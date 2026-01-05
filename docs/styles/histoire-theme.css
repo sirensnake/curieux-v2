@@ -1,0 +1,108 @@
+/**
+ * ==========================================
+ * CSS BANDEAU CONTEXTE HISTORIQUE
+ * Section Histoire - Le Monde des Curieux
+ * ==========================================
+ */
+
+/* BANDEAU CONTEXTE HISTORIQUE */
+.historical-context {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 5px solid #d97706;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px 0 rgba(217, 119, 6, 0.3);
+    font-family: 'Press Start 2P', cursive;
+    animation: contextSlideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.context-icon {
+    font-size: 4rem;
+    flex-shrink: 0;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+.context-text {
+    font-size: 11px;
+    line-height: 2;
+    color: #78350f;
+    text-align: left;
+}
+
+/* ANIMATIONS */
+@keyframes contextSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* THÈME HISTOIRE (MARRON/OCRE) */
+.histoire-section .header {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-color: #d97706;
+}
+
+.histoire-section .progress-fill {
+    background: linear-gradient(90deg, #d97706 0%, #b45309 100%);
+}
+
+.histoire-section .lesson-card:hover {
+    border-color: #d97706;
+    box-shadow: 12px 12px 0 rgba(217, 119, 6, 0.5);
+}
+
+.histoire-section .btn-primary {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.histoire-section .btn-primary:hover {
+    background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .historical-context {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .context-icon {
+        font-size: 3rem;
+    }
+    
+    .context-text {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 480px) {
+    .context-icon {
+        font-size: 2.5rem;
+    }
+    
+    .context-text {
+        font-size: 9px;
+    }
+}
