@@ -19,13 +19,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      
+      - name: Check folder
+        run: ls -R # Cela va nous montrer dans les logs ce que GitHub voit vraiment
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # On cible précisément le dossier qui contient ton index.html
-          path: './docs'
+          # On essaie de pointer le dossier docs, 
+          # s'il échoue, c'est que le dossier n'est pas sur cette branche
+          path: 'docs/' 
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
