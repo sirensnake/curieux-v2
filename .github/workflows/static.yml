@@ -18,13 +18,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Vérifier les dossiers
-        run: ls -R # Cette ligne va nous dire si 'docs' est bien là
+        with:
+          fetch-depth: 0 # Force à récupérer tout l'historique et tous les fichiers
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs/'
-          # Cette option évite que le build plante si un fichier est mal nommé
-          if-no-files-found: error
+          path: 'docs/' # On confirme bien le dossier docs/ que tu as créé
