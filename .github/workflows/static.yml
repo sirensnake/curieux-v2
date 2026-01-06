@@ -18,10 +18,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Vérifier les dossiers
+        run: ls -R # Cette ligne va nous dire si 'docs' est bien là
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs/'
+          path: './docs' # On ajoute le ./ pour être ultra-précis
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
