@@ -1,5 +1,6 @@
 const missionRobots = {
     id: "robots_01",
+    subject_key: "sciences", // Orienté Sciences/Techno
     badge: "🤖",
     title: "Univers des Robots",
     steps: [

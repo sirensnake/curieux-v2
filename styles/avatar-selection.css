@@ -1,0 +1,84 @@
+:root {
+    --mc-green: #4aa52e;
+    --mc-dark-green: #387a22;
+    --mc-dirt: #866043;
+    --pixel-border: 4px solid #000;
+}
+
+body {
+    background: #2c3e50;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 { 
+    font-size: 18px; 
+    text-shadow: 3px 3px 0 #000; 
+    margin-bottom: 30px; 
+    text-align: center; 
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border: var(--pixel-border);
+    border-radius: 10px;
+}
+
+.avatar-card {
+    background: #95a5a6;
+    border: 4px solid #bdc3c7;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-card:hover {
+    background: var(--mc-green);
+    border-color: #fff;
+    transform: translateY(-5px);
+}
+
+.avatar-card.active {
+    border-color: #f1c40f;
+    background: var(--mc-dark-green);
+    box-shadow: 0 0 15px #f1c40f;
+}
+
+.avatar-img {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.avatar-name { font-size: 8px; color: #fff; }
+
+.back-btn {
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: var(--mc-dirt);
+    border: var(--pixel-border);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+}

@@ -1,5 +1,6 @@
 const missionEau = {
     id: "cycle-eau",
+    subject_key: "sciences", // Ajouté pour le graphique turquoise
     badge: "💧",
     title: "Le Voyage d'une Goutte d'Eau",
     steps: [

@@ -1,5 +1,6 @@
 const missionHistoire = {
-    id: "roi-soleil", // ID utilisé par le DOM (item-roi-soleil)
+    id: "roi-soleil",
+    subject_key: "histoire", // Ajouté pour le graphique orange
     badge: "👑",
     title: "Mission : Le Secret du Roi Soleil",
     steps: [

@@ -1,347 +1,199 @@
 /**
  * ==========================================
- * LESSON ENGINE - MOTEUR UNIVERSEL
- * Le Monde des Curieux
+ * CORE : lesson-engine.js
+ * Plateforme : Le Monde des Curieux
+ * Rôle : Logique de jeu, Audio 8-bit, Confettis & Modale
  * ==========================================
- * Gère toutes les sections : Maths, English, Histoire, etc.
  */
 
 class LessonEngine {
-    constructor(section, lessonsData) {
-        this.section = section;
-        this.lessons = lessonsData;
-        this.currentLesson = null;
-        this.currentExerciseIndex = 0;
-        this.hearts = 5;
-        this.maxHearts = 5;
-        this.streak = this.loadStreak();
-        this.xp = this.loadXP();
-        this.correctAnswers = 0;
+    constructor(data) {
+        this.data = data;
+        this.lesson = null;
+        this.index = 0;
+        this.xp = parseInt(localStorage.getItem('curio_xp') || '855');
+        this.audioEnabled = false;
+
+        this.avatars = {
+            idle: "assets/img/avatars/curio-normal.png",
+            success: "assets/img/avatars/curio-happy.png",
+            error: "assets/img/avatars/curio-sad.png",
+            hint: "assets/img/avatars/curio-teacher.png"
+        };
+
+        window.engine = this;
+        this.init();
     }
-    
-    // ========================================
-    // SYSTÈME XP UNIVERSEL
-    // ========================================
-    
-    loadXP() {
-        return parseInt(localStorage.getItem('curio_xp') || '0');
-    }
-    
-    saveXP(amount) {
-        const total = this.loadXP() + amount;
-        localStorage.setItem('curio_xp', total);
+
+    init() {
+        this.renderGrid();
         this.updateXPDisplay();
-    }
-    
-    // ========================================
-    // SYSTÈME STREAKS UNIVERSEL
-    // ========================================
-    
-    loadStreak() {
-        const data = JSON.parse(localStorage.getItem(`${this.section}_streak`) || '{}');
-        const today = new Date().toDateString();
         
-        if (data.lastDate === today) {
-            return data.current || 0;
-        }
-        
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        
-        if (data.lastDate === yesterday.toDateString()) {
-            data.current = (data.current || 0) + 1;
-        } else {
-            data.current = 1;
-        }
-        
-        data.lastDate = today;
-        localStorage.setItem(`${this.section}_streak`, JSON.stringify(data));
-        return data.current;
-    }
-    
-    // ========================================
-    // SYSTÈME HEARTS UNIVERSEL
-    // ========================================
-    
-    loseHeart() {
-        this.hearts--;
-        this.updateHeartsDisplay();
-        
-        if (this.hearts <= 0) {
-            this.showGameOver();
-            return false;
-        }
-        return true;
-    }
-    
-    // ========================================
-    // AFFICHAGE DES LEÇONS
-    // ========================================
-    
-    renderLessonsGrid() {
-        const grid = document.getElementById('lessons-grid');
-        const completed = this.getCompletedLessons();
-        
-        if (!grid) {
-            console.error('❌ Element #lessons-grid introuvable');
-            return;
-        }
-        
-        grid.innerHTML = this.lessons.map((lesson, index) => {
-            const isCompleted = completed.includes(lesson.id);
-            const isLocked = index > 14 && !completed.includes(this.lessons[index - 1].id); // ← TOUTES LES LEÇONS DÉBLOQUÉES(this.lessons[index - 1].id);
-            
-            return `
-                <div class="lesson-card ${isCompleted ? 'completed' : ''} ${isLocked ? 'locked' : ''}"
-                     onclick="${!isLocked ? `${this.section}App.startLesson(${index})` : ''}">
-                    <div class="emoji">${lesson.emoji}</div>
-                    <h3 class="title">${lesson.title}</h3>
-                    <div class="xp">⭐ ${lesson.xp} XP</div>
-                    ${isLocked ? '<div class="lock">🔒</div>' : ''}
-                </div>
-            `;
-        }).join('');
-    }
-    
-    // ========================================
-    // DÉMARRAGE D'UNE LEÇON
-    // ========================================
-    
-    startLesson(index) {
-        this.currentLesson = this.lessons[index];
-        this.currentExerciseIndex = 0;
-        this.hearts = this.maxHearts;
-        this.correctAnswers = 0;
-        
-        // Masquer liste, afficher écran leçon
-        document.getElementById('lessons-list').style.display = 'none';
-        document.getElementById('lesson-screen').style.display = 'block';
-        document.getElementById('exercise-screen').style.display = 'block';
-        document.getElementById('results-screen').style.display = 'none';
-        
-        this.updateHeartsDisplay();
-        this.showExercise();
-    }
-    
-    // ========================================
-    // AFFICHAGE D'UN EXERCICE
-    // ========================================
-    
-    showExercise() {
-        const exercise = this.currentLesson.exercises[this.currentExerciseIndex];
-        
-        // Mise à jour barre de progression
-        const progress = ((this.currentExerciseIndex + 1) / this.currentLesson.exercises.length) * 100;
-        document.getElementById('progress-fill').style.width = progress + '%';
-        
-        // Affichage question
-        document.getElementById('question-text').innerText = exercise.question;
-        
-        // Reset input
-        const input = document.getElementById('answer-input');
-        input.value = '';
-        input.focus();
-        
-        // Cacher indice
-        const hintArea = document.getElementById('hint-area');
-        if (hintArea) {
-            hintArea.style.display = 'none';
-            hintArea.innerText = '';
-        }
-        
-        // Afficher contexte historique si présent (pour Histoire)
-        if (this.currentLesson.context && document.getElementById('historical-context')) {
-            document.getElementById('historical-context').style.display = 'flex';
-            document.getElementById('context-text').innerText = this.currentLesson.context;
-            if (this.currentLesson.contextIcon) {
-                document.getElementById('context-icon').innerText = this.currentLesson.contextIcon;
+        document.addEventListener('keydown', (e) => {
+            const screen = document.getElementById('lesson-screen');
+            if (e.key === 'Enter' && screen && !screen.classList.contains('hidden')) {
+                this.validate();
             }
-        }
-    }
-    
-    // ========================================
-    // VÉRIFICATION RÉPONSE
-    // ========================================
-    
-    checkAnswer() {
-        const input = document.getElementById('answer-input');
-        const userAnswer = input.value.trim().toLowerCase();
-        const exercise = this.currentLesson.exercises[this.currentExerciseIndex];
-        
-        // Normalisation réponses (accepter variations)
-        const correctAnswer = exercise.answer.toLowerCase().trim();
-        
-        // Tolérance pour réponses numériques
-        const isNumeric = !isNaN(parseFloat(correctAnswer));
-        const answersMatch = isNumeric 
-            ? parseFloat(userAnswer) === parseFloat(correctAnswer)
-            : userAnswer === correctAnswer;
-        
-        if (answersMatch) {
-            this.correctAnswers++;
-            this.showFeedback('correct', '✅ Correct !');
-            
-            setTimeout(() => {
-                this.currentExerciseIndex++;
-                
-                if (this.currentExerciseIndex >= this.currentLesson.exercises.length) {
-                    this.showResults();
-                } else {
-                    this.showExercise();
-                }
-            }, 1000);
-        } else {
-            // Animation shake
-            const exerciseScreen = document.getElementById('exercise-screen');
-            exerciseScreen.classList.add('shake');
-            setTimeout(() => exerciseScreen.classList.remove('shake'), 500);
-            
-            this.showFeedback('incorrect', '❌ Réessaie !');
-            
-            if (!this.loseHeart()) {
-                return; // Game over
-            }
-        }
-    }
-    
-    // ========================================
-    // AFFICHAGE FEEDBACK
-    // ========================================
-    
-    showFeedback(type, message) {
-        const feedback = document.getElementById('feedback');
-        if (!feedback) return;
-        
-        feedback.className = `feedback ${type}`;
-        feedback.innerText = message;
-        feedback.style.display = 'block';
-        
-        setTimeout(() => {
-            feedback.style.display = 'none';
-        }, 2000);
-    }
-    
-    // ========================================
-    // INDICE
-    // ========================================
-    
-    showHint() {
-        const exercise = this.currentLesson.exercises[this.currentExerciseIndex];
-        const hint = document.getElementById('hint-area');
-        
-        if (exercise.hint && hint) {
-            hint.innerText = '💡 ' + exercise.hint;
-            hint.style.display = 'block';
-        }
-    }
-    
-    // ========================================
-    // AFFICHAGE RÉSULTATS
-    // ========================================
-    
-    showResults() {
-        const totalCount = this.currentLesson.exercises.length;
-        const score = Math.round((this.correctAnswers / totalCount) * 100);
-        const xpEarned = this.currentLesson.xp;
-        
-        // Sauvegarder XP
-        this.saveXP(xpEarned);
-        
-        // Marquer comme complétée
-        this.markLessonCompleted(this.currentLesson.id);
-        
-        // Afficher écran résultats
-        document.getElementById('exercise-screen').style.display = 'none';
-        document.getElementById('results-screen').style.display = 'block';
-        
-        // Remplir statistiques
-        document.getElementById('result-correct').innerText = this.correctAnswers;
-        document.getElementById('result-xp').innerText = xpEarned;
-        document.getElementById('result-hearts').innerText = this.hearts;
-        document.getElementById('result-score').innerText = score + '%';
-    }
-    
-    // ========================================
-    // RETOUR AUX LEÇONS
-    // ========================================
-    
-    backToLessons() {
-        document.getElementById('lesson-screen').style.display = 'none';
-        document.getElementById('lessons-list').style.display = 'block';
-        this.renderLessonsGrid();
-        this.updateAllDisplays();
-    }
-    
-    // ========================================
-    // MISE À JOUR AFFICHAGES
-    // ========================================
-    
-    updateXPDisplay() {
-        const xp = this.loadXP();
-        const el = document.getElementById('xp-display');
-        if (el) el.innerText = xp + ' XP';
-    }
-    
-    updateHeartsDisplay() {
-        const displays = ['hearts-display', 'hearts-exercise'];
-        const heartsHTML = '❤️'.repeat(this.hearts) + '🖤'.repeat(this.maxHearts - this.hearts);
-        
-        displays.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.innerHTML = heartsHTML;
         });
     }
-    
-    updateStreakDisplay() {
-        const el = document.getElementById('streak-display');
-        if (el) {
-            const label = this.section === 'english' ? 'days' : 'jours';
-            el.innerText = `🔥 ${this.streak} ${label}`;
+
+    /**
+     * GESTION AUDIO & EFFETS
+     */
+    enableAudio() {
+        this.audioEnabled = true;
+        const btn = document.getElementById('sound-toggle');
+        btn.innerText = "🔊";
+        btn.style.backgroundColor = "#38b000";
+        btn.classList.replace('off', 'on');
+        this.play8BitSound('click');
+        this.setCurio('idle', "Système audio prêt !");
+    }
+
+    play8BitSound(type) {
+        if (!this.audioEnabled) return;
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        const now = ctx.currentTime;
+
+        if (type === 'success') {
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(523.25, now);
+            osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.2);
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+            osc.start(now); osc.stop(now + 0.3);
+        } else if (type === 'error') {
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, now);
+            osc.frequency.linearRampToValueAtTime(50, now + 0.3);
+            gain.gain.setValueAtTime(0.1, now);
+            osc.start(now); osc.stop(now + 0.3);
+        } else {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, now);
+            gain.gain.setValueAtTime(0.1, now);
+            osc.start(now); osc.stop(now + 0.05);
         }
     }
-    
-    updateAllDisplays() {
+
+    /**
+     * LOGIQUE DE JEU
+     */
+    renderGrid() {
+        const grid = document.getElementById('lessons-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        this.data.forEach((l, i) => {
+            const card = document.createElement('div');
+            card.className = 'lesson-card';
+            card.onclick = () => { this.play8BitSound('click'); this.start(i); };
+            card.innerHTML = `<span class="card-icon">${l.emoji}</span><span class="card-title">${l.title}</span>`;
+            grid.appendChild(card);
+        });
+    }
+
+    start(i) {
+        this.lesson = this.data[i];
+        this.index = 0;
+        document.getElementById('lessons-list').classList.add('hidden');
+        document.getElementById('lesson-screen').classList.remove('hidden');
+        this.updateUI();
+    }
+
+    updateUI() {
+        const q = this.lesson.exercises[this.index];
+        document.getElementById('question-text').innerText = q.question;
+        const input = document.getElementById('user-input');
+        input.value = ''; input.focus();
+        document.getElementById('progress-fill').style.width = (this.index / this.lesson.exercises.length) * 100 + "%";
+        this.setCurio('idle', "À toi de jouer !");
+    }
+
+    validate() {
+        const input = document.getElementById('user-input').value.trim().toLowerCase();
+        const currentEx = this.lesson.exercises[this.index];
+        if (input === currentEx.answer.toLowerCase()) {
+            this.play8BitSound('success');
+            this.setCurio('success', "Bien joué ! ✨");
+            this.index++;
+            if (this.index < this.lesson.exercises.length) {
+                setTimeout(() => this.updateUI(), 800);
+            } else {
+                this.finish();
+            }
+        } else {
+            this.play8BitSound('error');
+            this.setCurio('error', "💡 " + (currentEx.hint || "Essaie encore !"));
+        }
+    }
+
+    /**
+     * CÉLÉBRATION FINALE
+     */
+    finish() {
+        this.xp += this.lesson.xp;
+        localStorage.setItem('curio_xp', this.xp);
         this.updateXPDisplay();
-        this.updateHeartsDisplay();
-        this.updateStreakDisplay();
-    }
-    
-    // ========================================
-    // GESTION LEÇONS COMPLÉTÉES
-    // ========================================
-    
-    getCompletedLessons() {
-        return JSON.parse(localStorage.getItem(`${this.section}_completed`) || '[]');
-    }
-    
-    markLessonCompleted(lessonId) {
-        const completed = this.getCompletedLessons();
-        if (!completed.includes(lessonId)) {
-            completed.push(lessonId);
-            localStorage.setItem(`${this.section}_completed`, JSON.stringify(completed));
-        }
-    }
-    
-    // ========================================
-    // GAME OVER
-    // ========================================
-    
-    showGameOver() {
-        this.showFeedback('incorrect', '💔 Plus de cœurs ! La leçon redémarre...');
         
-        setTimeout(() => {
-            this.hearts = this.maxHearts;
-            this.currentExerciseIndex = 0;
-            this.correctAnswers = 0;
-            this.updateHeartsDisplay();
-            this.showExercise();
-        }, 2500);
+        this.launchConfetti();
+        this.play8BitSound('success');
+        
+        const modal = document.getElementById('victory-modal');
+        if (modal) {
+            document.getElementById('xp-added').innerText = this.lesson.xp;
+            modal.classList.remove('hidden');
+        }
+        this.setCurio('success', "FÉLICITATIONS ! 🏆");
+    }
+
+    launchConfetti() {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        document.body.appendChild(canvas);
+        canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999";
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const particles = [];
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
+        for (let i = 0; i < 100; i++) {
+            particles.push({
+                x: canvas.width / 2, y: canvas.height / 2,
+                size: Math.random() * 8 + 4,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20 - 5,
+                gravity: 0.2
+            });
+        }
+        const render = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.x += p.vx; p.y += p.vy; p.vy += p.gravity;
+                ctx.fillStyle = p.color;
+                ctx.fillRect(p.x, p.y, p.size, p.size);
+                if (p.y > canvas.height) particles.splice(i, 1);
+            });
+            if (particles.length > 0) requestAnimationFrame(render);
+            else canvas.remove();
+        };
+        render();
+    }
+
+    updateXPDisplay() {
+        const display = document.getElementById('xp-display');
+        if (display) display.innerText = this.xp + " XP";
+    }
+
+    setCurio(state, msg) {
+        document.getElementById('curio-sprite-img').src = this.avatars[state];
+        document.getElementById('curio-msg').innerText = msg;
+    }
+
+    showHint() {
+        const q = this.lesson.exercises[this.index];
+        this.setCurio('hint', "🧐 " + (q.hint || "Besoin d'aide ?"));
+        this.play8BitSound('click');
     }
 }
-
-// Export pour utilisation
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = LessonEngine;
-}
-
-console.log('✅ LessonEngine chargé avec succès');
