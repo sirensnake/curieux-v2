@@ -1,0 +1,44 @@
+:root {
+    --mc-grass: #4aa52e;
+    --mc-dirt: #866043;
+    --mc-border: #000;
+}
+
+body {
+    background: #2c3e50;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding: 20px;
+}
+
+.admin-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.85);
+    border: 4px solid var(--mc-border);
+    padding: 30px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+}
+
+.stat-bar-group { margin-bottom: 30px; }
+
+.bar-label {
+    display: flex; 
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+
+.bar-outer {
+    height: 32px;
+    background: var(--mc-dirt);
+    border: 3px solid var(--mc-border);
+    image-rendering: pixelated;
+}
+
+.bar-inner {
+    height: 100%;
+    background: var(--mc-grass);
+    border-right: 3px solid var(--mc-border);
+    transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

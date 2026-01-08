@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Le Monde des Curieux</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
+    <link rel="stylesheet" href="styles/dashboard-home.css">
+    <link rel="stylesheet" href="styles/dashboard-global.css">
+    
+    <style>
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid #2c3e50;
+            margin-bottom: 20px;
+        }
+        .grade-highlight { color: #3fff3f !important; text-shadow: 2px 2px #000; }
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        /* Style Minecraft de secours */
+        .section-card {
+            background: white;
+            border: 4px solid #2c3e50;
+            padding: 15px;
+            image-rendering: pixelated;
+        }
+        .progress-bar-mini {
+            background: #333;
+            height: 12px;
+            border: 2px solid #000;
+            margin: 10px 0;
+        }
+        .progress-fill-mini {
+            background: #3fff3f;
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="dashboard-home">
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section" onclick="window.location.href='index.html'" style="cursor:pointer">
+                <h1 style="font-family:'Press Start 2P'; font-size:16px;">🎮 Dashboard</h1>
+            </div>
+            
+            <div class="global-stats" style="display:flex; gap:15px;">
+                <div class="stat-card">⭐ <span id="global-xp">0</span> XP</div>
+                <div class="stat-card">🏆 <span id="global-grade" class="grade-highlight">Néophyte</span></div>
+            </div>
+        </header>
+
+        <div class="sections-grid" id="dashboard-grid">
+            </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="analytics-link-btn" onclick="window.location.href='dashboard-analytics.html'" style="padding:10px; font-family:'Press Start 2P'; font-size:10px; cursor:pointer;">
+                📊 Détails Analytics
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const GRADES = [
+            { min: 0, name: "Néophyte" },
+            { min: 100, name: "Apprenti" },
+            { min: 300, name: "Explorateur" },
+            { min: 600, name: "Chasseur" },
+            { min: 1000, name: "Maître" }
+        ];
+
+        const SECTIONS = [
+            { id: 'maths', name: 'Mathématiques', emoji: '🧮' },
+            { id: 'english', name: 'English', emoji: '🌍' },
+            { id: 'francais', name: 'Français', emoji: '📚' },
+            { id: 'histoire', name: 'Histoire', emoji: '🏛️' },
+            { id: 'sciences', name: 'Sciences', emoji: '🔬' }
+        ];
+
+        function render() {
+            // Lecture de la source de vérité d'index.html
+            const userProgress = JSON.parse(localStorage.getItem('userProgress')) || {};
+            const grid = document.getElementById('dashboard-grid');
+            let totalXP = 0;
+
+            grid.innerHTML = '';
+
+            SECTIONS.forEach(s => {
+                // On récupère les données par section (ex: userProgress.maths)
+                const sectionData = userProgress[s.id] || {};
+                const completedCount = Object.keys(sectionData).length;
+                const xp = completedCount * 10;
+                totalXP += xp;
+                
+                const percent = Math.min(100, Math.round((completedCount / 15) * 100));
+
+                grid.innerHTML += `
+                    <div class="section-card">
+                        <h3 style="font-size:14px; margin:0;">${s.emoji} ${s.name}</h3>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: ${percent}%"></div>
+                        </div>
+                        <div style="font-size:10px; display:flex; justify-content:space-between;">
+                            <span>${completedCount}/15 leçons</span>
+                            <span>${xp} XP</span>
+                        </div>
+                    </div>`;
+            });
+
+            // Update Global
+            document.getElementById('global-xp').innerText = totalXP;
+            const currentGrade = [...GRADES].reverse().find(g => totalXP >= g.min) || GRADES[0];
+            document.getElementById('global-grade').innerText = currentGrade.name;
+        }
+
+        // Exécution immédiate
+        document.addEventListener('DOMContentLoaded', render);
+    </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 const missionEnglish = {
     id: "english_01",
+    subject_key: "english", // Pour le graphique bleu
     badge: "🇬🇧",
     title: "English Adventure with Curio",
     steps: [

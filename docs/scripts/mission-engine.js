@@ -1,142 +1,120 @@
 /**
- * MOTEUR DE MISSION - GÉNÉRATEUR D'INTERFACE (Version avec Badge Secret)
+ * MISSION ENGINE - Le Monde des Curieux
+ * Gère l'affichage des missions, les indices et la progression.
  */
 
 function launchMission(missionData) {
+    // 1. Création de l'overlay (Style Minecraft / Curio)
     const overlay = document.createElement('div');
-    overlay.id = "mission-overlay";
-    overlay.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:9999; font-family:sans-serif; color: #333;";
+    overlay.id = 'mission-overlay';
+    overlay.style = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.85); z-index: 10000;
+        display: flex; justify-content: center; align-items: center;
+        font-family: 'Press Start 2P', cursive;
+    `;
+
+    document.body.appendChild(overlay);
 
     let currentStep = 0;
 
     const renderStep = () => {
         const step = missionData.steps[currentStep];
-        const progress = Math.round((currentStep / missionData.steps.length) * 100);
-
+        
         overlay.innerHTML = `
-            <div id="mission-card" style="background:white; padding:30px; border-radius:15px; max-width:500px; width:90%; text-align:center; border:5px solid #3498db; position:relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-                <h2 style="margin-top:0; color:#2c3e50;">${missionData.title}</h2>
-                <div style="width:100%; background:#eee; height:10px; border-radius:5px; margin-bottom:20px;">
-                    <div style="width:${progress}%; background:#3498db; height:100%; border-radius:5px; transition:0.3s;"></div>
+            <div style="background: #fff; border: 6px solid #2c3e50; padding: 30px; width: 90%; max-width: 600px; position: relative; box-shadow: 10px 10px 0 rgba(0,0,0,0.5);">
+                <button id="close-mission" style="position: absolute; top: -20px; right: -20px; background: #e74c3c; color: white; border: 4px solid #000; cursor: pointer; padding: 5px 10px;">X</button>
+                
+                <h2 style="font-size: 12px; color: #2a9d8f; margin-bottom: 20px; line-height: 1.5;">${missionData.title}</h2>
+                
+                <p style="font-size: 10px; color: #333; margin-bottom: 25px; line-height: 1.6;">${step.question}</p>
+                
+                <div id="options-container" style="display: grid; gap: 15px;"></div>
+                
+                <div id="hint-box" style="display: none; margin-top: 20px; padding: 15px; background: #f1c40f; border: 3px dashed #000; font-size: 8px; line-height: 1.4; color: #000;">
+                    💡 INDICE : ${step.feedback || "Relis bien la question !"}
                 </div>
-                <div style="background:#e1f5fe; color:#0288d1; padding:5px 15px; border-radius:20px; display:inline-block; margin-bottom:15px; font-weight:bold; font-size:0.9em;">
-                    ${step.subject}
-                </div>
-                <p style="font-size:1.2em; line-height:1.5; margin-bottom:25px; font-weight:500;">${step.question}</p>
-                <div style="display:grid; gap:10px;">
-                    ${step.options.map((opt, i) => `
-                        <button onclick="handleAnswer(${i})" style="padding:15px; border:2px solid #ddd; border-radius:10px; background:white; cursor:pointer; font-size:1.1em; transition:0.2s;" 
-                        onmouseover="this.style.borderColor='#3498db';this.style.background='#f0f7ff'" 
-                        onmouseout="this.style.borderColor='#ddd';this.style.background='white'">${opt}</button>
-                    `).join('')}
-                </div>
-                <button onclick="closeMission()" style="margin-top:20px; background:none; border:none; color:#95a5a6; text-decoration:underline; cursor:pointer;">Quitter</button>
+
+                <button id="get-hint" style="margin-top: 20px; background: none; border: none; color: #7f8c8d; font-family: 'Press Start 2P'; font-size: 7px; cursor: pointer; text-decoration: underline;">Besoin d'aide ?</button>
             </div>
         `;
-    };
 
-    window.handleAnswer = (index) => {
-        const step = missionData.steps[currentStep];
-        if (index === step.correct) {
-            currentStep++;
-            if (currentStep < missionData.steps.length) {
-                renderStep();
-            } else {
-                terminerMission();
-            }
-        } else {
-            const card = document.getElementById('mission-card');
-            card.style.borderColor = "#e74c3c";
-            setTimeout(() => card.style.borderColor = "#3498db", 500);
-        }
-    };
+        overlay.querySelector('#close-mission').onclick = () => overlay.remove();
 
-    const terminerMission = () => {
-        // --- EFFET CONFETTIS ---
-        confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 },
-            colors: ['#f1c40f', '#2ecc71', '#3498db', '#e74c3c']
-        });
-        const gain = 50;
-        const badge = missionData.badge || "🏅";
-        
-        // 1. Sauvegarde XP et Mission
-        if (typeof window.ajouterXP === "function") window.ajouterXP(gain);
-        if (typeof window.enregistrerMissionReussie === "function") window.enregistrerMissionReussie(missionData.id);
-        
-        // 2. Récupération des badges actuels
-        let badgesLog = JSON.parse(localStorage.getItem('curio_badges')) || [];
-        
-        // Ajouter le badge de la mission s'il n'existe pas
-        if (!badgesLog.includes(badge)) {
-            badgesLog.push(badge);
-        }
+        const container = overlay.querySelector('#options-container');
+        step.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            btn.style = `
+                padding: 15px; background: #ecf0f1; border: 4px solid #bdc3c7;
+                font-family: 'Press Start 2P'; font-size: 9px; cursor: pointer; text-align: left;
+                transition: all 0.2s;
+            `;
+            btn.textContent = option;
 
-        // 3. --- LOGIQUE DU BADGE SECRET DIAMANT ---
-        const toutesLesMissions = ["histoire_01", "sciences_eau_01", "robots_01", "francais_01", "english_01"];
-        const missionsFinies = JSON.parse(localStorage.getItem('curio_missions_completed')) || [];
-        
-        const toutEstFini = toutesLesMissions.every(id => missionsFinies.includes(id));
-        
-        let messageSecret = "";
-        if (toutEstFini && !badgesLog.includes("💎")) {
-            badgesLog.push("💎");
-            messageSecret = `<div style="margin-top:10px; color:#9b59b6; font-weight:bold; font-size:1.1em;">
-                                ✨ INCROYABLE ! Tu as débloqué le Badge Secret de Diamant ! 💎
-                             </div>`;
-                             // === PLACEZ LE CODE DU FINAL BLAST ICI ===
-            var duration = 4 * 1000; // 4 secondes de fête
-            var end = Date.now() + duration;
-
-            (function frame() {
-                confetti({
-                    particleCount: 10,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0, y: 0.7 },
-                    colors: ['#9b59b6', '#f1c40f', '#ffffff']
-                });
-                confetti({
-                    particleCount: 10,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1, y: 0.7 },
-                    colors: ['#9b59b6', '#f1c40f', '#ffffff']
-                });
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
+            btn.onclick = () => {
+                if (index === step.correct) {
+                    handleCorrect();
+                } else {
+                    handleWrong(btn);
                 }
-            }());
-            // === FIN DU CODE FINAL BLAST ===
-        }
-        
+            };
+            container.appendChild(btn);
+        });
 
-        // 4. Sauvegarde finale des badges
-        localStorage.setItem('curio_badges', JSON.stringify(badgesLog));
+        overlay.querySelector('#get-hint').onclick = () => {
+            overlay.querySelector('#hint-box').style.display = 'block';
+        };
+    };
+
+    const handleCorrect = () => {
+        currentStep++;
+        if (currentStep < missionData.steps.length) {
+            renderStep();
+        } else {
+            finishMission();
+        }
+    };
+
+    const handleWrong = (btn) => {
+        btn.style.background = "#ffcccc";
+        btn.style.border = "4px solid #e74c3c";
+        overlay.querySelector('#hint-box').style.display = 'block';
+        btn.parentElement.style.transform = "translateX(5px)";
+        setTimeout(() => btn.parentElement.style.transform = "translateX(0)", 100);
+    };
+
+    const finishMission = () => {
+        let done = JSON.parse(localStorage.getItem('curio_missions') || "[]");
+        if (!done.includes(missionData.id)) {
+            done.push(missionData.id);
+            localStorage.setItem('curio_missions', JSON.stringify(done));
+            
+            let xp = parseInt(localStorage.getItem('curio_xp') || 0) + 50;
+            localStorage.setItem('curio_xp', xp);
+        }
+
+        const btn = document.getElementById(`btn-mission-${missionData.id}`);
+        if (btn) {
+            btn.innerText = "Fait !";
+            btn.style.background = "#95a5a6";
+            btn.style.cursor = "default";
+            btn.disabled = true;
+        }
+
+        if(document.getElementById('xp-display')) {
+            document.getElementById('xp-display').innerText = (localStorage.getItem('curio_xp') || 0) + " XP";
+        }
 
         overlay.innerHTML = `
-            <div style="background:white; padding:40px; border-radius:20px; text-align:center; border:8px solid #f1c40f; animation: pop 0.4s ease-out; max-width:450px;">
-                <div style="font-size:60px; margin-bottom:10px;">${badge}</div>
-                <h2 style="color:#2c3e50; margin:0;">Mission Réussie !</h2>
-                ${messageSecret}
-                <div style="background:#f1c40f; color:white; padding:15px; border-radius:15px; font-size:2em; font-weight:bold; margin: 20px 0;">
-                    + ${gain} XP
-                </div>
-                <button onclick="closeMission()" style="background:#2ecc71; color:white; border:none; padding:15px 40px; border-radius:50px; font-size:1.2em; font-weight:bold; cursor:pointer; box-shadow: 0 4px 0 #27ae60;">Génial !</button>
+            <div style="background: #fff; border: 6px solid #27ae60; padding: 40px; text-align: center; font-family: 'Press Start 2P';">
+                <h2 style="color: #27ae60; font-size: 14px;">MISSION RÉUSSIE !</h2>
+                <p style="font-size: 10px; margin: 20px 0;">+ 50 XP</p>
+                <button onclick="location.reload()" style="padding: 15px; background: #27ae60; color: white; border: 4px solid #000; font-family: 'Press Start 2P'; cursor: pointer;">RETOUR</button>
             </div>
-            <style>@keyframes pop { from { transform:scale(0.8); opacity:0; } to { transform:scale(1); opacity:1; } }</style>
         `;
+        
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     };
 
-    window.closeMission = () => {
-        document.body.removeChild(overlay);
-        // On force la mise à jour visuelle des XP sur l'accueil
-        if (typeof window.mettreAJourAffichage === "function") window.mettreAJourAffichage();
-    };
-
-    document.body.appendChild(overlay);
     renderStep();
 }

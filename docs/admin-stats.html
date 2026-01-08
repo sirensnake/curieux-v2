@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Statistiques Curio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/admin-reporting.css">
+</head>
+<body>
+
+    <div class="admin-panel">
+        <h1 style="font-size: 16px; text-align: center;">📊 RAPPORT DES CURIOS</h1>
+        
+        <div id="reporting-grid">
+            </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="window.location.href='index.html'" 
+                    style="font-family: 'Press Start 2P'; padding: 15px 25px; background: #e74c3c; color: white; border: 4px solid #c0392b; cursor: pointer; font-size: 10px;">
+                🏠 RETOUR À L'ACCUEIL
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts/modules/reporting.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('reporting-grid');
+            // Utilisation du module de reporting
+            const stats = typeof CurioReporting !== 'undefined' ? CurioReporting.getAvatarStats() : {}; 
+            const total = Object.values(stats).reduce((a, b) => a + b, 0);
+
+            if (total === 0) {
+                container.innerHTML = "<p style='font-size:10px; color:#bdc3c7; text-align:center;'>Aucun choix d'avatar enregistré.</p>";
+                return;
+            }
+
+            for (const [id, count] of Object.entries(stats)) {
+                const pct = Math.round((count / total) * 100);
+                const row = document.createElement('div');
+                row.className = 'stat-bar-group';
+                row.innerHTML = `
+                    <div class="bar-label">
+                        <span>${id.toUpperCase()}</span>
+                        <span>${count} clics (${pct}%)</span>
+                    </div>
+                    <div class="bar-outer" style="height: 32px; background: #866043; border: 3px solid #000; margin-bottom: 15px;">
+                        <div class="bar-inner" style="width: 0%; height: 100%; background: #4aa52e; transition: width 1s;" data-pct="${pct}"></div>
+                    </div>
+                `;
+                container.appendChild(row);
+            }
+
+            setTimeout(() => {
+                document.querySelectorAll('.bar-inner').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-pct') + '%';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
