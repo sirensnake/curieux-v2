@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil - Le Monde des Curieux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
+</head>
+<body>
+    <div class="container">
+        <nav style="padding: 20px 0;">
+            <a href="index-dashboard.html" class="back-home-btn" style="text-decoration: none;">🏠 RETOUR AU DASHBOARD</a>
+        </nav>
+
+        <header class="header">
+            <h1>👤 MON PROFIL</h1>
+        </header>
+
+        <main class="lesson-card">
+            <div class="emoji" style="font-size: 80px; margin-bottom: 20px;">🦊</div>
+            <div id="profil-stats">
+                <p class="title">CHARGEMENT...</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Récupération de l'XP globale via ton système de stockage
+            const exp = localStorage.getItem('curio_total_exp') || 0; 
+            document.getElementById('profil-stats').innerHTML = `
+                <div class="stat-value" style="font-size: 30px; color: #f39c12; margin-bottom: 10px;">⭐ ${exp} XP</div>
+                <div class="stat-label" style="font-size: 15px;">NIVEAU : ${Math.floor(exp/200) + 1}</div>
+            `;
+        });
+    </script>
+</body>
+</html>

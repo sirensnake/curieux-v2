@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Parents - Suivi IEF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
+    <link rel="stylesheet" href="styles/dashboard-home.css">
+</head>
+<body class="dashboard-home">
+    <div class="container">
+        <nav style="padding: 20px;">
+            <a href="index-dashboard.html" class="btn-navigation-curio">🏠 DASHBOARD</a>
+        </nav>
+
+        <header class="main-header">
+            <h1 class="main-title">🛡️ ESPACE PARENTS</h1>
+            <p class="subtitle">Suivi des attendus de l'Éducation Nationale</p>
+        </header>
+
+        <div class="sections-grid" style="display: block;">
+            
+            <section class="section-card" style="width: 100%; border-bottom: 6px solid #005a8a; margin-bottom: 20px;">
+                <h2 class="section-title">📊 BILAN PÉDAGOGIQUE</h2>
+                <p class="section-description">
+                    Générez un récapitulatif des compétences validées pour votre dossier de contrôle annuel.
+                </p>
+                <button class="btn-navigation-curio" onclick="alert('Génération du PDF IEF...')">GÉNÉRER LE RAPPORT</button>
+            </section>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <section class="section-card">
+                    <h2 class="section-title">📜 SOCLE COMMUN</h2>
+                    <ul style="font-family: 'Lexend'; font-size: 0.8em; line-height: 1.8;">
+                        <li>Domaine 1 : Langue française</li>
+                        <li>Domaine 4 : Systèmes naturels</li>
+                    </ul>
+                </section>
+                
+                <section class="section-card">
+                    <h2 class="section-title">💾 STOCKAGE</h2>
+                    <p class="section-description" style="font-size: 0.7em;">
+                        Données sauvegardées en local sur votre disque T7.
+                    </p>
+                </section>
+            </div>
+
+            <section class="section-card" style="width: 100%; margin-top: 20px;">
+                <h2 class="section-title">📑 HISTORIQUE DES LECTURES</h2>
+                <div id="parent-news-log" style="font-family: 'Lexend'; font-size: 0.85em; margin-top: 15px;">
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        async function chargerLog() {
+            const container = document.getElementById('parent-news-log');
+            const quetesTerminees = JSON.parse(localStorage.getItem('curio_quetes_terminees') || '[]');
+            
+            if(quetesTerminees.length === 0) {
+                container.innerHTML = "<p>Aucune quête validée pour le moment.</p>";
+                return;
+            }
+
+            container.innerHTML = `<p>Quêtes validées par l'enfant : <strong>${quetesTerminees.length}</strong></p>`;
+        }
+        window.onload = chargerLog;
+    </script>
+</body>
+</html>

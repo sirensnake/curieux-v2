@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection du Profil - Le Monde des Curieux</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
+    <link rel="stylesheet" href="styles/dashboard-home.css">
+</head>
+<body class="dashboard-home">
+    <div class="container">
+        
+        <header class="main-header" style="margin-top: 50px;">
+            <div class="logo-section">
+                <h1 class="main-title">QUI ES-TU ?</h1>
+                <p class="subtitle">Choisis ton personnage pour commencer</p>
+            </div>
+        </header>
+
+        <div class="sections-grid" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            
+            <div class="section-card maths-card" onclick="window.location.href='index-dashboard.html'" style="cursor: pointer; max-width: 300px;">
+                <div class="section-header">
+                    <span class="section-emoji" style="font-size: 3rem;">🦊</span>
+                    <h2 class="section-title">CURIEUX</h2>
+                </div>
+                <div class="section-description">
+                    Accède à tes leçons et tes récompenses d'inventaire.
+                </div>
+                <button class="section-button maths-button">
+                    Choisir →
+                </button>
+            </div>
+
+            <div class="section-card sciences-card" style="opacity: 0.7; max-width: 300px;">
+                <div class="section-header">
+                    <span class="section-emoji" style="font-size: 3rem;">🤖</span>
+                    <h2 class="section-title">INVITÉ</h2>
+                </div>
+                <div class="section-description">
+                    Mode exploration (Prochainement disponible).
+                </div>
+                <button class="section-button sciences-button" style="background: #666; cursor: not-allowed;">
+                    Verrouillé
+                </button>
+            </div>
+
+        </div>
+
+        <footer class="dashboard-footer" style="margin-top: 40px;">
+            <p>Le Monde des Curieux © 2025 - Pixel Art Edition</p>
+        </footer>
+    </div>
+</body>
+</html>

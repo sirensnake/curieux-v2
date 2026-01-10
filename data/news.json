@@ -1,22 +1,14 @@
 {
   "articles": [
     {
-      "title": "Des essais de voitures volantes 🛫",
-      "summary": "Une entreprise a récemment testé une voiture volante aux États-Unis ! Ce véhicule futuriste ressemble à une voiture, mais il peut aussi s'élever dans les airs comme un petit avion. L'idée est que, dans le futur, ces voitures pourraient nous permettre de voyager plus rapidement d'un endroit à un autre, surtout dans les grandes villes où le trafic est souvent dense. Ce test est une étape importante pour rendre ce rêve possible un jour.",
-      "date": "18/10/2023",
-      "link": ""
+      "date": "10/01/2026",
+      "title": "Les pingouins sur Mars 🚀",
+      "summary": "Après l'océan, nos amis les pingouins explorent maintenant la planète rouge avec des combinaisons spatiales en blocs de glace !"
     },
     {
-      "title": "Les pingouins en ville 🐧",
-      "summary": "À Auckland, en Nouvelle-Zélande, des petits pingouins se promènent parfois en ville ! Maintenant, pour les protéger, des panneaux spéciaux ont été installés pour prévenir les gens. Ces panneaux racontent comment agir si on voit un pingouin : évitez de les déranger et gardez toujours une distance. Cette initiative aide les pingouins à se sentir plus en sécurité lorsqu'ils sortent de leur habitat naturel pour explorer les environs.",
-      "date": "18/10/2023",
-      "link": ""
-    },
-    {
-      "title": "L'art caché découvert dans les musées 🎨",
-      "summary": "Des chercheurs ont utilisé une technologie spéciale pour découvrir des peintures cachées sous d'autres couches de peinture dans des tableaux célèbres. Ces œuvres d'art « cachées » révèlent des secrets fascinants sur les artistes et la manière dont ils travaillaient. Cette technologie utilise des rayons X pour voir à travers les différentes couches sans abîmer l'œuvre originale. Grâce à cela, on peut mieux comprendre l'histoire de l'art et le processus créatif des artistes.",
-      "date": "18/10/2023",
-      "link": ""
+      "date": "10/01/2026",
+      "title": "L'école des Sorciers du Code 🧙‍♂️",
+      "summary": "Une nouvelle quête JavaScript est apparue. Apprends à lancer des sorts de fonctions pour vaincre les bugs."
     }
   ]
 }

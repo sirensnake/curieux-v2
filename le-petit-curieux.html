@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Petit Curieux - Le Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
+    <style>
+        .gazette-container { max-width: 900px; margin: auto; padding: 20px; }
+        .journal-header { border-bottom: 8px double #000; margin-bottom: 30px; padding: 20px; text-align: center; background: #fff; color: #000; }
+        .article-une { background: #fff; color: #000; border: 4px solid #000; padding: 25px; margin-bottom: 30px; position: relative; }
+        .mot-du-jour { background: #ffcc00; border: 3px solid #000; padding: 10px; display: inline-block; font-size: 0.7em; margin-bottom: 15px; }
+        .xp-stamp { position: absolute; bottom: -10px; right: -10px; transform: rotate(-10deg); }
+    </style>
+</head>
+<body class="dashboard-home">
+    <div class="gazette-container">
+        <nav style="margin-bottom: 20px;">
+            <a href="index-dashboard.html" class="btn-retour-home">🏠 REVENIR AU MONDE</a>
+        </nav>
+
+        <header class="journal-header">
+            <h1 class="pixel-font" style="font-size: 2.5em;">LE PETIT CURIEUX</h1>
+            <p style="font-family: 'Lexend'; font-weight: bold;">Le journal n°1 des explorateurs de savoir</p>
+        </header>
+
+        <div id="news-container">
+            </div>
+    </div>
+
+    <script>
+        async function chargerJournal() {
+            const container = document.getElementById('news-container');
+            const response = await fetch('data/news.json');
+            const data = await response.json();
+            
+            container.innerHTML = data.articles.map(a => `
+                <article class="article-une">
+                    <div class="mot-du-jour">💡 LE MOT DU JOUR : <strong>EXPLORATION</strong></div>
+                    <h2 class="pixel-font" style="color: #aa0000; margin-bottom: 15px;">${a.title}</h2>
+                    <p style="font-family: 'Lexend'; line-height: 1.6; font-size: 1.1em;">${a.summary}</p>
+                    
+                    <div class="xp-stamp">
+                        <button class="btn-curio" onclick="validerQuete('${a.title}')" style="background:#55FF55; border-radius: 50%; width: 80px; height: 80px; font-size: 0.5em;">REÇU !</button>
+                    </div>
+                </article>
+            `).join('');
+        }
+        window.onload = chargerJournal;
+    </script>
+</body>
+</html>

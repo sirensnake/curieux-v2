@@ -3,65 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infos & Actus - Le Monde des Curieux</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles/general_style.css">
+    <title>Journal des Curieux - Actualités</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/curio-main.css">
     <link rel="stylesheet" href="styles/dashboard-home.css">
-    
-    <link rel="stylesheet" href="styles/informations.css">
 </head>
-<body class="minecraft-theme">
+<body class="dashboard-home">
+    <div class="container">
+        <nav class="quick-nav" style="display: flex; padding: 10px; margin-bottom: 20px;">
+            <a href="index-dashboard.html" class="btn-curio" style="background: #5a8a00; font-size: 0.6em; text-decoration: none;">← RETOUR AU DASHBOARD</a>
+        </nav>
 
-    <nav class="breadcrumb">
-        <a href="index-dashboard.html">⬅ RETOUR AU DASHBOARD</a>
-    </nav>
-
-    <main class="info-container">
-        <section class="news-section">
-            <h2 class="news-title">🗞️ LE JOURNAL DES CURIEUX</h2>
-            <div id="news-container" class="news-grid">
-                <p class="loading-text">Chargement des nouvelles du jour...</p>
+        <header class="main-header">
+            <div class="logo-section">
+                <h1 class="main-title">🗞️ LE JOURNAL DES CURIEUX</h1>
+                <p id="exp-status" class="pixel-font" style="color: #ffcc00; font-size: 0.7em; margin-top: 10px;">CHARGEMENT DE TES POINTS...</p>
             </div>
-            <button id="refresh-news-btn" class="btn-refresh-news">ACTUALISER LES NOUVELLES</button>
-        </section>
+            <button id="btn-refresh-news" class="btn-curio" style="background: #f39c12; font-size: 0.5em;">ACTUALISER LE JOURNAL</button>
+        </header>
 
-        <section class="info-section">
-            <header class="info-header">
-                <h1>📜 PARCHEMINS D'INFORMATIONS</h1>
-                <p>Tout savoir sur ton aventure et la sécurité de tes données.</p>
-            </header>
+        <div id="news-container" class="sections-grid" style="display: block;">
+            </div>
 
-            <div class="info-grid">
-                <article class="info-card mission-card">
-                    <h2>🚀 NOTRE MISSION</h2>
-                    <p>Transformer l'apprentissage en quête épique pour les enfants en IEF et en soutien scolaire. Nous suivons les programmes officiels de l'Éducation Nationale.</p>
-                </article>
-
-                <article class="info-card data-card">
-                    <h2>🛡️ TES DONNÉES</h2>
-                    <p>Aucun serveur. Aucune publicité. Ta progression est enregistrée uniquement sur cet ordinateur via le <strong>localStorage</strong>.</p>
-                </article>
-                
-                <article class="info-card parents-card">
-                    <h2>👨‍🏫 POUR LES PARENTS</h2>
-                    <p>Utilisez le tableau de bord pour justifier de l'assiduité et de la progression lors des contrôles pédagogiques annuels.</p>
-                </article>
-
-                <article class="info-card report-card">
-                    <h2>📊 RAPPORT IEF</h2>
-                    <p>Bientôt : Générez un compte-rendu PDF de vos activités en un clic pour l'inspection académique.</p>
-                    <button class="btn-report">GÉNÉRER LE RAPPORT</button>
-                </article>
+        <section class="section-card" style="margin-top: 30px; width: 100%; border-left: 8px solid #005a8a;">
+            <div class="section-header">
+                <span class="section-emoji">📜</span>
+                <h2 class="section-title">Informations Générales</h2>
+            </div>
+            <div class="section-description">
+                <p>Bienvenue dans l'espace d'Instruction en Famille (IEF). Chaque activité ici est conçue pour respecter les attendus du <strong>Socle Commun</strong>.</p>
+                <p style="margin-top: 10px;"><em>"Apprendre est la plus grande des aventures."</em></p>
             </div>
         </section>
-    </main>
 
-    <footer class="pixel-footer">
-        <p>© 2026 Le Monde des Curieux</p>
-    </footer>
+        <footer class="dashboard-footer">
+            <p>Le Monde des Curieux © 2026 - Plateforme Éducative</p>
+        </footer>
+    </div>
 
-    <script src="scripts/news_display.js"></script>
+    <script>
+        // ON GARDE EXACTEMENT TA LOGIQUE DE DONNÉES
+        const NEWS_FILE = 'data/news.json';
+        const STORAGE_KEY_EXP = 'curio_total_exp';
+        const STORAGE_KEY_QUESTS = 'curio_quetes_terminees';
+
+        function rafraichirAffichageEXP() {
+            const totalExp = localStorage.getItem(STORAGE_KEY_EXP) || 0;
+            document.getElementById('exp-status').innerText = `⭐ TOTAL EXP : ${totalExp}`;
+        }
+
+        window.validerQuete = function(idQuete) {
+            let quetesTerminees = JSON.parse(localStorage.getItem(STORAGE_KEY_QUESTS) || '[]');
+            if (!quetesTerminees.includes(idQuete)) {
+                quetesTerminees.push(idQuete);
+                localStorage.setItem(STORAGE_KEY_QUESTS, JSON.stringify(quetesTerminees));
+                let actuelEXP = parseInt(localStorage.getItem(STORAGE_KEY_EXP) || 0);
+                localStorage.setItem(STORAGE_KEY_EXP, actuelEXP + 10);
+                alert("✨ Succès ! +10 EXP ajoutés à ton profil.");
+                rafraichirAffichageEXP();
+                chargerJournal();
+            }
+        };
+
+        async function chargerJournal() {
+            const container = document.getElementById('news-container');
+            try {
+                const response = await fetch(`${NEWS_FILE}?v=${Date.now()}`);
+                const data = await response.json();
+                const articles = data.articles || [];
+                const quetesFaites = JSON.parse(localStorage.getItem(STORAGE_KEY_QUESTS) || '[]');
+
+                // On transforme tes actualités JSON en cartes Minecraft
+                container.innerHTML = articles.map((a, index) => {
+                    const idUnique = `quest-${index}-${a.title.substring(0,5)}`;
+                    const dejaFait = quetesFaites.includes(idUnique);
+
+                    return `
+                        <article class="section-card" style="margin-bottom: 20px; width: 100%; ${dejaFait ? 'opacity: 0.7; border-color: #55FF55;' : ''}">
+                            <div class="section-header">
+                                <span class="section-emoji">${dejaFait ? '✅' : '📜'}</span>
+                                <h2 class="section-title" style="font-size: 0.8em; color: #2c3e50;">${a.title}</h2>
+                                <span style="font-size: 0.6em; margin-left: auto;">${a.date || ''}</span>
+                            </div>
+                            <div class="section-description" style="font-family: 'Lexend', sans-serif; color: #333;">
+                                ${a.summary}
+                            </div>
+                            <div style="text-align: right; margin-top: 15px;">
+                                ${!dejaFait 
+                                    ? `<button class="btn-curio" style="background: #2a9d8f; font-size: 0.5em;" onclick="validerQuete('${idUnique}')">RÉCLAMER +10 EXP</button>`
+                                    : `<span style="color: #00aa00; font-family: 'Press Start 2P'; font-size: 0.5em;">COMPLÉTÉ</span>`
+                                }
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+                rafraichirAffichageEXP();
+            } catch (e) { 
+                container.innerHTML = "<p style='color:white;'>Impossible de lire le journal des actualités.</p>"; 
+            }
+        }
+
+        document.getElementById('btn-refresh-news').onclick = chargerJournal;
+        window.onload = chargerJournal;
+    </script>
 </body>
 </html>
