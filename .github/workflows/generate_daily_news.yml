@@ -1,4 +1,4 @@
-name: Generate Daily News for Kids
+name: "News Auto Daily" # Change juste le nom ici
 
 on:
   schedule:

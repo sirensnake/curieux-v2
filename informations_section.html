@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infos & Actus - Le Monde des Curieux</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/general_style.css">
+    <link rel="stylesheet" href="styles/dashboard-home.css">
+    
+    <link rel="stylesheet" href="styles/informations.css">
+</head>
+<body class="minecraft-theme">
+
+    <nav class="breadcrumb">
+        <a href="index-dashboard.html">⬅ RETOUR AU DASHBOARD</a>
+    </nav>
+
+    <main class="info-container">
+        <section class="news-section">
+            <h2 class="news-title">🗞️ LE JOURNAL DES CURIEUX</h2>
+            <div id="news-container" class="news-grid">
+                <p class="loading-text">Chargement des nouvelles du jour...</p>
+            </div>
+            <button id="refresh-news-btn" class="btn-refresh-news">ACTUALISER LES NOUVELLES</button>
+        </section>
+
+        <section class="info-section">
+            <header class="info-header">
+                <h1>📜 PARCHEMINS D'INFORMATIONS</h1>
+                <p>Tout savoir sur ton aventure et la sécurité de tes données.</p>
+            </header>
+
+            <div class="info-grid">
+                <article class="info-card mission-card">
+                    <h2>🚀 NOTRE MISSION</h2>
+                    <p>Transformer l'apprentissage en quête épique pour les enfants en IEF et en soutien scolaire. Nous suivons les programmes officiels de l'Éducation Nationale.</p>
+                </article>
+
+                <article class="info-card data-card">
+                    <h2>🛡️ TES DONNÉES</h2>
+                    <p>Aucun serveur. Aucune publicité. Ta progression est enregistrée uniquement sur cet ordinateur via le <strong>localStorage</strong>.</p>
+                </article>
+                
+                <article class="info-card parents-card">
+                    <h2>👨‍🏫 POUR LES PARENTS</h2>
+                    <p>Utilisez le tableau de bord pour justifier de l'assiduité et de la progression lors des contrôles pédagogiques annuels.</p>
+                </article>
+
+                <article class="info-card report-card">
+                    <h2>📊 RAPPORT IEF</h2>
+                    <p>Bientôt : Générez un compte-rendu PDF de vos activités en un clic pour l'inspection académique.</p>
+                    <button class="btn-report">GÉNÉRER LE RAPPORT</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pixel-footer">
+        <p>© 2026 Le Monde des Curieux</p>
+    </footer>
+
+    <script src="scripts/news_display.js"></script>
+</body>
+</html>
