@@ -178,21 +178,61 @@
                 </button>
             </div>
 
+            <!-- SECTION SCIENCES -->
+            <div class="section-card sciences-card" onclick="window.location.href='sciences_duolingo_section.html'">
+                <div class="section-header">
+                    <span class="section-emoji">🔬</span>
+                    <h2 class="section-title">Sciences</h2>
+                </div>
+                
+                <div class="section-description">
+                    Système solaire, corps humain, expériences et nature
+                </div>
+                
+                <div class="section-stats">
+                    <div class="progress-info">
+                        <span class="progress-label">Progression</span>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini sciences-progress" id="sciences-progress" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percentage" id="sciences-percentage">0%</span>
+                    </div>
+                    
+                    <div class="section-metrics">
+                        <span class="metric"><strong id="sciences-completed">0</strong>/15 leçons</span>
+                        <span class="metric"><strong id="sciences-xp">0</strong> XP</span>
+                    </div>
+                </div>
+                
+                <button class="section-button sciences-button">
+                    Continuer →
+                </button>
+            </div>
+
         </div>
 
         <!-- FOOTER INFO -->
         <footer class="dashboard-footer">
-            <p>🎯 <strong>60 leçons</strong> disponibles • 📝 <strong>425+ exercices</strong> éducatifs</p>
-            <p>Version 1.0 - Le Monde des Curieux © 2025</p>
+            <p>🎯 <strong>75 leçons</strong> disponibles • 📝 <strong>600+ exercices</strong> éducatifs</p>
+            <p>Version 2.0 - Le Monde des Curieux © 2025</p>
         </footer>
     </div>
 
-    <!-- SCRIPT CHARGEMENT DONNÉES -->
+    <!-- SCRIPT UNIFIÉ PROGRESSION GLOBALE -->
+    <script src="scripts/modules/storage.js"></script>
     <script>
         // ========================================
-        // CHARGEMENT DONNÉES GLOBALES
+        // SYSTÈME UNIFIÉ DE PROGRESSION
         // ========================================
         
+        const SECTIONS_CONFIG = [
+            { key: 'maths', name: 'Mathématiques', emoji: '🧮', url: 'maths_duolingo_section.html', totalLessons: 15 },
+            { key: 'english', name: 'English', emoji: '🌍', url: 'english_duolingo_section.html', totalLessons: 15 },
+            { key: 'francais', name: 'Français', emoji: '📚', url: 'francais_duolingo_section.html', totalLessons: 15 },
+            { key: 'histoire', name: 'Histoire', emoji: '🏛️', url: 'histoire_duolingo_section.html', totalLessons: 15 },
+            { key: 'sciences', name: 'Sciences', emoji: '🔬', url: 'sciences_duolingo_section.html', totalLessons: 15 }
+        ];
+
         document.addEventListener('DOMContentLoaded', () => {
             loadGlobalStats();
             loadSectionsProgress();
@@ -200,28 +240,129 @@
         });
 
         // ========================================
+        // SYSTÈME DE STOCKAGE UNIFIÉ
+        // ========================================
+        
+        class UnifiedStorage {
+            // Récupère les données d'une section (compatible avec différentes structures)
+            static getSectionData(sectionKey) {
+                const data = {
+                    completed: [],
+                    xp: 0,
+                    streak: 0,
+                    hearts: 5,
+                    level: 1
+                };
+
+                // Essayer différentes structures de clés localStorage
+                const possibleKeys = [
+                    `${sectionKey}_completed`,
+                    `${sectionKey}Completed`,
+                    `${sectionKey}_progress`,
+                    `lessonEngine_${sectionKey}_completed`
+                ];
+
+                // Récupérer leçons complétées
+                for (const key of possibleKeys) {
+                    const stored = localStorage.getItem(key);
+                    if (stored) {
+                        try {
+                            const parsed = JSON.parse(stored);
+                            if (Array.isArray(parsed)) {
+                                data.completed = parsed;
+                                break;
+                            } else if (parsed.completed && Array.isArray(parsed.completed)) {
+                                data.completed = parsed.completed;
+                                break;
+                            }
+                        } catch (e) {
+                            console.warn(`Erreur parsing ${key}:`, e);
+                        }
+                    }
+                }
+
+                // Récupérer XP
+                const xpKeys = [`${sectionKey}_xp`, `${sectionKey}XP`, `lessonEngine_${sectionKey}_xp`];
+                for (const key of xpKeys) {
+                    const stored = localStorage.getItem(key);
+                    if (stored) {
+                        try {
+                            const parsed = JSON.parse(stored);
+                            data.xp = parsed.total || parsed.xp || parsed || 0;
+                            break;
+                        } catch (e) {
+                            data.xp = parseInt(stored) || 0;
+                        }
+                    }
+                }
+
+                // Récupérer Streak
+                const streakKeys = [`${sectionKey}_streak`, `${sectionKey}Streak`];
+                for (const key of streakKeys) {
+                    const stored = localStorage.getItem(key);
+                    if (stored) {
+                        try {
+                            const parsed = JSON.parse(stored);
+                            data.streak = parsed.currentStreak || parsed.streak || parsed || 0;
+                            break;
+                        } catch (e) {
+                            data.streak = parseInt(stored) || 0;
+                        }
+                    }
+                }
+
+                // Récupérer Hearts
+                const heartsKeys = [`${sectionKey}_hearts`, `${sectionKey}Hearts`];
+                for (const key of heartsKeys) {
+                    const stored = localStorage.getItem(key);
+                    if (stored) {
+                        try {
+                            const parsed = JSON.parse(stored);
+                            data.hearts = parsed.currentHearts || parsed.hearts || parsed || 5;
+                            break;
+                        } catch (e) {
+                            data.hearts = parseInt(stored) || 5;
+                        }
+                    }
+                }
+
+                return data;
+            }
+
+            // Sauvegarder les données d'une section (format unifié)
+            static saveSectionData(sectionKey, data) {
+                if (data.completed !== undefined) {
+                    localStorage.setItem(`${sectionKey}_completed`, JSON.stringify(data.completed));
+                }
+                if (data.xp !== undefined) {
+                    localStorage.setItem(`${sectionKey}_xp`, JSON.stringify({ total: data.xp }));
+                }
+                if (data.streak !== undefined) {
+                    localStorage.setItem(`${sectionKey}_streak`, JSON.stringify({ currentStreak: data.streak }));
+                }
+                if (data.hearts !== undefined) {
+                    localStorage.setItem(`${sectionKey}_hearts`, JSON.stringify({ currentHearts: data.hearts }));
+                }
+            }
+        }
+
+        // ========================================
         // STATS GLOBALES (HEADER)
         // ========================================
         
         function loadGlobalStats() {
-            // Récupérer toutes les données sections
-            const sections = ['maths', 'english', 'francais', 'histoire'];
             let totalXP = 0;
             let maxStreak = 0;
             let minHearts = 5;
+            let totalCompleted = 0;
 
-            sections.forEach(section => {
-                // XP
-                const xpData = JSON.parse(localStorage.getItem(`${section}_xp`)) || { total: 0 };
-                totalXP += xpData.total || 0;
-
-                // Streak
-                const streakData = JSON.parse(localStorage.getItem(`${section}_streak`)) || { currentStreak: 0 };
-                maxStreak = Math.max(maxStreak, streakData.currentStreak || 0);
-
-                // Hearts
-                const heartsData = JSON.parse(localStorage.getItem(`${section}_hearts`)) || { currentHearts: 5 };
-                minHearts = Math.min(minHearts, heartsData.currentHearts || 5);
+            SECTIONS_CONFIG.forEach(section => {
+                const data = UnifiedStorage.getSectionData(section.key);
+                
+                totalXP += data.xp;
+                maxStreak = Math.max(maxStreak, data.streak);
+                minHearts = Math.min(minHearts, data.hearts);
+                totalCompleted += data.completed.length;
             });
 
             // Affichage
@@ -232,6 +373,14 @@
             // Calcul niveau global (1 niveau = 200 XP)
             const globalLevel = Math.floor(totalXP / 200) + 1;
             document.getElementById('global-level').innerText = globalLevel;
+
+            console.log('📊 Stats Globales:', {
+                totalXP,
+                maxStreak,
+                minHearts,
+                totalCompleted,
+                globalLevel
+            });
         }
 
         // ========================================
@@ -239,25 +388,28 @@
         // ========================================
         
         function loadSectionsProgress() {
-            const sections = [
-                { key: 'maths', totalLessons: 15 },
-                { key: 'english', totalLessons: 15 },
-                { key: 'francais', totalLessons: 15 },
-                { key: 'histoire', totalLessons: 15 }
-            ];
-
-            sections.forEach(section => {
-                const completed = JSON.parse(localStorage.getItem(`${section.key}_completed`)) || [];
-                const xpData = JSON.parse(localStorage.getItem(`${section.key}_xp`)) || { total: 0 };
+            SECTIONS_CONFIG.forEach(section => {
+                const data = UnifiedStorage.getSectionData(section.key);
                 
-                const completedCount = completed.length;
+                const completedCount = data.completed.length;
                 const percentage = Math.round((completedCount / section.totalLessons) * 100);
                 
                 // Mise à jour affichage
-                document.getElementById(`${section.key}-completed`).innerText = completedCount;
-                document.getElementById(`${section.key}-xp`).innerText = xpData.total || 0;
-                document.getElementById(`${section.key}-progress`).style.width = percentage + '%';
-                document.getElementById(`${section.key}-percentage`).innerText = percentage + '%';
+                const completedEl = document.getElementById(`${section.key}-completed`);
+                const xpEl = document.getElementById(`${section.key}-xp`);
+                const progressEl = document.getElementById(`${section.key}-progress`);
+                const percentageEl = document.getElementById(`${section.key}-percentage`);
+                
+                if (completedEl) completedEl.innerText = completedCount;
+                if (xpEl) xpEl.innerText = data.xp;
+                if (progressEl) progressEl.style.width = percentage + '%';
+                if (percentageEl) percentageEl.innerText = percentage + '%';
+
+                console.log(`📚 ${section.name}:`, {
+                    completed: completedCount,
+                    xp: data.xp,
+                    percentage: percentage + '%'
+                });
             });
         }
 
@@ -266,20 +418,12 @@
         // ========================================
         
         function showRecommendation() {
-            const sections = [
-                { key: 'maths', name: 'Mathématiques', emoji: '🧮', url: 'maths_duolingo_section.html' },
-                { key: 'english', name: 'English', emoji: '🌍', url: 'english_duolingo_section.html' },
-                { key: 'francais', name: 'Français', emoji: '📚', url: 'francais_duolingo_section.html' },
-                { key: 'histoire', name: 'Histoire', emoji: '🏛️', url: 'histoire_duolingo_section.html' }
-            ];
-
-            // Trouver section avec moins de progression
             let minProgress = 100;
-            let recommendedSection = sections[0];
+            let recommendedSection = SECTIONS_CONFIG[0];
 
-            sections.forEach(section => {
-                const completed = JSON.parse(localStorage.getItem(`${section.key}_completed`)) || [];
-                const progress = (completed.length / 15) * 100;
+            SECTIONS_CONFIG.forEach(section => {
+                const data = UnifiedStorage.getSectionData(section.key);
+                const progress = (data.completed.length / section.totalLessons) * 100;
                 
                 if (progress < minProgress) {
                     minProgress = progress;
@@ -300,6 +444,39 @@
                 banner.onclick = () => window.location.href = recommendedSection.url;
             }
         }
+
+        // ========================================
+        // DEBUG MODE (CONSOLE)
+        // ========================================
+        
+        window.DashboardDebug = {
+            showAllData: () => {
+                console.log('=== DONNÉES GLOBALES ===');
+                SECTIONS_CONFIG.forEach(section => {
+                    console.log(`\n📚 ${section.name}:`, UnifiedStorage.getSectionData(section.key));
+                });
+            },
+            
+            resetSection: (sectionKey) => {
+                const keys = Object.keys(localStorage).filter(k => k.startsWith(sectionKey));
+                keys.forEach(k => localStorage.removeItem(k));
+                console.log(`✅ Section ${sectionKey} réinitialisée`);
+                location.reload();
+            },
+            
+            addTestData: (sectionKey) => {
+                UnifiedStorage.saveSectionData(sectionKey, {
+                    completed: [0, 1, 2],
+                    xp: 150,
+                    streak: 5,
+                    hearts: 4
+                });
+                console.log(`✅ Données test ajoutées pour ${sectionKey}`);
+                location.reload();
+            }
+        };
+
+        console.log('💡 Debug disponible: DashboardDebug.showAllData()');
     </script>
 </body>
 </html>
