@@ -1,0 +1,42 @@
+name: Generate Daily News for Kids
+
+on:
+  schedule:
+    # Exécute tous les jours à 06h00 UTC (ajustez l'heure si nécessaire)
+    - cron: "0 6 * * *"
+  workflow_dispatch: # Permet de déclencher manuellement le workflow depuis GitHub UI
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
+
+      - name: Generate News JSON
+        env:
+          # Utilisez un secret GitHub pour stocker votre clé API OpenAI
+          # Rendez-vous dans les paramètres de votre dépôt > Secrets and variables > Actions > New repository secret
+          # Nommez-le OPENAI_API_KEY et collez votre clé
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python .github/scripts/generate_news.py
+
+      - name: Commit and Push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add data/news.json
+          git commit -m "feat: Auto-generate daily news for kids" || echo "No changes to commit"
+          git push
