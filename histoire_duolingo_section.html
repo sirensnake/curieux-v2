@@ -3,115 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ Histoire - Le Monde des Curieux</title>
-    
+    <title>HISTOIRE - Le Monde des Curieux</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/curio-main.css">
-    <link rel="stylesheet" href="styles/histoire-theme.css">
-    <script src="scripts/progression.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+            min-height: 100vh;
+            font-family: 'Press Start 2P', monospace;
+            margin: 0; padding: 0;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header-hud {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, #9333ea, #7e22ce);
+            border-radius: 12px; margin-bottom: 2rem;
+        }
+        .pixel-btn {
+            font-family: 'Press Start 2P', monospace; font-size: 8px;
+            padding: 10px 16px; border: 3px solid #000; border-radius: 8px;
+            cursor: pointer; background: #95a5a6; color: white;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3); transition: transform 0.1s;
+        }
+        .pixel-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.4); }
+        .pixel-btn.primary { background: #2ecc71; padding: 15px 30px; font-size: 11px; }
+        .pixel-title {
+            font-family: 'Press Start 2P', monospace; font-size: 18px;
+            color: #fff; text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+            flex: 1; text-align: center; margin: 0;
+        }
+        .xp-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white; padding: 10px 20px; border-radius: 20px;
+            font-family: 'Press Start 2P', monospace; font-size: 11px;
+            border: 3px solid #000; box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        .lessons-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px; padding: 20px;
+        }
+        .lesson-card {
+            background: white; border: 4px solid #000; border-radius: 16px;
+            padding: 30px 20px; text-align: center; cursor: pointer;
+            transition: all 0.2s ease; box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+            min-height: 180px; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px); box-shadow: 0 12px 0 rgba(0,0,0,0.3);
+            border-color: #2dd4bf;
+        }
+        .lesson-card .card-icon { font-size: 48px; margin-bottom: 15px; }
+        .lesson-card .card-title {
+            font-family: 'Press Start 2P', monospace; font-size: 10px;
+            line-height: 1.6; color: #2c3e50;
+        }
+        #lesson-screen { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .progress-container {
+            width: 100%; height: 20px; background: #e0e0e0;
+            border: 3px solid #000; border-radius: 10px;
+            margin-bottom: 30px; overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%; background: linear-gradient(90deg, #2ecc71, #27ae60);
+            transition: width 0.3s ease; width: 0%;
+        }
+        .exercise-box {
+            background: white; border: 4px solid #000; border-radius: 20px;
+            padding: 40px; box-shadow: 0 8px 0 rgba(0,0,0,0.2); margin-bottom: 30px;
+        }
+        #question-text {
+            font-family: 'Press Start 2P', monospace; font-size: 14px;
+            color: #2c3e50; margin-bottom: 30px; line-height: 1.8; text-align: center;
+        }
+        .pixel-input {
+            font-family: 'Press Start 2P', monospace; font-size: 13px;
+            padding: 15px; border: 4px solid #000; border-radius: 8px;
+            width: 100%; max-width: 500px; margin: 20px auto;
+            display: block; text-align: center; background: white;
+        }
+        .pixel-input:focus {
+            outline: none; border-color: #2ecc71;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+        .actions { text-align: center; margin-top: 20px; }
+        .curio-fixed { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .curio-bubble {
+            background: white; border: 3px solid #000; border-radius: 16px;
+            padding: 15px; margin-bottom: 10px; max-width: 250px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.2); cursor: pointer;
+        }
+        .curio-bubble p {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px; line-height: 1.6; margin: 0;
+        }
+        .curio-avatar-container { position: relative; display: inline-block; }
+        .curio-avatar-box {
+            background: white; border: 4px solid #000; border-radius: 50%;
+            padding: 10px; cursor: pointer; transition: transform 0.2s;
+        }
+        .curio-avatar-box:hover { transform: scale(1.1); }
+        .curio-avatar-box img { display: block; image-rendering: pixelated; }
+        .sound-badge {
+            position: absolute; top: -5px; right: -5px;
+            width: 30px; height: 30px; background: #e74c3c;
+            border: 2px solid #000; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; cursor: pointer;
+        }
+        .sound-badge.off { background: #e74c3c; }
+        .sound-badge:not(.off) { background: #2ecc71; }
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8); display: flex;
+            align-items: center; justify-content: center; z-index: 10000;
+        }
+        .modal-content {
+            background: white; border: 5px solid #000; border-radius: 20px;
+            padding: 40px; text-align: center; max-width: 500px; width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .modal-header {
+            font-family: 'Press Start 2P', monospace; font-size: 16px;
+            color: #f39c12; margin-bottom: 20px;
+        }
+        .victory-icon { font-size: 64px; margin-bottom: 20px; }
+        .xp-gain {
+            font-family: 'Press Start 2P', monospace; font-size: 20px;
+            color: #2ecc71; margin: 20px 0;
+        }
+        .hidden { display: none !important; }
+    </style>
 </head>
-<body class="histoire-section">
+<body>
     <div class="container">
-        <!-- HEADER -->
-        <div class="header">
-            <button class="back-home-btn" onclick="window.location.href='index.html'">← Accueil</button>
-            <h1>🏛️ Histoire</h1>
-            <div class="stats">
-                <span id="streak-display">🔥 0 jours</span>
-                <span id="hearts-display">❤️❤️❤️❤️❤️</span>
-                <span id="xp-display">0 XP</span>
+        <header class="header-hud">
+            <button class="pixel-btn secondary small" onclick="location.href='index.html'">← RETOUR</button>
+            <h1 class="pixel-title">🏛️ HISTOIRE</h1>
+            <div id="xp-display" class="xp-badge">1255 XP</div>
+        </header>
+        <main id="lessons-list">
+            <div id="lessons-grid" class="lessons-grid"></div>
+        </main>
+        <section id="lesson-screen" class="hidden">
+            <div class="progress-container">
+                <div id="progress-fill" class="progress-bar"></div>
             </div>
-        </div>
-        
-        <!-- LESSONS LIST -->
-        <div id="lessons-list">
-            <div id="lessons-grid"></div>
-        </div>
-        
-        <!-- LESSON SCREEN -->
-        <div id="lesson-screen" style="display: none;">
-            
-            <!-- HISTORICAL CONTEXT BANNER -->
-            <div id="historical-context" class="historical-context" style="display: none;">
-                <div class="context-icon" id="context-icon">🏛️</div>
-                <div class="context-text" id="context-text"></div>
-            </div>
-            
-            <!-- EXERCISE SCREEN -->
-            <div id="exercise-screen">
-                <div class="exercise-header">
-                    <button class="btn btn-secondary" onclick="histoireApp.backToLessons()">← Retour</button>
-                    <span id="hearts-exercise">❤️❤️❤️❤️❤️</span>
-                </div>
-                
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
-                </div>
-                
-                <div class="question-area">
-                    <div class="question-text" id="question-text"></div>
-                    <input type="text" class="answer-input" id="answer-input" placeholder="Tape ta réponse..." autofocus>
-                    <div class="hint-area" id="hint-area" style="display: none;"></div>
-                </div>
-                
-                <div class="button-area">
-                    <button class="btn btn-secondary" onclick="histoireApp.showHint()">💡 Indice</button>
-                    <button class="btn btn-primary" onclick="histoireApp.checkAnswer()">✓ Vérifier</button>
+            <div class="exercise-box">
+                <h2 id="question-text">Chargement...</h2>
+                <input type="text" id="user-input" class="pixel-input" autocomplete="off" placeholder="Tape ta réponse ici...">
+                <div class="actions">
+                    <button class="pixel-btn primary" onclick="engine.validate()">VALIDER (ENTRÉE)</button>
                 </div>
             </div>
-            
-            <!-- RESULTS SCREEN -->
-            <div id="results-screen" style="display: none;">
-                <div class="results-icon">🏆</div>
-                <h2 style="color: #d97706; margin-bottom: 2rem;">Leçon Terminée !</h2>
-                
-                <div class="results-stats">
-                    <div class="stat-box">
-                        <div class="stat-value" id="result-correct">0</div>
-                        <div class="stat-label">Bonnes réponses</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="result-xp">0</div>
-                        <div class="stat-label">XP gagnés</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="result-hearts">5</div>
-                        <div class="stat-label">Cœurs restants</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="result-score">0%</div>
-                        <div class="stat-label">Score</div>
-                    </div>
-                </div>
-                
-                <button class="btn btn-primary" onclick="histoireApp.backToLessons()" style="margin-top: 2rem; width: 100%;">
-                    🏠 Retour aux leçons
-                </button>
-            </div>
-        </div>
-        
-        <!-- FEEDBACK -->
-        <div class="feedback" id="feedback" style="display: none;"></div>
+        </section>
     </div>
-
-    <!-- SCRIPTS -->
-    <script src="scripts/core/lesson-engine.js"></script>
+    <div class="curio-fixed">
+        <div class="curio-bubble" onclick="engine.showHint()">
+            <p id="curio-msg">Clique sur Curio pour un indice !</p>
+        </div>
+        <div class="curio-avatar-container">
+            <div id="sound-toggle" class="sound-badge off" onclick="engine.enableAudio()">🔇</div>
+            <div class="curio-avatar-box" onclick="engine.showHint()">
+                <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" alt="Curio" width="80">
+            </div>
+        </div>
+    </div>
+    <div id="victory-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">LEÇON RÉUSSIE !</div>
+            <div class="modal-body">
+                <div class="victory-icon">🏆</div>
+                <p id="modal-msg">Bravo petit curieux !</p>
+                <div class="xp-gain">+ <span id="xp-added">0</span> XP</div>
+            </div>
+            <button class="pixel-btn primary" onclick="location.reload()">CONTINUER</button>
+        </div>
+    </div>
     <script src="scripts/data/histoire-lessons.js"></script>
+    <script src="scripts/core/lesson-engine.js"></script>
     <script>
-        // Initialisation application Histoire
-        const histoireApp = new LessonEngine('histoire', histoireLessons);
-        
-        // Démarrage au chargement
-        document.addEventListener('DOMContentLoaded', () => {
-            histoireApp.renderLessonsGrid();
-            histoireApp.updateAllDisplays();
-            
-            // Enter pour valider
-            document.getElementById('answer-input').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') histoireApp.checkAnswer();
-            });
-        });
+        const engine = new LessonEngine(histoireLessons);
     </script>
-    <script src="scripts/curio-helper.js"></script>
 </body>
 </html>
