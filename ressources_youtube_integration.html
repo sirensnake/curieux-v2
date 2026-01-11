@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources Éducatives - Le Monde des Curieux</title>
+    
+    <!-- CSS Standards -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/ressources_style.css">
+    
+    <!-- Police Minecraft -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === STYLES RESSOURCES YOUTUBE === */
+        
+        :root {
+            --primary-green: #2a9d8f;
+            --primary-dark: #1d7a6e;
+            --premium-gold: #ffd700;
+            --premium-orange: #ff8c00;
+            --francais-color: #e63946;
+            --sciences-color: #118ab2;
+            --histoire-color: #a44a3f;
+            --philosophie-color: #6c5b7b;
+            --toutes-matieres: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* === BOUTON RETOUR ACCUEIL MINECRAFT === */
+        
+        .section-header-styled {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .back-btn-minecraft {
+            font-family: 'Press Start 2P', monospace;
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            color: white;
+            border: 3px solid #a8dadc;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3),
+                        inset 0 -3px 0 rgba(0,0,0,0.2),
+                        inset 0 3px 0 rgba(255,255,255,0.2);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-btn-minecraft::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .back-btn-minecraft:hover {
+            background: linear-gradient(135deg, #457b9d 0%, #1d3557 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4),
+                        inset 0 -3px 0 rgba(0,0,0,0.2),
+                        inset 0 3px 0 rgba(255,255,255,0.3);
+            border-color: #f1faee;
+        }
+        
+        .back-btn-minecraft:hover::before {
+            left: 100%;
+        }
+        
+        .back-btn-minecraft:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3),
+                        inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .resources-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* === HEADER SECTION === */
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .section-title h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            line-height: 1.4;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin: 0;
+        }
+        
+        /* === SECTION PREMIUM MAÎTRE LUCAS === */
+        
+        .premium-section {
+            margin-bottom: 4rem;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .premium-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px 16px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        
+        .premium-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30%, -30%); }
+        }
+        
+        .premium-icon {
+            font-size: 4rem;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .premium-title h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.15rem;
+            font-family: 'Press Start 2P', monospace;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            line-height: 1.4;
+        }
+        
+        .premium-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--premium-gold) 0%, var(--premium-orange) 100%);
+            color: #1d3557;
+            padding: 0.6rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: glow 2s infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 6px 12px rgba(255, 140, 0, 0.6); }
+        }
+        
+        /* === PREMIUM CARD === */
+        
+        .premium-card {
+            background: white;
+            border-radius: 0 0 16px 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--premium-gold) 0%, 
+                var(--premium-orange) 25%,
+                var(--premium-gold) 50%,
+                var(--premium-orange) 75%,
+                var(--premium-gold) 100%
+            );
+            background-size: 200% 100%;
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .premium-description {
+            font-size: 1.1rem;
+            color: #1d3557;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .playlists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .playlist-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--premium-orange);
+            transition: all 0.3s ease;
+        }
+        
+        .playlist-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border-left-color: var(--premium-gold);
+        }
+        
+        .playlist-name {
+            font-weight: 700;
+            color: #1d3557;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .playlist-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .premium-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+        }
+        
+        .premium-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .premium-link:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .premium-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5);
+        }
+        
+        .premium-link::after {
+            content: '→';
+            font-size: 1.6rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .premium-link:hover::after {
+            transform: translateX(8px);
+        }
+        
+        /* === CATÉGORIES PAR MATIÈRE === */
+        
+        .section-category {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .category-header.francais {
+            background: linear-gradient(135deg, var(--francais-color) 0%, #d62828 100%);
+            color: white;
+        }
+        
+        .category-header.sciences {
+            background: linear-gradient(135deg, var(--sciences-color) 0%, #0d698e 100%);
+            color: white;
+        }
+        
+        .category-header.histoire {
+            background: linear-gradient(135deg, var(--histoire-color) 0%, #823831 100%);
+            color: white;
+        }
+        
+        .category-header.philosophie {
+            background: linear-gradient(135deg, var(--philosophie-color) 0%, #564a5f 100%);
+            color: white;
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .category-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-family: 'Press Start 2P', monospace;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* === GRILLE RESSOURCES === */
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* === CARTES RESSOURCES === */
+        
+        .resource-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            transition: height 0.3s ease;
+        }
+        
+        .resource-card.video::before {
+            background: linear-gradient(90deg, #e63946, #f77f00);
+        }
+        
+        .resource-card.playlist::before {
+            background: linear-gradient(90deg, #06d6a0, #118ab2);
+        }
+        
+        .resource-card.channel::before {
+            background: linear-gradient(90deg, #a44a3f, #6c5b7b);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        
+        .resource-card:hover::before {
+            height: 12px;
+        }
+        
+        /* === HEADER CARTE === */
+        
+        .resource-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.15));
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover .resource-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .resource-title {
+            flex: 1;
+        }
+        
+        .resource-card h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1d3557;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        
+        .resource-card:hover h4 {
+            color: var(--primary-green);
+        }
+        
+        /* === BADGES === */
+        
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-badge.video {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .resource-badge.playlist {
+            background: #cfe2ff;
+            color: #084298;
+        }
+        
+        .resource-badge.channel {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+        
+        .resource-card:hover .resource-badge {
+            transform: scale(1.05);
+        }
+        
+        /* === DESCRIPTION === */
+        
+        .resource-description {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 1.25rem 0;
+        }
+        
+        /* === MÉTADONNÉES === */
+        
+        .resource-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #495057;
+        }
+        
+        /* === BOUTON LIEN === */
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1rem 1.75rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .resource-link:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .resource-link::after {
+            content: '→';
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(42, 157, 143, 0.4);
+        }
+        
+        .resource-link:hover::after {
+            transform: translateX(5px);
+        }
+        
+        /* === ANIMATIONS === */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .resource-card {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .resource-card:nth-child(1) { animation-delay: 0.1s; }
+        .resource-card:nth-child(2) { animation-delay: 0.2s; }
+        .resource-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        /* === RESPONSIVE === */
+        
+        @media (max-width: 768px) {
+            .section-title h1 {
+                font-size: 1.25rem;
+            }
+            
+            .premium-header {
+                padding: 1.5rem;
+            }
+            
+            .premium-title h2 {
+                font-size: 1.1rem;
+            }
+            
+            .premium-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .playlists-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .category-header h2 {
+                font-size: 1.25rem;
+            }
+            
+            .category-icon {
+                font-size: 2rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .resource-card {
+                padding: 1.5rem;
+            }
+            
+            .resource-icon {
+                font-size: 2.5rem;
+            }
+            
+            .resource-meta {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                padding: 1.5rem 1rem;
+            }
+            
+            .section-title h1 {
+                font-size: 1rem;
+            }
+            
+            .section-title p {
+                font-size: 0.9rem;
+            }
+            
+            .back-btn-minecraft {
+                font-size: 0.7rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            .premium-icon {
+                font-size: 3rem;
+            }
+            
+            .premium-title h2 {
+                font-size: 0.95rem;
+            }
+            
+            .premium-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .category-header h2 {
+                font-size: 1rem;
+            }
+            
+            .resource-link, .premium-link {
+                width: 100%;
+                justify-content: center;
+                font-size: 0.85rem;
+                padding: 0.875rem 1.25rem;
+            }
+        }
+        
+        /* === ACCESSIBILITÉ === */
+        
+        .resource-card:focus-within,
+        .premium-card:focus-within {
+            outline: 3px solid var(--primary-green);
+            outline-offset: 4px;
+        }
+        
+        .resource-link:focus,
+        .premium-link:focus {
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="section-header-styled">
+        <button onclick="history.back()" class="back-btn-minecraft">
+            ← Retour à l'accueil
+        </button>
+    </header>
+
+    <main class="resources-container">
+        <div class="section-title">
+            <h1>📚 Ressources Éducatives</h1>
+            <p>Vidéos, chaînes et contenus pour approfondir tes connaissances</p>
+        </div>
+
+        <!-- ========================================
+             SECTION PREMIUM - MAÎTRE LUCAS
+             ======================================== -->
+        <section class="premium-section">
+            <div class="premium-header">
+                <span class="premium-icon">🎓</span>
+                <div class="premium-title">
+                    <h2>Maître Lucas</h2>
+                    <p class="premium-subtitle">LA ressource complète pour TOUTES les matières !</p>
+                    <span class="premium-badge">⭐ ESSENTIEL - 800+ vidéos</span>
+                </div>
+            </div>
+            
+            <div class="premium-card">
+                <p class="premium-description">
+                    <strong>Professeur des écoles passionné</strong> proposant des vidéos éducatives pour enfants de 5 à 11 ans 
+                    (CP, CE1, CE2, CM1, CM2). Des <strong>animations ludiques professionnelles</strong> couvrant 
+                    <strong>TOUTES les matières du Cycle 2 et Cycle 3</strong> : mathématiques, français, sciences, 
+                    histoire, géographie, et bien plus !
+                </p>
+                
+                <h3 style="color: #1d3557; margin: 2rem 0 1rem 0; font-size: 1.2rem;">📋 Principales Playlists</h3>
+                
+                <div class="playlists-grid">
+                    <div class="playlist-item">
+                        <div class="playlist-name">🔢 Maths CP-CM2</div>
+                        <div class="playlist-meta">
+                            <span>284 vidéos</span>
+                            <span>Cycles 2 & 3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">📚 Français CP-CM2</div>
+                        <div class="playlist-meta">
+                            <span>325 vidéos</span>
+                            <span>Tous niveaux</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">🔬 Sciences & Monde</div>
+                        <div class="playlist-meta">
+                            <span>122 vidéos</span>
+                            <span>CP-CM2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">🏛️ Histoire CM1-CM2</div>
+                        <div class="playlist-meta">
+                            <span>18 vidéos</span>
+                            <span>Cycle 3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">🌍 Géographie</div>
+                        <div class="playlist-meta">
+                            <span>5 vidéos</span>
+                            <span>CM1-CM2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">🎵 Leçons en chansons</div>
+                        <div class="playlist-meta">
+                            <span>23 vidéos</span>
+                            <span>Ludique</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">✍️ Écriture</div>
+                        <div class="playlist-meta">
+                            <span>24 vidéos</span>
+                            <span>Apprentissage</span>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-item">
+                        <div class="playlist-name">🧠 Muscle ton cerveau</div>
+                        <div class="playlist-meta">
+                            <span>30 vidéos</span>
+                            <span>Méthodologie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://www.youtube.com/c/MaîtreLucas/playlists" 
+                   class="premium-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    🎓 Découvrir toutes les playlists
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION FRANÇAIS
+             ======================================== -->
+        <section class="section-category">
+            <div class="category-header francais">
+                <span class="category-icon">📚</span>
+                <h2>Français - Ressources Spécialisées</h2>
+            </div>
+            <div class="resources-grid">
+                <!-- Ressource 1 : Playlist Grammaire -->
+                <article class="resource-card playlist">
+                    <div class="resource-header">
+                        <span class="resource-icon">📺</span>
+                        <div class="resource-title">
+                            <h4>Grammaire française complète</h4>
+                            <span class="resource-badge playlist">📋 33 vidéos</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Nature des mots, conjugaison, temps verbaux, ponctuation, homophones... 
+                        Une playlist complète pour maîtriser la grammaire française !
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">👤 lamachineaecrire</span>
+                        <span class="meta-item">👀 1.7M vues</span>
+                        <span class="meta-item">⭐ 112K abonnés</span>
+                    </div>
+                    <a href="https://www.youtube.com/playlist?list=PLazb2cgf0jh1r56haXDyr4pbR8uHhM2Hl" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Voir la playlist
+                    </a>
+                </article>
+
+                <!-- Ressource 2 : Vidéo Participe Passé -->
+                <article class="resource-card video">
+                    <div class="resource-header">
+                        <span class="resource-icon">🎬</span>
+                        <div class="resource-title">
+                            <h4>L'accord du participe passé</h4>
+                            <span class="resource-badge video">⏱️ 2 minutes</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Règles de base expliquées simplement : auxiliaires être/avoir, 
+                        COD placé avant... Enfin comprendre le participe passé !
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">👤 Lumos, la sorcière des Lettres</span>
+                        <span class="meta-item">👀 847K vues</span>
+                        <span class="meta-item">💚 10K likes</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=0OhOpwT4bZI" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Voir la vidéo
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION SCIENCES
+             ======================================== -->
+        <section class="section-category">
+            <div class="category-header sciences">
+                <span class="category-icon">🔬</span>
+                <h2>Sciences</h2>
+            </div>
+            <div class="resources-grid">
+                <!-- Ressource 5 : C'est pas sorcier -->
+                <article class="resource-card channel">
+                    <div class="resource-header">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">
+                            <h4>C'est pas sorcier (officiel)</h4>
+                            <span class="resource-badge channel">📺 Chaîne complète</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        L'émission culte française ! Des centaines de vidéos sur les sciences, 
+                        la nature, l'histoire, la technologie... Explications claires et ludiques.
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">🏆 Émission emblématique</span>
+                        <span class="meta-item">🎓 Tous niveaux</span>
+                    </div>
+                    <a href="https://www.youtube.com/@Cestpassorcierofficiel" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Découvrir la chaîne
+                    </a>
+                </article>
+
+                <!-- Ressource 6 : Curionautes -->
+                <article class="resource-card channel">
+                    <div class="resource-header">
+                        <span class="resource-icon">🚀</span>
+                        <div class="resource-title">
+                            <h4>Curionautes des sciences</h4>
+                            <span class="resource-badge channel">🎬 Vidéos éducatives</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Récits ludiques + notions scientifiques. Une approche équilibrée 
+                        pour intéresser tous les enfants à la science !
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">🎯 8-12 ans</span>
+                        <span class="meta-item">🧪 Sciences ludiques</span>
+                    </div>
+                    <a href="https://www.youtube.com/@Curionautesdessciences/videos" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Explorer les vidéos
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION HISTOIRE
+             ======================================== -->
+        <section class="section-category">
+            <div class="category-header histoire">
+                <span class="category-icon">🏛️</span>
+                <h2>Histoire</h2>
+            </div>
+            <div class="resources-grid">
+                <!-- Ressource 3 : Quelle Histoire -->
+                <article class="resource-card channel">
+                    <div class="resource-header">
+                        <span class="resource-icon">📖</span>
+                        <div class="resource-title">
+                            <h4>Quelle Histoire</h4>
+                            <span class="resource-badge channel">📺 Chaîne jeunesse</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Vos enfants vont adorer l'Histoire ! Des livres, des jeux, une application, 
+                        et plein d'autres surprises. Histoires illustrées pour jeunes curieux.
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">📚 Éditeur jeunesse</span>
+                        <span class="meta-item">🎨 BD et illustrations</span>
+                        <span class="meta-item">🎯 8-12 ans</span>
+                    </div>
+                    <a href="https://www.youtube.com/channel/UCoejzfiaEjCusdpdX9W8jBQ" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Découvrir la chaîne
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION PHILOSOPHIE
+             ======================================== -->
+        <section class="section-category">
+            <div class="category-header philosophie">
+                <span class="category-icon">🤔</span>
+                <h2>Philosophie</h2>
+            </div>
+            <div class="resources-grid">
+                <!-- Ressource 4 : 1 jour 1 question - Philosophie -->
+                <article class="resource-card video">
+                    <div class="resource-header">
+                        <span class="resource-icon">💭</span>
+                        <div class="resource-title">
+                            <h4>C'est quoi la philosophie ?</h4>
+                            <span class="resource-badge video">⏱️ 1 min 42s</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        1 jour, 1 question explique la philosophie aux enfants : aimer la sagesse, 
+                        se poser des questions sur la vie, écouter les points de vue... 
+                        Une introduction parfaite pour les jeunes curieux !
+                    </p>
+                    <div class="resource-meta">
+                        <span class="meta-item">👤 Info ou Mytho ?</span>
+                        <span class="meta-item">👀 233K vues</span>
+                        <span class="meta-item">💚 4.1K likes</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=MXOCt0hHT2w" 
+                       class="resource-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Voir la vidéo
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.resource-card, .premium-section').forEach(card => {
+            if (card.classList.contains('resource-card')) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+            }
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
