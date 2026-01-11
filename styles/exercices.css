@@ -1,0 +1,175 @@
+/* ============================================================
+   LE MONDE DES CURIEUX - MOTEUR D'EXERCICES (STYLISATION)
+   ============================================================ */
+
+/* 1. BASE & FOND */
+body {
+    background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    min-height: 100vh;
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. HEADER HUD (Interface de navigation) */
+.header-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    border: 4px solid #000;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+}
+
+.pixel-title {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.xp-badge {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    border: 3px solid #000;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+}
+
+/* 3. BOUTONS PIXEL ART */
+.pixel-btn {
+    font-family: 'Press Start 2P', monospace;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.1s;
+}
+
+.pixel-btn:active {
+    transform: translateY(4px);
+}
+
+.pixel-btn.primary {
+    background: #2ecc71;
+    color: white;
+    padding: 15px 30px;
+    font-size: 11px;
+    box-shadow: 0 5px 0 #27ae60;
+}
+
+.pixel-btn.secondary {
+    background: #95a5a6;
+    color: white;
+    padding: 10px 16px;
+    font-size: 8px;
+}
+
+/* 4. SYSTÈME DE PROGRESSION */
+.progress-container {
+    width: 100%;
+    height: 24px;
+    background: #e0e0e0;
+    border: 4px solid #000;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 5. ZONE D'EXERCICE CENTRALE */
+.exercise-box {
+    background: white;
+    border: 5px solid #000;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#question-text {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.pixel-input {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    padding: 20px;
+    border: 4px solid #000;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    background: #ecf0f1;
+}
+
+.pixel-input:focus {
+    outline: none;
+    background: white;
+    border-color: #2ecc71;
+}
+
+/* 6. MODALE DE VICTOIRE */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    border: 6px solid #000;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    max-width: 450px;
+}
+
+.victory-icon {
+    font-size: 70px;
+    margin: 20px 0;
+    filter: drop-shadow(0 5px 0 rgba(0,0,0,0.1));
+}
+
+.xp-gain {
+    font-size: 24px;
+    color: #2ecc71;
+    margin: 25px 0;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* 7. UTILITAIRES */
+.hidden { display: none !important; }
+
+@media (max-width: 768px) {
+    .pixel-title { font-size: 14px; }
+    .exercise-box { padding: 30px 15px; }
+    #question-text { font-size: 11px; }
+}

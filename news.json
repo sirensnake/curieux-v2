@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "date": "10/01/2026",
+      "title": "Les pingouins sur Mars 🚀",
+      "summary": "Après l'océan, nos amis les pingouins explorent maintenant la planète rouge avec des combinaisons spatiales en blocs de glace !"
+    },
+    {
+      "date": "10/01/2026",
+      "title": "L'école des Sorciers du Code 🧙‍♂️",
+      "summary": "Une nouvelle quête JavaScript est apparue. Apprends à lancer des sorts de fonctions pour vaincre les bugs."
+    }
+  ]
+}
