@@ -1,18 +1,15 @@
-/* Thème Orange pour les Mathématiques */
+/**
+ * MATHS-THEME.CSS - Thème Couleurs Mathématiques
+ * Variables et overrides spécifiques à la section Maths
+ * Couleur principale : Orange #f97316
+ */
+
+/* ===== BACKGROUND BODY ===== */
 body {
     background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
 }
 
+/* ===== HEADER HUD THÈME MATHS ===== */
 .header-hud {
     background: linear-gradient(135deg, #f97316, #ea580c);
-    border: 4px solid #000;
-}
-
-.xp-badge {
-    background: #fb923c;
-    border: 3px solid #000;
-}
-
-.progress-bar {
-    background: #f97316;
 }

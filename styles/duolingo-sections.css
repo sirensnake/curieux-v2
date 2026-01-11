@@ -1,74 +1,384 @@
-/* ========================================== */
-/* DUOLINGO SECTIONS - COEUR DU DESIGN        */
-/* ========================================== */
+/**
+ * DUOLINGO-SECTIONS.CSS - Structure Commune
+ * Extrait de la version fonctionnelle lemondedescurieux.fr
+ * Contient TOUTE la structure layout, grilles, modales, HUD
+ */
 
-* { box-sizing: border-box; }
+/* ===== RESET & BASE ===== */
+* {
+    box-sizing: border-box;
+}
 
 body {
     min-height: 100vh;
     font-family: 'Press Start 2P', monospace;
-    margin: 0; padding: 0;
-    display: flex; flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; width: 100%; }
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-/* HEADER & HUD */
+/* ===== HEADER HUD ===== */
 .header-hud {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem 2rem; border-radius: 12px; margin-bottom: 2rem;
-    border: 4px solid #000; box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
 }
 
-.pixel-title { font-size: 16px; color: #fff; text-shadow: 2px 2px 0 #000; margin: 0; text-align: center; flex: 1; }
+.pixel-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
 
 .xp-badge {
-    color: white; padding: 10px 20px; border-radius: 20px;
-    font-size: 10px; border: 3px solid #000; box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    border: 3px solid #000;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
 }
 
-/* GRILLE DE LEÇONS */
+/* ===== BOUTONS PIXEL-ART ===== */
+.pixel-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    padding: 10px 16px;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #95a5a6;
+    color: white;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+}
+
+.pixel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.pixel-btn.primary {
+    background: #2ecc71;
+    padding: 15px 30px;
+    font-size: 11px;
+}
+
+.pixel-btn.secondary {
+    background: #95a5a6;
+}
+
+.pixel-btn.small {
+    font-size: 7px;
+    padding: 8px 12px;
+}
+
+/* ===== GRILLE DE LEÇONS ===== */
 .lessons-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem; padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
 }
 
 .lesson-card {
-    background: white; border: 4px solid #000; border-radius: 15px;
-    padding: 2rem; text-align: center; cursor: pointer;
-    box-shadow: 8px 8px 0 rgba(0,0,0,0.1); transition: all 0.2s;
+    background: white;
+    border: 4px solid #000;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.lesson-card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0 rgba(0,0,0,0.2); }
 
-/* ZONE D'EXERCICE */
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 0 rgba(0, 0, 0, 0.3);
+    border-color: #2dd4bf;
+}
+
+.lesson-card .card-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.lesson-card .card-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* ===== ÉCRAN DE LEÇON ===== */
+#lesson-screen {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== BARRE DE PROGRESSION ===== */
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border: 3px solid #000;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    transition: width 0.3s;
+    width: 0%;
+}
+
+/* ===== BOÎTE D'EXERCICE ===== */
 .exercise-box {
-    background: white; border: 6px solid #000; border-radius: 20px;
-    padding: 60px 40px; text-align: center; margin: 20px auto; max-width: 800px;
+    background: white;
+    border: 4px solid #000;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 
-.pixel-input {
-    font-family: 'Press Start 2P', monospace; width: 100%; max-width: 400px;
-    padding: 20px; border: 4px solid #000; font-size: 18px; margin-bottom: 20px;
+#question-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    line-height: 1.8;
     text-align: center;
 }
 
-.pixel-btn {
-    font-family: 'Press Start 2P', monospace; padding: 15px 25px;
-    border: 3px solid #000; cursor: pointer; border-radius: 8px;
-    transition: transform 0.1s;
+.pixel-input {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 13px;
+    padding: 15px;
+    border: 4px solid #000;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    background: white;
 }
-.pixel-btn:active { transform: translateY(4px); }
 
-/* CURIO */
-.curio-fixed { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; }
+.pixel-input:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ===== CURIO FIXE (MASCOTTE) ===== */
+.curio-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
 .curio-bubble {
-    background: white; border: 3px solid #000; padding: 15px;
-    border-radius: 15px; margin-bottom: 10px; font-size: 10px; max-width: 220px;
-    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+    background: white;
+    border: 3px solid #000;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
+    max-width: 250px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.hidden { display: none !important; }
+.curio-bubble p {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    line-height: 1.6;
+    margin: 0;
+}
 
-/* PROGRESS BAR */
-.progress-container { width: 100%; background: #eee; height: 20px; border: 3px solid #000; border-radius: 10px; margin-bottom: 30px; }
-.progress-bar { height: 100%; transition: width 0.3s ease; }
+.curio-avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.curio-avatar-box {
+    background: white;
+    border: 4px solid #000;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.curio-avatar-box:hover {
+    transform: scale(1.1);
+}
+
+.curio-avatar-box img {
+    display: block;
+    image-rendering: pixelated;
+}
+
+.sound-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    background: #e74c3c;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sound-badge.off {
+    background: #e74c3c;
+}
+
+.sound-badge:not(.off) {
+    background: #2ecc71;
+}
+
+/* ===== MODALE VICTOIRE ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: white;
+    border: 5px solid #000;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.victory-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.xp-gain {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 20px;
+    color: #2ecc71;
+    margin: 20px 0;
+}
+
+/* ===== UTILITAIRES ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .header-hud {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+    
+    .pixel-title {
+        font-size: 14px;
+    }
+    
+    .lessons-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .lesson-card {
+        min-height: 150px;
+    }
+    
+    .curio-fixed {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .curio-bubble {
+        max-width: 200px;
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pixel-title {
+        font-size: 12px;
+    }
+    
+    .xp-badge {
+        font-size: 9px;
+        padding: 8px 15px;
+    }
+    
+    .lesson-card .card-icon {
+        font-size: 36px;
+    }
+    
+    .lesson-card .card-title {
+        font-size: 8px;
+    }
+    
+    #question-text {
+        font-size: 11px;
+    }
+    
+    .pixel-input {
+        font-size: 11px;
+    }
+}

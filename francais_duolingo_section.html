@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRANÇAIS - Le Monde des Curieux</title>
+    
+    <!-- Police Minecraft -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- CSS ORDRE CRITIQUE : Structure commune → Thème matière -->
     <link rel="stylesheet" href="styles/duolingo-sections.css">
-    <link rel="stylesheet" href="styles/francais_style.css">
+    <link rel="stylesheet" href="styles/francais-theme.css">
 </head>
 <body>
     <div class="container">
         <header class="header-hud">
-            <button class="pixel-btn secondary" onclick="location.href='index-dashboard.html'">← RETOUR</button>
-            <h1 class="pixel-title">📝 FRANÇAIS</h1>
+            <button class="pixel-btn secondary" onclick="location.href='index.html'">← RETOUR</button>
+            <h1 class="pixel-title">📚 FRANÇAIS</h1>
             <div id="xp-display" class="xp-badge">0 XP</div>
         </header>
 
@@ -21,24 +25,50 @@
         </main>
 
         <section id="lesson-screen" class="hidden">
-            <div class="progress-container"><div id="progress-fill" class="progress-bar" style="width: 0%"></div></div>
+            <div class="progress-container">
+                <div id="progress-fill" class="progress-bar" style="width: 0%"></div>
+            </div>
             <div class="exercise-box">
                 <h2 id="question-text">Chargement...</h2>
-                <input type="text" id="user-input" class="pixel-input" autocomplete="off" placeholder="Réponse...">
+                <input type="text" id="user-input" class="pixel-input" autocomplete="off" placeholder="Tape ta réponse ici...">
                 <div class="actions">
-                    <button class="pixel-btn primary" onclick="engine.validate()">VALIDER</button>
+                    <button class="pixel-btn primary" onclick="engine.validate()">VALIDER (ENTRÉE)</button>
                 </div>
             </div>
         </section>
     </div>
 
+    <!-- CURIO MASCOTTE FIXE -->
     <div class="curio-fixed">
-        <div class="curio-bubble"><p id="curio-msg">Coucou ! On commence ?</p></div>
-        <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" width="80" alt="Curio">
+        <div class="curio-bubble">
+            <p id="curio-msg">Clique sur Curio pour un indice !</p>
+        </div>
+        <div class="curio-avatar-container">
+            <div id="sound-toggle" class="sound-badge off">🔇</div>
+            <div class="curio-avatar-box">
+                <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" width="80" alt="Curio">
+            </div>
+        </div>
     </div>
 
+    <!-- MODALE VICTOIRE -->
+    <div id="victory-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">LEÇON RÉUSSIE !</div>
+            <div class="modal-body">
+                <div class="victory-icon">🏆</div>
+                <p id="modal-msg">Bravo petit curieux !</p>
+                <div class="xp-gain">+ <span id="xp-added">0</span> XP</div>
+            </div>
+            <button class="pixel-btn primary" onclick="location.reload()">CONTINUER</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="scripts/data/francais-lessons.js"></script>
     <script src="scripts/core/lesson-engine.js"></script>
-    <script>const engine = new LessonEngine(francaisLessons);</script>
+    <script>
+        const engine = new LessonEngine(francaisLessons);
+    </script>
 </body>
 </html>

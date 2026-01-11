@@ -1,0 +1,15 @@
+/**
+ * FRANCAIS-THEME.CSS - Thème Français (Indigo)
+ * Variables et overrides spécifiques à la section Français
+ * Couleur principale : #6366f1
+ */
+
+/* ===== BACKGROUND BODY ===== */
+body {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+/* ===== HEADER HUD THÈME FRANÇAIS ===== */
+.header-hud {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
