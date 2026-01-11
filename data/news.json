@@ -1,14 +1,22 @@
 {
   "articles": [
     {
-      "date": "10/01/2026",
-      "title": "Les pingouins sur Mars 🚀",
-      "summary": "Après l'océan, nos amis les pingouins explorent maintenant la planète rouge avec des combinaisons spatiales en blocs de glace !"
+      "title": "Découverte d'une nouvelle espèce de grenouille 🐸",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille en Amérique du Sud. Cette petite grenouille, de couleur vive, a été trouvée dans la forêt tropicale. Elle a des traits uniques qui aident les chercheurs à mieux comprendre la biodiversité de la planète. Chaque découverte comme celle-ci est importante pour protéger les habitats naturels et les créatures qui y vivent. Les scientifiques continuent d'explorer des régions reculées pour découvrir d'autres merveilles de la nature.",
+      "date": "15/10/2023",
+      "link": ""
     },
     {
-      "date": "10/01/2026",
-      "title": "L'école des Sorciers du Code 🧙‍♂️",
-      "summary": "Une nouvelle quête JavaScript est apparue. Apprends à lancer des sorts de fonctions pour vaincre les bugs."
+      "title": "Un robot pour aider à la maison 🤖",
+      "summary": "Une entreprise de technologie a créé un nouveau robot qui aide dans les tâches ménagères. Ce robot peut passer l'aspirateur, faire la vaisselle et même arroser les plantes. Il est conçu pour aider les personnes à gagner du temps sur les corvées quotidiennes. Les inventeurs espèrent qu'il rendra la vie à la maison plus facile et plus amusante. Ce type de robot montre comment la technologie peut améliorer notre quotidien.",
+      "date": "15/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Un arbre au sommet des gratte-ciels 🏙️🌳",
+      "summary": "Un nouvel immeuble vient d'être inauguré avec une surprise : un arbre géant sur son toit ! Situé dans une grande ville, cet immeuble cherche à combiner la nature et l'architecture moderne. L'arbre, visible de loin, apporte de la verdure et un espace relaxant pour les habitants. Ce projet souhaite encourager d'autres constructions à intégrer plus de nature, pour des villes plus vertes et agréables. C'est une belle idée pour rendre les milieux urbains plus respectueux de l'environnement.",
+      "date": "15/10/2023",
+      "link": ""
     }
   ]
 }
