@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Un Nouveau Robot Explorateur! 🤖",
-      "summary": "Un tout nouveau robot, appelé 'AstroBot', a été envoyé dans l'espace pour explorer une planète éloignée. Il a été lancé il y a seulement deux jours et a pour mission d'envoyer des images et des informations aux scientifiques sur Terre. Les robots comme AstroBot aident les chercheurs à en apprendre plus sur l'univers, sans mettre les gens en danger. Les découvertes qu’il fera pourraient nous en dire plus sur comment fonctionnent d'autres planètes et si la vie pourrait y exister!",
-      "date": "27/10/2023",
+      "title": "Des Étoiles Tombent du Ciel 🌠",
+      "summary": "Ces nuits-ci, regarde bien le ciel ! Une pluie d'étoiles filantes, appelée la pluie de météores des Orionides, est visible. C'est un moment où beaucoup de petites météores traversent notre atmosphère, créant de belles traînées lumineuses. Les astronautes expliquent que ces météores viennent des restes de la comète de Halley, une comète célèbre. La meilleure période pour les voir est juste avant l'aube. Alors, si tu es un lève-tôt, lève les yeux pour profiter du spectacle céleste ! N'oublie pas de faire un vœu en voyant une étoile filante passer. 💫",
+      "date": "19/10/2023",
       "link": ""
     },
     {
-      "title": "Une Étoile de Mer Étonnante! ⭐",
-      "summary": "Des chercheurs ont récemment découvert une nouvelle espèce d'étoile de mer au fond de l'océan. Cette étoile de mer est très spéciale car elle change de couleur pour se camoufler. Les scientifiques pensent que cette capacité aide l'étoile de mer à se protéger des prédateurs. Les océans cachent encore beaucoup de mystères, et chaque nouvelle découverte nous aide à mieux comprendre la vie marine et comment la protéger.",
-      "date": "27/10/2023",
+      "title": "La Fête des Cultures du Monde 🌎",
+      "summary": "Aujourd'hui, des gens du monde entier célèbrent la Journée Mondiale de la Diversité Culturelle. C'est l'occasion de découvrir différentes cultures à travers des musiques, des danses et des cuisines variées. Partout dans le monde, des écoles et des communautés organisent des événements pour partager et apprendre les uns des autres. Cette journée nous rappelle l'importance de respecter et d'apprécier les traditions et les coutumes de chacun. En participant, on peut mieux comprendre et se lier aux personnes qui pourtant, vivent très loin de nous.",
+      "date": "19/10/2023",
       "link": ""
     },
     {
-      "title": "Une Nouvelle Voiture Écologique 🚗",
-      "summary": "Une nouvelle voiture électrique a été présentée cette semaine lors d'un grand salon de l'auto. Cette voiture est très spéciale car elle utilise seulement de l'électricité et pas d'essence, ce qui la rend plus respectueuse de l'environnement. En utilisant de telles voitures, nous pouvons réduire la pollution de l'air. Cela aide à protéger notre planète et à garder notre air pur et sain à respirer. Peut-être que ces voitures seront bientôt partout sur nos routes!",
-      "date": "27/10/2023",
+      "title": "Des Tortues Volent à la Maison 🐢✈️",
+      "summary": "Un groupe de tortues menacées a eu un voyage spécial cette semaine. Ces tortues caouannes, qui avaient été sauvées d'ennuis dans les eaux froides du nord, ont été transportées en avion vers des plages plus chaudes. Là, elles pourront retrouver leur habitat naturel. Les tortues caouannes ont besoin de chaleur pour rester en bonne santé et cette initiative montre comment les humains peuvent aider les animaux en danger. Bonne nouvelle, ces tortues auront la chance de retourner à l'océan et de vivre en sécurité !",
+      "date": "19/10/2023",
       "link": ""
     }
   ]
