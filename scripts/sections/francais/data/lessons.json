@@ -1,0 +1,617 @@
+{
+  "lessons": [
+    {
+      "id": "lesson_001",
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Le Verbe",
+      "titleShort": "Identifier le Verbe",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Le verbe est le mot qui indique l'action ou l'état. Il change selon le temps et la personne.",
+          "quiz": [
+            {
+              "question": "Quel est le verbe dans cette phrase : 'Le chat mange sa pâtée.'",
+              "options": ["chat", "mange", "pâtée", "sa"],
+              "correct": 1
+            }
+          ]
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "identify",
+              "instruction": "Trouve le verbe dans cette phrase",
+              "sentence": "Les enfants jouent dans le jardin.",
+              "words": ["Les", "enfants", "jouent", "dans", "le", "jardin"],
+              "answer": "jouent",
+              "hint": "Le verbe indique l'action"
+            },
+            {
+              "type": "identify",
+              "instruction": "Trouve le verbe",
+              "sentence": "Ma sœur lit un livre passionnant.",
+              "words": ["Ma", "sœur", "lit", "un", "livre", "passionnant"],
+              "answer": "lit",
+              "hint": "Que fait ma sœur ?"
+            },
+            {
+              "type": "match",
+              "instruction": "Associe chaque phrase à son verbe",
+              "pairs": [
+                {"left": "Le chien aboie fort", "right": "aboie"},
+                {"left": "Marie dessine un arbre", "right": "dessine"},
+                {"left": "Nous écoutons la radio", "right": "écoutons"},
+                {"left": "Tu cours très vite", "right": "cours"}
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_002",
+      "theme": "conjugaison",
+      "themeIcon": "⏰",
+      "title": "Présent de l'Indicatif",
+      "titleShort": "Verbes au Présent",
+      "level": 1,
+      "xpReward": 25,
+      "duration": 12,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Le présent indique une action qui se passe maintenant. Exemples : je chante, tu chantes, il chante.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Conjugue le verbe 'chanter' au présent",
+              "sentence": "Je ___ une chanson.",
+              "answer": "chante",
+              "options": ["chante", "chantes", "chantons", "chantent"],
+              "hint": "Première personne du singulier"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue 'manger'",
+              "sentence": "Nous ___ des fruits.",
+              "answer": "mangeons",
+              "options": ["mange", "manges", "mangeons", "mangent"],
+              "hint": "Première personne du pluriel"
+            },
+            {
+              "type": "match",
+              "instruction": "Associe le pronom à la bonne conjugaison",
+              "pairs": [
+                {"left": "je", "right": "parle"},
+                {"left": "tu", "right": "parles"},
+                {"left": "il/elle", "right": "parle"},
+                {"left": "nous", "right": "parlons"}
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_003",
+      "theme": "conjugaison",
+      "themeIcon": "🕐",
+      "title": "Imparfait",
+      "titleShort": "Verbes à l'Imparfait",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 12,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "L'imparfait exprime une action passée qui durait. Terminaisons : -ais, -ais, -ait, -ions, -iez, -aient.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Conjugue à l'imparfait",
+              "sentence": "Quand j'étais petit, je ___ (jouer) au foot.",
+              "answer": "jouais",
+              "options": ["joue", "jouais", "jouait", "jouions"],
+              "hint": "Première personne, terminaison -ais"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue 'avoir' à l'imparfait",
+              "sentence": "Nous ___ beaucoup de jouets.",
+              "answer": "avions",
+              "options": ["avons", "avais", "avions", "avaient"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_004",
+      "theme": "conjugaison",
+      "themeIcon": "⏮️",
+      "title": "Passé Composé",
+      "titleShort": "Verbes au Passé Composé",
+      "level": 2,
+      "xpReward": 30,
+      "duration": 15,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Le passé composé exprime une action passée terminée. Formation : auxiliaire (être/avoir) + participe passé.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Conjugue au passé composé avec 'avoir'",
+              "sentence": "Hier, j'___ (manger) une pomme.",
+              "answer": "ai mangé",
+              "options": ["mange", "ai mangé", "avais mangé", "mangeais"],
+              "hint": "Auxiliaire avoir + participe passé"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue avec 'être'",
+              "sentence": "Elle ___ (partir) en vacances.",
+              "answer": "est partie",
+              "options": ["part", "est partie", "a parti", "partait"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_005",
+      "theme": "grammaire",
+      "themeIcon": "🔤",
+      "title": "Le Nom",
+      "titleShort": "Reconnaître les Noms",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Le nom désigne une personne, un animal, une chose ou une idée. Il peut être propre ou commun.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "identify",
+              "instruction": "Trouve tous les noms",
+              "sentence": "Le chien joue avec sa balle rouge.",
+              "words": ["Le", "chien", "joue", "avec", "sa", "balle", "rouge"],
+              "answers": ["chien", "balle"],
+              "hint": "Personnes, animaux, choses"
+            },
+            {
+              "type": "sort",
+              "instruction": "Classe les mots : noms communs ou noms propres",
+              "items": ["table", "Paris", "chien", "Marie", "école", "France"],
+              "categories": ["Noms communs", "Noms propres"],
+              "answers": {
+                "Noms communs": ["table", "chien", "école"],
+                "Noms propres": ["Paris", "Marie", "France"]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_006",
+      "theme": "grammaire",
+      "themeIcon": "🎨",
+      "title": "L'Adjectif",
+      "titleShort": "Les Adjectifs Qualificatifs",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "L'adjectif qualificatif donne des précisions sur le nom. Il s'accorde en genre et en nombre.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "identify",
+              "instruction": "Trouve l'adjectif",
+              "sentence": "La petite fille joue dehors.",
+              "words": ["La", "petite", "fille", "joue", "dehors"],
+              "answer": "petite",
+              "hint": "Quel mot décrit 'fille' ?"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un adjectif",
+              "sentence": "J'ai vu un chat ___.",
+              "options": ["noir", "rapidement", "manger", "hier"],
+              "answer": "noir",
+              "hint": "Mot qui décrit le chat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_007",
+      "theme": "orthographe",
+      "themeIcon": "✍️",
+      "title": "Les Homophones a/à",
+      "titleShort": "Différencier a et à",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "'a' est le verbe avoir. 'à' est une préposition. Astuce : si tu peux remplacer par 'avait', écris 'a'.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Choisis a ou à",
+              "sentence": "Il ___ un vélo.",
+              "options": ["a", "à"],
+              "answer": "a",
+              "hint": "Verbe avoir (il avait)"
+            },
+            {
+              "type": "fill",
+              "instruction": "Choisis a ou à",
+              "sentence": "Je vais ___ l'école.",
+              "options": ["a", "à"],
+              "answer": "à",
+              "hint": "Préposition de lieu"
+            },
+            {
+              "type": "multi-fill",
+              "instruction": "Complète toutes les phrases",
+              "sentences": [
+                "Elle ___ des bonbons.",
+                "Nous allons ___ Paris.",
+                "Mon frère ___ 10 ans."
+              ],
+              "answers": ["a", "à", "a"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_008",
+      "theme": "orthographe",
+      "themeIcon": "✏️",
+      "title": "Les Homophones et/est",
+      "titleShort": "Différencier et et est",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "'est' est le verbe être. 'et' relie deux mots. Astuce : remplace par 'était' pour vérifier.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Choisis et ou est",
+              "sentence": "Le chat ___ noir.",
+              "options": ["et", "est"],
+              "answer": "est",
+              "hint": "Verbe être (était)"
+            },
+            {
+              "type": "fill",
+              "instruction": "Choisis et ou est",
+              "sentence": "J'aime les pommes ___ les poires.",
+              "options": ["et", "est"],
+              "answer": "et",
+              "hint": "Relie deux éléments"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_009",
+      "theme": "orthographe",
+      "themeIcon": "🔡",
+      "title": "Les Accents",
+      "titleShort": "é, è, ê",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 8,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Les accents changent la prononciation. é (aigu), è (grave), ê (circonflexe).",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "select-accent",
+              "instruction": "Choisis le bon accent",
+              "word": "ecole",
+              "position": 0,
+              "options": ["é", "è", "ê"],
+              "answer": "é",
+              "correctWord": "école"
+            },
+            {
+              "type": "fill",
+              "instruction": "Écris le mot correctement",
+              "sentence": "J'aime la ___ (foret).",
+              "answer": "forêt",
+              "hint": "Accent circonflexe"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_010",
+      "theme": "vocabulaire",
+      "themeIcon": "📚",
+      "title": "Les Synonymes",
+      "titleShort": "Mots de Même Sens",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Les synonymes sont des mots qui ont presque le même sens. Exemple : content/joyeux.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "match",
+              "instruction": "Associe les synonymes",
+              "pairs": [
+                {"left": "grand", "right": "immense"},
+                {"left": "content", "right": "joyeux"},
+                {"left": "fatigué", "right": "épuisé"},
+                {"left": "parler", "right": "discuter"}
+              ]
+            },
+            {
+              "type": "select",
+              "instruction": "Quel est le synonyme de 'rapide' ?",
+              "options": ["lent", "vite", "grand", "fort"],
+              "answer": "vite"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_011",
+      "theme": "vocabulaire",
+      "themeIcon": "🔄",
+      "title": "Les Antonymes",
+      "titleShort": "Mots de Sens Contraire",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 10,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Les antonymes sont des mots de sens contraire. Exemple : chaud/froid.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "match",
+              "instruction": "Associe les antonymes",
+              "pairs": [
+                {"left": "grand", "right": "petit"},
+                {"left": "monter", "right": "descendre"},
+                {"left": "jour", "right": "nuit"},
+                {"left": "entrer", "right": "sortir"}
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_012",
+      "theme": "grammaire",
+      "themeIcon": "🔢",
+      "title": "Le Pluriel des Noms",
+      "titleShort": "Former le Pluriel",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 12,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Pour former le pluriel, on ajoute généralement un 's'. Exceptions : -x, -aux, etc.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "transform",
+              "instruction": "Mets au pluriel",
+              "word": "chat",
+              "answer": "chats",
+              "hint": "Ajoute un 's'"
+            },
+            {
+              "type": "transform",
+              "instruction": "Mets au pluriel",
+              "word": "cheval",
+              "answer": "chevaux",
+              "hint": "al → aux"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec le pluriel",
+              "sentence": "Les ___ (animal) du zoo.",
+              "answer": "animaux"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_013",
+      "theme": "grammaire",
+      "themeIcon": "⚧️",
+      "title": "Le Féminin des Noms",
+      "titleShort": "Masculin et Féminin",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 12,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Pour former le féminin, on ajoute généralement un 'e'. Exemples : ami → amie.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "transform",
+              "instruction": "Mets au féminin",
+              "word": "ami",
+              "answer": "amie",
+              "hint": "Ajoute 'e'"
+            },
+            {
+              "type": "match",
+              "instruction": "Associe masculin et féminin",
+              "pairs": [
+                {"left": "acteur", "right": "actrice"},
+                {"left": "chanteur", "right": "chanteuse"},
+                {"left": "coiffeur", "right": "coiffeuse"}
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_014",
+      "theme": "conjugaison",
+      "themeIcon": "🔮",
+      "title": "Le Futur Simple",
+      "titleShort": "Verbes au Futur",
+      "level": 3,
+      "xpReward": 30,
+      "duration": 15,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Le futur simple exprime une action qui va se passer. Terminaisons : -ai, -as, -a, -ons, -ez, -ont.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "fill",
+              "instruction": "Conjugue au futur",
+              "sentence": "Demain, je ___ (chanter) une chanson.",
+              "answer": "chanterai",
+              "options": ["chante", "chanterai", "chantais", "ai chanté"],
+              "hint": "Infinitif + -ai"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue 'être' au futur",
+              "sentence": "Nous ___ en vacances.",
+              "answer": "serons",
+              "options": ["sommes", "étions", "serons", "serions"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson_015",
+      "theme": "revision",
+      "themeIcon": "🌟",
+      "title": "Révision Générale",
+      "titleShort": "Révise Tout !",
+      "level": 3,
+      "xpReward": 50,
+      "duration": 20,
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Révision de toutes les notions vues : grammaire, conjugaison, orthographe et vocabulaire.",
+          "quiz": []
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "mixed",
+              "instruction": "Questions variées",
+              "questions": [
+                {
+                  "type": "identify",
+                  "text": "Trouve le verbe",
+                  "sentence": "Les oiseaux chantent le matin.",
+                  "words": ["Les", "oiseaux", "chantent", "le", "matin"],
+                  "answer": "chantent"
+                },
+                {
+                  "type": "fill",
+                  "text": "Choisis a ou à",
+                  "sentence": "Elle ___ des fleurs.",
+                  "options": ["a", "à"],
+                  "answer": "a"
+                },
+                {
+                  "type": "transform",
+                  "text": "Mets au pluriel",
+                  "word": "oiseau",
+                  "answer": "oiseaux"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

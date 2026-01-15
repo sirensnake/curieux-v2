@@ -1,493 +1,139 @@
 /**
  * ==========================================
- * CSS DASHBOARD HOME v2
- * Le Monde des Curieux - Navigation Principale
- * 5 Sections : Maths, English, Français, Histoire, Sciences
+ * CSS DASHBOARD v3 - ÉVOLUTION MODERNE
+ * Esthétique Minecraft / Pixel-Art Premium
  * ==========================================
  */
 
-/* BODY DASHBOARD */
-.dashboard-home {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+:root {
+    --mc-gray: #c6c6c6;
+    --mc-dark: #373737;
+    --mc-light: #ffffff;
+    --mc-green: #76c610;
+    --mc-yellow: #f1c40f;
+    --shadow-solid: rgba(0, 0, 0, 0.35);
+}
+
+/* L'arrière-plan profite du dégradé de curio-main.css */
+body.dashboard-home {
+    font-family: 'Lexend', sans-serif;
+    padding: 40px 20px;
     min-height: 100vh;
-    padding: 20px;
 }
 
-.dashboard-home .container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ========================================
-   HEADER PRINCIPAL
-   ======================================== */
-
+/* --- HEADER HUD --- */
 .main-header {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border: 6px solid #2c3e50;
-    border-radius: 20px;
-    padding: 35px 40px;
-    margin-bottom: 30px;
-    box-shadow: 10px 10px 0 rgba(44, 62, 80, 0.4);
+    background: var(--mc-gray);
+    border: 6px solid #000;
+    /* Effet de biseau intérieur typique MC */
+    box-shadow: inset -6px -6px 0px var(--mc-dark), 
+                inset 6px 6px 0px var(--mc-light),
+                12px 12px 0px var(--shadow-solid);
+    padding: 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    animation: headerSlideDown 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.logo-section {
-    flex: 1;
+    margin-bottom: 50px;
 }
 
 .main-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 28px;
-    color: #1d3557;
-    margin-bottom: 12px;
-    text-shadow: 3px 3px 0 rgba(42, 157, 143, 0.3);
-}
-
-.subtitle {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    color: #457b9d;
+    font-size: 22px;
+    color: #2c3e50;
+    text-shadow: 3px 3px 0px #fff;
     margin: 0;
 }
 
-/* STATS GLOBALES */
-.global-stats {
-    display: flex;
-    gap: 20px;
-}
-
-.stat-card {
-    background: linear-gradient(135deg, #f1faee 0%, #e9ecef 100%);
-    border: 4px solid #2c3e50;
-    border-radius: 12px;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    min-width: 100px;
-    box-shadow: 4px 4px 0 rgba(44, 62, 80, 0.25);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.stat-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 6px 6px 0 rgba(42, 157, 143, 0.4);
-}
-
-.stat-icon {
-    font-size: 2.5rem;
-}
-
-.stat-value {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 22px;
-    color: #2a9d8f;
-    font-weight: bold;
-}
-
-.stat-label {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 9px;
-    color: #6c757d;
-    text-transform: uppercase;
-}
-
-/* ========================================
-   BANNIÈRE RECOMMANDATION
-   ======================================== */
-
-.recommendation-banner {
-    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-    border: 5px solid #f39c12;
-    border-radius: 15px;
-    padding: 20px 30px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 6px 6px 0 rgba(243, 156, 18, 0.3);
-    animation: bannerPulse 2s ease-in-out infinite;
-}
-
-.recommendation-icon {
-    font-size: 3rem;
-    flex-shrink: 0;
-}
-
-.recommendation-text {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 11px;
-    line-height: 1.8;
-    color: #856404;
-}
-
-.recommendation-text strong {
-    color: #d97706;
-}
-
-/* ========================================
-   GRILLE SECTIONS (5 CARTES)
-   ======================================== */
-
+/* --- GRILLE MODERNE --- */
 .sections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Grille optimisée pour 5 sections */
-@media (min-width: 1200px) {
-    .sections-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* CARTES SECTIONS */
+/* --- CARTES MATIÈRES --- */
 .section-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border: 6px solid #2c3e50;
-    border-radius: 20px;
-    padding: 30px;
+    background: var(--mc-gray);
+    border: 6px solid #000;
+    box-shadow: inset -6px -6px 0px var(--mc-dark), 
+                inset 6px 6px 0px var(--mc-light), 
+                10px 10px 0px var(--shadow-solid);
+    padding: 30px 20px;
+    text-align: center;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 8px 8px 0 rgba(44, 62, 80, 0.35);
-    animation: cardFadeIn 0.6s ease-out backwards;
+    transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 }
 
-.section-card:nth-child(1) { animation-delay: 0.1s; }
-.section-card:nth-child(2) { animation-delay: 0.2s; }
-.section-card:nth-child(3) { animation-delay: 0.3s; }
-.section-card:nth-child(4) { animation-delay: 0.4s; }
-.section-card:nth-child(5) { animation-delay: 0.5s; }
-
+/* Survol : La carte s'anime et s'élève */
 .section-card:hover {
-    transform: translateY(-12px) scale(1.03);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: inset -6px -6px 0px var(--mc-dark), 
+                inset 6px 6px 0px var(--mc-light), 
+                18px 18px 0px var(--shadow-solid);
+    filter: brightness(1.05);
 }
 
-/* Thèmes par section */
-.maths-card:hover {
-    border-color: #9c27b0;
-    box-shadow: 12px 12px 0 rgba(156, 39, 176, 0.5);
-}
-
-.english-card:hover {
-    border-color: #2196f3;
-    box-shadow: 12px 12px 0 rgba(33, 150, 243, 0.5);
-}
-
-.francais-card:hover {
-    border-color: #10b981;
-    box-shadow: 12px 12px 0 rgba(16, 185, 129, 0.5);
-}
-
-.histoire-card:hover {
-    border-color: #d97706;
-    box-shadow: 12px 12px 0 rgba(217, 119, 6, 0.5);
-}
-
-.sciences-card:hover {
-    border-color: #06b6d4;
-    box-shadow: 12px 12px 0 rgba(6, 182, 212, 0.5);
-}
-
-/* HEADER CARTE */
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+/* Clic : Effet de pression */
+.section-card:active {
+    transform: translateY(4px);
+    box-shadow: inset 6px 6px 0px var(--mc-dark), 
+                inset -6px -6px 0px var(--mc-light);
 }
 
 .section-emoji {
     font-size: 4rem;
-    animation: emojiFloat 3s ease-in-out infinite;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
 }
 
 .section-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 18px;
-    color: #1d3557;
-    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* DESCRIPTION */
-.section-description {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    line-height: 1.8;
-    color: #6c757d;
-    margin-bottom: 25px;
-    min-height: 60px;
+/* --- BARRES DE PROGRESSION GAMIFIÉES --- */
+.progress-container {
+    width: 100%;
+    height: 18px;
+    background: #1e1e1e;
+    border: 4px solid #000;
+    margin: 15px 0;
+    position: relative;
 }
 
-/* STATS SECTION */
-.section-stats {
-    margin-bottom: 25px;
+.progress-bar {
+    height: 100%;
+    background: var(--mc-green);
+    /* Effet de reflet sur la barre d'XP */
+    box-shadow: inset 0 4px 0 rgba(255,255,255,0.4),
+                inset 0 -4px 0 rgba(0,0,0,0.2);
 }
 
-.progress-info {
-    margin-bottom: 15px;
-}
-
-.progress-label {
+.xp-badge-small {
+    display: inline-block;
+    background: var(--mc-yellow);
+    border: 3px solid #000;
+    padding: 8px 12px;
     font-family: 'Press Start 2P', cursive;
     font-size: 9px;
-    color: #495057;
-    display: block;
-    margin-bottom: 8px;
+    color: #000;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
 }
 
-.progress-bar-mini {
-    background: #e9ecef;
-    border: 3px solid #2c3e50;
-    border-radius: 10px;
-    height: 22px;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
+/* Thèmes de couleurs par section */
+.section-card.francais { border-color: #000; }
+.section-card.maths { border-color: #000; }
 
-.progress-fill-mini {
-    height: 100%;
-    transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.maths-progress { background: linear-gradient(90deg, #9c27b0 0%, #7b1fa2 100%); }
-.english-progress { background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%); }
-.francais-progress { background: linear-gradient(90deg, #10b981 0%, #059669 100%); }
-.histoire-progress { background: linear-gradient(90deg, #d97706 0%, #b45309 100%); }
-.sciences-progress { background: linear-gradient(90deg, #06b6d4 0%, #0891b2 100%); }
-
-.progress-percentage {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    color: #495057;
-    font-weight: bold;
-}
-
-.section-metrics {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.metric {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    color: #6c757d;
-}
-
-.metric strong {
-    color: #2a9d8f;
-    font-size: 12px;
-}
-
-/* BOUTON SECTION */
-.section-button {
-    width: 100%;
-    padding: 18px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
-    position: relative;
-    top: 0;
-}
-
-.section-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 0 rgba(0, 0, 0, 0.25);
-}
-
-.section-button:active {
-    transform: translateY(3px);
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
-}
-
-.maths-button { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); }
-.english-button { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); }
-.francais-button { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-.histoire-button { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); }
-.sciences-button { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
-
-/* ========================================
-   FOOTER
-   ======================================== */
-
-.dashboard-footer {
-    background: rgba(255, 255, 255, 0.15);
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    line-height: 2;
-    backdrop-filter: blur(10px);
-}
-
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-
-@keyframes headerSlideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes cardFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes bannerPulse {
-    0%, 100% {
-        box-shadow: 6px 6px 0 rgba(243, 156, 18, 0.3);
-    }
-    50% {
-        box-shadow: 6px 6px 15px rgba(243, 156, 18, 0.6);
-    }
-}
-
-@keyframes emojiFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-
-@media (max-width: 992px) {
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .global-stats {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .sections-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .dashboard-home {
-        padding: 15px;
-    }
-    
-    .main-title {
-        font-size: 20px;
-    }
-    
-    .subtitle {
-        font-size: 10px;
-    }
-    
-    .stat-card {
-        min-width: 80px;
-        padding: 12px 15px;
-    }
-    
-    .stat-icon {
-        font-size: 2rem;
-    }
-    
-    .stat-value {
-        font-size: 18px;
-    }
-    
-    .section-emoji {
-        font-size: 3rem;
-    }
-    
-    .section-title {
-        font-size: 14px;
-    }
-    
-    .sections-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-header {
-        padding: 20px;
-    }
-    
-    .main-title {
-        font-size: 16px;
-    }
-    
-    .global-stats {
-        gap: 10px;
-    }
-    
-    .stat-card {
-        min-width: 70px;
-        padding: 10px;
-    }
-    
-    .stat-value {
-        font-size: 16px;
-    }
-    
-    .recommendation-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 20px;
-    }
-    
-    .section-card {
-        padding: 25px 20px;
-    }
-    
-    .section-description {
-        font-size: 9px;
-        min-height: 50px;
-    }
-    
-    .dashboard-footer {
-        font-size: 8px;
-        line-height: 1.8;
-    }
-}
-
-/* ACCESSIBILITÉ */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+.section-card.francais:hover { background-color: #e3f2fd; }
+.section-card.maths:hover { background-color: #fff9c4; }
+.section-card.english:hover { background-color: #fce4ec; }
+.section-card.histoire:hover { background-color: #efebe9; }
+.section-card.sciences:hover { background-color: #e8f5e9; }

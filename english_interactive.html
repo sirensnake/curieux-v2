@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Interactive - Le Monde des Curieux</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- CSS existants (ordre standard) -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index_style.css">
+    <link rel="stylesheet" href="styles/menu_lateral_enhanced.css">
+    <link rel="stylesheet" href="styles/accessibilite.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link rel="stylesheet" href="styles/breadcrumb.css">
+    <link rel="stylesheet" href="styles/layout_style.css">
+    <link rel="stylesheet" href="styles/general_style.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- CSS Section Anglais -->
+    <link rel="stylesheet" href="styles/sections/english-interactive.css">
+    <link rel="stylesheet" href="styles/duolingo-shared.css">
+    
+    <!-- Police Minecraft -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="english-interactive-section">
+    
+    <!-- Header stylisé -->
+    <header class="section-header-styled english">
+        <div class="header-left">
+            <button onclick="window.location.href='index.html'" class="back-btn-minecraft english">
+                ← Accueil
+            </button>
+            <button onclick="window.location.href='english_duolingo_section.html'" class="mode-switch-btn">
+                📖 Mode Classique
+            </button>
+        </div>
+        
+        <div class="header-center">
+            <h1>🇬🇧 English Interactive</h1>
+        </div>
+        
+        <div class="header-right">
+            <!-- Placeholder pour futures options -->
+        </div>
+    </header>
+
+    <!-- Zone Duolingo Header -->
+    <div class="duolingo-header">
+        <div class="duolingo-header-container">
+            <!-- Streak -->
+            <div class="duolingo-stat streak">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-content">
+                    <div id="streak-display" class="stat-value">0 day</div>
+                    <div class="stat-label">Streak</div>
+                </div>
+            </div>
+            
+            <!-- Hearts -->
+            <div class="duolingo-stat hearts">
+                <div class="stat-content">
+                    <div id="hearts-display" class="stat-value">❤️❤️❤️❤️❤️</div>
+                    <div class="stat-label">Hearts</div>
+                </div>
+            </div>
+            
+            <!-- XP -->
+            <div class="duolingo-stat xp">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-content">
+                    <div id="xp-display" class="stat-value">
+                        Level 1 • 0 XP
+                        <div class="xp-bar">
+                            <div class="xp-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur principal -->
+    <main class="english-interactive-main">
+        
+        <!-- Bannière nouveau mode (visible depuis english_section.html) -->
+        <div class="new-mode-banner" id="new-mode-banner" style="display: none;">
+            <div class="banner-content">
+                <div class="banner-icon">🎮</div>
+                <div class="banner-text">
+                    <strong>Nouveau Mode Interactif !</strong>
+                    <p>Apprends l'anglais avec prononciation audio, exercices variés et système de progression</p>
+                </div>
+                <button class="banner-close" onclick="document.getElementById('new-mode-banner').style.display='none'">
+                    ✕
+                </button>
+            </div>
+        </div>
+        
+        <!-- Sélecteur de leçons -->
+        <section id="lesson-selector" class="lesson-selector-section">
+            <div class="section-intro">
+                <h2>Choisis une leçon</h2>
+                <p>Progresse à ton rythme à travers 20 leçons interactives !</p>
+            </div>
+            
+            <!-- Leçons injectées dynamiquement par english-interactive.js -->
+            <div class="lessons-loading">
+                <div class="loading-spinner">⏳</div>
+                <p>Chargement des leçons...</p>
+            </div>
+        </section>
+        
+        <!-- Zone de leçon active -->
+        <section id="lesson-container" class="lesson-container-section">
+            <!-- Contenu injecté dynamiquement -->
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="english-footer">
+        <div class="footer-content">
+            <p>© 2026 Le Monde des Curieux - Apprends l'anglais en t'amusant !</p>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="english_section.html">Mode Classique</a>
+                <a href="#" onclick="window.englishApp?.loadProgress(); return false;">Rafraîchir Progression</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Core (ordre d'importance) -->
+    <!-- 1. Event Bus (doit être chargé en premier) -->
+    <script src="scripts/core/event-bus.js"></script>
+    
+    <!-- 2. Storage Adapter -->
+    <script src="scripts/core/storage-adapter.js"></script>
+    
+    <!-- 3. Audio Player -->
+    <script src="scripts/core/audio-player.js"></script>
+    
+    <!-- 4. XP System Unified -->
+    <script src="scripts/shared/xp-system-unified.js"></script>
+    
+    <!-- 5. Duolingo Mechanics (Hearts + Streaks) -->
+    <script src="scripts/shared/duolingo-mechanics.js"></script>
+    
+    <!-- 6. Lesson Engine Universal (si utilisé) -->
+    <!-- <script src="scripts/lesson-engine.js"></script> -->
+    
+    <!-- 7. Controller Section Anglais -->
+    <script src="scripts/sections/english/english-interactive.js"></script>
+    
+    <!-- Scripts généraux du site -->
+    <script src="scripts/general_script.js"></script>
+    
+    <!-- Script initialisation page -->
+    <script>
+        // Vérification dépendances critiques
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🇬🇧 English Interactive Page Loading...');
+            
+            // Vérification chargement Event Bus
+            if (!window.eventBus) {
+                console.error('❌ Event Bus not loaded!');
+                document.querySelector('.lessons-loading').innerHTML = `
+                    <div class="error-state">
+                        <p>⚠️ Erreur de chargement des systèmes</p>
+                        <button onclick="location.reload()">Rafraîchir</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Vérification Storage Adapter
+            if (!window.storageAdapter) {
+                console.error('❌ Storage Adapter not loaded!');
+                return;
+            }
+            
+            // Vérification Audio Player
+            if (!window.audioPlayer) {
+                console.warn('⚠️ Audio Player not loaded, pronunciation may not work');
+            }
+            
+            // Vérification XP System
+            if (!window.xpSystemUnified) {
+                console.error('❌ XP System not loaded!');
+                return;
+            }
+            
+            // Vérification Duolingo Mechanics
+            if (!window.HeartSystem || !window.StreakSystem) {
+                console.warn('⚠️ Duolingo Mechanics not fully loaded');
+            }
+            
+            // Vérification EnglishApp initialisé
+            const checkAppReady = setInterval(() => {
+                if (window.englishApp) {
+                    console.log('✅ English Interactive App Ready!');
+                    clearInterval(checkAppReady);
+                    
+                    // Log état initial pour debug
+                    console.log('Initial State:', {
+                        lessons: window.englishApp.lessons.length,
+                        hearts: window.englishApp.hearts?.getCurrentHearts(),
+                        streak: window.englishApp.streaks?.getCurrentStreak(),
+                        xp: window.englishApp.xp?.getSectionStats('anglais')
+                    });
+                }
+            }, 100);
+            
+            // Timeout sécurité
+            setTimeout(() => {
+                clearInterval(checkAppReady);
+                if (!window.englishApp) {
+                    console.error('❌ English App failed to initialize');
+                    document.querySelector('.lessons-loading').innerHTML = `
+                        <div class="error-state">
+                            <p>⚠️ Impossible de démarrer l'application</p>
+                            <button onclick="location.reload()">Rafraîchir</button>
+                        </div>
+                    `;
+                }
+            }, 5000);
+        });
+        
+        // Helper: Affichage bannière si venu depuis english_section.html
+        if (document.referrer.includes('english_section.html')) {
+            const banner = document.getElementById('new-mode-banner');
+            if (banner) {
+                banner.style.display = 'block';
+                
+                // Auto-masquage après 10 secondes
+                setTimeout(() => {
+                    banner.style.display = 'none';
+                }, 10000);
+            }
+        }
+    </script>
+</body>
+</html>

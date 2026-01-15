@@ -3,246 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Monde des Curieux - Accueil</title>
+    <title>Le Monde des Curieux - Dashboard</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/curio-main.css">
     <link rel="stylesheet" href="styles/dashboard-home.css">
-    
-    <style>
-        /* Animation pour l'inventaire quand un objet est débloqué */
-        @keyframes shake {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(0deg); }
-            75% { transform: rotate(-5deg); }
-            100% { transform: rotate(0deg); }
-        }
-        .shake-animation {
-            animation: shake 0.5s ease-in-out infinite;
-        }
-
-        .quick-nav .btn-curio {
-            transition: transform 0.1s, filter 0.2s;
-        }
-        .quick-nav .btn-curio:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-        }
-    </style>
 </head>
-<body class="dashboard-home">
-    <div class="container">
+<body class="minecraft-theme dashboard-home"> <div class="container">
         
-        <nav class="quick-nav" style="display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; background: #1a1a1a; border-bottom: 4px solid #000; margin-bottom: 20px;">
-            <a href="index.html" class="btn-curio" style="background: #aa0000; font-size: 0.7em; text-decoration: none; padding: 10px 15px; border: 3px solid #000; color: white;">← QUITTER</a>
-            
-            <div style="display: flex; gap: 15px;">
-                <a href="profil_section.html" class="btn-curio" style="background: #5a8a00; font-size: 0.7em; text-decoration: none; padding: 10px 15px; border: 3px solid #000; color: white;">👤 PROFIL</a>
-                <a href="inventaire_section.html" id="nav-inventory" class="btn-curio" style="background: #3b3b3b; font-size: 0.7em; text-decoration: none; padding: 10px 15px; border: 3px solid #000; color: white;">🎒 INVENTAIRE</a>
-                <a href="le-petit-curieux.html" class="btn-curio" style="background: #005a8a; font-size: 0.7em; text-decoration: none; padding: 10px 15px; border: 3px solid #000; color: white;">🗞️ JOURNAL</a>
-            </div>
-        </nav>
-
-        <div id="unlock-banner" class="recommendation-banner" style="display: none; background: #55FF55; color: #000; border: 4px solid #000; margin: 0 20px 20px 20px; font-family: 'Press Start 2P'; padding: 15px; align-items: center; gap: 15px;">
-            <div style="font-size: 2em;">✨</div>
-            <div>
-                <strong style="display: block; margin-bottom: 5px;">NOUVEL OBJET DÉBLOQUÉ !</strong>
-                <span id="unlock-item-name" style="font-size: 0.8em;"></span>
-            </div>
-        </div>
-
         <header class="main-header">
             <div class="logo-section">
-                <h1 class="main-title">🎮 Le Monde des Curieux</h1>
-                <p class="subtitle">Apprends en t'amusant !</p>
+                <h1 class="main-title">MON PARCOURS</h1>
+                <p class="subtitle">Explorateur : <span id="player-name">Curieux</span></p>
             </div>
-            
             <div class="global-stats">
                 <div class="stat-card">
-                    <span class="stat-icon">🔥</span>
-                    <span class="stat-value" id="global-streak">0</span>
-                    <span class="stat-label">jours</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">❤️</span>
-                    <span class="stat-value" id="global-hearts">5</span>
-                    <span class="stat-label">cœurs</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">⭐</span>
-                    <span class="stat-value" id="global-xp">0</span>
-                    <span class="stat-label">XP</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">📊</span>
-                    <span class="stat-value" id="global-level">1</span>
-                    <span class="stat-label">Niveau</span>
+                    <span class="stat-icon">💎</span>
+                    <div class="stat-info">
+                        <span class="stat-value" id="total-xp">0</span>
+                        <span class="stat-label">TOTAL XP</span>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <div class="recommendation-banner" id="recommendation-banner" style="display: none;">
-            <div class="recommendation-icon">💡</div>
-            <div class="recommendation-text">
-                <strong>Continue ton apprentissage !</strong>
-                <span id="recommendation-message"></span>
-            </div>
-        </div>
-
-        <div class="sections-grid">
-            <div class="section-card maths-card" onclick="window.location.href='maths_duolingo_section.html'">
-                <div class="section-header">
-                    <span class="section-emoji">🧮</span>
-                    <h2 class="section-title" style="font-size: 0.7rem;">Mathématiques</h2>
-                </div>
-                <div class="section-description">Calcul mental, géométrie, problèmes et fractions</div>
-                <div class="section-stats">
-                    <div class="progress-info">
-                        <span class="progress-label">Progression</span>
-                        <div class="progress-bar-mini"><div class="progress-fill-mini maths-progress" id="maths-progress" style="width: 0%"></div></div>
-                        <span class="progress-percentage" id="maths-percentage">0%</span>
-                    </div>
-                    <div class="section-metrics">
-                        <span class="metric"><strong id="maths-completed">0</strong>/15 leçons</span>
-                        <span class="metric"><strong id="maths-xp">0</strong> XP</span>
-                    </div>
-                </div>
-                <button class="section-button maths-button">Continuer →</button>
+        <main class="sections-grid">
+            <div class="section-card francais" onclick="location.href='francais_duolingo_section.html'">
+                <span class="section-emoji">📝</span>
+                <h2 class="section-title">FRANÇAIS</h2>
+                <div class="progress-container"><div id="francais-bar" class="progress-bar"></div></div>
+                <div id="francais-xp-display" class="xp-badge-small">0 XP</div>
             </div>
 
-            <div class="section-card english-card" onclick="window.location.href='english_duolingo_section.html'">
-                <div class="section-header">
-                    <span class="section-emoji">🌍</span>
-                    <h2 class="section-title">English</h2>
-                </div>
-                <div class="section-description">Vocabulaire, phrases courantes et prononciation</div>
-                <div class="section-stats">
-                    <div class="progress-info">
-                        <span class="progress-label">Progression</span>
-                        <div class="progress-bar-mini"><div class="progress-fill-mini english-progress" id="english-progress" style="width: 0%"></div></div>
-                        <span class="progress-percentage" id="english-percentage">0%</span>
-                    </div>
-                    <div class="section-metrics">
-                        <span class="metric"><strong id="english-completed">0</strong>/15 leçons</span>
-                        <span class="metric"><strong id="english-xp">0</strong> XP</span>
-                    </div>
-                </div>
-                <button class="section-button english-button">Continuer →</button>
+            <div class="section-card maths" onclick="location.href='maths_duolingo_section.html'">
+                <span class="section-emoji">🔢</span>
+                <h2 class="section-title">MATHS</h2>
+                <div class="progress-container"><div id="maths-bar" class="progress-bar"></div></div>
+                <div id="maths-xp-display" class="xp-badge-small">0 XP</div>
             </div>
 
-            <div class="section-card francais-card" onclick="window.location.href='francais_duolingo_section.html'">
-                <div class="section-header">
-                    <span class="section-emoji">📚</span>
-                    <h2 class="section-title">Français</h2>
-                </div>
-                <div class="section-description">Grammaire, conjugaison, orthographe et vocabulaire</div>
-                <div class="section-stats">
-                    <div class="progress-info">
-                        <span class="progress-label">Progression</span>
-                        <div class="progress-bar-mini"><div class="progress-fill-mini francais-progress" id="francais-progress" style="width: 0%"></div></div>
-                        <span class="progress-percentage" id="francais-percentage">0%</span>
-                    </div>
-                    <div class="section-metrics">
-                        <span class="metric"><strong id="francais-completed">0</strong>/15 leçons</span>
-                        <span class="metric"><strong id="francais-xp">0</strong> XP</span>
-                    </div>
-                </div>
-                <button class="section-button francais-button">Continuer →</button>
-            </div>
-        </div>
-
-        <footer class="dashboard-footer" style="padding: 30px 20px; border-top: 4px solid #000; margin-top: 40px; background: rgba(0,0,0,0.1);">
-            <div style="margin-bottom: 25px;">
-                <a href="espace_parents.html" class="btn-curio" style="background: #7f8c8d; border: 3px solid #000; color: #fff; font-size: 0.65em; text-decoration: none; padding: 12px 20px; display: inline-flex; align-items: center; gap: 10px;">
-                    ⚙️ ESPACE PARENTS : DOSSIER IEF & RAPPORTS
-                </a>
+            <div class="section-card english" onclick="location.href='english_duolingo_section.html'">
+                <span class="section-emoji">🇬🇧</span>
+                <h2 class="section-title">ENGLISH</h2>
+                <div class="progress-container"><div id="english-bar" class="progress-bar"></div></div>
+                <div id="english-xp-display" class="xp-badge-small">0 XP</div>
             </div>
 
-            <p style="color: #2c3e50; margin-bottom: 10px;">🎯 <strong>75 leçons</strong> disponibles • 📝 <strong>600+ exercices</strong> éducatifs</p>
-            <p style="font-size: 0.8em; opacity: 0.8;">Version 2.0 - Le Monde des Curieux © 2026</p>
-        </footer>
+            <div class="section-card histoire" onclick="location.href='histoire_duolingo_section.html'">
+                <span class="section-emoji">🏰</span>
+                <h2 class="section-title">HISTOIRE</h2>
+                <div class="progress-container"><div id="histoire-bar" class="progress-bar"></div></div>
+                <div id="histoire-xp-display" class="xp-badge-small">0 XP</div>
+            </div>
+
+            <div class="section-card sciences" onclick="location.href='sciences_duolingo_section.html'">
+                <span class="section-emoji">🧪</span>
+                <h2 class="section-title">SCIENCES</h2>
+                <div class="progress-container"><div id="sciences-bar" class="progress-bar"></div></div>
+                <div id="sciences-xp-display" class="xp-badge-small">0 XP</div>
+            </div>
+        </main>
     </div>
 
-    <script src="scripts/modules/storage.js"></script>
+    <script src="scripts/storage.js"></script>
     <script>
-        const SECTIONS_CONFIG = [
-            { key: 'maths', name: 'Mathématiques', emoji: '🧮', url: 'maths_duolingo_section.html', totalLessons: 15 },
-            { key: 'english', name: 'English', emoji: '🌍', url: 'english_duolingo_section.html', totalLessons: 15 },
-            { key: 'francais', name: 'Français', emoji: '📚', url: 'francais_duolingo_section.html', totalLessons: 15 }
-        ];
-
         document.addEventListener('DOMContentLoaded', () => {
-            loadGlobalStats();
-            loadSectionsProgress();
-            showRecommendation();
-            verifierNouveauxObjets();
+            if (typeof UnifiedStorage === 'undefined') return;
+
+            const sections = ['maths', 'english', 'francais', 'histoire', 'sciences'];
+            let totalCalculated = 0;
+            const legacyXP = parseInt(localStorage.getItem('curio_xp') || '0');
+
+            sections.forEach(sec => {
+                let data = UnifiedStorage.getSectionData(sec);
+                if (sec === 'francais' && data.xp === 0) data.xp = legacyXP;
+
+                const el = document.getElementById(`${sec}-xp-display`);
+                const bar = document.getElementById(`${sec}-bar`);
+                if (el) el.innerText = `${data.xp} XP`;
+                if (bar) bar.style.width = `${Math.min((data.xp / 500) * 100, 100)}%`;
+                
+                totalCalculated += data.xp;
+            });
+
+            const totalDisplay = document.getElementById('total-xp');
+            if (totalDisplay) totalDisplay.innerText = Math.max(totalCalculated, legacyXP);
         });
-
-        // SYSTÈME DE DÉTECTION D'OBJETS DÉBLOQUÉS
-        function verifierNouveauxObjets() {
-            const exp = parseInt(localStorage.getItem('curio_total_exp') || 0);
-            const items = [
-                { name: 'Épée de Bois 🗡️', req: 0 },
-                { name: 'Pioche de Pierre ⛏️', req: 20 },
-                { name: 'Bouclier de Fer 🛡️', req: 50 },
-                { name: 'Pomme Dorée 🍎', req: 100 },
-                { name: 'Casque Diamant ⛑️', req: 200 }
-            ];
-
-            const objetActuel = items.reverse().find(i => exp >= i.req);
-            const dernierVu = localStorage.getItem('curio_last_item_seen');
-
-            if (objetActuel && objetActuel.name !== dernierVu) {
-                const banner = document.getElementById('unlock-banner');
-                const nameEl = document.getElementById('unlock-item-name');
-                const navInv = document.getElementById('nav-inventory');
-                
-                nameEl.innerText = `Nouveau trésor : ${objetActuel.name}`;
-                banner.style.display = 'flex';
-                
-                // Animation de l'icône inventaire
-                if (navInv) navInv.classList.add('shake-animation');
-                
-                localStorage.setItem('curio_last_item_seen', objetActuel.name);
-            }
-        }
-
-        // --- Logique de progression (Existante) ---
-        function loadGlobalStats() {
-            let totalXP = 0;
-            // Utilise l'EXP du journal en priorité pour l'affichage global si elle existe
-            const journalXP = parseInt(localStorage.getItem('curio_total_exp') || 0);
-            totalXP += journalXP;
-
-            SECTIONS_CONFIG.forEach(s => {
-                const stored = localStorage.getItem(`${s.key}_xp`);
-                if(stored) totalXP += (JSON.parse(stored).total || 0);
-            });
-
-            document.getElementById('global-xp').innerText = totalXP;
-            document.getElementById('global-level').innerText = Math.floor(totalXP / 200) + 1;
-        }
-
-        function loadSectionsProgress() {
-            SECTIONS_CONFIG.forEach(s => {
-                const completed = JSON.parse(localStorage.getItem(`${s.key}_completed`) || '[]');
-                const perc = Math.round((completed.length / s.totalLessons) * 100);
-                
-                const progressFill = document.getElementById(`${s.key}-progress`);
-                if(progressFill) progressFill.style.width = perc + '%';
-                
-                const percText = document.getElementById(`${s.key}-percentage`);
-                if(percText) percText.innerText = perc + '%';
-            });
-        }
-
-        function showRecommendation() {
-            const banner = document.getElementById('recommendation-banner');
-            const message = document.getElementById('recommendation-message');
-            message.innerHTML = `Visite le <strong>🗞️ Journal</strong> pour gagner de l'EXP !`;
-            banner.style.display = 'flex';
-        }
     </script>
 </body>
 </html>

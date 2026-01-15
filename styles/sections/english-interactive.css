@@ -1,0 +1,41 @@
+:root {
+    --duo-green: #58cc02; --duo-blue: #1cb0f6;
+    --duo-gray: #e5e5e5; --duo-text: #4b4b4b;
+}
+
+.duo-container { max-width: 650px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
+
+/* Drag & Drop Styles */
+.match-grid { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; 
+}
+
+.drag-item {
+    padding: 15px; border: 2px solid var(--duo-gray); border-radius: 12px;
+    background: white; cursor: grab; font-weight: bold;
+    box-shadow: 0 4px 0 var(--duo-gray); text-align: center;
+    list-style: none; touch-action: none;
+}
+
+.drag-item:active { cursor: grabbing; }
+
+.drop-zone {
+    height: 55px; border: 2px dashed var(--duo-gray);
+    border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; background: #fafafa;
+    transition: all 0.2s;
+}
+
+.drop-zone.hover { border-color: var(--duo-blue); background: #e3f2fd; }
+
+.drop-zone .drag-item { width: 100%; height: 100%; box-sizing: border-box; margin: 0; box-shadow: none; }
+
+/* UI Elements */
+.instruction { font-size: 1.4rem; font-weight: bold; margin-bottom: 25px; }
+.footer-ui { position: fixed; bottom: 0; left: 0; right: 0; padding: 20px; background: white; border-top: 2px solid var(--duo-gray); text-align: center; }
+.btn-check { width: 100%; max-width: 400px; padding: 18px; border-radius: 15px; border: none; background: var(--duo-gray); color: #afafaf; font-weight: bold; font-size: 1.2rem; cursor: not-allowed; }
+.btn-check.active { background: var(--duo-green); color: white; cursor: pointer; box-shadow: 0 4px 0 #46a302; }
+
+.feedback { position: fixed; bottom: 100px; left: 0; right: 0; padding: 20px; font-weight: bold; display: none; text-align: center; }
+.feedback.correct { display: block; background: #d7ffb8; color: #58a700; }
+.feedback.wrong { display: block; background: #ffdfe0; color: #ea2b2b; }

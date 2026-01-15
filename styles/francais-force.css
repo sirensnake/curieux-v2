@@ -1,0 +1,157 @@
+/* 
+ * CSS FORCE - Section Français Interactive
+ * Override absolu pour corriger le problème de grille
+ */
+
+/* ============================================================================
+   GRILLE LEÇONS - FORCE DISPLAY GRID
+   ============================================================================ */
+
+.lesson-grid,
+.lessons-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+    padding: 2rem 1rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* ============================================================================
+   CARTES LEÇONS
+   ============================================================================ */
+
+.lesson-card {
+    background: white !important;
+    border: 2px solid #e5e5e5 !important;
+    border-left: 4px solid #e63946 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.2) !important;
+    border-left-color: #f77f00 !important;
+}
+
+.lesson-card.completed {
+    background: linear-gradient(135deg, #f1faee 0%, #e8f5e9 100%) !important;
+    border-left-color: #52b788 !important;
+}
+
+.lesson-card.locked {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(0.5) !important;
+}
+
+/* ============================================================================
+   ÉLÉMENTS CARTE
+   ============================================================================ */
+
+.lesson-number {
+    position: absolute !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    background: #e63946 !important;
+    color: white !important;
+    font-size: 0.75rem !important;
+    font-weight: bold !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 6px !important;
+    font-family: 'Press Start 2P', monospace !important;
+}
+
+.lesson-icon {
+    font-size: 3rem !important;
+    text-align: center !important;
+    margin: 1.5rem 0 1rem !important;
+    line-height: 1 !important;
+    font-family: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
+}
+
+.lesson-title {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #1d3557 !important;
+    text-align: center !important;
+    margin: 0.75rem 0 !important;
+    min-height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.lesson-meta {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid #e5e5e5 !important;
+    font-size: 0.85rem !important;
+}
+
+.lesson-xp {
+    color: #e63946 !important;
+    font-weight: 600 !important;
+}
+
+.lesson-duration {
+    color: #6c757d !important;
+}
+
+.lesson-badge {
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    font-size: 1.5rem !important;
+}
+
+/* ============================================================================
+   HEADER FRANÇAIS
+   ============================================================================ */
+
+.section-header-styled.french {
+    background: linear-gradient(135deg, #e63946 0%, #f77f00 100%) !important;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .lesson-grid,
+    .lessons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+        gap: 1rem !important;
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .lesson-card {
+        padding: 1rem !important;
+    }
+    
+    .lesson-icon {
+        font-size: 2.5rem !important;
+        margin: 1rem 0 0.5rem !important;
+    }
+    
+    .lesson-title {
+        font-size: 1rem !important;
+        min-height: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson-grid,
+    .lessons-grid {
+        grid-template-columns: 1fr !important;
+        padding: 1rem !important;
+    }
+}

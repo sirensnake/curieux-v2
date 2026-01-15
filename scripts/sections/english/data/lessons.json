@@ -1,0 +1,735 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "target": "CM1-CM2",
+    "language": "English",
+    "totalLessons": 20,
+    "lastUpdate": "2026-01-11",
+    "modes": ["classic", "interactive"]
+  },
+  
+  "lessons": [
+    {
+      "id": "lesson_001",
+      "theme": "family",
+      "title": "My Family",
+      "titleFr": "Ma Famille",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 10,
+      "description": "Apprends les membres de la famille en anglais",
+      
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Les membres de la famille sont importants ! En anglais, on dit 'father' pour père, 'mother' pour mère...",
+          "quiz": [
+            {
+              "question": "Comment dit-on 'père' en anglais ?",
+              "options": ["father", "brother", "uncle", "grandfather"],
+              "correct": 0
+            }
+          ]
+        },
+        
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "id": "ex_001_01",
+              "type": "translate",
+              "instruction": "Traduis ce mot en français",
+              "word": "father",
+              "answer": "père",
+              "hints": ["C'est le papa", "Il commence par P"],
+              "audio": "father"
+            },
+            {
+              "id": "ex_001_02",
+              "type": "translate",
+              "instruction": "Traduis ce mot en français",
+              "word": "mother",
+              "answer": "mère",
+              "hints": ["C'est la maman"],
+              "audio": "mother"
+            },
+            {
+              "id": "ex_001_03",
+              "type": "listen",
+              "instruction": "Écoute et écris le mot en anglais",
+              "audio": "sister",
+              "answer": "sister",
+              "hints": ["C'est ta sœur"]
+            },
+            {
+              "id": "ex_001_04",
+              "type": "match",
+              "instruction": "Associe les mots",
+              "pairs": [
+                { "en": "brother", "fr": "frère" },
+                { "en": "grandmother", "fr": "grand-mère" },
+                { "en": "grandfather", "fr": "grand-père" }
+              ]
+            },
+            {
+              "id": "ex_001_05",
+              "type": "fill",
+              "instruction": "Complète la phrase",
+              "sentence": "My ___ is called John",
+              "answer": "father",
+              "options": ["father", "mother", "sister"],
+              "translation": "Mon père s'appelle John"
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_002",
+      "theme": "colors",
+      "title": "Colors",
+      "titleFr": "Les Couleurs",
+      "level": 1,
+      "xpReward": 20,
+      "duration": 8,
+      "description": "Découvre les couleurs principales en anglais",
+      
+      "modes": {
+        "classic": {
+          "available": true,
+          "content": "Les couleurs en anglais : red (rouge), blue (bleu), green (vert)...",
+          "quiz": []
+        },
+        
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "id": "ex_002_01",
+              "type": "translate",
+              "word": "red",
+              "answer": "rouge",
+              "hints": ["C'est la couleur du feu"],
+              "audio": "red"
+            },
+            {
+              "id": "ex_002_02",
+              "type": "translate",
+              "word": "blue",
+              "answer": "bleu",
+              "audio": "blue"
+            },
+            {
+              "id": "ex_002_03",
+              "type": "match",
+              "pairs": [
+                { "en": "yellow", "fr": "jaune" },
+                { "en": "green", "fr": "vert" },
+                { "en": "black", "fr": "noir" },
+                { "en": "white", "fr": "blanc" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_003",
+      "theme": "numbers",
+      "title": "Numbers 1-20",
+      "titleFr": "Les Nombres 1-20",
+      "level": 1,
+      "xpReward": 25,
+      "duration": 12,
+      "description": "Compte de 1 à 20 en anglais",
+      
+      "modes": {
+        "classic": {
+          "available": true
+        },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "id": "ex_003_01",
+              "type": "translate",
+              "word": "one",
+              "answer": "un",
+              "audio": "one"
+            },
+            {
+              "id": "ex_003_02",
+              "type": "listen",
+              "audio": "five",
+              "answer": "five"
+            },
+            {
+              "id": "ex_003_03",
+              "type": "match",
+              "pairs": [
+                { "en": "ten", "fr": "dix" },
+                { "en": "fifteen", "fr": "quinze" },
+                { "en": "twenty", "fr": "vingt" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_004",
+      "theme": "animals",
+      "title": "Farm Animals",
+      "titleFr": "Animaux de la Ferme",
+      "level": 2,
+      "xpReward": 20,
+      "duration": 10,
+      "description": "Les animaux de la ferme en anglais",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "cow", "answer": "vache", "audio": "cow" },
+            { "type": "translate", "word": "pig", "answer": "cochon", "audio": "pig" },
+            { "type": "listen", "audio": "horse", "answer": "horse" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "sheep", "fr": "mouton" },
+                { "en": "chicken", "fr": "poule" },
+                { "en": "duck", "fr": "canard" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_005",
+      "theme": "animals",
+      "title": "Wild Animals",
+      "titleFr": "Animaux Sauvages",
+      "level": 2,
+      "xpReward": 25,
+      "duration": 12,
+      "description": "Découvre les animaux sauvages",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "lion", "answer": "lion", "audio": "lion" },
+            { "type": "translate", "word": "elephant", "answer": "éléphant", "audio": "elephant" },
+            { "type": "listen", "audio": "tiger", "answer": "tiger" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "monkey", "fr": "singe" },
+                { "en": "giraffe", "fr": "girafe" },
+                { "en": "bear", "fr": "ours" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_006",
+      "theme": "food",
+      "title": "Fruits",
+      "titleFr": "Les Fruits",
+      "level": 2,
+      "xpReward": 20,
+      "duration": 10,
+      "description": "Apprends les noms des fruits",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "apple", "answer": "pomme", "audio": "apple" },
+            { "type": "translate", "word": "banana", "answer": "banane", "audio": "banana" },
+            { "type": "listen", "audio": "orange", "answer": "orange" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "strawberry", "fr": "fraise" },
+                { "en": "grape", "fr": "raisin" },
+                { "en": "pear", "fr": "poire" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_007",
+      "theme": "food",
+      "title": "Vegetables",
+      "titleFr": "Les Légumes",
+      "level": 2,
+      "xpReward": 20,
+      "duration": 10,
+      "description": "Découvre les légumes en anglais",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "carrot", "answer": "carotte", "audio": "carrot" },
+            { "type": "translate", "word": "tomato", "answer": "tomate", "audio": "tomato" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "potato", "fr": "pomme de terre" },
+                { "en": "salad", "fr": "salade" },
+                { "en": "peas", "fr": "petits pois" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_008",
+      "theme": "clothes",
+      "title": "My Clothes",
+      "titleFr": "Mes Vêtements",
+      "level": 3,
+      "xpReward": 25,
+      "duration": 12,
+      "description": "Les vêtements du quotidien",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "shirt", "answer": "chemise", "audio": "shirt" },
+            { "type": "translate", "word": "pants", "answer": "pantalon", "audio": "pants" },
+            { "type": "listen", "audio": "shoes", "answer": "shoes" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "hat", "fr": "chapeau" },
+                { "en": "socks", "fr": "chaussettes" },
+                { "en": "jacket", "fr": "veste" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_009",
+      "theme": "school",
+      "title": "At School",
+      "titleFr": "À l'École",
+      "level": 3,
+      "xpReward": 25,
+      "duration": 12,
+      "description": "Le vocabulaire de l'école",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "teacher", "answer": "professeur", "audio": "teacher" },
+            { "type": "translate", "word": "book", "answer": "livre", "audio": "book" },
+            { "type": "listen", "audio": "pencil", "answer": "pencil" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "classroom", "fr": "salle de classe" },
+                { "en": "desk", "fr": "bureau" },
+                { "en": "notebook", "fr": "cahier" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_010",
+      "theme": "time",
+      "title": "Days of the Week",
+      "titleFr": "Les Jours de la Semaine",
+      "level": 3,
+      "xpReward": 30,
+      "duration": 15,
+      "description": "Apprends les jours en anglais",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "Monday", "answer": "lundi", "audio": "monday" },
+            { "type": "translate", "word": "Tuesday", "answer": "mardi", "audio": "tuesday" },
+            { "type": "listen", "audio": "wednesday", "answer": "wednesday" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "Thursday", "fr": "jeudi" },
+                { "en": "Friday", "fr": "vendredi" },
+                { "en": "Saturday", "fr": "samedi" },
+                { "en": "Sunday", "fr": "dimanche" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_011",
+      "theme": "time",
+      "title": "Months",
+      "titleFr": "Les Mois",
+      "level": 3,
+      "xpReward": 30,
+      "duration": 15,
+      "description": "Les 12 mois de l'année",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "January", "answer": "janvier", "audio": "january" },
+            { "type": "translate", "word": "February", "answer": "février", "audio": "february" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "March", "fr": "mars" },
+                { "en": "April", "fr": "avril" },
+                { "en": "May", "fr": "mai" },
+                { "en": "June", "fr": "juin" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_012",
+      "theme": "greetings",
+      "title": "Greetings",
+      "titleFr": "Les Salutations",
+      "level": 4,
+      "xpReward": 25,
+      "duration": 10,
+      "description": "Apprends à saluer en anglais",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            {
+              "type": "translate",
+              "word": "hello",
+              "answer": "bonjour",
+              "audio": "hello"
+            },
+            {
+              "type": "fill",
+              "sentence": "Good ___, how are you?",
+              "answer": "morning",
+              "options": ["morning", "night", "day"],
+              "translation": "Bonjour, comment vas-tu ?"
+            },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "goodbye", "fr": "au revoir" },
+                { "en": "good night", "fr": "bonne nuit" },
+                { "en": "see you later", "fr": "à plus tard" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_013",
+      "theme": "house",
+      "title": "Rooms of the House",
+      "titleFr": "Les Pièces de la Maison",
+      "level": 4,
+      "xpReward": 25,
+      "duration": 12,
+      "description": "Les différentes pièces",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "kitchen", "answer": "cuisine", "audio": "kitchen" },
+            { "type": "translate", "word": "bedroom", "answer": "chambre", "audio": "bedroom" },
+            { "type": "listen", "audio": "bathroom", "answer": "bathroom" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "living room", "fr": "salon" },
+                { "en": "garden", "fr": "jardin" },
+                { "en": "garage", "fr": "garage" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_014",
+      "theme": "body",
+      "title": "Body Parts",
+      "titleFr": "Les Parties du Corps",
+      "level": 4,
+      "xpReward": 30,
+      "duration": 15,
+      "description": "Apprends ton corps en anglais",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "head", "answer": "tête", "audio": "head" },
+            { "type": "translate", "word": "hand", "answer": "main", "audio": "hand" },
+            { "type": "listen", "audio": "foot", "answer": "foot" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "arm", "fr": "bras" },
+                { "en": "leg", "fr": "jambe" },
+                { "en": "eye", "fr": "œil" },
+                { "en": "ear", "fr": "oreille" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_015",
+      "theme": "weather",
+      "title": "Weather",
+      "titleFr": "La Météo",
+      "level": 5,
+      "xpReward": 25,
+      "duration": 10,
+      "description": "Parle du temps qu'il fait",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "sunny", "answer": "ensoleillé", "audio": "sunny" },
+            { "type": "translate", "word": "rainy", "answer": "pluvieux", "audio": "rainy" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "cloudy", "fr": "nuageux" },
+                { "en": "windy", "fr": "venteux" },
+                { "en": "snowy", "fr": "neigeux" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_016",
+      "theme": "actions",
+      "title": "Common Verbs",
+      "titleFr": "Verbes Courants",
+      "level": 5,
+      "xpReward": 30,
+      "duration": 15,
+      "description": "Les verbes d'action essentiels",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "to eat", "answer": "manger", "audio": "eat" },
+            { "type": "translate", "word": "to drink", "answer": "boire", "audio": "drink" },
+            { "type": "listen", "audio": "sleep", "answer": "sleep" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "to run", "fr": "courir" },
+                { "en": "to jump", "fr": "sauter" },
+                { "en": "to play", "fr": "jouer" },
+                { "en": "to read", "fr": "lire" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_017",
+      "theme": "adjectives",
+      "title": "Describing Things",
+      "titleFr": "Décrire les Choses",
+      "level": 5,
+      "xpReward": 30,
+      "duration": 12,
+      "description": "Adjectifs pour décrire",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "big", "answer": "grand", "audio": "big" },
+            { "type": "translate", "word": "small", "answer": "petit", "audio": "small" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "hot", "fr": "chaud" },
+                { "en": "cold", "fr": "froid" },
+                { "en": "fast", "fr": "rapide" },
+                { "en": "slow", "fr": "lent" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_018",
+      "theme": "emotions",
+      "title": "Feelings",
+      "titleFr": "Les Émotions",
+      "level": 6,
+      "xpReward": 25,
+      "duration": 10,
+      "description": "Exprime ce que tu ressens",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "happy", "answer": "heureux", "audio": "happy" },
+            { "type": "translate", "word": "sad", "answer": "triste", "audio": "sad" },
+            { "type": "listen", "audio": "angry", "answer": "angry" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "tired", "fr": "fatigué" },
+                { "en": "excited", "fr": "excité" },
+                { "en": "scared", "fr": "effrayé" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_019",
+      "theme": "questions",
+      "title": "Asking Questions",
+      "titleFr": "Poser des Questions",
+      "level": 6,
+      "xpReward": 35,
+      "duration": 15,
+      "description": "Les mots interrogatifs",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "what", "answer": "quoi", "audio": "what" },
+            { "type": "translate", "word": "who", "answer": "qui", "audio": "who" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "where", "fr": "où" },
+                { "en": "when", "fr": "quand" },
+                { "en": "why", "fr": "pourquoi" },
+                { "en": "how", "fr": "comment" }
+              ]
+            },
+            {
+              "type": "fill",
+              "sentence": "___ is your name?",
+              "answer": "what",
+              "options": ["what", "who", "where"],
+              "translation": "Quel est ton nom ?"
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "id": "lesson_020",
+      "theme": "mixed",
+      "title": "Final Review",
+      "titleFr": "Révision Finale",
+      "level": 6,
+      "xpReward": 50,
+      "duration": 20,
+      "description": "Révise tout ce que tu as appris !",
+      
+      "modes": {
+        "classic": { "available": true },
+        "interactive": {
+          "available": true,
+          "exercises": [
+            { "type": "translate", "word": "family", "answer": "famille", "audio": "family" },
+            { "type": "translate", "word": "school", "answer": "école", "audio": "school" },
+            { "type": "listen", "audio": "animal", "answer": "animal" },
+            {
+              "type": "match",
+              "pairs": [
+                { "en": "color", "fr": "couleur" },
+                { "en": "number", "fr": "nombre" },
+                { "en": "food", "fr": "nourriture" },
+                { "en": "weather", "fr": "météo" }
+              ]
+            },
+            {
+              "type": "fill",
+              "sentence": "My favorite ___ is blue",
+              "answer": "color",
+              "options": ["color", "number", "food"],
+              "translation": "Ma couleur préférée est le bleu"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
