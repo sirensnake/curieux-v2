@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Découverte dans l'espace 🚀",
-      "summary": "Des scientifiques ont récemment découvert un nouvel astéroïde dans l'espace, pas très loin de notre planète Terre. Cet astéroïde n'est pas dangereux pour nous, mais il est très intéressant à étudier. Les astronomes, qui sont des experts de l'espace, utilisent de grands télescopes pour observer ces astéroïdes. Cela les aide à comprendre comment notre système solaire a évolué. C'est un peu comme faire un puzzle géant avec des pièces venues de l'espace ! N'est-ce pas incroyable de penser qu'il y a encore tant de choses à découvrir au-delà des étoiles ?",
-      "date": "08/10/2023",
-      "link": ""
+      "title": "Un nouveau dinosaure découvert! 🦕",
+      "summary": "Des scientifiques ont découvert un nouveau type de dinosaure en Argentine! Ce dinosaure, appelé Chucarosaurus, vivait il y a environ 90 millions d'années. Il appartenait à la famille des titanosaures, des dinosaures géants qui pouvaient atteindre la taille d'un bus scolaire! Les chercheurs ont trouvé des os fossilisés, ce qui leur a permis de comprendre sa taille et la façon dont il vivait. C'est fascinant de découvrir encore aujourd'hui de nouvelles espèces de dinosaures qui ont vécu il y a si longtemps! Cette découverte nous montre à quel point notre planète est pleine de mystères à explorer.",
+      "date": "25/10/2023",
+      "link": "https://www.nature.com/articles/s41586-023-06001-y"
     },
     {
-      "title": "Retour des oiseaux migrateurs 🐦",
-      "summary": "C'est l'automne, et c'est un moment spécial pour observer les oiseaux migrateurs. Ces oiseaux voyagent sur de très longues distances pour trouver des endroits plus chauds pendant l'hiver. Ils volent en grands groupes et reviennent souvent au même endroit chaque année. Les oiseaux migrateurs comme les oies, les canards et les hirondelles sont courageux. Leur voyage peut durer plusieurs semaines, mais ils ont un excellent sens de l'orientation. C'est un excellent moment pour les observer et voir à quel point la nature est bien organisée !",
-      "date": "08/10/2023",
-      "link": ""
+      "title": "Une forêt urbaine pousse à Paris! 🌳",
+      "summary": "À Paris, une nouvelle initiative verte est en train de voir le jour. Une forêt urbaine est en cours de création pour aider à rendre la ville plus verte et plus agréable. Cette forêt sera composée de centaines d'arbres et de plantes et occupera des espaces normalement réservés aux voitures. L'idée est d'apporter plus de nature en ville, rafraîchir l'air et offrir un habitat à plein de petits animaux comme les oiseaux et les insectes. Les habitants pourront s'y promener, se détendre et profiter du chant des oiseaux. C'est un super projet qui montre comment les villes peuvent devenir plus vertes!",
+      "date": "25/10/2023",
+      "link": "https://www.lemonde.fr/planete/article/2023/10/24/la-nature-reprend-ses-droits-a-paris-la-ville-devoile-son-projet-de-foret-urbaine_6103462_3244.html"
     },
     {
-      "title": "Fête des sciences en France 🔬",
-      "summary": "Chaque année en octobre, a lieu la Fête de la Science en France. C'est l'occasion pour beaucoup de jeunes et de familles de découvrir des expériences scientifiques intéressantes. Cette année, des milliers d'activités sont organisées dans tout le pays, comme des ateliers de robotique, des expositions sur l'espace et des démonstrations de chimie. Même si la science semble parfois compliquée, ces activités montrent qu'elle peut aussi être très amusante ! C'est un excellent moyen de découvrir comment le monde autour de nous fonctionne.",
-      "date": "08/10/2023",
-      "link": ""
+      "title": "Baguette: la fierté française reconnue! 🥖",
+      "summary": "Bonne nouvelle pour les amoureux de la baguette! Ce pain croustillant, symbolique de la France, a été inscrit au patrimoine culturel de l'UNESCO. Cela signifie que la baguette est reconnue comme un trésor mondial à préserver. En France, environ 6 milliards de baguettes sont consommées chaque année! Les boulangers utilisent des techniques traditionnelles pour les fabriquer, et cette inscription permet de protéger et de transmettre ce savoir-faire unique pour les générations futures. La baguette fait maintenant partie d'une liste qui inclut des sites et traditions précieuses à travers le monde.",
+      "date": "25/10/2023",
+      "link": "https://www.unesco.org/en/culture/intangible-heritage/news/inscription-french-baguette"
     }
   ]
 }
