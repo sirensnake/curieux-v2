@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un nouveau dinosaure découvert! 🦕",
-      "summary": "Des scientifiques ont découvert un nouveau type de dinosaure en Argentine! Ce dinosaure, appelé Chucarosaurus, vivait il y a environ 90 millions d'années. Il appartenait à la famille des titanosaures, des dinosaures géants qui pouvaient atteindre la taille d'un bus scolaire! Les chercheurs ont trouvé des os fossilisés, ce qui leur a permis de comprendre sa taille et la façon dont il vivait. C'est fascinant de découvrir encore aujourd'hui de nouvelles espèces de dinosaures qui ont vécu il y a si longtemps! Cette découverte nous montre à quel point notre planète est pleine de mystères à explorer.",
-      "date": "25/10/2023",
-      "link": "https://www.nature.com/articles/s41586-023-06001-y"
+      "title": "Découverte musicale 🎶",
+      "summary": "Un groupe d'artistes a récemment découvert une grotte en Chine avec d'incroyables caractéristiques acoustiques. Lorsqu'ils chantent à l'intérieur, le son rebondit d'une manière incroyable, transformant leurs voix en une mélodie harmonieuse. Cette découverte pourrait permettre de nouvelles façons d'apprécier la musique et d'entendre des sons. C'est un peu comme une salle de concert naturelle cachée sous la terre! Les scientifiques et les musiciens sont très excités d'en savoir plus sur cette grotte.",
+      "date": "01/11/2023",
+      "link": ""
     },
     {
-      "title": "Une forêt urbaine pousse à Paris! 🌳",
-      "summary": "À Paris, une nouvelle initiative verte est en train de voir le jour. Une forêt urbaine est en cours de création pour aider à rendre la ville plus verte et plus agréable. Cette forêt sera composée de centaines d'arbres et de plantes et occupera des espaces normalement réservés aux voitures. L'idée est d'apporter plus de nature en ville, rafraîchir l'air et offrir un habitat à plein de petits animaux comme les oiseaux et les insectes. Les habitants pourront s'y promener, se détendre et profiter du chant des oiseaux. C'est un super projet qui montre comment les villes peuvent devenir plus vertes!",
-      "date": "25/10/2023",
-      "link": "https://www.lemonde.fr/planete/article/2023/10/24/la-nature-reprend-ses-droits-a-paris-la-ville-devoile-son-projet-de-foret-urbaine_6103462_3244.html"
+      "title": "Nouvelle espèce marine découverte! 🐠",
+      "summary": "Des chercheurs ont récemment découvert une nouvelle espèce de poisson au fond de l'océan Pacifique. Ces poissons ont une apparence remarquable avec des nageoires brillantes et colorées. Ils vivent très profondément sous l'eau, là où la lumière du soleil n'atteint pas. Cela montre qu'il y a encore beaucoup de choses à apprendre sur les océans de notre planète. Les scientifiques espèrent en apprendre davantage sur ces poissons pour comprendre comment ils survivent dans des environnements aussi uniques.",
+      "date": "01/11/2023",
+      "link": ""
     },
     {
-      "title": "Baguette: la fierté française reconnue! 🥖",
-      "summary": "Bonne nouvelle pour les amoureux de la baguette! Ce pain croustillant, symbolique de la France, a été inscrit au patrimoine culturel de l'UNESCO. Cela signifie que la baguette est reconnue comme un trésor mondial à préserver. En France, environ 6 milliards de baguettes sont consommées chaque année! Les boulangers utilisent des techniques traditionnelles pour les fabriquer, et cette inscription permet de protéger et de transmettre ce savoir-faire unique pour les générations futures. La baguette fait maintenant partie d'une liste qui inclut des sites et traditions précieuses à travers le monde.",
-      "date": "25/10/2023",
-      "link": "https://www.unesco.org/en/culture/intangible-heritage/news/inscription-french-baguette"
+      "title": "Jardin flottant en ville 🌿",
+      "summary": "Une nouvelle tendance écologique a vu le jour : des jardins flottants sur l'eau! Une ville en Europe a commencé à créer des îlots de verdure sur ses canaux. Ces jardins flottants aident à purifier l'eau et offrent une nouvelle maison pour les oiseaux et les insectes. Les habitants peuvent se promener le long de ces canaux et admirer ces petits espaces de nature. Une belle manière de rendre la ville plus verte et de protéger l'environnement en même temps!",
+      "date": "01/11/2023",
+      "link": ""
     }
   ]
 }
