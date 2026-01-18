@@ -1,0 +1,115 @@
+/* --- Styles extraits du header --- */
+.header-content { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 20px; }
+.header-text { flex: 1; }
+.stats-btn { font-family: 'Press Start 2P', cursive; font-size: 11px; padding: 12px 20px; border: 4px solid #2c3e50; border-radius: 10px; background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6f 100%); color: white; cursor: pointer; box-shadow: 4px 4px 0 rgba(44, 62, 80, 0.3); transition: all 0.3s ease; white-space: nowrap; }
+
+/* --- Style Minecraft pour les boutons de mission --- */
+.play-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #7c7c7c; /* Gris Minecraft */
+    box-shadow: inset -3px -3px 0px 0px #373737, 
+                inset 3px 3px 0px 0px #bdbdbd;
+    transition: all 0.1s;
+}
+
+.play-btn:hover:not(:disabled) {
+    background-color: #8c8c8c;
+    box-shadow: inset -3px -3px 0px 0px #474747, 
+                inset 3px 3px 0px 0px #cdcdcd;
+}
+
+.play-btn:disabled {
+    background-color: #3fb11e; /* Vert succès */
+    box-shadow: inset -3px -3px 0px 0px #256a12, 
+                inset 3px 3px 0px 0px #65e042;
+    cursor: default;
+    opacity: 0.9;
+}
+
+/* --- Badge de succès (Etoile) --- */
+.mission-badge {
+    margin-right: 8px;
+    font-size: 14px;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Barre de progression style Minecraft */
+.xp-bar-container {
+    width: 100%;
+    height: 14px;
+    background-color: #313131;
+    border: 3px solid #000;
+    margin-top: 10px;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    width: 0%; /* Sera mis à jour par le JS */
+    background-color: #3fb11e; /* Vert XP Minecraft */
+    box-shadow: inset 0px 2px 0px #65e042, inset 0px -2px 0px #256a12;
+    transition: width 0.5s ease-out;
+}
+
+/* Animation de la barre qui brille lors d'un gain d'XP */
+.xp-gain-anim {
+    animation: flash 0.5s;
+}
+
+@keyframes flash {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.8); }
+    100% { filter: brightness(1); }
+}
+
+/* Barre de progression XP */
+.xp-bar-container {
+    width: 100%;
+    height: 12px;
+    background: #313131;
+    border: 3px solid #000;
+    margin-top: 8px;
+}
+.xp-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: #3fb11e; /* Vert Minecraft */
+    box-shadow: inset 0 2px 0 #65e042;
+    transition: width 0.4s ease;
+}
+
+/* Badge de son (Style Sections) */
+.sound-toggle-home {
+    cursor: pointer;
+    font-size: 14px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+/* Style pour les images d'illustration dans les popups de mission */
+.quiz-pixel-image {
+    width: 80px !important;    /* On force la taille */
+    height: 80px !important;
+    image-rendering: pixelated; /* Pour le style net Curio */
+    display: block;
+    margin: 10px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #3d3d3d;
+}

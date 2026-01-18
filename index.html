@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/side-menu-unified.css">
     <link rel="stylesheet" href="styles/mindmap_svg.css">
+    <link rel="stylesheet" href="styles/missions-dynamic.css">
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -17,63 +18,8 @@
     <script src="scripts/mission-sciences.js"></script>
     <script src="scripts/mission-francais.js"></script>
     <script src="scripts/mission-english.js"></script>
-    
-    <style>
-        /* Styles additionnels pour le header avec bouton */
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            gap: 20px;
-        }
-        
-        .header-text {
-            flex: 1;
-        }
-        
-        .stats-btn {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 11px;
-            padding: 12px 20px;
-            border: 4px solid #2c3e50;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #2a9d8f 0%, #1d7a6f 100%);
-            color: white;
-            cursor: pointer;
-            box-shadow: 4px 4px 0 rgba(44, 62, 80, 0.3);
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .stats-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 6px 6px 0 rgba(44, 62, 80, 0.4);
-        }
-        
-        .stats-btn:active {
-            transform: translateY(1px);
-            box-shadow: 3px 3px 0 rgba(44, 62, 80, 0.3);
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .stats-btn {
-                font-size: 9px;
-                padding: 10px 15px;
-            }
-        }
-    </style>
 </head>
 <body class="home-page">
-
-    <button class="menu-toggle-btn" onclick="toggleSideMenu()" aria-label="Ouvrir le menu">
-        ☰
-    </button>
 
     <header class="main-header">
         <div class="header-content">
@@ -81,9 +27,10 @@
                 <h1>🎮 Le Monde des Curieux</h1>
                 <p>Instruction en Famille & Réussite Scolaire</p>
             </div>
-            <button class="stats-btn" onclick="window.location.href='dashboard-analytics.html'">
-                📊 Statistiques
-            </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="stats-btn" onclick="window.location.href='dashboard-analytics.html'">📊 Stats</button>
+                <div id="sound-toggle-btn" onclick="initAndToggleAudio()" style="cursor:pointer; font-size:20px; background: rgba(0,0,0,0.3); padding: 5px; border-radius: 5px;">🔇</div>
+            </div>
         </div>
     </header>
 
@@ -106,20 +53,23 @@
 
         <aside class="sidebar-section">
             <div class="card">
-                <h2>📊 Statistiques</h2>
-                <div style="font-size: 10px;">⭐ <span id="xp-val">0</span> XP | 🎯 <span id="mission-val">0</span>/5</div>
+                <h2>📊 Ma Progression</h2>
+                <div style="font-size: 10px; margin-bottom: 8px;">⭐ <span id="xp-val">0</span> XP | 🎯 <span id="mission-val">0</span>/5</div>
+                <div class="xp-bar-container">
+                    <div id="xp-bar-fill" class="xp-bar-fill"></div>
+                </div>
             </div>
 
             <div class="card">
-                <h2>🚀 Missions Spéciales</h2>
+                <h2>🚀 Missions</h2>
                 <div class="mission-list">
-                    <div class="mission-item">👑 Le Roi Soleil <button id="btn-roi-soleil" onclick="startMission(missionHistoire)" class="play-btn">Jouer</button></div>
-                    <div class="mission-item">💧 Cycle de l'Eau <button id="btn-cycle-eau" onclick="startMission(missionEau)" class="play-btn">Jouer</button></div>
-                    <div class="mission-item">🤖 Univers Robots <button id="btn-robots_01" onclick="startMission(missionRobots)" class="play-btn">Jouer</button></div>
-                    <div class="mission-item">📚 Détective Mots <button id="btn-francais_01" onclick="startMission(missionFrancais)" class="play-btn">Jouer</button></div>
-                    <div class="mission-item">🇬🇧 English Adventure <button id="btn-english_01" onclick="startMission(missionEnglish)" class="play-btn">Jouer</button></div>
+                    <div class="mission-item">👑 Roi Soleil <button id="btn-roi-soleil" onclick="handleStart('roi-soleil', missionHistoire)" class="play-btn">Jouer</button></div>
+                    <div class="mission-item">💧 Cycle Eau <button id="btn-cycle-eau" onclick="handleStart('cycle-eau', missionEau)" class="play-btn">Jouer</button></div>
+                    <div class="mission-item">🤖 Robots <button id="btn-robots_01" onclick="handleStart('robots_01', missionRobots)" class="play-btn">Jouer</button></div>
+                    <div class="mission-item">📚 Français <button id="btn-francais_01" onclick="handleStart('francais_01', missionFrancais)" class="play-btn">Jouer</button></div>
+                    <div class="mission-item">🇬🇧 English <button id="btn-english_01" onclick="handleStart('english_01', missionEnglish)" class="play-btn">Jouer</button></div>
                 </div>
-                <button onclick="resetProgression()" class="reset-btn">RÉINITIALISER TOUT</button>
+                <button onclick="resetProgression()" class="reset-btn" style="margin-top:10px; font-size:6px;">RÉINITIALISER</button>
             </div>
         </aside>
     </main>
@@ -132,28 +82,65 @@
         </div>
     </div>
 
-    <div id="reset-modal" class="custom-modal">
-        <div class="modal-content">
-            <p style="font-size: 10px; line-height: 1.6; margin-bottom: 20px;">⚠️ ATTENTION !<br><br>Veux-tu vraiment effacer toute ta progression ?</p>
-            <div class="modal-btns">
-                <button class="btn-confirm" onclick="confirmReset()">OUI !</button>
-                <button class="btn-cancel" onclick="closeResetModal()">NON</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="scripts/side-menu-unified.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            if (typeof loadSideMenu === "function") loadSideMenu();
-            updateUI();
-        });
+        // --- SYSTÈME AUDIO SANS FICHIERS (Comme lesson-engine.js) ---
+        let audioEnabled = false;
+        let audioCtx = null;
 
+        function initAndToggleAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            audioEnabled = !audioEnabled;
+            document.getElementById('sound-toggle-btn').innerText = audioEnabled ? "🔊" : "🔇";
+            if (audioEnabled) playSynthSfx('click');
+        }
+
+        function playSynthSfx(type) {
+            if (!audioEnabled || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+
+            if (type === 'success') {
+                osc.frequency.setValueAtTime(587, now); 
+                osc.frequency.exponentialRampToValueAtTime(880, now + 0.1);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(); osc.stop(now + 0.3);
+            } else if (type === 'wrong') {
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(110, now);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.linearRampToValueAtTime(0, now + 0.2);
+                osc.start(); osc.stop(now + 0.2);
+            } else if (type === 'click') {
+                osc.frequency.setValueAtTime(440, now);
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.linearRampToValueAtTime(0, now + 0.05);
+                osc.start(); osc.stop(now + 0.05);
+            } else if (type === 'victory') {
+                [523, 659, 783, 1046].forEach((f, i) => {
+                    const o = audioCtx.createOscillator();
+                    const g = audioCtx.createGain();
+                    o.connect(g); g.connect(audioCtx.destination);
+                    o.frequency.setValueAtTime(f, now + (i * 0.1));
+                    g.gain.setValueAtTime(0.1, now + (i * 0.1));
+                    g.gain.exponentialRampToValueAtTime(0.01, now + (i * 0.1) + 0.4);
+                    o.start(now + (i * 0.1)); o.stop(now + (i * 0.1) + 0.4);
+                });
+            }
+        }
+
+        // --- LOGIQUE MISSIONS ---
         let currentMission = null;
         let stepIndex = 0;
 
-        function startMission(m) {
-            currentMission = m;
+        function handleStart(id, missionData) {
+            if (!audioCtx) initAndToggleAudio(); // Active le son au premier clic
+            playSynthSfx('click');
+            currentMission = missionData;
             stepIndex = 0;
             document.getElementById('quiz-overlay').style.display = 'flex';
             showStep();
@@ -161,9 +148,9 @@
 
         function showStep() {
             const step = currentMission.steps[stepIndex];
-            document.getElementById('quiz-header').innerHTML = `<h3 style="color:#2a9d8f;">${step.subject}</h3>`;
+            document.getElementById('quiz-header').innerHTML = `<h3 style="color:#2a9d8f; font-size:12px;">${step.subject}</h3>`;
             document.getElementById('quiz-body').innerHTML = `
-                <p style="margin:20px 0; font-size:10px; line-height:1.4;">${step.question}</p>
+                <p style="margin:20px 0; font-size:9px;">${step.question}</p>
                 ${step.options.map((o, i) => `<button class="option-btn" onclick="checkAnswer(${i})">${o}</button>`).join('')}
             `;
             document.getElementById('feedback').innerText = "";
@@ -171,10 +158,9 @@
 
         function checkAnswer(i) {
             const fb = document.getElementById('feedback');
-            const card = document.getElementById('quiz-card');
-
             if (i === currentMission.steps[stepIndex].correct) {
-                fb.innerText = "✔️ CORRECT !";
+                playSynthSfx('success');
+                fb.innerText = "✔️ BIEN JOUÉ !";
                 fb.style.color = "#27ae60";
                 setTimeout(() => {
                     stepIndex++;
@@ -182,13 +168,12 @@
                     else finishMission();
                 }, 800);
             } else {
-                // Effet Vibration (Shake)
-                card.classList.remove('shake');
-                void card.offsetWidth; // Force le reflow pour relancer l'animation
-                card.classList.add('shake');
-                
+                playSynthSfx('wrong');
                 fb.innerText = "❌ RÉESSAIE !";
                 fb.style.color = "#e74c3c";
+                const card = document.getElementById('quiz-card');
+                card.classList.add('shake');
+                setTimeout(() => card.classList.remove('shake'), 500);
             }
         }
 
@@ -202,10 +187,12 @@
                 let xp = parseInt(localStorage.getItem('curio_xp') || 0) + 50;
                 localStorage.setItem('curio_xp', xp);
             }
+            
             updateUI();
 
-            // Effet Doubles Confettis au bout de 5 missions
+            // CONFETTIS ET SON VICTOIRE (Seulement si 5/5)
             if (done.length >= 5) {
+                playSynthSfx('victory');
                 const end = Date.now() + 3000;
                 (function frame() {
                     confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0, y: 0.8 } });
@@ -217,31 +204,34 @@
 
         function updateUI() {
             const done = JSON.parse(localStorage.getItem('curio_missions') || "[]");
-            document.getElementById('xp-val').innerText = localStorage.getItem('curio_xp') || 0;
+            const xp = parseInt(localStorage.getItem('curio_xp') || 0);
+            
+            document.getElementById('xp-val').innerText = xp;
             document.getElementById('mission-val').innerText = done.length;
+            
+            // Barre de progression (250 XP = 100%)
+            const progress = Math.min((xp / 250) * 100, 100);
+            document.getElementById('xp-bar-fill').style.width = progress + "%";
             
             done.forEach(id => {
                 const btn = document.getElementById(`btn-${id}`);
                 if (btn) {
                     btn.innerText = "OK";
                     btn.disabled = true;
+                    if (!btn.parentElement.querySelector('.mission-badge')) {
+                        const badge = document.createElement('span');
+                        badge.className = 'mission-badge'; badge.innerText = '⭐ ';
+                        btn.parentElement.insertBefore(badge, btn);
+                    }
                 }
             });
         }
 
-        // --- LOGIQUE POPUP PERSONNALISÉE ---
         function resetProgression() {
-            document.getElementById('reset-modal').style.display = 'flex';
+            if(confirm("Effacer ta progression ?")) { localStorage.clear(); location.reload(); }
         }
 
-        function closeResetModal() {
-            document.getElementById('reset-modal').style.display = 'none';
-        }
-
-        function confirmReset() {
-            localStorage.clear();
-            location.reload();
-        }
+        window.onload = updateUI;
     </script>
 </body>
 </html>

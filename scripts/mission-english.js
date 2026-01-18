@@ -24,7 +24,7 @@ const missionEnglish = {
         },
         {
             subject: "English - Animals",
-            question: "Comment appelle-t-on cet animal : 🐱 ?",
+            question: "Comment appelle-t-on cet animal : <br> <img src='images/cat-icon.png' class='quiz-pixel-image'>",
             options: ["A dog", "A cat", "A rabbit"],
             correct: 1
         },
