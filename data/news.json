@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte dans l'espace 🚀",
-      "summary": "Des scientifiques ont récemment découvert un nouvel astéroïde dans l'espace, pas très loin de notre planète Terre. Cet astéroïde n'est pas dangereux pour nous, mais il est très intéressant à étudier. Les astronomes, qui sont des experts de l'espace, utilisent de grands télescopes pour observer ces astéroïdes. Cela les aide à comprendre comment notre système solaire a évolué. C'est un peu comme faire un puzzle géant avec des pièces venues de l'espace ! N'est-ce pas incroyable de penser qu'il y a encore tant de choses à découvrir au-delà des étoiles ?",
-      "date": "08/10/2023",
+      "title": "Le retour des pandas 🐼",
+      "summary": "Les pandas géants, ces ours noirs et blancs qui vivent principalement en Chine, sont passés du statut d'espèce \"en danger\" à \"vulnérable\". Cela signifie qu'ils sont un peu moins en danger, grâce aux efforts de protection de leurs habitats. Beaucoup de gens ont travaillé dur pour conserver leurs forêts de bambous. C'est une excellente nouvelle pour la biodiversité ! Maintenant, les pandas ont plus de chances de rester sur notre planète pendant encore très longtemps.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Retour des oiseaux migrateurs 🐦",
-      "summary": "C'est l'automne, et c'est un moment spécial pour observer les oiseaux migrateurs. Ces oiseaux voyagent sur de très longues distances pour trouver des endroits plus chauds pendant l'hiver. Ils volent en grands groupes et reviennent souvent au même endroit chaque année. Les oiseaux migrateurs comme les oies, les canards et les hirondelles sont courageux. Leur voyage peut durer plusieurs semaines, mais ils ont un excellent sens de l'orientation. C'est un excellent moment pour les observer et voir à quel point la nature est bien organisée !",
-      "date": "08/10/2023",
+      "title": "Robots sportifs 🤖",
+      "summary": "Cette semaine, une compétition amusante de robots s'est tenue au Japon. Des robots ont participé à une course où ils ont dû courir, sauter et éviter des obstacles. Ces petites machines, créées par des ingénieurs et étudiants du monde entier, montrent que la technologie peut être amusante et pleine de surprises. Les compétitions de robots aident les gens à apprendre et à améliorer la fabrication de ces machines, qui aident aussi dans les hôpitaux ou dans l'espace.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Fête des sciences en France 🔬",
-      "summary": "Chaque année en octobre, a lieu la Fête de la Science en France. C'est l'occasion pour beaucoup de jeunes et de familles de découvrir des expériences scientifiques intéressantes. Cette année, des milliers d'activités sont organisées dans tout le pays, comme des ateliers de robotique, des expositions sur l'espace et des démonstrations de chimie. Même si la science semble parfois compliquée, ces activités montrent qu'elle peut aussi être très amusante ! C'est un excellent moyen de découvrir comment le monde autour de nous fonctionne.",
-      "date": "08/10/2023",
+      "title": "Découverte d'une comète 🌠",
+      "summary": "Des astronomes ont repéré une nouvelle comète dans notre système solaire. Une comète est une boule de glace et de poussière qui se déplace dans l'espace, et parfois, elle laisse derrière elle une belle traînée lumineuse que l'on peut voir dans le ciel. Cette nouvelle comète sera visible depuis la Terre dans quelques mois, ce qui est très excitant pour les amateurs d'astronomie. Regarder le ciel et découvrir ces objets célestes nous aide à mieux comprendre l'univers.",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
