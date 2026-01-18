@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRANÇAIS - Le Monde des Curieux</title>
-    
-    <!-- Police Minecraft -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-    <!-- CSS ORDRE CRITIQUE : Structure commune → Thème matière -->
-    <link rel="stylesheet" href="styles/duolingo-sections.css">
-    <link rel="stylesheet" href="styles/francais-theme.css">
+    <link rel="stylesheet" href="styles/duolingo-shared.css">
+    <link rel="stylesheet" href="styles/sections/french-duolingo.css">
 </head>
 <body>
     <div class="container">
         <header class="header-hud">
-            <button class="pixel-btn secondary" onclick="location.href='index.html'">← RETOUR</button>
-            <h1 class="pixel-title">📚 FRANÇAIS</h1>
+            <button class="pixel-btn secondary small" onclick="location.href='index.html'">← RETOUR</button>
+            <h1 class="pixel-title">🇫🇷 FRANÇAIS</h1>
             <div id="xp-display" class="xp-badge">0 XP</div>
         </header>
-
         <main id="lessons-list">
             <div id="lessons-grid" class="lessons-grid"></div>
         </main>
-
         <section id="lesson-screen" class="hidden">
             <div class="progress-container">
-                <div id="progress-fill" class="progress-bar" style="width: 0%"></div>
+                <div id="progress-fill" class="progress-bar"></div>
             </div>
             <div class="exercise-box">
                 <h2 id="question-text">Chargement...</h2>
@@ -37,21 +31,17 @@
             </div>
         </section>
     </div>
-
-    <!-- CURIO MASCOTTE FIXE -->
     <div class="curio-fixed">
-        <div class="curio-bubble">
+        <div class="curio-bubble" onclick="engine.showHint()">
             <p id="curio-msg">Clique sur Curio pour un indice !</p>
         </div>
         <div class="curio-avatar-container">
-            <div id="sound-toggle" class="sound-badge off">🔇</div>
-            <div class="curio-avatar-box">
-                <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" width="80" alt="Curio">
+            <div id="sound-toggle" class="sound-badge off" onclick="engine.enableAudio()">🔇</div>
+            <div class="curio-avatar-box" onclick="engine.showHint()">
+                <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" alt="Curio" width="80">
             </div>
         </div>
     </div>
-
-    <!-- MODALE VICTOIRE -->
     <div id="victory-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <div class="modal-header">LEÇON RÉUSSIE !</div>
@@ -59,16 +49,175 @@
                 <div class="victory-icon">🏆</div>
                 <p id="modal-msg">Bravo petit curieux !</p>
                 <div class="xp-gain">+ <span id="xp-added">0</span> XP</div>
+                <div class="total-xp">Total : <span id="total-xp-display">0</span> XP</div>
             </div>
             <button class="pixel-btn primary" onclick="location.reload()">CONTINUER</button>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- ✅✅✅ SYSTÈME XP UNIFIÉ ✅✅✅ -->
+    <script>
+    (function() {
+        'use strict';
+        
+        console.log('🎯 Initialisation système XP pour section FRANÇAIS');
+        
+        if (typeof window.xpSystem === 'undefined') {
+            class UnifiedXPSystem {
+                constructor() {
+                    this.storageKey = 'lemondedescurieux_xp';
+                    this.sections = ['francais', 'maths', 'anglais', 'sciences', 'histoire'];
+                    this.data = this.loadData();
+                    console.log('✅ xpSystem créé', this.data);
+                }
+
+                loadData() {
+                    try {
+                        const saved = localStorage.getItem(this.storageKey);
+                        if (saved) return JSON.parse(saved);
+                    } catch (e) {
+                        console.error('Erreur chargement:', e);
+                    }
+                    return this.getDefaultData();
+                }
+
+                getDefaultData() {
+                    const bySection = {};
+                    this.sections.forEach(s => { bySection[s] = 0; });
+                    return {
+                        total: 0,
+                        bySection: bySection,
+                        level: 1,
+                        xpToNextLevel: 200,
+                        history: [],
+                        lastActivity: null
+                    };
+                }
+
+                saveData() {
+                    try {
+                        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+                        console.log('💾 XP sauvegardé:', this.data.total);
+                        return true;
+                    } catch (e) {
+                        console.error('Erreur sauvegarde:', e);
+                        return false;
+                    }
+                }
+
+                addXP(section, amount, metadata = {}) {
+                    if (!this.sections.includes(section)) {
+                        console.warn('⚠️ Section inconnue:', section);
+                        return false;
+                    }
+
+                    const xpToAdd = Math.max(0, parseInt(amount) || 0);
+                    if (xpToAdd === 0) return false;
+
+                    const previousLevel = this.data.level;
+
+                    this.data.bySection[section] += xpToAdd;
+                    this.data.total += xpToAdd;
+                    this.data.lastActivity = new Date().toISOString();
+
+                    this.addToHistory(section, xpToAdd, metadata);
+                    this.recalculateLevel();
+                    this.saveData();
+
+                    window.dispatchEvent(new CustomEvent('xp:updated', {
+                        detail: { section, amount: xpToAdd, total: this.data.total, level: this.data.level }
+                    }));
+
+                    if (this.data.level > previousLevel) {
+                        setTimeout(() => {
+                            alert(`🎉 NIVEAU ${this.data.level} ATTEINT !`);
+                        }, 1000);
+                    }
+
+                    console.log(`✅ +${xpToAdd} XP (${section}) | Total: ${this.data.total} XP`);
+                    return true;
+                }
+
+                recalculateLevel() {
+                    let level = 1;
+                    let totalNeeded = 0;
+                    const baseXP = 200;
+                    const multiplier = 1.5;
+
+                    while (totalNeeded <= this.data.total) {
+                        const xpForLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+                        totalNeeded += xpForLevel;
+                        if (totalNeeded <= this.data.total) level++;
+                    }
+
+                    this.data.level = level;
+                    this.data.xpToNextLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+                }
+
+                addToHistory(section, xp, metadata) {
+                    this.data.history.unshift({
+                        section, xp,
+                        timestamp: new Date().toISOString(),
+                        ...metadata
+                    });
+                    if (this.data.history.length > 100) {
+                        this.data.history = this.data.history.slice(0, 100);
+                    }
+                }
+
+                getTotal() { return this.data.total; }
+                getLevel() { return this.data.level; }
+                getBySection(section) { return this.data.bySection[section] || 0; }
+            }
+
+            window.xpSystem = new UnifiedXPSystem();
+        }
+        
+        const xpDisplay = document.getElementById('xp-display');
+        if (xpDisplay && window.xpSystem) {
+            const francaisXP = window.xpSystem.getBySection('francais');
+            xpDisplay.textContent = `${francaisXP} XP`;
+            console.log('📊 XP Français affichés:', francaisXP);
+        }
+    })();
+    </script>
+
     <script src="scripts/data/francais-lessons.js"></script>
     <script src="scripts/core/lesson-engine.js"></script>
     <script>
         const engine = new LessonEngine(francaisLessons);
+        
+        // ✅ INTERCEPTER LA FIN DE LEÇON
+        const originalFinish = engine.finish.bind(engine);
+        engine.finish = function() {
+            console.log('🎯 Leçon terminée, ajout XP...');
+            
+            const exercisesCount = this.lesson.exercises.length;
+            const correctAnswers = this.currentIndex;
+            const baseXP = 20;
+            const bonusXP = Math.floor(correctAnswers * 2);
+            const totalXP = baseXP + bonusXP;
+            
+            if (window.xpSystem) {
+                window.xpSystem.addXP('francais', totalXP, {
+                    lesson: this.lesson.title || 'Leçon de français',
+                    exercises: exercisesCount,
+                    timestamp: new Date().toISOString()
+                });
+                
+                const xpAddedElement = document.getElementById('xp-added');
+                const totalXpElement = document.getElementById('total-xp-display');
+                
+                if (xpAddedElement) xpAddedElement.textContent = totalXP;
+                if (totalXpElement) totalXpElement.textContent = window.xpSystem.getTotal();
+                
+                console.log(`✅ Modal: +${totalXP} XP, Total: ${window.xpSystem.getTotal()} XP`);
+            }
+            
+            originalFinish();
+        };
+        
+        console.log('✅ Section français avec système XP intégré');
     </script>
 </body>
 </html>

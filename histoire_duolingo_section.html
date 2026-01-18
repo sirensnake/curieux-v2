@@ -8,7 +8,7 @@
     <style>
         * { box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             min-height: 100vh;
             font-family: 'Press Start 2P', monospace;
             margin: 0; padding: 0;
@@ -17,7 +17,7 @@
         .header-hud {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1.5rem 2rem;
-            background: linear-gradient(135deg, #9333ea, #7e22ce);
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             border-radius: 12px; margin-bottom: 2rem;
         }
         .pixel-btn {
@@ -134,6 +134,10 @@
             font-family: 'Press Start 2P', monospace; font-size: 20px;
             color: #2ecc71; margin: 20px 0;
         }
+        .total-xp {
+            font-family: 'Press Start 2P', monospace; font-size: 12px;
+            color: #3498db; margin: 10px 0;
+        }
         .hidden { display: none !important; }
     </style>
 </head>
@@ -142,7 +146,7 @@
         <header class="header-hud">
             <button class="pixel-btn secondary small" onclick="location.href='index.html'">← RETOUR</button>
             <h1 class="pixel-title">🏛️ HISTOIRE</h1>
-            <div id="xp-display" class="xp-badge">1255 XP</div>
+            <div id="xp-display" class="xp-badge">0 XP</div>
         </header>
         <main id="lessons-list">
             <div id="lessons-grid" class="lessons-grid"></div>
@@ -178,14 +182,167 @@
                 <div class="victory-icon">🏆</div>
                 <p id="modal-msg">Bravo petit curieux !</p>
                 <div class="xp-gain">+ <span id="xp-added">0</span> XP</div>
+                <div class="total-xp">Total : <span id="total-xp-display">0</span> XP</div>
             </div>
             <button class="pixel-btn primary" onclick="location.reload()">CONTINUER</button>
         </div>
     </div>
+
+    <!-- ✅✅✅ SYSTÈME XP UNIFIÉ ✅✅✅ -->
+    <script>
+    (function() {
+        'use strict';
+        
+        
+        if (typeof window.xpSystem === 'undefined') {
+            class UnifiedXPSystem {
+                constructor() {
+                    this.storageKey = 'lemondedescurieux_xp';
+                    this.sections = ['francais', 'maths', 'anglais', 'sciences', 'histoire'];
+                    this.data = this.loadData();
+                }
+
+                loadData() {
+                    try {
+                        const saved = localStorage.getItem(this.storageKey);
+                        if (saved) return JSON.parse(saved);
+                    } catch (e) {
+                        console.error('Erreur chargement:', e);
+                    }
+                    return this.getDefaultData();
+                }
+
+                getDefaultData() {
+                    const bySection = {};
+                    this.sections.forEach(s => { bySection[s] = 0; });
+                    return {
+                        total: 0,
+                        bySection: bySection,
+                        level: 1,
+                        xpToNextLevel: 200,
+                        history: [],
+                        lastActivity: null
+                    };
+                }
+
+                saveData() {
+                    try {
+                        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+                        return true;
+                    } catch (e) {
+                        console.error('Erreur sauvegarde:', e);
+                        return false;
+                    }
+                }
+
+                addXP(section, amount, metadata = {}) {
+                    if (!this.sections.includes(section)) {
+                        console.warn('⚠️ Section inconnue:', section);
+                        return false;
+                    }
+
+                    const xpToAdd = Math.max(0, parseInt(amount) || 0);
+                    if (xpToAdd === 0) return false;
+
+                    const previousLevel = this.data.level;
+
+                    this.data.bySection[section] += xpToAdd;
+                    this.data.total += xpToAdd;
+                    this.data.lastActivity = new Date().toISOString();
+
+                    this.addToHistory(section, xpToAdd, metadata);
+                    this.recalculateLevel();
+                    this.saveData();
+
+                    window.dispatchEvent(new CustomEvent('xp:updated', {
+                        detail: { section, amount: xpToAdd, total: this.data.total, level: this.data.level }
+                    }));
+
+                    if (this.data.level > previousLevel) {
+                        setTimeout(() => {
+                            alert(`🎉 NIVEAU ${this.data.level} ATTEINT !`);
+                        }, 1000);
+                    }
+
+                    return true;
+                }
+
+                recalculateLevel() {
+                    let level = 1;
+                    let totalNeeded = 0;
+                    const baseXP = 200;
+                    const multiplier = 1.5;
+
+                    while (totalNeeded <= this.data.total) {
+                        const xpForLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+                        totalNeeded += xpForLevel;
+                        if (totalNeeded <= this.data.total) level++;
+                    }
+
+                    this.data.level = level;
+                    this.data.xpToNextLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+                }
+
+                addToHistory(section, xp, metadata) {
+                    this.data.history.unshift({
+                        section, xp,
+                        timestamp: new Date().toISOString(),
+                        ...metadata
+                    });
+                    if (this.data.history.length > 100) {
+                        this.data.history = this.data.history.slice(0, 100);
+                    }
+                }
+
+                getTotal() { return this.data.total; }
+                getLevel() { return this.data.level; }
+                getBySection(section) { return this.data.bySection[section] || 0; }
+            }
+
+            window.xpSystem = new UnifiedXPSystem();
+        }
+        
+        const xpDisplay = document.getElementById('xp-display');
+        if (xpDisplay && window.xpSystem) {
+            const histoireXP = window.xpSystem.getBySection('histoire');
+            xpDisplay.textContent = `${histoireXP} XP`;
+        }
+    })();
+    </script>
+
     <script src="scripts/data/histoire-lessons.js"></script>
     <script src="scripts/core/lesson-engine.js"></script>
     <script>
         const engine = new LessonEngine(histoireLessons);
+        
+        // ✅ INTERCEPTER LA FIN DE LEÇON
+        const originalFinish = engine.finish.bind(engine);
+        engine.finish = function() {
+            
+            const exercisesCount = this.lesson.exercises.length;
+            const correctAnswers = this.currentIndex;
+            const baseXP = 20;
+            const bonusXP = Math.floor(correctAnswers * 2);
+            const totalXP = baseXP + bonusXP;
+            
+            if (window.xpSystem) {
+                window.xpSystem.addXP('histoire', totalXP, {
+                    lesson: this.lesson.title || 'Leçon d\'histoire',
+                    exercises: exercisesCount,
+                    timestamp: new Date().toISOString()
+                });
+                
+                const xpAddedElement = document.getElementById('xp-added');
+                const totalXpElement = document.getElementById('total-xp-display');
+                
+                if (xpAddedElement) xpAddedElement.textContent = totalXP;
+                if (totalXpElement) totalXpElement.textContent = window.xpSystem.getTotal();
+                
+            }
+            
+            originalFinish();
+        };
+        
     </script>
 </body>
 </html>

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathématiques - Le Monde des Curieux</title>
+    <title>[SECTION] - Le Monde des Curieux</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/curio-main.css">
     <link rel="stylesheet" href="styles/duolingo-sections.css">
-    <link rel="stylesheet" href="styles/maths-theme.css">
+    <link rel="stylesheet" href="styles/[section]-theme.css">
 </head>
 <body>
     <div class="container">
         <header class="header-hud">
             <button class="pixel-btn secondary small" onclick="location.href='index.html'">← RETOUR</button>
-            <h1 class="pixel-title">🔢 MATHÉMATIQUES</h1>
+            <h1 class="pixel-title">[EMOJI] [TITRE SECTION]</h1>
             <div id="xp-display" class="xp-badge">0 XP</div>
         </header>
 
@@ -53,14 +53,13 @@
         </div>
     </div>
 
-    <!-- ✅✅✅ SYSTÈME XP UNIFIÉ - INTÉGRÉ ✅✅✅ -->
+    <!-- ✅✅✅ SYSTÈME XP UNIFIÉ ✅✅✅ -->
     <script>
     (function() {
         'use strict';
         
-        console.log('🎯 Initialisation système XP pour section MATHS');
+        console.log('🎯 Initialisation système XP pour section [SECTION_ID]');
         
-        // Créer le système XP s'il n'existe pas
         if (typeof window.xpSystem === 'undefined') {
             class UnifiedXPSystem {
                 constructor() {
@@ -133,7 +132,7 @@
                         }, 1000);
                     }
 
-                    console.log(`✅ +${xpToAdd} XP (${section}) | Total: ${this.data.total} XP | Niveau: ${this.data.level}`);
+                    console.log(`✅ +${xpToAdd} XP (${section}) | Total: ${this.data.total} XP`);
                     return true;
                 }
 
@@ -172,63 +171,51 @@
             window.xpSystem = new UnifiedXPSystem();
         }
         
-        // Afficher XP actuels dans le header
         const xpDisplay = document.getElementById('xp-display');
         if (xpDisplay && window.xpSystem) {
-            const mathsXP = window.xpSystem.getBySection('maths');
-            xpDisplay.textContent = `${mathsXP} XP`;
-            console.log('📊 XP Maths affichés:', mathsXP);
+            const sectionXP = window.xpSystem.getBySection('[SECTION_ID]');
+            xpDisplay.textContent = `${sectionXP} XP`;
+            console.log('📊 XP [SECTION] affichés:', sectionXP);
         }
     })();
     </script>
 
-    <script src="scripts/data/maths-lessons.js"></script>
+    <script src="scripts/data/[section]-lessons.js"></script>
     <script src="scripts/core/lesson-engine.js"></script>
     <script>
-        const engine = new LessonEngine(mathsLessons);
+        const engine = new LessonEngine([SECTION]Lessons);
         
         // ✅ INTERCEPTER LA FIN DE LEÇON
         const originalFinish = engine.finish.bind(engine);
         engine.finish = function() {
             console.log('🎯 Leçon terminée, ajout XP...');
             
-            // Calculer XP
             const exercisesCount = this.lesson.exercises.length;
-            const correctAnswers = this.currentIndex; // Approximation
+            const correctAnswers = this.currentIndex;
             const baseXP = 20;
             const bonusXP = Math.floor(correctAnswers * 2);
             const totalXP = baseXP + bonusXP;
             
-            // Ajouter XP
             if (window.xpSystem) {
-                window.xpSystem.addXP('maths', totalXP, {
-                    lesson: this.lesson.title || 'Leçon de maths',
+                window.xpSystem.addXP('[SECTION_ID]', totalXP, {
+                    lesson: this.lesson.title || 'Leçon de [SECTION]',
                     exercises: exercisesCount,
                     timestamp: new Date().toISOString()
                 });
                 
-                // Mettre à jour l'affichage modal
                 const xpAddedElement = document.getElementById('xp-added');
                 const totalXpElement = document.getElementById('total-xp-display');
                 
-                if (xpAddedElement) {
-                    xpAddedElement.textContent = totalXP;
-                }
+                if (xpAddedElement) xpAddedElement.textContent = totalXP;
+                if (totalXpElement) totalXpElement.textContent = window.xpSystem.getTotal();
                 
-                if (totalXpElement) {
-                    totalXpElement.textContent = window.xpSystem.getTotal();
-                }
-                
-                console.log(`✅ Modal mis à jour: +${totalXP} XP, Total: ${window.xpSystem.getTotal()} XP`);
-            } else {
-                console.error('❌ xpSystem non disponible');
+                console.log(`✅ Modal: +${totalXP} XP, Total: ${window.xpSystem.getTotal()} XP`);
             }
             
-            // Appeler la fonction originale
             originalFinish();
         };
         
-        console.log('✅ Section maths avec système XP intégré');
+        console.log('✅ Section [SECTION] avec système XP intégré');
     </script>
 </body>
 </html>

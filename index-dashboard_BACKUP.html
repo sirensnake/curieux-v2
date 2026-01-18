@@ -43,6 +43,11 @@
             </div>
         </header>
 
+        <!-- ✅ DEBUG ZONE -->
+        <div id="debug-zone" style="background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-family: monospace; font-size: 11px;">
+            <strong>🔍 DEBUG:</strong><br>
+            <span id="debug-info">Initialisation...</span>
+        </div>
 
         <main class="sections-grid">
             <div class="section-card francais" onclick="location.href='francais_duolingo_section.html'">
@@ -254,6 +259,18 @@
             // INITIALISATION DASHBOARD
             // ========================================
             document.addEventListener('DOMContentLoaded', () => {
+                const debugInfo = document.getElementById('debug-info');
+
+                // Afficher debug
+                const stats = window.xpSystem.getStats();
+                debugInfo.innerHTML = `
+                    ✅ Système XP chargé<br>
+                    Total XP: ${stats.totalXP}<br>
+                    Niveau: ${stats.level}<br>
+                    Sections: ${JSON.stringify(stats.sections)}<br>
+                    <span style="color: #2ecc71;">Prêt à l'emploi !</span>
+                `;
+
                 const sections = [
                     { id: 'francais', htmlId: 'francais' },
                     { id: 'maths', htmlId: 'maths' },

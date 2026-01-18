@@ -1,0 +1,12 @@
+/* FRANÇAIS - Couleurs spécifiques uniquement */
+body {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.header-hud {
+    background: linear-gradient(135deg, #58cc02, #46a302);
+}
+
+.lesson-card:hover {
+    border-color: #58cc02;
+}

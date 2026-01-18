@@ -4,51 +4,237 @@
       "id": "lesson_001",
       "theme": "grammaire",
       "themeIcon": "📝",
-      "title": "Le Verbe",
-      "titleShort": "Identifier le Verbe",
+      "title": "Les Classes de Mots",
+      "titleShort": "Classes de Mots",
       "level": 1,
-      "xpReward": 20,
-      "duration": 10,
+      "xpReward": 50,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Le verbe est le mot qui indique l'action ou l'état. Il change selon le temps et la personne.",
-          "quiz": [
-            {
-              "question": "Quel est le verbe dans cette phrase : 'Le chat mange sa pâtée.'",
-              "options": ["chat", "mange", "pâtée", "sa"],
-              "correct": 1
-            }
-          ]
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "identify",
-              "instruction": "Trouve le verbe dans cette phrase",
-              "sentence": "Les enfants jouent dans le jardin.",
-              "words": ["Les", "enfants", "jouent", "dans", "le", "jardin"],
-              "answer": "jouent",
-              "hint": "Le verbe indique l'action"
+              "type": "qcm",
+              "instruction": "Classe grammaticale ?",
+              "sentence": "Le **dragon** vole.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif",
+                "Adverbe"
+              ],
+              "answer": "Nom"
             },
             {
-              "type": "identify",
-              "instruction": "Trouve le verbe",
-              "sentence": "Ma sœur lit un livre passionnant.",
-              "words": ["Ma", "sœur", "lit", "un", "livre", "passionnant"],
-              "answer": "lit",
-              "hint": "Que fait ma sœur ?"
+              "type": "qcm",
+              "instruction": "Classe grammaticale ?",
+              "sentence": "Il court **vite**.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif",
+                "Adverbe"
+              ],
+              "answer": "Adverbe"
             },
             {
-              "type": "match",
-              "instruction": "Associe chaque phrase à son verbe",
-              "pairs": [
-                {"left": "Le chien aboie fort", "right": "aboie"},
-                {"left": "Marie dessine un arbre", "right": "dessine"},
-                {"left": "Nous écoutons la radio", "right": "écoutons"},
-                {"left": "Tu cours très vite", "right": "cours"}
+              "type": "qcm",
+              "instruction": "Classe grammaticale ?",
+              "sentence": "Un **grand** château.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif",
+                "Adverbe"
+              ],
+              "answer": "Adjectif"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un nom",
+              "sentence": "Le ___ explore la jungle.",
+              "acceptedAnswers": [
+                "lion",
+                "tigre",
+                "singe",
+                "explorateur"
               ]
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un verbe",
+              "sentence": "Les oiseaux ___ dans le ciel.",
+              "acceptedAnswers": [
+                "volent",
+                "planent",
+                "chantent"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le verbe ?",
+              "sentence": "Sophie dessine un robot.",
+              "choices": [
+                "Sophie",
+                "dessine",
+                "robot"
+              ],
+              "answer": "dessine"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un adjectif",
+              "sentence": "Un château ___.",
+              "acceptedAnswers": [
+                "grand",
+                "immense",
+                "magnifique",
+                "hanté"
+              ]
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Le",
+                "pirate",
+                "cherche",
+                "un",
+                "trésor"
+              ],
+              "answer": "Le pirate cherche un trésor"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Combien de noms ?",
+              "sentence": "Le chat et le chien dorment.",
+              "choices": [
+                "1",
+                "2",
+                "3"
+              ],
+              "answer": "2"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Combien de verbes ?",
+              "sentence": "Marie chante et danse.",
+              "choices": [
+                "0",
+                "1",
+                "2"
+              ],
+              "answer": "2"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un adverbe",
+              "sentence": "Il marche ___.",
+              "acceptedAnswers": [
+                "lentement",
+                "rapidement",
+                "vite"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Classe du mot souligné ?",
+              "sentence": "Elle parle **très** fort.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif",
+                "Adverbe"
+              ],
+              "answer": "Adverbe"
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Les",
+                "sirènes",
+                "nagent",
+                "gracieusement"
+              ],
+              "answer": "Les sirènes nagent gracieusement"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel mot est un déterminant ?",
+              "sentence": "Un dragon dort.",
+              "choices": [
+                "Un",
+                "dragon",
+                "dort"
+              ],
+              "answer": "Un"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un déterminant",
+              "sentence": "___ soleil brille.",
+              "acceptedAnswers": [
+                "Le",
+                "Un",
+                "Ce",
+                "Mon"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Classe du mot souligné ?",
+              "sentence": "Le chat **noir** dort.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif"
+              ],
+              "answer": "Adjectif"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Combien d'adjectifs ?",
+              "sentence": "Un petit chien blanc.",
+              "choices": [
+                "0",
+                "1",
+                "2"
+              ],
+              "answer": "2"
+            },
+            {
+              "type": "fill",
+              "instruction": "Trouve le nom",
+              "sentence": "Les ___ volent haut.",
+              "acceptedAnswers": [
+                "oiseaux",
+                "avions",
+                "dragons",
+                "ballons"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est l'adjectif ?",
+              "sentence": "Une belle histoire.",
+              "choices": [
+                "Une",
+                "belle",
+                "histoire"
+              ],
+              "answer": "belle"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Classe grammaticale ?",
+              "sentence": "Ils **nagent**.",
+              "choices": [
+                "Verbe",
+                "Nom",
+                "Adjectif"
+              ],
+              "answer": "Verbe"
             }
           ]
         }
@@ -58,44 +244,204 @@
       "id": "lesson_002",
       "theme": "conjugaison",
       "themeIcon": "⏰",
-      "title": "Présent de l'Indicatif",
-      "titleShort": "Verbes au Présent",
+      "title": "Le Présent de l'Indicatif",
+      "titleShort": "Présent",
       "level": 1,
-      "xpReward": 25,
-      "duration": 12,
+      "xpReward": 50,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Le présent indique une action qui se passe maintenant. Exemples : je chante, tu chantes, il chante.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
               "type": "fill",
-              "instruction": "Conjugue le verbe 'chanter' au présent",
-              "sentence": "Je ___ une chanson.",
-              "answer": "chante",
-              "options": ["chante", "chantes", "chantons", "chantent"],
-              "hint": "Première personne du singulier"
+              "instruction": "Conjugue au présent",
+              "sentence": "Je (voler) ___ comme un oiseau.",
+              "acceptedAnswers": [
+                "vole"
+              ]
             },
             {
               "type": "fill",
-              "instruction": "Conjugue 'manger'",
-              "sentence": "Nous ___ des fruits.",
-              "answer": "mangeons",
-              "options": ["mange", "manges", "mangeons", "mangent"],
-              "hint": "Première personne du pluriel"
+              "instruction": "Conjugue au présent",
+              "sentence": "Tu (danser) ___ sur la musique.",
+              "acceptedAnswers": [
+                "danses"
+              ]
             },
             {
-              "type": "match",
-              "instruction": "Associe le pronom à la bonne conjugaison",
-              "pairs": [
-                {"left": "je", "right": "parle"},
-                {"left": "tu", "right": "parles"},
-                {"left": "il/elle", "right": "parle"},
-                {"left": "nous", "right": "parlons"}
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Il ___ dans l'océan.",
+              "choices": [
+                "nage",
+                "nages",
+                "nagent"
+              ],
+              "answer": "nage"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Nous ___ une fusée.",
+              "choices": [
+                "construisons",
+                "construisez",
+                "construire"
+              ],
+              "answer": "construisons"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue au présent",
+              "sentence": "Vous (voyager) ___ dans l'espace.",
+              "acceptedAnswers": [
+                "voyagez"
+              ]
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue au présent",
+              "sentence": "Ils (courir) ___ très vite.",
+              "acceptedAnswers": [
+                "courent"
+              ]
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue ÊTRE",
+              "sentence": "Je ___ un magicien.",
+              "acceptedAnswers": [
+                "suis"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Tu ___ courageux.",
+              "choices": [
+                "es",
+                "est",
+                "sommes"
+              ],
+              "answer": "es"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Elle ___ un dragon.",
+              "choices": [
+                "est",
+                "es",
+                "être"
+              ],
+              "answer": "est"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue AVOIR",
+              "sentence": "Nous ___ des pouvoirs.",
+              "acceptedAnswers": [
+                "avons"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Vous ___ raison.",
+              "choices": [
+                "avez",
+                "avons",
+                "a"
+              ],
+              "answer": "avez"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Ils ___ faim.",
+              "choices": [
+                "ont",
+                "a",
+                "avons"
+              ],
+              "answer": "ont"
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Je",
+                "nage",
+                "dans",
+                "la",
+                "mer"
+              ],
+              "answer": "Je nage dans la mer"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue au présent",
+              "sentence": "Les pirates (chercher) ___ un trésor.",
+              "acceptedAnswers": [
+                "cherchent"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "On ___ au foot.",
+              "choices": [
+                "joue",
+                "joues",
+                "jouons"
+              ],
+              "answer": "joue"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue ALLER",
+              "sentence": "Je ___ à l'école.",
+              "acceptedAnswers": [
+                "vais"
+              ]
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue ALLER",
+              "sentence": "Tu ___ chez toi.",
+              "acceptedAnswers": [
+                "vas"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Bonne conjugaison ?",
+              "sentence": "Nous ___ au cinéma.",
+              "choices": [
+                "allons",
+                "allez",
+                "va"
+              ],
+              "answer": "allons"
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Vous",
+                "allez",
+                "en",
+                "vacances"
+              ],
+              "answer": "Vous allez en vacances"
+            },
+            {
+              "type": "fill",
+              "instruction": "Conjugue au présent",
+              "sentence": "Elle (finir) ___ ses devoirs.",
+              "acceptedAnswers": [
+                "finit"
               ]
             }
           ]
@@ -104,36 +450,225 @@
     },
     {
       "id": "lesson_003",
-      "theme": "conjugaison",
-      "themeIcon": "🕐",
-      "title": "Imparfait",
-      "titleShort": "Verbes à l'Imparfait",
-      "level": 2,
-      "xpReward": 25,
-      "duration": 12,
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Le Sujet du Verbe",
+      "titleShort": "Le Sujet",
+      "level": 1,
+      "xpReward": 50,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "L'imparfait exprime une action passée qui durait. Terminaisons : -ais, -ais, -ait, -ions, -iez, -aient.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "fill",
-              "instruction": "Conjugue à l'imparfait",
-              "sentence": "Quand j'étais petit, je ___ (jouer) au foot.",
-              "answer": "jouais",
-              "options": ["joue", "jouais", "jouait", "jouions"],
-              "hint": "Première personne, terminaison -ais"
+              "type": "qcm",
+              "instruction": "Quel est le sujet ?",
+              "sentence": "Le dragon dort.",
+              "choices": [
+                "Le",
+                "dragon",
+                "Le dragon"
+              ],
+              "answer": "Le dragon"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet ?",
+              "sentence": "Les pirates naviguent.",
+              "choices": [
+                "Les",
+                "pirates",
+                "Les pirates"
+              ],
+              "answer": "Les pirates"
             },
             {
               "type": "fill",
-              "instruction": "Conjugue 'avoir' à l'imparfait",
-              "sentence": "Nous ___ beaucoup de jouets.",
-              "answer": "avions",
-              "options": ["avons", "avais", "avions", "avaient"]
+              "instruction": "Complète avec un sujet",
+              "sentence": "___ vole dans le ciel.",
+              "acceptedAnswers": [
+                "L'oiseau",
+                "L'avion",
+                "La fusée",
+                "Le dragon"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Singulier ou pluriel ?",
+              "sentence": "Les enfants rient.",
+              "choices": [
+                "Singulier",
+                "Pluriel"
+              ],
+              "answer": "Pluriel"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet inversé ?",
+              "sentence": "Où vas-tu ?",
+              "choices": [
+                "Où",
+                "vas",
+                "tu"
+              ],
+              "answer": "tu"
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Les",
+                "licornes",
+                "galopent",
+                "librement"
+              ],
+              "answer": "Les licornes galopent librement"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet ?",
+              "sentence": "Dans la forêt, les loups hurlent.",
+              "choices": [
+                "la forêt",
+                "les loups",
+                "hurlent"
+              ],
+              "answer": "les loups"
+            },
+            {
+              "type": "fill",
+              "instruction": "Trouve le sujet",
+              "sentence": "___ construit un château.",
+              "acceptedAnswers": [
+                "Le roi",
+                "Il",
+                "Marie",
+                "Tom"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Combien de sujets ?",
+              "sentence": "Pierre court et saute.",
+              "choices": [
+                "0",
+                "1",
+                "2"
+              ],
+              "answer": "1"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un pronom sujet",
+              "sentence": "___ dansons ensemble.",
+              "acceptedAnswers": [
+                "Nous"
+              ]
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un pronom sujet",
+              "sentence": "___ chantes bien.",
+              "acceptedAnswers": [
+                "Tu"
+              ]
+            },
+            {
+              "type": "drag",
+              "instruction": "Remets dans l'ordre",
+              "words": [
+                "Le",
+                "vampire",
+                "dort",
+                "le",
+                "jour"
+              ],
+              "answer": "Le vampire dort le jour"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet ?",
+              "sentence": "Demain, nous partirons.",
+              "choices": [
+                "Demain",
+                "nous",
+                "partirons"
+              ],
+              "answer": "nous"
+            },
+            {
+              "type": "fill",
+              "instruction": "Remplace par un pronom",
+              "sentence": "Marie et Paul jouent → ___ jouent.",
+              "acceptedAnswers": [
+                "Ils"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Le sujet fait ou subit l'action ?",
+              "sentence": "Le chat mange.",
+              "choices": [
+                "Fait",
+                "Subit"
+              ],
+              "answer": "Fait"
+            },
+            {
+              "type": "fill",
+              "instruction": "Complète avec un sujet pluriel",
+              "sentence": "___ nagent dans l'océan.",
+              "acceptedAnswers": [
+                "Les poissons",
+                "Les dauphins",
+                "Ils",
+                "Nous"
+              ]
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet ?",
+              "sentence": "Tom et Léa jouent.",
+              "choices": [
+                "Tom",
+                "Léa",
+                "Tom et Léa"
+              ],
+              "answer": "Tom et Léa"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Singulier ou pluriel ?",
+              "sentence": "Le chat miaule.",
+              "choices": [
+                "Singulier",
+                "Pluriel"
+              ],
+              "answer": "Singulier"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Quel est le sujet inversé ?",
+              "sentence": "Comment fait-il ?",
+              "choices": [
+                "Comment",
+                "fait",
+                "il"
+              ],
+              "answer": "il"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Combien de sujets ?",
+              "sentence": "Sophie rit et Paul pleure.",
+              "choices": [
+                "0",
+                "1",
+                "2"
+              ],
+              "answer": "2"
             }
           ]
         }
@@ -141,36 +676,236 @@
     },
     {
       "id": "lesson_004",
-      "theme": "conjugaison",
-      "themeIcon": "⏮️",
-      "title": "Passé Composé",
-      "titleShort": "Verbes au Passé Composé",
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Le COD",
+      "titleShort": "Le COD",
       "level": 2,
-      "xpReward": 30,
-      "duration": 15,
+      "xpReward": 60,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Le passé composé exprime une action passée terminée. Formation : auxiliaire (être/avoir) + participe passé.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "fill",
-              "instruction": "Conjugue au passé composé avec 'avoir'",
-              "sentence": "Hier, j'___ (manger) une pomme.",
-              "answer": "ai mangé",
-              "options": ["mange", "ai mangé", "avais mangé", "mangeais"],
-              "hint": "Auxiliaire avoir + participe passé"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Conjugue avec 'être'",
-              "sentence": "Elle ___ (partir) en vacances.",
-              "answer": "est partie",
-              "options": ["part", "est partie", "a parti", "partait"]
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -178,39 +913,236 @@
     },
     {
       "id": "lesson_005",
-      "theme": "grammaire",
-      "themeIcon": "🔤",
-      "title": "Le Nom",
-      "titleShort": "Reconnaître les Noms",
-      "level": 1,
-      "xpReward": 20,
-      "duration": 10,
+      "theme": "conjugaison",
+      "themeIcon": "⏰",
+      "title": "L'Imparfait",
+      "titleShort": "L'Imparfait",
+      "level": 2,
+      "xpReward": 60,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Le nom désigne une personne, un animal, une chose ou une idée. Il peut être propre ou commun.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "identify",
-              "instruction": "Trouve tous les noms",
-              "sentence": "Le chien joue avec sa balle rouge.",
-              "words": ["Le", "chien", "joue", "avec", "sa", "balle", "rouge"],
-              "answers": ["chien", "balle"],
-              "hint": "Personnes, animaux, choses"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "sort",
-              "instruction": "Classe les mots : noms communs ou noms propres",
-              "items": ["table", "Paris", "chien", "Marie", "école", "France"],
-              "categories": ["Noms communs", "Noms propres"],
-              "answers": {
-                "Noms communs": ["table", "chien", "école"],
-                "Noms propres": ["Paris", "Marie", "France"]
-              }
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -218,37 +1150,236 @@
     },
     {
       "id": "lesson_006",
-      "theme": "grammaire",
-      "themeIcon": "🎨",
-      "title": "L'Adjectif",
-      "titleShort": "Les Adjectifs Qualificatifs",
-      "level": 1,
-      "xpReward": 20,
-      "duration": 10,
+      "theme": "conjugaison",
+      "themeIcon": "⏰",
+      "title": "Le Passé Composé",
+      "titleShort": "Le Passé Composé",
+      "level": 2,
+      "xpReward": 60,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "L'adjectif qualificatif donne des précisions sur le nom. Il s'accorde en genre et en nombre.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "identify",
-              "instruction": "Trouve l'adjectif",
-              "sentence": "La petite fille joue dehors.",
-              "words": ["La", "petite", "fille", "joue", "dehors"],
-              "answer": "petite",
-              "hint": "Quel mot décrit 'fille' ?"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Complète avec un adjectif",
-              "sentence": "J'ai vu un chat ___.",
-              "options": ["noir", "rapidement", "manger", "hier"],
-              "answer": "noir",
-              "hint": "Mot qui décrit le chat"
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -257,46 +1388,235 @@
     {
       "id": "lesson_007",
       "theme": "orthographe",
-      "themeIcon": "✍️",
-      "title": "Les Homophones a/à",
-      "titleShort": "Différencier a et à",
-      "level": 2,
-      "xpReward": 25,
-      "duration": 10,
+      "themeIcon": "✏️",
+      "title": "a ou à",
+      "titleShort": "a ou à",
+      "level": 1,
+      "xpReward": 40,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "'a' est le verbe avoir. 'à' est une préposition. Astuce : si tu peux remplacer par 'avait', écris 'a'.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "fill",
-              "instruction": "Choisis a ou à",
-              "sentence": "Il ___ un vélo.",
-              "options": ["a", "à"],
-              "answer": "a",
-              "hint": "Verbe avoir (il avait)"
-            },
-            {
-              "type": "fill",
-              "instruction": "Choisis a ou à",
-              "sentence": "Je vais ___ l'école.",
-              "options": ["a", "à"],
-              "answer": "à",
-              "hint": "Préposition de lieu"
-            },
-            {
-              "type": "multi-fill",
-              "instruction": "Complète toutes les phrases",
-              "sentences": [
-                "Elle ___ des bonbons.",
-                "Nous allons ___ Paris.",
-                "Mon frère ___ 10 ans."
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
               ],
-              "answers": ["a", "à", "a"]
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -306,35 +1626,234 @@
       "id": "lesson_008",
       "theme": "orthographe",
       "themeIcon": "✏️",
-      "title": "Les Homophones et/est",
-      "titleShort": "Différencier et et est",
-      "level": 2,
-      "xpReward": 25,
-      "duration": 10,
+      "title": "et ou est",
+      "titleShort": "et ou est",
+      "level": 1,
+      "xpReward": 40,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "'est' est le verbe être. 'et' relie deux mots. Astuce : remplace par 'était' pour vérifier.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "fill",
-              "instruction": "Choisis et ou est",
-              "sentence": "Le chat ___ noir.",
-              "options": ["et", "est"],
-              "answer": "est",
-              "hint": "Verbe être (était)"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Choisis et ou est",
-              "sentence": "J'aime les pommes ___ les poires.",
-              "options": ["et", "est"],
-              "answer": "et",
-              "hint": "Relie deux éléments"
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -342,37 +1861,236 @@
     },
     {
       "id": "lesson_009",
-      "theme": "orthographe",
-      "themeIcon": "🔡",
-      "title": "Les Accents",
-      "titleShort": "é, è, ê",
-      "level": 1,
-      "xpReward": 20,
-      "duration": 8,
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Les Adjectifs",
+      "titleShort": "Les Adjectifs",
+      "level": 2,
+      "xpReward": 50,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Les accents changent la prononciation. é (aigu), è (grave), ê (circonflexe).",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "select-accent",
-              "instruction": "Choisis le bon accent",
-              "word": "ecole",
-              "position": 0,
-              "options": ["é", "è", "ê"],
-              "answer": "é",
-              "correctWord": "école"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Écris le mot correctement",
-              "sentence": "J'aime la ___ (foret).",
-              "answer": "forêt",
-              "hint": "Accent circonflexe"
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -380,37 +2098,236 @@
     },
     {
       "id": "lesson_010",
-      "theme": "vocabulaire",
-      "themeIcon": "📚",
-      "title": "Les Synonymes",
-      "titleShort": "Mots de Même Sens",
+      "theme": "conjugaison",
+      "themeIcon": "⏰",
+      "title": "Le Futur",
+      "titleShort": "Le Futur",
       "level": 2,
-      "xpReward": 25,
-      "duration": 10,
+      "xpReward": 60,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Les synonymes sont des mots qui ont presque le même sens. Exemple : content/joyeux.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "match",
-              "instruction": "Associe les synonymes",
-              "pairs": [
-                {"left": "grand", "right": "immense"},
-                {"left": "content", "right": "joyeux"},
-                {"left": "fatigué", "right": "épuisé"},
-                {"left": "parler", "right": "discuter"}
-              ]
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "select",
-              "instruction": "Quel est le synonyme de 'rapide' ?",
-              "options": ["lent", "vite", "grand", "fort"],
-              "answer": "vite"
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -418,31 +2335,236 @@
     },
     {
       "id": "lesson_011",
-      "theme": "vocabulaire",
-      "themeIcon": "🔄",
-      "title": "Les Antonymes",
-      "titleShort": "Mots de Sens Contraire",
-      "level": 2,
-      "xpReward": 25,
-      "duration": 10,
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Le Pluriel",
+      "titleShort": "Le Pluriel",
+      "level": 1,
+      "xpReward": 40,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Les antonymes sont des mots de sens contraire. Exemple : chaud/froid.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "match",
-              "instruction": "Associe les antonymes",
-              "pairs": [
-                {"left": "grand", "right": "petit"},
-                {"left": "monter", "right": "descendre"},
-                {"left": "jour", "right": "nuit"},
-                {"left": "entrer", "right": "sortir"}
-              ]
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -451,40 +2573,235 @@
     {
       "id": "lesson_012",
       "theme": "grammaire",
-      "themeIcon": "🔢",
-      "title": "Le Pluriel des Noms",
-      "titleShort": "Former le Pluriel",
-      "level": 2,
-      "xpReward": 25,
-      "duration": 12,
+      "themeIcon": "📝",
+      "title": "Le Féminin",
+      "titleShort": "Le Féminin",
+      "level": 1,
+      "xpReward": 40,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Pour former le pluriel, on ajoute généralement un 's'. Exceptions : -x, -aux, etc.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "transform",
-              "instruction": "Mets au pluriel",
-              "word": "chat",
-              "answer": "chats",
-              "hint": "Ajoute un 's'"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "transform",
-              "instruction": "Mets au pluriel",
-              "word": "cheval",
-              "answer": "chevaux",
-              "hint": "al → aux"
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Complète avec le pluriel",
-              "sentence": "Les ___ (animal) du zoo.",
-              "answer": "animaux"
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -493,36 +2810,235 @@
     {
       "id": "lesson_013",
       "theme": "grammaire",
-      "themeIcon": "⚧️",
-      "title": "Le Féminin des Noms",
-      "titleShort": "Masculin et Féminin",
+      "themeIcon": "📝",
+      "title": "Les Déterminants",
+      "titleShort": "Les Déterminants",
       "level": 2,
-      "xpReward": 25,
-      "duration": 12,
+      "xpReward": 50,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Pour former le féminin, on ajoute généralement un 'e'. Exemples : ami → amie.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "transform",
-              "instruction": "Mets au féminin",
-              "word": "ami",
-              "answer": "amie",
-              "hint": "Ajoute 'e'"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "match",
-              "instruction": "Associe masculin et féminin",
-              "pairs": [
-                {"left": "acteur", "right": "actrice"},
-                {"left": "chanteur", "right": "chanteuse"},
-                {"left": "coiffeur", "right": "coiffeuse"}
-              ]
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -530,36 +3046,236 @@
     },
     {
       "id": "lesson_014",
-      "theme": "conjugaison",
-      "themeIcon": "🔮",
-      "title": "Le Futur Simple",
-      "titleShort": "Verbes au Futur",
-      "level": 3,
-      "xpReward": 30,
-      "duration": 15,
+      "theme": "grammaire",
+      "themeIcon": "📝",
+      "title": "Le COI",
+      "titleShort": "Le COI",
+      "level": 2,
+      "xpReward": 60,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Le futur simple exprime une action qui va se passer. Terminaisons : -ai, -as, -a, -ons, -ez, -ont.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "fill",
-              "instruction": "Conjugue au futur",
-              "sentence": "Demain, je ___ (chanter) une chanson.",
-              "answer": "chanterai",
-              "options": ["chante", "chanterai", "chantais", "ai chanté"],
-              "hint": "Infinitif + -ai"
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             },
             {
-              "type": "fill",
-              "instruction": "Conjugue 'être' au futur",
-              "sentence": "Nous ___ en vacances.",
-              "answer": "serons",
-              "options": ["sommes", "étions", "serons", "serions"]
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }
@@ -567,47 +3283,236 @@
     },
     {
       "id": "lesson_015",
-      "theme": "revision",
-      "themeIcon": "🌟",
+      "theme": "grammaire",
+      "themeIcon": "📝",
       "title": "Révision Générale",
-      "titleShort": "Révise Tout !",
+      "titleShort": "Révision Générale",
       "level": 3,
-      "xpReward": 50,
-      "duration": 20,
+      "xpReward": 100,
+      "duration": 25,
       "modes": {
-        "classic": {
-          "available": true,
-          "content": "Révision de toutes les notions vues : grammaire, conjugaison, orthographe et vocabulaire.",
-          "quiz": []
-        },
         "interactive": {
           "available": true,
           "exercises": [
             {
-              "type": "mixed",
-              "instruction": "Questions variées",
-              "questions": [
-                {
-                  "type": "identify",
-                  "text": "Trouve le verbe",
-                  "sentence": "Les oiseaux chantent le matin.",
-                  "words": ["Les", "oiseaux", "chantent", "le", "matin"],
-                  "answer": "chantent"
-                },
-                {
-                  "type": "fill",
-                  "text": "Choisis a ou à",
-                  "sentence": "Elle ___ des fleurs.",
-                  "options": ["a", "à"],
-                  "answer": "a"
-                },
-                {
-                  "type": "transform",
-                  "text": "Mets au pluriel",
-                  "word": "oiseau",
-                  "answer": "oiseaux"
-                }
-              ]
+              "type": "qcm",
+              "instruction": "Question 1",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 2",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 3",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 4",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 5",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 6",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 7",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 8",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 9",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 10",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 11",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 12",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 13",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 14",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 15",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 16",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 17",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 18",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 19",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
+            },
+            {
+              "type": "qcm",
+              "instruction": "Question 20",
+              "sentence": "Phrase exemple.",
+              "choices": [
+                "A",
+                "B",
+                "C"
+              ],
+              "answer": "A"
             }
           ]
         }

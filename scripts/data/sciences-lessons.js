@@ -140,7 +140,7 @@ const sciencesLessons = [
         difficulty: 'moyen',
         exercises: [
             { question: 'Par où entre la nourriture dans le corps ?', answer: 'bouche', hint: 'BOUCHE (première étape de la digestion)' },
-            { question: 'Comment s\'appelle le tube qui va de la bouche à l\'estomac ?', answer: 'œsophage', hint: 'ŒSOPHAGE (conduit des aliments)' },
+            { question: 'Comment s\'appelle le tube qui va de la bouche à l\'estomac ?', answer: 'œsophage', 'oesophage' hint: 'ŒSOPHAGE (conduit des aliments)' },
             { question: 'Dans quel organe la nourriture est-elle brassée avec des sucs ?', answer: 'estomac', hint: 'ESTOMAC (poche qui digère partiellement)' },
             { question: 'Quel organe absorbe les nutriments dans le sang ?', answer: 'intestin', hint: 'INTESTIN (intestin grêle surtout)' },
             { question: 'Par où sortent les déchets de la digestion ?', answer: 'anus', hint: 'ANUS (extrémité du gros intestin)' },

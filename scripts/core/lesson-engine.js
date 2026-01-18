@@ -1,219 +1,396 @@
 /**
- * ==========================================
- * CORE : lesson-engine.js
- * Plateforme : Le Monde des Curieux
- * Rôle : Logique de jeu, Audio 8-bit, Confettis & Modale
- * ==========================================
+ * 🎮 LESSON ENGINE - Moteur de leçons Duolingo-style
+ * Compatible avec toutes les sections : français, anglais, maths, sciences, histoire
+ * Version : 2.0 - Système XP intégré
  */
 
 class LessonEngine {
-    constructor(data) {
-        this.data = data;
+    constructor(lessons) {
+        
+        this.lessons = lessons;
         this.lesson = null;
-        this.index = 0;
-        this.xp = parseInt(localStorage.getItem('curio_xp') || '0');
+        this.currentIndex = 0;
         this.audioEnabled = false;
-
-        this.avatars = {
-            idle: "assets/img/avatars/curio-normal.png",
-            success: "assets/img/avatars/curio-happy.png",
-            error: "assets/img/avatars/curio-sad.png",
-            hint: "assets/img/avatars/curio-teacher.png"
+        this.hintUsed = false;
+        
+        // Éléments DOM
+        this.elements = {
+            lessonsGrid: document.getElementById('lessons-grid'),
+            lessonsList: document.getElementById('lessons-list'),
+            lessonScreen: document.getElementById('lesson-screen'),
+            progressFill: document.getElementById('progress-fill'),
+            questionText: document.getElementById('question-text'),
+            userInput: document.getElementById('user-input'),
+            curioMsg: document.getElementById('curio-msg'),
+            curioSprite: document.getElementById('curio-sprite-img'),
+            soundToggle: document.getElementById('sound-toggle'),
+            victoryModal: document.getElementById('victory-modal'),
+            modalMsg: document.getElementById('modal-msg')
         };
-
-        window.engine = this;
-        this.init();
+        
+        // Initialiser l'affichage
+        this.renderLessons();
+        this.setupEventListeners();
     }
-
-    init() {
-        this.renderGrid();
-        this.updateXPDisplay();
-        
-        document.addEventListener('keydown', (e) => {
-            const screen = document.getElementById('lesson-screen');
-            if (e.key === 'Enter' && screen && !screen.classList.contains('hidden')) {
-                this.validate();
-            }
-        });
-        
-        // Gestionnaire du badge son
-        const soundBadge = document.getElementById('sound-toggle');
-        if (soundBadge) {
-            soundBadge.addEventListener('click', () => {
-                if (!this.audioEnabled) {
-                    this.enableAudio();
-                }
-            });
-        }
-        
-        // Gestionnaire Curio pour indices
-        const curioBox = document.querySelector('.curio-avatar-box');
-        if (curioBox) {
-            curioBox.addEventListener('click', () => {
-                if (this.lesson && !document.getElementById('lesson-screen').classList.contains('hidden')) {
-                    this.showHint();
-                }
-            });
-        }
-    }
-
+    
     /**
-     * GESTION AUDIO & EFFETS
+     * 🎨 Affiche la grille de leçons
      */
-    enableAudio() {
-        this.audioEnabled = true;
-        const btn = document.getElementById('sound-toggle');
-        btn.innerText = "🔊";
-        btn.style.backgroundColor = "#38b000";
-        btn.classList.remove('off');
-        this.play8BitSound('click');
-        this.setCurio('idle', "Système audio prêt !");
+    renderLessons() {
+        if (!this.elements.lessonsGrid) return;
+        
+        this.elements.lessonsGrid.innerHTML = this.lessons.map((lesson, index) => `
+            <div class="lesson-card" onclick="engine.startLesson(${index})" role="button" tabindex="0">
+                <div class="card-icon">${lesson.emoji || lesson.icon || '📚'}</div>
+                <div class="card-title">${lesson.title}</div>
+            </div>
+        `).join('');
+        
     }
-
-    play8BitSound(type) {
-        if (!this.audioEnabled) return;
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        const now = ctx.currentTime;
-
-        if (type === 'success') {
-            osc.type = 'square';
-            osc.frequency.setValueAtTime(523.25, now);
-            osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.2);
-            gain.gain.setValueAtTime(0.1, now);
-            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-            osc.start(now); osc.stop(now + 0.3);
-        } else if (type === 'error') {
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(150, now);
-            osc.frequency.linearRampToValueAtTime(50, now + 0.3);
-            gain.gain.setValueAtTime(0.1, now);
-            osc.start(now); osc.stop(now + 0.3);
-        } else {
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(800, now);
-            gain.gain.setValueAtTime(0.1, now);
-            osc.start(now); osc.stop(now + 0.05);
-        }
-    }
-
+    
     /**
-     * LOGIQUE DE JEU
+     * 🚀 Démarre une leçon
      */
-    renderGrid() {
-        const grid = document.getElementById('lessons-grid');
-        if (!grid) return;
-        grid.innerHTML = '';
-        this.data.forEach((l, i) => {
-            const card = document.createElement('div');
-            card.className = 'lesson-card';
-            card.onclick = () => { this.play8BitSound('click'); this.start(i); };
-            card.innerHTML = `<span class="card-icon">${l.emoji}</span><span class="card-title">${l.title}</span>`;
-            grid.appendChild(card);
-        });
+    startLesson(index) {
+        this.lesson = this.lessons[index];
+        this.currentIndex = 0;
+        this.hintUsed = false;
+        
+        
+        // Masquer liste, afficher écran leçon
+        this.elements.lessonsList.classList.add('hidden');
+        this.elements.lessonScreen.classList.remove('hidden');
+        
+        // Charger premier exercice
+        this.loadExercise(0);
     }
-
-    start(i) {
-        this.lesson = this.data[i];
-        this.index = 0;
-        document.getElementById('lessons-list').classList.add('hidden');
-        document.getElementById('lesson-screen').classList.remove('hidden');
-        this.updateUI();
+    
+    /**
+     * 📝 Charge un exercice
+     */
+    loadExercise(index) {
+        if (!this.lesson || !this.lesson.exercises[index]) {
+            console.error('❌ Exercice invalide:', index);
+            return;
+        }
+        
+        this.currentIndex = index;
+        const exercise = this.lesson.exercises[index];
+        
+        // Mise à jour progression
+        const progress = ((index) / this.lesson.exercises.length) * 100;
+        this.elements.progressFill.style.width = progress + '%';
+        
+        // Affichage question
+        this.elements.questionText.textContent = exercise.question;
+        this.elements.userInput.value = '';
+        this.elements.userInput.focus();
+        
+        // Reset Curio
+        this.resetCurio();
+        
     }
-
-    updateUI() {
-        const q = this.lesson.exercises[this.index];
-        document.getElementById('question-text').innerText = q.question;
-        const input = document.getElementById('user-input');
-        input.value = ''; input.focus();
-        document.getElementById('progress-fill').style.width = (this.index / this.lesson.exercises.length) * 100 + "%";
-        this.setCurio('idle', "À toi de jouer !");
-    }
-
+    
+    /**
+     * ✅ Valide la réponse
+     */
     validate() {
-        const input = document.getElementById('user-input').value.trim().toLowerCase();
-        const currentEx = this.lesson.exercises[this.index];
-        if (input === currentEx.answer.toLowerCase()) {
-            this.play8BitSound('success');
-            this.setCurio('success', "Bien joué ! ✨");
-            this.index++;
-            if (this.index < this.lesson.exercises.length) {
-                setTimeout(() => this.updateUI(), 800);
+        const userAnswer = this.elements.userInput.value.trim().toLowerCase();
+        const exercise = this.lesson.exercises[this.currentIndex];
+        
+        if (!userAnswer) {
+            this.playSoundEffect('error');
+            return;
+        }
+        
+        // Vérifier réponse
+        const isCorrect = this.checkAnswer(userAnswer, exercise);
+        
+        if (isCorrect) {
+            this.handleCorrectAnswer();
+        } else {
+            this.handleWrongAnswer();
+        }
+    }
+    
+    /**
+     * 🔍 Vérifie la réponse
+     */
+    checkAnswer(userAnswer, exercise) {
+        const correctAnswers = Array.isArray(exercise.answer) 
+            ? exercise.answer 
+            : [exercise.answer];
+        
+        return correctAnswers.some(answer => 
+            userAnswer === answer.toString().toLowerCase()
+        );
+    }
+    
+    /**
+     * ✅ Gère réponse correcte
+     */
+    handleCorrectAnswer() {
+        
+        // Feedback visuel
+        this.flashScreen('#2ecc71');
+        this.playSoundEffect('correct');
+        this.showCurioReaction('happy');
+        
+        // Passage à l'exercice suivant
+        setTimeout(() => {
+            if (this.currentIndex < this.lesson.exercises.length - 1) {
+                this.loadExercise(this.currentIndex + 1);
             } else {
                 this.finish();
             }
+        }, 800);
+    }
+    
+    /**
+     * ❌ Gère réponse incorrecte
+     */
+    handleWrongAnswer() {
+        
+        // Feedback visuel
+        this.flashScreen('#e74c3c');
+        this.playSoundEffect('error');
+        this.showCurioReaction('sad');
+        
+        // Effacer champ
+        this.elements.userInput.value = '';
+        this.elements.userInput.focus();
+    }
+    
+    /**
+     * 💡 Affiche un indice
+     */
+    showHint() {
+        const exercise = this.lesson.exercises[this.currentIndex];
+        
+        if (!exercise.hint) {
+            this.elements.curioMsg.textContent = "Désolé, pas d'indice pour cet exercice !";
+            this.playSoundEffect('hint');
+            return;
+        }
+        
+        if (!this.hintUsed) {
+            this.elements.curioMsg.textContent = exercise.hint;
+            this.hintUsed = true;
+            this.playSoundEffect('hint');
+            this.showCurioReaction('thinking');
+            
         } else {
-            this.play8BitSound('error');
-            this.setCurio('error', "💡 " + (currentEx.hint || "Essaie encore !"));
+            this.elements.curioMsg.textContent = "Je t'ai déjà aidé ! À toi de jouer maintenant 😊";
+            this.playSoundEffect('hint');
         }
     }
-
+    
     /**
-     * CÉLÉBRATION FINALE
+     * 🔊 Active/désactive l'audio
+     */
+    enableAudio() {
+        this.audioEnabled = !this.audioEnabled;
+        
+        if (this.elements.soundToggle) {
+            this.elements.soundToggle.textContent = this.audioEnabled ? '🔊' : '🔇';
+            this.elements.soundToggle.classList.toggle('off', !this.audioEnabled);
+        }
+        
+    }
+    
+    /**
+     * 🎵 Joue un effet sonore
+     */
+    playSoundEffect(type) {
+        if (!this.audioEnabled) return;
+        
+        const frequencies = {
+            correct: [523, 659, 784],
+            error: [200, 150],
+            hint: [440, 554],
+            victory: [523, 659, 784, 1046]
+        };
+        
+        const freq = frequencies[type] || [440];
+        
+        try {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            freq.forEach((f, i) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = f;
+                oscillator.type = 'square';
+                
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                
+                oscillator.start(audioContext.currentTime + i * 0.1);
+                oscillator.stop(audioContext.currentTime + i * 0.1 + 0.1);
+            });
+        } catch (e) {
+            console.warn('⚠️ Audio non supporté:', e);
+        }
+    }
+    
+    /**
+     * 🎨 Flash d'écran coloré
+     */
+    flashScreen(color) {
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: ${color}; opacity: 0.3; z-index: 9999;
+            pointer-events: none; transition: opacity 0.3s;
+        `;
+        document.body.appendChild(overlay);
+        
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 300);
+        }, 100);
+    }
+    
+    /**
+     * 🦊 Affiche réaction de Curio
+     */
+    showCurioReaction(mood) {
+        const sprites = {
+            normal: 'assets/img/avatars/curio-normal.png',
+            happy: 'assets/img/avatars/curio-happy.png',
+            sad: 'assets/img/avatars/curio-sad.png',
+            thinking: 'assets/img/avatars/curio-thinking.png'
+        };
+        
+        if (this.elements.curioSprite && sprites[mood]) {
+            this.elements.curioSprite.src = sprites[mood];
+            
+            // Retour à normal après 2 secondes
+            setTimeout(() => {
+                this.elements.curioSprite.src = sprites.normal;
+            }, 2000);
+        }
+    }
+    
+    /**
+     * 🔄 Reset Curio
+     */
+    resetCurio() {
+        this.elements.curioMsg.textContent = "Clique sur Curio pour un indice !";
+        this.showCurioReaction('normal');
+        this.hintUsed = false;
+    }
+    
+    /**
+     * 🏆 Termine la leçon
      */
     finish() {
-        this.xp += this.lesson.xp;
-        localStorage.setItem('curio_xp', this.xp);
-        this.updateXPDisplay();
         
-        this.launchConfetti();
-        this.play8BitSound('success');
+        // Confetti animation
+        this.playConfetti();
         
-        const modal = document.getElementById('victory-modal');
-        if (modal) {
-            document.getElementById('xp-added').innerText = this.lesson.xp;
-            modal.classList.remove('hidden');
-        }
-        this.setCurio('success', "FÉLICITATIONS ! 🏆");
+        // Afficher modal
+        this.playSoundEffect('victory');
+        
+        setTimeout(() => {
+            this.elements.victoryModal.classList.remove('hidden');
+        }, 500);
     }
-
-    launchConfetti() {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        document.body.appendChild(canvas);
-        canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999";
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        const particles = [];
-        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
-        for (let i = 0; i < 100; i++) {
-            particles.push({
-                x: canvas.width / 2, y: canvas.height / 2,
-                size: Math.random() * 8 + 4,
-                color: colors[Math.floor(Math.random() * colors.length)],
-                vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20 - 5,
-                gravity: 0.2
+    
+    /**
+     * 🎉 Animation confetti - PLUIE DE CONFETTIS COLORÉS
+     */
+    playConfetti() {
+        // Couleurs vives
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#6c5ce7', '#fd79a8', '#00b894', '#fdcb6e'];
+        
+        const container = document.createElement('div');
+        container.style.cssText = `
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0;
+            pointer-events: none; 
+            z-index: 9998; 
+            overflow: hidden;
+        `;
+        document.body.appendChild(container);
+        
+        // 🎊 150 confettis qui tombent du haut !
+        for (let i = 0; i < 150; i++) {
+            setTimeout(() => {
+                const confetti = document.createElement('div');
+                
+                // Dimensions du confetti
+                const width = 8 + Math.random() * 8; // 8-16px
+                const height = 15 + Math.random() * 15; // 15-30px
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Position de départ (haut de l'écran, répartis sur toute la largeur)
+                const startX = Math.random() * 100;
+                
+                confetti.style.cssText = `
+                    position: absolute;
+                    left: ${startX}%;
+                    top: -20px;
+                    width: ${width}px;
+                    height: ${height}px;
+                    background: ${color};
+                    opacity: 0.9;
+                    border-radius: 2px;
+                    transform: rotate(${Math.random() * 360}deg);
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                `;
+                
+                container.appendChild(confetti);
+                
+                // Animation de chute avec dérive gauche/droite
+                const duration = 2500 + Math.random() * 2000; // 2.5-4.5 secondes
+                const drift = (Math.random() - 0.5) * 50; // Dérive -25 à +25
+                const rotations = 3 + Math.random() * 5; // 3-8 tours
+                
+                confetti.animate([
+                    { 
+                        transform: `translateY(0) translateX(0) rotate(0deg)`,
+                        opacity: 0.9
+                    },
+                    { 
+                        transform: `translateY(50vh) translateX(${drift * 0.5}px) rotate(${rotations * 180}deg)`,
+                        opacity: 0.8
+                    },
+                    { 
+                        transform: `translateY(110vh) translateX(${drift}px) rotate(${rotations * 360}deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: duration,
+                    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    fill: 'forwards'
+                });
+                
+            }, i * 10); // Étalement sur 1.5 secondes
+        }
+        
+        // Nettoyage après 5 secondes
+        setTimeout(() => container.remove(), 5000);
+    }
+    
+    /**
+     * ⌨️ Configuration événements clavier
+     */
+    setupEventListeners() {
+        if (this.elements.userInput) {
+            this.elements.userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.validate();
+                }
             });
         }
-        const render = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((p, i) => {
-                p.x += p.vx; p.y += p.vy; p.vy += p.gravity;
-                ctx.fillStyle = p.color;
-                ctx.fillRect(p.x, p.y, p.size, p.size);
-                if (p.y > canvas.height) particles.splice(i, 1);
-            });
-            if (particles.length > 0) requestAnimationFrame(render);
-            else canvas.remove();
-        };
-        render();
-    }
-
-    updateXPDisplay() {
-        const display = document.getElementById('xp-display');
-        if (display) display.innerText = this.xp + " XP";
-    }
-
-    setCurio(state, msg) {
-        document.getElementById('curio-sprite-img').src = this.avatars[state];
-        document.getElementById('curio-msg').innerText = msg;
-    }
-
-    showHint() {
-        const q = this.lesson.exercises[this.index];
-        this.setCurio('hint', "🧐 " + (q.hint || "Besoin d'aide ?"));
-        this.play8BitSound('click');
     }
 }
+
