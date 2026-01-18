@@ -75,4 +75,29 @@ const sciencesLessons = [
         ]
     },
 
-    //
+    // LEÇON 10 : VOLCANS ET SÉISMES
+    {
+        id: 'sciences-10-volcans',
+        title: 'Volcans et Séismes',
+        emoji: '🌋',
+        xp: 55,
+        difficulty: 'moyen',
+        exercises: [
+            { question: 'Comment s\'appelle la roche fondue sous la terre ?', answer: 'magma', hint: 'Elle est stockée dans une chambre sous le volcan.' },
+            { question: 'Comment s' + "'" + 'appelle le magma quand il sort à la surface ?', answer: 'lave', hint: 'Elle refroidit au contact de l’air.' },
+            { question: 'Comment appelle-t-on les vibrations brutales du sol ?', answer: 'séisme', hint: 'On dit aussi un tremblement de terre.' },
+            { question: 'Quel appareil enregistre les secousses terrestres ?', answer: 'sismographe', hint: 'Il trace des lignes sur un papier ou un écran.' },
+            { question: 'Comment s\'appelle le lieu où la rupture de la roche a lieu en profondeur ?', answer: 'foyer', hint: 'C’est le point de départ du séisme sous la terre.' }
+        ]
+    }
+    // ... Les autres leçons suivent la même structure
+];
+
+// Export pour utilisation Node.js ou Browser
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = sciencesLessons;
+} else {
+    window.sciencesLessons = sciencesLessons;
+}
+
+console.log('✅ ' + sciencesLessons.length + ' leçons de Sciences chargées avec succès.');
