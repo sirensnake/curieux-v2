@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Le retour des pandas 🐼",
-      "summary": "Les pandas géants, ces ours noirs et blancs qui vivent principalement en Chine, sont passés du statut d'espèce \"en danger\" à \"vulnérable\". Cela signifie qu'ils sont un peu moins en danger, grâce aux efforts de protection de leurs habitats. Beaucoup de gens ont travaillé dur pour conserver leurs forêts de bambous. C'est une excellente nouvelle pour la biodiversité ! Maintenant, les pandas ont plus de chances de rester sur notre planète pendant encore très longtemps.",
-      "date": "26/10/2023",
+      "title": "La découverte d'un nouveau dinosaure 🦖",
+      "summary": "Des chercheurs ont récemment découvert un nouveau dinosaure en Chine ! Ce dinosaure, appelé Fujianvenator prodigiosus, vivait il y a environ 150 millions d'années. Il avait de longues pattes et des ailes, ce qui lui permettait probablement de courir vite et peut-être même de voler sur de courtes distances. Cette découverte aide les scientifiques à mieux comprendre l'évolution des oiseaux, car certains dinosaures ont donné naissance aux oiseaux que nous connaissons aujourd'hui. N'est-ce pas fascinant de penser qu'un pigeon est le lointain cousin d'un T-rex ?!",
+      "date": "06/10/2023",
       "link": ""
     },
     {
-      "title": "Robots sportifs 🤖",
-      "summary": "Cette semaine, une compétition amusante de robots s'est tenue au Japon. Des robots ont participé à une course où ils ont dû courir, sauter et éviter des obstacles. Ces petites machines, créées par des ingénieurs et étudiants du monde entier, montrent que la technologie peut être amusante et pleine de surprises. Les compétitions de robots aident les gens à apprendre et à améliorer la fabrication de ces machines, qui aident aussi dans les hôpitaux ou dans l'espace.",
-      "date": "26/10/2023",
+      "title": "Nobel de chimie 2023 🎖️",
+      "summary": "Le prix Nobel de chimie 2023 a été attribué à deux chercheurs pour leurs travaux incroyables sur les nanoparticules. Ces minuscules particules, invisibles à l'œil nu, peuvent avoir des applications très utiles, comme dans la médecine pour transporter des médicaments directement aux cellules malades ou dans l'environnement pour nettoyer la pollution. Les recherches sur les nanoparticules ouvrent la voie à de nombreuses innovations futures qui pourraient aider l'humanité à résoudre des problèmes importants. C'est une grande avancée pour la science !",
+      "date": "06/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte d'une comète 🌠",
-      "summary": "Des astronomes ont repéré une nouvelle comète dans notre système solaire. Une comète est une boule de glace et de poussière qui se déplace dans l'espace, et parfois, elle laisse derrière elle une belle traînée lumineuse que l'on peut voir dans le ciel. Cette nouvelle comète sera visible depuis la Terre dans quelques mois, ce qui est très excitant pour les amateurs d'astronomie. Regarder le ciel et découvrir ces objets célestes nous aide à mieux comprendre l'univers.",
-      "date": "26/10/2023",
+      "title": "La tortue géante retourne à la mer 🐢",
+      "summary": "Une tortue géante, qui avait été secourue après s'être retrouvée piégée dans des filets de pêche, a été relâchée dans l'océan cette semaine. Ce type de tortue, qui peut vivre jusqu'à 100 ans, est essentiel pour l'écosystème marin. Les organisations de protection de la faune travaillent dur pour aider ces tortues à survivre face aux dangers comme la pêche et la pollution. Voir cette tortue retourner librement dans la mer est une bonne nouvelle pour tous ceux qui aiment la nature et souhaitent protéger les animaux.",
+      "date": "06/10/2023",
       "link": ""
     }
   ]
