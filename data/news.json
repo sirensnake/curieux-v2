@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "La découverte d'un nouveau dinosaure 🦖",
-      "summary": "Des chercheurs ont récemment découvert un nouveau dinosaure en Chine ! Ce dinosaure, appelé Fujianvenator prodigiosus, vivait il y a environ 150 millions d'années. Il avait de longues pattes et des ailes, ce qui lui permettait probablement de courir vite et peut-être même de voler sur de courtes distances. Cette découverte aide les scientifiques à mieux comprendre l'évolution des oiseaux, car certains dinosaures ont donné naissance aux oiseaux que nous connaissons aujourd'hui. N'est-ce pas fascinant de penser qu'un pigeon est le lointain cousin d'un T-rex ?!",
-      "date": "06/10/2023",
+      "title": "Découverte d'une nouvelle espèce d'oiseau 🐦",
+      "summary": "Une nouvelle espèce d'oiseau a été découverte en Amazonie ! Ces oiseaux colorés ont été trouvés par des scientifiques qui exploraient la jungle. Leur plumage est d'un mélange de bleu et de vert éclatant, et ils chantent de manière très particulière. Cette découverte est importante car elle montre que la nature a encore beaucoup de secrets à nous révéler. Les scientifiques vont étudier ces oiseaux pour mieux comprendre leur rôle dans leur habitat et comment les protéger.",
+      "date": "07/11/2023",
       "link": ""
     },
     {
-      "title": "Nobel de chimie 2023 🎖️",
-      "summary": "Le prix Nobel de chimie 2023 a été attribué à deux chercheurs pour leurs travaux incroyables sur les nanoparticules. Ces minuscules particules, invisibles à l'œil nu, peuvent avoir des applications très utiles, comme dans la médecine pour transporter des médicaments directement aux cellules malades ou dans l'environnement pour nettoyer la pollution. Les recherches sur les nanoparticules ouvrent la voie à de nombreuses innovations futures qui pourraient aider l'humanité à résoudre des problèmes importants. C'est une grande avancée pour la science !",
-      "date": "06/10/2023",
+      "title": "Nouvelle invention pour nettoyer les océans 🌊",
+      "summary": "Une équipe de jeunes inventeurs a créé un robot spécial pour nettoyer les déchets plastiques dans nos océans. Cet ingénieux robot flotte à la surface de l'eau et collecte les déchets qu'il rencontre. La mer est un endroit vital pour diverses créatures, et réduire les déchets plastiques les aide à mieux vivre. Cette invention montre qu'avec des idées brillantes, il est possible de trouver des solutions pour prendre soin de notre planète.",
+      "date": "07/11/2023",
       "link": ""
     },
     {
-      "title": "La tortue géante retourne à la mer 🐢",
-      "summary": "Une tortue géante, qui avait été secourue après s'être retrouvée piégée dans des filets de pêche, a été relâchée dans l'océan cette semaine. Ce type de tortue, qui peut vivre jusqu'à 100 ans, est essentiel pour l'écosystème marin. Les organisations de protection de la faune travaillent dur pour aider ces tortues à survivre face aux dangers comme la pêche et la pollution. Voir cette tortue retourner librement dans la mer est une bonne nouvelle pour tous ceux qui aiment la nature et souhaitent protéger les animaux.",
-      "date": "06/10/2023",
+      "title": "Une nouvelle aventure spatiale commence 🚀",
+      "summary": "La semaine dernière, une fusée a quitté la Terre pour se diriger vers la Lune. Ses passagers ? Des astronautes prêts à explorer notre satellite naturel. Leur mission est d'étudier la surface lunaire et de tester de nouveaux outils pour les futures explorations spatiales. Ces voyages aident les scientifiques à apprendre comment les humains peuvent vivre en dehors de la Terre, ce qui est passionnant pour l'avenir des voyages dans l'espace.",
+      "date": "07/11/2023",
       "link": ""
     }
   ]
