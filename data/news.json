@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte d'une nouvelle espèce d'oiseau 🐦",
-      "summary": "Une nouvelle espèce d'oiseau a été découverte en Amazonie ! Ces oiseaux colorés ont été trouvés par des scientifiques qui exploraient la jungle. Leur plumage est d'un mélange de bleu et de vert éclatant, et ils chantent de manière très particulière. Cette découverte est importante car elle montre que la nature a encore beaucoup de secrets à nous révéler. Les scientifiques vont étudier ces oiseaux pour mieux comprendre leur rôle dans leur habitat et comment les protéger.",
-      "date": "07/11/2023",
+      "title": "Un robot pour recycler les déchets 🤖",
+      "summary": "Un nouveau robot a été inventé pour aider à trier et recycler les déchets plus facilement. Ce robot utilise des bras mécaniques pour attraper les bouteilles en plastique et les cannettes en aluminium. Il peut même reconnaître différents matériaux grâce à des capteurs spéciaux. Cette invention pourrait aider les centres de recyclage à travailler plus rapidement et à mieux prendre soin de notre planète. C'est une belle avancée technologique qui montre comment la science peut aider à résoudre des problèmes environnementaux.",
+      "date": "03/11/2023",
       "link": ""
     },
     {
-      "title": "Nouvelle invention pour nettoyer les océans 🌊",
-      "summary": "Une équipe de jeunes inventeurs a créé un robot spécial pour nettoyer les déchets plastiques dans nos océans. Cet ingénieux robot flotte à la surface de l'eau et collecte les déchets qu'il rencontre. La mer est un endroit vital pour diverses créatures, et réduire les déchets plastiques les aide à mieux vivre. Cette invention montre qu'avec des idées brillantes, il est possible de trouver des solutions pour prendre soin de notre planète.",
-      "date": "07/11/2023",
+      "title": "Les baleines au centre d'une mission spatiale de la NASA 🌌",
+      "summary": "La NASA a choisi de nommer une nouvelle mission spatiale en l'honneur des baleines! Les scientifiques étudient les mouvements des baleines pour améliorer la technologie des satellites. Ces géants des mers ont une manière unique de se déplacer efficacement dans l'eau, et en s'inspirant de cela, les chercheurs espèrent concevoir des engins spatiaux plus performants. Apprendre de la nature pour mieux explorer l'espace est une aventure passionnante qui montre à quel point les animaux peuvent nous inspirer.",
+      "date": "03/11/2023",
       "link": ""
     },
     {
-      "title": "Une nouvelle aventure spatiale commence 🚀",
-      "summary": "La semaine dernière, une fusée a quitté la Terre pour se diriger vers la Lune. Ses passagers ? Des astronautes prêts à explorer notre satellite naturel. Leur mission est d'étudier la surface lunaire et de tester de nouveaux outils pour les futures explorations spatiales. Ces voyages aident les scientifiques à apprendre comment les humains peuvent vivre en dehors de la Terre, ce qui est passionnant pour l'avenir des voyages dans l'espace.",
-      "date": "07/11/2023",
+      "title": "Un concert de musique classique sur la Lune 🎶",
+      "summary": "Imagine un concert sur la Lune! Une équipe de musiciens et d'ingénieurs discute de l'idée de faire un jour un concert de musique classique depuis notre satellite. Bien sûr, cela demande encore beaucoup de préparation et de recherche car le son voyage différemment dans l'espace. Si ce projet voit le jour, ce serait une première dans l'histoire de la musique et de l'exploration spatiale. Cela pourrait aussi envoyer un message d'unité et de paix au monde entier, en montrant comment la musique relie les gens, même au-delà de notre planète.",
+      "date": "03/11/2023",
       "link": ""
     }
   ]
