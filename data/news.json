@@ -1,20 +1,20 @@
 {
   "articles": [
     {
-      "title": "Un robot pour recycler les déchets 🤖",
-      "summary": "Un nouveau robot a été inventé pour aider à trier et recycler les déchets plus facilement. Ce robot utilise des bras mécaniques pour attraper les bouteilles en plastique et les cannettes en aluminium. Il peut même reconnaître différents matériaux grâce à des capteurs spéciaux. Cette invention pourrait aider les centres de recyclage à travailler plus rapidement et à mieux prendre soin de notre planète. C'est une belle avancée technologique qui montre comment la science peut aider à résoudre des problèmes environnementaux.",
+      "title": "Planète lointaine découverte! 🌌",
+      "summary": "Les astronomes ont découvert une nouvelle planète située à des milliers d'années-lumière de la Terre. Cette incroyable découverte a été rendue possible grâce à un puissant télescope spatial. La planète est surnommée \"TOI-700 e\" et pourrait avoir des caractéristiques semblables à la Terre, comme de l'eau liquide à sa surface. Cette découverte est passionnante car elle nous aide à en savoir plus sur notre univers et la possibilité de trouver d'autres mondes habitables. Qui sait, peut-être qu'un jour, nous en apprendrons davantage sur les mystères de notre galaxie!",
       "date": "03/11/2023",
       "link": ""
     },
     {
-      "title": "Les baleines au centre d'une mission spatiale de la NASA 🌌",
-      "summary": "La NASA a choisi de nommer une nouvelle mission spatiale en l'honneur des baleines! Les scientifiques étudient les mouvements des baleines pour améliorer la technologie des satellites. Ces géants des mers ont une manière unique de se déplacer efficacement dans l'eau, et en s'inspirant de cela, les chercheurs espèrent concevoir des engins spatiaux plus performants. Apprendre de la nature pour mieux explorer l'espace est une aventure passionnante qui montre à quel point les animaux peuvent nous inspirer.",
+      "title": "Bienvenue au bébé panda ! 🐼",
+      "summary": "Bonne nouvelle au zoo de Beauval en France : un bébé panda est né récemment. Les soigneurs sont ravis de voir que le petit se porte bien. Les pandas sont des animaux rares et chaque naissance est donc un événement mondial. Ce bébé panda est tout petit et passe ses journées à dormir et à boire du lait. À mesure qu'il grandira, il développera les fameuses taches noires et blanches qui le rendront si mignon! Les visiteurs du zoo pourront bientôt venir l'admirer, mais pour l'instant, il reste avec sa maman pour se renforcer.",
       "date": "03/11/2023",
       "link": ""
     },
     {
-      "title": "Un concert de musique classique sur la Lune 🎶",
-      "summary": "Imagine un concert sur la Lune! Une équipe de musiciens et d'ingénieurs discute de l'idée de faire un jour un concert de musique classique depuis notre satellite. Bien sûr, cela demande encore beaucoup de préparation et de recherche car le son voyage différemment dans l'espace. Si ce projet voit le jour, ce serait une première dans l'histoire de la musique et de l'exploration spatiale. Cela pourrait aussi envoyer un message d'unité et de paix au monde entier, en montrant comment la musique relie les gens, même au-delà de notre planète.",
+      "title": "Festival des lumières à Lyon 🎆",
+      "summary": "Chaque année, la ville de Lyon en France s'illumine lors du célèbre Festival des Lumières. Cet événement spectaculaire est une tradition où les artistes du monde entier créent des œuvres lumineuses impressionnantes. La ville entière devient un terrain de jeu magique mettant en avant la créativité et l'ingéniosité. Pendant quatre jours, les rues, les bâtiments et les places publiques sont transformés en art vivant grâce à des installations de lumière colorée. C'est une formidable occasion pour les familles de découvrir l'art sous une autre forme tout en se promenant dans une atmosphère féerique.",
       "date": "03/11/2023",
       "link": ""
     }
