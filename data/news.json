@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Planète lointaine découverte! 🌌",
-      "summary": "Les astronomes ont découvert une nouvelle planète située à des milliers d'années-lumière de la Terre. Cette incroyable découverte a été rendue possible grâce à un puissant télescope spatial. La planète est surnommée \"TOI-700 e\" et pourrait avoir des caractéristiques semblables à la Terre, comme de l'eau liquide à sa surface. Cette découverte est passionnante car elle nous aide à en savoir plus sur notre univers et la possibilité de trouver d'autres mondes habitables. Qui sait, peut-être qu'un jour, nous en apprendrons davantage sur les mystères de notre galaxie!",
-      "date": "03/11/2023",
+      "title": "🏳️‍🌈 Un festival coloré pour célébrer la diversité !",
+      "summary": "Ce week-end, une grande parade multicolore a eu lieu dans la ville pour célébrer la diversité et l'inclusion. De nombreuses personnes se sont rassemblées pour montrer leur soutien à toutes les cultures et styles de vie. Les participants portaient des tenues colorées et dansaient au rythme de la musique joyeuse. L'événement a été créé pour rappeler l'importance de respecter et accepter les différences de chacun. C'était une journée remplie de sourires et de partage !",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Bienvenue au bébé panda ! 🐼",
-      "summary": "Bonne nouvelle au zoo de Beauval en France : un bébé panda est né récemment. Les soigneurs sont ravis de voir que le petit se porte bien. Les pandas sont des animaux rares et chaque naissance est donc un événement mondial. Ce bébé panda est tout petit et passe ses journées à dormir et à boire du lait. À mesure qu'il grandira, il développera les fameuses taches noires et blanches qui le rendront si mignon! Les visiteurs du zoo pourront bientôt venir l'admirer, mais pour l'instant, il reste avec sa maman pour se renforcer.",
-      "date": "03/11/2023",
+      "title": "🧬 Des scientifiques décryptent un super changement génétique !",
+      "summary": "Des chercheurs ont découvert une nouvelle façon dont les plantes adaptent leurs gènes pour mieux survivre aux changements climatiques. Ce processus fascinant permet aux plantes de grandir même dans des conditions difficiles, comme le manque d'eau. Cette découverte pourrait aider à développer de nouvelles variétés de cultures plus résistantes à la sécheresse, ce qui est important pour notre futur ! Les scientifiques continuent de chercher comment utiliser cette information pour améliorer l'agriculture.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Festival des lumières à Lyon 🎆",
-      "summary": "Chaque année, la ville de Lyon en France s'illumine lors du célèbre Festival des Lumières. Cet événement spectaculaire est une tradition où les artistes du monde entier créent des œuvres lumineuses impressionnantes. La ville entière devient un terrain de jeu magique mettant en avant la créativité et l'ingéniosité. Pendant quatre jours, les rues, les bâtiments et les places publiques sont transformés en art vivant grâce à des installations de lumière colorée. C'est une formidable occasion pour les familles de découvrir l'art sous une autre forme tout en se promenant dans une atmosphère féerique.",
-      "date": "03/11/2023",
+      "title": "🐧 Des manchots heureux retrouvent la mer !",
+      "summary": "Après plusieurs mois de soin dans un centre de réhabilitation, 30 manchots ont été libérés sur une plage pour retrouver leur habitat naturel. Ces oiseaux avaient été recueillis parce qu'ils étaient blessés ou trop faibles pour survivre seuls. Les soigneurs ont pris soin d'eux jusqu'à ce qu'ils soient assez forts pour retourner dans l'océan. Assister à leur retour à la mer a été un moment émouvant pour tous les bénévoles, et une belle réussite pour la protection animale !",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
