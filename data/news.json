@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Atterrissage réussi sur Mars 🚀",
-      "summary": "La NASA vient de réussir un nouvel atterrissage sur Mars avec une mission incroyable appelée \"Perseverance\". Cette mission a pour but de découvrir si la planète rouge a pu, un jour, abriter des formes de vie. C'est un robot qui s'est posé sur le sol martien, et il est équipé de nombreux outils pour faire des expériences. Il va aussi collecter des échantillons de terre et de roche pour les ramener sur Terre plus tard. Cette mission est très importante pour en apprendre plus sur Mars et peut-être se préparer pour que des humains y voyagent un jour. Vive l'exploration spatiale !",
-      "date": "13/10/2023",
+      "title": "🌟 Découverte d'une nouvelle étoile !",
+      "summary": "Des astronomes ont découvert une nouvelle étoile très brillante dans notre galaxie, la Voie lactée ! Cette étoile, pas encore nommée, est plus grande que notre soleil et située à des millions de kilomètres de la Terre. Les scientifiques étudient cette étoile pour mieux comprendre comment les étoiles naissent et évoluent. Découvrir de nouvelles étoiles aide les chercheurs à apprendre sur l'univers et ses mystères. Peut-être qu'un jour, toi aussi tu pourras observer ces étoiles avec un télescope !",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Un refuge pour les abeilles 🐝",
-      "summary": "En France, une nouvelle initiative a été lancée pour aider les abeilles. Des associations se regroupent pour créer des zones protégées où les abeilles peuvent vivre en sécurité. C'est très important car les abeilles aident énormément la nature en pollinisant les fleurs. Ces zones sont remplies de plantes et de fleurs que les abeilles adorent. Elles peuvent ainsi se nourrir et se reproduire, ce qui aide toute la biodiversité environnante. Protéger les abeilles, c'est aussi protéger notre environnement et la qualité de notre nourriture. Génial, non ?",
-      "date": "13/10/2023",
+      "title": "🐦 Un refuge pour les oiseaux rares",
+      "summary": "En France, un nouveau refuge a ouvert pour protéger des oiseaux rares comme le balbuzard pêcheur. Ce refuge est un endroit sûr où les oiseaux peuvent se reposer, manger et construire leurs nids loin des dangers. En protégeant ces espèces, on aide à maintenir l'équilibre de la nature. Si tu aimes les oiseaux, il est possible d'observer des oiseaux près de chez toi et même de construire des nichoirs pour les aider !",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Festival international du cinéma 🎬",
-      "summary": "Il se passe quelque chose de magique dans le monde du cinéma : le Festival international du film pour enfants de Busan vient de débuter. Ce festival est une belle occasion pour les enfants du monde entier de découvrir des films qui racontent des histoires de partout. Chaque film est choisi pour sa capacité à enseigner, émouvoir ou divertir. De nombreux jeunes réalisateurs présentent leurs œuvres, partageant ainsi des perspectives différentes et enrichissantes. C'est un moment où le cinéma devient un pont entre les cultures !",
-      "date": "13/10/2023",
+      "title": "🍎 Festival de la pomme en Normandie",
+      "summary": "En Normandie, le Festival de la pomme réunit chaque année plein de gens pour célébrer ce fruit délicieux. Au programme : des dégustations de pommes, des concours de tarte aux pommes et même une course de sacs remplis de pommes ! C’est aussi l'occasion de découvrir comment les pommes sont cultivées. Ce genre d'événements aide à rassembler les gens autour d'une tradition locale tout en s'amusant. Peut-être qu'un jour, tu pourras y participer et goûter à des variétés de pommes que tu ne connais pas encore !",
+      "date": "10/10/2023",
       "link": ""
     }
   ]
