@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "content": [
     {
-      "title": "🌟 Découverte d'une nouvelle étoile !",
-      "summary": "Des astronomes ont découvert une nouvelle étoile très brillante dans notre galaxie, la Voie lactée ! Cette étoile, pas encore nommée, est plus grande que notre soleil et située à des millions de kilomètres de la Terre. Les scientifiques étudient cette étoile pour mieux comprendre comment les étoiles naissent et évoluent. Découvrir de nouvelles étoiles aide les chercheurs à apprendre sur l'univers et ses mystères. Peut-être qu'un jour, toi aussi tu pourras observer ces étoiles avec un télescope !",
-      "date": "10/10/2023",
+      "title": "Des astronautes reviennent de l'espace 🚀",
+      "summary": "Cette semaine, un vaisseau spatial est revenu sur Terre après une mission dans l'espace. Les astronautes ont passé plusieurs mois à bord de la Station spatiale internationale, où ils ont mené des expériences scientifiques. Ils ont étudié comment les plantes poussent en apesanteur et ont observé des étoiles lointaines. Revenir sur Terre est un processus délicat, mais ces astronautes sont experts. Leur retour nous rappelle l'importance de l'exploration spatiale pour mieux comprendre notre univers.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "🐦 Un refuge pour les oiseaux rares",
-      "summary": "En France, un nouveau refuge a ouvert pour protéger des oiseaux rares comme le balbuzard pêcheur. Ce refuge est un endroit sûr où les oiseaux peuvent se reposer, manger et construire leurs nids loin des dangers. En protégeant ces espèces, on aide à maintenir l'équilibre de la nature. Si tu aimes les oiseaux, il est possible d'observer des oiseaux près de chez toi et même de construire des nichoirs pour les aider !",
-      "date": "10/10/2023",
+      "title": "Découverte d'une nouvelle espèce de grenouille 🐸",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans les forêts d'Amérique du Sud. Cette grenouille est très petite, de la taille d'un ongle, et sa couleur vive la rend unique. Les chercheurs sont ravis, car chaque nouvelle espèce découverte nous en apprend plus sur la biodiversité et l'importance de protéger ces habitats naturels. Protéger les forêts est crucial pour que ces animaux fascinants puissent survivre.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "🍎 Festival de la pomme en Normandie",
-      "summary": "En Normandie, le Festival de la pomme réunit chaque année plein de gens pour célébrer ce fruit délicieux. Au programme : des dégustations de pommes, des concours de tarte aux pommes et même une course de sacs remplis de pommes ! C’est aussi l'occasion de découvrir comment les pommes sont cultivées. Ce genre d'événements aide à rassembler les gens autour d'une tradition locale tout en s'amusant. Peut-être qu'un jour, tu pourras y participer et goûter à des variétés de pommes que tu ne connais pas encore !",
-      "date": "10/10/2023",
+      "title": "Un festival géant de cerfs-volants en Inde 🪁",
+      "summary": "En Inde, des centaines de personnes se sont rassemblées pour un festival de cerfs-volants colorés. Pendant cet événement spécial, le ciel devient un magnifique tableau de couleurs et de formes. Les participants rivalisent d'imagination pour créer des cerfs-volants de toutes tailles et motifs. Ce festival est une ancienne tradition qui encourage la créativité et apporte de la joie aux communautés locales. C'est aussi l'occasion de célébrer la culture et de partager de merveilleux moments en famille et entre amis.",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
