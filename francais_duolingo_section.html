@@ -3,221 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRANÇAIS - Le Monde des Curieux</title>
+    <title>🇫🇷 Français - Le Monde des Curieux</title>
+    
+    <!-- CSS Externe -->
+    <link rel="stylesheet" href="styles/francais-section.css">
+    
+    <!-- Police Minecraft -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/duolingo-shared.css">
-    <link rel="stylesheet" href="styles/sections/french-duolingo.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header-hud">
-            <button class="pixel-btn secondary small" onclick="location.href='index.html'">← RETOUR</button>
-            <h1 class="pixel-title">🇫🇷 FRANÇAIS</h1>
-            <div id="xp-display" class="xp-badge">0 XP</div>
-        </header>
-        <main id="lessons-list">
-            <div id="lessons-grid" class="lessons-grid"></div>
-        </main>
-        <section id="lesson-screen" class="hidden">
-            <div class="progress-container">
-                <div id="progress-fill" class="progress-bar"></div>
-            </div>
-            <div class="exercise-box">
-                <h2 id="question-text">Chargement...</h2>
-                <input type="text" id="user-input" class="pixel-input" autocomplete="off" placeholder="Tape ta réponse ici...">
-                <div class="actions">
-                    <button class="pixel-btn primary" onclick="engine.validate()">VALIDER (ENTRÉE)</button>
+    <!-- Header -->
+    <button onclick="history.back()" class="back-btn">
+        ← Retour à l'accueil
+    </button>
+
+    <!-- Titre Section -->
+    <div class="section-title">
+        <h1>🇫🇷 Apprends le Français avec Curio !</h1>
+        <p>Améliore ton français en t'amusant : grammaire, conjugaison, orthographe et vocabulaire !</p>
+    </div>
+
+    <!-- Zone Gamification -->
+    <div class="gamification-header">
+        <!-- Streak -->
+        <div class="gamification-badge streak-badge">
+            <span class="badge-icon">🔥</span>
+            <span class="badge-value" id="streak-value">0</span>
+            <span class="badge-label">jours</span>
+        </div>
+        
+        <!-- Hearts -->
+        <div class="gamification-badge hearts-badge">
+            <span class="badge-icon">❤️</span>
+            <span class="badge-value" id="hearts-value">5</span>
+            <span class="badge-label">cœurs</span>
+        </div>
+        
+        <!-- XP -->
+        <div class="gamification-badge xp-badge">
+            <span class="badge-icon">⭐</span>
+            <span class="badge-value" id="xp-value">CHARGEMENT...</span>
+        </div>
+    </div>
+
+    <!-- Contenu Éducatif -->
+    <div class="learning-content">
+        <!-- Grammaire -->
+        <div class="topic-card">
+            <h2>📚 Grammaire</h2>
+            <p>Maîtrise les règles de la langue française</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">🔤</div>
+                    <h3>Homophones</h3>
+                    <p>a/à, et/est, son/sont...</p>
+                    <button class="btn-start-activity" onclick="startActivity('homophones')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">✏️</div>
+                    <h3>Accords</h3>
+                    <p>Genre, nombre, participes</p>
+                    <button class="btn-start-activity" onclick="startActivity('accords')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🎯</div>
+                    <h3>COD / COI</h3>
+                    <p>Compléments d'objet</p>
+                    <button class="btn-start-activity" onclick="startActivity('cod-coi')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🔢</div>
+                    <h3>Pluriels</h3>
+                    <p>Règles du pluriel</p>
+                    <button class="btn-start-activity" onclick="startActivity('pluriel')">
+                        Commencer
+                    </button>
                 </div>
             </div>
-        </section>
-    </div>
-    <div class="curio-fixed">
-        <div class="curio-bubble" onclick="engine.showHint()">
-            <p id="curio-msg">Clique sur Curio pour un indice !</p>
         </div>
-        <div class="curio-avatar-container">
-            <div id="sound-toggle" class="sound-badge off" onclick="engine.enableAudio()">🔇</div>
-            <div class="curio-avatar-box" onclick="engine.showHint()">
-                <img src="assets/img/avatars/curio-normal.png" id="curio-sprite-img" alt="Curio" width="80">
+
+        <!-- Conjugaison -->
+        <div class="topic-card">
+            <h2>🔄 Conjugaison</h2>
+            <p>Apprends les temps et les verbes</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">⏰</div>
+                    <h3>Présent</h3>
+                    <p>Verbes du 1er, 2ème, 3ème groupe</p>
+                    <button class="btn-start-activity" onclick="startActivity('present')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">📅</div>
+                    <h3>Passé Composé</h3>
+                    <p>Auxiliaires être et avoir</p>
+                    <button class="btn-start-activity" onclick="startActivity('passe-compose')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🔮</div>
+                    <h3>Futur Simple</h3>
+                    <p>Actions à venir</p>
+                    <button class="btn-start-activity" onclick="startActivity('futur')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">📖</div>
+                    <h3>Imparfait</h3>
+                    <p>Le temps du passé</p>
+                    <button class="btn-start-activity" onclick="startActivity('imparfait')">
+                        Commencer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orthographe & Vocabulaire -->
+        <div class="topic-card">
+            <h2>📝 Orthographe & Vocabulaire</h2>
+            <p>Enrichis ton expression écrite</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">📝</div>
+                    <h3>Orthographe</h3>
+                    <p>Mots difficiles</p>
+                    <button class="btn-start-activity" onclick="startActivity('orthographe')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">📚</div>
+                    <h3>Vocabulaire</h3>
+                    <p>Synonymes et contraires</p>
+                    <button class="btn-start-activity" onclick="startActivity('vocabulaire')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🎭</div>
+                    <h3>Expressions</h3>
+                    <p>Expressions françaises</p>
+                    <button class="btn-start-activity" onclick="startActivity('expressions')">
+                        Commencer
+                    </button>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🔠</div>
+                    <h3>Familles de Mots</h3>
+                    <p>Préfixes et suffixes</p>
+                    <button class="btn-start-activity" onclick="startActivity('familles-mots')">
+                        Commencer
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    <div id="victory-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="modal-header">LEÇON RÉUSSIE !</div>
-            <div class="modal-body">
-                <div class="victory-icon">🏆</div>
-                <p id="modal-msg">Bravo petit curieux !</p>
-                <div class="xp-gain">+ <span id="xp-added">0</span> XP</div>
-                <div class="total-xp">Total : <span id="total-xp-display">0</span> XP</div>
-            </div>
-            <button class="pixel-btn primary" onclick="location.reload()">CONTINUER</button>
-        </div>
+
+    <!-- Modal Activité (créé dynamiquement) -->
+    <div id="activity-modal"></div>
+    
+    <!-- Feedback Complétion (créé dynamiquement) -->
+    <div id="completion-feedback"></div>
+
+    <!-- Bulle d'aide Curio -->
+    <div id="curio-help" class="curio-help-bubble">
+        <button class="curio-close" onclick="closeCurioHelp()">×</button>
+        <div class="curio-avatar">🦊</div>
+        <p class="curio-message" id="curio-message">
+            Bienvenue ! Je suis Curio, ton guide. Choisis une activité pour commencer ton aventure !
+        </p>
     </div>
 
-    <!-- ✅✅✅ SYSTÈME XP UNIFIÉ ✅✅✅ -->
-    <script>
-    (function() {
-        'use strict';
-        
-        console.log('🎯 Initialisation système XP pour section FRANÇAIS');
-        
-        if (typeof window.xpSystem === 'undefined') {
-            class UnifiedXPSystem {
-                constructor() {
-                    this.storageKey = 'lemondedescurieux_xp';
-                    this.sections = ['francais', 'maths', 'anglais', 'sciences', 'histoire'];
-                    this.data = this.loadData();
-                    console.log('✅ xpSystem créé', this.data);
-                }
-
-                loadData() {
-                    try {
-                        const saved = localStorage.getItem(this.storageKey);
-                        if (saved) return JSON.parse(saved);
-                    } catch (e) {
-                        console.error('Erreur chargement:', e);
-                    }
-                    return this.getDefaultData();
-                }
-
-                getDefaultData() {
-                    const bySection = {};
-                    this.sections.forEach(s => { bySection[s] = 0; });
-                    return {
-                        total: 0,
-                        bySection: bySection,
-                        level: 1,
-                        xpToNextLevel: 200,
-                        history: [],
-                        lastActivity: null
-                    };
-                }
-
-                saveData() {
-                    try {
-                        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-                        console.log('💾 XP sauvegardé:', this.data.total);
-                        return true;
-                    } catch (e) {
-                        console.error('Erreur sauvegarde:', e);
-                        return false;
-                    }
-                }
-
-                addXP(section, amount, metadata = {}) {
-                    if (!this.sections.includes(section)) {
-                        console.warn('⚠️ Section inconnue:', section);
-                        return false;
-                    }
-
-                    const xpToAdd = Math.max(0, parseInt(amount) || 0);
-                    if (xpToAdd === 0) return false;
-
-                    const previousLevel = this.data.level;
-
-                    this.data.bySection[section] += xpToAdd;
-                    this.data.total += xpToAdd;
-                    this.data.lastActivity = new Date().toISOString();
-
-                    this.addToHistory(section, xpToAdd, metadata);
-                    this.recalculateLevel();
-                    this.saveData();
-
-                    window.dispatchEvent(new CustomEvent('xp:updated', {
-                        detail: { section, amount: xpToAdd, total: this.data.total, level: this.data.level }
-                    }));
-
-                    if (this.data.level > previousLevel) {
-                        setTimeout(() => {
-                            alert(`🎉 NIVEAU ${this.data.level} ATTEINT !`);
-                        }, 1000);
-                    }
-
-                    console.log(`✅ +${xpToAdd} XP (${section}) | Total: ${this.data.total} XP`);
-                    return true;
-                }
-
-                recalculateLevel() {
-                    let level = 1;
-                    let totalNeeded = 0;
-                    const baseXP = 200;
-                    const multiplier = 1.5;
-
-                    while (totalNeeded <= this.data.total) {
-                        const xpForLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
-                        totalNeeded += xpForLevel;
-                        if (totalNeeded <= this.data.total) level++;
-                    }
-
-                    this.data.level = level;
-                    this.data.xpToNextLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
-                }
-
-                addToHistory(section, xp, metadata) {
-                    this.data.history.unshift({
-                        section, xp,
-                        timestamp: new Date().toISOString(),
-                        ...metadata
-                    });
-                    if (this.data.history.length > 100) {
-                        this.data.history = this.data.history.slice(0, 100);
-                    }
-                }
-
-                getTotal() { return this.data.total; }
-                getLevel() { return this.data.level; }
-                getBySection(section) { return this.data.bySection[section] || 0; }
-            }
-
-            window.xpSystem = new UnifiedXPSystem();
-        }
-        
-        const xpDisplay = document.getElementById('xp-display');
-        if (xpDisplay && window.xpSystem) {
-            const francaisXP = window.xpSystem.getBySection('francais');
-            xpDisplay.textContent = `${francaisXP} XP`;
-            console.log('📊 XP Français affichés:', francaisXP);
-        }
-    })();
-    </script>
-
-    <script src="scripts/data/francais-lessons.js"></script>
-    <script src="scripts/core/lesson-engine.js"></script>
-    <script>
-        const engine = new LessonEngine(francaisLessons);
-        
-        // ✅ INTERCEPTER LA FIN DE LEÇON
-        const originalFinish = engine.finish.bind(engine);
-        engine.finish = function() {
-            console.log('🎯 Leçon terminée, ajout XP...');
-            
-            const exercisesCount = this.lesson.exercises.length;
-            const correctAnswers = this.currentIndex;
-            const baseXP = 20;
-            const bonusXP = Math.floor(correctAnswers * 2);
-            const totalXP = baseXP + bonusXP;
-            
-            if (window.xpSystem) {
-                window.xpSystem.addXP('francais', totalXP, {
-                    lesson: this.lesson.title || 'Leçon de français',
-                    exercises: exercisesCount,
-                    timestamp: new Date().toISOString()
-                });
-                
-                const xpAddedElement = document.getElementById('xp-added');
-                const totalXpElement = document.getElementById('total-xp-display');
-                
-                if (xpAddedElement) xpAddedElement.textContent = totalXP;
-                if (totalXpElement) totalXpElement.textContent = window.xpSystem.getTotal();
-                
-                console.log(`✅ Modal: +${totalXP} XP, Total: ${window.xpSystem.getTotal()} XP`);
-            }
-            
-            originalFinish();
-        };
-        
-        console.log('✅ Section français avec système XP intégré');
-    </script>
+    <!-- Script Standalone -->
+    <script src="scripts/francais-standalone.js"></script>
 </body>
 </html>
