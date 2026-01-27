@@ -1,21 +1,21 @@
 {
-  "content": [
+  "articles": [
     {
-      "title": "Des astronautes reviennent de l'espace 🚀",
-      "summary": "Cette semaine, un vaisseau spatial est revenu sur Terre après une mission dans l'espace. Les astronautes ont passé plusieurs mois à bord de la Station spatiale internationale, où ils ont mené des expériences scientifiques. Ils ont étudié comment les plantes poussent en apesanteur et ont observé des étoiles lointaines. Revenir sur Terre est un processus délicat, mais ces astronautes sont experts. Leur retour nous rappelle l'importance de l'exploration spatiale pour mieux comprendre notre univers.",
-      "date": "26/10/2023",
+      "title": "Les secrets des dauphins 🐬",
+      "summary": "Une nouvelle étude a découvert que les dauphins peuvent « parler » entre eux avec des sortes de « sifflements ». Ces bruits spéciaux aident les dauphins à communiquer lorsqu'ils chassent ou jouent. Les scientifiques ont observé que chaque dauphin a son propre sifflement, un peu comme notre prénom. C'est fascinant de voir à quel point ces animaux marins sont intelligents et sociaux, vivant souvent en groupes soudés appelés « pods ». En apprendre plus sur les dauphins nous aide à mieux comprendre et protéger nos amis océaniques.",
+      "date": "27/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte d'une nouvelle espèce de grenouille 🐸",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans les forêts d'Amérique du Sud. Cette grenouille est très petite, de la taille d'un ongle, et sa couleur vive la rend unique. Les chercheurs sont ravis, car chaque nouvelle espèce découverte nous en apprend plus sur la biodiversité et l'importance de protéger ces habitats naturels. Protéger les forêts est crucial pour que ces animaux fascinants puissent survivre.",
-      "date": "26/10/2023",
+      "title": "Exploration martienne 🚀",
+      "summary": "La NASA a lancé une nouvelle mission passionnante vers Mars avec un rover nommé Perseverance. Ce robot a pour mission principale de chercher des signes de vie ancienne sur la planète rouge. Les scientifiques espèrent qu'il nous apportera des informations cruciales sur l'histoire de Mars. Perseverance est équipé d'instruments incroyables pour analyser les roches et l'atmosphère martienne. La découverte de vie ancienne, même microscopique, serait une avancée incroyable pour l'humanité et nous aiderait à mieux comprendre notre propre planète.",
+      "date": "27/10/2023",
       "link": ""
     },
     {
-      "title": "Un festival géant de cerfs-volants en Inde 🪁",
-      "summary": "En Inde, des centaines de personnes se sont rassemblées pour un festival de cerfs-volants colorés. Pendant cet événement spécial, le ciel devient un magnifique tableau de couleurs et de formes. Les participants rivalisent d'imagination pour créer des cerfs-volants de toutes tailles et motifs. Ce festival est une ancienne tradition qui encourage la créativité et apporte de la joie aux communautés locales. C'est aussi l'occasion de célébrer la culture et de partager de merveilleux moments en famille et entre amis.",
-      "date": "26/10/2023",
+      "title": "Le marathon des records 🏃‍♂️",
+      "summary": "Un marathon incroyable vient de se dérouler à New York, où des milliers de coureurs se sont rassemblés pour un long parcours de 42,195 kilomètres. Participer à un marathon, c'est comme un grand défi personnel où chaque coureur pousse ses limites. Cet événement attire des gens du monde entier, tous prêts à courir, à être encouragés par des spectateurs enthousiastes. Cette année, de nombreux records personnels ont été battus, rendant cette expérience encore plus spéciale pour les participants. Chaque marathon est une fête de sport et de détermination!",
+      "date": "27/10/2023",
       "link": ""
     }
   ]
