@@ -70,10 +70,22 @@
                     <button @click="toggleMaps()" class="action-btn btn-primary">
                         🖼️ Voir l'illustration
                     </button>
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info">
+                        📖 En savoir plus
+                    </button>
                     <button @click="startQuiz()" class="action-btn btn-quiz">
                         🎯 Quiz
                     </button>
                 </div>
+            </div>
+
+            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+            <div x-show="showLesson" x-transition class="lesson-container">
+                <div class="lesson-header">
+                    <h2>📖 <span x-text="getLessonTitle()"></span></h2>
+                    <button @click="showLesson = false" class="close-btn">Fermer</button>
+                </div>
+                <div class="lesson-content" x-html="getLessonContent()"></div>
             </div>
 
             <!-- FRISE CHRONOLOGIQUE -->
@@ -233,6 +245,7 @@
                 Alpine.data('histoireApp', () => ({
                     currentPeriod: 'prehistoire',
                     showMap: false,
+                    showLesson: false,
                     showQuiz: false,
                     showResults: false,
                     showTimeline: false,
@@ -391,6 +404,155 @@
                     },
                     getMapImageUrl() { return this.mapData[this.currentPeriod]?.imageUrl || ""; },
                     getMapTitle() { return this.mapData[this.currentPeriod]?.title || ""; },
+                    
+                    // CONTENU ÉDUCATIF PAR PÉRIODE
+                    lessonData: {
+                        prehistoire: {
+                            title: "La Préhistoire : Les débuts de l'humanité",
+                            content: `
+                                <h3>🦴 Qu'est-ce que la Préhistoire ?</h3>
+                                <p>La Préhistoire est la période la plus longue de l'histoire humaine. Elle commence il y a <strong>environ 3 millions d'années</strong> avec les premiers hommes et se termine vers <strong>-3300 avant J.-C.</strong> avec l'invention de l'écriture.</p>
+                                
+                                <h3>🔥 Les grandes découvertes</h3>
+                                <ul>
+                                    <li><strong>Le feu</strong> : Maîtrisé il y a environ 400 000 ans, il permet de se chauffer, cuisiner et se protéger</li>
+                                    <li><strong>Les outils</strong> : En pierre taillée, puis polie (haches, couteaux, grattoirs)</li>
+                                    <li><strong>L'art</strong> : Peintures rupestres dans les grottes (Lascaux, Chauvet)</li>
+                                    <li><strong>L'agriculture</strong> : Vers -10 000 ans, passage de chasseur-cueilleur à agriculteur</li>
+                                </ul>
+                                
+                                <h3>🏠 Mode de vie</h3>
+                                <p>Les hommes préhistoriques vivaient en <strong>petits groupes nomades</strong>, se déplaçant pour suivre les troupeaux d'animaux. Ils habitaient dans des <strong>grottes</strong> ou construisaient des <strong>abris en peaux et branches</strong>.</p>
+                                
+                                <h3>🎨 L'art préhistorique</h3>
+                                <p>Les hommes de Cro-Magnon (nos ancêtres directs) ont laissé de magnifiques <strong>peintures dans les grottes</strong> représentant des animaux (mammouths, bisons, chevaux) et des mains en négatif.</p>
+                            `
+                        },
+                        antiquite: {
+                            title: "L'Antiquité : Les grandes civilisations",
+                            content: `
+                                <h3>🏛️ Qu'est-ce que l'Antiquité ?</h3>
+                                <p>L'Antiquité débute avec l'<strong>invention de l'écriture</strong> vers -3300 av. J.-C. et se termine avec la <strong>chute de l'Empire romain d'Occident</strong> en 476 après J.-C.</p>
+                                
+                                <h3>🏺 Les grandes civilisations</h3>
+                                <ul>
+                                    <li><strong>Les Égyptiens</strong> : Pyramides, pharaons, hiéroglyphes, momification</li>
+                                    <li><strong>Les Grecs</strong> : Démocratie à Athènes, philosophie, théâtre, Jeux Olympiques</li>
+                                    <li><strong>Les Romains</strong> : Immense empire, routes, aqueducs, droit romain</li>
+                                </ul>
+                                
+                                <h3>⚔️ L'Empire Romain</h3>
+                                <p>Rome a créé le plus grand empire de l'Antiquité, s'étendant de l'Angleterre jusqu'au Moyen-Orient. Les Romains ont construit :</p>
+                                <ul>
+                                    <li><strong>Routes</strong> pour faciliter le commerce et les déplacements des légions</li>
+                                    <li><strong>Aqueducs</strong> pour amener l'eau dans les villes</li>
+                                    <li><strong>Amphithéâtres</strong> comme le Colisée pour les spectacles</li>
+                                    <li><strong>Thermes</strong> (bains publics) pour l'hygiène et les loisirs</li>
+                                </ul>
+                                
+                                <h3>📜 L'héritage de l'Antiquité</h3>
+                                <p>Nous utilisons encore aujourd'hui l'<strong>alphabet latin</strong>, de nombreux mots viennent du <strong>grec et du latin</strong>, et notre <strong>calendrier</strong> a été créé par Jules César !</p>
+                            `
+                        },
+                        moyenage: {
+                            title: "Le Moyen Âge : L'époque des châteaux et des chevaliers",
+                            content: `
+                                <h3>🏰 Qu'est-ce que le Moyen Âge ?</h3>
+                                <p>Le Moyen Âge commence en <strong>476</strong> (chute de Rome) et se termine en <strong>1492</strong> (découverte de l'Amérique). C'est une période de <strong>1000 ans</strong> !</p>
+                                
+                                <h3>⚔️ Le système féodal</h3>
+                                <p>La société est organisée en trois groupes :</p>
+                                <ul>
+                                    <li><strong>Le clergé</strong> (ceux qui prient) : moines, prêtres, évêques</li>
+                                    <li><strong>La noblesse</strong> (ceux qui combattent) : rois, seigneurs, chevaliers</li>
+                                    <li><strong>Le peuple</strong> (ceux qui travaillent) : paysans, artisans, marchands</li>
+                                </ul>
+                                
+                                <h3>🛡️ Les chevaliers</h3>
+                                <p>Les chevaliers sont des <strong>guerriers à cheval</strong> au service d'un seigneur. Ils portent une <strong>armure en métal</strong>, utilisent une <strong>épée</strong> et un <strong>bouclier</strong>. Ils suivent le <strong>code de la chevalerie</strong> : être courageux, loyal et protéger les faibles.</p>
+                                
+                                <h3>🏰 La vie au château</h3>
+                                <p>Les châteaux forts sont construits en <strong>pierre</strong>, avec des <strong>remparts</strong>, des <strong>tours</strong>, un <strong>donjon</strong> et un <strong>pont-levis</strong>. Ils protègent le seigneur et sa famille des attaques.</p>
+                                
+                                <h3>🎭 Culture et religion</h3>
+                                <p>L'Église joue un rôle très important. On construit de magnifiques <strong>cathédrales gothiques</strong> comme Notre-Dame de Paris. Les moines copient des livres à la main dans les <strong>monastères</strong>.</p>
+                            `
+                        },
+                        tempsmodernes: {
+                            title: "Les Temps Modernes : L'ère des grandes découvertes",
+                            content: `
+                                <h3>⛵ Qu'est-ce que les Temps Modernes ?</h3>
+                                <p>Les Temps Modernes commencent en <strong>1492</strong> avec la découverte de l'Amérique et se terminent en <strong>1789</strong> avec la Révolution française.</p>
+                                
+                                <h3>🌍 Les grandes découvertes</h3>
+                                <ul>
+                                    <li><strong>1492</strong> : Christophe Colomb découvre l'Amérique en cherchant une route vers les Indes</li>
+                                    <li><strong>1498</strong> : Vasco de Gama atteint les Indes en contournant l'Afrique</li>
+                                    <li><strong>1519-1522</strong> : Magellan fait le premier tour du monde (il meurt pendant le voyage)</li>
+                                </ul>
+                                
+                                <h3>🚢 Les navires explorateurs</h3>
+                                <p>Les Européens utilisent des <strong>caravelles</strong> : bateaux à voiles rapides et maniables. Ils naviguent grâce à la <strong>boussole</strong>, l'<strong>astrolabe</strong> et des <strong>cartes marines</strong>.</p>
+                                
+                                <h3>📖 La Renaissance</h3>
+                                <p>C'est une période de renouveau des <strong>arts</strong>, des <strong>sciences</strong> et de la <strong>pensée</strong> :</p>
+                                <ul>
+                                    <li><strong>1455</strong> : Gutenberg invente l'imprimerie → les livres deviennent moins chers</li>
+                                    <li><strong>Léonard de Vinci</strong> : peintre, inventeur, scientifique génial</li>
+                                    <li><strong>Copernic</strong> : découvre que la Terre tourne autour du Soleil</li>
+                                </ul>
+                                
+                                <h3>👑 Les rois puissants</h3>
+                                <p><strong>François Ier</strong> en France et <strong>Louis XIV</strong> (le Roi-Soleil) construisent des palais magnifiques comme le <strong>château de Versailles</strong>. C'est l'époque de la <strong>monarchie absolue</strong> : le roi a tous les pouvoirs.</p>
+                            `
+                        },
+                        epoquecontemporaine: {
+                            title: "L'Époque Contemporaine : Le monde moderne",
+                            content: `
+                                <h3>🏭 Qu'est-ce que l'Époque Contemporaine ?</h3>
+                                <p>L'Époque Contemporaine commence en <strong>1789</strong> avec la Révolution française et continue jusqu'à aujourd'hui.</p>
+                                
+                                <h3>🇫🇷 La Révolution française (1789)</h3>
+                                <p>Le peuple français se révolte contre le roi <strong>Louis XVI</strong>. Événements importants :</p>
+                                <ul>
+                                    <li><strong>14 juillet 1789</strong> : Prise de la Bastille (prison symbole du pouvoir royal)</li>
+                                    <li><strong>1789</strong> : Déclaration des Droits de l'Homme et du Citoyen</li>
+                                    <li><strong>1792</strong> : Proclamation de la République</li>
+                                    <li>Devise : <strong>"Liberté, Égalité, Fraternité"</strong></li>
+                                </ul>
+                                
+                                <h3>⚙️ La Révolution industrielle (1800s)</h3>
+                                <p>Invention de la <strong>machine à vapeur</strong> qui transforme tout :</p>
+                                <ul>
+                                    <li><strong>Transports</strong> : trains, bateaux à vapeur</li>
+                                    <li><strong>Usines</strong> : production en masse de textiles, acier</li>
+                                    <li><strong>Villes</strong> : les gens quittent les campagnes pour travailler en ville</li>
+                                </ul>
+                                
+                                <h3>⚔️ Les grandes guerres du XXe siècle</h3>
+                                <ul>
+                                    <li><strong>1914-1918</strong> : Première Guerre mondiale</li>
+                                    <li><strong>1939-1945</strong> : Seconde Guerre mondiale</li>
+                                    <li>Ces guerres ont causé des millions de morts et changé le monde</li>
+                                </ul>
+                                
+                                <h3>🚀 Le monde moderne</h3>
+                                <p>Après 1945, le monde change rapidement :</p>
+                                <ul>
+                                    <li><strong>1969</strong> : L'homme marche sur la Lune</li>
+                                    <li><strong>1990s</strong> : Invention d'Internet</li>
+                                    <li><strong>2000s</strong> : Smartphones, réseaux sociaux</li>
+                                </ul>
+                            `
+                        }
+                    },
+                    
+                    getLessonTitle() { 
+                        return this.lessonData[this.currentPeriod]?.title || "En savoir plus"; 
+                    },
+                    getLessonContent() { 
+                        return this.lessonData[this.currentPeriod]?.content || "<p>Contenu non disponible</p>"; 
+                    },
                     finishQuiz() { this.showQuiz = false; this.showResults = true; },
                     retryQuiz() { this.showResults = false; this.showQuiz = true; this.currentQuestion = this.score = 0; },
 
