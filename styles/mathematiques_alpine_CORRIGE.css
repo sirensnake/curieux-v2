@@ -1,0 +1,330 @@
+/* ==========================================================================
+   Design System - Section Mathématiques (Basé sur le template Histoire)
+   ========================================================================== */
+
+:root {
+  /* Palette Mathématiques (Bleu profond, Orange vif, Teal) */
+  --primary-color: #2c504e;
+  /* Bleu pétrole foncé pour les titres */
+  --secondary-color: #ff8c00;
+  /* Orange vif pour les accents (similaire histoire) */
+  --accent-color: #00b894;
+  /* Teal pour les éléments de succès/boutons */
+  --text-color: #2d3436;
+  /* Gris très foncé pour le texte */
+  --bg-color: #dfe6e9;
+  /* Gris bleuté très clair pour le fond */
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+
+  /* Constantes Pixel Art */
+  --pixel-border: 3px solid #2d3436;
+  --pixel-shadow: 4px 4px 0px #2d3436;
+  --pixel-shadow-hover: 2px 2px 0px #2d3436;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  /* Légère texture de fond style cahier à carreaux subtil */
+  background-image:
+    linear-gradient(rgba(44, 80, 78, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 80, 78, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Réutilisation du conteneur Histoire pour la cohérence */
+.histoire-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 2px solid var(--text-color);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  background: var(--bg-color);
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px var(--text-color);
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--text-color);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0px var(--secondary-color);
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+/* Navigation des Domaines (ex-Périodes) */
+.periods-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  border: var(--pixel-border);
+}
+
+.period-btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.period-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--text-color);
+}
+
+.period-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--pixel-shadow-hover);
+}
+
+.period-btn.active {
+  background: var(--secondary-color);
+  color: white;
+  transform: translate(2px, 2px);
+  box-shadow: var(--pixel-shadow-hover);
+}
+
+/* ==========================================================================
+   Contenu Principal (Grille de Chapitres / Quiz)
+   ========================================================================== */
+
+.content-display {
+  min-height: 400px;
+}
+
+.domain-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-decoration: underline decoration-var(--secondary-color) thickness(3px);
+}
+
+/* Utilisation de la grille de chapitres pour le choix Leçon/Quiz */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.chapter-card {
+  background: var(--card-bg);
+  border: var(--pixel-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--pixel-shadow);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0px var(--text-color);
+  border-color: var(--accent-color);
+}
+
+.chapter-image {
+  height: 160px;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  border-bottom: var(--pixel-border);
+  background-image: linear-gradient(45deg, var(--primary-color) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--primary-color) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--primary-color) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--primary-color) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.8;
+}
+
+.chapter-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chapter-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.chapter-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.start-btn {
+  padding: 8px 16px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid var(--text-color);
+  box-shadow: 2px 2px 0px var(--text-color);
+}
+
+.start-btn:hover {
+  background: var(--secondary-color);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--text-color);
+}
+
+/* ==========================================================================
+   Zone Quiz (Styles basiques pour l'instant, à enrichir si besoin)
+   ========================================================================== */
+.quiz-container {
+  background: var(--card-bg);
+  border: var(--pixel-border);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--pixel-shadow);
+}
+
+.quiz-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.question-box p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.option-btn {
+  padding: 15px;
+  font-size: 1.1rem;
+  background: var(--bg-color);
+  border: 2px solid var(--text-color);
+  box-shadow: 3px 3px 0px var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.option-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--text-color);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .section-title h1 {
+    font-size: 2rem;
+  }
+
+  .periods-nav {
+    flex-direction: column;
+  }
+
+  .period-btn {
+    width: 100%;
+  }
+
+  .chapters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}

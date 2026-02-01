@@ -1,0 +1,23 @@
+/* CSS ADDITIONNEL pour les vraies cartes historiques */
+
+.map-image-container {
+    margin: 30px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    background: white;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+/* Amélioration du loading */
+.map-image[loading="lazy"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 400px;
+}

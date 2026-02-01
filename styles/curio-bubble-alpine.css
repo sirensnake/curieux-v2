@@ -1,0 +1,256 @@
+/* ========================================
+   CURIO BUBBLE - ALPINE.JS
+   Styles pour la bulle d'aide Curio
+   ======================================== */
+
+/* Masquer éléments Alpine avant initialisation */
+[x-cloak] {
+    display: none !important;
+}
+
+/* ==================
+   BULLE PRINCIPALE
+   ================== */
+.curio-bubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    max-width: 320px;
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    border: 3px solid #ff6f00;
+    border-radius: 20px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 8px 24px rgba(255, 111, 0, 0.3);
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Variantes de couleur */
+.curio-bubble--success {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-color: #4caf50;
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+}
+
+.curio-bubble--warning {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-color: #ff9800;
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.3);
+}
+
+.curio-bubble--info {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-color: #2196f3;
+    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.3);
+}
+
+/* ==================
+   AVATAR CURIO
+   ================== */
+.curio-avatar {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    animation: curioFloat 3s ease-in-out infinite;
+    user-select: none;
+}
+
+@keyframes curioFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Animation sur succès */
+.curio-bubble--success .curio-avatar {
+    animation: curioFloat 3s ease-in-out infinite, curioShake 0.5s ease-in-out;
+}
+
+@keyframes curioShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px) rotate(-5deg); }
+    75% { transform: translateX(5px) rotate(5deg); }
+}
+
+/* ==================
+   MESSAGE
+   ================== */
+.curio-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ==================
+   BOUTON FERMETURE
+   ================== */
+.curio-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #ff6f00;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.curio-close:hover {
+    opacity: 1;
+    transform: scale(1.2) rotate(90deg);
+}
+
+.curio-close:active {
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* Variantes bouton fermeture */
+.curio-bubble--success .curio-close {
+    color: #4caf50;
+}
+
+.curio-bubble--warning .curio-close {
+    color: #ff9800;
+}
+
+.curio-bubble--info .curio-close {
+    color: #2196f3;
+}
+
+/* ==================
+   TRANSITIONS ALPINE.JS
+   ================== */
+
+/* Transition d'entrée/sortie */
+.curio-bubble[x-show] {
+    transition: all 0.3s ease;
+}
+
+/* États de transition */
+[x-transition\:enter] {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+}
+
+[x-transition\:enter-end] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+[x-transition\:leave] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+[x-transition\:leave-end] {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+}
+
+/* ==================
+   RESPONSIVE
+   ================== */
+@media (max-width: 768px) {
+    .curio-bubble {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+    
+    .curio-avatar {
+        font-size: 2rem;
+    }
+    
+    .curio-message {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .curio-bubble {
+        padding: 1rem 1.25rem;
+        border-radius: 15px;
+    }
+    
+    .curio-avatar {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .curio-message {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==================
+   MODE SOMBRE
+   ================== */
+@media (prefers-color-scheme: dark) {
+    .curio-bubble {
+        background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
+        border-color: #ff9800;
+        color: #fff;
+    }
+    
+    .curio-message {
+        color: #fff;
+    }
+    
+    .curio-bubble--success {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+        border-color: #66bb6a;
+    }
+    
+    .curio-bubble--warning {
+        background: linear-gradient(135deg, #e65100 0%, #ef6c00 100%);
+        border-color: #ffa726;
+    }
+    
+    .curio-bubble--info {
+        background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+        border-color: #42a5f5;
+    }
+}
+
+/* ==================
+   ACCESSIBILITÉ
+   ================== */
+
+/* Focus visible pour navigation clavier */
+.curio-close:focus {
+    outline: 2px solid #ff6f00;
+    outline-offset: 2px;
+}
+
+/* Réduire animations si préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+    .curio-avatar,
+    .curio-bubble,
+    .curio-close {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Contraste élevé */
+@media (prefers-contrast: high) {
+    .curio-bubble {
+        border-width: 4px;
+    }
+    
+    .curio-message {
+        font-weight: 600;
+    }
+}

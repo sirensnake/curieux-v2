@@ -1,202 +1,629 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇫🇷 Français - Le Monde des Curieux</title>
-    
-    <!-- CSS Externe -->
-    <link rel="stylesheet" href="styles/francais-section.css">
-    
-    <!-- Police Minecraft -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <button onclick="history.back()" class="back-btn">
-        ← Retour à l'accueil
-    </button>
 
-    <!-- Titre Section -->
-    <div class="section-title">
-        <h1>🇫🇷 Apprends le Français avec Curio !</h1>
-        <p>Améliore ton français en t'amusant : grammaire, conjugaison, orthographe et vocabulaire !</p>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Français - Le Monde des Curieux</title>
+        <link rel="stylesheet" href="styles/francais_BON_CSS.css">
+    </head>
 
-    <!-- Zone Gamification -->
-    <div class="gamification-header">
-        <!-- Streak -->
-        <div class="gamification-badge streak-badge">
-            <span class="badge-icon">🔥</span>
-            <span class="badge-value" id="streak-value">0</span>
-            <span class="badge-label">jours</span>
-        </div>
-        
-        <!-- Hearts -->
-        <div class="gamification-badge hearts-badge">
-            <span class="badge-icon">❤️</span>
-            <span class="badge-value" id="hearts-value">5</span>
-            <span class="badge-label">cœurs</span>
-        </div>
-        
-        <!-- XP -->
-        <div class="gamification-badge xp-badge">
-            <span class="badge-icon">⭐</span>
-            <span class="badge-value" id="xp-value">CHARGEMENT...</span>
-        </div>
-    </div>
+    <body x-data="francaisApp" x-cloak>
 
-    <!-- Contenu Éducatif -->
-    <div class="learning-content">
-        <!-- Grammaire -->
-        <div class="topic-card">
-            <h2>📚 Grammaire</h2>
-            <p>Maîtrise les règles de la langue française</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">🔤</div>
-                    <h3>Homophones</h3>
-                    <p>a/à, et/est, son/sont...</p>
-                    <button class="btn-start-activity" onclick="startActivity('homophones')">
-                        Commencer
+        <!-- Système XP -->
+        <script src="scripts/section-xp-system.js"></script>
+
+        <!-- Bulle Curio -->
+        <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
+            <button @click="hide()" class="curio-close">×</button>
+            <div class="curio-avatar">🦊</div>
+            <p class="curio-message" x-text="currentMessage"></p>
+        </div>
+
+        <div class="francais-container">
+            <!-- Header avec bouton retour -->
+            <div class="section-header">
+                <button onclick="history.back()" class="back-btn">
+                    ← Retour à l'accueil
+                </button>
+            </div>
+
+            <!-- Titre section -->
+            <div class="section-title">
+                <h1>🇫🇷 Français</h1>
+                <p>Maîtrise la langue française : grammaire, conjugaison et vocabulaire !</p>
+            </div>
+
+            <!-- Navigation thèmes -->
+            <div class="themes-nav">
+                <button @click="selectTheme('grammaire')"
+                    :class="'theme-btn grammaire' + (currentTheme === 'grammaire' ? ' active' : '')">
+                    📚 Grammaire
+                </button>
+                <button @click="selectTheme('conjugaison')"
+                    :class="'theme-btn conjugaison' + (currentTheme === 'conjugaison' ? ' active' : '')">
+                    🔄 Conjugaison
+                </button>
+                <button @click="selectTheme('vocabulaire')"
+                    :class="'theme-btn vocabulaire' + (currentTheme === 'vocabulaire' ? ' active' : '')">
+                    📖 Vocabulaire
+                </button>
+            </div>
+
+            <!-- Contenu thème -->
+            <div class="theme-content" x-show="currentTheme" x-cloak>
+                <div class="theme-section">
+                    <h2 x-text="getThemeName()"></h2>
+                    <p class="theme-description" x-text="getThemeDescription()"></p>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <button @click="toggleIllustration()" class="action-btn btn-visual">
+                        🖼️ Voir l'illustration
+                    </button>
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info">
+                        📖 En savoir plus
+                    </button>
+                    <button @click="startQuiz()" class="action-btn btn-quiz">
+                        🎯 Quiz
                     </button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">✏️</div>
-                    <h3>Accords</h3>
-                    <p>Genre, nombre, participes</p>
-                    <button class="btn-start-activity" onclick="startActivity('accords')">
-                        Commencer
-                    </button>
+            </div>
+
+            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+            <div x-show="showLesson" x-transition class="lesson-container">
+                <div class="lesson-header">
+                    <h3>📖 <span x-text="getLessonTitle()"></span></h3>
+                    <button @click="showLesson = false" class="close-btn">Fermer</button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🎯</div>
-                    <h3>COD / COI</h3>
-                    <p>Compléments d'objet</p>
-                    <button class="btn-start-activity" onclick="startActivity('cod-coi')">
-                        Commencer
-                    </button>
+                <div class="lesson-content" x-html="getLessonContent()"></div>
+            </div>
+
+            <!-- ILLUSTRATION -->
+            <div x-show="showIllustration" x-transition class="illustration-container">
+                <div class="illustration-header">
+                    <h3>🖼️ <span x-text="getThemeName()"></span></h3>
+                    <button @click="showIllustration = false" class="close-btn">Fermer</button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🔢</div>
-                    <h3>Pluriels</h3>
-                    <p>Règles du pluriel</p>
-                    <button class="btn-start-activity" onclick="startActivity('pluriel')">
-                        Commencer
-                    </button>
+                <div class="illustration-content">
+                    <img :src="getImageUrl()" :alt="'Illustration ' + getThemeName()" class="theme-illustration" loading="lazy">
                 </div>
             </div>
         </div>
 
-        <!-- Conjugaison -->
-        <div class="topic-card">
-            <h2>🔄 Conjugaison</h2>
-            <p>Apprends les temps et les verbes</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">⏰</div>
-                    <h3>Présent</h3>
-                    <p>Verbes du 1er, 2ème, 3ème groupe</p>
-                    <button class="btn-start-activity" onclick="startActivity('present')">
-                        Commencer
-                    </button>
+        <!-- QUIZ -->
+        <div x-show="showQuiz" x-transition class="quiz-container">
+            <div class="quiz-header">
+                <h3>🎯 Quiz <span x-text="getThemeName()"></span></h3>
+                <div class="quiz-progress">
+                    <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
+                    </div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">📅</div>
-                    <h3>Passé Composé</h3>
-                    <p>Auxiliaires être et avoir</p>
-                    <button class="btn-start-activity" onclick="startActivity('passe-compose')">
-                        Commencer
-                    </button>
+            </div>
+
+            <div class="quiz-content">
+                <div x-show="!quizFinished" class="question-zone">
+                    <div class="question-text">
+                        <span x-text="currentQuestion.question"></span>
+                    </div>
+
+                    <!-- Options de réponse -->
+                    <div class="answer-options">
+                        <template x-for="(option, index) in currentQuestion.options" :key="index">
+                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option">
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div x-show="answered" x-transition class="feedback-zone">
+                        <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
+                            <span x-show="isCorrect">✅ Bravo ! C'est correct !</span>
+                            <span x-show="!isCorrect">
+                                ❌ Pas tout à fait... La bonne réponse était : <strong x-text="currentQuestion.correct"></strong>
+                            </span>
+                        </div>
+                        <div class="feedback-explanation" x-show="currentQuestion.explanation">
+                            💡 <span x-text="currentQuestion.explanation"></span>
+                        </div>
+                        <button @click="nextQuestion()" class="next-btn">Suivant →</button>
+                    </div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🔮</div>
-                    <h3>Futur Simple</h3>
-                    <p>Actions à venir</p>
-                    <button class="btn-start-activity" onclick="startActivity('futur')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">📖</div>
-                    <h3>Imparfait</h3>
-                    <p>Le temps du passé</p>
-                    <button class="btn-start-activity" onclick="startActivity('imparfait')">
-                        Commencer
-                    </button>
+
+                <!-- Résultats finaux -->
+                <div x-show="quizFinished" x-transition class="results-zone">
+                    <h3>🎉 Quiz terminé !</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span class="score-number" x-text="score"></span>
+                            <span class="score-total" x-text="'/ ' + getCurrentQuiz().length"></span>
+                        </div>
+                        <p class="score-percentage" x-text="Math.round((score / getCurrentQuiz().length) * 100) + '%'"></p>
+                        <p class="score-message" x-text="getScoreMessage()"></p>
+                    </div>
+                    <div class="results-actions">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz">
+                            🔄 Recommencer
+                        </button>
+                        <button @click="backToTheme()" class="action-btn btn-info">
+                            ← Retour au thème
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Orthographe & Vocabulaire -->
-        <div class="topic-card">
-            <h2>📝 Orthographe & Vocabulaire</h2>
-            <p>Enrichis ton expression écrite</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">📝</div>
-                    <h3>Orthographe</h3>
-                    <p>Mots difficiles</p>
-                    <button class="btn-start-activity" onclick="startActivity('orthographe')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">📚</div>
-                    <h3>Vocabulaire</h3>
-                    <p>Synonymes et contraires</p>
-                    <button class="btn-start-activity" onclick="startActivity('vocabulaire')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🎭</div>
-                    <h3>Expressions</h3>
-                    <p>Expressions françaises</p>
-                    <button class="btn-start-activity" onclick="startActivity('expressions')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🔠</div>
-                    <h3>Familles de Mots</h3>
-                    <p>Préfixes et suffixes</p>
-                    <button class="btn-start-activity" onclick="startActivity('familles-mots')">
-                        Commencer
-                    </button>
-                </div>
-            </div>
         </div>
-    </div>
 
-    <!-- Modal Activité (créé dynamiquement) -->
-    <div id="activity-modal"></div>
-    
-    <!-- Feedback Complétion (créé dynamiquement) -->
-    <div id="completion-feedback"></div>
+        <!-- Alpine.js CDN -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Bulle d'aide Curio -->
-    <div id="curio-help" class="curio-help-bubble">
-        <button class="curio-close" onclick="closeCurioHelp()">×</button>
-        <div class="curio-avatar">🦊</div>
-        <p class="curio-message" id="curio-message">
-            Bienvenue ! Je suis Curio, ton guide. Choisis une activité pour commencer ton aventure !
-        </p>
-    </div>
+        <!-- JS inline AVANT Alpine -->
+        <script>
+            document.addEventListener('alpine:init', () => {
+                console.log('🎯 Alpine:init déclenché');
 
-    <!-- Script Standalone -->
-    <script src="scripts/francais-standalone.js"></script>
-</body>
+                Alpine.data('curioBubble', () => ({
+                    visible: false,
+                    currentMessage: '',
+                    variant: 'info',
+                    autoHideTimer: null,
+                    init() { window.curioBubbleInstance = this; },
+                    show(m, v = 'info') {
+                        if (this.autoHideTimer) clearTimeout(this.autoHideTimer);
+                        this.currentMessage = m;
+                        this.variant = v;
+                        this.visible = true;
+                        this.autoHideTimer = setTimeout(() => this.hide(), 5000);
+                    },
+                    hide() { this.visible = false; }
+                }));
+
+                Alpine.data('francaisApp', () => ({
+                    currentTheme: 'grammaire',
+                    showIllustration: false,
+                    showLesson: false,
+                    showQuiz: false,
+                    showResults: false,
+                    currentQuestionIndex: 0,
+                    score: 0,
+                    selectedAnswer: null,
+                    answered: false,
+                    isCorrect: false,
+                    quizFinished: false,
+                    currentQuestion: null,
+                    audioContext: null,
+
+                    init() {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        console.log('✅ francaisApp initialisé');
+
+                        // Initialiser le système XP
+                        if (window.SectionXP) {
+                            window.SectionXP.init('francais');
+                        }
+                    },
+
+                    playCorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 523; o.type = 'sine';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.2);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.2);
+                        } catch (e) { }
+                    },
+
+                    playIncorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 185; o.type = 'triangle';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.3);
+                        } catch (e) { }
+                    },
+
+                    themes: {
+                        grammaire: {
+                            name: 'Grammaire',
+                            description: 'Maîtrise les règles essentielles : homophones, accords, COD/COI',
+                            imageUrl: '/images/francais/illustration_grammaire.jpg'
+                        },
+                        conjugaison: {
+                            name: 'Conjugaison',
+                            description: 'Apprends les temps : présent, futur, imparfait, passé composé',
+                            imageUrl: '/images/francais/illustration_conjugaison.jpg'
+                        },
+                        vocabulaire: {
+                            name: 'Vocabulaire',
+                            description: 'Enrichis ton vocabulaire : synonymes, antonymes, expressions',
+                            imageUrl: '/images/francais/illustration_vocabulaire.jpg'
+                        }
+                    },
+
+                    // Contenus pédagogiques
+                    lessonData: {
+                        grammaire: {
+                            title: "📚 La Grammaire",
+                            content: `
+                                <h3>Pourquoi la grammaire ?</h3>
+                                <p>La grammaire, ce sont les <strong>règles de la langue</strong>. Elle t'aide à bien écrire et à te faire comprendre !</p>
+
+                                <h3>Les homophones</h3>
+                                <p>Les homophones sont des mots qui <strong>se prononcent pareil</strong> mais s'écrivent différemment :</p>
+                                <ul>
+                                    <li><strong>a / à</strong> : "Il <span class="correct">a</span> un chat" / "Il va <span class="correct">à</span> l'école"</li>
+                                    <li><strong>et / est</strong> : "Paul <span class="correct">et</span> Marie" / "Il <span class="correct">est</span> grand"</li>
+                                    <li><strong>son / sont</strong> : "<span class="correct">Son</span> vélo" / "Ils <span class="correct">sont</span> contents"</li>
+                                    <li><strong>ou / où</strong> : "Pomme <span class="correct">ou</span> poire ?" / "<span class="correct">Où</span> est-il ?"</li>
+                                    <li><strong>ce / se</strong> : "<span class="correct">Ce</span> livre" / "Il <span class="correct">se</span> lave"</li>
+                                </ul>
+
+                                <h3>Les accords</h3>
+                                <h4>Accord en genre et nombre</h4>
+                                <ul>
+                                    <li><strong>Masculin/Féminin</strong> : un chat <span class="correct">noir</span> / une chatte <span class="correct">noire</span></li>
+                                    <li><strong>Singulier/Pluriel</strong> : un livre <span class="correct">intéressant</span> / des livres <span class="correct">intéressants</span></li>
+                                </ul>
+
+                                <h4>Accord du participe passé</h4>
+                                <ul>
+                                    <li>Avec <strong>être</strong> : "Elle est <span class="correct">partie</span>" (accord avec le sujet)</li>
+                                    <li>Avec <strong>avoir</strong> : "Il a <span class="correct">mangé</span>" (pas d'accord) MAIS "La pomme qu'il a <span class="correct">mangée</span>" (accord avec le COD placé avant)</li>
+                                </ul>
+
+                                <h3>COD et COI</h3>
+                                <h4>Le COD (Complément d'Objet Direct)</h4>
+                                <p>Il répond à la question <strong>"quoi ?" ou "qui ?"</strong> :</p>
+                                <div class="example">
+                                    "Je mange <strong>une pomme</strong>" → Je mange quoi ? Une pomme (COD)
+                                </div>
+
+                                <h4>Le COI (Complément d'Objet Indirect)</h4>
+                                <p>Il répond à la question <strong>"à qui ?", "à quoi ?", "de qui ?", "de quoi ?"</strong> :</p>
+                                <div class="example">
+                                    "Je parle <strong>à Marie</strong>" → Je parle à qui ? À Marie (COI)
+                                </div>
+
+                                <h3>Les pluriels</h3>
+                                <ul>
+                                    <li>Règle générale : <strong>+ s</strong> → chat → chats</li>
+                                    <li>Mots en <strong>-eu, -au, -eau</strong> : + x → jeu → jeux, château → châteaux</li>
+                                    <li>Mots en <strong>-al</strong> : → -aux → cheval → chevaux</li>
+                                    <li>Mots en <strong>-ou</strong> : + s SAUF 7 exceptions (bijou, caillou, chou, genou, hibou, joujou, pou) → + x</li>
+                                    <li>Mots en <strong>-s, -x, -z</strong> : ne changent pas → souris → souris</li>
+                                </ul>
+
+                                <h3>À retenir</h3>
+                                <p>📌 Relis toujours tes phrases pour vérifier les accords !</p>
+                                <p>📌 Pour les homophones, demande-toi quel est le sens de la phrase 🤔</p>
+                            `
+                        },
+                        conjugaison: {
+                            title: "🔄 La Conjugaison",
+                            content: `
+                                <h3>Pourquoi conjuguer ?</h3>
+                                <p>La conjugaison permet de situer une action dans le <strong>temps</strong> (passé, présent, futur) et d'indiquer <strong>qui</strong> fait l'action !</p>
+
+                                <h3>Le Présent</h3>
+                                <p>Le présent exprime une action qui <strong>se passe maintenant</strong> ou une vérité générale.</p>
+
+                                <h4>Verbes du 1er groupe (-er)</h4>
+                                <p>Exemple : <strong>CHANTER</strong></p>
+                                <ul>
+                                    <li>Je chant<strong>e</strong></li>
+                                    <li>Tu chant<strong>es</strong></li>
+                                    <li>Il/Elle chant<strong>e</strong></li>
+                                    <li>Nous chant<strong>ons</strong></li>
+                                    <li>Vous chant<strong>ez</strong></li>
+                                    <li>Ils/Elles chant<strong>ent</strong></li>
+                                </ul>
+
+                                <h4>Verbes du 2ème groupe (-ir)</h4>
+                                <p>Exemple : <strong>FINIR</strong></p>
+                                <ul>
+                                    <li>Je fin<strong>is</strong></li>
+                                    <li>Tu fin<strong>is</strong></li>
+                                    <li>Il/Elle fin<strong>it</strong></li>
+                                    <li>Nous fin<strong>issons</strong></li>
+                                    <li>Vous fin<strong>issez</strong></li>
+                                    <li>Ils/Elles fin<strong>issent</strong></li>
+                                </ul>
+
+                                <h4>Verbes fréquents du 3ème groupe</h4>
+                                <ul>
+                                    <li><strong>ÊTRE</strong> : je suis, tu es, il est, nous sommes, vous êtes, ils sont</li>
+                                    <li><strong>AVOIR</strong> : j'ai, tu as, il a, nous avons, vous avez, ils ont</li>
+                                    <li><strong>ALLER</strong> : je vais, tu vas, il va, nous allons, vous allez, ils vont</li>
+                                    <li><strong>FAIRE</strong> : je fais, tu fais, il fait, nous faisons, vous faites, ils font</li>
+                                </ul>
+
+                                <h3>Le Futur Simple</h3>
+                                <p>Le futur exprime une action qui <strong>se passera plus tard</strong>.</p>
+                                <p>Formation : <strong>infinitif + terminaisons</strong> (-ai, -as, -a, -ons, -ez, -ont)</p>
+
+                                <div class="example">
+                                    <strong>CHANTER</strong> : je chanter<strong>ai</strong>, tu chanter<strong>as</strong>, il chanter<strong>a</strong>, nous chanter<strong>ons</strong>, vous chanter<strong>ez</strong>, ils chanter<strong>ont</strong>
+                                </div>
+
+                                <h4>Verbes irréguliers au futur</h4>
+                                <ul>
+                                    <li><strong>ÊTRE</strong> → je ser<strong>ai</strong></li>
+                                    <li><strong>AVOIR</strong> → j'aur<strong>ai</strong></li>
+                                    <li><strong>ALLER</strong> → j'ir<strong>ai</strong></li>
+                                    <li><strong>FAIRE</strong> → je fer<strong>ai</strong></li>
+                                    <li><strong>VOIR</strong> → je verr<strong>ai</strong></li>
+                                </ul>
+
+                                <h3>L'Imparfait</h3>
+                                <p>L'imparfait exprime une action <strong>du passé qui durait</strong> ou une habitude.</p>
+                                <p>Formation : <strong>radical (nous au présent) + terminaisons</strong> (-ais, -ais, -ait, -ions, -iez, -aient)</p>
+
+                                <div class="example">
+                                    <strong>CHANTER</strong> (nous chant-ons) : je chant<strong>ais</strong>, tu chant<strong>ais</strong>, il chant<strong>ait</strong>, nous chant<strong>ions</strong>, vous chant<strong>iez</strong>, ils chant<strong>aient</strong>
+                                </div>
+
+                                <h3>Le Passé Composé</h3>
+                                <p>Le passé composé exprime une action <strong>du passé terminée</strong>.</p>
+                                <p>Formation : <strong>auxiliaire (être/avoir au présent) + participe passé</strong></p>
+
+                                <h4>Avec AVOIR (la majorité)</h4>
+                                <div class="example">
+                                    J'<strong>ai mangé</strong>, tu <strong>as fini</strong>, il <strong>a couru</strong>
+                                </div>
+
+                                <h4>Avec ÊTRE (14 verbes + les pronominaux)</h4>
+                                <p>Verbes de déplacement et d'état : aller, venir, arriver, partir, entrer, sortir, monter, descendre, naître, mourir, rester, tomber, retourner, passer</p>
+                                <div class="example">
+                                    Je <strong>suis allé</strong>(e), tu <strong>es venu</strong>(e), il <strong>est parti</strong>
+                                </div>
+
+                                <h3>À retenir</h3>
+                                <p>📌 Au passé composé avec <strong>être</strong>, le participe passé s'accorde avec le sujet !</p>
+                                <p>📌 Apprends les verbes irréguliers par cœur, ils sont très utilisés 📝</p>
+                            `
+                        },
+                        vocabulaire: {
+                            title: "📖 Le Vocabulaire",
+                            content: `
+                                <h3>Pourquoi enrichir son vocabulaire ?</h3>
+                                <p>Plus tu connais de mots, mieux tu peux <strong>t'exprimer</strong> et <strong>comprendre</strong> ce que tu lis !</p>
+
+                                <h3>Les synonymes</h3>
+                                <p>Les synonymes sont des mots qui ont <strong>un sens proche ou identique</strong> :</p>
+                                <ul>
+                                    <li><strong>Content</strong> = heureux, joyeux, ravi, enchanté</li>
+                                    <li><strong>Maison</strong> = habitation, demeure, logement, résidence</li>
+                                    <li><strong>Grand</strong> = immense, gigantesque, énorme, colossal</li>
+                                    <li><strong>Dire</strong> = raconter, expliquer, déclarer, affirmer</li>
+                                    <li><strong>Beau</strong> = joli, magnifique, splendide, superbe</li>
+                                </ul>
+
+                                <h3>Les antonymes (contraires)</h3>
+                                <p>Les antonymes sont des mots qui ont <strong>un sens opposé</strong> :</p>
+                                <ul>
+                                    <li><strong>Grand</strong> ≠ petit</li>
+                                    <li><strong>Chaud</strong> ≠ froid</li>
+                                    <li><strong>Rapide</strong> ≠ lent</li>
+                                    <li><strong>Monter</strong> ≠ descendre</li>
+                                    <li><strong>Rire</strong> ≠ pleurer</li>
+                                    <li><strong>Facile</strong> ≠ difficile</li>
+                                </ul>
+
+                                <h3>Les familles de mots</h3>
+                                <p>Une famille de mots regroupe tous les mots formés à partir d'un <strong>radical commun</strong> :</p>
+
+                                <h4>Famille de "terre"</h4>
+                                <ul>
+                                    <li>terr<strong>ain</strong></li>
+                                    <li>terr<strong>asse</strong></li>
+                                    <li>terr<strong>estre</strong></li>
+                                    <li>terr<strong>itoire</strong></li>
+                                    <li>enter<strong>rer</strong></li>
+                                    <li>déterr<strong>er</strong></li>
+                                </ul>
+
+                                <h3>Les préfixes et suffixes</h3>
+                                <h4>Préfixes (au début du mot)</h4>
+                                <ul>
+                                    <li><strong>dé-</strong> (défaire, décoller) = contraire</li>
+                                    <li><strong>re-</strong> (refaire, relire) = à nouveau</li>
+                                    <li><strong>in-/im-</strong> (impossible, invisible) = négation</li>
+                                    <li><strong>pré-</strong> (préhistoire, prévenir) = avant</li>
+                                </ul>
+
+                                <h4>Suffixes (à la fin du mot)</h4>
+                                <ul>
+                                    <li><strong>-eur/-euse</strong> (chanteur, danseuse) = celui qui fait</li>
+                                    <li><strong>-tion</strong> (addition, natation) = action</li>
+                                    <li><strong>-ment</strong> (rapidement, doucement) = manière</li>
+                                    <li><strong>-able</strong> (mangeable, lavable) = qui peut être</li>
+                                </ul>
+
+                                <h3>Les expressions</h3>
+                                <p>Les expressions sont des <strong>groupes de mots</strong> dont le sens n'est pas littéral :</p>
+                                <ul>
+                                    <li><strong>"Avoir un chat dans la gorge"</strong> = être enroué</li>
+                                    <li><strong>"Poser un lapin"</strong> = ne pas venir à un rendez-vous</li>
+                                    <li><strong>"Casser les pieds"</strong> = embêter, ennuyer</li>
+                                    <li><strong>"Tomber dans les pommes"</strong> = s'évanouir</li>
+                                    <li><strong>"Avoir le cafard"</strong> = être triste</li>
+                                </ul>
+
+                                <h3>Les niveaux de langue</h3>
+                                <ul>
+                                    <li><strong>Familier</strong> : "J'ai la flemme" / "Ça craint"</li>
+                                    <li><strong>Courant</strong> : "Je n'ai pas envie" / "C'est dommage"</li>
+                                    <li><strong>Soutenu</strong> : "Je n'ai guère l'inclination" / "Cela est regrettable"</li>
+                                </ul>
+
+                                <h3>À retenir</h3>
+                                <p>📌 Lis beaucoup pour découvrir de nouveaux mots ! 📚</p>
+                                <p>📌 Note les mots que tu ne connais pas et cherche leur définition 📝</p>
+                                <p>📌 Utilise des synonymes pour éviter les répétitions dans tes textes ✍️</p>
+                            `
+                        }
+                    },
+
+                    // Questions quiz (10 par thème)
+                    quizQuestions: {
+                        grammaire: [
+                            { question: "Il ... un vélo. (a/à)", options: ["a", "à"], correct: "a", explanation: "'a' est le verbe avoir. 'à' est une préposition." },
+                            { question: "Paul ... Marie sont amis. (et/est)", options: ["et", "est"], correct: "et", explanation: "'et' relie deux éléments. 'est' est le verbe être." },
+                            { question: "Ils ... contents. (son/sont)", options: ["son", "sont"], correct: "sont", explanation: "'sont' est le verbe être (3e personne du pluriel). 'son' est un déterminant possessif." },
+                            { question: "... est mon livre ? (ou/où)", options: ["ou", "où"], correct: "où", explanation: "'où' indique un lieu. 'ou' est un choix." },
+                            { question: "Les chat... noir...", options: ["s noirs", "s noir", "noir", "noirs"], correct: "s noirs", explanation: "'chats' prend un 's' au pluriel, et 'noirs' s'accorde en genre et nombre." },
+                            { question: "Elle est ... (parti/partie)", options: ["parti", "partie"], correct: "partie", explanation: "Avec 'être', le participe passé s'accorde avec le sujet féminin." },
+                            { question: "Je mange une pomme. 'une pomme' est :", options: ["COD", "COI", "Sujet"], correct: "COD", explanation: "Je mange quoi ? Une pomme (COD = réponse à 'quoi ?')" },
+                            { question: "Pluriel de 'cheval' :", options: ["chevals", "chevaux", "chevaus"], correct: "chevaux", explanation: "Les mots en '-al' font leur pluriel en '-aux'." },
+                            { question: "Pluriel de 'jeu' :", options: ["jeus", "jeux"], correct: "jeux", explanation: "Les mots en '-eu' prennent un 'x' au pluriel." },
+                            { question: "Il ... à l'école. (a/à)", options: ["a", "à"], correct: "à", explanation: "'à' est une préposition de lieu. 'a' serait le verbe avoir." }
+                        ],
+                        conjugaison: [
+                            { question: "Je ... (chanter, présent)", options: ["chante", "chantes", "chantons"], correct: "chante", explanation: "1ère personne du singulier : -e" },
+                            { question: "Nous ... (finir, présent)", options: ["finons", "finissons", "finisons"], correct: "finissons", explanation: "Verbe du 2ème groupe : nous finissons" },
+                            { question: "Ils ... (être, présent)", options: ["es", "sont", "êtes"], correct: "sont", explanation: "Ils sont (3ème personne du pluriel)" },
+                            { question: "J'... (avoir, présent)", options: ["a", "ai", "as"], correct: "ai", explanation: "J'ai (1ère personne du singulier)" },
+                            { question: "Tu ... (chanter, futur)", options: ["chantera", "chanteras", "chanterai"], correct: "chanteras", explanation: "Futur : infinitif + as" },
+                            { question: "Je ... (être, futur)", options: ["serai", "sera", "seras"], correct: "serai", explanation: "Futur irrégulier de être : je serai" },
+                            { question: "Nous ... (chanter, imparfait)", options: ["chantions", "chantons", "chanterions"], correct: "chantions", explanation: "Imparfait : nous chantions" },
+                            { question: "Il ... (manger, passé composé)", options: ["a mangé", "est mangé", "ai mangé"], correct: "a mangé", explanation: "Passé composé avec 'avoir' : il a mangé" },
+                            { question: "Elle ... (aller, passé composé)", options: ["a allé", "est allé", "est allée"], correct: "est allée", explanation: "'Aller' utilise 'être', accord avec le sujet féminin" },
+                            { question: "Vous ... (faire, présent)", options: ["faisez", "faites", "fasez"], correct: "faites", explanation: "Verbe irrégulier : vous faites" }
+                        ],
+                        vocabulaire: [
+                            { question: "Synonyme de 'content' :", options: ["Triste", "Heureux", "Fâché"], correct: "Heureux", explanation: "'Heureux' et 'content' ont un sens proche." },
+                            { question: "Antonyme de 'grand' :", options: ["Petit", "Large", "Haut"], correct: "Petit", explanation: "'Petit' est le contraire de 'grand'." },
+                            { question: "Synonyme de 'maison' :", options: ["Voiture", "Habitation", "Jardin"], correct: "Habitation", explanation: "'Habitation' est un synonyme de 'maison'." },
+                            { question: "Antonyme de 'chaud' :", options: ["Tiède", "Froid", "Doux"], correct: "Froid", explanation: "'Froid' est l'opposé de 'chaud'." },
+                            { question: "Famille du mot 'terre' :", options: ["Terrible", "Terrain", "Terre-neuve"], correct: "Terrain", explanation: "'Terrain' vient du radical 'terr-'." },
+                            { question: "Préfixe de 'refaire' :", options: ["re-", "dé-", "pré-"], correct: "re-", explanation: "Le préfixe 're-' signifie 'à nouveau'." },
+                            { question: "Suffixe de 'chanteur' :", options: ["-tion", "-eur", "-ment"], correct: "-eur", explanation: "Le suffixe '-eur' indique 'celui qui fait'." },
+                            { question: "'Avoir un chat dans la gorge' signifie :", options: ["Avoir un animal", "Être enroué", "Avoir faim"], correct: "Être enroué", explanation: "C'est une expression qui signifie être enroué." },
+                            { question: "Synonyme de 'rapide' :", options: ["Lent", "Vite", "Calme"], correct: "Vite", explanation: "'Vite' et 'rapide' ont un sens proche." },
+                            { question: "Antonyme de 'monter' :", options: ["Grimper", "Descendre", "Escalader"], correct: "Descendre", explanation: "'Descendre' est l'opposé de 'monter'." }
+                        ]
+                    },
+
+                    selectTheme(t) {
+                        this.currentTheme = t;
+                        this.showQuiz = this.showResults = this.showIllustration = this.showLesson = false;
+                    },
+
+                    getThemeName() {
+                        return this.themes[this.currentTheme]?.name || '';
+                    },
+
+                    getThemeDescription() {
+                        return this.themes[this.currentTheme]?.description || '';
+                    },
+
+                    getImageUrl() {
+                        return this.themes[this.currentTheme]?.imageUrl || '';
+                    },
+
+                    getLessonTitle() {
+                        return this.lessonData[this.currentTheme]?.title || '';
+                    },
+
+                    getLessonContent() {
+                        return this.lessonData[this.currentTheme]?.content || '';
+                    },
+
+                    toggleIllustration() {
+                        this.showIllustration = !this.showIllustration;
+                    },
+
+                    startQuiz() {
+                        this.showQuiz = true;
+                        this.showResults = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.selectedAnswer = null;
+                        this.answered = false;
+                        this.quizFinished = false;
+                        this.loadQuestion();
+                    },
+
+                    getCurrentQuiz() {
+                        return this.quizQuestions[this.currentTheme] || [];
+                    },
+
+                    loadQuestion() {
+                        const questions = this.getCurrentQuiz();
+                        this.currentQuestion = questions[this.currentQuestionIndex];
+                        this.answered = false;
+                        this.isCorrect = false;
+                    },
+
+                    checkAnswer(selectedOption) {
+                        if (this.answered) return;
+                        this.answered = true;
+                        this.isCorrect = (selectedOption === this.currentQuestion.correct);
+                        if (this.isCorrect) {
+                            this.score++;
+                            this.playCorrectSound();
+
+                            // Ajouter XP pour bonne réponse
+                            if (window.SectionXP) {
+                                window.SectionXP.addXP('francais', window.SectionXP.rewards.QUESTION_CORRECT);
+                            }
+                        } else {
+                            this.playIncorrectSound();
+                        }
+                    },
+
+                    nextQuestion() {
+                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                            this.currentQuestionIndex++;
+                            this.loadQuestion();
+                        } else {
+                            this.finishQuiz();
+                        }
+                    },
+
+                    finishQuiz() {
+                        this.quizFinished = true;
+
+                        // Bonus XP pour complétion du quiz
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
+
+                            // Bonus supplémentaire si quiz parfait
+                            const quizLength = this.getCurrentQuiz().length;
+                            if (this.score === quizLength) {
+                                window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
+                            }
+                        }
+                    },
+
+                    retryQuiz() {
+                        this.quizFinished = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.loadQuestion();
+                    },
+
+                    getScoreMessage() {
+                        const percentage = (this.score / this.getCurrentQuiz().length) * 100;
+                        if (percentage === 100) return '🏆 Parfait ! Tu maîtrises ce thème !';
+                        if (percentage >= 80) return '🌟 Excellent ! Très bien joué !';
+                        if (percentage >= 60) return '👍 Bien ! Continue comme ça !';
+                        if (percentage >= 40) return '💪 Pas mal ! Révise encore un peu !';
+                        return '📚 Continue à apprendre, tu vas y arriver !';
+                    },
+
+                    backToTheme() {
+                        this.showResults = false;
+                        this.showQuiz = false;
+                    }
+                }));
+            });
+        </script>
+    </body>
+
 </html>

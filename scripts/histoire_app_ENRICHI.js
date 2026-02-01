@@ -37,9 +37,10 @@ document.addEventListener('alpine:init', () => {
         currentPeriod: 'prehistoire',
         showTimeline: false,
         showMap: false,
-        quizCompleted: false,
-        quizScore: 0,
-        currentQuestionIndex: 0,
+        showQuiz: false,
+        showResults: false,
+        currentQuestion: 0,
+        score: 0,
         selectedAnswer: null,
         answerChecked: false,
         
@@ -328,12 +329,41 @@ document.addEventListener('alpine:init', () => {
                 tempsmodernes: "les Temps Modernes",
                 epoquecontemporaine: "l'Époque Contemporaine"
             };
+            return names[this.currentPeriod] || "cette période";
+        },
+        
+        startQuiz() {
+            this.showQuiz = true;
+            this.showResults = false;
+            this.currentQuestion = 0;
+            this.score = 0;
+            this.selectedAnswer = null;
+            this.answerChecked = false;
+            window.curioBubbleInstance.show("❓ C'est parti pour le quiz de " + this.getPeriodName() + " !", 'info');
+        },
+        
+        getPeriodName() {
+            const names = {
+                prehistoire: "la Préhistoire",
+                antiquite: "l'Antiquité",
+                moyenage: "le Moyen Âge",
+                tempsmodernes: "les Temps Modernes",
+                epoquecontemporaine: "l'Époque Contemporaine"
+            };
             return names[this.currentPeriod] || '';
         },
         
         // QUIZ
+        getCurrentQuiz() {
+            return this.quizData[this.currentPeriod] || [];
+        },
+        
+        getCurrentQuestionData() {
+            return this.getCurrentQuiz()[this.currentQuestion] || { question: '', options: [], correct: 0 };
+        },
+        
         getCurrentQuestion() {
-            return this.quizData[this.currentPeriod][this.currentQuestionIndex];
+            return this.quizData[this.currentPeriod][this.currentQuestion];
         },
         
         getTotalQuestions() {
@@ -341,48 +371,33 @@ document.addEventListener('alpine:init', () => {
         },
         
         getQuizProgress() {
-            return (this.currentQuestionIndex / this.getTotalQuestions()) * 100;
+            return (this.currentQuestion / this.getTotalQuestions()) * 100;
         },
         
-        checkAnswer(index) {
-            if (this.answerChecked) return;
+        selectAnswer(index) {
+            if (!this.answerChecked) {
+                this.selectedAnswer = index;
+            }
+        },
+        
+        checkAnswer() {
+            if (this.answerChecked || this.selectedAnswer === null) return;
             
-            this.selectedAnswer = index;
             this.answerChecked = true;
+            const question = this.getCurrentQuestionData();
             
-            const question = this.getCurrentQuestion();
-            if (index === question.correct) {
-                this.quizScore++;
+            if (this.selectedAnswer === question.correct) {
+                this.score++;
                 window.curioBubbleInstance.show("✨ Bravo ! C'est la bonne réponse !", 'success');
             } else {
                 window.curioBubbleInstance.show("💪 Pas tout à fait... La bonne réponse était : " + question.options[question.correct], 'default');
             }
-            
-            setTimeout(() => {
-                this.nextQuestion();
-            }, 2500);
         },
         
         nextQuestion() {
-            if (this.currentQuestionIndex < this.getTotalQuestions() - 1) {
-                this.currentQuestionIndex++;
-                this.selectedAnswer = null;
-                this.answerChecked = false;
-            } else {
-                this.quizCompleted = true;
-                const percentage = Math.round((this.quizScore / this.getTotalQuestions()) * 100);
-                let message = `🎉 Quiz terminé ! Score : ${this.quizScore}/${this.getTotalQuestions()} (${percentage}%)`;
-                
-                if (percentage === 100) {
-                    message += " - PARFAIT ! 🏆";
-                } else if (percentage >= 80) {
-                    message += " - Excellent ! ⭐";
-                } else if (percentage >= 60) {
-                    message += " - Bien joué ! 👍";
-                }
-                
-                window.curioBubbleInstance.show(message, 'success');
-            }
+            this.currentQuestion++;
+            this.selectedAnswer = null;
+            this.answerChecked = false;
         },
         
         getOptionClass(index) {
@@ -394,9 +409,10 @@ document.addEventListener('alpine:init', () => {
         },
         
         resetQuiz() {
-            this.quizCompleted = false;
-            this.quizScore = 0;
-            this.currentQuestionIndex = 0;
+            this.showResults = false;
+            this.showQuiz = false;
+            this.score = 0;
+            this.currentQuestion = 0;
             this.selectedAnswer = null;
             this.answerChecked = false;
         },
@@ -445,6 +461,30 @@ document.addEventListener('alpine:init', () => {
         
         getMapLegend() {
             return this.mapData[this.currentPeriod]?.legend || [];
+        },
+        
+        getScoreMessage() {
+            const percentage = Math.round(this.score / this.getCurrentQuiz().length * 100);
+            if (percentage === 100) return "🏆 PARFAIT ! Tu es un champion d'Histoire !";
+            if (percentage >= 80) return "⭐ Excellent ! Tu maîtrises très bien cette période !";
+            if (percentage >= 60) return "👍 Bien joué ! Continue comme ça !";
+            if (percentage >= 40) return "🤔 Pas mal ! Relis le cours et recommence !";
+            return "💪 Continue à apprendre ! L'Histoire est passionnante !";
+        },
+        
+        finishQuiz() {
+            this.showQuiz = false;
+            this.showResults = true;
+            window.curioBubbleInstance.show(this.getScoreMessage(), 'success');
+        },
+        
+        retryQuiz() {
+            this.showResults = false;
+            this.currentQuestion = 0;
+            this.score = 0;
+            this.selectedAnswer = null;
+            this.answerChecked = false;
+            this.showQuiz = true;
         }
     }));
 });

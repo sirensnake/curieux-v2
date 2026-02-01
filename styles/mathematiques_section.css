@@ -1,0 +1,732 @@
+/* ========================================
+   🧮 SECTION MATHÉMATIQUES - CSS COMPLET
+   Thème : Orange/Violet (#FF6B35 / #6A4C93)
+   ======================================== */
+
+/* === VARIABLES COULEURS === */
+:root {
+    --math-primary: #FF6B35;        /* Orange vif */
+    --math-secondary: #6A4C93;      /* Violet foncé */
+    --math-accent: #4ECDC4;         /* Bleu ciel */
+    --math-highlight: #FFE66D;      /* Jaune */
+    --math-success: #95E1D3;        /* Vert menthe */
+    --math-background: #F8F9FA;
+    --math-text: #2C3E50;
+    --math-white: #FFFFFF;
+}
+
+/* === BODY & STRUCTURE === */
+.mathematiques-section {
+    background: linear-gradient(135deg, #FFF5F0 0%, #F0E8FF 100%);
+    min-height: 100vh;
+}
+
+/* === HEADER === */
+.section-header-styled.mathematiques {
+    background: linear-gradient(135deg, var(--math-primary) 0%, var(--math-secondary) 100%);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(106, 76, 147, 0.3);
+}
+
+.back-btn-minecraft.mathematiques {
+    background-color: var(--math-white);
+    color: var(--math-primary);
+    border: 3px solid var(--math-primary);
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 0 var(--math-secondary);
+}
+
+.back-btn-minecraft.mathematiques:hover {
+    background-color: var(--math-primary);
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--math-secondary);
+}
+
+/* === TITRE SECTION === */
+.section-title {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.section-title h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    color: var(--math-primary);
+    text-shadow: 3px 3px 0 var(--math-secondary);
+    margin-bottom: 1rem;
+    animation: titleBounce 2s ease-in-out infinite;
+}
+
+@keyframes titleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: var(--math-text);
+    line-height: 1.6;
+}
+
+/* === ZONE XP === */
+.xp-zone {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: var(--math-white);
+    border-radius: 12px;
+    max-width: 600px;
+    border: 3px solid var(--math-primary);
+    box-shadow: 0 4px 8px rgba(255, 107, 53, 0.2);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    color: var(--math-text);
+}
+
+/* === NAVIGATION DOMAINES === */
+.domains-navigation {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.domains-navigation h2 {
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: var(--math-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.domains-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.domain-btn {
+    padding: 1.2rem 1.5rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    border: 3px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--math-white);
+    color: var(--math-text);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+/* Couleurs spécifiques par domaine */
+.domain-btn.numeration {
+    border-color: #FF6B35;
+    color: #FF6B35;
+}
+
+.domain-btn.numeration:hover,
+.domain-btn.numeration.active {
+    background: #FF6B35;
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(255, 107, 53, 0.4);
+}
+
+.domain-btn.calcul {
+    border-color: #6A4C93;
+    color: #6A4C93;
+}
+
+.domain-btn.calcul:hover,
+.domain-btn.calcul.active {
+    background: #6A4C93;
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(106, 76, 147, 0.4);
+}
+
+.domain-btn.geometrie {
+    border-color: #4ECDC4;
+    color: #4ECDC4;
+}
+
+.domain-btn.geometrie:hover,
+.domain-btn.geometrie.active {
+    background: #4ECDC4;
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(78, 205, 196, 0.4);
+}
+
+.domain-btn.mesures {
+    border-color: #FFE66D;
+    color: #8B7400;
+}
+
+.domain-btn.mesures:hover,
+.domain-btn.mesures.active {
+    background: #FFE66D;
+    color: #2C3E50;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(255, 230, 109, 0.4);
+}
+
+.domain-btn.problemes {
+    border-color: #95E1D3;
+    color: #2A7A6E;
+}
+
+.domain-btn.problemes:hover,
+.domain-btn.problemes.active {
+    background: #95E1D3;
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(149, 225, 211, 0.4);
+}
+
+/* === TIMELINE === */
+.timeline-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--math-white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 3px solid var(--math-primary);
+}
+
+.timeline-item.numeration { border-color: #FF6B35; background: linear-gradient(135deg, #FFF5F0, #FFFFFF); }
+.timeline-item.calcul { border-color: #6A4C93; background: linear-gradient(135deg, #F0E8FF, #FFFFFF); }
+.timeline-item.geometrie { border-color: #4ECDC4; background: linear-gradient(135deg, #E8FFFE, #FFFFFF); }
+.timeline-item.mesures { border-color: #FFE66D; background: linear-gradient(135deg, #FFFDF0, #FFFFFF); }
+.timeline-item.problemes { border-color: #95E1D3; background: linear-gradient(135deg, #F0FFF8, #FFFFFF); }
+
+.timeline-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    color: var(--math-text);
+}
+
+/* === ZONE ACTIVITÉS === */
+.activities-zone {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.action-btn {
+    padding: 1rem 1.5rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    border: 3px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+}
+
+.btn-visual {
+    background: var(--math-white);
+    border-color: var(--math-accent);
+    color: var(--math-accent);
+}
+
+.btn-visual:hover {
+    background: var(--math-accent);
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(78, 205, 196, 0.3);
+}
+
+.btn-quiz {
+    background: var(--math-white);
+    border-color: var(--math-primary);
+    color: var(--math-primary);
+}
+
+.btn-quiz:hover {
+    background: var(--math-primary);
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(255, 107, 53, 0.3);
+}
+
+.btn-info {
+    background: var(--math-white);
+    border-color: var(--math-secondary);
+    color: var(--math-secondary);
+}
+
+.btn-info:hover {
+    background: var(--math-secondary);
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(106, 76, 147, 0.3);
+}
+
+/* === ILLUSTRATION === */
+.illustration-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--math-white);
+    border-radius: 12px;
+    border: 3px solid var(--math-accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.illustration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--math-accent), var(--math-success));
+    border-radius: 8px;
+    color: var(--math-white);
+}
+
+.illustration-header h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: var(--math-white);
+    color: var(--math-text);
+    border: 2px solid var(--math-white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background: var(--math-text);
+    color: var(--math-white);
+}
+
+.domain-illustration {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--math-accent);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* === LEÇON "EN SAVOIR PLUS" === */
+.lesson-container {
+    margin: 2rem 0;
+    background: var(--math-white);
+    border-radius: 12px;
+    border: 3px solid var(--math-secondary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--math-primary), var(--math-secondary));
+    color: var(--math-white);
+}
+
+.lesson-header h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.lesson-content {
+    padding: 2rem;
+    line-height: 1.8;
+    color: var(--math-text);
+}
+
+.lesson-content h3 {
+    color: var(--math-primary);
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(135deg, #FFF5F0, #FFE8DC);
+    border-left: 5px solid var(--math-primary);
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(255, 107, 53, 0.2);
+}
+
+.lesson-content h4 {
+    color: var(--math-secondary);
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.lesson-content p {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.lesson-content ul,
+.lesson-content ol {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background: #F8F9FA;
+    border-left: 4px solid var(--math-accent);
+    border-radius: 6px;
+}
+
+.lesson-content li {
+    margin: 0.6rem 0;
+    line-height: 1.6;
+}
+
+.lesson-content strong {
+    color: var(--math-primary);
+    background: rgba(255, 107, 53, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}
+
+/* === QUIZ === */
+.quiz-container {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--math-white);
+    border-radius: 12px;
+    border: 3px solid var(--math-primary);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--math-primary), var(--math-secondary));
+    border-radius: 8px;
+    color: var(--math-white);
+}
+
+.quiz-header h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.quiz-progress {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.question-zone {
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--math-text);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #FFF5F0, #FFFFFF);
+    border-left: 5px solid var(--math-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.answer-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    background: var(--math-white);
+    border: 3px solid var(--math-accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--math-text);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: var(--math-accent);
+    color: var(--math-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 rgba(78, 205, 196, 0.3);
+}
+
+.answer-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* === FEEDBACK === */
+.feedback-zone {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.feedback.correct {
+    background: linear-gradient(135deg, #D4EDDA, #C3E6CB);
+    color: #155724;
+    border: 2px solid #28A745;
+}
+
+.feedback.incorrect {
+    background: linear-gradient(135deg, #F8D7DA, #F5C6CB);
+    color: #721C24;
+    border: 2px solid #DC3545;
+}
+
+.feedback-explanation {
+    padding: 1rem;
+    background: #FFF9E6;
+    border-left: 4px solid var(--math-highlight);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--math-text);
+}
+
+.next-btn {
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    background: var(--math-primary);
+    color: var(--math-white);
+    border: 3px solid var(--math-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 0 var(--math-secondary);
+}
+
+.next-btn:hover {
+    background: var(--math-secondary);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--math-primary);
+}
+
+/* === RÉSULTATS === */
+.results-zone {
+    text-align: center;
+    padding: 2rem;
+}
+
+.results-zone h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    color: var(--math-primary);
+    margin-bottom: 2rem;
+}
+
+.score-display {
+    margin: 2rem 0;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--math-primary), var(--math-secondary));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.4);
+    margin-bottom: 1rem;
+}
+
+.score-number {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 3rem;
+    color: var(--math-white);
+}
+
+.score-total {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.score-message {
+    font-size: 1.2rem;
+    color: var(--math-text);
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.results-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .section-title h1 {
+        font-size: 1.5rem;
+    }
+    
+    .domains-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .domain-btn,
+    .action-btn {
+        font-size: 0.7rem;
+        padding: 1rem;
+    }
+    
+    .score-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .score-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h1 {
+        font-size: 1.2rem;
+    }
+    
+    .quiz-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .lesson-content {
+        padding: 1rem;
+    }
+    
+    .back-btn-minecraft.mathematiques {
+        font-size: 0.65rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* === ANIMATIONS SUPPLÉMENTAIRES === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.quiz-container,
+.lesson-container,
+.illustration-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* === ACCESSIBILITÉ === */
+[x-cloak] {
+    display: none !important;
+}
+
+*:focus {
+    outline: 3px solid var(--math-accent);
+    outline-offset: 2px;
+}
+
+/* === IMPRESSION === */
+@media print {
+    .back-btn-minecraft,
+    .action-buttons,
+    .close-btn {
+        display: none;
+    }
+    
+    .lesson-container,
+    .quiz-container {
+        page-break-inside: avoid;
+    }
+}

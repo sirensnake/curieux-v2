@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+.histoire-header {
+    background: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(63, 81, 181, 0.3);
+}
+
+.back-btn {
+    background: #283593;
+    color: white;
+    border: 3px solid #1a237e;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: #1a237e;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #3f51b5;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Navigation des périodes */
+.periods-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.period-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.period-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(63, 81, 181, 0.3);
+    border-color: #3f51b5;
+}
+
+.period-card.active {
+    border-color: #3f51b5;
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+}
+
+.period-card h3 {
+    color: #3f51b5;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.period-card .dates {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contenu détaillé */
+.period-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.period-content h2 {
+    color: #3f51b5;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #3f51b5;
+    padding-bottom: 0.5rem;
+}
+
+.period-content h3 {
+    color: #5c6bc0;
+    margin: 2rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.period-content p {
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.period-content ul {
+    margin: 1rem 0 1rem 2rem;
+    line-height: 1.8;
+}
+
+.period-content li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Cartes personnages historiques */
+.personnages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.personnage-card {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #3f51b5;
+    transition: all 0.3s ease;
+}
+
+.personnage-card:hover {
+    background: #e8eaf6;
+    transform: translateX(5px);
+}
+
+.personnage-card h4 {
+    color: #3f51b5;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.personnage-card .role {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.personnage-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Section savais-tu */
+.saviez-vous {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #ff9800;
+    margin: 2rem 0;
+}
+
+.saviez-vous h4 {
+    color: #e65100;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.saviez-vous p {
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Quiz intégré */
+.quiz-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.quiz-progress {
+    background: #f5f5f5;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3f51b5 0%, #5c6bc0 100%);
+    transition: width 0.3s ease;
+}
+
+.quiz-question {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-question h4 {
+    color: #3f51b5;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quiz-option {
+    background: white;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover:not(.correct):not(.incorrect) {
+    border-color: #3f51b5;
+    background: #e8eaf6;
+}
+
+.quiz-option.correct {
+    border-color: #4caf50;
+    background: #e8f5e9;
+}
+
+.quiz-option.incorrect {
+    border-color: #f44336;
+    background: #ffebee;
+}
+
+/* FRISE CHRONOLOGIQUE */
+.timeline-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.timeline-horizontal {
+    position: relative;
+    padding: 3rem 0;
+    min-width: 1000px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3f51b5 0%, #5c6bc0 100%);
+}
+
+.timeline-events {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-event {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: #3f51b5;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 4px white;
+    transition: all 0.3s ease;
+}
+
+.timeline-event:hover .timeline-dot {
+    transform: scale(1.5);
+    background: #ff9800;
+}
+
+.timeline-label {
+    background: #f5f5f5;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3f51b5;
+    transition: all 0.3s ease;
+}
+
+.timeline-event:hover .timeline-label {
+    background: #3f51b5;
+    color: white;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* CARTE HISTORIQUE */
+.map-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.map-display {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.map-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-top: 1.5rem;
+}
+
+.map-info h4 {
+    color: #3f51b5;
+    margin-bottom: 0.75rem;
+}
+
+.map-legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+/* Boutons d'action */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+    color: white;
+}
+
+/* Bulle Curio */
+[x-cloak] { display: none !important; }
+
+.curio-bubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    max-width: 320px;
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    border: 3px solid #ff6f00;
+    border-radius: 20px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 8px 24px rgba(255, 111, 0, 0.3);
+    z-index: 9999;
+}
+
+.curio-avatar {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.curio-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.curio-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #ff6f00;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+.curio-close:hover {
+    opacity: 1;
+    transform: scale(1.2) rotate(90deg);
+}
+
+.curio-bubble--success {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-color: #4caf50;
+}
+
+.curio-bubble--info {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-color: #2196f3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .section-title h1 {
+        font-size: 1.5rem;
+    }
+    
+    .periods-nav {
+        grid-template-columns: 1fr;
+    }
+    
+    .personnages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-horizontal {
+        min-width: 800px;
+    }
+    
+    .curio-bubble {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}

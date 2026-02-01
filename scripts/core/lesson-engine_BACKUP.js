@@ -1,15 +1,16 @@
 /**
  * 🎮 LESSON ENGINE - Moteur de leçons Duolingo-style
  * Compatible avec toutes les sections : français, anglais, maths, sciences, histoire
- * Version : 2.1 - UTF-8 Corrigé + Son Harmonisé
+ * Version : 2.0 - Système XP intégré
  */
 
 class LessonEngine {
     constructor(lessons) {
+        
         this.lessons = lessons;
         this.lesson = null;
         this.currentIndex = 0;
-        this.audioEnabled = true; // ✅ Activé par défaut
+        this.audioEnabled = false;
         this.hintUsed = false;
         
         // Éléments DOM
@@ -27,28 +28,9 @@ class LessonEngine {
             modalMsg: document.getElementById('modal-msg')
         };
         
-        // Initialiser contexte audio global
-        this.initAudioContext();
-        
         // Initialiser l'affichage
         this.renderLessons();
         this.setupEventListeners();
-        
-        console.log('✅ LessonEngine initialisé (son activé par défaut)');
-    }
-    
-    /**
-     * 🔊 Initialise le contexte audio global
-     */
-    initAudioContext() {
-        if (!window.audioContext) {
-            try {
-                window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                console.log('✅ AudioContext global créé');
-            } catch (e) {
-                console.warn('⚠️ AudioContext non supporté:', e);
-            }
-        }
     }
     
     /**
@@ -63,6 +45,7 @@ class LessonEngine {
                 <div class="card-title">${lesson.title}</div>
             </div>
         `).join('');
+        
     }
     
     /**
@@ -72,6 +55,7 @@ class LessonEngine {
         this.lesson = this.lessons[index];
         this.currentIndex = 0;
         this.hintUsed = false;
+        
         
         // Masquer liste, afficher écran leçon
         this.elements.lessonsList.classList.add('hidden');
@@ -104,6 +88,7 @@ class LessonEngine {
         
         // Reset Curio
         this.resetCurio();
+        
     }
     
     /**
@@ -145,6 +130,7 @@ class LessonEngine {
      * ✅ Gère réponse correcte
      */
     handleCorrectAnswer() {
+        
         // Feedback visuel
         this.flashScreen('#2ecc71');
         this.playSoundEffect('correct');
@@ -164,6 +150,7 @@ class LessonEngine {
      * ❌ Gère réponse incorrecte
      */
     handleWrongAnswer() {
+        
         // Feedback visuel
         this.flashScreen('#e74c3c');
         this.playSoundEffect('error');
@@ -191,6 +178,7 @@ class LessonEngine {
             this.hintUsed = true;
             this.playSoundEffect('hint');
             this.showCurioReaction('thinking');
+            
         } else {
             this.elements.curioMsg.textContent = "Je t'ai déjà aidé ! À toi de jouer maintenant 😊";
             this.playSoundEffect('hint');
@@ -198,7 +186,7 @@ class LessonEngine {
     }
     
     /**
-     * 📊 Active/désactive l'audio
+     * 🔊 Active/désactive l'audio
      */
     enableAudio() {
         this.audioEnabled = !this.audioEnabled;
@@ -208,54 +196,44 @@ class LessonEngine {
             this.elements.soundToggle.classList.toggle('off', !this.audioEnabled);
         }
         
-        console.log('🔊 Audio:', this.audioEnabled ? 'ACTIVÉ' : 'DÉSACTIVÉ');
     }
     
     /**
-     * 🎵 Joue un effet sonore - VERSION HARMONISÉE
+     * 🎵 Joue un effet sonore
      */
     playSoundEffect(type) {
-        if (!this.audioEnabled) {
-            console.log('🔇 Son désactivé');
-            return;
-        }
+        if (!this.audioEnabled) return;
         
         const frequencies = {
-            correct: [523, 659, 784],      // Do - Mi - Sol (accord joyeux)
-            error: [200, 150],              // Sons graves (erreur)
-            hint: [440, 554],               // La - Do# (question)
-            victory: [523, 659, 784, 1046]  // Mélodie victoire
+            correct: [523, 659, 784],
+            error: [200, 150],
+            hint: [440, 554],
+            victory: [523, 659, 784, 1046]
         };
         
         const freq = frequencies[type] || [440];
         
         try {
-            const ctx = window.audioContext;
-            if (!ctx) {
-                console.warn('⚠️ AudioContext non disponible');
-                return;
-            }
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             
             freq.forEach((f, i) => {
-                const oscillator = ctx.createOscillator();
-                const gainNode = ctx.createGain();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
                 
                 oscillator.connect(gainNode);
-                gainNode.connect(ctx.destination);
+                gainNode.connect(audioContext.destination);
                 
                 oscillator.frequency.value = f;
-                oscillator.type = 'square'; // Son 8-bit rétro
+                oscillator.type = 'square';
                 
-                gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
                 
-                oscillator.start(ctx.currentTime + i * 0.1);
-                oscillator.stop(ctx.currentTime + i * 0.1 + 0.1);
+                oscillator.start(audioContext.currentTime + i * 0.1);
+                oscillator.stop(audioContext.currentTime + i * 0.1 + 0.1);
             });
-            
-            console.log('🔊 Son joué:', type);
         } catch (e) {
-            console.error('❌ Erreur lecture son:', e);
+            console.warn('⚠️ Audio non supporté:', e);
         }
     }
     
@@ -311,6 +289,7 @@ class LessonEngine {
      * 🏆 Termine la leçon
      */
     finish() {
+        
         // Confetti animation
         this.playConfetti();
         
@@ -414,3 +393,4 @@ class LessonEngine {
         }
     }
 }
+

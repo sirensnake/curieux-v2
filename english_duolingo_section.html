@@ -1,202 +1,599 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇬🇧 English - Le Monde des Curieux</title>
-    
-    <!-- CSS Externe -->
-    <link rel="stylesheet" href="styles/anglais-section.css">
-    
-    <!-- Police Minecraft -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <button onclick="history.back()" class="back-btn">
-        ← Retour à l'accueil
-    </button>
 
-    <!-- Titre Section -->
-    <div class="section-title">
-        <h1>🇬🇧 Learn English with Curio!</h1>
-        <p>Découvre l'anglais en t'amusant avec des activités interactives !</p>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>English - Le Monde des Curieux</title>
+        <link rel="stylesheet" href="styles/english_BON_CSS.css">
+    </head>
 
-    <!-- Zone Gamification -->
-    <div class="gamification-header">
-        <!-- Streak -->
-        <div class="gamification-badge streak-badge">
-            <span class="badge-icon">🔥</span>
-            <span class="badge-value" id="streak-value">0</span>
-            <span class="badge-label">jours</span>
-        </div>
-        
-        <!-- Hearts -->
-        <div class="gamification-badge hearts-badge">
-            <span class="badge-icon">❤️</span>
-            <span class="badge-value" id="hearts-value">5</span>
-            <span class="badge-label">cœurs</span>
-        </div>
-        
-        <!-- XP -->
-        <div class="gamification-badge xp-badge">
-            <span class="badge-icon">⭐</span>
-            <span class="badge-value" id="xp-value">CHARGEMENT...</span>
-        </div>
-    </div>
+    <body x-data="englishApp" x-cloak>
 
-    <!-- Contenu Éducatif -->
-    <div class="learning-content">
-        <!-- Vocabulaire de Base -->
-        <div class="topic-card">
-            <h2>📚 Basic Vocabulary</h2>
-            <p>Les mots essentiels du quotidien</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Family & People</h3>
-                    <p>La famille et les personnes</p>
-                    <button class="btn-start-activity" onclick="startActivity('family')">
-                        Start
+        <!-- Système XP -->
+        <script src="scripts/section-xp-system.js"></script>
+
+        <!-- Bulle Curio -->
+        <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
+            <button @click="hide()" class="curio-close">×</button>
+            <div class="curio-avatar">🦊</div>
+            <p class="curio-message" x-text="currentMessage"></p>
+        </div>
+
+        <div class="english-container">
+            <!-- Header avec bouton retour -->
+            <div class="section-header">
+                <button onclick="history.back()" class="back-btn">
+                    ← Retour à l'accueil
+                </button>
+            </div>
+
+            <!-- Titre section -->
+            <div class="section-title">
+                <h1>🇬🇧 Learn English!</h1>
+                <p>Discover English through fun and interactive activities!</p>
+            </div>
+
+            <!-- Navigation thèmes -->
+            <div class="themes-nav">
+                <button @click="selectTheme('vocabulary')"
+                    :class="'theme-btn vocabulary' + (currentTheme === 'vocabulary' ? ' active' : '')">
+                    📚 Basic Vocabulary
+                </button>
+                <button @click="selectTheme('phrases')"
+                    :class="'theme-btn phrases' + (currentTheme === 'phrases' ? ' active' : '')">
+                    💬 Everyday Phrases
+                </button>
+                <button @click="selectTheme('grammar')"
+                    :class="'theme-btn grammar' + (currentTheme === 'grammar' ? ' active' : '')">
+                    📖 Grammar Basics
+                </button>
+            </div>
+
+            <!-- Contenu thème -->
+            <div class="theme-content" x-show="currentTheme" x-cloak>
+                <div class="theme-section">
+                    <h2 x-text="getThemeName()"></h2>
+                    <p class="theme-description" x-text="getThemeDescription()"></p>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <button @click="toggleIllustration()" class="action-btn btn-visual">
+                        🖼️ Voir l'illustration
+                    </button>
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info">
+                        📖 En savoir plus
+                    </button>
+                    <button @click="startQuiz()" class="action-btn btn-quiz">
+                        🎯 Quiz
                     </button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🎨</div>
-                    <h3>Colors & Numbers</h3>
-                    <p>Couleurs et nombres</p>
-                    <button class="btn-start-activity" onclick="startActivity('colors_numbers')">
-                        Start
-                    </button>
+            </div>
+
+            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+            <div x-show="showLesson" x-transition class="lesson-container">
+                <div class="lesson-header">
+                    <h3>📖 <span x-text="getLessonTitle()"></span></h3>
+                    <button @click="showLesson = false" class="close-btn">Fermer</button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🐶</div>
-                    <h3>Animals</h3>
-                    <p>Les animaux</p>
-                    <button class="btn-start-activity" onclick="startActivity('animals')">
-                        Start
-                    </button>
+                <div class="lesson-content" x-html="getLessonContent()"></div>
+            </div>
+
+            <!-- ILLUSTRATION -->
+            <div x-show="showIllustration" x-transition class="illustration-container">
+                <div class="illustration-header">
+                    <h3>🖼️ <span x-text="getThemeName()"></span></h3>
+                    <button @click="showIllustration = false" class="close-btn">Fermer</button>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🍎</div>
-                    <h3>Food & Drinks</h3>
-                    <p>Nourriture et boissons</p>
-                    <button class="btn-start-activity" onclick="startActivity('food')">
-                        Start
-                    </button>
+                <div class="illustration-content">
+                    <img :src="getImageUrl()" :alt="'Illustration ' + getThemeName()" class="theme-illustration" loading="lazy">
                 </div>
             </div>
         </div>
 
-        <!-- Phrases & Communication -->
-        <div class="topic-card">
-            <h2>💬 Everyday Phrases</h2>
-            <p>Phrases et expressions courantes</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">👋</div>
-                    <h3>Greetings</h3>
-                    <p>Salutations</p>
-                    <button class="btn-start-activity" onclick="startActivity('greetings')">
-                        Start
-                    </button>
+        <!-- QUIZ -->
+        <div x-show="showQuiz" x-transition class="quiz-container">
+            <div class="quiz-header">
+                <h3>🎯 Quiz <span x-text="getThemeName()"></span></h3>
+                <div class="quiz-progress">
+                    <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
+                    </div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">❓</div>
-                    <h3>Questions</h3>
-                    <p>Poser des questions</p>
-                    <button class="btn-start-activity" onclick="startActivity('questions')">
-                        Start
-                    </button>
+            </div>
+
+            <div class="quiz-content">
+                <div x-show="!quizFinished" class="question-zone">
+                    <div class="question-text">
+                        <span x-text="currentQuestion.question"></span>
+                    </div>
+
+                    <!-- Options de réponse -->
+                    <div class="answer-options">
+                        <template x-for="(option, index) in currentQuestion.options" :key="index">
+                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option">
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div x-show="answered" x-transition class="feedback-zone">
+                        <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
+                            <span x-show="isCorrect">✅ Bravo ! C'est correct !</span>
+                            <span x-show="!isCorrect">
+                                ❌ Pas tout à fait... La bonne réponse était : <strong x-text="currentQuestion.correct"></strong>
+                            </span>
+                        </div>
+                        <div class="feedback-explanation" x-show="currentQuestion.explanation">
+                            💡 <span x-text="currentQuestion.explanation"></span>
+                        </div>
+                        <button @click="nextQuestion()" class="next-btn">Suivant →</button>
+                    </div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🏫</div>
-                    <h3>At School</h3>
-                    <p>À l'école</p>
-                    <button class="btn-start-activity" onclick="startActivity('school')">
-                        Start
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🕐</div>
-                    <h3>Time & Days</h3>
-                    <p>L'heure et les jours</p>
-                    <button class="btn-start-activity" onclick="startActivity('time')">
-                        Start
-                    </button>
+
+                <!-- Résultats finaux -->
+                <div x-show="quizFinished" x-transition class="results-zone">
+                    <h3>🎉 Quiz terminé !</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span class="score-number" x-text="score"></span>
+                            <span class="score-total" x-text="'/ ' + getCurrentQuiz().length"></span>
+                        </div>
+                        <p class="score-percentage" x-text="Math.round((score / getCurrentQuiz().length) * 100) + '%'"></p>
+                        <p class="score-message" x-text="getScoreMessage()"></p>
+                    </div>
+                    <div class="results-actions">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz">
+                            🔄 Recommencer
+                        </button>
+                        <button @click="backToTheme()" class="action-btn btn-info">
+                            ← Retour au thème
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Grammaire & Verbes -->
-        <div class="topic-card">
-            <h2>📖 Grammar Basics</h2>
-            <p>Les bases de la grammaire anglaise</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">🏃</div>
-                    <h3>Action Verbs</h3>
-                    <p>Verbes d'action</p>
-                    <button class="btn-start-activity" onclick="startActivity('verbs')">
-                        Start
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">📝</div>
-                    <h3>Present Simple</h3>
-                    <p>Le présent simple</p>
-                    <button class="btn-start-activity" onclick="startActivity('present')">
-                        Start
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🔤</div>
-                    <h3>Pronouns</h3>
-                    <p>Les pronoms</p>
-                    <button class="btn-start-activity" onclick="startActivity('pronouns')">
-                        Start
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🎯</div>
-                    <h3>Adjectives</h3>
-                    <p>Les adjectifs</p>
-                    <button class="btn-start-activity" onclick="startActivity('adjectives')">
-                        Start
-                    </button>
-                </div>
-            </div>
         </div>
-    </div>
 
-    <!-- Modal Activité (créé dynamiquement) -->
-    <div id="activity-modal"></div>
-    
-    <!-- Feedback Complétion (créé dynamiquement) -->
-    <div id="completion-feedback"></div>
+        <!-- Alpine.js CDN -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Bulle d'aide Curio -->
-    <div id="curio-help" class="curio-help-bubble">
-        <button class="curio-close" onclick="closeCurioHelp()">×</button>
-        <div class="curio-avatar">🦊</div>
-        <p class="curio-message" id="curio-message">
-            Welcome! Let's learn English together!
-        </p>
-    </div>
+        <!-- JS inline AVANT Alpine -->
+        <script>
+            document.addEventListener('alpine:init', () => {
+                console.log('🎯 Alpine:init déclenché');
 
-    <!-- Script Standalone -->
-    <script src="scripts/anglais-standalone.js"></script>
-</body>
+                Alpine.data('curioBubble', () => ({
+                    visible: false,
+                    currentMessage: '',
+                    variant: 'info',
+                    autoHideTimer: null,
+                    init() { window.curioBubbleInstance = this; },
+                    show(m, v = 'info') {
+                        if (this.autoHideTimer) clearTimeout(this.autoHideTimer);
+                        this.currentMessage = m;
+                        this.variant = v;
+                        this.visible = true;
+                        this.autoHideTimer = setTimeout(() => this.hide(), 5000);
+                    },
+                    hide() { this.visible = false; }
+                }));
+
+                Alpine.data('englishApp', () => ({
+                    currentTheme: 'vocabulary',
+                    showIllustration: false,
+                    showLesson: false,
+                    showQuiz: false,
+                    showResults: false,
+                    currentQuestionIndex: 0,
+                    score: 0,
+                    selectedAnswer: null,
+                    answered: false,
+                    isCorrect: false,
+                    quizFinished: false,
+                    currentQuestion: null,
+                    audioContext: null,
+
+                    init() {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        console.log('✅ englishApp initialisé');
+
+                        // Initialiser le système XP
+                        if (window.SectionXP) {
+                            window.SectionXP.init('anglais');
+                        }
+                    },
+
+                    playCorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 523; o.type = 'sine';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.2);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.2);
+                        } catch (e) { }
+                    },
+
+                    playIncorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 185; o.type = 'triangle';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.3);
+                        } catch (e) { }
+                    },
+
+                    themes: {
+                        vocabulary: {
+                            name: 'Basic Vocabulary',
+                            description: 'Learn essential everyday words: family, colors, animals, food',
+                            imageUrl: '/images/english/illustration_vocabulary.jpg'
+                        },
+                        phrases: {
+                            name: 'Everyday Phrases',
+                            description: 'Master common expressions: greetings, questions, time, school',
+                            imageUrl: '/images/english/illustration_phrases.jpg'
+                        },
+                        grammar: {
+                            name: 'Grammar Basics',
+                            description: 'Understand English grammar: verbs, present tense, pronouns, adjectives',
+                            imageUrl: '/images/english/illustration_grammar.jpg'
+                        }
+                    },
+
+                    // Contenus pédagogiques
+                    lessonData: {
+                        vocabulary: {
+                            title: "📚 Basic Vocabulary",
+                            content: `
+                                <h3>Why learn vocabulary?</h3>
+                                <p>Vocabulary is the <strong>foundation of any language</strong>. The more words you know, the better you can express yourself and understand others!</p>
+
+                                <h3>👨‍👩‍👧‍👦 Family & People</h3>
+                                <ul>
+                                    <li><strong class="english-word">Father</strong> <span class="french-translation">(père)</span> - My father is tall.</li>
+                                    <li><strong class="english-word">Mother</strong> <span class="french-translation">(mère)</span> - My mother is kind.</li>
+                                    <li><strong class="english-word">Brother</strong> <span class="french-translation">(frère)</span> - I have one brother.</li>
+                                    <li><strong class="english-word">Sister</strong> <span class="french-translation">(sœur)</span> - My sister is young.</li>
+                                    <li><strong class="english-word">Friend</strong> <span class="french-translation">(ami/amie)</span> - She is my best friend.</li>
+                                </ul>
+
+                                <h3>🎨 Colors</h3>
+                                <ul>
+                                    <li><strong class="english-word">Red</strong> <span class="french-translation">(rouge)</span> - The apple is red.</li>
+                                    <li><strong class="english-word">Blue</strong> <span class="french-translation">(bleu)</span> - The sky is blue.</li>
+                                    <li><strong class="english-word">Green</strong> <span class="french-translation">(vert)</span> - The grass is green.</li>
+                                    <li><strong class="english-word">Yellow</strong> <span class="french-translation">(jaune)</span> - The sun is yellow.</li>
+                                    <li><strong class="english-word">Black</strong> <span class="french-translation">(noir)</span>, <strong class="english-word">White</strong> <span class="french-translation">(blanc)</span></li>
+                                </ul>
+
+                                <h3>🔢 Numbers 1-10</h3>
+                                <ul>
+                                    <li><strong class="english-word">One</strong> (1), <strong class="english-word">Two</strong> (2), <strong class="english-word">Three</strong> (3), <strong class="english-word">Four</strong> (4), <strong class="english-word">Five</strong> (5)</li>
+                                    <li><strong class="english-word">Six</strong> (6), <strong class="english-word">Seven</strong> (7), <strong class="english-word">Eight</strong> (8), <strong class="english-word">Nine</strong> (9), <strong class="english-word">Ten</strong> (10)</li>
+                                </ul>
+
+                                <h3>🐶 Animals</h3>
+                                <ul>
+                                    <li><strong class="english-word">Dog</strong> <span class="french-translation">(chien)</span> - The dog barks.</li>
+                                    <li><strong class="english-word">Cat</strong> <span class="french-translation">(chat)</span> - The cat meows.</li>
+                                    <li><strong class="english-word">Bird</strong> <span class="french-translation">(oiseau)</span> - The bird sings.</li>
+                                    <li><strong class="english-word">Fish</strong> <span class="french-translation">(poisson)</span> - The fish swims.</li>
+                                    <li><strong class="english-word">Horse</strong> <span class="french-translation">(cheval)</span>, <strong class="english-word">Rabbit</strong> <span class="french-translation">(lapin)</span></li>
+                                </ul>
+
+                                <h3>🍎 Food & Drinks</h3>
+                                <ul>
+                                    <li><strong class="english-word">Apple</strong> <span class="french-translation">(pomme)</span> - I eat an apple.</li>
+                                    <li><strong class="english-word">Bread</strong> <span class="french-translation">(pain)</span> - I like bread.</li>
+                                    <li><strong class="english-word">Water</strong> <span class="french-translation">(eau)</span> - I drink water.</li>
+                                    <li><strong class="english-word">Milk</strong> <span class="french-translation">(lait)</span> - Milk is white.</li>
+                                    <li><strong class="english-word">Cake</strong> <span class="french-translation">(gâteau)</span>, <strong class="english-word">Juice</strong> <span class="french-translation">(jus)</span></li>
+                                </ul>
+
+                                <h3>💡 Learning Tips</h3>
+                                <ul>
+                                    <li>📝 Practice writing new words every day</li>
+                                    <li>🗣️ Say words out loud to remember pronunciation</li>
+                                    <li>🎨 Draw pictures to associate with words</li>
+                                    <li>🎮 Use flashcards or play memory games</li>
+                                </ul>
+                            `
+                        },
+                        phrases: {
+                            title: "💬 Everyday Phrases",
+                            content: `
+                                <h3>Why learn phrases?</h3>
+                                <p>Knowing <strong>common phrases</strong> helps you communicate in real situations. You can make friends, ask for help, and express yourself!</p>
+
+                                <h3>👋 Greetings</h3>
+                                <ul>
+                                    <li><strong class="english-word">Hello!</strong> / <strong class="english-word">Hi!</strong> <span class="french-translation">(Bonjour / Salut)</span></li>
+                                    <li><strong class="english-word">Good morning!</strong> <span class="french-translation">(Bonjour - matin)</span></li>
+                                    <li><strong class="english-word">Good afternoon!</strong> <span class="french-translation">(Bon après-midi)</span></li>
+                                    <li><strong class="english-word">Good evening!</strong> <span class="french-translation">(Bonsoir)</span></li>
+                                    <li><strong class="english-word">Goodbye!</strong> / <strong class="english-word">Bye!</strong> <span class="french-translation">(Au revoir)</span></li>
+                                    <li><strong class="english-word">See you later!</strong> <span class="french-translation">(À plus tard)</span></li>
+                                </ul>
+
+                                <h3>🙋 Introducing Yourself</h3>
+                                <ul>
+                                    <li><strong class="english-word">My name is...</strong> <span class="french-translation">(Je m'appelle...)</span></li>
+                                    <li><strong class="english-word">I am 10 years old.</strong> <span class="french-translation">(J'ai 10 ans)</span></li>
+                                    <li><strong class="english-word">Nice to meet you!</strong> <span class="french-translation">(Enchanté/e)</span></li>
+                                    <li><strong class="english-word">How are you?</strong> <span class="french-translation">(Comment vas-tu ?)</span></li>
+                                    <li><strong class="english-word">I'm fine, thank you.</strong> <span class="french-translation">(Je vais bien, merci)</span></li>
+                                </ul>
+
+                                <h3>❓ Common Questions</h3>
+                                <ul>
+                                    <li><strong class="english-word">What is your name?</strong> <span class="french-translation">(Comment t'appelles-tu ?)</span></li>
+                                    <li><strong class="english-word">How old are you?</strong> <span class="french-translation">(Quel âge as-tu ?)</span></li>
+                                    <li><strong class="english-word">Where are you from?</strong> <span class="french-translation">(D'où viens-tu ?)</span></li>
+                                    <li><strong class="english-word">What time is it?</strong> <span class="french-translation">(Quelle heure est-il ?)</span></li>
+                                    <li><strong class="english-word">Can you help me?</strong> <span class="french-translation">(Peux-tu m'aider ?)</span></li>
+                                </ul>
+
+                                <h3>🏫 At School</h3>
+                                <ul>
+                                    <li><strong class="english-word">I go to school.</strong> <span class="french-translation">(Je vais à l'école)</span></li>
+                                    <li><strong class="english-word">I like English.</strong> <span class="french-translation">(J'aime l'anglais)</span></li>
+                                    <li><strong class="english-word">Can I go to the bathroom?</strong> <span class="french-translation">(Puis-je aller aux toilettes ?)</span></li>
+                                    <li><strong class="english-word">I don't understand.</strong> <span class="french-translation">(Je ne comprends pas)</span></li>
+                                    <li><strong class="english-word">Homework</strong> <span class="french-translation">(devoirs)</span>, <strong class="english-word">Teacher</strong> <span class="french-translation">(professeur)</span></li>
+                                </ul>
+
+                                <h3>🕐 Days & Time</h3>
+                                <ul>
+                                    <li><strong class="english-word">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday</strong></li>
+                                    <li><strong class="english-word">Today</strong> <span class="french-translation">(aujourd'hui)</span>, <strong class="english-word">Tomorrow</strong> <span class="french-translation">(demain)</span>, <strong class="english-word">Yesterday</strong> <span class="french-translation">(hier)</span></li>
+                                    <li><strong class="english-word">It's 3 o'clock.</strong> <span class="french-translation">(Il est 3 heures)</span></li>
+                                </ul>
+
+                                <h3>😊 Polite Expressions</h3>
+                                <ul>
+                                    <li><strong class="english-word">Please</strong> <span class="french-translation">(S'il te plaît)</span></li>
+                                    <li><strong class="english-word">Thank you</strong> / <strong class="english-word">Thanks</strong> <span class="french-translation">(Merci)</span></li>
+                                    <li><strong class="english-word">You're welcome</strong> <span class="french-translation">(De rien)</span></li>
+                                    <li><strong class="english-word">Excuse me</strong> / <strong class="english-word">Sorry</strong> <span class="french-translation">(Excuse-moi / Pardon)</span></li>
+                                </ul>
+                            `
+                        },
+                        grammar: {
+                            title: "📖 Grammar Basics",
+                            content: `
+                                <h3>Why learn grammar?</h3>
+                                <p>Grammar is the <strong>structure of language</strong>. It helps you build correct sentences and express yourself clearly!</p>
+
+                                <h3>🔤 Personal Pronouns</h3>
+                                <ul>
+                                    <li><strong class="english-word">I</strong> <span class="french-translation">(je)</span> - I am a student.</li>
+                                    <li><strong class="english-word">You</strong> <span class="french-translation">(tu/vous)</span> - You are nice.</li>
+                                    <li><strong class="english-word">He</strong> <span class="french-translation">(il)</span> - He is my brother.</li>
+                                    <li><strong class="english-word">She</strong> <span class="french-translation">(elle)</span> - She is my sister.</li>
+                                    <li><strong class="english-word">It</strong> <span class="french-translation">(il/elle - chose)</span> - It is a book.</li>
+                                    <li><strong class="english-word">We</strong> <span class="french-translation">(nous)</span> - We are friends.</li>
+                                    <li><strong class="english-word">They</strong> <span class="french-translation">(ils/elles)</span> - They are happy.</li>
+                                </ul>
+
+                                <h3>📝 Present Simple - Verb "TO BE"</h3>
+                                <ul>
+                                    <li><strong class="english-word">I am</strong> (I'm) - I am 10 years old.</li>
+                                    <li><strong class="english-word">You are</strong> (You're) - You are smart.</li>
+                                    <li><strong class="english-word">He is / She is / It is</strong> (He's/She's/It's) - He is tall.</li>
+                                    <li><strong class="english-word">We are</strong> (We're) - We are students.</li>
+                                    <li><strong class="english-word">They are</strong> (They're) - They are my friends.</li>
+                                </ul>
+
+                                <h3>🏃 Action Verbs</h3>
+                                <ul>
+                                    <li><strong class="english-word">Run</strong> <span class="french-translation">(courir)</span> - I run fast.</li>
+                                    <li><strong class="english-word">Jump</strong> <span class="french-translation">(sauter)</span> - She jumps high.</li>
+                                    <li><strong class="english-word">Eat</strong> <span class="french-translation">(manger)</span> - They eat lunch.</li>
+                                    <li><strong class="english-word">Drink</strong> <span class="french-translation">(boire)</span> - We drink water.</li>
+                                    <li><strong class="english-word">Sleep</strong> <span class="french-translation">(dormir)</span> - He sleeps at night.</li>
+                                    <li><strong class="english-word">Play</strong> <span class="french-translation">(jouer)</span> - I play football.</li>
+                                    <li><strong class="english-word">Read</strong> <span class="french-translation">(lire)</span> - You read a book.</li>
+                                    <li><strong class="english-word">Write</strong> <span class="french-translation">(écrire)</span> - She writes a letter.</li>
+                                </ul>
+
+                                <h3>🎯 Adjectives</h3>
+                                <p>Adjectives <strong>describe nouns</strong> (people, places, things):</p>
+                                <ul>
+                                    <li><strong>Size:</strong> <span class="english-word">Big, Small, Tall, Short</span></li>
+                                    <li><strong>Colors:</strong> <span class="english-word">Red, Blue, Green, Yellow</span></li>
+                                    <li><strong>Feelings:</strong> <span class="english-word">Happy, Sad, Angry, Tired</span></li>
+                                    <li><strong>Quality:</strong> <span class="english-word">Good, Bad, Beautiful, Ugly</span></li>
+                                    <li><strong>Temperature:</strong> <span class="english-word">Hot, Cold, Warm, Cool</span></li>
+                                </ul>
+
+                                <h4>📐 Using Adjectives</h4>
+                                <ul>
+                                    <li>The <strong class="english-word">big</strong> dog - Le <strong>grand</strong> chien</li>
+                                    <li>A <strong class="english-word">beautiful</strong> flower - Une <strong>belle</strong> fleur</li>
+                                    <li>I am <strong class="english-word">happy</strong> - Je suis <strong>heureux/heureuse</strong></li>
+                                </ul>
+
+                                <h3>❓ Making Questions</h3>
+                                <ul>
+                                    <li><strong class="english-word">What?</strong> <span class="french-translation">(Quoi ?)</span> - What is your name?</li>
+                                    <li><strong class="english-word">Who?</strong> <span class="french-translation">(Qui ?)</span> - Who is he?</li>
+                                    <li><strong class="english-word">Where?</strong> <span class="french-translation">(Où ?)</span> - Where are you?</li>
+                                    <li><strong class="english-word">When?</strong> <span class="french-translation">(Quand ?)</span> - When is your birthday?</li>
+                                    <li><strong class="english-word">Why?</strong> <span class="french-translation">(Pourquoi ?)</span> - Why are you sad?</li>
+                                    <li><strong class="english-word">How?</strong> <span class="french-translation">(Comment ?)</span> - How are you?</li>
+                                </ul>
+
+                                <h3>📚 Grammar Rules to Remember</h3>
+                                <ul>
+                                    <li>✅ Sentences start with a <strong>capital letter</strong> and end with a <strong>period (.)</strong></li>
+                                    <li>✅ Add <strong>-s</strong> to verbs with he/she/it: He play<strong>s</strong>, She eat<strong>s</strong></li>
+                                    <li>✅ Use <strong>a/an</strong> before singular nouns: a dog, an apple</li>
+                                    <li>✅ Questions end with a <strong>question mark (?)</strong></li>
+                                </ul>
+                            `
+                        }
+                    },
+
+                    // Questions quiz (10 par thème)
+                    quizQuestions: {
+                        vocabulary: [
+                            { question: "Comment dit-on 'mère' en anglais ?", options: ["Mother", "Father", "Sister", "Brother"], correct: "Mother", explanation: "'Mother' signifie 'mère' en anglais." },
+                            { question: "Quelle est la couleur du ciel ?", options: ["Red", "Blue", "Green", "Yellow"], correct: "Blue", explanation: "The sky is blue = Le ciel est bleu." },
+                            { question: "Comment dit-on 'chien' en anglais ?", options: ["Cat", "Dog", "Bird", "Fish"], correct: "Dog", explanation: "'Dog' signifie 'chien' en anglais." },
+                            { question: "Combien font 'five + three' ?", options: ["Seven", "Eight", "Nine", "Ten"], correct: "Eight", explanation: "5 + 3 = 8 (eight)" },
+                            { question: "Comment dit-on 'pomme' en anglais ?", options: ["Apple", "Banana", "Orange", "Pear"], correct: "Apple", explanation: "'Apple' signifie 'pomme' en anglais." },
+                            { question: "De quelle couleur est l'herbe (grass) ?", options: ["Red", "Blue", "Green", "Yellow"], correct: "Green", explanation: "The grass is green = L'herbe est verte." },
+                            { question: "Quel animal dit 'meow' ?", options: ["Dog", "Cat", "Bird", "Horse"], correct: "Cat", explanation: "Le chat (cat) fait 'meow' (miaou)." },
+                            { question: "Comment dit-on 'eau' en anglais ?", options: ["Water", "Milk", "Juice", "Tea"], correct: "Water", explanation: "'Water' signifie 'eau' en anglais." },
+                            { question: "Quel est le numéro après 'nine' ?", options: ["Eight", "Ten", "Eleven", "Seven"], correct: "Ten", explanation: "Après 9 (nine) vient 10 (ten)." },
+                            { question: "Comment dit-on 'ami' en anglais ?", options: ["Friend", "Enemy", "Stranger", "Neighbor"], correct: "Friend", explanation: "'Friend' signifie 'ami/amie' en anglais." }
+                        ],
+                        phrases: [
+                            { question: "Comment dit-on 'Bonjour' en anglais ?", options: ["Goodbye", "Hello", "Thank you", "Sorry"], correct: "Hello", explanation: "'Hello' ou 'Hi' signifient 'Bonjour' en anglais." },
+                            { question: "Quelle phrase signifie 'Comment t'appelles-tu ?' ?", options: ["How are you?", "What is your name?", "Where are you?", "How old are you?"], correct: "What is your name?", explanation: "'What is your name?' = Comment t'appelles-tu ?" },
+                            { question: "Comment dit-on 'Merci' en anglais ?", options: ["Please", "Sorry", "Thank you", "Excuse me"], correct: "Thank you", explanation: "'Thank you' ou 'Thanks' signifient 'Merci'." },
+                            { question: "Quelle phrase signifie 'Au revoir' ?", options: ["Hello", "Goodbye", "Good morning", "Good night"], correct: "Goodbye", explanation: "'Goodbye' ou 'Bye' signifient 'Au revoir'." },
+                            { question: "Comment demander l'âge de quelqu'un ?", options: ["What is your name?", "How old are you?", "Where are you from?", "How are you?"], correct: "How old are you?", explanation: "'How old are you?' = Quel âge as-tu ?" },
+                            { question: "Quel jour vient après Monday ?", options: ["Sunday", "Tuesday", "Wednesday", "Friday"], correct: "Tuesday", explanation: "Lundi (Monday) → Mardi (Tuesday)" },
+                            { question: "Comment dit-on 'S'il te plaît' ?", options: ["Thank you", "Please", "Sorry", "Welcome"], correct: "Please", explanation: "'Please' signifie 'S'il te plaît' en anglais." },
+                            { question: "Quelle phrase signifie 'Je ne comprends pas' ?", options: ["I understand", "I don't understand", "I know", "I like"], correct: "I don't understand", explanation: "'I don't understand' = Je ne comprends pas." },
+                            { question: "Comment dit-on 'Quelle heure est-il ?' ?", options: ["What time is it?", "What day is it?", "What is it?", "When is it?"], correct: "What time is it?", explanation: "'What time is it?' = Quelle heure est-il ?" },
+                            { question: "Quel mot signifie 'aujourd'hui' ?", options: ["Yesterday", "Tomorrow", "Today", "Now"], correct: "Today", explanation: "'Today' = aujourd'hui, 'Yesterday' = hier, 'Tomorrow' = demain" }
+                        ],
+                        grammar: [
+                            { question: "Quel pronom remplace 'Marie' ?", options: ["He", "She", "It", "They"], correct: "She", explanation: "'She' (elle) est utilisé pour une fille/femme." },
+                            { question: "Complète : 'I ___ a student.'", options: ["am", "is", "are", "be"], correct: "am", explanation: "Avec 'I', on utilise 'am' : I am = Je suis" },
+                            { question: "Complète : 'He ___ tall.'", options: ["am", "is", "are", "be"], correct: "is", explanation: "Avec He/She/It, on utilise 'is' : He is = Il est" },
+                            { question: "Quel verbe signifie 'courir' ?", options: ["Walk", "Run", "Jump", "Sleep"], correct: "Run", explanation: "'Run' signifie 'courir' en anglais." },
+                            { question: "Quel adjectif signifie 'grand' (taille) ?", options: ["Small", "Short", "Big", "Little"], correct: "Big", explanation: "'Big' signifie 'grand', 'Small' signifie 'petit'." },
+                            { question: "Quel mot pose une question sur le lieu ?", options: ["What", "Who", "Where", "When"], correct: "Where", explanation: "'Where?' = Où ? (pour demander un lieu)" },
+                            { question: "Complète : 'They ___ happy.'", options: ["am", "is", "are", "be"], correct: "are", explanation: "Avec You/We/They, on utilise 'are' : They are = Ils sont" },
+                            { question: "Quel pronom pour parler de soi-même ?", options: ["You", "He", "I", "We"], correct: "I", explanation: "'I' (je) est utilisé pour parler de soi-même." },
+                            { question: "Quel adjectif signifie 'heureux' ?", options: ["Sad", "Happy", "Angry", "Tired"], correct: "Happy", explanation: "'Happy' = heureux/heureuse, 'Sad' = triste" },
+                            { question: "Complète : 'She ___ a book.' (lire)", options: ["read", "reads", "reading", "readed"], correct: "reads", explanation: "Avec She, on ajoute -s au verbe : She reads = Elle lit" }
+                        ]
+                    },
+
+                    selectTheme(t) {
+                        this.currentTheme = t;
+                        this.showQuiz = this.showResults = this.showIllustration = this.showLesson = false;
+                    },
+
+                    getThemeName() {
+                        return this.themes[this.currentTheme]?.name || '';
+                    },
+
+                    getThemeDescription() {
+                        return this.themes[this.currentTheme]?.description || '';
+                    },
+
+                    getImageUrl() {
+                        return this.themes[this.currentTheme]?.imageUrl || '';
+                    },
+
+                    getLessonTitle() {
+                        return this.lessonData[this.currentTheme]?.title || '';
+                    },
+
+                    getLessonContent() {
+                        return this.lessonData[this.currentTheme]?.content || '';
+                    },
+
+                    toggleIllustration() {
+                        this.showIllustration = !this.showIllustration;
+                    },
+
+                    startQuiz() {
+                        this.showQuiz = true;
+                        this.showResults = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.selectedAnswer = null;
+                        this.answered = false;
+                        this.quizFinished = false;
+                        this.loadQuestion();
+                    },
+
+                    getCurrentQuiz() {
+                        return this.quizQuestions[this.currentTheme] || [];
+                    },
+
+                    loadQuestion() {
+                        const questions = this.getCurrentQuiz();
+                        this.currentQuestion = questions[this.currentQuestionIndex];
+                        this.answered = false;
+                        this.isCorrect = false;
+                    },
+
+                    checkAnswer(selectedOption) {
+                        if (this.answered) return;
+                        this.answered = true;
+                        this.isCorrect = (selectedOption === this.currentQuestion.correct);
+                        if (this.isCorrect) {
+                            this.score++;
+                            this.playCorrectSound();
+
+                            // Ajouter XP pour bonne réponse
+                            if (window.SectionXP) {
+                                window.SectionXP.addXP('anglais', window.SectionXP.rewards.QUESTION_CORRECT);
+                            }
+                        } else {
+                            this.playIncorrectSound();
+                        }
+                    },
+
+                    nextQuestion() {
+                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                            this.currentQuestionIndex++;
+                            this.loadQuestion();
+                        } else {
+                            this.finishQuiz();
+                        }
+                    },
+
+                    finishQuiz() {
+                        this.quizFinished = true;
+
+                        // Bonus XP pour complétion du quiz
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('anglais', window.SectionXP.rewards.QUIZ_COMPLETED);
+
+                            // Bonus supplémentaire si quiz parfait
+                            const quizLength = this.getCurrentQuiz().length;
+                            if (this.score === quizLength) {
+                                window.SectionXP.addXP('anglais', window.SectionXP.rewards.PERFECT_QUIZ);
+                            }
+                        }
+                    },
+
+                    retryQuiz() {
+                        this.quizFinished = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.loadQuestion();
+                    },
+
+                    getScoreMessage() {
+                        const percentage = (this.score / this.getCurrentQuiz().length) * 100;
+                        if (percentage === 100) return '🏆 Perfect! You mastered this theme!';
+                        if (percentage >= 80) return '🌟 Excellent! Very well done!';
+                        if (percentage >= 60) return '👍 Good job! Keep it up!';
+                        if (percentage >= 40) return '💪 Not bad! Practice a bit more!';
+                        return '📚 Keep learning, you\'ll get there!';
+                    },
+
+                    backToTheme() {
+                        this.showResults = false;
+                        this.showQuiz = false;
+                    }
+                }));
+            });
+        </script>
+    </body>
+
 </html>

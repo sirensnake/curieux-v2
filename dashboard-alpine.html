@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Dashboard - Le Monde des Curieux</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- CSS Externe -->
+    <link rel="stylesheet" href="styles/dashboard-alpine.css">
+    
+    <!-- Police Minecraft -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dashboard Alpine.js -->
+    <div class="dashboard" x-data="progressDashboard()" x-init="init()">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎮 Le Monde des Curieux</h1>
+            <p class="header-subtitle">Dashboard de Progression</p>
+        </div>
+        
+        <!-- Statistiques Principales -->
+        <div class="stats-grid">
+            <!-- XP Total -->
+            <div class="stat-card xp-card">
+                <div class="stat-label">XP TOTAL</div>
+                <div class="stat-value" x-text="stats.totalXP"></div>
+                <div class="stat-sublabel" x-text="`Niveau ${stats.level}`"></div>
+            </div>
+            
+            <!-- Streak -->
+            <div class="stat-card streak-card">
+                <div class="stat-label">SÉRIE</div>
+                <div class="stat-value">
+                    🔥 <span x-text="stats.streak"></span>
+                </div>
+                <div class="stat-sublabel">jours consécutifs</div>
+            </div>
+            
+            <!-- Hearts -->
+            <div class="stat-card hearts-card">
+                <div class="stat-label">CŒURS</div>
+                <div class="stat-value" x-html="heartsDisplay"></div>
+                <div class="stat-sublabel">vies disponibles</div>
+            </div>
+            
+            <!-- Activités -->
+            <div class="stat-card activities-card">
+                <div class="stat-label">ACTIVITÉS</div>
+                <div class="stat-value" x-text="stats.activitiesCompleted"></div>
+                <div class="stat-sublabel">complétées</div>
+            </div>
+        </div>
+        
+        <!-- Graphique Progression par Matière -->
+        <div class="chart-section">
+            <h2 class="section-title">📊 Progression par Matière</h2>
+            <div class="chart-container">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Badges -->
+        <div class="badges-section">
+            <h2 class="section-title">🏆 Badges Débloqués</h2>
+            <div class="badges-container">
+                <template x-for="badge in badges" :key="badge.id">
+                    <div 
+                        class="badge" 
+                        :class="badge.unlocked ? 'unlocked' : 'locked'"
+                        @click="showBadgeDetail(badge)"
+                    >
+                        <div class="badge-icon" x-text="badge.icon"></div>
+                        <div class="badge-name" x-text="badge.name"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        
+        <!-- Boutons Actions -->
+        <div class="actions-section">
+            <button @click="exportPDF()" class="btn-action export-btn">
+                📄 Exporter en PDF
+            </button>
+            <button @click="resetProgress()" class="btn-action reset-btn">
+                🔄 Réinitialiser la progression
+            </button>
+            <button @click="location.href='/'" class="btn-action home-btn">
+                🏠 Retour à l'accueil
+            </button>
+        </div>
+    </div>
+    
+    <!-- Script Alpine.js Component -->
+    <script src="scripts/dashboard-alpine-component.js"></script>
+</body>
+</html>

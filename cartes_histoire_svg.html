@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartes Histoire - SVG Stylisées</title>
+    <style>
+        body { 
+            font-family: 'Press Start 2P', cursive; 
+            padding: 2rem; 
+            background: #f1faee;
+        }
+        .carte-container {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .carte-container h2 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>🗺️ Cartes Histoire SVG</h1>
+
+    <div class="carte-container">
+        <h2>🦴 Préhistoire - Migrations</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <!-- Continents simplifiés -->
+            <ellipse cx="200" cy="150" rx="120" ry="80" fill="#D2691E" opacity="0.6"/>
+            <ellipse cx="400" cy="180" rx="150" ry="100" fill="#D2691E" opacity="0.6"/>
+            <ellipse cx="600" cy="200" rx="100" ry="70" fill="#D2691E" opacity="0.6"/>
+            <!-- Flèches migration -->
+            <path d="M 200 150 Q 300 100 400 180" stroke="#FFD700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+            <path d="M 400 180 Q 500 150 600 200" stroke="#FFD700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#FFD700"/>
+                </marker>
+            </defs>
+            <text x="400" y="320" font-size="32" fill="white" text-anchor="middle" font-weight="bold">MIGRATIONS PRÉHISTORIQUES</text>
+            <text x="400" y="360" font-size="16" fill="#FFD700" text-anchor="middle">Homo Sapiens (-200 000 à -10 000)</text>
+        </svg>
+    </div>
+
+    <div class="carte-container">
+        <h2>🏛️ Antiquité - Empire Romain</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
+            <rect fill="#DAA520" width="800" height="400"/>
+            <!-- Méditerranée -->
+            <ellipse cx="400" cy="250" rx="250" ry="100" fill="#4682B4" opacity="0.7"/>
+            <!-- Territoires empire -->
+            <path d="M 150 150 Q 400 100 650 150 L 650 250 Q 400 300 150 250 Z" fill="#DC143C" opacity="0.5"/>
+            <path d="M 200 180 L 250 160 L 280 180 L 280 220 L 250 240 L 200 220 Z" fill="#8B0000"/>
+            <text x="240" y="205" font-size="14" fill="white" font-weight="bold">ROME</text>
+            <!-- Routes commerciales -->
+            <line x1="250" y1="200" x2="350" y2="180" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="250" y1="200" x2="300" y2="270" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="250" y1="200" x2="450" y2="220" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="400" y="340" font-size="32" fill="white" text-anchor="middle" font-weight="bold">EMPIRE ROMAIN</text>
+            <text x="400" y="380" font-size="16" fill="#FFD700" text-anchor="middle">Apogée sous Trajan (117 ap. J.-C.)</text>
+        </svg>
+    </div>
+
+    <div class="carte-container">
+        <h2>🏰 Moyen Âge - Europe Féodale</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
+            <rect fill="#4169E1" width="800" height="400"/>
+            <!-- Royaumes -->
+            <polygon points="150,100 250,120 280,200 200,250 120,200" fill="#8B0000" opacity="0.6"/>
+            <polygon points="300,80 450,100 480,180 400,220 320,180" fill="#006400" opacity="0.6"/>
+            <polygon points="500,120 650,140 680,220 600,260 520,220" fill="#8B4513" opacity="0.6"/>
+            <!-- Châteaux -->
+            <g transform="translate(180, 160)">
+                <rect x="-15" y="-30" width="30" height="30" fill="#696969"/>
+                <polygon points="0,-30 -20,-45 20,-45" fill="#8B4513"/>
+                <rect x="-3" y="-15" width="6" height="15" fill="#FFD700"/>
+            </g>
+            <g transform="translate(380, 130)">
+                <rect x="-15" y="-30" width="30" height="30" fill="#696969"/>
+                <polygon points="0,-30 -20,-45 20,-45" fill="#8B4513"/>
+                <rect x="-3" y="-15" width="6" height="15" fill="#FFD700"/>
+            </g>
+            <g transform="translate(580, 180)">
+                <rect x="-15" y="-30" width="30" height="30" fill="#696969"/>
+                <polygon points="0,-30 -20,-45 20,-45" fill="#8B4513"/>
+                <rect x="-3" y="-15" width="6" height="15" fill="#FFD700"/>
+            </g>
+            <text x="400" y="320" font-size="32" fill="white" text-anchor="middle" font-weight="bold">EUROPE MÉDIÉVALE</text>
+            <text x="400" y="360" font-size="16" fill="#FFD700" text-anchor="middle">Système féodal (800-1500)</text>
+        </svg>
+    </div>
+
+    <div class="carte-container">
+        <h2>⛵ Temps Modernes - Grandes Découvertes</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
+            <rect fill="#DC143C" width="800" height="400"/>
+            <!-- Océans -->
+            <rect x="0" y="200" width="800" height="200" fill="#1E90FF" opacity="0.5"/>
+            <!-- Continents -->
+            <ellipse cx="150" cy="180" rx="100" ry="120" fill="#228B22" opacity="0.7"/>
+            <ellipse cx="650" cy="200" rx="120" ry="100" fill="#8B4513" opacity="0.7"/>
+            <!-- Routes maritimes -->
+            <path d="M 150 200 Q 400 150 650 200" stroke="#FFD700" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
+            <path d="M 150 220 Q 350 280 550 240" stroke="#FFD700" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
+            <!-- Bateaux -->
+            <g transform="translate(300, 180)">
+                <polygon points="0,-15 -10,5 10,5" fill="#8B4513"/>
+                <line x1="0" y1="-15" x2="0" y2="-30" stroke="#696969" stroke-width="2"/>
+                <polygon points="-5,-30 5,-25 5,-20 -5,-25" fill="white"/>
+            </g>
+            <g transform="translate(500, 220)">
+                <polygon points="0,-15 -10,5 10,5" fill="#8B4513"/>
+                <line x1="0" y1="-15" x2="0" y2="-30" stroke="#696969" stroke-width="2"/>
+                <polygon points="-5,-30 5,-25 5,-20 -5,-25" fill="white"/>
+            </g>
+            <text x="400" y="340" font-size="32" fill="white" text-anchor="middle" font-weight="bold">GRANDES DÉCOUVERTES</text>
+            <text x="400" y="380" font-size="16" fill="#FFD700" text-anchor="middle">Explorations maritimes (1492-1789)</text>
+        </svg>
+    </div>
+
+    <div class="carte-container">
+        <h2>🏭 Époque Contemporaine - Révolution Industrielle</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
+            <rect fill="#2F4F4F" width="800" height="400"/>
+            <!-- Pays industrialisés -->
+            <rect x="100" y="100" width="150" height="120" fill="#4682B4" opacity="0.6"/>
+            <rect x="300" y="120" width="180" height="100" fill="#4682B4" opacity="0.6"/>
+            <rect x="550" y="110" width="160" height="110" fill="#4682B4" opacity="0.6"/>
+            <!-- Usines -->
+            <g transform="translate(180, 150)">
+                <rect x="-20" y="-40" width="40" height="40" fill="#696969"/>
+                <rect x="-8" y="-60" width="16" height="20" fill="#8B4513"/>
+                <circle cx="0" cy="-75" r="8" fill="#A9A9A9"/>
+                <circle cx="0" cy="-85" r="6" fill="#D3D3D3"/>
+            </g>
+            <g transform="translate(400, 160)">
+                <rect x="-20" y="-40" width="40" height="40" fill="#696969"/>
+                <rect x="-8" y="-60" width="16" height="20" fill="#8B4513"/>
+                <circle cx="0" cy="-75" r="8" fill="#A9A9A9"/>
+                <circle cx="0" cy="-85" r="6" fill="#D3D3D3"/>
+            </g>
+            <g transform="translate(630, 155)">
+                <rect x="-20" y="-40" width="40" height="40" fill="#696969"/>
+                <rect x="-8" y="-60" width="16" height="20" fill="#8B4513"/>
+                <circle cx="0" cy="-75" r="8" fill="#A9A9A9"/>
+                <circle cx="0" cy="-85" r="6" fill="#D3D3D3"/>
+            </g>
+            <!-- Chemins de fer -->
+            <line x1="180" y1="200" x2="400" y2="200" stroke="#FFD700" stroke-width="3"/>
+            <line x1="400" y1="200" x2="630" y2="200" stroke="#FFD700" stroke-width="3"/>
+            <text x="400" y="320" font-size="32" fill="white" text-anchor="middle" font-weight="bold">RÉVOLUTION INDUSTRIELLE</text>
+            <text x="400" y="360" font-size="16" fill="#FFD700" text-anchor="middle">Industrialisation de l'Europe (1789-1914)</text>
+        </svg>
+    </div>
+
+</body>
+</html>

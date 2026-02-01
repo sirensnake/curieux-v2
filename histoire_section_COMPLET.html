@@ -10,6 +10,9 @@
 
     <body x-data="histoireApp" x-cloak>
 
+        <!-- Système XP -->
+        <script src="scripts/section-xp-system.js"></script>
+
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
             <button @click="hide()" class="curio-close">×</button>
@@ -258,6 +261,11 @@
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
                         console.log('✅ histoireApp initialisé');
+
+                        // Initialiser le système XP
+                        if (window.SectionXP) {
+                            window.SectionXP.init('histoire');
+                        }
                     },
 
                     playCorrectSound() {
@@ -378,7 +386,15 @@
                         this.selectedAnswer = idx;
                         const q = this.getCurrentQuestionData();
                         this.answerChecked = true;
-                        if (idx === q.correct) { this.score++; this.playCorrectSound(); }
+                        if (idx === q.correct) {
+                            this.score++;
+                            this.playCorrectSound();
+
+                            // Ajouter XP pour bonne réponse
+                            if (window.SectionXP) {
+                                window.SectionXP.addXP('histoire', window.SectionXP.rewards.QUESTION_CORRECT);
+                            }
+                        }
                         else { this.playIncorrectSound(); }
                         setTimeout(() => {
                             if (this.currentQuestion < this.getCurrentQuiz().length - 1) this.nextQuestion();
@@ -553,7 +569,21 @@
                     getLessonContent() { 
                         return this.lessonData[this.currentPeriod]?.content || "<p>Contenu non disponible</p>"; 
                     },
-                    finishQuiz() { this.showQuiz = false; this.showResults = true; },
+                    finishQuiz() {
+                        this.showQuiz = false;
+                        this.showResults = true;
+
+                        // Bonus XP pour complétion du quiz
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('histoire', window.SectionXP.rewards.QUIZ_COMPLETED);
+
+                            // Bonus supplémentaire si quiz parfait
+                            const quizLength = this.getCurrentQuiz().length;
+                            if (this.score === quizLength) {
+                                window.SectionXP.addXP('histoire', window.SectionXP.rewards.PERFECT_QUIZ);
+                            }
+                        }
+                    },
                     retryQuiz() { this.showResults = false; this.showQuiz = true; this.currentQuestion = this.score = 0; },
 
                     getPeriodTitle() {
