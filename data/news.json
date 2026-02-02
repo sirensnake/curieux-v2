@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Un arbre peu ordinaire 🌳",
-      "summary": "Une équipe de scientifiques a découvert un arbre très spécial en Amazonie. Cet arbre peut aider à lutter contre le changement climatique car il absorbe plus de dioxyde de carbone que d'autres arbres. Les chercheurs pensent que planter plus d'arbres comme celui-ci pourrait aider à rendre notre planète plus saine. L'Amazonie est une grande forêt qu'on appelle parfois le \"poumon de la Terre\" car elle produit beaucoup d'oxygène. C'est donc une découverte importante qui pourrait avoir un impact positif sur notre environnement. Les scientifiques encouragent les personnes à protéger les forêts pour qu'elles continuent d'aider notre planète.",
-      "date": "20/10/2023",
+      "title": "🌍 L'Exploration de Mars Continue",
+      "summary": "Cette semaine, la NASA a reçu de nouvelles photos incroyables de la planète Mars envoyées par son robot explorateur. Ce robot, appelé Perseverance, roule sur Mars depuis 2021 pour étudier sa surface et chercher des signes de vie ancienne. Récemment, il a découvert des formations rocheuses intéressantes qui pourraient aider les scientifiques à comprendre l'histoire de notre voisin rouge. Les enfants peuvent suivre ses aventures en ligne!",
+      "date": "21/10/2023",
+      "link": "https://mars.nasa.gov/mars2020/"
+    },
+    {
+      "title": "🎨 Un Nouveau Record de Peinture",
+      "summary": "Un jeune artiste talentueux a battu un record en peignant une fresque géante! Adama, âgée de seulement 10 ans, a réalisé une œuvre d'art de 100 mètres de long pour sensibiliser les gens à la protection des océans. Cette immense peinture colorée montre des poissons, des coraux et des tortues heureuses. Des milliers de personnes sont venues admirer son travail et ont promis de mieux protéger la mer. Adama prouve que l'art peut être un puissant moyen de changer le monde!",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Championnat de dessin rapide ✏️",
-      "summary": "Hier, un championnat de dessin rapide a eu lieu en ligne. Des enfants du monde entier ont participé et ont eu seulement 60 minutes pour créer une œuvre d'art. Le thème du concours cette année était 'Les animaux fantastiques'. C'était l'occasion pour les jeunes artistes de montrer leur créativité et leur talent. Les dessins représentaient des animaux imaginaires pleins de couleurs et de détails étonnants. Le gagnant a été un jeune artiste de 11 ans de France, qui a dessiné un dragon avec des ailes en forme de feuilles. Ce type de concours encourage les enfants à s'exprimer et à explorer le monde à travers l'art.",
-      "date": "20/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Un robot plongeur 🤖",
-      "summary": "Des ingénieurs ont mis au point un robot capable de plonger dans les profondeurs de l'océan. Ce robot, qui ressemble un peu à une méduse, peut explorer des endroits que les humains ne peuvent pas atteindre. Grâce à ses caméras, il prend des photos et des vidéos de ce qu'il voit sous l'eau. Cela permet aux scientifiques d'apprendre sur la vie marine et de découvrir de nouvelles espèces. Ces robots sont très utiles car ils aident à explorer des zones dangereuses. En savoir plus sur l'océan nous aide à mieux comprendre et protéger notre planète.",
-      "date": "20/10/2023",
+      "title": "🐘 Une Belle Histoire d'Éléphant",
+      "summary": "Dans un parc en Afrique, un jeune éléphanteau qui avait perdu sa famille a été réuni avec un nouveau troupeau. Les rangers du parc ont travaillé dur pour s'assurer qu'il soit accepté et en sécurité. Les éléphants sont des animaux très sociaux, et ils prennent soin les uns des autres. Grâce à cette belle histoire, nous pouvons voir comment les humains peuvent aider la nature et les animaux à prospérer ensemble. Les éléphants sont chanceux d'avoir de tels amis!",
+      "date": "21/10/2023",
       "link": ""
     }
   ]
