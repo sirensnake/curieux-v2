@@ -1,294 +1,578 @@
-/**
- * ==========================================
- * DONNÉES LEÇONS SCIENCES CM1-CM2
- * Le Monde des Curieux - Version Intégrale
- * ==========================================
- */
+// ========================================
+// SCIENCES LESSONS DATA - Alpine.js Format
+// Le Monde des Curieux
+// 96 questions CM1/CM2 réparties en 3 domaines
+// ========================================
 
-const sciencesLessons = [
-    // LEÇON 1 : SYSTÈME SOLAIRE
-    {
-        id: 'sciences-01-systeme-solaire',
-        title: 'Système Solaire',
-        emoji: '🌍',
-        xp: 45,
-        difficulty: 'facile',
-        exercises: [
-            { question: 'Quelle étoile est au centre du système solaire ?', answer: 'soleil', hint: 'LE SOLEIL (notre étoile, source de lumière et chaleur)' },
-            { question: 'Combien de planètes y a-t-il dans le système solaire ?', answer: '8', hint: '8 planètes (depuis que Pluton n\'est plus considérée comme planète)' },
-            { question: 'Quelle est la planète la plus proche du Soleil ?', answer: 'mercure', hint: 'MERCURE (la plus petite et la plus chaude)' },
-            { question: 'Sur quelle planète vivons-nous ?', answer: 'terre', hint: 'TERRE (la planète bleue, 3ème depuis le Soleil)' },
-            { question: 'Quelle est la plus grosse planète du système solaire ?', answer: 'jupiter', hint: 'JUPITER (planète géante gazeuse)' },
-            { question: 'Comment s\'appelle le satellite naturel de la Terre ?', answer: 'lune', hint: 'LUNE (tourne autour de la Terre en 28 jours)' },
-            { question: 'Quelle planète est surnommée la planète rouge ?', answer: 'mars', hint: 'MARS (rouge à cause de l\'oxyde de fer)' },
-            { question: 'Combien de temps met la Terre pour tourner autour du Soleil ?', answer: '1 an', hint: '1 AN (365 jours, une révolution complète)' }
+const sciencesLessons = {
+    // ===== DOMAINE 1: SCIENCES DE LA TERRE =====
+    terre: {
+        name: 'Sciences de la Terre',
+        description: 'Notre planète et l\'univers',
+        imageUrl: 'images/sciences/illustration_terre.jpg',
+        lessons: {
+            systeme_solaire: {
+                title: '🪐 Le Système Solaire',
+                content: `
+                    <h3>Qu'est-ce que le système solaire ?</h3>
+                    <p>Le système solaire est l'ensemble formé par le <strong>Soleil</strong> et tous les objets qui tournent autour de lui : les planètes, leurs satellites, les astéroïdes et les comètes.</p>
+
+                    <h3>Le Soleil - notre étoile</h3>
+                    <p>Le Soleil est une <strong>étoile</strong>, une boule de gaz brûlant qui produit de la lumière et de la chaleur. C'est grâce au Soleil que la vie existe sur Terre !</p>
+
+                    <h3>Les 8 planètes</h3>
+                    <p>Il y a <strong>8 planètes</strong> dans le système solaire, de la plus proche à la plus éloignée du Soleil :</p>
+                    <ol>
+                        <li><strong>Mercure</strong> - la plus petite et la plus proche</li>
+                        <li><strong>Vénus</strong> - la plus chaude</li>
+                        <li><strong>Terre</strong> - notre planète bleue</li>
+                        <li><strong>Mars</strong> - la planète rouge</li>
+                        <li><strong>Jupiter</strong> - la plus grosse</li>
+                        <li><strong>Saturne</strong> - celle aux anneaux magnifiques</li>
+                        <li><strong>Uranus</strong> - inclinée sur le côté</li>
+                        <li><strong>Neptune</strong> - la plus éloignée</li>
+                    </ol>
+
+                    <h3>Les satellites naturels</h3>
+                    <p>Certaines planètes ont des <strong>satellites</strong> qui tournent autour d'elles. La Terre a un satellite : la <strong>Lune</strong> !</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Le Soleil est une <strong>étoile</strong>, pas une planète</p>
+                    <p>📌 Il y a <strong>8 planètes</strong> dans notre système solaire</p>
+                    <p>📌 La Terre est la seule planète connue où il y a de la <strong>vie</strong> !</p>
+                `
+            },
+            cycle_eau: {
+                title: '🌊 Le Cycle de l\'Eau',
+                content: `
+                    <h3>Qu'est-ce que le cycle de l'eau ?</h3>
+                    <p>Le cycle de l'eau explique comment l'eau <strong>circule</strong> entre les océans, l'air et la terre. C'est un cycle qui se répète sans arrêt !</p>
+
+                    <h3>Les étapes du cycle</h3>
+                    <ol>
+                        <li><strong>Évaporation</strong> : Le Soleil chauffe l'eau des océans, des lacs et des rivières. L'eau se transforme en <strong>vapeur</strong> et monte dans l'air.</li>
+                        <li><strong>Condensation</strong> : En altitude, la vapeur d'eau refroidit et forme des petites gouttelettes qui créent les <strong>nuages</strong>.</li>
+                        <li><strong>Précipitations</strong> : Quand les gouttelettes deviennent trop lourdes, elles retombent sous forme de <strong>pluie, neige ou grêle</strong>.</li>
+                        <li><strong>Ruissellement</strong> : L'eau retourne dans les rivières, puis les océans, et le cycle recommence !</li>
+                    </ol>
+
+                    <h3>Les 3 états de l'eau</h3>
+                    <ul>
+                        <li><strong>Solide</strong> : glace, neige, grêle</li>
+                        <li><strong>Liquide</strong> : eau des océans, rivières, pluie</li>
+                        <li><strong>Gazeux</strong> : vapeur d'eau dans l'air</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 L'eau sur Terre ne disparaît jamais, elle <strong>circule</strong> en permanence</p>
+                    <p>📌 Le cycle de l'eau est alimenté par l'<strong>énergie du Soleil</strong></p>
+                    <p>📌 Sans le cycle de l'eau, il n'y aurait <strong>pas de vie</strong> sur Terre !</p>
+                `
+            },
+            volcans: {
+                title: '🌋 Volcans & Séismes',
+                content: `
+                    <h3>Qu'est-ce qu'un volcan ?</h3>
+                    <p>Un volcan est une <strong>montagne</strong> par laquelle remonte du <strong>magma</strong> (de la roche en fusion) depuis les profondeurs de la Terre.</p>
+
+                    <h3>Les éruptions volcaniques</h3>
+                    <p>Quand un volcan entre en éruption :</p>
+                    <ul>
+                        <li>Le <strong>magma</strong> remonte à la surface</li>
+                        <li>Il devient de la <strong>lave</strong> (magma à l'air libre)</li>
+                        <li>La lave coule sur les pentes du volcan</li>
+                        <li>Des <strong>cendres</strong> et des <strong>gaz</strong> peuvent être projetés</li>
+                    </ul>
+
+                    <h3>Les volcans actifs, endormis et éteints</h3>
+                    <ul>
+                        <li><strong>Actifs</strong> : peuvent entrer en éruption à tout moment</li>
+                        <li><strong>Endormis</strong> : n'ont pas eu d'éruption récente mais peuvent se réveiller</li>
+                        <li><strong>Éteints</strong> : ne peuvent plus entrer en éruption</li>
+                    </ul>
+
+                    <h3>Qu'est-ce qu'un séisme ?</h3>
+                    <p>Un séisme (ou tremblement de terre) se produit quand les <strong>plaques tectoniques</strong> (morceaux de la croûte terrestre) se déplacent et se frottent les unes contre les autres.</p>
+
+                    <h3>Mesurer les séismes</h3>
+                    <p>On utilise un <strong>sismographe</strong> pour mesurer l'intensité d'un séisme. Plus le séisme est fort, plus les secousses sont importantes.</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Le <strong>magma</strong> est sous terre, la <strong>lave</strong> est en surface</p>
+                    <p>📌 Les volcans et séismes se produisent souvent aux <strong>frontières des plaques</strong></p>
+                    <p>📌 On peut <strong>prévoir</strong> les éruptions mais pas les séismes !</p>
+                `
+            },
+            meteo: {
+                title: '🌤️ Météo & Climat',
+                content: `
+                    <h3>Météo et climat, quelle différence ?</h3>
+                    <ul>
+                        <li><strong>La météo</strong> : le temps qu'il fait <strong>aujourd'hui</strong> (pluie, soleil, vent...)</li>
+                        <li><strong>Le climat</strong> : le temps qu'il fait <strong>en moyenne</strong> sur une longue période</li>
+                    </ul>
+
+                    <h3>Les éléments de la météo</h3>
+                    <ul>
+                        <li><strong>Température</strong> : chaud ou froid (mesurée en °C)</li>
+                        <li><strong>Précipitations</strong> : pluie, neige, grêle</li>
+                        <li><strong>Vent</strong> : mouvement de l'air</li>
+                        <li><strong>Pression atmosphérique</strong> : le poids de l'air</li>
+                        <li><strong>Humidité</strong> : quantité de vapeur d'eau dans l'air</li>
+                    </ul>
+
+                    <h3>Les saisons</h3>
+                    <p>La Terre tourne autour du Soleil en 1 an. Comme elle est inclinée, les rayons du Soleil n'arrivent pas de la même manière selon la période de l'année. Cela crée les <strong>4 saisons</strong> : printemps, été, automne, hiver.</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 La météo change <strong>chaque jour</strong>, le climat sur <strong>des années</strong></p>
+                    <p>📌 Les saisons sont dues à l'<strong>inclinaison</strong> de la Terre</p>
+                    <p>📌 On peut prévoir la météo grâce aux <strong>satellites</strong> et aux <strong>stations météo</strong> !</p>
+                `
+            }
+        },
+        quiz: [
+            {q: "Quelle est l'étoile au centre du système solaire ?", o: ["Le Soleil", "La Lune", "Mars", "Jupiter"], c: "Le Soleil"},
+            {q: "Combien de planètes compte le système solaire ?", o: ["8", "7", "9", "10"], c: "8"},
+            {q: "Quelle est la planète la plus proche du Soleil ?", o: ["Mercure", "Vénus", "Terre", "Mars"], c: "Mercure"},
+            {q: "Sur quelle planète vivons-nous ?", o: ["La Terre", "Mars", "Jupiter", "Vénus"], c: "La Terre"},
+            {q: "Quelle planète est appelée la 'planète rouge' ?", o: ["Mars", "Vénus", "Jupiter", "Saturne"], c: "Mars"},
+            {q: "Quelle planète possède des anneaux visibles ?", o: ["Saturne", "Jupiter", "Mars", "Terre"], c: "Saturne"},
+            {q: "La Lune est le satellite naturel de quelle planète ?", o: ["La Terre", "Mars", "Jupiter", "Vénus"], c: "La Terre"},
+            {q: "Quelle est la plus grosse planète du système solaire ?", o: ["Jupiter", "Saturne", "Terre", "Neptune"], c: "Jupiter"},
+            {q: "Que se passe-t-il quand l'eau des océans chauffe ?", o: ["Elle s'évapore", "Elle gèle", "Elle coule", "Elle disparaît"], c: "Elle s'évapore"},
+            {q: "Comment appelle-t-on la transformation de l'eau en vapeur ?", o: ["Évaporation", "Condensation", "Précipitation", "Infiltration"], c: "Évaporation"},
+            {q: "Où va la vapeur d'eau qui monte dans le ciel ?", o: ["Elle forme des nuages", "Elle disparaît", "Elle retombe immédiatement", "Elle va dans l'espace"], c: "Elle forme des nuages"},
+            {q: "Que se passe-t-il quand la vapeur d'eau refroidit ?", o: ["Elle se condense", "Elle s'évapore", "Elle brûle", "Elle gèle"], c: "Elle se condense"},
+            {q: "Qu'est-ce que les précipitations ?", o: ["Pluie, neige, grêle", "Nuages", "Vapeur d'eau", "Arc-en-ciel"], c: "Pluie, neige, grêle"},
+            {q: "Où retourne l'eau de pluie ?", o: ["Dans les rivières et océans", "Dans le ciel", "Elle disparaît", "Dans les arbres"], c: "Dans les rivières et océans"},
+            {q: "Combien y a-t-il d'états de l'eau dans le cycle ?", o: ["3 états", "2 états", "4 états", "1 état"], c: "3 états"},
+            {q: "Le cycle de l'eau se répète-t-il ?", o: ["Oui, constamment", "Non, jamais", "Parfois", "Une fois par an"], c: "Oui, constamment"},
+            {q: "Qu'est-ce qu'un volcan ?", o: ["Une montagne qui crache du magma", "Une simple montagne", "Un trou dans le sol", "Une rivière de feu"], c: "Une montagne qui crache du magma"},
+            {q: "Comment appelle-t-on la roche en fusion sous terre ?", o: ["Magma", "Lave", "Roche", "Vapeur"], c: "Magma"},
+            {q: "Comment appelle-t-on le magma qui sort du volcan ?", o: ["Lave", "Magma", "Feu", "Fumée"], c: "Lave"},
+            {q: "Qu'est-ce qu'un séisme ?", o: ["Un tremblement de terre", "Une éruption volcanique", "Un ouragan", "Une inondation"], c: "Un tremblement de terre"},
+            {q: "Où se produisent la plupart des séismes ?", o: ["Aux frontières des plaques", "N'importe où", "Dans les océans", "Dans les villes"], c: "Aux frontières des plaques"},
+            {q: "Avec quel instrument mesure-t-on les séismes ?", o: ["Sismographe", "Thermomètre", "Baromètre", "Boussole"], c: "Sismographe"},
+            {q: "Tous les volcans sont-ils actifs ?", o: ["Non, certains sont éteints", "Oui, tous", "Aucun n'est actif", "Seulement en hiver"], c: "Non, certains sont éteints"},
+            {q: "Qu'est-ce que la météo ?", o: ["Le temps qu'il fait aujourd'hui", "Le temps moyen sur des années", "La température", "Les saisons"], c: "Le temps qu'il fait aujourd'hui"}
         ]
     },
 
-    // LEÇON 2 : CYCLE DE L'EAU
-    {
-        id: 'sciences-02-cycle-eau',
-        title: 'Cycle de l\'Eau',
-        emoji: '💧',
-        xp: 45,
-        difficulty: 'facile',
-        exercises: [
-            { question: 'Que devient l\'eau liquide quand elle chauffe ?', answer: 'vapeur', hint: 'VAPEUR (évaporation, transformation en gaz)' },
-            { question: 'Comment s\'appelle le passage de l\'eau liquide à la vapeur ?', answer: 'évaporation', hint: 'ÉVAPORATION (sous l\'effet de la chaleur)' },
-            { question: 'Comment s\'appelle la vapeur qui redevient liquide ?', answer: 'condensation', hint: 'CONDENSATION (formation des nuages)' },
-            { question: 'Comment appelle-t-on l\'eau qui tombe du ciel ?', answer: 'précipitations', hint: 'PRÉCIPITATIONS (pluie, neige, grêle)' },
-            { question: 'Où va l\'eau de pluie qui tombe sur le sol ?', answer: 'rivières', hint: 'RIVIÈRES (ou fleuves, puis océans)' },
-            { question: 'Dans quel état est l\'eau dans les nuages ?', answer: 'liquide', hint: 'LIQUIDE (gouttelettes en suspension)' },
-            { question: 'Que forme la vapeur d\'eau en altitude quand il fait froid ?', answer: 'nuages', hint: 'NUAGES (condensation de la vapeur)' }
+    // ===== DOMAINE 2: LE MONDE DU VIVANT =====
+    vivant: {
+        name: 'Le Monde du Vivant',
+        description: 'Plantes, animaux et écosystèmes',
+        imageUrl: 'images/sciences/illustration_vivant.jpg',
+        lessons: {
+            plantes: {
+                title: '🌳 Les Plantes',
+                content: `
+                    <h3>Qu'est-ce qu'une plante ?</h3>
+                    <p>Une plante est un <strong>être vivant</strong> qui fabrique sa propre nourriture grâce à la lumière du Soleil. C'est ce qu'on appelle la <strong>photosynthèse</strong> !</p>
+
+                    <h3>Les parties d'une plante</h3>
+                    <ul>
+                        <li><strong>Racines</strong> : puisent l'eau et les sels minéraux dans le sol</li>
+                        <li><strong>Tige</strong> : transporte l'eau et les nutriments</li>
+                        <li><strong>Feuilles</strong> : captent la lumière du Soleil pour la photosynthèse</li>
+                        <li><strong>Fleurs</strong> : permettent la reproduction</li>
+                        <li><strong>Fruits</strong> : protègent les graines</li>
+                    </ul>
+
+                    <h3>La photosynthèse</h3>
+                    <p>Les plantes utilisent :</p>
+                    <ul>
+                        <li>L'<strong>eau</strong> du sol</li>
+                        <li>Le <strong>CO2</strong> de l'air</li>
+                        <li>La <strong>lumière</strong> du Soleil</li>
+                    </ul>
+                    <p>Pour fabriquer leur <strong>nourriture</strong> (sucres) et rejeter de l'<strong>oxygène</strong> dans l'air !</p>
+
+                    <h3>Pourquoi les plantes sont-elles importantes ?</h3>
+                    <ul>
+                        <li>Elles produisent l'<strong>oxygène</strong> que nous respirons</li>
+                        <li>Elles sont à la base de la <strong>chaîne alimentaire</strong></li>
+                        <li>Elles stabilisent les <strong>sols</strong></li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Les plantes fabriquent leur nourriture grâce au <strong>Soleil</strong></p>
+                    <p>📌 Sans plantes, pas d'<strong>oxygène</strong> pour respirer !</p>
+                    <p>📌 Les plantes sont des <strong>êtres vivants</strong> : elles naissent, grandissent, se reproduisent et meurent</p>
+                `
+            },
+            chaines_alimentaires: {
+                title: '🦋 Chaînes Alimentaires',
+                content: `
+                    <h3>Qu'est-ce qu'une chaîne alimentaire ?</h3>
+                    <p>Une chaîne alimentaire montre <strong>qui mange qui</strong> dans la nature. Elle commence toujours par les <strong>plantes</strong> et se termine par les <strong>prédateurs</strong>.</p>
+
+                    <h3>Les maillons de la chaîne</h3>
+                    <ol>
+                        <li><strong>Producteurs</strong> : les plantes (fabriquent leur nourriture)</li>
+                        <li><strong>Herbivores</strong> : mangent les plantes (ex: lapin, vache)</li>
+                        <li><strong>Carnivores</strong> : mangent les herbivores (ex: renard, loup)</li>
+                        <li><strong>Décomposeurs</strong> : recyclent les déchets (vers de terre, champignons)</li>
+                    </ol>
+
+                    <h3>Exemple de chaîne alimentaire</h3>
+                    <p><strong>Herbe → Sauterelle → Grenouille → Serpent → Faucon</strong></p>
+
+                    <h3>Les réseaux alimentaires</h3>
+                    <p>Dans la nature, il n'y a pas une seule chaîne mais un <strong>réseau complexe</strong> : un animal peut manger plusieurs types de proies et être mangé par plusieurs prédateurs.</p>
+
+                    <h3>L'équilibre de la nature</h3>
+                    <p>Si un maillon disparaît :</p>
+                    <ul>
+                        <li>Ses <strong>prédateurs</strong> manquent de nourriture</li>
+                        <li>Ses <strong>proies</strong> deviennent trop nombreuses</li>
+                        <li>L'<strong>écosystème</strong> est déséquilibré</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Tout commence par les <strong>plantes</strong> qui utilisent le Soleil</p>
+                    <p>📌 Chaque être vivant a un <strong>rôle important</strong> dans l'écosystème</p>
+                    <p>📌 Il faut <strong>protéger</strong> tous les maillons de la chaîne !</p>
+                `
+            },
+            corps_humain: {
+                title: '🫀 Corps Humain',
+                content: `
+                    <h3>Les systèmes du corps humain</h3>
+                    <p>Le corps humain est une <strong>machine incroyable</strong> composée de plusieurs systèmes qui travaillent ensemble :</p>
+
+                    <h3>Le système digestif</h3>
+                    <p>Il transforme les <strong>aliments</strong> en énergie :</p>
+                    <ul>
+                        <li><strong>Bouche</strong> : mastique et broie</li>
+                        <li><strong>Estomac</strong> : digère avec des sucs</li>
+                        <li><strong>Intestins</strong> : absorbent les nutriments</li>
+                    </ul>
+
+                    <h3>Le système respiratoire</h3>
+                    <p>Il apporte l'<strong>oxygène</strong> nécessaire à la vie :</p>
+                    <ul>
+                        <li><strong>Nez/Bouche</strong> : entrée de l'air</li>
+                        <li><strong>Poumons</strong> : échangent O2 et CO2</li>
+                        <li>Le cœur pompe le sang oxygéné dans tout le corps</li>
+                    </ul>
+
+                    <h3>Le système circulatoire</h3>
+                    <ul>
+                        <li><strong>Cœur</strong> : pompe le sang (70 battements/minute au repos)</li>
+                        <li><strong>Vaisseaux sanguins</strong> : artères, veines, capillaires</li>
+                        <li><strong>Sang</strong> : transporte oxygène et nutriments</li>
+                    </ul>
+
+                    <h3>Le système nerveux</h3>
+                    <ul>
+                        <li><strong>Cerveau</strong> : centre de commande</li>
+                        <li><strong>Nerfs</strong> : transmettent les messages</li>
+                        <li>Contrôle tous les mouvements et les sens</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Le corps humain contient environ <strong>206 os</strong> et <strong>600 muscles</strong></p>
+                    <p>📌 Le cœur bat environ <strong>100 000 fois par jour</strong> !</p>
+                    <p>📌 Tous les systèmes travaillent <strong>ensemble</strong> pour nous maintenir en vie</p>
+                `
+            },
+            squelette: {
+                title: '🦴 Squelette & Muscles',
+                content: `
+                    <h3>Le squelette - notre charpente</h3>
+                    <p>Le squelette est formé de <strong>206 os</strong> qui :</p>
+                    <ul>
+                        <li><strong>Soutiennent</strong> notre corps</li>
+                        <li><strong>Protègent</strong> nos organes vitaux</li>
+                        <li>Permettent les <strong>mouvements</strong></li>
+                        <li>Fabriquent les <strong>cellules sanguines</strong> (moelle osseuse)</li>
+                    </ul>
+
+                    <h3>Les principaux os</h3>
+                    <ul>
+                        <li><strong>Crâne</strong> : protège le cerveau</li>
+                        <li><strong>Colonne vertébrale</strong> : 33 vertèbres, protège la moelle épinière</li>
+                        <li><strong>Cage thoracique</strong> : côtes qui protègent cœur et poumons</li>
+                        <li><strong>Fémur</strong> : l'os le plus long du corps (cuisse)</li>
+                    </ul>
+
+                    <h3>Les articulations</h3>
+                    <p>Les articulations sont les <strong>points de jonction</strong> entre les os :</p>
+                    <ul>
+                        <li><strong>Coude</strong>, <strong>genou</strong> : articulations en charnière</li>
+                        <li><strong>Épaule</strong>, <strong>hanche</strong> : articulations à rotule (mouvement circulaire)</li>
+                        <li>Le <strong>cartilage</strong> protège les os du frottement</li>
+                    </ul>
+
+                    <h3>Les muscles</h3>
+                    <p>Le corps humain contient environ <strong>600 muscles</strong> :</p>
+                    <ul>
+                        <li><strong>Muscles volontaires</strong> : on les contrôle (bras, jambes)</li>
+                        <li><strong>Muscles involontaires</strong> : travaillent tout seuls (cœur, intestins)</li>
+                        <li>Les muscles sont attachés aux os par des <strong>tendons</strong></li>
+                    </ul>
+
+                    <h3>Comment bouger ?</h3>
+                    <p>Pour bouger, il faut :</p>
+                    <ol>
+                        <li>Le <strong>cerveau</strong> envoie un ordre</li>
+                        <li>Les <strong>nerfs</strong> transmettent le message</li>
+                        <li>Les <strong>muscles</strong> se contractent</li>
+                        <li>Les <strong>os</strong> bougent grâce aux articulations</li>
+                    </ol>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Les os sont <strong>vivants</strong> : ils grandissent et se réparent !</p>
+                    <p>📌 Les muscles travaillent toujours par <strong>paires</strong> (biceps/triceps)</p>
+                    <p>📌 Le <strong>calcium</strong> dans les aliments rend les os plus solides</p>
+                `
+            }
+        },
+        quiz: [
+            {q: "Quel est le rôle des racines d'une plante ?", o: ["Puiser l'eau du sol", "Faire la photosynthèse", "Produire des fleurs", "Capter la lumière"], c: "Puiser l'eau du sol"},
+            {q: "Comment appelle-t-on le processus par lequel les plantes fabriquent leur nourriture ?", o: ["Photosynthèse", "Respiration", "Digestion", "Transpiration"], c: "Photosynthèse"},
+            {q: "De quoi les plantes ont-elles besoin pour faire la photosynthèse ?", o: ["Eau, CO2 et lumière", "Seulement de l'eau", "Seulement du soleil", "Terre uniquement"], c: "Eau, CO2 et lumière"},
+            {q: "Que produisent les plantes lors de la photosynthèse ?", o: ["Oxygène", "CO2", "Azote", "Vapeur d'eau"], c: "Oxygène"},
+            {q: "Qu'est-ce qu'un herbivore ?", o: ["Un animal qui mange des plantes", "Un animal qui mange de la viande", "Un animal qui mange tout", "Un animal qui ne mange rien"], c: "Un animal qui mange des plantes"},
+            {q: "Quel est le premier maillon d'une chaîne alimentaire ?", o: ["Les plantes", "Les herbivores", "Les carnivores", "Les décomposeurs"], c: "Les plantes"},
+            {q: "Que se passe-t-il si un maillon disparaît d'une chaîne alimentaire ?", o: ["L'équilibre est perturbé", "Rien ne change", "Tout s'arrange", "C'est mieux"], c: "L'équilibre est perturbé"},
+            {q: "Qu'est-ce qu'un réseau alimentaire ?", o: ["Plusieurs chaînes liées", "Une seule chaîne", "Des plantes uniquement", "Des carnivores uniquement"], c: "Plusieurs chaînes liées"},
+            {q: "Combien d'os compte le corps humain adulte ?", o: ["206 os", "150 os", "300 os", "100 os"], c: "206 os"},
+            {q: "Quel organe pompe le sang dans le corps ?", o: ["Le cœur", "Les poumons", "L'estomac", "Le cerveau"], c: "Le cœur"},
+            {q: "À quoi sert le système respiratoire ?", o: ["Apporter de l'oxygène", "Digérer les aliments", "Pomper le sang", "Contrôler les muscles"], c: "Apporter de l'oxygène"},
+            {q: "Quel organe contrôle tous les autres ?", o: ["Le cerveau", "Le cœur", "Les poumons", "L'estomac"], c: "Le cerveau"},
+            {q: "Combien de battements le cœur fait-il par jour environ ?", o: ["100 000 battements", "10 000 battements", "1 000 battements", "500 battements"], c: "100 000 battements"},
+            {q: "Quel est le rôle du squelette ?", o: ["Soutenir et protéger", "Digérer", "Respirer", "Penser"], c: "Soutenir et protéger"},
+            {q: "Combien de muscles compte le corps humain environ ?", o: ["600 muscles", "200 muscles", "1000 muscles", "100 muscles"], c: "600 muscles"},
+            {q: "Qu'est-ce qu'une articulation ?", o: ["Jonction entre deux os", "Un muscle", "Un organe", "Un nerf"], c: "Jonction entre deux os"},
+            {q: "Quel est l'os le plus long du corps ?", o: ["Le fémur", "Le tibia", "L'humérus", "Le radius"], c: "Le fémur"},
+            {q: "À quoi servent les tendons ?", o: ["Attacher muscles aux os", "Protéger les os", "Faire circuler le sang", "Contrôler les nerfs"], c: "Attacher muscles aux os"},
+            {q: "Quel nutriment rend les os plus solides ?", o: ["Le calcium", "Le fer", "Le sucre", "La vitamine C"], c: "Le calcium"},
+            {q: "Combien de vertèbres compte la colonne vertébrale ?", o: ["33 vertèbres", "20 vertèbres", "50 vertèbres", "10 vertèbres"], c: "33 vertèbres"}
         ]
     },
 
-    // LEÇON 3 : ÉTATS DE LA MATIÈRE
-    {
-        id: 'sciences-03-etats-matiere',
-        title: 'États de la Matière',
-        emoji: '🧊',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Quels sont les 3 états de la matière ?', answer: 'solide liquide gaz', hint: 'SOLIDE, LIQUIDE, GAZ' },
-            { question: 'Dans quel état est la glace ?', answer: 'solide', hint: 'SOLIDE (forme fixe, dur)' },
-            { question: 'Dans quel état est l\'eau du robinet ?', answer: 'liquide', hint: 'LIQUIDE (coule, prend la forme du récipient)' },
-            { question: 'Dans quel état est l\'air que nous respirons ?', answer: 'gaz', hint: 'GAZ (invisible, se répand partout)' },
-            { question: 'Comment s\'appelle le passage du solide au liquide ?', answer: 'fusion', hint: 'FUSION (la glace fond en eau)' },
-            { question: 'Comment s\'appelle le passage du liquide au solide ?', answer: 'solidification', hint: 'SOLIDIFICATION (l\'eau gèle en glace)' },
-            { question: 'À quelle température l\'eau gèle-t-elle ?', answer: '0 degrés', hint: '0 DEGRÉS Celsius' },
-            { question: 'À quelle température l\'eau bout-elle ?', answer: '100 degrés', hint: '100 DEGRÉS Celsius' }
-        ]
-    },
+    // ===== DOMAINE 3: MATIÈRE & ÉNERGIE =====
+    matiere: {
+        name: 'Matière & Énergie',
+        description: 'États de la matière et forces',
+        imageUrl: 'images/sciences/illustration_matiere.jpg',
+        lessons: {
+            etats_matiere: {
+                title: '💧 États de la Matière',
+                content: `
+                    <h3>Qu'est-ce que la matière ?</h3>
+                    <p>La matière, c'est <strong>tout ce qui nous entoure</strong> : l'air, l'eau, les objets, notre corps... Tout est fait de matière !</p>
 
-    // LEÇON 4 : ÉLECTRICITÉ
-    {
-        id: 'sciences-04-electricite',
-        title: 'Électricité',
-        emoji: '⚡',
-        xp: 55,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Que faut-il pour faire fonctionner une lampe électrique ?', answer: 'pile', hint: 'PILE (ou batterie, source d\'électricité)' },
-            { question: 'Comment appelle-t-on le chemin que suit l\'électricité ?', answer: 'circuit', hint: 'CIRCUIT ÉLECTRIQUE (boucle fermée)' },
-            { question: 'Quel matériau laisse passer l\'électricité ?', answer: 'conducteur', hint: 'CONDUCTEUR (métaux comme le cuivre)' },
-            { question: 'Quel matériau ne laisse pas passer l\'électricité ?', answer: 'isolant', hint: 'ISOLANT (plastique, caoutchouc, bois)' },
-            { question: 'Comment s\'appelle un circuit où l\'électricité circule ?', answer: 'circuit fermé', hint: 'CIRCUIT FERMÉ (boucle complète)' },
-            { question: 'Que se passe-t-il si on coupe le circuit ?', answer: 'il s\'ouvre', hint: 'IL S\'OUVRE (l\'électricité ne passe plus)' },
-            { question: 'Quel appareil permet d\'ouvrir/fermer un circuit ?', answer: 'interrupteur', hint: 'INTERRUPTEUR (bouton on/off)' }
-        ]
-    },
+                    <h3>Les 3 états de la matière</h3>
+                    <p>La matière existe sous <strong>3 formes principales</strong> :</p>
 
-    // LEÇON 5 : LUMIÈRE ET OMBRES
-    {
-        id: 'sciences-05-lumiere',
-        title: 'Lumière et Ombres',
-        emoji: '💡',
-        xp: 45,
-        difficulty: 'facile',
-        exercises: [
-            { question: 'Quelle est notre principale source de lumière naturelle ?', answer: 'soleil', hint: 'LE SOLEIL (étoile qui éclaire la Terre)' },
-            { question: 'Comment se déplace la lumière ?', answer: 'en ligne droite', hint: 'EN LIGNE DROITE (rayons rectilignes)' },
-            { question: 'Que se forme quand on cache la lumière ?', answer: 'ombre', hint: 'OMBRE (zone sombre derrière l\'objet)' },
-            { question: 'Un objet qui laisse passer la lumière est...', answer: 'transparent', hint: 'TRANSPARENT (comme le verre)' },
-            { question: 'Un objet qui ne laisse pas passer la lumière est...', answer: 'opaque', hint: 'OPAQUE (bloque complètement la lumière)' },
-            { question: 'Comment appelle-t-on un objet qui produit de la lumière ?', answer: 'source lumineuse', hint: 'SOURCE LUMINEUSE (Soleil, lampe, bougie)' },
-            { question: 'Pourquoi voit-on les objets ?', answer: 'ils réfléchissent la lumière', hint: 'ILS RÉFLÉCHISSENT LA LUMIÈRE (renvoient vers nos yeux)' }
-        ]
-    },
+                    <h4>1. L'état SOLIDE</h4>
+                    <ul>
+                        <li>Forme <strong>fixe</strong> (un cube reste un cube)</li>
+                        <li>Volume <strong>fixe</strong></li>
+                        <li>Exemples : glace, bois, pierre, fer</li>
+                    </ul>
 
-    // LEÇON 6 : CORPS HUMAIN - SQUELETTE
-    {
-        id: 'sciences-06-squelette',
-        title: 'Corps Humain : Squelette',
-        emoji: '🦴',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Combien d\'os a un adulte environ ?', answer: '206', hint: '206 OS (bébé en a plus, certains fusionnent)' },
-            { question: 'Comment s\'appelle l\'os de la tête ?', answer: 'crâne', hint: 'CRÂNE (protège le cerveau)' },
-            { question: 'Comment s\'appelle la colonne d\'os dans le dos ?', answer: 'colonne vertébrale', hint: 'COLONNE VERTÉBRALE (vertèbres empilées)' },
-            { question: 'Quel os protège le cœur et les poumons ?', answer: 'côtes', hint: 'CÔTES (cage thoracique)' },
-            { question: 'Comment s\'appelle l\'os du bras ?', answer: 'humérus', hint: 'HUMÉRUS (entre épaule et coude)' },
-            { question: 'Comment s\'appelle l\'os de la cuisse ?', answer: 'fémur', hint: 'FÉMUR (le plus long os du corps)' },
-            { question: 'Que trouve-t-on à l\'intérieur des os ?', answer: 'moelle', hint: 'MOELLE OSSEUSE (fabrique les cellules sanguines)' }
-        ]
-    },
+                    <h4>2. L'état LIQUIDE</h4>
+                    <ul>
+                        <li>Forme <strong>variable</strong> (prend la forme du récipient)</li>
+                        <li>Volume <strong>fixe</strong></li>
+                        <li>Exemples : eau, lait, huile, jus</li>
+                    </ul>
 
-    // LEÇON 7 : CORPS HUMAIN - DIGESTION (CORRIGÉE)
-    {
-        id: 'sciences-07-digestion',
-        title: 'Corps Humain : Digestion',
-        emoji: '🍽️',
-        xp: 55,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Par où entre la nourriture dans le corps ?', answer: 'bouche', hint: 'BOUCHE (première étape de la digestion)' },
-            { question: 'Comment s\'appelle le tube qui va de la bouche à l\'estomac ?', answer: 'oesophage', hint: 'ŒSOPHAGE (conduit des aliments)' },
-            { question: 'Dans quel organe la nourriture est-elle brassée avec des sucs ?', answer: 'estomac', hint: 'ESTOMAC (poche qui digère partiellement)' },
-            { question: 'Quel organe absorbe les nutriments dans le sang ?', answer: 'intestin', hint: 'INTESTIN (intestin grêle surtout)' },
-            { question: 'Par où sortent les déchets de la digestion ?', answer: 'anus', hint: 'ANUS (extrémité du gros intestin)' },
-            { question: 'Quel organe produit la bile pour digérer les graisses ?', answer: 'foie', hint: 'FOIE (glande digestive importante)' },
-            { question: 'Combien de temps environ dure la digestion ?', answer: '24 heures', hint: '24 HEURES environ (varie selon aliments)' }
-        ]
-    },
+                    <h4>3. L'état GAZEUX</h4>
+                    <ul>
+                        <li>Forme <strong>variable</strong></li>
+                        <li>Volume <strong>variable</strong> (occupe tout l'espace disponible)</li>
+                        <li>Exemples : air, vapeur d'eau, fumée</li>
+                    </ul>
 
-    // LEÇON 8 : CLASSIFICATION ANIMALE
-    {
-        id: 'sciences-08-classification',
-        title: 'Classification Animale',
-        emoji: '🦁',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appellent les animaux avec une colonne vertébrale ?', answer: 'vertébrés', hint: 'VERTÉBRÉS (mammifères, oiseaux, poissons...)' },
-            { question: 'Comment s\'appellent les animaux sans colonne vertébrale ?', answer: 'invertébrés', hint: 'INVERTÉBRÉS (insectes, vers, mollusques...)' },
-            { question: 'Comment s\'appellent les animaux qui allaitent leurs petits ?', answer: 'mammifères', hint: 'MAMMIFÈRES (chat, chien, humain, baleine...)' },
-            { question: 'Comment s\'appellent les animaux avec des plumes ?', answer: 'oiseaux', hint: 'OISEAUX (aigle, moineau, poule...)' },
-            { question: 'Comment s\'appellent les animaux qui vivent dans l\'eau et ont des branchies ?', answer: 'poissons', hint: 'POISSONS (respirent dans l\'eau)' },
-            { question: 'Comment s\'appellent les animaux à sang froid avec des écailles ?', answer: 'reptiles', hint: 'REPTILES (serpent, lézard, crocodile...)' },
-            { question: 'Comment s\'appellent les animaux avec 6 pattes ?', answer: 'insectes', hint: 'INSECTES (mouche, fourmi, abeille...)' },
-            { question: 'Les grenouilles font partie de quel groupe ?', answer: 'amphibiens', hint: 'AMPHIBIENS (vivent dans l\'eau et sur terre)' }
-        ]
-    },
+                    <h3>Les changements d'état</h3>
+                    <p>La matière peut passer d'un état à un autre :</p>
+                    <ul>
+                        <li><strong>Fusion</strong> : solide → liquide (glace → eau)</li>
+                        <li><strong>Solidification</strong> : liquide → solide (eau → glace)</li>
+                        <li><strong>Évaporation</strong> : liquide → gaz (eau → vapeur)</li>
+                        <li><strong>Condensation</strong> : gaz → liquide (vapeur → eau)</li>
+                    </ul>
 
-    // LEÇON 9 : CHAÎNE ALIMENTAIRE
-    {
-        id: 'sciences-09-chaine-alimentaire',
-        title: 'Chaîne Alimentaire',
-        emoji: '🌱',
-        xp: 55,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appellent les êtres vivants qui fabriquent leur nourriture ?', answer: 'producteurs', hint: 'PRODUCTEURS (plantes avec photosynthèse)' },
-            { question: 'Comment s\'appellent les animaux qui mangent des plantes ?', answer: 'herbivores', hint: 'HERBIVORES (vache, lapin, chenille...)' },
-            { question: 'Comment s\'appellent les animaux qui mangent d\'autres animaux ?', answer: 'carnivores', hint: 'CARNIVORES (lion, renard, aigle...)' },
-            { question: 'Comment s\'appellent les animaux qui mangent plantes ET animaux ?', answer: 'omnivores', hint: 'OMNIVORES (humain, ours, cochon...)' },
-            { question: 'Quel est le premier maillon de la chaîne alimentaire ?', answer: 'plantes', hint: 'PLANTES (ou producteurs)' },
-            { question: 'Comment s\'appellent les organismes qui décomposent les déchets ?', answer: 'décomposeurs', hint: 'DÉCOMPOSEURS (champignons, bactéries, vers)' },
-            { question: 'Que se passe-t-il si un maillon disparaît ?', answer: 'la chaîne se rompt', hint: 'LA CHAÎNE SE ROMPT (déséquilibre écologique)' }
-        ]
-    },
+                    <h3>À retenir</h3>
+                    <p>📌 C'est la <strong>température</strong> qui fait changer d'état</p>
+                    <p>📌 Quand l'eau change d'état, elle reste de l'<strong>eau</strong> !</p>
+                    <p>📌 L'eau bout à <strong>100°C</strong> et gèle à <strong>0°C</strong></p>
+                `
+            },
+            electricite: {
+                title: '🔋 Électricité',
+                content: `
+                    <h3>Qu'est-ce que l'électricité ?</h3>
+                    <p>L'électricité est une forme d'<strong>énergie</strong> qui fait fonctionner nos appareils : lumières, ordinateurs, téléphones, réfrigérateurs...</p>
 
-    // LEÇON 10 : VOLCANS ET SÉISMES
-    {
-        id: 'sciences-10-volcans',
-        title: 'Volcans et Séismes',
-        emoji: '🌋',
-        xp: 55,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appelle la roche en fusion dans le volcan ?', answer: 'magma', hint: 'MAGMA (roche très chaude et liquide)' },
-            { question: 'Comment s\'appelle le magma quand il sort du volcan ?', answer: 'lave', hint: 'LAVE (coule à la surface)' },
-            { question: 'Comment s\'appelle l\'ouverture au sommet du volcan ?', answer: 'cratère', hint: 'CRATÈRE (trou par où sort la lave)' },
-            { question: 'Comment s\'appelle une secousse de la Terre ?', answer: 'séisme', hint: 'SÉISME (ou tremblement de terre)' },
-            { question: 'Comment s\'appelle l\'appareil qui mesure les séismes ?', answer: 'sismographe', hint: 'SISMOGRAPHE (enregistre les vibrations)' },
-            { question: 'Où se trouvent la plupart des volcans ?', answer: 'bordure des plaques', hint: 'BORDURE DES PLAQUES TECTONIQUES' },
-            { question: 'Quel célèbre volcan a détruit Pompéi ?', answer: 'vésuve', hint: 'VÉSUVE (Italie, 79 ap. J-C)' }
-        ]
-    },
+                    <h3>Le circuit électrique</h3>
+                    <p>Pour que l'électricité circule, il faut un <strong>circuit fermé</strong> composé de :</p>
+                    <ul>
+                        <li><strong>Générateur</strong> : produit l'électricité (pile, batterie)</li>
+                        <li><strong>Conducteurs</strong> : transportent l'électricité (fils électriques)</li>
+                        <li><strong>Récepteur</strong> : utilise l'électricité (lampe, moteur)</li>
+                        <li><strong>Interrupteur</strong> : ouvre ou ferme le circuit</li>
+                    </ul>
 
-    // LEÇON 11 : ÉNERGIE
-    {
-        id: 'sciences-11-energie',
-        title: 'Énergie',
-        emoji: '⚙️',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Quelle est notre principale source d\'énergie naturelle ?', answer: 'soleil', hint: 'LE SOLEIL (énergie solaire)' },
-            { question: 'Comment s\'appelle l\'énergie du vent ?', answer: 'éolienne', hint: 'ÉOLIENNE (énergie éolienne)' },
-            { question: 'Comment s\'appelle l\'énergie de l\'eau qui coule ?', answer: 'hydraulique', hint: 'HYDRAULIQUE (barrages, rivières)' },
-            { question: 'Quelle énergie produit de la chaleur en brûlant ?', answer: 'thermique', hint: 'THERMIQUE (feu, combustion)' },
-            { question: 'Quelles énergies ne s\'épuisent pas ?', answer: 'renouvelables', hint: 'RENOUVELABLES (soleil, vent, eau...)' },
-            { question: 'Quelles énergies s\'épuisent ?', answer: 'non renouvelables', hint: 'NON RENOUVELABLES (pétrole, charbon, gaz)' },
-            { question: 'Comment économiser l\'énergie à la maison ?', answer: 'éteindre les lumières', hint: 'ÉTEINDRE LES LUMIÈRES (ou appareils non utilisés)' }
-        ]
-    },
+                    <h3>Conducteurs et isolants</h3>
+                    <ul>
+                        <li><strong>Conducteurs</strong> : laissent passer l'électricité (métaux : cuivre, fer, or)</li>
+                        <li><strong>Isolants</strong> : ne laissent pas passer l'électricité (plastique, bois, caoutchouc)</li>
+                    </ul>
 
-    // LEÇON 12 : MACHINES SIMPLES
-    {
-        id: 'sciences-12-machines',
-        title: 'Machines Simples',
-        emoji: '🔧',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appelle une barre rigide qui pivote sur un point ?', answer: 'levier', hint: 'LEVIER (balançoire, pince...)' },
-            { question: 'Comment s\'appelle le point d\'appui du levier ?', answer: 'pivot', hint: 'PIVOT (ou point d\'appui, fulcrum)' },
-            { question: 'Comment s\'appelle un plan incliné enroulé autour d\'un axe ?', answer: 'vis', hint: 'VIS (transforme rotation en mouvement)' },
-            { question: 'Comment s\'appelle une roue avec une corde ?', answer: 'poulie', hint: 'POULIE (facilite le levage)' },
-            { question: 'Quel système permet de déplacer des charges lourdes facilement ?', answer: 'plan incliné', hint: 'PLAN INCLINÉ (rampe)' },
-            { question: 'Comment s\'appelle une roue dentée ?', answer: 'engrenage', hint: 'ENGRENAGE (transmet le mouvement)' },
-            { question: 'À quoi servent les machines simples ?', answer: 'faciliter le travail', hint: 'FACILITER LE TRAVAIL (réduire l\'effort)' }
-        ]
-    },
+                    <h3>Les dangers de l'électricité</h3>
+                    <p>⚡ L'électricité peut être <strong>dangereuse</strong> :</p>
+                    <ul>
+                        <li>Ne jamais toucher une prise avec les doigts</li>
+                        <li>Ne pas manipuler d'appareils avec les mains mouillées</li>
+                        <li>Ne jamais ouvrir un appareil branché</li>
+                    </ul>
 
-    // LEÇON 13 : ENVIRONNEMENT
-    {
-        id: 'sciences-13-environnement',
-        title: 'Environnement',
-        emoji: '🌿',
-        xp: 50,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appelle l\'ensemble des êtres vivants et leur milieu ?', answer: 'écosystème', hint: 'ÉCOSYSTÈME (forêt, océan, prairie...)' },
-            { question: 'Quel gaz rejetons-nous en respirant ?', answer: 'co2', hint: 'CO2 (dioxyde de carbone)' },
-            { question: 'Quel gaz les plantes produisent-elles ?', answer: 'oxygène', hint: 'OXYGÈNE (grâce à la photosynthèse)' },
-            { question: 'Que faut-il faire avec les déchets recyclables ?', answer: 'les trier', hint: 'LES TRIER (poubelles de recyclage)' },
-            { question: 'Comment s\'appelle le réchauffement de la planète ?', answer: 'réchauffement climatique', hint: 'RÉCHAUFFEMENT CLIMATIQUE (effet de serre)' },
-            { question: 'Quel animal est menacé de disparition ?', answer: 'espèce en danger', hint: 'ESPÈCE EN DANGER (ours polaire, tigre...)' },
-            { question: 'Que peut-on faire pour protéger la planète ?', answer: 'économiser l\'eau', hint: 'ÉCONOMISER L\'EAU (ou énergie, recycler...)' }
-        ]
-    },
+                    <h3>Production d'électricité</h3>
+                    <p>On produit l'électricité avec :</p>
+                    <ul>
+                        <li><strong>Centrales</strong> (hydrauliques, nucléaires, thermiques)</li>
+                        <li><strong>Énergies renouvelables</strong> (solaire, éolienne)</li>
+                    </ul>
 
-    // LEÇON 14 : ASTRONOMIE
-    {
-        id: 'sciences-14-astronomie',
-        title: 'Astronomie',
-        emoji: '🔭',
-        xp: 55,
-        difficulty: 'moyen',
-        exercises: [
-            { question: 'Comment s\'appelle une boule de gaz brillante dans l\'espace ?', answer: 'étoile', hint: 'ÉTOILE (comme le Soleil)' },
-            { question: 'Comment s\'appelle un groupe d\'étoiles formant un dessin ?', answer: 'constellation', hint: 'CONSTELLATION (Grande Ourse, Orion...)' },
-            { question: 'Comment s\'appelle notre galaxie ?', answer: 'voie lactée', hint: 'VOIE LACTÉE (contient le système solaire)' },
-            { question: 'Comment s\'appelle un rocher qui tombe du ciel ?', answer: 'météorite', hint: 'MÉTÉORITE (fragment qui atteint la Terre)' },
-            { question: 'Comment s\'appelle une étoile filante ?', answer: 'météore', hint: 'MÉTÉORE (brûle dans l\'atmosphère)' },
-            { question: 'Quel instrument sert à observer les étoiles ?', answer: 'télescope', hint: 'TÉLESCOPE (ou lunette astronomique)' },
-            { question: 'Pourquoi ne voit-on pas les étoiles le jour ?', answer: 'le soleil est trop lumineux', hint: 'LE SOLEIL EST TROP LUMINEUX (éblouit)' }
-        ]
-    },
+                    <h3>À retenir</h3>
+                    <p>📌 Pas de circuit fermé = pas d'électricité</p>
+                    <p>📌 L'électricité circule très <strong>vite</strong> : à la vitesse de la lumière !</p>
+                    <p>📌 Il faut <strong>économiser</strong> l'électricité pour protéger la planète</p>
+                `
+            },
+            magnetisme: {
+                title: '🧲 Magnétisme',
+                content: `
+                    <h3>Qu'est-ce que le magnétisme ?</h3>
+                    <p>Le magnétisme est une <strong>force invisible</strong> exercée par les aimants. Cette force peut attirer ou repousser certains objets.</p>
 
-    // LEÇON 15 : QUIZ FINAL SCIENCES
-    {
-        id: 'sciences-15-quiz-final',
-        title: 'Quiz Final Sciences',
-        emoji: '🏆',
-        xp: 100,
-        difficulty: 'difficile',
-        exercises: [
-            { question: 'Combien de planètes dans le système solaire ?', answer: '8', hint: '8 PLANÈTES' },
-            { question: 'Comment s\'appelle le passage de l\'eau liquide en vapeur ?', answer: 'évaporation', hint: 'ÉVAPORATION' },
-            { question: 'Quels sont les 3 états de la matière ?', answer: 'solide liquide gaz', hint: 'SOLIDE, LIQUIDE, GAZ' },
-            { question: 'Quel matériau laisse passer l\'électricité ?', answer: 'conducteur', hint: 'CONDUCTEUR (métaux)' },
-            { question: 'Combien d\'os dans le corps humain adulte ?', answer: '206', hint: '206 OS' },
-            { question: 'Comment s\'appellent les animaux qui allaitent ?', answer: 'mammifères', hint: 'MAMMIFÈRES' },
-            { question: 'Quel est le premier maillon de la chaîne alimentaire ?', answer: 'plantes', hint: 'PLANTES (producteurs)' },
-            { question: 'Comment s\'appelle le magma qui sort du volcan ?', answer: 'lave', hint: 'LAVE' },
-            { question: 'Quelle énergie vient du vent ?', answer: 'éolienne', hint: 'ÉOLIENNE' },
-            { question: 'Quel gaz les plantes produisent-elles ?', answer: 'oxygène', hint: 'OXYGÈNE (photosynthèse)' }
+                    <h3>Les aimants</h3>
+                    <p>Un aimant possède :</p>
+                    <ul>
+                        <li>Un <strong>pôle Nord</strong></li>
+                        <li>Un <strong>pôle Sud</strong></li>
+                    </ul>
+
+                    <h3>Les lois de l'attraction magnétique</h3>
+                    <ul>
+                        <li>Deux pôles <strong>différents</strong> s'<strong>attirent</strong> (Nord-Sud)</li>
+                        <li>Deux pôles <strong>identiques</strong> se <strong>repoussent</strong> (Nord-Nord ou Sud-Sud)</li>
+                    </ul>
+
+                    <h3>Matériaux magnétiques</h3>
+                    <ul>
+                        <li><strong>Attirés</strong> par les aimants : fer, nickel, cobalt (matériaux ferromagnétiques)</li>
+                        <li><strong>Non attirés</strong> : bois, plastique, verre, aluminium</li>
+                    </ul>
+
+                    <h3>Le champ magnétique</h3>
+                    <p>Autour d'un aimant, il y a une zone d'influence appelée <strong>champ magnétique</strong>. Plus on est proche de l'aimant, plus la force est grande.</p>
+
+                    <h3>Utilisations du magnétisme</h3>
+                    <ul>
+                        <li><strong>Boussole</strong> : aiguille magnétique qui pointe vers le Nord</li>
+                        <li><strong>Moteurs électriques</strong> : utilisent des aimants</li>
+                        <li><strong>Disques durs</strong> : stockent les données grâce au magnétisme</li>
+                        <li><strong>IRM médicale</strong> : imagerie du corps humain</li>
+                    </ul>
+
+                    <h3>La Terre est un aimant géant !</h3>
+                    <p>Notre planète possède un <strong>champ magnétique</strong> avec un pôle Nord magnétique et un pôle Sud magnétique. C'est ce qui fait fonctionner les boussoles !</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Les pôles opposés s'<strong>attirent</strong>, les pôles identiques se <strong>repoussent</strong></p>
+                    <p>📌 Le magnétisme traverse certains matériaux (papier, verre)</p>
+                    <p>📌 On peut <strong>créer</strong> un aimant en frottant du fer avec un aimant !</p>
+                `
+            },
+            lumiere: {
+                title: '💡 Lumière & Ombres',
+                content: `
+                    <h3>Qu'est-ce que la lumière ?</h3>
+                    <p>La lumière est une forme d'<strong>énergie</strong> qui nous permet de voir. Elle se propage en ligne droite à très grande vitesse : <strong>300 000 km/s</strong> !</p>
+
+                    <h3>Les sources de lumière</h3>
+                    <p>Il existe deux types de sources :</p>
+
+                    <h4>Sources primaires (produisent de la lumière)</h4>
+                    <ul>
+                        <li>Le <strong>Soleil</strong> (source naturelle)</li>
+                        <li>Les <strong>étoiles</strong></li>
+                        <li>Le <strong>feu</strong></li>
+                        <li>Les <strong>lampes</strong> (source artificielle)</li>
+                    </ul>
+
+                    <h4>Sources secondaires (reflètent la lumière)</h4>
+                    <ul>
+                        <li>La <strong>Lune</strong> : reflète la lumière du Soleil</li>
+                        <li>Tous les <strong>objets</strong> qu'on voit : reflètent la lumière</li>
+                    </ul>
+
+                    <h3>Propagation de la lumière</h3>
+                    <p>La lumière se propage :</p>
+                    <ul>
+                        <li>En <strong>ligne droite</strong></li>
+                        <li>Dans toutes les <strong>directions</strong></li>
+                        <li>Même dans le <strong>vide</strong> (espace)</li>
+                    </ul>
+
+                    <h3>Les ombres</h3>
+                    <p>Une ombre se forme quand un objet <strong>opaque</strong> bloque la lumière. La lumière ne peut pas contourner l'obstacle, elle crée donc une zone sombre : l'<strong>ombre</strong>.</p>
+
+                    <h3>Matériaux et lumière</h3>
+                    <ul>
+                        <li><strong>Transparents</strong> : laissent passer toute la lumière (verre, air)</li>
+                        <li><strong>Translucides</strong> : laissent passer une partie de la lumière (papier calque)</li>
+                        <li><strong>Opaques</strong> : ne laissent pas passer la lumière (bois, métal)</li>
+                    </ul>
+
+                    <h3>Réflexion et réfraction</h3>
+                    <ul>
+                        <li><strong>Réflexion</strong> : la lumière rebondit sur une surface (miroir)</li>
+                        <li><strong>Réfraction</strong> : la lumière change de direction en passant d'un milieu à un autre (air → eau)</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 La lumière voyage <strong>très vite</strong> : elle met 8 minutes depuis le Soleil !</p>
+                    <p>📌 Sans lumière, nous ne pourrions <strong>rien voir</strong></p>
+                    <p>📌 L'arc-en-ciel se forme par <strong>réfraction</strong> de la lumière dans les gouttes d'eau</p>
+                `
+            }
+        },
+        quiz: [
+            {q: "Combien d'états de la matière existe-t-il principalement ?", o: ["3 états", "2 états", "4 états", "5 états"], c: "3 états"},
+            {q: "Quel état de la matière a une forme et un volume fixes ?", o: ["Solide", "Liquide", "Gazeux", "Plasma"], c: "Solide"},
+            {q: "Comment s'appelle le passage de l'état liquide à l'état solide ?", o: ["Solidification", "Fusion", "Évaporation", "Condensation"], c: "Solidification"},
+            {q: "À quelle température l'eau bout-elle ?", o: ["100°C", "0°C", "50°C", "200°C"], c: "100°C"},
+            {q: "À quelle température l'eau gèle-t-elle ?", o: ["0°C", "100°C", "-10°C", "50°C"], c: "0°C"},
+            {q: "Qu'est-ce qui fait fonctionner une lampe ?", o: ["L'électricité", "Le magnétisme", "La gravité", "La lumière"], c: "L'électricité"},
+            {q: "Qu'est-ce qu'un conducteur électrique ?", o: ["Un matériau qui laisse passer l'électricité", "Un matériau qui bloque l'électricité", "Une pile", "Un interrupteur"], c: "Un matériau qui laisse passer l'électricité"},
+            {q: "Quel matériau est un bon isolant électrique ?", o: ["Le plastique", "Le cuivre", "Le fer", "L'or"], c: "Le plastique"},
+            {q: "Que faut-il pour qu'un circuit électrique fonctionne ?", o: ["Un circuit fermé", "Un circuit ouvert", "Seulement une pile", "Seulement des fils"], c: "Un circuit fermé"},
+            {q: "Combien de pôles possède un aimant ?", o: ["2 pôles", "1 pôle", "3 pôles", "4 pôles"], c: "2 pôles"},
+            {q: "Que se passe-t-il quand on approche deux pôles Nord d'aimants ?", o: ["Ils se repoussent", "Ils s'attirent", "Rien", "Ils fondent"], c: "Ils se repoussent"},
+            {q: "Quel matériau est attiré par un aimant ?", o: ["Le fer", "Le bois", "Le plastique", "Le verre"], c: "Le fer"},
+            {q: "Qu'est-ce qu'une boussole utilise pour fonctionner ?", o: ["Le magnétisme terrestre", "L'électricité", "La gravité", "Le vent"], c: "Le magnétisme terrestre"},
+            {q: "À quelle vitesse se propage la lumière ?", o: ["300 000 km/s", "100 km/s", "1000 km/s", "10 000 km/s"], c: "300 000 km/s"},
+            {q: "Le Soleil est-il une source primaire de lumière ?", o: ["Oui", "Non", "Parfois", "Seulement la nuit"], c: "Oui"},
+            {q: "Qu'est-ce qu'une ombre ?", o: ["Zone sombre créée par un obstacle", "Reflet dans un miroir", "Source de lumière", "Couleur"], c: "Zone sombre créée par un obstacle"},
+            {q: "Quel matériau est transparent ?", o: ["Le verre", "Le bois", "Le métal", "Le carton"], c: "Le verre"},
+            {q: "Comment s'appelle le phénomène quand la lumière rebondit sur un miroir ?", o: ["Réflexion", "Réfraction", "Diffraction", "Absorption"], c: "Réflexion"},
+            {q: "La Lune produit-elle sa propre lumière ?", o: ["Non, elle reflète celle du Soleil", "Oui", "Parfois", "Seulement la nuit"], c: "Non, elle reflète celle du Soleil"},
+            {q: "Qu'est-ce qui crée un arc-en-ciel ?", o: ["Réfraction de la lumière dans l'eau", "Magnétisme", "Électricité", "Gravité"], c: "Réfraction de la lumière dans l'eau"}
         ]
     }
-];
+};
 
-// Exposition globale pour le navigateur
-window.sciencesLessons = sciencesLessons;
-
-// Export pour environnement Node (si besoin)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = sciencesLessons;
+// Export pour utilisation dans la page HTML
+if (typeof window !== 'undefined') {
+    window.sciencesLessons = sciencesLessons;
+    console.log('✅ Sciences lessons chargées - 3 domaines, 12 thèmes, 96 questions');
 }
-
-console.log('✅ Données Sciences chargées : ' + sciencesLessons.length + ' leçons prêtes.');

@@ -1,202 +1,399 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧪 Sciences - Le Monde des Curieux</title>
-    
-    <!-- CSS Externe -->
-    <link rel="stylesheet" href="styles/sciences-section.css">
-    
-    <!-- Police Minecraft -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <button onclick="history.back()" class="back-btn">
-        ← Retour à l'accueil
-    </button>
 
-    <!-- Titre Section -->
-    <div class="section-title">
-        <h1>🧪 Sciences avec Curio !</h1>
-        <p>Découvre les mystères de la science et de la nature !</p>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🧪 Sciences - Le Monde des Curieux</title>
+        <link rel="stylesheet" href="styles/sciences_alpine.css">
+    </head>
 
-    <!-- Zone Gamification -->
-    <div class="gamification-header">
-        <!-- Streak -->
-        <div class="gamification-badge streak-badge">
-            <span class="badge-icon">🔥</span>
-            <span class="badge-value" id="streak-value">0</span>
-            <span class="badge-label">jours</span>
-        </div>
-        
-        <!-- Hearts -->
-        <div class="gamification-badge hearts-badge">
-            <span class="badge-icon">❤️</span>
-            <span class="badge-value" id="hearts-value">5</span>
-            <span class="badge-label">cœurs</span>
-        </div>
-        
-        <!-- XP -->
-        <div class="gamification-badge xp-badge">
-            <span class="badge-icon">⭐</span>
-            <span class="badge-value" id="xp-value">CHARGEMENT...</span>
-        </div>
-    </div>
+    <body x-data="sciencesApp" x-cloak>
 
-    <!-- Contenu Éducatif -->
-    <div class="learning-content">
-        <!-- Sciences de la Terre -->
-        <div class="topic-card">
-            <h2>🌍 Sciences de la Terre</h2>
-            <p>Notre planète et l'univers</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">🪐</div>
-                    <h3>Système Solaire</h3>
-                    <p>Les planètes et le Soleil</p>
-                    <button class="btn-start-activity" onclick="startActivity('systeme_solaire')">
-                        Commencer
-                    </button>
+        <!-- Système XP -->
+        <script src="scripts/section-xp-system.js"></script>
+
+        <!-- Bulle Curio -->
+        <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
+            <button @click="hide()" class="curio-close">×</button>
+            <div class="curio-avatar">🦊</div>
+            <p class="curio-message" x-text="currentMessage"></p>
+        </div>
+
+        <div class="sciences-container">
+            <!-- Header avec bouton retour -->
+            <div class="section-header">
+                <button onclick="history.back()" class="back-btn">
+                    ← Retour à l'accueil
+                </button>
+            </div>
+
+            <!-- Titre section -->
+            <div class="section-title">
+                <h1>🧪 Sciences</h1>
+                <p>Découvre les mystères de la science et de la nature !</p>
+            </div>
+
+            <!-- Navigation domaines -->
+            <div class="domains-nav">
+                <button @click="selectDomain('terre')"
+                    :class="'domain-btn terre' + (currentDomain === 'terre' ? ' active' : '')">
+                    🌍 Sciences de la Terre
+                </button>
+                <button @click="selectDomain('vivant')"
+                    :class="'domain-btn vivant' + (currentDomain === 'vivant' ? ' active' : '')">
+                    🌱 Le Vivant
+                </button>
+                <button @click="selectDomain('matiere')"
+                    :class="'domain-btn matiere' + (currentDomain === 'matiere' ? ' active' : '')">
+                    ⚗️ Matière & Énergie
+                </button>
+            </div>
+
+            <!-- Zone d'affichage du domaine -->
+            <div x-show="currentDomain" x-cloak>
+                <div class="domain-content" x-transition>
+                    <div class="domain-section">
+                        <h2 x-text="getDomainName()"></h2>
+                        <p class="domain-description" x-text="getDomainDescription()"></p>
+
+                        <!-- Boutons actions -->
+                        <div class="action-buttons">
+                            <button @click="startQuiz()" class="action-btn btn-quiz">
+                                🎯 Lancer le Quiz
+                            </button>
+                            <button @click="showIllustration = true" class="action-btn btn-visual">
+                                🖼️ Voir Illustration
+                            </button>
+                            <button @click="showLesson = true" class="action-btn btn-info">
+                                📖 Voir la Leçon
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🌊</div>
-                    <h3>Cycle de l'Eau</h3>
-                    <p>Évaporation et précipitations</p>
-                    <button class="btn-start-activity" onclick="startActivity('cycle_eau')">
-                        Commencer
-                    </button>
+
+                <!-- Zone Leçon -->
+                <div x-show="showLesson" x-transition class="lesson-container">
+                    <div class="lesson-header">
+                        <h3>📖 <span x-text="getLessonTitle()"></span></h3>
+                        <button @click="showLesson = false" class="close-btn">✖ Fermer</button>
+                    </div>
+                    <div class="lesson-content" x-html="getLessonContent()"></div>
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🌋</div>
-                    <h3>Volcans & Séismes</h3>
-                    <p>Les phénomènes géologiques</p>
-                    <button class="btn-start-activity" onclick="startActivity('volcans')">
-                        Commencer
-                    </button>
+
+                <!-- Zone Illustration -->
+                <div x-show="showIllustration" x-transition class="illustration-container">
+                    <div class="illustration-header">
+                        <h3>🖼️ <span x-text="getDomainName()"></span></h3>
+                        <button @click="showIllustration = false" class="close-btn">✖ Fermer</button>
+                    </div>
+                    <img :src="getImageUrl()" alt="Illustration Sciences" class="domain-illustration"
+                        @error="handleImageError($event)">
                 </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🌤️</div>
-                    <h3>Météo & Climat</h3>
-                    <p>Le temps qu'il fait</p>
-                    <button class="btn-start-activity" onclick="startActivity('meteo')">
-                        Commencer
-                    </button>
+
+                <!-- Zone Quiz -->
+                <div x-show="showQuiz && !showResults" x-transition class="quiz-container">
+                    <div class="quiz-header">
+                        <h3>🎯 Quiz <span x-text="getDomainName()"></span></h3>
+                        <p class="quiz-progress">
+                            Question <span x-text="currentQuestionIndex + 1"></span> / <span
+                                x-text="getCurrentQuiz().length"></span>
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill"
+                                :style="`width: ${((currentQuestionIndex + 1) / getCurrentQuiz().length) * 100}%`"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-content">
+                        <div class="question-zone">
+                            <p class="question-text" x-text="currentQuestion?.q"></p>
+
+                            <div class="answer-options">
+                                <template x-for="(option, index) in currentQuestion?.o" :key="index">
+                                    <button @click="checkAnswer(option)" class="answer-btn"
+                                        :style="answered && option === currentQuestion.c ? 'border-color: #4caf50; background: #e8f5e9;' : 
+                                                answered && option === selectedAnswer && option !== currentQuestion.c ? 'border-color: #f44336; background: #ffebee;' : ''"
+                                        :disabled="answered" x-text="option">
+                                    </button>
+                                </template>
+                            </div>
+
+                            <div x-show="answered" x-transition class="feedback-zone">
+                                <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
+                                    <span x-text="isCorrect ? '✅ Bravo ! Bonne réponse !' : '❌ Ce n\'est pas la bonne réponse.'"></span>
+                                </div>
+                                <div x-show="!isCorrect" class="feedback-explanation">
+                                    💡 La bonne réponse était : <strong x-text="currentQuestion?.c"></strong>
+                                </div>
+                                <button @click="nextQuestion()" class="next-btn">
+                                    <span x-text="currentQuestionIndex < getCurrentQuiz().length - 1 ? 'Question suivante ➡️' : 'Voir les résultats 🏆'"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zone Résultats -->
+                <div x-show="showResults" x-transition class="quiz-container">
+                    <div class="results-zone">
+                        <h3>🏆 Quiz Terminé !</h3>
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span class="score-number" x-text="score"></span>
+                                <span class="score-total"> / <span x-text="getCurrentQuiz().length"></span></span>
+                            </div>
+                            <p class="score-message" x-text="getScoreMessage()"></p>
+                        </div>
+                        <div class="results-actions">
+                            <button @click="retryQuiz()" class="action-btn btn-quiz">
+                                🔄 Refaire le Quiz
+                            </button>
+                            <button @click="backToDomain()" class="action-btn btn-info">
+                                ← Retour au Domaine
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Le Vivant -->
-        <div class="topic-card">
-            <h2>🌱 Le Monde du Vivant</h2>
-            <p>Plantes, animaux et écosystèmes</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">🌳</div>
-                    <h3>Les Plantes</h3>
-                    <p>Photosynthèse et croissance</p>
-                    <button class="btn-start-activity" onclick="startActivity('plantes')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🦋</div>
-                    <h3>Chaînes Alimentaires</h3>
-                    <p>Qui mange qui ?</p>
-                    <button class="btn-start-activity" onclick="startActivity('chaines_alimentaires')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🫀</div>
-                    <h3>Corps Humain</h3>
-                    <p>Organes et systèmes</p>
-                    <button class="btn-start-activity" onclick="startActivity('corps_humain')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🦴</div>
-                    <h3>Squelette & Muscles</h3>
-                    <p>Bouger et se tenir</p>
-                    <button class="btn-start-activity" onclick="startActivity('squelette')">
-                        Commencer
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- Données leçons -->
+        <script src="scripts/data/sciences-lessons.js"></script>
 
-        <!-- Matière & Énergie -->
-        <div class="topic-card">
-            <h2>⚗️ Matière & Énergie</h2>
-            <p>États de la matière et forces</p>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">💧</div>
-                    <h3>États de la Matière</h3>
-                    <p>Solide, liquide, gaz</p>
-                    <button class="btn-start-activity" onclick="startActivity('etats_matiere')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🔋</div>
-                    <h3>Électricité</h3>
-                    <p>Circuits et courant</p>
-                    <button class="btn-start-activity" onclick="startActivity('electricite')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">🧲</div>
-                    <h3>Magnétisme</h3>
-                    <p>Aimants et forces</p>
-                    <button class="btn-start-activity" onclick="startActivity('magnetisme')">
-                        Commencer
-                    </button>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">💡</div>
-                    <h3>Lumière & Ombres</h3>
-                    <p>Propagation et réflexion</p>
-                    <button class="btn-start-activity" onclick="startActivity('lumiere')">
-                        Commencer
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Alpine.js CDN -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Modal Activité (créé dynamiquement) -->
-    <div id="activity-modal"></div>
-    
-    <!-- Feedback Complétion (créé dynamiquement) -->
-    <div id="completion-feedback"></div>
+        <!-- JS inline AVANT Alpine -->
+        <script>
+            document.addEventListener('alpine:init', () => {
+                console.log('🎯 Alpine:init déclenché');
 
-    <!-- Bulle d'aide Curio -->
-    <div id="curio-help" class="curio-help-bubble">
-        <button class="curio-close" onclick="closeCurioHelp()">×</button>
-        <div class="curio-avatar">🦊</div>
-        <p class="curio-message" id="curio-message">
-            Prêt à explorer les sciences ?
-        </p>
-    </div>
+                Alpine.data('curioBubble', () => ({
+                    visible: false,
+                    currentMessage: '',
+                    variant: 'info',
+                    autoHideTimer: null,
+                    init() { window.curioBubbleInstance = this; },
+                    show(m, v = 'info') {
+                        if (this.autoHideTimer) clearTimeout(this.autoHideTimer);
+                        this.currentMessage = m;
+                        this.variant = v;
+                        this.visible = true;
+                        this.autoHideTimer = setTimeout(() => this.hide(), 5000);
+                    },
+                    hide() { this.visible = false; }
+                }));
 
-    <!-- Script Standalone -->
-    <script src="scripts/sciences-standalone.js"></script>
-</body>
+                Alpine.data('sciencesApp', () => ({
+                    currentDomain: 'terre',
+                    showIllustration: false,
+                    showLesson: false,
+                    showQuiz: false,
+                    showResults: false,
+                    currentQuestionIndex: 0,
+                    score: 0,
+                    selectedAnswer: null,
+                    answered: false,
+                    isCorrect: false,
+                    quizFinished: false,
+                    currentQuestion: null,
+                    audioContext: null,
+
+                    init() {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        console.log('✅ sciencesApp initialisé');
+
+                        // Initialiser le système XP
+                        if (window.SectionXP) {
+                            window.SectionXP.init('sciences');
+                        }
+
+                        // Vérifier que les données sont chargées
+                        if (typeof window.sciencesLessons === 'undefined') {
+                            console.error('❌ sciences-lessons.js non chargé !');
+                        } else {
+                            console.log('✅ sciences-lessons.js chargé - 3 domaines disponibles');
+                        }
+                    },
+
+                    playCorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 523; o.type = 'sine';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.2);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.2);
+                        } catch (e) { }
+                    },
+
+                    playIncorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 185; o.type = 'triangle';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.3);
+                        } catch (e) { }
+                    },
+
+                    selectDomain(domain) {
+                        this.currentDomain = domain;
+                        this.showIllustration = false;
+                        this.showLesson = false;
+                        this.showQuiz = false;
+                        this.showResults = false;
+                        console.log('🎯 Domaine sélectionné:', domain);
+                    },
+
+                    getDomainName() {
+                        if (!window.sciencesLessons) return '';
+                        return window.sciencesLessons[this.currentDomain]?.name || '';
+                    },
+
+                    getDomainDescription() {
+                        if (!window.sciencesLessons) return '';
+                        return window.sciencesLessons[this.currentDomain]?.description || '';
+                    },
+
+                    getImageUrl() {
+                        if (!window.sciencesLessons) return '';
+                        return window.sciencesLessons[this.currentDomain]?.imageUrl || 'images/sciences/placeholder.jpg';
+                    },
+
+                    handleImageError(event) {
+                        console.warn('⚠️ Image non trouvée, utilisation placeholder');
+                        event.target.src = 'images/sciences/placeholder.jpg';
+                    },
+
+                    getLessonTitle() {
+                        if (!window.sciencesLessons) return '';
+                        const lessons = window.sciencesLessons[this.currentDomain]?.lessons;
+                        if (!lessons) return '';
+                        // Prendre le premier thème du domaine
+                        const firstTheme = Object.keys(lessons)[0];
+                        return lessons[firstTheme]?.title || '';
+                    },
+
+                    getLessonContent() {
+                        if (!window.sciencesLessons) return '';
+                        const lessons = window.sciencesLessons[this.currentDomain]?.lessons;
+                        if (!lessons) return '';
+                        // Prendre le premier thème du domaine
+                        const firstTheme = Object.keys(lessons)[0];
+                        return lessons[firstTheme]?.content || '';
+                    },
+
+                    getCurrentQuiz() {
+                        if (!window.sciencesLessons) return [];
+                        return window.sciencesLessons[this.currentDomain]?.quiz || [];
+                    },
+
+                    startQuiz() {
+                        const quiz = this.getCurrentQuiz();
+                        if (quiz.length === 0) {
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show('Aucun quiz disponible pour ce domaine.', 'error');
+                            }
+                            return;
+                        }
+
+                        this.showQuiz = true;
+                        this.showResults = false;
+                        this.currentQuestionIndex = 0;
+                        this.score = 0;
+                        this.quizFinished = false;
+                        this.loadQuestion();
+                        console.log('🎯 Quiz démarré -', quiz.length, 'questions');
+                    },
+
+                    loadQuestion() {
+                        this.currentQuestion = this.getCurrentQuiz()[this.currentQuestionIndex];
+                        this.answered = false;
+                        this.selectedAnswer = null;
+                        this.isCorrect = false;
+                    },
+
+                    checkAnswer(answer) {
+                        if (this.answered) return;
+
+                        this.answered = true;
+                        this.selectedAnswer = answer;
+                        this.isCorrect = (answer === this.currentQuestion.c);
+
+                        if (this.isCorrect) {
+                            this.score++;
+                            this.playCorrectSound();
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show('✅ Bravo ! Continue comme ça !', 'success');
+                            }
+
+                            // XP pour bonne réponse
+                            if (window.SectionXP) {
+                                window.SectionXP.addXP('sciences', window.SectionXP.rewards.CORRECT_ANSWER);
+                            }
+                        } else {
+                            this.playIncorrectSound();
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show('Pas de panique ! Réessaye la prochaine question !', 'error');
+                            }
+                        }
+                    },
+
+                    nextQuestion() {
+                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                            this.currentQuestionIndex++;
+                            this.loadQuestion();
+                        } else {
+                            this.finishQuiz();
+                        }
+                    },
+
+                    finishQuiz() {
+                        this.showResults = true;
+                        this.quizFinished = true;
+
+                        // Bonus XP pour complétion du quiz
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('sciences', window.SectionXP.rewards.QUIZ_COMPLETED);
+
+                            // Bonus supplémentaire si quiz parfait
+                            const quizLength = this.getCurrentQuiz().length;
+                            if (this.score === quizLength) {
+                                window.SectionXP.addXP('sciences', window.SectionXP.rewards.PERFECT_QUIZ);
+                                if (window.curioBubbleInstance) {
+                                    window.curioBubbleInstance.show('🏆 Quiz PARFAIT ! Tu es un champion !', 'success');
+                                }
+                            }
+                        }
+                    },
+
+                    retryQuiz() {
+                        this.showResults = false;
+                        this.currentQuestionIndex = 0;
+                        this.score = 0;
+                        this.quizFinished = false;
+                        this.loadQuestion();
+                    },
+
+                    getScoreMessage() {
+                        const percentage = (this.score / this.getCurrentQuiz().length) * 100;
+                        if (percentage === 100) return '🏆 Parfait ! Tu maîtrises ce domaine !';
+                        if (percentage >= 80) return '🌟 Excellent ! Très bien joué !';
+                        if (percentage >= 60) return '👍 Bien ! Continue comme ça !';
+                        if (percentage >= 40) return '💪 Pas mal ! Révise encore un peu !';
+                        return '📚 Continue à apprendre, tu vas y arriver !';
+                    },
+
+                    backToDomain() {
+                        this.showResults = false;
+                        this.showQuiz = false;
+                    }
+                }));
+            });
+        </script>
+    </body>
+
 </html>
