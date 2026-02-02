@@ -9,7 +9,7 @@ const sciencesLessons = {
     terre: {
         name: 'Sciences de la Terre',
         description: 'Notre planète et l\'univers',
-        imageUrl: 'images/sciences/illustration_terre.jpg',
+        imageUrl: 'images/sciences/illustration_systeme_solaire.jpg',
         lessons: {
             systeme_solaire: {
                 title: '🪐 Le Système Solaire',
@@ -163,7 +163,7 @@ const sciencesLessons = {
     vivant: {
         name: 'Le Monde du Vivant',
         description: 'Plantes, animaux et écosystèmes',
-        imageUrl: 'images/sciences/illustration_vivant.jpg',
+        imageUrl: 'images/sciences/illustration_plantes.jpg',
         lessons: {
             plantes: {
                 title: '🌳 Les Plantes',
@@ -358,7 +358,7 @@ const sciencesLessons = {
     matiere: {
         name: 'Matière & Énergie',
         description: 'États de la matière et forces',
-        imageUrl: 'images/sciences/illustration_matiere.jpg',
+        imageUrl: 'images/sciences/illustration_etats_matiere.jpg',
         lessons: {
             etats_matiere: {
                 title: '💧 États de la Matière',
