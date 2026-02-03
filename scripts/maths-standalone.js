@@ -1202,10 +1202,11 @@ function completeActivity() {
     const content = EDUCATIONAL_CONTENT[currentActivity];
     const totalQuestions = content.exercises.length;
     const percentage = Math.round((currentScore / totalQuestions) * 100);
+    const isPerfect = (percentage === 100);
     
     // Calcul XP
     let xpGained = currentScore * 10;
-    if (percentage === 100) {
+    if (isPerfect) {
         xpGained += 50;
     }
     
@@ -1222,6 +1223,28 @@ function completeActivity() {
     
     // Message Curio
     showCurioMessage('complete');
+    
+    // --- BADGE SYSTEM : écriture quiz_stats ---
+    try {
+        const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
+        const stats = raw ? JSON.parse(raw) : { totalCompleted: 0, perfectCount: 0, bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 } };
+        stats.totalCompleted = (stats.totalCompleted || 0) + 1;
+        if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
+        if (!stats.bySubject) stats.bySubject = {};
+        stats.bySubject[SECTION_NAME] = (stats.bySubject[SECTION_NAME] || 0) + 1;
+        localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
+        console.log('📊 [' + SECTION_NAME + '] Quiz stats mis à jour:', stats);
+    } catch(e) { console.warn('[' + SECTION_NAME + '] Erreur stats quiz:', e); }
+
+    // --- BADGE SYSTEM : check + sync ---
+    if (window.badgeSystem) {
+        const newBadges = window.badgeSystem.checkBadges();
+        if (newBadges && newBadges.length > 0) {
+            console.log('🏆 [' + SECTION_NAME + '] Nouveaux badges:', newBadges.map(function(b){ return b.name; }));
+            showCurioMessage('🏆 Badge débloqué : ' + newBadges[0].name + ' !');
+        }
+        if (window.BRIDGE) window.BRIDGE.syncBadges();
+    }
     
     // Feedback final
     showCompletionFeedback(currentScore, totalQuestions, xpGained);
