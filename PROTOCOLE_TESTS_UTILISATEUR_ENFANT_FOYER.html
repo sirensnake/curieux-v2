@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocole Tests Utilisateur Enfant - Foyer</title>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 11pt; line-height: 1.4; }
+            h1 { page-break-before: always; }
+            h1:first-of-type { page-break-before: avoid; }
+            .page-break { page-break-after: always; }
+            table { page-break-inside: avoid; }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .print-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .print-btn:hover {
+            background: #229954;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        p, li {
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .context-box {
+            background: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .metrics-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .metrics-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .metrics-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .session-header {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            margin: -25px -25px 20px -25px;
+        }
+
+        .timeline {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #667eea;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '●';
+            position: absolute;
+            left: -13px;
+            color: #667eea;
+            font-size: 1.5em;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📋 PROTOCOLE DE TEST UTILISATEUR ENFANT</h1>
+    <p>Le Monde des Curieux — Tests en contexte foyer</p>
+</div>
+
+<div class="no-print">
+    <button class="print-btn" onclick="window.print()">🖨️ IMPRIMER CE PROTOCOLE</button>
+</div>
+
+<h2>🎯 CONTEXTE SPÉCIFIQUE</h2>
+
+<div class="context-box">
+    <p><strong>Environnement de test :</strong> Enfant en foyer, accès limité et supervisé</p>
+    
+    <p><strong>Contraintes identifiées :</strong></p>
+    <ul>
+        <li>Sessions courtes (30-45 min max par visite)</li>
+        <li>Pas de contrôle direct pendant utilisation autonome</li>
+        <li>Communication asynchrone possible (appels/visites espacés)</li>
+        <li>Besoin d'autonomie maximale de l'interface</li>
+        <li>Tests à distance via visio possibles</li>
+    </ul>
+
+    <p><strong>Objectifs prioritaires :</strong></p>
+    <ol>
+        <li>Valider l'<strong>ergonomie intuitive</strong> (utilisation sans aide adulte)</li>
+        <li>Mesurer l'<strong>engagement spontané</strong> (revient-il de lui-même ?)</li>
+        <li>Identifier les <strong>blocages UX</strong> (où abandonne-t-il ?)</li>
+        <li>Évaluer la <strong>clarté pédagogique</strong> (comprend-il les explications ?)</li>
+    </ol>
+</div>
+
+<hr>
+
+<h2>📅 PLANNING DE TESTS (3 SESSIONS)</h2>
+
+<div class="session-card">
+    <div class="session-header">
+        <h3 style="margin: 0; color: white;">SESSION 1 — Découverte libre (30-45 min)</h3>
+    </div>
+    
+    <p><strong>Timing :</strong> Première visite/appel vidéo<br>
+    <strong>Objectif :</strong> Observer l'exploration naturelle sans guidage</p>
+
+    <h4>Préparation (5 min avant session) :</h4>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Réinitialiser dashboard (<code>localStorage.clear()</code>)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Ouvrir <code>index.html</code> sur tablette/ordinateur accessible</div>
+        <div class="checklist-item"><div class="checkbox"></div> Préparer grille d'observation (voir ci-dessous)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Tester connexion si visio (stabilité écran partagé)</div>
+    </div>
+
+    <h4>Déroulement (30 min observation) :</h4>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>Introduction minimale (2 min) :</strong>
+            <ul>
+                <li>"Voilà un site que je crée pour toi, explore-le comme tu veux"</li>
+                <li>"Dis-moi si quelque chose ne marche pas ou n'est pas clair"</li>
+                <li><strong>NE PAS expliquer les fonctionnalités</strong> (test d'intuitivité)</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <strong>Observation silencieuse (20 min) :</strong>
+            <ul>
+                <li>Laisser naviguer librement</li>
+                <li>Noter tous les clics/hésitations/abandons</li>
+                <li>Intervention UNIQUEMENT si blocage technique (bug, freeze)</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <strong>Questions ouvertes (8 min) :</strong>
+            <ul>
+                <li>"Qu'est-ce que tu as préféré ?"</li>
+                <li>"Y avait-il des choses pas claires ?"</li>
+                <li>"Tu retournerais dessus ? Quand ?"</li>
+                <li>"Si tu devais changer une chose, ce serait quoi ?"</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>📊 Métriques clés :</h4>
+    <table class="metrics-table">
+        <tr>
+            <td>A-t-il trouvé seul comment accéder à une section ?</td>
+            <td><strong>OUI / NON</strong></td>
+        </tr>
+        <tr>
+            <td>A-t-il compris le système XP/niveau ?</td>
+            <td><strong>OUI / PARTIELLEMENT / NON</strong></td>
+        </tr>
+        <tr>
+            <td>A-t-il terminé au moins 1 quiz ?</td>
+            <td><strong>OUI / NON</strong></td>
+        </tr>
+        <tr>
+            <td>Temps avant abandon spontané :</td>
+            <td><strong>_____ min</strong></td>
+        </tr>
+        <tr>
+            <td>Nombre de clics "retour" confus :</td>
+            <td><strong>_____</strong></td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<div class="session-card">
+    <div class="session-header">
+        <h3 style="margin: 0; color: white;">SESSION 2 — Focus section Français (30 min)</h3>
+    </div>
+    
+    <p><strong>Timing :</strong> 3-7 jours après Session 1<br>
+    <strong>Objectif :</strong> Tester mécaniques gamifiées et qualité pédagogique</p>
+
+    <h4>Préparation :</h4>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Vérifier que données Session 1 sont conservées (ne pas reset)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Ouvrir directement <code>francais_duolingo_section.html</code></div>
+    </div>
+
+    <h4>Scénario guidé (25 min) :</h4>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>Choix thème + quiz (10 min) :</strong>
+            <ul>
+                <li>"Choisis un thème et fais le quiz sans mon aide"</li>
+                <li>Observer : hésite-t-il sur les réponses ? Lit-il les explications ?</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <strong>Questions pédagogiques (10 min) :</strong>
+            <ul>
+                <li>"Les explications après les réponses, ça t'aide ?"</li>
+                <li>"C'était trop facile, trop dur, ou bien ?"</li>
+                <li>Montrer une question incorrecte : "Tu comprends pourquoi c'est faux ?"</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <strong>Test gamification (5 min) :</strong>
+            <ul>
+                <li>Lui montrer le dashboard : "Tu vois tes XP ici"</li>
+                <li>"Est-ce que ça te donne envie de refaire des quiz ?"</li>
+                <li>"Les badges, tu comprends comment on les débloque ?"</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>📊 Métriques clés :</h4>
+    <table class="metrics-table">
+        <tr>
+            <td>Score quiz :</td>
+            <td><strong>_____ / 10</strong></td>
+        </tr>
+        <tr>
+            <td>Temps moyen par question :</td>
+            <td><strong>_____ sec</strong></td>
+        </tr>
+        <tr>
+            <td>Lit-il les explications ?</td>
+            <td><strong>TOUJOURS / PARFOIS / JAMAIS</strong></td>
+        </tr>
+        <tr>
+            <td>Comprend-il les explications ?</td>
+            <td><strong>OUI / PARTIELLEMENT / NON</strong></td>
+        </tr>
+        <tr>
+            <td>Motivation pour recommencer ?</td>
+            <td><strong>FORTE / MOYENNE / FAIBLE</strong></td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<div class="session-card">
+    <div class="session-header">
+        <h3 style="margin: 0; color: white;">SESSION 3 — Usage autonome + feedback final (15 min)</h3>
+    </div>
+    
+    <p><strong>Timing :</strong> 7-14 jours après Session 2<br>
+    <strong>Objectif :</strong> Mesurer utilisation spontanée et recueillir suggestions</p>
+
+    <h4>Préparation :</h4>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Vérifier statistiques dashboard (a-t-il utilisé entre les sessions ?)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Noter : streak actuel, XP total, sections visitées</div>
+    </div>
+
+    <h4>Déroulement :</h4>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>Analyse usage autonome (5 min) :</strong>
+            <ol>
+                <li>Ouvrir dashboard ensemble</li>
+                <li>"Je vois que tu as gagné X XP, tu as fait quoi ?"</li>
+                <li>"Tu y es retourné combien de fois ?"</li>
+                <li>"Qu'est-ce qui t'a donné envie d'y retourner ?"</li>
+            </ol>
+        </div>
+        <div class="timeline-item">
+            <strong>Feedback constructif (10 min) :</strong>
+            <ul>
+                <li>"Si je rajoute des choses, tu voudrais quoi ?"</li>
+                <li>"Qu'est-ce qui t'a ennuyé ou énervé ?"</li>
+                <li>"Tu montrerais ce site à tes copains ? Pourquoi ?"</li>
+                <li>Montrer dashboard étendu : "Ces statistiques, ça t'intéresse ?"</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>📊 Métriques clés :</h4>
+    <table class="metrics-table">
+        <tr>
+            <td>Nombre de visites autonomes :</td>
+            <td><strong>_____</strong></td>
+        </tr>
+        <tr>
+            <td>Streak maintenu ?</td>
+            <td><strong>OUI / NON</strong></td>
+        </tr>
+        <tr>
+            <td>Sections explorées :</td>
+            <td><strong>_____</strong></td>
+        </tr>
+        <tr>
+            <td>Note globale enfant /10 :</td>
+            <td><strong>_____</strong></td>
+        </tr>
+        <tr>
+            <td>Recommanderait-il à un copain ?</td>
+            <td><strong>OUI / NON / PEUT-ÊTRE</strong></td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<h2>📝 GRILLE D'OBSERVATION</h2>
+<p><em>(Imprimer/remplir en direct)</em></p>
+
+<div class="session-card">
+    <h3>NAVIGATION</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Trouve l'accueil facilement</div>
+        <div class="checklist-item"><div class="checkbox"></div> Comprend la mindmap (si applicable)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Clique sur une section sans hésiter</div>
+        <div class="checklist-item"><div class="checkbox"></div> Utilise le bouton "retour" correctement</div>
+        <div class="checklist-item"><div class="checkbox"></div> Explore plusieurs sections</div>
+        <div class="checklist-item"><div class="checkbox"></div> Accède au dashboard seul</div>
+    </div>
+    <p><strong>Blocages observés :</strong></p>
+    <p>_____________________________________________</p>
+    <p>_____________________________________________</p>
+</div>
+
+<div class="session-card">
+    <h3>QUIZ / ACTIVITÉS</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Comprend les consignes sans aide</div>
+        <div class="checklist-item"><div class="checkbox"></div> Lit les questions attentivement</div>
+        <div class="checklist-item"><div class="checkbox"></div> Prend le temps de réfléchir</div>
+        <div class="checklist-item"><div class="checkbox"></div> Réagit aux feedbacks (✅/❌)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Lit les explications</div>
+        <div class="checklist-item"><div class="checkbox"></div> Recommence après un quiz</div>
+    </div>
+    <p><strong>Comportements notables :</strong></p>
+    <p>_____________________________________________</p>
+    <p>_____________________________________________</p>
+</div>
+
+<div class="session-card">
+    <h3>GAMIFICATION</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Remarque les XP gagnés</div>
+        <div class="checklist-item"><div class="checkbox"></div> Commente le niveau/progression</div>
+        <div class="checklist-item"><div class="checkbox"></div> Réagit aux badges débloqués</div>
+        <div class="checklist-item"><div class="checkbox"></div> Comprend le système streak</div>
+        <div class="checklist-item"><div class="checkbox"></div> Revient pour "farmer" XP</div>
+    </div>
+    <p><strong>Motivation observée (1-5) :</strong> _____ / 5</p>
+    <p><strong>Commentaires :</strong></p>
+    <p>_____________________________________________</p>
+</div>
+
+<div class="session-card">
+    <h3>TECHNIQUE / UX</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Aucun bug/freeze rencontré</div>
+        <div class="checklist-item"><div class="checkbox"></div> Temps de chargement OK</div>
+        <div class="checklist-item"><div class="checkbox"></div> Lisibilité texte/polices</div>
+        <div class="checklist-item"><div class="checkbox"></div> Boutons assez gros (tactile)</div>
+        <div class="checklist-item"><div class="checkbox"></div> Couleurs/contrastes confortables</div>
+    </div>
+    <p><strong>Problèmes techniques :</strong></p>
+    <p>_____________________________________________</p>
+    <p>_____________________________________________</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>🚨 GESTION SITUATIONS DIFFICILES</h2>
+
+<div class="warning-box">
+    <h4>Si l'enfant abandonne rapidement (&lt;5 min)</h4>
+    <ul>
+        <li><strong>Ne pas insister</strong> (respecter désintérêt)</li>
+        <li>Noter contexte : fatigué ? distrait ? activité concurrente ?</li>
+        <li>Retenter un autre jour (ne pas forcer)</li>
+        <li>Analyser : problème d'interface ou mauvais timing ?</li>
+    </ul>
+</div>
+
+<div class="danger-box">
+    <h4>Si bug critique bloque progression</h4>
+    <ul>
+        <li><strong>Intervention immédiate</strong> (ne pas frustrer)</li>
+        <li>Noter précisément la reproduction du bug</li>
+        <li>Proposer autre section ou revenir plus tard</li>
+        <li>Fixer bug avant Session 2</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <h4>Si l'enfant demande de l'aide</h4>
+    <p><strong>Distinguer :</strong></p>
+    <ul>
+        <li>Aide UX (pas clair) → Noter problème design</li>
+        <li>Aide pédagogique (trop dur) → Noter niveau difficulté</li>
+    </ul>
+    <ul>
+        <li>Donner aide minimale nécessaire</li>
+        <li><strong>Ne jamais</strong> donner réponses quiz (apprendre autonomie)</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <h4>Si réticence à critiquer</h4>
+    <ul>
+        <li>"Ce n'est pas grave si ça ne te plaît pas, ça m'aide pour améliorer"</li>
+        <li>Poser questions fermées : "Ce bouton, il est clair ou pas ?"</li>
+        <li>Observer comportement plus que verbal (hésitations = signaux)</li>
+    </ul>
+</div>
+
+<hr>
+
+<h2>📈 EXPLOITATION RÉSULTATS</h2>
+
+<h3>Après chaque session</h3>
+<ol>
+    <li><strong>Remplir grille dans les 30 min</strong> (tant que mémoire fraîche)</li>
+    <li><strong>Prioriser bugs critiques</strong> (Session 2 impossible si bloquants)</li>
+    <li><strong>Lister 3 quick wins UX</strong> (petits ajustements faciles)</li>
+    <li><strong>Photographier grille remplie</strong> (backup si perte papier)</li>
+</ol>
+
+<h3>Après Session 3 (analyse globale)</h3>
+
+<div class="success-box">
+    <h4>🟢 VALIDER si :</h4>
+    <ul>
+        <li>✅ Au moins 2/3 sessions complétées</li>
+        <li>✅ Utilisation autonome entre sessions (streak maintenu)</li>
+        <li>✅ Note globale ≥ 6/10</li>
+        <li>✅ Aucun bug bloquant critique</li>
+        <li>✅ Volonté de recommander à un copain</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <h4>🟡 AJUSTER si :</h4>
+    <ul>
+        <li>⚠️ Abandon systématique &lt;10 min</li>
+        <li>⚠️ Confusion récurrente navigation</li>
+        <li>⚠️ "C'est trop dur/facile" répété</li>
+        <li>⚠️ Ignorer système gamification</li>
+    </ul>
+</div>
+
+<div class="danger-box">
+    <h4>🔴 REVOIR ARCHITECTURE si :</h4>
+    <ul>
+        <li>❌ Bugs critiques fréquents</li>
+        <li>❌ Rejet total interface</li>
+        <li>❌ Incompréhension objectif site</li>
+        <li>❌ Feedback "c'est nul/ennuyant"</li>
+    </ul>
+</div>
+
+<hr>
+
+<h2>✅ CHECKLIST GLOBALE PROTOCOLE</h2>
+
+<div class="session-card">
+    <h3>Avant Session 1 :</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Site fonctionnel localhost ou en ligne</div>
+        <div class="checklist-item"><div class="checkbox"></div> Dashboard réinitialisé</div>
+        <div class="checklist-item"><div class="checkbox"></div> Grilles observation imprimées</div>
+        <div class="checklist-item"><div class="checkbox"></div> Coordination foyer OK</div>
+        <div class="checklist-item"><div class="checkbox"></div> Matériel technique testé</div>
+    </div>
+</div>
+
+<div class="session-card">
+    <h3>Entre sessions :</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Grilles remplies scannées/photographiées</div>
+        <div class="checklist-item"><div class="checkbox"></div> Bugs critiques fixés</div>
+        <div class="checklist-item"><div class="checkbox"></div> Quick wins UX implémentés</div>
+        <div class="checklist-item"><div class="checkbox"></div> Planification session suivante</div>
+    </div>
+</div>
+
+<div class="session-card">
+    <h3>Après Session 3 :</h3>
+    <div class="checklist">
+        <div class="checklist-item"><div class="checkbox"></div> Rapport final rédigé</div>
+        <div class="checklist-item"><div class="checkbox"></div> Actions prioritaires listées</div>
+        <div class="checklist-item"><div class="checkbox"></div> Remerciements enfant/foyer</div>
+        <div class="checklist-item"><div class="checkbox"></div> Sauvegarde toutes données tests</div>
+    </div>
+</div>
+
+<hr>
+
+<div class="success-box" style="margin-top: 40px;">
+    <h3>📌 Note finale</h3>
+    <p>Ce protocole privilégie <strong>l'observation naturaliste</strong> (laisser faire) plutôt que le <strong>test dirigiste</strong> (faire faire). L'objectif est de voir si l'interface <strong>fonctionne seule</strong>, car l'enfant l'utilisera <strong>sans toi</strong> la majorité du temps.</p>
+    <p style="margin-top: 15px; font-size: 1.2em; text-align: center;"><strong>Bon courage pour les tests ! 🚀</strong></p>
+</div>
+
+<div class="no-print" style="text-align: center; margin-top: 40px;">
+    <button class="print-btn" onclick="window.print()">🖨️ IMPRIMER CE PROTOCOLE</button>
+</div>
+
+</body>
+</html>

@@ -137,15 +137,29 @@ const BRIDGE = {
         let badges = this._read(this.KEYS.BADGES) || [];
 
         // Source 1 : userBadges (badges-system.js)
+        // Format réel écrit par BadgeSystem.saveUserBadges() :
+        //   { earned: ['xp_1000', 'streak_7'], earnedDates: { xp_1000: timestamp }, notifications: [...] }
         const userBadges = this._read('userBadges');
-        if (Array.isArray(userBadges)) {
+        if (userBadges && userBadges.earned && Array.isArray(userBadges.earned)) {
+            // Format badges-system.js (format actuel)
+            for (const badgeId of userBadges.earned) {
+                if (!badges.find(b => b.id === badgeId)) {
+                    badges.push({
+                        id: badgeId,
+                        unlocked: true,
+                        unlockedAt: (userBadges.earnedDates && userBadges.earnedDates[badgeId]) || Date.now()
+                    });
+                }
+            }
+        } else if (Array.isArray(userBadges)) {
+            // Format ancien : tableau d'objets [{ id, unlocked, unlockedAt }]
             for (const badge of userBadges) {
                 if (badge.unlocked && !badges.find(b => b.id === badge.id)) {
                     badges.push({ id: badge.id, unlocked: true, unlockedAt: badge.unlockedAt || Date.now() });
                 }
             }
         } else if (userBadges && typeof userBadges === 'object') {
-            // Format objet { id: { unlocked: true } }
+            // Format ancien : objet { id: { unlocked: true } }
             for (const [id, data] of Object.entries(userBadges)) {
                 if (data && data.unlocked && !badges.find(b => b.id === id)) {
                     badges.push({ id, unlocked: true, unlockedAt: data.unlockedAt || Date.now() });
@@ -180,6 +194,9 @@ const BRIDGE = {
         return { xp, streaks, hearts, badges };
     }
 };
+
+// Export global (utilisé par les sections pour syncBadges après checkBadges)
+window.BRIDGE = BRIDGE;
 
 // Auto-sync au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {

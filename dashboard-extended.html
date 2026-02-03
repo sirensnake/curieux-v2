@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Parcours - Le Monde des Curieux</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-section: #0f3460;
+            --accent-green: #27ae60;
+            --accent-blue: #3498db;
+            --accent-purple: #9b59b6;
+            --accent-orange: #e67e22;
+            --accent-red: #e74c3c;
+            --text-light: #ecf0f1;
+            --text-dim: #95a5a6;
+            --border: #34495e;
+            --shadow: rgba(0,0,0,0.3);
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1419 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        [x-cloak] { display: none !important; }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        /* ═══════════════════════════════════════
+           HEADER
+        ═══════════════════════════════════════ */
+        .header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-section) 100%);
+            border: 3px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -10%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .user-info h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.4em;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+        }
+
+        .user-subtitle {
+            font-size: 0.9em;
+            color: var(--text-dim);
+            font-weight: 300;
+        }
+
+        .user-subtitle .name {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+            border-color: var(--accent-blue);
+        }
+
+        .stat-icon {
+            font-size: 1.8em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .stat-content .value {
+            display: block;
+            font-size: 1.4em;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .stat-content .label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════
+           NIVEAU + XP PROGRESS BAR
+        ═══════════════════════════════════════ */
+        .level-progress {
+            margin-top: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .level-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .level-badge {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95em;
+            border: 2px solid rgba(255,255,255,0.2);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .xp-fraction {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-dim);
+        }
+
+        .xp-fraction .current {
+            color: var(--accent-green);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 16px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+            border-radius: 20px;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.6);
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255,255,255,0.3) 50%, 
+                transparent 100%
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ═══════════════════════════════════════
+           GRID LAYOUT
+        ═══════════════════════════════════════ */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(52, 152, 219, 0.2);
+        }
+
+        .card-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.85em;
+            margin-bottom: 16px;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title .icon {
+            font-size: 1.3em;
+        }
+
+        /* ═══════════════════════════════════════
+           STREAKS
+        ═══════════════════════════════════════ */
+        .streak-display {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .streak-flame {
+            font-size: 4em;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 4px 8px rgba(230, 126, 34, 0.5));
+            animation: flameFlicker 1.5s ease-in-out infinite;
+        }
+
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(-2deg); }
+            50% { transform: scale(0.98) rotate(2deg); }
+            75% { transform: scale(1.03) rotate(-1deg); }
+        }
+
+        .streak-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .streak-label {
+            font-size: 0.85em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .longest-streak {
+            margin-top: 15px;
+            font-size: 0.8em;
+            color: var(--text-dim);
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* ═══════════════════════════════════════
+           BADGES
+        ═══════════════════════════════════════ */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+        }
+
+        .badge-item {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .badge-item.unlocked {
+            border-color: var(--accent-green);
+            background: rgba(39, 174, 96, 0.1);
+        }
+
+        .badge-item.locked {
+            opacity: 0.4;
+            filter: grayscale(1);
+        }
+
+        .badge-item:hover {
+            transform: scale(1.05);
+        }
+
+        .badge-emoji {
+            font-size: 2.5em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .badge-name {
+            font-size: 0.7em;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .badge-date {
+            font-size: 0.65em;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        /* ═══════════════════════════════════════
+           SECTIONS PROGRESS
+        ═══════════════════════════════════════ */
+        .sections-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-row {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-row:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(4px);
+        }
+
+        .section-row.bonus-row {
+            background: linear-gradient(90deg, rgba(241, 196, 15, 0.1), rgba(230, 126, 34, 0.1));
+            border-color: var(--accent-orange);
+            cursor: default;
+        }
+
+        .section-row.bonus-row:hover {
+            transform: none;
+            background: linear-gradient(90deg, rgba(241, 196, 15, 0.15), rgba(230, 126, 34, 0.15));
+        }
+
+        .section-emoji {
+            font-size: 2.5em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .section-info {
+            flex: 1;
+        }
+
+        .section-name {
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+        }
+
+        .section-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .section-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        .section-xp {
+            font-weight: 700;
+            color: var(--accent-green);
+            font-size: 1.1em;
+            white-space: nowrap;
+        }
+
+        /* ═══════════════════════════════════════
+           STATS QUIZ
+        ═══════════════════════════════════════ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-box .big-num {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-box .label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════
+           ACTIVITY FEED
+        ═══════════════════════════════════════ */
+        .activity-feed {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .activity-feed::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .activity-feed::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .activity-feed::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 10px;
+        }
+
+        .activity-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--accent-green);
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            font-size: 0.85em;
+        }
+
+        .activity-item .time {
+            color: var(--text-dim);
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+
+        .activity-item .desc {
+            font-weight: 600;
+        }
+
+        .activity-item .xp-gain {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════
+           BUTTONS
+        ═══════════════════════════════════════ */
+        .btn {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.7em;
+            padding: 12px 24px;
+            border: 3px solid #000;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+        }
+
+        .btn-back {
+            background: var(--accent-red);
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .btn-back:hover {
+            background: #c0392b;
+        }
+
+        .btn-reset {
+            background: var(--accent-orange);
+            color: white;
+            font-size: 0.6em;
+            padding: 10px 20px;
+            margin-left: 10px;
+        }
+
+        .btn-reset:hover {
+            background: #d35400;
+        }
+
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .user-info h1 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body x-data="dashboardApp" x-cloak>
+    <div class="container">
+        <!-- BOUTONS NAVIGATION -->
+        <div class="btn-container">
+            <button class="btn btn-back" @click="goBack()">← RETOUR</button>
+            <button class="btn btn-reset" @click="resetAllData()">🗑️ RÉINITIALISER</button>
+        </div>
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-top">
+                <div class="user-info">
+                    <h1>🎮 MON PARCOURS</h1>
+                    <p class="user-subtitle">Explorateur : <span class="name" x-text="userName"></span></p>
+                </div>
+
+                <div class="header-stats">
+                    <div class="stat-pill">
+                        <span class="stat-icon">💎</span>
+                        <div class="stat-content">
+                            <span class="value" x-text="totalXP"></span>
+                            <span class="label">Total XP</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-pill">
+                        <span class="stat-icon">🏆</span>
+                        <div class="stat-content">
+                            <span class="value" x-text="currentLevel"></span>
+                            <span class="label">Niveau</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-pill">
+                        <span class="stat-icon">🔥</span>
+                        <div class="stat-content">
+                            <span class="value" x-text="currentStreak"></span>
+                            <span class="label">Série</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-pill" x-show="badgesXP > 0">
+                        <span class="stat-icon">🏅</span>
+                        <div class="stat-content">
+                            <span class="value" x-text="badgesXP"></span>
+                            <span class="label">Bonus Badges</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRESS BAR XP -->
+            <div class="level-progress">
+                <div class="level-info">
+                    <span class="level-badge">NIVEAU <span x-text="currentLevel"></span></span>
+                    <span class="xp-fraction">
+                        <span class="current" x-text="currentLevelXP"></span> / 
+                        <span x-text="xpToNextLevel"></span> XP
+                    </span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" :style="'width: ' + progressPercent + '%'"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="main-grid">
+            <!-- STREAKS CARD -->
+            <div class="card">
+                <h2 class="card-title"><span class="icon">🔥</span> Série Quotidienne</h2>
+                <div class="streak-display">
+                    <div class="streak-flame">🔥</div>
+                    <div class="streak-number" x-text="currentStreak"></div>
+                    <div class="streak-label">Jours Consécutifs</div>
+                    <div class="longest-streak">
+                        🏅 Record : <strong x-text="longestStreak"></strong> jours
+                    </div>
+                </div>
+            </div>
+
+            <!-- BADGES CARD -->
+            <div class="card">
+                <h2 class="card-title"><span class="icon">🏆</span> Badges Débloqués</h2>
+                <div class="badges-grid">
+                    <template x-for="badge in badgesList" :key="badge.id">
+                        <div class="badge-item" :class="badge.unlocked ? 'unlocked' : 'locked'">
+                            <span class="badge-emoji" x-text="badge.emoji"></span>
+                            <div class="badge-name" x-text="badge.name"></div>
+                            <div class="badge-date" x-show="badge.unlocked" x-text="badge.dateText"></div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTIONS PROGRESS -->
+        <div class="card" style="margin-bottom: 20px;">
+            <h2 class="card-title"><span class="icon">📚</span> Progression par Matière</h2>
+            <div class="sections-list">
+                <template x-for="section in sectionsList" :key="section.id">
+                    <div class="section-row" :class="{ 'bonus-row': section.isBonus }" @click="section.isBonus ? null : goToSection(section.link)">
+                        <span class="section-emoji" x-text="section.emoji"></span>
+                        <div class="section-info">
+                            <div class="section-name" x-text="section.name"></div>
+                            <div class="section-progress-bar" x-show="!section.isBonus">
+                                <div class="section-progress-fill" :style="'width: ' + section.progress + '%'"></div>
+                            </div>
+                        </div>
+                        <div class="section-xp" x-text="section.xp + ' XP'"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- STATS + ACTIVITY -->
+        <div class="main-grid">
+            <!-- QUIZ STATS -->
+            <div class="card">
+                <h2 class="card-title"><span class="icon">📊</span> Statistiques Quiz</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="big-num" x-text="quizStats.totalCompleted"></div>
+                        <div class="label">Quiz Complétés</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="big-num" x-text="quizStats.perfectCount"></div>
+                        <div class="label">Sans Faute</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="big-num" x-text="quizStats.successRate + '%'"></div>
+                        <div class="label">Taux Réussite</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="big-num" x-text="quizStats.subjectsCompleted"></div>
+                        <div class="label">Matières Actives</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="card">
+                <h2 class="card-title"><span class="icon">📅</span> Activité Récente</h2>
+                <div class="activity-feed">
+                    <template x-for="activity in recentActivity" :key="activity.timestamp">
+                        <div class="activity-item">
+                            <div class="time" x-text="activity.timeText"></div>
+                            <div class="desc">
+                                <span x-text="activity.section"></span> — 
+                                <span class="xp-gain">+<span x-text="activity.xp"></span> XP</span>
+                            </div>
+                        </div>
+                    </template>
+                    <div x-show="recentActivity.length === 0" style="text-align: center; color: var(--text-dim); padding: 20px;">
+                        Aucune activité récente
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('dashboardApp', () => ({
+                userName: 'Curieux',
+                totalXP: 0,
+                currentLevel: 1,
+                xpToNextLevel: 200,
+                currentLevelXP: 0,
+                progressPercent: 0,
+                currentStreak: 0,
+                longestStreak: 0,
+                badgesXP: 0,
+                badgesList: [],
+                sectionsList: [],
+                quizStats: {
+                    totalCompleted: 0,
+                    perfectCount: 0,
+                    successRate: 0,
+                    subjectsCompleted: 0
+                },
+                recentActivity: [],
+
+                init() {
+                    this.loadAllData();
+                    this.setupAutoRefresh();
+                },
+
+                loadAllData() {
+                    this.loadXPData();
+                    this.loadStreaksData();
+                    this.loadBadgesData();
+                    this.loadSectionsData();
+                    this.loadQuizStats();
+                    this.loadRecentActivity();
+                },
+
+                loadXPData() {
+                    try {
+                        const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                        this.totalXP = xpData.total || 0;
+                        this.currentLevel = xpData.level || 1;
+                        this.xpToNextLevel = xpData.xpToNextLevel || 200;
+
+                        // Calculer XP dans le niveau actuel
+                        const baseXP = 200;
+                        const multiplier = 1.5;
+                        let totalForPreviousLevels = 0;
+                        for (let i = 1; i < this.currentLevel; i++) {
+                            totalForPreviousLevels += Math.floor(baseXP * Math.pow(multiplier, i - 1));
+                        }
+                        this.currentLevelXP = this.totalXP - totalForPreviousLevels;
+                        this.progressPercent = Math.min((this.currentLevelXP / this.xpToNextLevel) * 100, 100);
+                    } catch (e) {
+                        console.error('Erreur chargement XP:', e);
+                    }
+                },
+
+                loadStreaksData() {
+                    try {
+                        const streaksData = JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}');
+                        this.currentStreak = streaksData.currentStreak || 0;
+                        this.longestStreak = streaksData.longestStreak || 0;
+                    } catch (e) {
+                        console.error('Erreur chargement streaks:', e);
+                    }
+                },
+
+                loadBadgesData() {
+                    try {
+                        const badgesData = JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]');
+                        const allBadges = [
+                            { id: 'streak_7', emoji: '🔥', name: 'Semaine de feu', threshold: 7 },
+                            { id: 'streak_30', emoji: '🏆', name: 'Champion du mois', threshold: 30 },
+                            { id: 'xp_1000', emoji: '📚', name: 'Érudit', threshold: 1000 },
+                            { id: 'xp_5000', emoji: '🎓', name: 'Savant', threshold: 5000 },
+                            { id: 'perfect_10', emoji: '⭐', name: 'Sans faute', threshold: 10 },
+                            { id: 'quiz_100', emoji: '💯', name: 'Centurion', threshold: 100 },
+                            { id: 'all_subjects', emoji: '🌟', name: 'Polyvalent', threshold: 5 }
+                        ];
+
+                        this.badgesList = allBadges.map(badge => {
+                            const earned = badgesData.find(b => b.id === badge.id);
+                            return {
+                                ...badge,
+                                unlocked: earned?.unlocked || false,
+                                dateText: earned?.unlockedAt ? new Date(earned.unlockedAt).toLocaleDateString('fr-FR') : ''
+                            };
+                        });
+                    } catch (e) {
+                        console.error('Erreur chargement badges:', e);
+                    }
+                },
+
+                loadSectionsData() {
+                    try {
+                        const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                        const bySection = xpData.bySection || {};
+
+                        // Récupérer les XP bonus badges
+                        this.badgesXP = bySection.badges || 0;
+
+                        this.sectionsList = [
+                            { id: 'francais', name: 'Français', emoji: '📚', link: 'francais_duolingo_section.html', xp: bySection.francais || 0 },
+                            { id: 'anglais', name: 'English', emoji: '🇬🇧', link: 'english_duolingo_section.html', xp: bySection.anglais || 0 },
+                            { id: 'maths', name: 'Mathématiques', emoji: '🔢', link: 'maths_duolingo_section.html', xp: bySection.maths || 0 },
+                            { id: 'sciences', name: 'Sciences', emoji: '🧪', link: 'sciences_duolingo_section.html', xp: bySection.sciences || 0 },
+                            { id: 'histoire', name: 'Histoire', emoji: '🏰', link: 'histoire_duolingo_section.html', xp: bySection.histoire || 0 }
+                        ];
+
+                        // Ajouter ligne bonus badges si > 0
+                        if (this.badgesXP > 0) {
+                            this.sectionsList.push({
+                                id: 'badges',
+                                name: 'Bonus Badges',
+                                emoji: '🏅',
+                                link: '#',
+                                xp: this.badgesXP,
+                                isBonus: true
+                            });
+                        }
+
+                        // Calculer progress
+                        this.sectionsList = this.sectionsList.map(s => ({
+                            ...s,
+                            progress: s.isBonus ? 100 : Math.min((s.xp / 1000) * 100, 100)
+                        }));
+                    } catch (e) {
+                        console.error('Erreur chargement sections:', e);
+                    }
+                },
+
+                loadQuizStats() {
+                    try {
+                        const quizData = JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}');
+                        const bySubject = quizData.bySubject || {};
+
+                        this.quizStats = {
+                            totalCompleted: quizData.totalCompleted || 0,
+                            perfectCount: quizData.perfectCount || 0,
+                            successRate: quizData.totalCompleted > 0
+                                ? Math.round((quizData.perfectCount / quizData.totalCompleted) * 100)
+                                : 0,
+                            subjectsCompleted: Object.values(bySubject).filter(v => v > 0).length
+                        };
+                    } catch (e) {
+                        console.error('Erreur chargement quiz stats:', e);
+                    }
+                },
+
+                loadRecentActivity() {
+                    try {
+                        const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                        const history = xpData.history || [];
+
+                        this.recentActivity = history.slice(0, 10).map(h => ({
+                            section: this.getSectionName(h.section),
+                            xp: h.xp,
+                            timestamp: h.timestamp,
+                            timeText: this.formatRelativeTime(h.timestamp)
+                        }));
+                    } catch (e) {
+                        console.error('Erreur chargement activité:', e);
+                    }
+                },
+
+                getSectionName(id) {
+                    const names = {
+                        francais: 'Français',
+                        anglais: 'English',
+                        maths: 'Maths',
+                        sciences: 'Sciences',
+                        histoire: 'Histoire',
+                        badges: 'Badges'
+                    };
+                    return names[id] || id;
+                },
+
+                formatRelativeTime(timestamp) {
+                    if (!timestamp) return '';
+                    const now = new Date();
+                    const past = new Date(timestamp);
+                    const diffMs = now - past;
+                    const diffMins = Math.floor(diffMs / 60000);
+                    const diffHours = Math.floor(diffMs / 3600000);
+                    const diffDays = Math.floor(diffMs / 86400000);
+
+                    if (diffMins < 1) return "À l'instant";
+                    if (diffMins < 60) return `Il y a ${diffMins} min`;
+                    if (diffHours < 24) return `Il y a ${diffHours}h`;
+                    if (diffDays < 7) return `Il y a ${diffDays}j`;
+                    return past.toLocaleDateString('fr-FR');
+                },
+
+                setupAutoRefresh() {
+                    // Rafraîchir toutes les 3 secondes
+                    setInterval(() => {
+                        this.loadAllData();
+                    }, 3000);
+
+                    // Écouter les events XP
+                    window.addEventListener('xp:updated', () => {
+                        this.loadAllData();
+                    });
+
+                    window.addEventListener('storage', () => {
+                        this.loadAllData();
+                    });
+                },
+
+                goToSection(link) {
+                    window.location.href = link;
+                },
+
+                goBack() {
+                    window.location.href = 'index.html';
+                },
+
+                resetAllData() {
+                    if (!confirm('⚠️ ATTENTION !\n\nCette action va SUPPRIMER TOUTES tes données :\n\n• Tous les XP\n• Tous les badges\n• Toutes les statistiques\n• Tout l\'historique\n• Tous les streaks\n\nCette action est IRRÉVERSIBLE !\n\nEs-tu vraiment sûr(e) ?')) {
+                        return;
+                    }
+
+                    // Double confirmation
+                    if (!confirm('🔴 DERNIÈRE CONFIRMATION\n\nTu es sur le point de perdre TOUTES tes données.\n\nContinuer ?')) {
+                        return;
+                    }
+
+                    try {
+                        // Supprimer toutes les clés localStorage
+                        localStorage.removeItem('lemondedescurieux_xp');
+                        localStorage.removeItem('lemondedescurieux_streaks');
+                        localStorage.removeItem('lemondedescurieux_badges');
+                        localStorage.removeItem('lemondedescurieux_quiz_stats');
+                        localStorage.removeItem('userBadges');
+                        
+                        // Anciennes clés (compatibilité)
+                        localStorage.removeItem('curio_xp');
+                        localStorage.removeItem('xp_data');
+                        
+                        alert('✅ Toutes les données ont été supprimées !\n\nLe dashboard va se recharger.');
+                        
+                        // Recharger la page
+                        window.location.reload();
+                    } catch (e) {
+                        alert('❌ Erreur lors de la réinitialisation : ' + e.message);
+                        console.error('Erreur reset:', e);
+                    }
+                }
+            }));
+        });
+    </script>
+</body>
+</html>
+        });
+    </script>
+</body>
+</html>

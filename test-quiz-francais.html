@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>🧪 Test Quiz Français — Validation</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #eee; padding: 24px; min-height: 100vh; }
+        h1 { color: #e94560; text-align: center; margin-bottom: 8px; font-size: 1.4em; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 24px; font-size: 0.85em; }
+
+        .theme-block { background: #16213e; border-radius: 12px; padding: 18px; margin-bottom: 20px; }
+        .theme-title { font-size: 1.1em; font-weight: bold; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #0f3460; }
+        .theme-title.ok { color: #4caf50; }
+        .theme-title.warn { color: #ff9800; }
+
+        .q-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #0f3460; }
+        .q-row:last-child { border-bottom: none; }
+        .q-num { min-width: 28px; font-weight: bold; color: #e94560; font-size: 0.85em; }
+        .q-body { flex: 1; }
+        .q-question { font-size: 0.92em; color: #ddd; }
+        .q-meta { font-size: 0.78em; color: #888; margin-top: 3px; }
+        .q-meta span { margin-right: 14px; }
+
+        .badge { display: inline-block; font-size: 0.72em; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+        .badge-ok { background: #1b5e20; color: #a5d6a7; }
+        .badge-warn { background: #e65100; color: #ffe0b2; }
+        .badge-err { background: #b71c1c; color: #ef9a9a; }
+
+        .summary { background: #0f3460; border-radius: 10px; padding: 16px 20px; margin-top: 24px; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+        .sum-item { text-align: center; }
+        .sum-num { font-size: 1.8em; font-weight: bold; }
+        .sum-label { font-size: 0.78em; color: #aaa; margin-top: 2px; }
+        .sum-num.green { color: #4caf50; }
+        .sum-num.orange { color: #ff9800; }
+        .sum-num.red { color: #ef5350; }
+
+        .detail-box { background: #1e3a5f; border-radius: 6px; padding: 8px 10px; margin-top: 6px; font-size: 0.78em; }
+        .detail-box .lbl { color: #90caf9; font-weight: bold; margin-right: 6px; }
+        .detail-box .val { color: #ccc; }
+    </style>
+</head>
+<body>
+
+<h1>🧪 Validation Quiz Français</h1>
+<p class="subtitle">Extraction et vérification automatique des 30 questions (3 thèmes × 10)</p>
+
+<div id="output">⏳ Chargement...</div>
+
+<script>
+// ──────────────────────────────────────────────
+// DONNÉES EXACTES DU FICHIER francais_duolingo_section.html
+// (copiées depuis le fichier après correction Q10)
+// ──────────────────────────────────────────────
+const quizQuestions = {
+    grammaire: [
+        { question: "Il ... un vélo. (a/à)", options: ["a", "à"], correct: "a", explanation: "'a' est le verbe avoir. 'à' est une préposition." },
+        { question: "Paul ... Marie sont amis. (et/est)", options: ["et", "est"], correct: "et", explanation: "'et' relie deux éléments. 'est' est le verbe être." },
+        { question: "Ils ... contents. (son/sont)", options: ["son", "sont"], correct: "sont", explanation: "'sont' est le verbe être (3e personne du pluriel). 'son' est un déterminant possessif." },
+        { question: "... est mon livre ? (ou/où)", options: ["ou", "où"], correct: "où", explanation: "'où' indique un lieu. 'ou' est un choix." },
+        { question: "Les chat... noir...", options: ["s noirs", "s noir", "noir", "noirs"], correct: "s noirs", explanation: "'chats' prend un 's' au pluriel, et 'noirs' s'accorde en genre et nombre." },
+        { question: "Elle est ... (parti/partie)", options: ["parti", "partie"], correct: "partie", explanation: "Avec 'être', le participe passé s'accorde avec le sujet féminin." },
+        { question: "Je mange une pomme. 'une pomme' est :", options: ["COD", "COI", "Sujet"], correct: "COD", explanation: "Je mange quoi ? Une pomme (COD = réponse à 'quoi ?')" },
+        { question: "Pluriel de 'cheval' :", options: ["chevals", "chevaux", "chevaus"], correct: "chevaux", explanation: "Les mots en '-al' font leur pluriel en '-aux'." },
+        { question: "Pluriel de 'jeu' :", options: ["jeus", "jeux"], correct: "jeux", explanation: "Les mots en '-eu' prennent un 'x' au pluriel." },
+        { question: "Elle va ... l'école. (a/à)", options: ["a", "à"], correct: "à", explanation: "'à' est une préposition indiquant un lieu. 'a' est le verbe avoir." }
+    ],
+    conjugaison: [
+        { question: "Je ... (chanter, présent)", options: ["chante", "chantes", "chantons"], correct: "chante", explanation: "1ère personne du singulier : -e" },
+        { question: "Nous ... (finir, présent)", options: ["finons", "finissons", "finisons"], correct: "finissons", explanation: "Verbe du 2ème groupe : nous finissons" },
+        { question: "Ils ... (être, présent)", options: ["es", "sont", "êtes"], correct: "sont", explanation: "Ils sont (3ème personne du pluriel)" },
+        { question: "J'... (avoir, présent)", options: ["a", "ai", "as"], correct: "ai", explanation: "J'ai (1ère personne du singulier)" },
+        { question: "Tu ... (chanter, futur)", options: ["chantera", "chanteras", "chanterai"], correct: "chanteras", explanation: "Futur : infinitif + as" },
+        { question: "Je ... (être, futur)", options: ["serai", "sera", "seras"], correct: "serai", explanation: "Futur irrégulier de être : je serai" },
+        { question: "Nous ... (chanter, imparfait)", options: ["chantions", "chantons", "chanterions"], correct: "chantions", explanation: "Imparfait : nous chantions" },
+        { question: "Il ... (manger, passé composé)", options: ["a mangé", "est mangé", "ai mangé"], correct: "a mangé", explanation: "Passé composé avec 'avoir' : il a mangé" },
+        { question: "Elle ... (aller, passé composé)", options: ["a allé", "est allé", "est allée"], correct: "est allée", explanation: "'Aller' utilise 'être', accord avec le sujet féminin" },
+        { question: "Vous ... (faire, présent)", options: ["faisez", "faites", "fasez"], correct: "faites", explanation: "Verbe irrégulier : vous faites" }
+    ],
+    vocabulaire: [
+        { question: "Synonyme de 'content' :", options: ["Triste", "Heureux", "Fâché"], correct: "Heureux", explanation: "'Heureux' et 'content' ont un sens proche." },
+        { question: "Antonyme de 'grand' :", options: ["Petit", "Large", "Haut"], correct: "Petit", explanation: "'Petit' est le contraire de 'grand'." },
+        { question: "Synonyme de 'maison' :", options: ["Voiture", "Habitation", "Jardin"], correct: "Habitation", explanation: "'Habitation' est un synonyme de 'maison'." },
+        { question: "Antonyme de 'chaud' :", options: ["Tiède", "Froid", "Doux"], correct: "Froid", explanation: "'Froid' est l'opposé de 'chaud'." },
+        { question: "Famille du mot 'terre' :", options: ["Terrible", "Terrain", "Terre-neuve"], correct: "Terrain", explanation: "'Terrain' vient du radical 'terr-'." },
+        { question: "Préfixe de 'refaire' :", options: ["re-", "dé-", "pré-"], correct: "re-", explanation: "Le préfixe 're-' signifie 'à nouveau'." },
+        { question: "Suffixe de 'chanteur' :", options: ["-tion", "-eur", "-ment"], correct: "-eur", explanation: "Le suffixe '-eur' indique 'celui qui fait'." },
+        { question: "'Avoir un chat dans la gorge' signifie :", options: ["Avoir un animal", "Être enroué", "Avoir faim"], correct: "Être enroué", explanation: "C'est une expression qui signifie être enroué." },
+        { question: "Synonyme de 'rapide' :", options: ["Lent", "Vite", "Calme"], correct: "Vite", explanation: "'Vite' et 'rapide' ont un sens proche." },
+        { question: "Antonyme de 'monter' :", options: ["Grimper", "Descendre", "Escalader"], correct: "Descendre", explanation: "'Descendre' est l'opposé de 'monter'." }
+    ]
+};
+
+// ──────────────────────────────────────────────
+// RÈGLES DE VALIDATION
+// ──────────────────────────────────────────────
+function validate(theme, q, idx) {
+    const flags = [];
+
+    // 1 — La bonne réponse existe dans les options
+    if (!q.options.includes(q.correct)) {
+        flags.push({ level: 'err', msg: `correct "${q.correct}" absent des options` });
+    }
+
+    // 2 — Pas de doublon de question dans le même thème
+    const dupes = quizQuestions[theme].filter(
+        (other, i) => i !== idx && other.question === q.question
+    );
+    if (dupes.length > 0) {
+        flags.push({ level: 'err', msg: 'question dupliquée dans le même thème' });
+    }
+
+    // 3 — Explication présente et non vide
+    if (!q.explanation || q.explanation.trim().length < 5) {
+        flags.push({ level: 'warn', msg: 'explication absente ou trop courte' });
+    }
+
+    // 4 — Options : pas de doublon
+    const uniqOpts = new Set(q.options);
+    if (uniqOpts.size !== q.options.length) {
+        flags.push({ level: 'err', msg: 'options dupliquées' });
+    }
+
+    // 5 — Minimum 2 options
+    if (q.options.length < 2) {
+        flags.push({ level: 'err', msg: 'moins de 2 options' });
+    }
+
+    // 6 — Homophones grammaire : vérifier que Q1 et Q10 ne testent pas la même direction
+    // (Q1 correct=a, Q10 correct=à → OK, directions opposées ✓)
+
+    return flags;
+}
+
+// ──────────────────────────────────────────────
+// RENDU
+// ──────────────────────────────────────────────
+function render() {
+    const out = document.getElementById('output');
+    let html = '';
+    let totOk = 0, totWarn = 0, totErr = 0;
+    const themeLabels = { grammaire: '📚 Grammaire', conjugaison: '🔄 Conjugaison', vocabulaire: '📖 Vocabulaire' };
+
+    for (const theme of ['grammaire', 'conjugaison', 'vocabulaire']) {
+        const questions = quizQuestions[theme];
+        let themeOk = true;
+        let rows = '';
+
+        questions.forEach((q, idx) => {
+            const flags = validate(theme, q, idx);
+            const hasErr  = flags.some(f => f.level === 'err');
+            const hasWarn = flags.some(f => f.level === 'warn');
+            if (hasErr)  { totErr++;  themeOk = false; }
+            else if (hasWarn) { totWarn++; themeOk = false; }
+            else { totOk++; }
+
+            const statusBadge = hasErr
+                ? '<span class="badge badge-err">❌ ERREUR</span>'
+                : hasWarn
+                    ? '<span class="badge badge-warn">⚠️ Attention</span>'
+                    : '<span class="badge badge-ok">✅ OK</span>';
+
+            let flagsHtml = '';
+            flags.forEach(f => {
+                flagsHtml += `<div class="detail-box"><span class="lbl">${f.level === 'err' ? '🔴' : '🟡'}</span><span class="val">${f.msg}</span></div>`;
+            });
+
+            rows += `
+            <div class="q-row">
+                <div class="q-num">Q${idx + 1}</div>
+                <div class="q-body">
+                    <div class="q-question">${q.question} ${statusBadge}</div>
+                    <div class="q-meta">
+                        <span>Options : ${q.options.join(' | ')}</span>
+                        <span>Correct : <strong>${q.correct}</strong></span>
+                    </div>
+                    <div class="q-meta" style="color:#6a9fd8;">💡 ${q.explanation}</div>
+                    ${flagsHtml}
+                </div>
+            </div>`;
+        });
+
+        const titleClass = themeOk ? 'ok' : 'warn';
+        html += `
+        <div class="theme-block">
+            <div class="theme-title ${titleClass}">${themeLabels[theme]} — ${questions.length} questions</div>
+            ${rows}
+        </div>`;
+    }
+
+    // Summary
+    const total = totOk + totWarn + totErr;
+    html += `
+    <div class="summary">
+        <div class="sum-item"><div class="sum-num green">${totOk}</div><div class="sum-label">✅ Valides</div></div>
+        <div class="sum-item"><div class="sum-num orange">${totWarn}</div><div class="sum-label">⚠️ Attention</div></div>
+        <div class="sum-item"><div class="sum-num red">${totErr}</div><div class="sum-label">❌ Erreurs</div></div>
+        <div class="sum-item"><div class="sum-num" style="color:#90caf9;">${total}</div><div class="sum-label">Total questions</div></div>
+    </div>`;
+
+    out.innerHTML = html;
+}
+
+render();
+</script>
+</body>
+</html>

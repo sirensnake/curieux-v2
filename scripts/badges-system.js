@@ -112,11 +112,10 @@ class BadgeSystem {
 
     /**
      * Récupérer données utilisateur depuis XP system
+     * Lit les clés officielles (lemondedescurieux_*) EN PREMIER,
+     * puis les anciennes clés comme fallback.
      */
     getUserData() {
-        const xpData = localStorage.getItem('section-xp-data');
-        const progressData = localStorage.getItem('progressData');
-        
         let userData = {
             totalXP: 0,
             currentStreak: 0,
@@ -131,44 +130,84 @@ class BadgeSystem {
             }
         };
 
-        // XP total
-        if (xpData) {
-            const xp = JSON.parse(xpData);
-            userData.totalXP = Object.values(xp).reduce((sum, val) => sum + val, 0);
+        // --- XP TOTAL ---
+        // Source principale : lemondedescurieux_xp (écrit par section-xp-system.js)
+        const officialXP = localStorage.getItem('lemondedescurieux_xp');
+        if (officialXP) {
+            try {
+                const xp = JSON.parse(officialXP);
+                userData.totalXP = xp.total || 0;
+            } catch(e) {}
+        }
+        // Fallback : section-xp-data (ancien système)
+        if (userData.totalXP === 0) {
+            const oldXP = localStorage.getItem('section-xp-data');
+            if (oldXP) {
+                try {
+                    const xp = JSON.parse(oldXP);
+                    userData.totalXP = Object.values(xp).reduce((sum, val) => typeof val === 'number' ? sum + val : sum, 0);
+                } catch(e) {}
+            }
         }
 
-        // Streak actuel
-        const streakData = localStorage.getItem('dailyStreak');
-        if (streakData) {
-            const streak = JSON.parse(streakData);
-            userData.currentStreak = streak.currentStreak || 0;
+        // --- STREAK ---
+        // Source principale : lemondedescurieux_streaks (écrit par section-xp-system.js)
+        const officialStreak = localStorage.getItem('lemondedescurieux_streaks');
+        if (officialStreak) {
+            try {
+                const streak = JSON.parse(officialStreak);
+                userData.currentStreak = streak.currentStreak || 0;
+            } catch(e) {}
+        }
+        // Fallback : dailyStreak (ancien système)
+        if (userData.currentStreak === 0) {
+            const oldStreak = localStorage.getItem('dailyStreak');
+            if (oldStreak) {
+                try {
+                    const streak = JSON.parse(oldStreak);
+                    userData.currentStreak = streak.currentStreak || 0;
+                } catch(e) {}
+            }
         }
 
-        // Quiz complétés et performances
-        if (progressData) {
-            const progress = JSON.parse(progressData);
-            
-            // Parcourir toutes les sections
-            Object.keys(progress).forEach(section => {
-                const sectionData = progress[section];
-                
-                if (sectionData.quizResults) {
-                    Object.values(sectionData.quizResults).forEach(result => {
-                        userData.totalQuizCompleted++;
-                        
-                        // Quiz parfait ?
-                        if (result.score === 100 || result.correctAnswers === result.totalQuestions) {
-                            userData.perfectQuizCount++;
-                        }
-                        
-                        // Compter par matière
-                        const subjectKey = section.toLowerCase();
-                        if (userData.quizBySubject.hasOwnProperty(subjectKey)) {
-                            userData.quizBySubject[subjectKey]++;
-                        }
+        // --- QUIZ STATS ---
+        // Source principale : lemondedescurieux_quiz_stats (écrit par les sections)
+        const quizStats = localStorage.getItem('lemondedescurieux_quiz_stats');
+        if (quizStats) {
+            try {
+                const stats = JSON.parse(quizStats);
+                userData.totalQuizCompleted = stats.totalCompleted || 0;
+                userData.perfectQuizCount = stats.perfectCount || 0;
+                if (stats.bySubject) {
+                    Object.keys(userData.quizBySubject).forEach(s => {
+                        userData.quizBySubject[s] = stats.bySubject[s] || 0;
                     });
                 }
-            });
+            } catch(e) {}
+        }
+        // Fallback : progressData (ancien système)
+        if (userData.totalQuizCompleted === 0) {
+            const progressData = localStorage.getItem('progressData');
+            if (progressData) {
+                try {
+                    const progress = JSON.parse(progressData);
+                    Object.keys(progress).forEach(section => {
+                        const sectionData = progress[section];
+                        if (sectionData.quizResults) {
+                            Object.values(sectionData.quizResults).forEach(result => {
+                                userData.totalQuizCompleted++;
+                                if (result.score === 100 || result.correctAnswers === result.totalQuestions) {
+                                    userData.perfectQuizCount++;
+                                }
+                                const subjectKey = section.toLowerCase();
+                                if (userData.quizBySubject.hasOwnProperty(subjectKey)) {
+                                    userData.quizBySubject[subjectKey]++;
+                                }
+                            });
+                        }
+                    });
+                } catch(e) {}
+            }
         }
 
         return userData;
@@ -229,23 +268,23 @@ class BadgeSystem {
 
     /**
      * Ajouter XP bonus d'un badge
+     * Écrit dans lemondedescurieux_xp (clé officielle du dashboard)
      */
     addBadgeXP(badgeId, xpAmount) {
-        // Récupérer XP actuel
-        const xpData = localStorage.getItem('section-xp-data');
-        let xp = xpData ? JSON.parse(xpData) : {};
+        try {
+            const raw = localStorage.getItem('lemondedescurieux_xp');
+            let xp = raw ? JSON.parse(raw) : { total: 0, bySection: {} };
 
-        // Ajouter catégorie "badges" si inexistante
-        if (!xp.badges) {
-            xp.badges = 0;
+            // Les XP badge vont dans une section dédiée "badges"
+            if (!xp.bySection) xp.bySection = {};
+            xp.bySection.badges = (xp.bySection.badges || 0) + xpAmount;
+            xp.total = (xp.total || 0) + xpAmount;
+
+            localStorage.setItem('lemondedescurieux_xp', JSON.stringify(xp));
+            console.log(`✨ +${xpAmount} XP bonus badge ${badgeId} → total: ${xp.total}`);
+        } catch(e) {
+            console.warn('[BadgeSystem] Erreur addBadgeXP:', e);
         }
-
-        xp.badges += xpAmount;
-
-        // Sauvegarder
-        localStorage.setItem('section-xp-data', JSON.stringify(xp));
-
-        console.log(`✨ +${xpAmount} XP bonus badge ${badgeId}`);
     }
 
     /**

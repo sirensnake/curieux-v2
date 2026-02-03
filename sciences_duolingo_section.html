@@ -160,6 +160,8 @@
 
         <!-- Données leçons -->
         <script src="scripts/data/sciences-lessons.js"></script>
+        <script src="scripts/badges-system.js"></script>
+        <script src="scripts/storage-bridge.js"></script>
 
         <!-- Alpine.js CDN -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -354,19 +356,42 @@
                     finishQuiz() {
                         this.showResults = true;
                         this.quizFinished = true;
+                        const quizLength = this.getCurrentQuiz().length;
+                        const isPerfect = (this.score === quizLength);
 
                         // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('sciences', window.SectionXP.rewards.QUIZ_COMPLETED);
-
-                            // Bonus supplémentaire si quiz parfait
-                            const quizLength = this.getCurrentQuiz().length;
-                            if (this.score === quizLength) {
+                            if (isPerfect) {
                                 window.SectionXP.addXP('sciences', window.SectionXP.rewards.PERFECT_QUIZ);
                                 if (window.curioBubbleInstance) {
                                     window.curioBubbleInstance.show('🏆 Quiz PARFAIT ! Tu es un champion !', 'success');
                                 }
                             }
+                        }
+
+                        // --- BADGE SYSTEM : écriture quiz_stats ---
+                        try {
+                            const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
+                            const stats = raw ? JSON.parse(raw) : { totalCompleted: 0, perfectCount: 0, bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 } };
+                            stats.totalCompleted = (stats.totalCompleted || 0) + 1;
+                            if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
+                            if (!stats.bySubject) stats.bySubject = {};
+                            stats.bySubject.sciences = (stats.bySubject.sciences || 0) + 1;
+                            localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
+                            console.log('📊 [sciences] Quiz stats mis à jour:', stats);
+                        } catch(e) { console.warn('[sciences] Erreur stats quiz:', e); }
+
+                        // --- BADGE SYSTEM : check + sync ---
+                        if (window.badgeSystem) {
+                            const newBadges = window.badgeSystem.checkBadges();
+                            if (newBadges && newBadges.length > 0) {
+                                console.log('🏆 [sciences] Nouveaux badges:', newBadges.map(b => b.name));
+                                if (window.curioBubbleInstance && newBadges[0]) {
+                                    window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
+                                }
+                            }
+                            if (window.BRIDGE) window.BRIDGE.syncBadges();
                         }
                     },
 

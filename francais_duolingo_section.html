@@ -10,8 +10,10 @@
 
     <body x-data="francaisApp" x-cloak>
 
-        <!-- Système XP -->
+        <!-- Système XP + Badges -->
         <script src="scripts/section-xp-system.js"></script>
+        <script src="scripts/badges-system.js"></script>
+        <script src="scripts/storage-bridge.js"></script>
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
@@ -483,7 +485,7 @@
                             { question: "Je mange une pomme. 'une pomme' est :", options: ["COD", "COI", "Sujet"], correct: "COD", explanation: "Je mange quoi ? Une pomme (COD = réponse à 'quoi ?')" },
                             { question: "Pluriel de 'cheval' :", options: ["chevals", "chevaux", "chevaus"], correct: "chevaux", explanation: "Les mots en '-al' font leur pluriel en '-aux'." },
                             { question: "Pluriel de 'jeu' :", options: ["jeus", "jeux"], correct: "jeux", explanation: "Les mots en '-eu' prennent un 'x' au pluriel." },
-                            { question: "Il ... à l'école. (a/à)", options: ["a", "à"], correct: "à", explanation: "'à' est une préposition de lieu. 'a' serait le verbe avoir." }
+                            { question: "Elle va ... l'école. (a/à)", options: ["a", "à"], correct: "à", explanation: "'à' est une préposition indiquant un lieu. 'a' est le verbe avoir." }
                         ],
                         conjugaison: [
                             { question: "Je ... (chanter, présent)", options: ["chante", "chantes", "chantons"], correct: "chante", explanation: "1ère personne du singulier : -e" },
@@ -589,16 +591,47 @@
 
                     finishQuiz() {
                         this.quizFinished = true;
+                        const quizLength = this.getCurrentQuiz().length;
+                        const isPerfect = (this.score === quizLength);
 
                         // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
-
-                            // Bonus supplémentaire si quiz parfait
-                            const quizLength = this.getCurrentQuiz().length;
-                            if (this.score === quizLength) {
+                            if (isPerfect) {
                                 window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
                             }
+                        }
+
+                        // --- Mise à jour stats quiz pour badges ---
+                        try {
+                            const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
+                            const stats = raw ? JSON.parse(raw) : {
+                                totalCompleted: 0,
+                                perfectCount: 0,
+                                bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 }
+                            };
+                            stats.totalCompleted = (stats.totalCompleted || 0) + 1;
+                            if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
+                            if (!stats.bySubject) stats.bySubject = {};
+                            stats.bySubject.francais = (stats.bySubject.francais || 0) + 1;
+                            localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
+                            console.log('📊 Quiz stats mis à jour:', stats);
+                        } catch(e) {
+                            console.warn('[francais] Erreur stats quiz:', e);
+                        }
+
+                        // --- Vérification badges ---
+                        if (window.badgeSystem) {
+                            const newBadges = window.badgeSystem.checkBadges();
+                            if (newBadges.length > 0) {
+                                console.log('🏆 Nouveaux badges:', newBadges.map(b => b.name));
+                                // Notification via Curio si disponible
+                                if (window.curioBubbleInstance && newBadges[0]) {
+                                    window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
+                                }
+                            }
+                            // Syncer vers dashboard
+                            if (window.BRIDGE) window.BRIDGE.syncBadges();
                         }
                     },
 
