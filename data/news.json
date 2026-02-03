@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "🌍 L'Exploration de Mars Continue",
-      "summary": "Cette semaine, la NASA a reçu de nouvelles photos incroyables de la planète Mars envoyées par son robot explorateur. Ce robot, appelé Perseverance, roule sur Mars depuis 2021 pour étudier sa surface et chercher des signes de vie ancienne. Récemment, il a découvert des formations rocheuses intéressantes qui pourraient aider les scientifiques à comprendre l'histoire de notre voisin rouge. Les enfants peuvent suivre ses aventures en ligne!",
-      "date": "21/10/2023",
-      "link": "https://mars.nasa.gov/mars2020/"
-    },
-    {
-      "title": "🎨 Un Nouveau Record de Peinture",
-      "summary": "Un jeune artiste talentueux a battu un record en peignant une fresque géante! Adama, âgée de seulement 10 ans, a réalisé une œuvre d'art de 100 mètres de long pour sensibiliser les gens à la protection des océans. Cette immense peinture colorée montre des poissons, des coraux et des tortues heureuses. Des milliers de personnes sont venues admirer son travail et ont promis de mieux protéger la mer. Adama prouve que l'art peut être un puissant moyen de changer le monde!",
-      "date": "21/10/2023",
+      "title": "Nouveau chaton à la Maison Blanche! 🐱",
+      "summary": "Le président des États-Unis a récemment adopté un petit chaton adorable, apportant un peu de joie supplémentaire à la Maison Blanche. Ce chaton, nommé Willow, adore jouer et explorer ses nouveaux environs. Les animaux de compagnie comme Willow peuvent ajouter beaucoup de bonheur et de confort aux endroits où ils vivent. De nombreuses personnes suivaient déjà ses aventures à travers des photos et des vidéos partagées sur Internet. C'est une belle manière de montrer comment les animaux domestiques peuvent devenir des amis précieux au quotidien.",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "🐘 Une Belle Histoire d'Éléphant",
-      "summary": "Dans un parc en Afrique, un jeune éléphanteau qui avait perdu sa famille a été réuni avec un nouveau troupeau. Les rangers du parc ont travaillé dur pour s'assurer qu'il soit accepté et en sécurité. Les éléphants sont des animaux très sociaux, et ils prennent soin les uns des autres. Grâce à cette belle histoire, nous pouvons voir comment les humains peuvent aider la nature et les animaux à prospérer ensemble. Les éléphants sont chanceux d'avoir de tels amis!",
-      "date": "21/10/2023",
+      "title": "Une nouvelle planète découverte! 🔭",
+      "summary": "Des astronomes ont découvert une nouvelle planète très éloignée de la Terre! Cette planète se trouve dans un autre système solaire, tournant autour d'une étoile. Elle est beaucoup plus grande que notre planète et pourrait être gazeuse, comme Jupiter. Les scientifiques utilisent de puissants télescopes pour voir ces lointaines planètes et en apprendre plus sur elles. Même si elle est trop loin pour qu'on puisse la visiter, cette découverte en apprend davantage aux scientifiques sur notre univers et comment les planètes se forment.",
+      "date": "28/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Un record du monde de dominos tombés! 🀄",
+      "summary": "Un nouvel impressionnant record du monde a été établi : des amateurs de dominos ont réussi à faire tomber plus de 4 millions de pièces de dominos en une seule réaction en chaîne! Ce projet géant a pris des mois à planifier et à mettre en place, et il a eu lieu lors d'un événement spécial dédié uniquement aux dominos. Les motifs réalisés étaient spectaculaires, et tout le monde a été très impressionné par la précision et le dévouement nécessaires pour réussir cet exploit. C'est un exemple parfait de ce que l'on peut accomplir avec patience et travail d'équipe!",
+      "date": "28/10/2023",
       "link": ""
     }
   ]
