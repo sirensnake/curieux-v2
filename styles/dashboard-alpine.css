@@ -113,6 +113,53 @@ body {
 }
 
 /* ========================================
+   BARRE DE PROGRESSION XP
+   ======================================== */
+
+.xp-bar-section {
+    margin-bottom: 2rem;
+}
+
+.xp-bar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.xp-bar-label {
+    font-size: 0.7rem;
+    color: #444;
+}
+
+.xp-bar-track {
+    position: relative;
+    background: #e2e8f0;
+    border: 3px solid #333;
+    border-radius: 12px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+.xp-bar-pct {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.65rem;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(255,255,255,0.8);
+    z-index: 1;
+}
+
+/* ========================================
    SECTION GRAPHIQUE
    ======================================== */
 

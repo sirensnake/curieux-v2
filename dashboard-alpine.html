@@ -61,6 +61,18 @@
                 <div class="stat-sublabel">complétées</div>
             </div>
         </div>
+
+        <!-- Barre de Progression XP -->
+        <div class="xp-bar-section">
+            <div class="xp-bar-header">
+                <span class="xp-bar-label">Niveau <span x-text="stats.level"></span></span>
+                <span class="xp-bar-label"><span x-text="stats.xpToNext"></span> XP vers niveau suivant</span>
+            </div>
+            <div class="xp-bar-track">
+                <div class="xp-bar-fill" :style="'width: ' + Math.max(stats.levelProgress, 4) + '%'"></div>
+                <span class="xp-bar-pct" x-text="stats.levelProgress + '%'"></span>
+            </div>
+        </div>
         
         <!-- Graphique Progression par Matière -->
         <div class="chart-section">
@@ -101,6 +113,9 @@
         </div>
     </div>
     
+    <!-- Storage Bridge (charge AVANT le composant Alpine) -->
+    <script src="scripts/storage-bridge.js"></script>
+
     <!-- Script Alpine.js Component -->
     <script src="scripts/dashboard-alpine-component.js"></script>
 </body>
