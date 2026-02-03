@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Gamification - Le Monde des Curieux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #eee;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        /* HEADER */
+        .header {
+            background: #0f3460;
+            border: 4px solid #e94560;
+            border-radius: 16px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.4);
+        }
+        .header h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: #e94560;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+        .header p { color: #aaa; font-size: 0.9em; }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* PANELS */
+        .panel {
+            background: #0f3460;
+            border: 3px solid #e94560;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+        }
+        .panel h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #e94560;
+            font-size: 0.95em;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        /* STAT ROWS */
+        .stat { display: flex; justify-content: space-between; padding: 10px 12px; background: #16213e; border-radius: 8px; margin-bottom: 8px; border: 2px solid #1a1a2e; }
+        .stat-label { color: #aaa; }
+        .stat-value { color: #e94560; font-weight: bold; font-size: 1.1em; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 3px solid rgba(0,0,0,0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin: 4px;
+            color: white;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 5px 5px 0 rgba(0,0,0,0.4); }
+        .btn:active { transform: translateY(1px); box-shadow: 1px 1px 0 rgba(0,0,0,0.3); }
+
+        .btn-xp { background: linear-gradient(135deg, #e94560, #c62a47); }
+        .btn-streak { background: linear-gradient(135deg, #ff9800, #e68900); }
+        .btn-quiz { background: linear-gradient(135deg, #4caf50, #388e3c); }
+        .btn-heart { background: linear-gradient(135deg, #9c27b0, #7b1fa2); }
+        .btn-reset { background: linear-gradient(135deg, #607d8b, #455a64); }
+
+        /* PROGRESS BAR */
+        .progress-track {
+            width: 100%;
+            height: 28px;
+            background: #16213e;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 3px solid #e94560;
+            margin: 12px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b81);
+            border-radius: 14px;
+            transition: width 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        /* BADGES GRID */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .badge-card {
+            background: #16213e;
+            border: 3px solid #333;
+            border-radius: 10px;
+            padding: 12px 6px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .badge-card.earned {
+            border-color: #4caf50;
+            background: #1b3a1b;
+            box-shadow: 0 0 8px rgba(76,175,80,0.4);
+        }
+        .badge-card.locked { opacity: 0.4; }
+        .badge-icon { font-size: 1.8em; }
+        .badge-name { font-size: 0.7em; color: #aaa; margin-top: 4px; }
+        .badge-card.earned .badge-name { color: #4caf50; }
+
+        /* LOG */
+        .log-panel { grid-column: 1 / -1; }
+        .log-box {
+            background: #0a0a0a;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 12px;
+            height: 140px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+        }
+        .log-info { color: #5599ff; }
+        .log-success { color: #4caf50; }
+        .log-warn { color: #ff9800; }
+        .log-error { color: #f44336; }
+
+        /* ALERT */
+        .alert-advanced {
+            display: none;
+            background: #1a3a1a;
+            border: 3px solid #4caf50;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 12px;
+            text-align: center;
+        }
+        .alert-advanced.visible { display: block; }
+        .alert-advanced strong { color: #4caf50; }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🎮 Démo Gamification — Le Monde des Curieux</h1>
+        <p>Teste badges, progression et power-ups. Données en localStorage.</p>
+    </div>
+
+    <div class="grid">
+
+        <!-- PANEL : STATS + ACTIONS -->
+        <div class="panel">
+            <h2>📊 Stats & Actions</h2>
+            <div class="stat"><span class="stat-label">XP Total</span><span class="stat-value" id="valXP">0</span></div>
+            <div class="stat"><span class="stat-label">Niveau</span><span class="stat-value" id="valNiveau">1</span></div>
+            <div class="stat"><span class="stat-label">Streak</span><span class="stat-value" id="valStreak">0 jours</span></div>
+            <div class="stat"><span class="stat-label">Quiz</span><span class="stat-value" id="valQuiz">0</span></div>
+            <div class="stat"><span class="stat-label">Cœurs</span><span class="stat-value" id="valCoeurs">5 / 5</span></div>
+
+            <div style="margin-top:16px;">
+                <button class="btn btn-xp" onclick="actions.addXP(100)">⚡ +100 XP</button>
+                <button class="btn btn-streak" onclick="actions.addStreak()">🔥 +1 Streak</button>
+                <button class="btn btn-quiz" onclick="actions.doQuiz(true)">✅ Quiz Parfait</button>
+                <button class="btn btn-quiz" onclick="actions.doQuiz(false)">📝 Quiz Normal</button>
+                <button class="btn btn-heart" onclick="actions.loseHeart()">💔 -1 Cœur</button>
+            </div>
+        </div>
+
+        <!-- PANEL : PROGRESSION -->
+        <div class="panel">
+            <h2>🎯 Progression</h2>
+            <div class="stat"><span class="stat-label">Niveau actuel</span><span class="stat-value" id="valNiveauProg">1</span></div>
+            <div class="stat"><span class="stat-label">XP vers niveau suivant</span><span class="stat-value" id="valXPSuivant">100 XP</span></div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressBar" style="width:0%">0%</div>
+            </div>
+
+            <div class="alert-advanced" id="alertAdvanced">
+                <strong>🎉 Niveau 11 atteint !</strong><br>
+                <span style="color:#aaa;">Contenu avancé débloqué</span>
+            </div>
+        </div>
+
+        <!-- PANEL : BADGES -->
+        <div class="panel" style="grid-column: 1 / -1;">
+            <h2>🏆 Badges</h2>
+            <div class="stat" style="margin-bottom:12px;"><span class="stat-label">Badges gagnés</span><span class="stat-value" id="valBadges">0 / 7</span></div>
+            <div class="badges-grid" id="badgesGrid"></div>
+        </div>
+
+        <!-- PANEL : LOG -->
+        <div class="panel log-panel">
+            <h2>📝 Journal</h2>
+            <div class="log-box" id="logBox"><div class="log-info">[INFO] Démo chargée...</div></div>
+            <div style="margin-top:10px;">
+                <button class="btn btn-reset" onclick="actions.resetAll()">🔄 Réinitialiser tout</button>
+                <button class="btn btn-reset" onclick="actions.clearLog()">🧹 Vider log</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SCRIPTS GAMIFICATION (les 3 fichiers) -->
+<script src="scripts/badges-system.js"></script>
+<script src="scripts/powerups-system.js"></script>
+<script src="scripts/progression-system.js"></script>
+
+<!-- SCRIPT DÉMO -->
+<script>
+// ============================================================
+// DONNÉES UTILISATEUR (stockées séparément pour la démo)
+// ============================================================
+const DEMO_KEY = 'demo_userData_v2';
+
+let state = {
+    xp: 0,
+    streak: 0,
+    quizzes: 0,
+    perfectQuizzes: 0,
+    hearts: 5,
+    maxHearts: 5,
+    badges: [],          // IDs de badges gagnés
+    quizBySubject: { francais:0, maths:0, anglais:0, sciences:0, histoire:0 }
+};
+
+// ============================================================
+// BADGE DEFINITIONS (miroir des badges dans badges-system.js)
+// ============================================================
+const BADGE_DEFS = [
+    { id:'streak_7',      icon:'🔥', name:'Semaine',   type:'streak',  target:7,    bonus:100  },
+    { id:'streak_30',     icon:'🏆', name:'Champion',  type:'streak',  target:30,   bonus:500  },
+    { id:'xp_1000',       icon:'📚', name:'Érudit',    type:'xp',      target:1000, bonus:200  },
+    { id:'xp_5000',       icon:'🎓', name:'Savant',    type:'xp',      target:5000, bonus:1000 },
+    { id:'perfect_10',    icon:'⭐', name:'Sans faute',type:'perfect', target:10,   bonus:150  },
+    { id:'quiz_100',      icon:'💯', name:'Centurion', type:'quiz',    target:100,  bonus:300  },
+    { id:'all_subjects',  icon:'🌟', name:'Polyvalent',type:'all',     target:5,    bonus:250  }
+];
+
+// ============================================================
+// NIVEAUX (même courbe que progression-system.js)
+// ============================================================
+const LEVEL_XP = [0,100,250,450,700,1000,1400,1900,2500,3200,4000,5000,6200,7600,9200,11000,13000,15300,18000,21000];
+
+// ============================================================
+// LOAD / SAVE
+// ============================================================
+function loadState() {
+    const saved = localStorage.getItem(DEMO_KEY);
+    if (saved) {
+        try { state = JSON.parse(saved); }
+        catch(e) { log('Erreur lecture données', 'error'); }
+    }
+}
+
+function saveState() {
+    localStorage.setItem(DEMO_KEY, JSON.stringify(state));
+}
+
+// ============================================================
+// LOG
+// ============================================================
+function log(msg, type='info') {
+    const box = document.getElementById('logBox');
+    const div = document.createElement('div');
+    div.className = 'log-' + type;
+    div.textContent = `[${type.toUpperCase()}] ${new Date().toLocaleTimeString()} — ${msg}`;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+}
+
+// ============================================================
+// CALCUL NIVEAU
+// ============================================================
+function getLevel() {
+    for (let i = LEVEL_XP.length - 1; i >= 0; i--) {
+        if (state.xp >= LEVEL_XP[i]) return i + 1;
+    }
+    return 1;
+}
+
+function getLevelProgress() {
+    const lvl = getLevel();
+    if (lvl >= LEVEL_XP.length) return 100;
+    const base = LEVEL_XP[lvl - 1];
+    const next = LEVEL_XP[lvl];
+    return Math.round(((state.xp - base) / (next - base)) * 100);
+}
+
+function getXPToNext() {
+    const lvl = getLevel();
+    if (lvl >= LEVEL_XP.length) return 0;
+    return LEVEL_XP[lvl] - state.xp;
+}
+
+// ============================================================
+// BADGE CHECK
+// ============================================================
+function checkBadges() {
+    BADGE_DEFS.forEach(badge => {
+        if (state.badges.includes(badge.id)) return;
+
+        let unlocked = false;
+        switch(badge.type) {
+            case 'streak':  unlocked = state.streak >= badge.target; break;
+            case 'xp':      unlocked = state.xp >= badge.target; break;
+            case 'perfect': unlocked = state.perfectQuizzes >= badge.target; break;
+            case 'quiz':    unlocked = state.quizzes >= badge.target; break;
+            case 'all': {
+                const count = Object.values(state.quizBySubject).filter(v => v > 0).length;
+                unlocked = count >= badge.target;
+                break;
+            }
+        }
+
+        if (unlocked) {
+            state.badges.push(badge.id);
+            state.xp += badge.bonus;
+            log(`🏆 Badge "${badge.icon} ${badge.name}" débloqué ! +${badge.bonus} XP`, 'success');
+        }
+    });
+}
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+    const lvl = getLevel();
+
+    // Stats
+    document.getElementById('valXP').textContent        = state.xp;
+    document.getElementById('valNiveau').textContent     = lvl;
+    document.getElementById('valStreak').textContent     = state.streak + ' jours';
+    document.getElementById('valQuiz').textContent       = state.quizzes;
+    document.getElementById('valCoeurs').textContent     = state.hearts + ' / ' + state.maxHearts;
+    document.getElementById('valBadges').textContent     = state.badges.length + ' / ' + BADGE_DEFS.length;
+
+    // Progression
+    document.getElementById('valNiveauProg').textContent = lvl;
+    document.getElementById('valXPSuivant').textContent  = getXPToNext() + ' XP';
+    const pct = getLevelProgress();
+    document.getElementById('progressBar').style.width = Math.max(pct, 8) + '%';
+    document.getElementById('progressBar').textContent   = pct + '%';
+
+    // Alert niveau 11
+    if (lvl >= 11) document.getElementById('alertAdvanced').classList.add('visible');
+
+    // Badges grid
+    const grid = document.getElementById('badgesGrid');
+    grid.innerHTML = BADGE_DEFS.map(b => {
+        const earned = state.badges.includes(b.id);
+        return `<div class="badge-card ${earned ? 'earned' : 'locked'}">
+                    <div class="badge-icon">${b.icon}</div>
+                    <div class="badge-name">${b.name}</div>
+                </div>`;
+    }).join('');
+}
+
+// ============================================================
+// ACTIONS (appelées depuis les boutons)
+// ============================================================
+const actions = {
+
+    addXP(amount) {
+        const oldLvl = getLevel();
+        state.xp += amount;
+        checkBadges();
+        saveState();
+        render();
+        const newLvl = getLevel();
+        log(`+${amount} XP ajouté`, 'success');
+        if (newLvl > oldLvl) log(`🎉 LEVEL UP → Niveau ${newLvl} !`, 'success');
+    },
+
+    addStreak() {
+        state.streak++;
+        checkBadges();
+        saveState();
+        render();
+        log(`Streak : ${state.streak} jours`, 'info');
+    },
+
+    doQuiz(perfect) {
+        const xpGain = perfect ? 50 : 30;
+        state.quizzes++;
+        if (perfect) state.perfectQuizzes++;
+
+        // Ajoute à une matière aléatoire
+        const subjects = Object.keys(state.quizBySubject);
+        const s = subjects[Math.floor(Math.random() * subjects.length)];
+        state.quizBySubject[s]++;
+
+        const oldLvl = getLevel();
+        state.xp += xpGain;
+        checkBadges();
+        saveState();
+        render();
+        const newLvl = getLevel();
+        log(`Quiz ${perfect ? 'parfait' : 'normal'} (+${xpGain} XP)`, 'success');
+        if (newLvl > oldLvl) log(`🎉 LEVEL UP → Niveau ${newLvl} !`, 'success');
+    },
+
+    loseHeart() {
+        if (state.hearts <= 0) { log('Plus de cœurs !', 'warn'); return; }
+        state.hearts--;
+        saveState();
+        render();
+        log(`💔 Cœur perdu (${state.hearts} restants)`, 'warn');
+    },
+
+    resetAll() {
+        if (!confirm('Réinitialiser toutes les données ?')) return;
+        state = { xp:0, streak:0, quizzes:0, perfectQuizzes:0, hearts:5, maxHearts:5, badges:[], quizBySubject:{francais:0,maths:0,anglais:0,sciences:0,histoire:0} };
+        saveState();
+        render();
+        document.getElementById('alertAdvanced').classList.remove('visible');
+        actions.clearLog();
+        log('Tout réinitialisé', 'warn');
+    },
+
+    clearLog() {
+        document.getElementById('logBox').innerHTML = '<div class="log-info">[INFO] Log vidé</div>';
+    }
+};
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    loadState();
+    render();
+    log('Démo prête — clique les boutons !', 'success');
+});
+</script>
+</body>
+</html>
