@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST - Badges Français</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a2e; color: #eee; }
+        h2 { color: #00d4ff; }
+        .ok  { color: #2ecc71; }
+        .err { color: #e74c3c; }
+        .warn { color: #f39c12; }
+        #log { background: #16213e; padding: 15px; border-radius: 8px; margin-top: 15px; white-space: pre-wrap; font-size: 13px; max-height: 400px; overflow-y: auto; }
+        button { margin: 5px; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .btn-run  { background: #2ecc71; color: #fff; }
+        .btn-reset { background: #e74c3c; color: #fff; }
+        .btn-check { background: #3498db; color: #fff; }
+    </style>
+</head>
+<body>
+    <h2>🧪 Test : Chaîne Badges ← Quiz Français</h2>
+    <p>Ce test vérifie que <code>finishQuiz()</code> écrit correctement dans localStorage et que <code>badgeSystem.checkBadges()</code> lit ces données.</p>
+
+    <button class="btn-reset" onclick="resetTout()">🗑️ Reset localStorage</button>
+    <button class="btn-run" onclick="simulerQuizParfait()">🎯 Simuler quiz parfait (10/10)</button>
+    <button class="btn-run" onclick="simulerQuizNormal()">📝 Simuler quiz normal (7/10)</button>
+    <button class="btn-check" onclick="checkBadges()">🏆 Vérifier badges</button>
+    <button class="btn-check" onclick="lireTout()">📋 Lire tout localStorage</button>
+    <button style="background:#9b59b6;color:#fff;" onclick="forcerSeuil()">⚡ Forcer 1000 XP + check badges</button>
+
+    <div id="log">En attente...</div>
+
+    <!-- Charge les mêmes scripts que francais_duolingo_section.html -->
+    <script src="scripts/section-xp-system.js"></script>
+    <script src="scripts/badges-system.js"></script>
+    <script src="scripts/storage-bridge.js"></script>
+
+    <script>
+    const log = document.getElementById('log');
+
+    function println(msg, cls = '') {
+        log.innerHTML += `<span class="${cls}">${msg}\n</span>`;
+    }
+
+    function resetTout() {
+        log.innerHTML = '';
+        // Efface exactement les clés utilisées
+        const keys = [
+            'lemondedescurieux_xp',
+            'lemondedescurieux_streaks',
+            'lemondedescurieux_hearts',
+            'lemondedescurieux_badges',
+            'lemondedescurieux_quiz_stats',
+            'userBadges',
+            'section-xp-data',
+            'progressData',
+            'dailyStreak',
+            'curio_xp'
+        ];
+        keys.forEach(k => localStorage.removeItem(k));
+        println('🗑️ Reset fait. Clés supprimées : ' + keys.join(', '));
+
+        // Réinitialise l'instance badgeSystem
+        if (window.badgeSystem) {
+            window.badgeSystem.userBadges = { earned: [], earnedDates: {}, notifications: [] };
+            window.badgeSystem.saveUserBadges();
+            println('🔄 badgeSystem réinitialisé');
+        }
+    }
+
+    // Simule exactement ce que finishQuiz() fait dans francais_duolingo_section.html
+    function simulerQuizParfait() {
+        println('\n--- SIMULATION : Quiz parfait (10/10) ---', 'ok');
+        _simulerQuiz(10, 10);
+    }
+
+    function simulerQuizNormal() {
+        println('\n--- SIMULATION : Quiz normal (7/10) ---', 'warn');
+        _simulerQuiz(7, 10);
+    }
+
+    function _simulerQuiz(score, total) {
+        const isPerfect = (score === total);
+
+        // 1. XP via SectionXP (même appel que dans le HTML)
+        if (window.SectionXP) {
+            window.SectionXP.init('francais');
+            window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
+            println(`  ✨ +${window.SectionXP.rewards.QUIZ_COMPLETED} XP (complétion)`);
+            if (isPerfect) {
+                window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
+                println(`  ✨ +${window.SectionXP.rewards.PERFECT_QUIZ} XP (parfait)`);
+            }
+            println(`  📊 XP total après quiz : ${window.SectionXP.getTotalXP()}`);
+        } else {
+            println('  ❌ SectionXP non chargé !', 'err');
+        }
+
+        // 2. Stats quiz (même bloc try/catch que dans finishQuiz)
+        try {
+            const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
+            const stats = raw ? JSON.parse(raw) : {
+                totalCompleted: 0,
+                perfectCount: 0,
+                bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 }
+            };
+            stats.totalCompleted = (stats.totalCompleted || 0) + 1;
+            if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
+            if (!stats.bySubject) stats.bySubject = {};
+            stats.bySubject.francais = (stats.bySubject.francais || 0) + 1;
+            localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
+            println(`  📊 quiz_stats écrit : ${JSON.stringify(stats)}`);
+        } catch(e) {
+            println('  ❌ Erreur stats: ' + e, 'err');
+        }
+
+        // 3. Check badges (même appel que dans finishQuiz)
+        if (window.badgeSystem) {
+            const newBadges = window.badgeSystem.checkBadges();
+            if (newBadges.length > 0) {
+                newBadges.forEach(b => println(`  🏆 Badge débloqué : ${b.name}`, 'ok'));
+            } else {
+                println('  (aucun nouveau badge cette fois)');
+            }
+            // Syncer
+            if (window.BRIDGE) window.BRIDGE.syncBadges();
+        } else {
+            println('  ❌ badgeSystem non chargé !', 'err');
+        }
+
+        println('  ✅ Simulation terminée');
+    }
+
+    function checkBadges() {
+        println('\n--- VÉRIFICATION BADGES ---');
+        if (!window.badgeSystem) {
+            println('  ❌ badgeSystem non chargé !', 'err');
+            return;
+        }
+        // Forcer relecture des données
+        window.badgeSystem.userBadges = window.badgeSystem.loadUserBadges();
+
+        const userData = window.badgeSystem.getUserData();
+        println('  userData lu par badgeSystem :');
+        println('    totalXP         : ' + userData.totalXP);
+        println('    currentStreak   : ' + userData.currentStreak);
+        println('    totalQuizCompleted : ' + userData.totalQuizCompleted);
+        println('    perfectQuizCount   : ' + userData.perfectQuizCount);
+        println('    quizBySubject   : ' + JSON.stringify(userData.quizBySubject));
+
+        const earned = window.badgeSystem.userBadges.earned;
+        println('  Badges gagnés : ' + (earned.length > 0 ? earned.join(', ') : '(aucun)'), earned.length > 0 ? 'ok' : 'warn');
+
+        // Vérifier aussi lemondedescurieux_badges (après sync)
+        if (window.BRIDGE) window.BRIDGE.syncBadges();
+        const synced = localStorage.getItem('lemondedescurieux_badges');
+        println('  lemondedescurieux_badges (dashboard) : ' + (synced || '(vide)'));
+    }
+
+    function lireTout() {
+        println('\n--- CONTENU LOCALSTORAGE (clés projet) ---');
+        const keys = [
+            'lemondedescurieux_xp',
+            'lemondedescurieux_streaks',
+            'lemondedescurieux_hearts',
+            'lemondedescurieux_badges',
+            'lemondedescurieux_quiz_stats',
+            'userBadges'
+        ];
+        keys.forEach(k => {
+            const val = localStorage.getItem(k);
+            println(`  ${k} : ${val || '(null)'}`);
+        });
+    }
+
+    // Force lemondedescurieux_xp à 1000, puis vérifie badges
+    function forcerSeuil() {
+        println('\n--- FORCE SEUIL : 1000 XP ---', 'warn');
+        try {
+            const raw = localStorage.getItem('lemondedescurieux_xp');
+            const xp = raw ? JSON.parse(raw) : { total: 0, bySection: {} };
+            xp.total = 1000;
+            if (!xp.bySection) xp.bySection = {};
+            xp.bySection.francais = 1000;
+            localStorage.setItem('lemondedescurieux_xp', JSON.stringify(xp));
+            println('  lemondedescurieux_xp forcé à total:1000');
+        } catch(e) { println('  ❌ ' + e, 'err'); }
+
+        if (window.badgeSystem) {
+            window.badgeSystem.userBadges = window.badgeSystem.loadUserBadges();
+            const newBadges = window.badgeSystem.checkBadges();
+            if (newBadges.length > 0) {
+                newBadges.forEach(b => println('  🏆 Badge débloqué : ' + b.name + ' (xpBonus: +' + b.xpBonus + ')', 'ok'));
+            } else {
+                println('  (aucun nouveau badge) earned=' + JSON.stringify(window.badgeSystem.userBadges.earned));
+            }
+            if (window.BRIDGE) window.BRIDGE.syncBadges();
+            println('  lemondedescurieux_badges : ' + (localStorage.getItem('lemondedescurieux_badges') || '(vide)'));
+        }
+    }
+
+    // Init
+    println('✅ Scripts chargés : SectionXP=' + !!window.SectionXP + ' | badgeSystem=' + !!window.badgeSystem + ' | BRIDGE=' + !!window.BRIDGE);
+    </script>
+</body>
+</html>

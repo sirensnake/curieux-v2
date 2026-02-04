@@ -14,6 +14,9 @@
         <script src="scripts/section-xp-system.js"></script>
         <script src="scripts/badges-system.js"></script>
         <script src="scripts/storage-bridge.js"></script>
+        
+        <!-- Admin Shortcut (Ctrl+Shift+A) -->
+        <script src="scripts/admin-shortcut.js"></script>
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
@@ -131,7 +134,7 @@
                         <div class="feedback-explanation" x-show="currentQuestion.explanation">
                             💡 <span x-text="currentQuestion.explanation"></span>
                         </div>
-                        <button @click="nextQuestion()" class="next-btn">Suivant →</button>
+                        <!-- Bouton "Suivant" supprimé : auto-avance après 2s -->
                     </div>
                 </div>
 
@@ -542,7 +545,65 @@
                         this.showIllustration = !this.showIllustration;
                     },
 
+                    // ✅ COOLDOWN : Vérifier si quiz peut être démarré (24h)
+                    canStartQuiz(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        
+                        if (!cooldownData.lastCompleted) return true;
+                        
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
+                        
+                        return timeSinceCompletion >= cooldownDuration;
+                    },
+
+                    // Obtenir temps restant avant déblocage
+                    getCooldownTimeRemaining(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        
+                        if (!cooldownData.lastCompleted) return null;
+                        
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
+                        const remaining = cooldownDuration - timeSinceCompletion;
+                        
+                        if (remaining <= 0) return null;
+                        
+                        const hours = Math.floor(remaining / (60 * 60 * 1000));
+                        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+                        
+                        return { hours, minutes };
+                    },
+
+                    // Enregistrer cooldown après complétion
+                    recordQuizCompletion(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = {
+                            lastCompleted: Date.now(),
+                            count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
+                        };
+                        localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
+                        console.log(`🔒 Cooldown activé pour ${theme} jusqu'à`, new Date(cooldownData.lastCompleted + 24*60*60*1000).toLocaleString('fr-FR'));
+                    },
+
                     startQuiz() {
+                        // ✅ VÉRIFIER COOLDOWN
+                        if (!this.canStartQuiz(this.currentTheme)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
+                            
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            return; // BLOQUER le démarrage
+                        }
+
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
@@ -578,6 +639,11 @@
                         } else {
                             this.playIncorrectSound();
                         }
+
+                        // ✅ AUTO-AVANCE : Timer 2 secondes puis question suivante
+                        setTimeout(() => {
+                            this.nextQuestion();
+                        }, 2000);
                     },
 
                     nextQuestion() {
@@ -620,6 +686,9 @@
                             console.warn('[francais] Erreur stats quiz:', e);
                         }
 
+                        // ✅ ENREGISTRER COOLDOWN (24h)
+                        this.recordQuizCompletion(this.currentTheme);
+
                         // --- Vérification badges ---
                         if (window.badgeSystem) {
                             const newBadges = window.badgeSystem.checkBadges();
@@ -636,6 +705,21 @@
                     },
 
                     retryQuiz() {
+                        // ✅ VÉRIFIER COOLDOWN même pour retry
+                        if (!this.canStartQuiz(this.currentTheme)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
+                            
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            // Fermer le quiz au lieu de retry
+                            this.backToTheme();
+                            return;
+                        }
+
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>🔍 Test Maths Cooldown</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .test-btn { 
+            padding: 15px 30px; 
+            margin: 10px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .test-btn:hover { background: #45a049; }
+        .result { 
+            margin: 20px 0; 
+            padding: 15px; 
+            background: white; 
+            border-left: 4px solid #2196F3;
+            border-radius: 5px;
+        }
+        .error { border-left-color: #f44336; }
+        .success { border-left-color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test Diagnostic Maths</h1>
+    
+    <div>
+        <button class="test-btn" onclick="testStartActivity()">Test startActivity('additions')</button>
+        <button class="test-btn" onclick="testCooldownFunctions()">Test Fonctions Cooldown</button>
+        <button class="test-btn" onclick="viewLocalStorage()">Voir localStorage</button>
+        <button class="test-btn" onclick="clearCooldowns()">Clear Cooldowns</button>
+    </div>
+    
+    <div id="results"></div>
+
+    <!-- Charger le fichier maths-standalone.js -->
+    <script src="scripts/maths-standalone.js"></script>
+
+    <script>
+        function log(message, type = 'result') {
+            const div = document.createElement('div');
+            div.className = `result ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+            document.getElementById('results').prepend(div);
+        }
+
+        function testStartActivity() {
+            try {
+                if (typeof startActivity === 'function') {
+                    log('✅ startActivity existe', 'success');
+                    log('Appel startActivity("additions")...', 'result');
+                    startActivity('additions');
+                } else {
+                    log('❌ startActivity n\'existe pas !', 'error');
+                }
+            } catch(e) {
+                log('❌ Erreur: ' + e.message, 'error');
+            }
+        }
+
+        function testCooldownFunctions() {
+            try {
+                // Test canStartActivity
+                if (typeof canStartActivity === 'function') {
+                    const canStart = canStartActivity('additions');
+                    log(`✅ canStartActivity('additions') = ${canStart}`, 'success');
+                } else {
+                    log('❌ canStartActivity n\'existe pas !', 'error');
+                }
+
+                // Test getCooldownTimeRemaining
+                if (typeof getCooldownTimeRemaining === 'function') {
+                    const remaining = getCooldownTimeRemaining('additions');
+                    log(`✅ getCooldownTimeRemaining('additions') = ${JSON.stringify(remaining)}`, 'success');
+                } else {
+                    log('❌ getCooldownTimeRemaining n\'existe pas !', 'error');
+                }
+
+                // Test recordActivityCompletion
+                if (typeof recordActivityCompletion === 'function') {
+                    log('✅ recordActivityCompletion existe', 'success');
+                } else {
+                    log('❌ recordActivityCompletion n\'existe pas !', 'error');
+                }
+            } catch(e) {
+                log('❌ Erreur: ' + e.message, 'error');
+            }
+        }
+
+        function viewLocalStorage() {
+            const cooldowns = [];
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('quiz_cooldown_maths_')) {
+                    const data = JSON.parse(localStorage.getItem(key));
+                    cooldowns.push(`${key}: ${new Date(data.lastCompleted).toLocaleString()}`);
+                }
+            });
+
+            if (cooldowns.length > 0) {
+                log('Cooldowns Maths:<br>' + cooldowns.join('<br>'), 'result');
+            } else {
+                log('Aucun cooldown Maths trouvé', 'result');
+            }
+        }
+
+        function clearCooldowns() {
+            let count = 0;
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('quiz_cooldown_maths_')) {
+                    localStorage.removeItem(key);
+                    count++;
+                }
+            });
+            log(`✅ ${count} cooldown(s) supprimé(s)`, 'success');
+        }
+
+        // Log initial
+        log('Page de test chargée', 'success');
+    </script>
+</body>
+</html>

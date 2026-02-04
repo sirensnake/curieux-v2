@@ -12,8 +12,6 @@
 
         <!-- Système XP -->
         <script src="scripts/section-xp-system.js"></script>
-        <script src="scripts/badges-system.js"></script>
-        <script src="scripts/storage-bridge.js"></script>
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
@@ -131,7 +129,7 @@
                         <div class="feedback-explanation" x-show="currentQuestion.explanation">
                             💡 <span x-text="currentQuestion.explanation"></span>
                         </div>
-                        <!-- Bouton "Suivant" supprimé : auto-avance après 2s -->
+                        <button @click="nextQuestion()" class="next-btn">Suivant →</button>
                     </div>
                 </div>
 
@@ -235,17 +233,17 @@
                         vocabulary: {
                             name: 'Basic Vocabulary',
                             description: 'Learn essential everyday words: family, colors, animals, food',
-                            imageUrl: 'images/anglais/illustration_vocabulary.jpg'
+                            imageUrl: '/images/english/illustration_vocabulary.jpg'
                         },
                         phrases: {
                             name: 'Everyday Phrases',
                             description: 'Master common expressions: greetings, questions, time, school',
-                            imageUrl: 'images/anglais/illustration_conversation.jpg'
+                            imageUrl: '/images/english/illustration_phrases.jpg'
                         },
                         grammar: {
                             name: 'Grammar Basics',
                             description: 'Understand English grammar: verbs, present tense, pronouns, adjectives',
-                            imageUrl: 'images/anglais/illustration_grammar.jpg'
+                            imageUrl: '/images/english/illustration_grammar.jpg'
                         }
                     },
 
@@ -512,65 +510,7 @@
                         this.showIllustration = !this.showIllustration;
                     },
 
-                    // ✅ COOLDOWN : Vérifier si quiz peut être démarré (24h)
-                    canStartQuiz(theme) {
-                        const cooldownKey = `quiz_cooldown_anglais_${theme}`;
-                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
-                        if (!cooldownData.lastCompleted) return true;
-                        
-                        const now = Date.now();
-                        const timeSinceCompletion = now - cooldownData.lastCompleted;
-                        const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
-                        
-                        return timeSinceCompletion >= cooldownDuration;
-                    },
-
-                    // Obtenir temps restant avant déblocage
-                    getCooldownTimeRemaining(theme) {
-                        const cooldownKey = `quiz_cooldown_anglais_${theme}`;
-                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
-                        if (!cooldownData.lastCompleted) return null;
-                        
-                        const now = Date.now();
-                        const timeSinceCompletion = now - cooldownData.lastCompleted;
-                        const cooldownDuration = 24 * 60 * 60 * 1000;
-                        const remaining = cooldownDuration - timeSinceCompletion;
-                        
-                        if (remaining <= 0) return null;
-                        
-                        const hours = Math.floor(remaining / (60 * 60 * 1000));
-                        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-                        
-                        return { hours, minutes };
-                    },
-
-                    // Enregistrer cooldown après complétion
-                    recordQuizCompletion(theme) {
-                        const cooldownKey = `quiz_cooldown_anglais_${theme}`;
-                        const cooldownData = {
-                            lastCompleted: Date.now(),
-                            count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
-                        };
-                        localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
-                        console.log(`🔒 Cooldown activé pour ${theme} jusqu'à`, new Date(cooldownData.lastCompleted + 24*60*60*1000).toLocaleString('fr-FR'));
-                    },
-
                     startQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN
-                        if (!this.canStartQuiz(this.currentTheme)) {
-                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
-                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
-                            if (window.curioBubbleInstance) {
-                                window.curioBubbleInstance.show(message, 'info');
-                            } else {
-                                alert(message);
-                            }
-                            return; // BLOQUER le démarrage
-                        }
-
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
@@ -606,11 +546,6 @@
                         } else {
                             this.playIncorrectSound();
                         }
-
-                        // ✅ AUTO-AVANCE : Timer 2 secondes puis question suivante
-                        setTimeout(() => {
-                            this.nextQuestion();
-                        }, 2000);
                     },
 
                     nextQuestion() {
@@ -624,61 +559,20 @@
 
                     finishQuiz() {
                         this.quizFinished = true;
-                        const quizLength = this.getCurrentQuiz().length;
-                        const isPerfect = (this.score === quizLength);
 
                         // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('anglais', window.SectionXP.rewards.QUIZ_COMPLETED);
-                            if (isPerfect) {
+
+                            // Bonus supplémentaire si quiz parfait
+                            const quizLength = this.getCurrentQuiz().length;
+                            if (this.score === quizLength) {
                                 window.SectionXP.addXP('anglais', window.SectionXP.rewards.PERFECT_QUIZ);
                             }
                         }
-
-                        // --- BADGE SYSTEM : écriture quiz_stats ---
-                        try {
-                            const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
-                            const stats = raw ? JSON.parse(raw) : { totalCompleted: 0, perfectCount: 0, bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 } };
-                            stats.totalCompleted = (stats.totalCompleted || 0) + 1;
-                            if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
-                            if (!stats.bySubject) stats.bySubject = {};
-                            stats.bySubject.anglais = (stats.bySubject.anglais || 0) + 1;
-                            localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
-                            console.log('📊 [anglais] Quiz stats mis à jour:', stats);
-                        } catch(e) { console.warn('[anglais] Erreur stats quiz:', e); }
-
-                        // --- BADGE SYSTEM : check + sync ---
-                        if (window.badgeSystem) {
-                            const newBadges = window.badgeSystem.checkBadges();
-                            if (newBadges && newBadges.length > 0) {
-                                console.log('🏆 [anglais] Nouveaux badges:', newBadges.map(b => b.name));
-                                if (window.curioBubbleInstance && newBadges[0]) {
-                                    window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
-                                }
-                            }
-                            if (window.BRIDGE) window.BRIDGE.syncBadges();
-                        }
-
-                        // ✅ ENREGISTRER COOLDOWN (24h)
-                        this.recordQuizCompletion(this.currentTheme);
                     },
 
                     retryQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN même pour retry
-                        if (!this.canStartQuiz(this.currentTheme)) {
-                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
-                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
-                            if (window.curioBubbleInstance) {
-                                window.curioBubbleInstance.show(message, 'info');
-                            } else {
-                                alert(message);
-                            }
-                            // Fermer le quiz au lieu de retry
-                            this.backToTheme();
-                            return;
-                        }
-
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();
@@ -700,9 +594,6 @@
                 }));
             });
         </script>
-
-    <!-- Admin Shortcut (Ctrl+Shift+X) -->
-    <script src="scripts/admin-shortcut.js"></script>
     </body>
 
 </html>

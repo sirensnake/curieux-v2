@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Admin - Le Monde des Curieux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ecf0f1;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 15px;
+            border: 3px solid #000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+        }
+
+        .header p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .admin-card {
+            background: #16213e;
+            border: 3px solid #34495e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .admin-card h2 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1em;
+            color: #3498db;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.7em;
+            padding: 12px 24px;
+            border: 3px solid #000;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+        }
+
+        .btn-info {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .info-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .warning-box {
+            background: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .data-display {
+            background: #0f1419;
+            border: 2px solid #34495e;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            max-height: 400px;
+            overflow-y: auto;
+            margin: 15px 0;
+        }
+
+        .data-display pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid #34495e;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #3498db;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-box .label {
+            font-size: 0.8em;
+            color: #95a5a6;
+            text-transform: uppercase;
+        }
+
+        .back-btn {
+            background: #95a5a6;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .back-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .log {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid #27ae60;
+            border-radius: 5px;
+            font-size: 0.85em;
+            display: none;
+        }
+
+        .log.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+
+        <div class="header">
+            <h1>🔧 PANNEAU ADMIN</h1>
+            <p>Gestion des données et cooldowns - Accès réservé administrateur</p>
+        </div>
+
+        <div class="warning-box">
+            ⚠️ <strong>ATTENTION :</strong> Ce panneau permet de modifier/supprimer toutes les données du site. Utilisez avec précaution.
+        </div>
+
+        <!-- STATISTIQUES GLOBALES -->
+        <div class="admin-card">
+            <h2>📊 Statistiques Globales</h2>
+            <div class="stats-grid" id="stats-grid">
+                <div class="stat-box">
+                    <span class="value" id="total-xp">-</span>
+                    <span class="label">XP Total</span>
+                </div>
+                <div class="stat-box">
+                    <span class="value" id="current-level">-</span>
+                    <span class="label">Niveau</span>
+                </div>
+                <div class="stat-box">
+                    <span class="value" id="total-badges">-</span>
+                    <span class="label">Badges Débloqués</span>
+                </div>
+                <div class="stat-box">
+                    <span class="value" id="quiz-completed">-</span>
+                    <span class="label">Quiz Complétés</span>
+                </div>
+                <div class="stat-box">
+                    <span class="value" id="current-streak">-</span>
+                    <span class="label">Streak Actuel</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- GESTION COOLDOWNS -->
+        <div class="admin-card">
+            <h2>⏰ Gestion Cooldowns Quiz</h2>
+            <div class="info-box">
+                ℹ️ Les cooldowns empêchent de refaire un quiz pendant 24h. Utile pour les tests.
+            </div>
+            
+            <button class="btn btn-warning" onclick="viewCooldowns()">📋 Voir Cooldowns Actifs</button>
+            <button class="btn btn-danger" onclick="clearAllCooldowns()">🗑️ Supprimer Tous les Cooldowns</button>
+            <button class="btn btn-info" onclick="clearSpecificCooldown()">🎯 Supprimer Cooldown Spécifique</button>
+
+            <div class="data-display" id="cooldowns-display" style="display: none;"></div>
+        </div>
+
+        <!-- RÉINITIALISATION DONNÉES -->
+        <div class="admin-card">
+            <h2>🗑️ Réinitialisation Données</h2>
+            <div class="warning-box">
+                ⚠️ Ces actions sont <strong>IRRÉVERSIBLES</strong>. Toutes les données seront supprimées définitivement.
+            </div>
+
+            <button class="btn btn-danger" onclick="resetXP()">💎 Reset XP</button>
+            <button class="btn btn-danger" onclick="resetBadges()">🏆 Reset Badges</button>
+            <button class="btn btn-danger" onclick="resetStreaks()">🔥 Reset Streaks</button>
+            <button class="btn btn-danger" onclick="resetQuizStats()">📊 Reset Stats Quiz</button>
+            <button class="btn btn-danger" onclick="resetALL()">☢️ RESET COMPLET</button>
+        </div>
+
+        <!-- EXPORT/IMPORT DONNÉES -->
+        <div class="admin-card">
+            <h2>💾 Export/Import Données</h2>
+            <div class="info-box">
+                ℹ️ Sauvegardez les données avant un reset ou pour transférer vers un autre appareil.
+            </div>
+
+            <button class="btn btn-success" onclick="exportData()">📥 Exporter Toutes les Données</button>
+            <button class="btn btn-info" onclick="importData()">📤 Importer Données</button>
+            <button class="btn btn-info" onclick="viewAllData()">👁️ Voir Toutes les Données</button>
+
+            <div class="data-display" id="data-display" style="display: none;"></div>
+        </div>
+
+        <!-- LOG -->
+        <div class="log" id="log"></div>
+    </div>
+
+    <script>
+        // ========================================
+        // UTILITAIRES
+        // ========================================
+        function showLog(message, type = 'success') {
+            const log = document.getElementById('log');
+            log.textContent = message;
+            log.className = 'log show';
+            log.style.borderColor = type === 'success' ? '#27ae60' : '#e74c3c';
+            log.style.background = type === 'success' ? 'rgba(39, 174, 96, 0.1)' : 'rgba(231, 76, 60, 0.1)';
+            setTimeout(() => log.classList.remove('show'), 5000);
+        }
+
+        // ========================================
+        // CHARGEMENT STATS
+        // ========================================
+        function loadStats() {
+            try {
+                const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                const badgesData = JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]');
+                const quizData = JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}');
+                const streaksData = JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}');
+
+                document.getElementById('total-xp').textContent = xpData.total || 0;
+                document.getElementById('current-level').textContent = xpData.level || 1;
+                document.getElementById('total-badges').textContent = badgesData.filter(b => b.unlocked).length;
+                document.getElementById('quiz-completed').textContent = quizData.totalCompleted || 0;
+                document.getElementById('current-streak').textContent = streaksData.currentStreak || 0;
+            } catch (e) {
+                console.error('Erreur chargement stats:', e);
+            }
+        }
+
+        // ========================================
+        // GESTION COOLDOWNS
+        // ========================================
+        function viewCooldowns() {
+            const display = document.getElementById('cooldowns-display');
+            const cooldowns = [];
+            
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('quiz_cooldown_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        const section = key.split('_')[2];
+                        const theme = key.split('_').slice(3).join('_');
+                        const expiresAt = new Date(data.lastCompleted + 24*60*60*1000);
+                        const now = new Date();
+                        const remainingMs = expiresAt - now;
+                        const remainingHours = Math.floor(remainingMs / (60*60*1000));
+                        const remainingMins = Math.floor((remainingMs % (60*60*1000)) / (60*1000));
+                        
+                        cooldowns.push({
+                            key,
+                            section,
+                            theme,
+                            lastCompleted: new Date(data.lastCompleted).toLocaleString('fr-FR'),
+                            expiresAt: expiresAt.toLocaleString('fr-FR'),
+                            remaining: remainingMs > 0 ? `${remainingHours}h ${remainingMins}min` : 'Expiré',
+                            expired: remainingMs <= 0,
+                            count: data.count
+                        });
+                    } catch (e) {}
+                }
+            });
+
+            if (cooldowns.length === 0) {
+                display.innerHTML = '<pre>Aucun cooldown actif.</pre>';
+            } else {
+                let html = '<pre>';
+                cooldowns.forEach(c => {
+                    html += `\n📍 ${c.section.toUpperCase()} - ${c.theme}\n`;
+                    html += `   Complété: ${c.lastCompleted}\n`;
+                    html += `   Expire: ${c.expiresAt}\n`;
+                    html += `   Restant: ${c.remaining}${c.expired ? ' ❌' : ' ✅'}\n`;
+                    html += `   Fois complété: ${c.count}\n`;
+                    html += `   Clé: ${c.key}\n`;
+                });
+                html += '</pre>';
+                display.innerHTML = html;
+            }
+            
+            display.style.display = 'block';
+        }
+
+        function clearAllCooldowns() {
+            if (!confirm('⚠️ Supprimer TOUS les cooldowns de quiz ?\n\nLes quiz seront à nouveau accessibles immédiatement.')) {
+                return;
+            }
+
+            let count = 0;
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('quiz_cooldown_')) {
+                    localStorage.removeItem(key);
+                    count++;
+                }
+            });
+
+            showLog(`✅ ${count} cooldown(s) supprimé(s) avec succès !`);
+            viewCooldowns();
+        }
+
+        function clearSpecificCooldown() {
+            const section = prompt('Section (francais/anglais/maths/sciences) :');
+            if (!section) return;
+            
+            const theme = prompt('Thème (grammaire/conjugaison/vocabulaire/etc.) :');
+            if (!theme) return;
+
+            const key = `quiz_cooldown_${section}_${theme}`;
+            
+            if (localStorage.getItem(key)) {
+                localStorage.removeItem(key);
+                showLog(`✅ Cooldown supprimé : ${section} - ${theme}`);
+                viewCooldowns();
+            } else {
+                showLog(`❌ Cooldown introuvable : ${key}`, 'error');
+            }
+        }
+
+        // ========================================
+        // RÉINITIALISATION
+        // ========================================
+        function resetXP() {
+            if (!confirm('⚠️ SUPPRIMER TOUS LES XP ?\n\nNiveau, XP, historique, tout sera perdu.')) return;
+            localStorage.removeItem('lemondedescurieux_xp');
+            showLog('✅ XP réinitialisés');
+            loadStats();
+        }
+
+        function resetBadges() {
+            if (!confirm('⚠️ SUPPRIMER TOUS LES BADGES ?')) return;
+            localStorage.removeItem('lemondedescurieux_badges');
+            localStorage.removeItem('userBadges');
+            showLog('✅ Badges réinitialisés');
+            loadStats();
+        }
+
+        function resetStreaks() {
+            if (!confirm('⚠️ SUPPRIMER LES STREAKS ?')) return;
+            localStorage.removeItem('lemondedescurieux_streaks');
+            showLog('✅ Streaks réinitialisés');
+            loadStats();
+        }
+
+        function resetQuizStats() {
+            if (!confirm('⚠️ SUPPRIMER LES STATS QUIZ ?')) return;
+            localStorage.removeItem('lemondedescurieux_quiz_stats');
+            showLog('✅ Stats quiz réinitialisées');
+            loadStats();
+        }
+
+        function resetALL() {
+            if (!confirm('☢️ RESET COMPLET - SUPPRIMER TOUTES LES DONNÉES ?\n\nCette action est IRRÉVERSIBLE !')) return;
+            if (!confirm('🔴 DERNIÈRE CONFIRMATION\n\nTout sera perdu définitivement. Continuer ?')) return;
+
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('lemondedescurieux_') || key.startsWith('quiz_cooldown_')) {
+                    localStorage.removeItem(key);
+                }
+            });
+
+            showLog('✅ RESET COMPLET effectué');
+            loadStats();
+        }
+
+        // ========================================
+        // EXPORT/IMPORT
+        // ========================================
+        function exportData() {
+            const data = {};
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('lemondedescurieux_') || key.startsWith('quiz_cooldown_')) {
+                    data[key] = localStorage.getItem(key);
+                }
+            });
+
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `lemondedescurieux_backup_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            
+            showLog('✅ Données exportées avec succès');
+        }
+
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        Object.keys(data).forEach(key => {
+                            localStorage.setItem(key, data[key]);
+                        });
+                        showLog('✅ Données importées avec succès');
+                        loadStats();
+                    } catch (error) {
+                        showLog('❌ Erreur lors de l\'import : ' + error.message, 'error');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+
+        function viewAllData() {
+            const display = document.getElementById('data-display');
+            const data = {};
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('lemondedescurieux_') || key.startsWith('quiz_cooldown_')) {
+                    try {
+                        data[key] = JSON.parse(localStorage.getItem(key));
+                    } catch {
+                        data[key] = localStorage.getItem(key);
+                    }
+                }
+            });
+
+            display.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            display.style.display = 'block';
+        }
+
+        // ========================================
+        // INIT
+        // ========================================
+        loadStats();
+    </script>
+</body>
+</html>
