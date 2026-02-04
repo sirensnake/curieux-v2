@@ -90,12 +90,34 @@ class BadgeSystem {
 
     /**
      * Charger badges utilisateur depuis localStorage
+     * ✅ CORRECTION : Lire depuis lemondedescurieux_badges (clé officielle dashboard)
      */
     loadUserBadges() {
+        // ✅ Lire clé officielle EN PREMIER
+        const official = localStorage.getItem('lemondedescurieux_badges');
+        if (official) {
+            try {
+                const badges = JSON.parse(official);
+                // Convertir format dashboard vers format interne
+                return {
+                    earned: badges.filter(b => b.unlocked).map(b => b.id),
+                    earnedDates: badges.reduce((acc, b) => {
+                        if (b.unlocked && b.unlockedAt) acc[b.id] = new Date(b.unlockedAt).getTime();
+                        return acc;
+                    }, {}),
+                    notifications: []
+                };
+            } catch(e) {
+                console.error('[BadgeSystem] Erreur parsing badges officiels:', e);
+            }
+        }
+        
+        // Fallback : ancienne clé userBadges
         const saved = localStorage.getItem('userBadges');
         if (saved) {
             return JSON.parse(saved);
         }
+        
         return {
             earned: [], // IDs des badges gagnés
             earnedDates: {}, // { badgeId: timestamp }
@@ -105,9 +127,26 @@ class BadgeSystem {
 
     /**
      * Sauvegarder badges utilisateur
+     * ✅ CORRECTION : Écrire dans lemondedescurieux_badges (clé officielle dashboard)
      */
     saveUserBadges() {
+        // ✅ Convertir format interne vers format dashboard
+        const dashboardFormat = Object.keys(this.badges).map(badgeId => {
+            const isUnlocked = this.userBadges.earned.includes(badgeId);
+            return {
+                id: badgeId,
+                unlocked: isUnlocked,
+                unlockedAt: isUnlocked ? new Date(this.userBadges.earnedDates[badgeId] || Date.now()).toISOString() : null
+            };
+        });
+        
+        // ✅ Sauvegarder clé officielle
+        localStorage.setItem('lemondedescurieux_badges', JSON.stringify(dashboardFormat));
+        
+        // Aussi sauvegarder ancienne clé pour compatibilité
         localStorage.setItem('userBadges', JSON.stringify(this.userBadges));
+        
+        console.log('✅ Badges sauvegardés:', dashboardFormat.filter(b => b.unlocked).length, 'badges débloqués');
     }
 
     /**
@@ -131,13 +170,28 @@ class BadgeSystem {
         };
 
         // --- XP TOTAL ---
-        // Source principale : lemondedescurieux_xp (écrit par section-xp-system.js)
+        // ✅ CORRECTION : Calculer VRAI total en additionnant toutes les sections
+        // (même méthode que dashboard-extended.html)
         const officialXP = localStorage.getItem('lemondedescurieux_xp');
         if (officialXP) {
             try {
                 const xp = JSON.parse(officialXP);
-                userData.totalXP = xp.total || 0;
-            } catch(e) {}
+                const bySection = xp.bySection || {};
+                
+                // ✅ ADDITIONNER TOUTES LES SECTIONS (pas lire xp.total qui est obsolète)
+                userData.totalXP = (
+                    (bySection.francais || 0) +
+                    (bySection.anglais || 0) +
+                    (bySection.maths || 0) +
+                    (bySection.sciences || 0) +
+                    (bySection.histoire || 0) +
+                    (bySection.badges || 0)
+                );
+                
+                console.log('[BadgeSystem] Total XP recalculé:', userData.totalXP, 'depuis sections:', bySection);
+            } catch(e) {
+                console.error('[BadgeSystem] Erreur parsing XP:', e);
+            }
         }
         // Fallback : section-xp-data (ancien système)
         if (userData.totalXP === 0) {

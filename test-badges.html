@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test Système Badges</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f1419 100%);
+            color: #ecf0f1;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #27ae60;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .section {
+            background: #16213e;
+            border: 2px solid #34495e;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .section h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #34495e;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .info-box .label {
+            font-size: 0.85em;
+            color: #95a5a6;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-box .value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #27ae60;
+        }
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .badge-card {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid #34495e;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .badge-card.unlocked {
+            border-color: #27ae60;
+            background: rgba(39, 174, 96, 0.1);
+        }
+        .badge-card.locked {
+            opacity: 0.4;
+            filter: grayscale(1);
+        }
+        .badge-emoji {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .badge-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        .badge-desc {
+            font-size: 0.75em;
+            color: #95a5a6;
+            margin-bottom: 8px;
+        }
+        .badge-status {
+            font-size: 0.7em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .badge-status.unlocked {
+            background: #27ae60;
+            color: white;
+        }
+        .badge-status.locked {
+            background: #e74c3c;
+            color: white;
+        }
+        .badge-date {
+            font-size: 0.7em;
+            color: #3498db;
+            margin-top: 5px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: #3498db; color: white; }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-danger { background: #e74c3c; color: white; }
+        .btn-warning { background: #e67e22; color: white; }
+        .btn-info { background: #9b59b6; color: white; }
+        .console {
+            background: #0f1419;
+            border: 2px solid #34495e;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            max-height: 300px;
+            overflow-y: auto;
+            color: #27ae60;
+        }
+        .console-line {
+            margin-bottom: 5px;
+            padding: 3px 0;
+        }
+        .console-error { color: #e74c3c; }
+        .console-success { color: #27ae60; }
+        .console-info { color: #3498db; }
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .stats-table th, .stats-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #34495e;
+        }
+        .stats-table th {
+            background: rgba(255,255,255,0.05);
+            color: #3498db;
+            font-weight: 700;
+        }
+        .progress-simulation {
+            margin-top: 15px;
+        }
+        .progress-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+        }
+        .progress-label {
+            min-width: 150px;
+            font-weight: 600;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #34495e;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #3498db);
+            transition: width 0.3s ease;
+        }
+        .progress-value {
+            min-width: 100px;
+            text-align: right;
+            font-weight: 700;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Testeur Système Badges</h1>
+
+        <!-- ÉTAT ACTUEL -->
+        <div class="section">
+            <h2>📊 État Actuel du Système</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <div class="label">Total XP</div>
+                    <div class="value" id="current-xp">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Niveau</div>
+                    <div class="value" id="current-level">1</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Streak Actuel</div>
+                    <div class="value" id="current-streak">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Record Streak</div>
+                    <div class="value" id="longest-streak">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Quiz Complétés</div>
+                    <div class="value" id="quiz-completed">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Quiz Parfaits</div>
+                    <div class="value" id="quiz-perfect">0</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 20px; margin-bottom: 10px; color: #3498db;">XP par Section</h3>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Section</th>
+                        <th>XP</th>
+                    </tr>
+                </thead>
+                <tbody id="sections-table">
+                    <!-- Rempli dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BADGES -->
+        <div class="section">
+            <h2>🏆 État des Badges</h2>
+            <div class="badges-grid" id="badges-container">
+                <!-- Rempli dynamiquement -->
+            </div>
+        </div>
+
+        <!-- PROGRESSION VERS BADGES -->
+        <div class="section">
+            <h2>📈 Progression vers Badges Non-débloqués</h2>
+            <div class="progress-simulation" id="progress-container">
+                <!-- Rempli dynamiquement -->
+            </div>
+        </div>
+
+        <!-- ACTIONS DE TEST -->
+        <div class="section">
+            <h2>🔧 Actions de Test</h2>
+            <div class="btn-container">
+                <button class="btn btn-success" onclick="testCheckBadges()">🔍 Vérifier Badges</button>
+                <button class="btn btn-primary" onclick="simulateXP(100)">+100 XP Test</button>
+                <button class="btn btn-primary" onclick="simulateXP(500)">+500 XP Test</button>
+                <button class="btn btn-primary" onclick="simulateStreak(7)">+7 Jours Streak</button>
+                <button class="btn btn-primary" onclick="simulateQuiz(true)">Quiz Parfait</button>
+                <button class="btn btn-primary" onclick="simulateQuiz(false)">Quiz Normal</button>
+                <button class="btn btn-warning" onclick="forceUnlockAll()">🔓 Débloquer Tous</button>
+                <button class="btn btn-danger" onclick="resetBadges()">🗑️ Reset Badges</button>
+                <button class="btn btn-info" onclick="exportData()">💾 Exporter Data</button>
+            </div>
+        </div>
+
+        <!-- CONSOLE -->
+        <div class="section">
+            <h2>📟 Console de Debug</h2>
+            <div class="console" id="console">
+                <div class="console-line console-info">🧪 Testeur de badges initialisé...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/badges-system.js"></script>
+    <script>
+        // Définition des badges (doit correspondre à badges-system.js)
+        const BADGES_DEFINITIONS = [
+            { id: 'streak_7', emoji: '🔥', name: 'Semaine de feu', desc: '7 jours consécutifs', type: 'streak', threshold: 7 },
+            { id: 'streak_30', emoji: '🏆', name: 'Champion du mois', desc: '30 jours consécutifs', type: 'streak', threshold: 30 },
+            { id: 'xp_1000', emoji: '📚', name: 'Érudit', desc: '1000 XP total', type: 'xp', threshold: 1000 },
+            { id: 'xp_5000', emoji: '🎓', name: 'Savant', desc: '5000 XP total', type: 'xp', threshold: 5000 },
+            { id: 'perfect_10', emoji: '⭐', name: 'Sans faute', desc: '10 quiz parfaits', type: 'perfect', threshold: 10 },
+            { id: 'quiz_100', emoji: '💯', name: 'Centurion', desc: '100 quiz complétés', type: 'quiz', threshold: 100 },
+            { id: 'all_subjects', emoji: '🌟', name: 'Polyvalent', desc: 'Activité dans 5 matières', type: 'subjects', threshold: 5 }
+        ];
+
+        function log(message, type = 'info') {
+            const console = document.getElementById('console');
+            const line = document.createElement('div');
+            line.className = `console-line console-${type}`;
+            const timestamp = new Date().toLocaleTimeString('fr-FR');
+            line.textContent = `[${timestamp}] ${message}`;
+            console.appendChild(line);
+            console.scrollTop = console.scrollHeight;
+        }
+
+        function loadCurrentData() {
+            try {
+                // XP Data
+                const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                const bySection = xpData.bySection || {};
+                const totalXP = Object.values(bySection).reduce((sum, xp) => sum + xp, 0);
+
+                document.getElementById('current-xp').textContent = totalXP;
+                document.getElementById('current-level').textContent = xpData.level || 1;
+
+                // Streaks Data
+                const streaksData = JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}');
+                document.getElementById('current-streak').textContent = streaksData.currentStreak || 0;
+                document.getElementById('longest-streak').textContent = streaksData.longestStreak || 0;
+
+                // Quiz Stats
+                const quizStats = JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}');
+                document.getElementById('quiz-completed').textContent = quizStats.totalCompleted || 0;
+                document.getElementById('quiz-perfect').textContent = quizStats.perfectCount || 0;
+
+                // Sections Table
+                const sectionsTable = document.getElementById('sections-table');
+                sectionsTable.innerHTML = '';
+                const sections = ['francais', 'anglais', 'maths', 'sciences', 'histoire', 'badges'];
+                sections.forEach(section => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td>${section.charAt(0).toUpperCase() + section.slice(1)}</td><td>${bySection[section] || 0}</td>`;
+                    sectionsTable.appendChild(row);
+                });
+
+                log('✅ Données actuelles chargées', 'success');
+            } catch (e) {
+                log('❌ Erreur chargement données: ' + e.message, 'error');
+            }
+        }
+
+        function loadBadges() {
+            try {
+                const badgesData = JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]');
+                const container = document.getElementById('badges-container');
+                container.innerHTML = '';
+
+                BADGES_DEFINITIONS.forEach(badge => {
+                    const earned = badgesData.find(b => b.id === badge.id);
+                    const isUnlocked = earned?.unlocked || false;
+
+                    const card = document.createElement('div');
+                    card.className = `badge-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+                    card.innerHTML = `
+                        <span class="badge-emoji">${badge.emoji}</span>
+                        <div class="badge-name">${badge.name}</div>
+                        <div class="badge-desc">${badge.desc}</div>
+                        <div class="badge-status ${isUnlocked ? 'unlocked' : 'locked'}">
+                            ${isUnlocked ? '✅ DÉBLOQUÉ' : '🔒 VERROUILLÉ'}
+                        </div>
+                        ${isUnlocked && earned?.unlockedAt ? `<div class="badge-date">${new Date(earned.unlockedAt).toLocaleDateString('fr-FR')}</div>` : ''}
+                    `;
+                    container.appendChild(card);
+                });
+
+                log(`🏆 ${badgesData.filter(b => b.unlocked).length}/${BADGES_DEFINITIONS.length} badges débloqués`, 'info');
+            } catch (e) {
+                log('❌ Erreur chargement badges: ' + e.message, 'error');
+            }
+        }
+
+        function loadProgress() {
+            try {
+                const container = document.getElementById('progress-container');
+                container.innerHTML = '';
+
+                const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                const bySection = xpData.bySection || {};
+                const totalXP = Object.values(bySection).reduce((sum, xp) => sum + xp, 0);
+
+                const streaksData = JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}');
+                const currentStreak = streaksData.currentStreak || 0;
+
+                const quizStats = JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}');
+                const quizCompleted = quizStats.totalCompleted || 0;
+                const quizPerfect = quizStats.perfectCount || 0;
+                const subjectsActive = Object.values(quizStats.bySubject || {}).filter(v => v > 0).length;
+
+                const badgesData = JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]');
+
+                const progressItems = [
+                    { label: '🔥 Streak 7 jours', current: currentStreak, target: 7, unlocked: badgesData.find(b => b.id === 'streak_7')?.unlocked },
+                    { label: '🏆 Streak 30 jours', current: currentStreak, target: 30, unlocked: badgesData.find(b => b.id === 'streak_30')?.unlocked },
+                    { label: '📚 1000 XP', current: totalXP, target: 1000, unlocked: badgesData.find(b => b.id === 'xp_1000')?.unlocked },
+                    { label: '🎓 5000 XP', current: totalXP, target: 5000, unlocked: badgesData.find(b => b.id === 'xp_5000')?.unlocked },
+                    { label: '⭐ 10 Quiz Parfaits', current: quizPerfect, target: 10, unlocked: badgesData.find(b => b.id === 'perfect_10')?.unlocked },
+                    { label: '💯 100 Quiz', current: quizCompleted, target: 100, unlocked: badgesData.find(b => b.id === 'quiz_100')?.unlocked },
+                    { label: '🌟 5 Matières', current: subjectsActive, target: 5, unlocked: badgesData.find(b => b.id === 'all_subjects')?.unlocked }
+                ];
+
+                progressItems.forEach(item => {
+                    if (!item.unlocked) {
+                        const percent = Math.min((item.current / item.target) * 100, 100);
+                        const div = document.createElement('div');
+                        div.className = 'progress-item';
+                        div.innerHTML = `
+                            <div class="progress-label">${item.label}</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${percent}%"></div>
+                            </div>
+                            <div class="progress-value">${item.current} / ${item.target}</div>
+                        `;
+                        container.appendChild(div);
+                    }
+                });
+
+                if (container.children.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #27ae60; padding: 20px;">🎉 Tous les badges sont débloqués !</p>';
+                }
+            } catch (e) {
+                log('❌ Erreur calcul progression: ' + e.message, 'error');
+            }
+        }
+
+        function testCheckBadges() {
+            try {
+                if (!window.badgeSystem) {
+                    log('❌ Badge system non trouvé !', 'error');
+                    return;
+                }
+
+                const newBadges = window.badgeSystem.checkBadges();
+                if (newBadges && newBadges.length > 0) {
+                    log(`🎉 ${newBadges.length} nouveau(x) badge(s) débloqué(s) !`, 'success');
+                    newBadges.forEach(b => log(`   🏆 ${b.name}`, 'success'));
+                } else {
+                    log('✅ Vérification badges: aucun nouveau badge', 'info');
+                }
+
+                refresh();
+            } catch (e) {
+                log('❌ Erreur vérification badges: ' + e.message, 'error');
+            }
+        }
+
+        function simulateXP(amount) {
+            try {
+                const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
+                if (!xpData.bySection) xpData.bySection = {};
+                xpData.bySection.francais = (xpData.bySection.francais || 0) + amount;
+                localStorage.setItem('lemondedescurieux_xp', JSON.stringify(xpData));
+
+                log(`✅ +${amount} XP ajoutés à Français`, 'success');
+                testCheckBadges();
+            } catch (e) {
+                log('❌ Erreur simulation XP: ' + e.message, 'error');
+            }
+        }
+
+        function simulateStreak(days) {
+            try {
+                const streaksData = JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}');
+                streaksData.currentStreak = (streaksData.currentStreak || 0) + days;
+                streaksData.longestStreak = Math.max(streaksData.currentStreak, streaksData.longestStreak || 0);
+                localStorage.setItem('lemondedescurieux_streaks', JSON.stringify(streaksData));
+
+                log(`✅ +${days} jours streak ajoutés`, 'success');
+                testCheckBadges();
+            } catch (e) {
+                log('❌ Erreur simulation streak: ' + e.message, 'error');
+            }
+        }
+
+        function simulateQuiz(perfect) {
+            try {
+                const quizStats = JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}');
+                quizStats.totalCompleted = (quizStats.totalCompleted || 0) + 1;
+                if (perfect) quizStats.perfectCount = (quizStats.perfectCount || 0) + 1;
+                localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(quizStats));
+
+                log(`✅ Quiz ${perfect ? 'parfait' : 'normal'} simulé`, 'success');
+                testCheckBadges();
+            } catch (e) {
+                log('❌ Erreur simulation quiz: ' + e.message, 'error');
+            }
+        }
+
+        function forceUnlockAll() {
+            if (!confirm('Débloquer TOUS les badges ?')) return;
+
+            try {
+                const badges = BADGES_DEFINITIONS.map(b => ({
+                    id: b.id,
+                    unlocked: true,
+                    unlockedAt: new Date().toISOString()
+                }));
+                localStorage.setItem('lemondedescurieux_badges', JSON.stringify(badges));
+
+                log('✅ Tous les badges débloqués !', 'success');
+                refresh();
+            } catch (e) {
+                log('❌ Erreur déblocage: ' + e.message, 'error');
+            }
+        }
+
+        function resetBadges() {
+            if (!confirm('Réinitialiser TOUS les badges ?')) return;
+
+            try {
+                localStorage.removeItem('lemondedescurieux_badges');
+                log('✅ Badges réinitialisés', 'success');
+                refresh();
+            } catch (e) {
+                log('❌ Erreur reset: ' + e.message, 'error');
+            }
+        }
+
+        function exportData() {
+            try {
+                const data = {
+                    xp: JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}'),
+                    streaks: JSON.parse(localStorage.getItem('lemondedescurieux_streaks') || '{}'),
+                    badges: JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]'),
+                    quizStats: JSON.parse(localStorage.getItem('lemondedescurieux_quiz_stats') || '{}')
+                };
+
+                const json = JSON.stringify(data, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `badges-export-${Date.now()}.json`;
+                a.click();
+
+                log('✅ Données exportées', 'success');
+            } catch (e) {
+                log('❌ Erreur export: ' + e.message, 'error');
+            }
+        }
+
+        function refresh() {
+            loadCurrentData();
+            loadBadges();
+            loadProgress();
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            log('🚀 Chargement des données...', 'info');
+            refresh();
+
+            // Auto-refresh toutes les 2 secondes
+            setInterval(refresh, 2000);
+        });
+    </script>
+</body>
+</html>

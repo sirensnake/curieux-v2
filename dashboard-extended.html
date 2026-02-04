@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Parcours - Le Monde des Curieux</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         :root {
             --bg-dark: #1a1a2e;
             --bg-card: #16213e;
@@ -194,9 +194,9 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(255,255,255,0.3) 50%, 
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255,255,255,0.3) 50%,
                 transparent 100%
             );
             animation: shimmer 2s infinite;
@@ -637,7 +637,7 @@
                 <div class="level-info">
                     <span class="level-badge">NIVEAU <span x-text="currentLevel"></span></span>
                     <span class="xp-fraction">
-                        <span class="current" x-text="currentLevelXP"></span> / 
+                        <span class="current" x-text="currentLevelXP"></span> /
                         <span x-text="xpToNextLevel"></span> XP
                     </span>
                 </div>
@@ -729,7 +729,7 @@
                         <div class="activity-item">
                             <div class="time" x-text="activity.timeText"></div>
                             <div class="desc">
-                                <span x-text="activity.section"></span> — 
+                                <span x-text="activity.section"></span> —
                                 <span class="xp-gain">+<span x-text="activity.xp"></span> XP</span>
                             </div>
                         </div>
@@ -784,19 +784,49 @@
                 loadXPData() {
                     try {
                         const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
-                        this.totalXP = xpData.total || 0;
-                        this.currentLevel = xpData.level || 1;
-                        this.xpToNextLevel = xpData.xpToNextLevel || 200;
+                        const bySection = xpData.bySection || {};
 
-                        // Calculer XP dans le niveau actuel
+                        // ✅ RECALCULER LE VRAI TOTAL : Somme de TOUTES les sections
+                        this.totalXP = (
+                            (bySection.francais || 0) +
+                            (bySection.anglais || 0) +
+                            (bySection.maths || 0) +
+                            (bySection.sciences || 0) +
+                            (bySection.histoire || 0) +
+                            (bySection.badges || 0)
+                        );
+
+                        // ✅ RECALCULER LE NIVEAU basé sur le vrai total
                         const baseXP = 200;
                         const multiplier = 1.5;
+                        let level = 1;
+                        let totalNeeded = 0;
+
+                        while (totalNeeded <= this.totalXP) {
+                            const xpForLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+                            totalNeeded += xpForLevel;
+                            if (totalNeeded <= this.totalXP) level++;
+                        }
+
+                        this.currentLevel = level;
+                        this.xpToNextLevel = Math.floor(baseXP * Math.pow(multiplier, level - 1));
+
+                        // ✅ CALCULER XP DANS LE NIVEAU ACTUEL
                         let totalForPreviousLevels = 0;
                         for (let i = 1; i < this.currentLevel; i++) {
                             totalForPreviousLevels += Math.floor(baseXP * Math.pow(multiplier, i - 1));
                         }
                         this.currentLevelXP = this.totalXP - totalForPreviousLevels;
                         this.progressPercent = Math.min((this.currentLevelXP / this.xpToNextLevel) * 100, 100);
+
+                        console.log('✅ Dashboard XP recalculé:', {
+                            totalXP: this.totalXP,
+                            bySection: bySection,
+                            level: this.currentLevel,
+                            currentLevelXP: this.currentLevelXP,
+                            xpToNextLevel: this.xpToNextLevel,
+                            progressPercent: this.progressPercent.toFixed(1) + '%'
+                        });
                     } catch (e) {
                         console.error('Erreur chargement XP:', e);
                     }
@@ -979,13 +1009,13 @@
                         localStorage.removeItem('lemondedescurieux_badges');
                         localStorage.removeItem('lemondedescurieux_quiz_stats');
                         localStorage.removeItem('userBadges');
-                        
+
                         // Anciennes clés (compatibilité)
                         localStorage.removeItem('curio_xp');
                         localStorage.removeItem('xp_data');
-                        
+
                         alert('✅ Toutes les données ont été supprimées !\n\nLe dashboard va se recharger.');
-                        
+
                         // Recharger la page
                         window.location.reload();
                     } catch (e) {
@@ -996,9 +1026,10 @@
             }));
         });
     </script>
-</body>
-</html>
-        });
-    </script>
+
+
+
+    <!-- Admin Shortcut (Ctrl+Shift+X) -->
+    <script src="scripts/admin-shortcut.js"></script>
 </body>
 </html>
