@@ -137,7 +137,7 @@
                         <div class="feedback-explanation" x-show="currentQuestion.explanation">
                             💡 <span x-text="currentQuestion.explanation"></span>
                         </div>
-                        <button @click="nextQuestion()" class="next-btn">Suivant →</button>
+                        <!-- Bouton "Suivant" supprimé : auto-avance après 2s -->
                     </div>
                 </div>
 
@@ -614,7 +614,54 @@
                         this.showIllustration = !this.showIllustration;
                     },
 
+                    // ✅ COOLDOWN : Vérifier si quiz peut être démarré (24h)
+                    canStartQuiz(domain) {
+                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        if (!cooldownData.lastCompleted) return true;
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
+                        return timeSinceCompletion >= cooldownDuration;
+                    },
+
+                    getCooldownTimeRemaining(domain) {
+                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        if (!cooldownData.lastCompleted) return null;
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
+                        const remaining = cooldownDuration - timeSinceCompletion;
+                        if (remaining <= 0) return null;
+                        const hours = Math.floor(remaining / (60 * 60 * 1000));
+                        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+                        return { hours, minutes };
+                    },
+
+                    recordQuizCompletion(domain) {
+                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
+                        const cooldownData = {
+                            lastCompleted: Date.now(),
+                            count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
+                        };
+                        localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
+                        console.log(`🔒 Cooldown activé pour ${domain}`);
+                    },
+
                     startQuiz() {
+                        // ✅ VÉRIFIER COOLDOWN
+                        if (!this.canStartQuiz(this.currentDomain)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentDomain);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            return;
+                        }
+
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
@@ -650,6 +697,11 @@
                         } else {
                             this.playIncorrectSound();
                         }
+
+                        // ✅ AUTO-AVANCE : Timer 2 secondes puis question suivante
+                        setTimeout(() => {
+                            this.nextQuestion();
+                        }, 2000);
                     },
 
                     nextQuestion() {
@@ -674,9 +726,25 @@
                                 window.SectionXP.addXP('maths', window.SectionXP.rewards.PERFECT_QUIZ);
                             }
                         }
+
+                        // ✅ ENREGISTRER COOLDOWN (24h)
+                        this.recordQuizCompletion(this.currentDomain);
                     },
 
                     retryQuiz() {
+                        // ✅ VÉRIFIER COOLDOWN même pour retry
+                        if (!this.canStartQuiz(this.currentDomain)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentDomain);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            this.backToDomain();
+                            return;
+                        }
+
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();

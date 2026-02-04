@@ -1059,12 +1059,75 @@ let currentActivity = null;
 let currentExerciseIndex = 0;
 let currentScore = 0;
 
+// ✅ COOLDOWN : Vérifier si activité peut être démarrée (24h)
+function canStartActivity(activityId) {
+    const cooldownKey = `quiz_cooldown_maths_${activityId}`;
+    const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+    
+    if (!cooldownData.lastCompleted) return true;
+    
+    const now = Date.now();
+    const timeSinceCompletion = now - cooldownData.lastCompleted;
+    const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
+    
+    return timeSinceCompletion >= cooldownDuration;
+}
+
+// Obtenir temps restant avant déblocage
+function getCooldownTimeRemaining(activityId) {
+    const cooldownKey = `quiz_cooldown_maths_${activityId}`;
+    const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+    
+    if (!cooldownData.lastCompleted) return null;
+    
+    const now = Date.now();
+    const timeSinceCompletion = now - cooldownData.lastCompleted;
+    const cooldownDuration = 24 * 60 * 60 * 1000;
+    const remaining = cooldownDuration - timeSinceCompletion;
+    
+    if (remaining <= 0) return null;
+    
+    const hours = Math.floor(remaining / (60 * 60 * 1000));
+    const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+    
+    return { hours: hours, minutes: minutes };
+}
+
+// Enregistrer cooldown après complétion
+function recordActivityCompletion(activityId) {
+    const cooldownKey = `quiz_cooldown_maths_${activityId}`;
+    const cooldownData = {
+        lastCompleted: Date.now(),
+        count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
+    };
+    localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
+    console.log(`🔒 Cooldown activé pour ${activityId} jusqu'à`, new Date(cooldownData.lastCompleted + 24*60*60*1000).toLocaleString('fr-FR'));
+}
+
 function startActivity(activityId) {
     console.log('🎮 Démarrage activité:', activityId);
+    
+    // ✅ VÉRIFIER COOLDOWN
+    if (!canStartActivity(activityId)) {
+        const remaining = getCooldownTimeRemaining(activityId);
+        const message = `⏰ Activité déjà complétée aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour la refaire.`;
+        
+        showCurioMessage(message);
+        alert(message);
+        return; // BLOQUER le démarrage
+    }
     
     const content = EDUCATIONAL_CONTENT[activityId];
     if (!content) {
         console.error('Activité non trouvée:', activityId);
+        return;
+    }
+    
+    // ✅ VÉRIFIER QUE LE DOM EST PRÊT
+    const modalContainer = document.getElementById('activity-modal');
+    if (!modalContainer) {
+        console.error('❌ activity-modal non trouvé dans le DOM !');
+        alert('Erreur: Élément modal manquant. Rechargez la page.');
         return;
     }
     
@@ -1139,10 +1202,11 @@ function checkAnswer(selectedAnswer) {
     const feedbackZone = document.getElementById('feedback-zone');
     const optionsContainer = document.getElementById('options-container');
     
-    // Désactiver tous les boutons
+    // Désactiver tous les boutons de réponse
     const buttons = optionsContainer.querySelectorAll('button');
     buttons.forEach(btn => btn.disabled = true);
     
+    // Afficher feedback
     if (isCorrect) {
         currentScore++;
         playSound('correct');
@@ -1152,10 +1216,10 @@ function checkAnswer(selectedAnswer) {
             <div style="background: #d4edda; padding: 1rem; border-radius: 8px; border: 2px solid #28a745;">
                 <p style="color: #155724; font-weight: bold; margin-bottom: 0.5rem;">✅ Correct !</p>
                 <p style="color: #155724; font-size: 0.9rem;">${exercise.explanation}</p>
+                <p style="color: #155724; font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">⏳ Prochaine question dans 2 secondes...</p>
             </div>
         `;
     } else {
-        // Perdre un cœur
         window.heartsSystem.loseHeart(SECTION_NAME);
         playSound('incorrect');
         showCurioMessage('incorrect');
@@ -1165,32 +1229,24 @@ function checkAnswer(selectedAnswer) {
                 <p style="color: #721c24; font-weight: bold; margin-bottom: 0.5rem;">❌ Incorrect !</p>
                 <p style="color: #721c24; font-size: 0.9rem;">La bonne réponse est : <strong>${exercise.correct}</strong></p>
                 <p style="color: #721c24; font-size: 0.9rem; margin-top: 0.5rem;">${exercise.explanation}</p>
+                <p style="color: #721c24; font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">⏳ Prochaine question dans 2 secondes...</p>
             </div>
         `;
         
-        // Vérifier si plus de cœurs
         const hearts = window.heartsSystem.getHearts(SECTION_NAME);
         if (hearts.current === 0) {
             setTimeout(() => showCurioMessage('noHearts'), 1000);
         }
     }
     
-    // Bouton suivant
+    // ✅ AUTO-AVANCE STRICT : Aucun bouton, juste le timer
     setTimeout(() => {
         if (currentExerciseIndex < content.exercises.length - 1) {
-            feedbackZone.innerHTML += `
-                <button 
-                    onclick="nextExercise()" 
-                    class="btn-complete-activity"
-                    style="margin-top: 1rem;"
-                >
-                    ➡️ Question suivante
-                </button>
-            `;
+            nextExercise();
         } else {
             completeActivity();
         }
-    }, 100);
+    }, 2000);
 }
 
 function nextExercise() {
@@ -1245,6 +1301,9 @@ function completeActivity() {
         }
         if (window.BRIDGE) window.BRIDGE.syncBadges();
     }
+    
+    // ✅ ENREGISTRER COOLDOWN (24h)
+    recordActivityCompletion(currentActivity);
     
     // Feedback final
     showCompletionFeedback(currentScore, totalQuestions, xpGained);
