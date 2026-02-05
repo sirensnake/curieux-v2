@@ -50,6 +50,34 @@
                     :class="'theme-btn grammar' + (currentTheme === 'grammar' ? ' active' : '')">
                     📖 Grammar Basics
                 </button>
+                <button @click="selectTheme('numbers')"
+                    :class="'theme-btn numbers' + (currentTheme === 'numbers' ? ' active' : '')">
+                    🔢 Numbers & Time
+                </button>
+                <button @click="selectTheme('school')"
+                    :class="'theme-btn school' + (currentTheme === 'school' ? ' active' : '')">
+                    🏫 At School
+                </button>
+                <button @click="selectTheme('body')"
+                    :class="'theme-btn body' + (currentTheme === 'body' ? ' active' : '')">
+                    🧍 My Body & Health
+                </button>
+                <button @click="selectTheme('home')"
+                    :class="'theme-btn home' + (currentTheme === 'home' ? ' active' : '')">
+                    🏠 At Home
+                </button>
+                <button @click="selectTheme('hobbies')"
+                    :class="'theme-btn hobbies' + (currentTheme === 'hobbies' ? ' active' : '')">
+                    ⚽ Hobbies & Sports
+                </button>
+                <button @click="selectTheme('food')"
+                    :class="'theme-btn food' + (currentTheme === 'food' ? ' active' : '')">
+                    🍽️ Food & Meals
+                </button>
+                <button @click="selectTheme('weather')"
+                    :class="'theme-btn weather' + (currentTheme === 'weather' ? ' active' : '')">
+                    ☀️ Weather & Seasons
+                </button>
             </div>
 
             <!-- Contenu thème -->
@@ -198,6 +226,7 @@
                     quizFinished: false,
                     currentQuestion: null,
                     audioContext: null,
+                    shuffledQuiz: null,
 
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -246,6 +275,41 @@
                             name: 'Grammar Basics',
                             description: 'Understand English grammar: verbs, present tense, pronouns, adjectives',
                             imageUrl: 'images/anglais/illustration_grammar.jpg'
+                        },
+                        numbers: {
+                            name: 'Numbers & Time',
+                            description: 'Learn to count, tell time, dates and seasons',
+                            imageUrl: 'images/anglais/illustration_numbers.jpg'
+                        },
+                        school: {
+                            name: 'At School',
+                            description: 'Classroom objects, subjects and school activities',
+                            imageUrl: 'images/anglais/illustration_school.jpg'
+                        },
+                        body: {
+                            name: 'My Body & Health',
+                            description: 'Body parts, feelings and health expressions',
+                            imageUrl: 'images/anglais/illustration_body.jpg'
+                        },
+                        home: {
+                            name: 'At Home',
+                            description: 'Rooms, furniture and daily routines',
+                            imageUrl: 'images/anglais/illustration_home.jpg'
+                        },
+                        hobbies: {
+                            name: 'Hobbies & Sports',
+                            description: 'Activities, sports and leisure vocabulary',
+                            imageUrl: 'images/anglais/illustration_hobbies.jpg'
+                        },
+                        food: {
+                            name: 'Food & Meals',
+                            description: 'Food vocabulary, meal times and preferences',
+                            imageUrl: 'images/anglais/illustration_food.jpg'
+                        },
+                        weather: {
+                            name: 'Weather & Seasons',
+                            description: 'Weather expressions and seasonal activities',
+                            imageUrl: 'images/anglais/illustration_weather.jpg'
                         }
                     },
 
@@ -480,7 +544,101 @@
                             { question: "Quel pronom pour parler de soi-même ?", options: ["You", "He", "I", "We"], correct: "I", explanation: "'I' (je) est utilisé pour parler de soi-même." },
                             { question: "Quel adjectif signifie 'heureux' ?", options: ["Sad", "Happy", "Angry", "Tired"], correct: "Happy", explanation: "'Happy' = heureux/heureuse, 'Sad' = triste" },
                             { question: "Complète : 'She ___ a book.' (lire)", options: ["read", "reads", "reading", "readed"], correct: "reads", explanation: "Avec She, on ajoute -s au verbe : She reads = Elle lit" }
+],
+                        numbers: [
+                            { question: "How do you say '5'?", options: ["five", "fife", "fiv", "fyve"], correct: "five", explanation: "5 = five" },
+                            { question: "How do you say '13'?", options: ["thirteen", "threeteen", "thirtheen", "therteen"], correct: "thirteen", explanation: "13 = thirteen" },
+                            { question: "How do you say '20'?", options: ["twenty", "twenti", "twentty", "tuenty"], correct: "twenty", explanation: "20 = twenty" },
+                            { question: "What time is it? (3:00)", options: ["three o'clock", "three hours", "three times", "third o'clock"], correct: "three o'clock", explanation: "o'clock = precise hour" },
+                            { question: "What time is it? (7:30)", options: ["both are correct", "half past seven", "seven thirty", "seven and half"], correct: "both are correct", explanation: "7:30 = half past seven OR seven thirty" },
+                            { question: "Which is a day?", options: ["Monday", "January", "Spring", "Morning"], correct: "Monday", explanation: "Monday is a day" },
+                            { question: "Which is a month?", options: ["February", "Tuesday", "Summer", "Yesterday"], correct: "February", explanation: "February is a month" },
+                            { question: "Which is a season?", options: ["Winter", "December", "Cold", "Night"], correct: "Winter", explanation: "Winter is a season" },
+                            { question: "How do you say '1st'?", options: ["first", "onest", "one", "firsted"], correct: "first", explanation: "1st = first (ordinal)" },
+                            { question: "How do you say '100'?", options: ["one hundred", "hundred", "cent", "one cent"], correct: "one hundred", explanation: "100 = one hundred" }
+                        ],
+                        school: [
+                            { question: "What do you write with?", options: ["a pen", "a desk", "a door", "a wall"], correct: "a pen", explanation: "pen = stylo" },
+                            { question: "Where does teacher write?", options: ["on the board", "on the pen", "on the student", "on the chair"], correct: "on the board", explanation: "board = tableau" },
+                            { question: "Where do you sit?", options: ["on a chair", "on the board", "on the teacher", "on the pen"], correct: "on a chair", explanation: "chair = chaise" },
+                            { question: "Subject with numbers?", options: ["math", "art", "music", "PE"], correct: "math", explanation: "math = mathématiques" },
+                            { question: "You sing in...?", options: ["music", "math", "science", "history"], correct: "music", explanation: "music = musique" },
+                            { question: "Play sports where?", options: ["in the gym", "in the library", "in the cafeteria", "in the classroom"], correct: "in the gym", explanation: "gym = gymnase" },
+                            { question: "Eat lunch where?", options: ["in the cafeteria", "in the gym", "in the library", "in the office"], correct: "in the cafeteria", explanation: "cafeteria = cantine" },
+                            { question: "Carry books in...?", options: ["a backpack", "a pencil", "a desk", "a chair"], correct: "a backpack", explanation: "backpack = sac à dos" },
+                            { question: "Who teaches you?", options: ["the teacher", "the student", "the book", "the desk"], correct: "the teacher", explanation: "teacher = professeur" },
+                            { question: "What do you read?", options: ["a book", "a chair", "a board", "a gym"], correct: "a book", explanation: "book = livre" }
+                        ],
+                        body: [
+                            { question: "You see with your...", options: ["eyes", "ears", "nose", "mouth"], correct: "eyes", explanation: "eyes = yeux" },
+                            { question: "You hear with your...", options: ["ears", "eyes", "nose", "mouth"], correct: "ears", explanation: "ears = oreilles" },
+                            { question: "You smell with your...", options: ["nose", "ears", "eyes", "hands"], correct: "nose", explanation: "nose = nez" },
+                            { question: "You walk with your...", options: ["legs", "arms", "eyes", "ears"], correct: "legs", explanation: "legs = jambes" },
+                            { question: "You write with your...", options: ["hand", "foot", "head", "leg"], correct: "hand", explanation: "hand = main" },
+                            { question: "How feel? 😊", options: ["happy", "sad", "angry", "tired"], correct: "happy", explanation: "happy = heureux" },
+                            { question: "How feel? 😢", options: ["sad", "happy", "angry", "excited"], correct: "sad", explanation: "sad = triste" },
+                            { question: "How feel? 😴", options: ["tired", "happy", "angry", "hungry"], correct: "tired", explanation: "tired = fatigué" },
+                            { question: "Cold: My ... hurts.", options: ["throat", "tooth", "stomach", "foot"], correct: "throat", explanation: "sore throat = mal de gorge" },
+                            { question: "Toothache: My ... hurts.", options: ["tooth", "throat", "head", "stomach"], correct: "tooth", explanation: "toothache = mal de dents" }
+                        ],
+                        home: [
+                            { question: "Where do you sleep?", options: ["in the bedroom", "in the kitchen", "in the bathroom", "in the garage"], correct: "in the bedroom", explanation: "bedroom = chambre" },
+                            { question: "Where do you cook?", options: ["in the kitchen", "in the bedroom", "in the bathroom", "in the living room"], correct: "in the kitchen", explanation: "kitchen = cuisine" },
+                            { question: "Where take a shower?", options: ["in the bathroom", "in the kitchen", "in the bedroom", "in the garden"], correct: "in the bathroom", explanation: "bathroom = salle de bain" },
+                            { question: "Where watch TV?", options: ["in the living room", "in the bathroom", "in the garage", "in the closet"], correct: "in the living room", explanation: "living room = salon" },
+                            { question: "What sleep in?", options: ["a bed", "a sofa", "a chair", "a table"], correct: "a bed", explanation: "bed = lit" },
+                            { question: "Sit on to eat?", options: ["a chair", "a bed", "a shower", "a window"], correct: "a chair", explanation: "chair = chaise" },
+                            { question: "Eat on...?", options: ["a table", "a bed", "a sofa", "a door"], correct: "a table", explanation: "table = table" },
+                            { question: "Put clothes where?", options: ["in the closet", "in the oven", "in the sink", "in the bed"], correct: "in the closet", explanation: "closet = placard" },
+                            { question: "I ... my teeth daily.", options: ["brush", "cook", "sleep", "eat"], correct: "brush", explanation: "brush teeth" },
+                            { question: "I ... breakfast at 7.", options: ["eat", "sleep", "brush", "watch"], correct: "eat", explanation: "eat breakfast" }
+                        ],
+                        hobbies: [
+                            { question: "I ... football.", options: ["play", "do", "make", "go"], correct: "play", explanation: "play + sport (ball)" },
+                            { question: "I ... swimming.", options: ["go", "play", "do", "make"], correct: "go", explanation: "go + -ing" },
+                            { question: "I ... judo.", options: ["do", "play", "go", "make"], correct: "do", explanation: "do + martial arts" },
+                            { question: "I ... pictures.", options: ["draw", "play", "go", "do"], correct: "draw", explanation: "draw = dessiner" },
+                            { question: "I ... books.", options: ["read", "write", "watch", "listen"], correct: "read", explanation: "read = lire" },
+                            { question: "I ... to music.", options: ["listen", "watch", "read", "play"], correct: "listen", explanation: "listen to = écouter" },
+                            { question: "I ... video games.", options: ["play", "watch", "listen", "read"], correct: "play", explanation: "play video games" },
+                            { question: "I ... bike.", options: ["ride a", "drive a", "fly a", "sail a"], correct: "ride a", explanation: "ride a bike" },
+                            { question: "My hobby is ...", options: ["painting", "paint", "to paint", "painted"], correct: "painting", explanation: "hobby is + -ing" },
+                            { question: "Favorite sport?", options: ["basketball", "math", "cooking", "sleeping"], correct: "basketball", explanation: "basketball is sport" }
+                        ],
+                        food: [
+                            { question: "I'm hungry. I ...", options: ["eat", "drink", "sleep", "play"], correct: "eat", explanation: "hungry → eat" },
+                            { question: "I'm thirsty. I ...", options: ["drink", "eat", "sleep", "play"], correct: "drink", explanation: "thirsty → drink" },
+                            { question: "Which is a fruit?", options: ["apple", "carrot", "bread", "cheese"], correct: "apple", explanation: "apple = pomme (fruit)" },
+                            { question: "Which is vegetable?", options: ["carrot", "apple", "cake", "milk"], correct: "carrot", explanation: "carrot = carotte" },
+                            { question: "Eat for breakfast?", options: ["cereal", "pizza", "steak", "soup"], correct: "cereal", explanation: "cereal = céréales" },
+                            { question: "Drink in morning?", options: ["orange juice", "soup", "ice cream", "cake"], correct: "orange juice", explanation: "juice = jus" },
+                            { question: "Do you like pizza? Yes, ...", options: ["I do", "I am", "I like", "I want"], correct: "I do", explanation: "'Do you?' → 'I do'" },
+                            { question: "Would you like water? Yes, ...", options: ["please", "I do", "I am", "I like"], correct: "please", explanation: "'Would you?' → 'please'" },
+                            { question: "I ... chocolate daily.", options: ["eat", "eats", "eating", "to eat"], correct: "eat", explanation: "I eat (present)" },
+                            { question: "She ... vegetables.", options: ["likes", "like", "liking", "to like"], correct: "likes", explanation: "She likes (+s)" }
+                        ],
+                        weather: [
+                            { question: "When rains, need ...", options: ["umbrella", "ice cream", "swimsuit", "fan"], correct: "umbrella", explanation: "umbrella = parapluie" },
+                            { question: "When cold, wear ...", options: ["coat", "swimsuit", "t-shirt", "shorts"], correct: "coat", explanation: "coat = manteau" },
+                            { question: "When hot, wear ...", options: ["shorts", "coat", "boots", "gloves"], correct: "shorts", explanation: "shorts = short" },
+                            { question: "It's raining. Weather is ...", options: ["rainy", "sunny", "snowy", "windy"], correct: "rainy", explanation: "rainy = pluvieux" },
+                            { question: "Sun shining. It's ...", options: ["sunny", "rainy", "snowy", "cloudy"], correct: "sunny", explanation: "sunny = ensoleillé" },
+                            { question: "It's snowing. It's ...", options: ["snowy", "sunny", "hot", "warm"], correct: "snowy", explanation: "snowy = neigeux" },
+                            { question: "Which is season?", options: ["spring", "Monday", "January", "morning"], correct: "spring", explanation: "spring = printemps" },
+                            { question: "After summer?", options: ["autumn", "spring", "winter", "summer"], correct: "autumn", explanation: "autumn/fall" },
+                            { question: "In winter, usually ...", options: ["cold", "hot", "warm", "boiling"], correct: "cold", explanation: "winter = cold" },
+                            { question: "In summer, usually ...", options: ["hot", "cold", "freezing", "snowy"], correct: "hot", explanation: "summer = hot" }
                         ]
+                    },
+
+                    // Mélanger un tableau (Fisher-Yates)
+                    shuffleArray(array) {
+                        const shuffled = [...array];
+                        for (let i = shuffled.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                        }
+                        return shuffled;
                     },
 
                     selectTheme(t) {
@@ -516,13 +674,13 @@
                     canStartQuiz(theme) {
                         const cooldownKey = `quiz_cooldown_anglais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
+
                         if (!cooldownData.lastCompleted) return true;
-                        
+
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
                         const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
-                        
+
                         return timeSinceCompletion >= cooldownDuration;
                     },
 
@@ -530,19 +688,19 @@
                     getCooldownTimeRemaining(theme) {
                         const cooldownKey = `quiz_cooldown_anglais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
+
                         if (!cooldownData.lastCompleted) return null;
-                        
+
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
                         const cooldownDuration = 24 * 60 * 60 * 1000;
                         const remaining = cooldownDuration - timeSinceCompletion;
-                        
+
                         if (remaining <= 0) return null;
-                        
+
                         const hours = Math.floor(remaining / (60 * 60 * 1000));
                         const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-                        
+
                         return { hours, minutes };
                     },
 
@@ -562,7 +720,7 @@
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
+
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
@@ -570,6 +728,13 @@
                             }
                             return; // BLOQUER le démarrage
                         }
+
+                        // ✨ NOUVEAU : Mélanger les options des questions
+                        const quiz = this.quizQuestions[this.currentTheme] || [];
+                        this.shuffledQuiz = quiz.map(q => {
+                            const shuffledOptions = this.shuffleArray([...q.options]);
+                            return { ...q, options: shuffledOptions };
+                        });
 
                         this.showQuiz = true;
                         this.showResults = false;
@@ -581,7 +746,7 @@
                     },
 
                     getCurrentQuiz() {
-                        return this.quizQuestions[this.currentTheme] || [];
+                        return this.shuffledQuiz || this.quizQuestions[this.currentTheme] || [];
                     },
 
                     loadQuestion() {
@@ -614,7 +779,7 @@
                     },
 
                     nextQuestion() {
-                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                        if (this.currentQuestionIndex < this.shuffledQuiz.length - 1) {
                             this.currentQuestionIndex++;
                             this.loadQuestion();
                         } else {
@@ -624,7 +789,7 @@
 
                     finishQuiz() {
                         this.quizFinished = true;
-                        const quizLength = this.getCurrentQuiz().length;
+                        const quizLength = this.shuffledQuiz.length;
                         const isPerfect = (this.score === quizLength);
 
                         // Bonus XP pour complétion du quiz
@@ -637,34 +802,34 @@
                         // ========================================================================
                         if (typeof gameSystem !== 'undefined') {
                             try {
-                                const quizLength = this.getCurrentQuiz().length;
+                                const quizLength = this.shuffledQuiz.length;
                                 const percentage = Math.round((this.score / quizLength) * 100);
                                 const baseXP = this.score * 10;
                                 const lessonId = `english_${this.currentDomain}_${Date.now()}`;
-                                
+
                                 // Context pour bonus automatiques
                                 const englishData = gameSystem.getSectionData('english');
                                 const context = {
                                     perfectScore: percentage === 100,
                                     hasActiveStreak: englishData.streak > 0
                                 };
-                                
+
                                 // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
                                 const earnedXP = gameSystem.awardXP('english', baseXP, context);
-                                
+
                                 // Enregistrer complétion leçon
                                 gameSystem.completeLesson('english', lessonId, percentage, 0);
-                                
+
                                 // Mettre à jour streak quotidien
                                 gameSystem.updateStreak('english');
-                                
+
                                 // Mettre à jour affichage badges
                                 if (typeof updateGameSystemUI === 'function') {
                                     updateGameSystemUI();
                                 }
-                                
+
                                 console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
-                                
+
                             } catch (error) {
                                 console.error('❌ Erreur MasterGameSystem:', error);
                                 // Fallback: ancien système continue de fonctionner
@@ -708,7 +873,7 @@
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
+
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
@@ -755,7 +920,7 @@
                     if (typeof MasterGameSystem !== 'undefined') {
                         window.gameSystem = new MasterGameSystem();
                         console.log('✅ MasterGameSystem v3.0 initialisé pour section english');
-                        
+
                         // Mettre à jour UI badges si fonction disponible
                         if (typeof updateGameSystemUI === 'function') {
                             updateGameSystemUI();

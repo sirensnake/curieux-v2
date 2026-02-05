@@ -14,7 +14,7 @@
         <script src="scripts/section-xp-system.js"></script>
         <script src="scripts/badges-system.js"></script>
         <script src="scripts/storage-bridge.js"></script>
-        
+
         <!-- Admin Shortcut (Ctrl+Shift+A) -->
         <script src="scripts/admin-shortcut.js"></script>
 
@@ -52,6 +52,34 @@
                 <button @click="selectTheme('vocabulaire')"
                     :class="'theme-btn vocabulaire' + (currentTheme === 'vocabulaire' ? ' active' : '')">
                     📖 Vocabulaire
+                </button>
+                <button @click="selectTheme('orthographe')"
+                    :class="'theme-btn orthographe' + (currentTheme === 'orthographe' ? ' active' : '')">
+                    ✍️ Orthographe
+                </button>
+                <button @click="selectTheme('ponctuation')"
+                    :class="'theme-btn ponctuation' + (currentTheme === 'ponctuation' ? ' active' : '')">
+                    🔣 Ponctuation
+                </button>
+                <button @click="selectTheme('typesphrases')"
+                    :class="'theme-btn typesphrases' + (currentTheme === 'typesphrases' ? ' active' : '')">
+                    💬 Types de Phrases
+                </button>
+                <button @click="selectTheme('classesmots')"
+                    :class="'theme-btn classesmots' + (currentTheme === 'classesmots' ? ' active' : '')">
+                    🏷️ Classes de Mots
+                </button>
+                <button @click="selectTheme('lecture')"
+                    :class="'theme-btn lecture' + (currentTheme === 'lecture' ? ' active' : '')">
+                    📖 Lecture
+                </button>
+                <button @click="selectTheme('production')"
+                    :class="'theme-btn production' + (currentTheme === 'production' ? ' active' : '')">
+                    ✍️ Production
+                </button>
+                <button @click="selectTheme('poesie')"
+                    :class="'theme-btn poesie' + (currentTheme === 'poesie' ? ' active' : '')">
+                    🎭 Poésie
                 </button>
             </div>
 
@@ -249,6 +277,41 @@
                             name: 'Vocabulaire',
                             description: 'Enrichis ton vocabulaire : synonymes, antonymes, expressions',
                             imageUrl: '/images/francais/illustration_vocabulaire.jpg'
+                        },
+                        orthographe: {
+                            name: 'Orthographe',
+                            description: 'Maîtrise les sons complexes et les lettres muettes',
+                            imageUrl: '/images/francais/illustration_orthographe.jpg'
+                        },
+                        ponctuation: {
+                            name: 'Ponctuation',
+                            description: 'Apprends à utiliser les signes de ponctuation correctement',
+                            imageUrl: '/images/francais/illustration_ponctuation.jpg'
+                        },
+                        typesphrases: {
+                            name: 'Types de Phrases',
+                            description: 'Distingue les phrases déclaratives, interrogatives, exclamatives et impératives',
+                            imageUrl: '/images/francais/illustration_phrases.jpg'
+                        },
+                        classesmots: {
+                            name: 'Classes de Mots',
+                            description: 'Identifie les noms, verbes, adjectifs et déterminants',
+                            imageUrl: '/images/francais/illustration_classes.jpg'
+                        },
+                        lecture: {
+                            name: 'Lecture & Compréhension',
+                            description: 'Comprends un texte et trouve l\'idée principale',
+                            imageUrl: '/images/francais/illustration_lecture.jpg'
+                        },
+                        production: {
+                            name: 'Production d\'Écrit',
+                            description: 'Rédige des récits, descriptions et dialogues',
+                            imageUrl: '/images/francais/illustration_ecriture.jpg'
+                        },
+                        poesie: {
+                            name: 'Poésie',
+                            description: 'Découvre les rimes, les vers et les figures de style',
+                            imageUrl: '/images/francais/illustration_poesie.jpg'
                         }
                     },
 
@@ -513,8 +576,93 @@
                             { question: "'Avoir un chat dans la gorge' signifie :", options: ["Avoir un animal", "Être enroué", "Avoir faim"], correct: "Être enroué", explanation: "C'est une expression qui signifie être enroué." },
                             { question: "Synonyme de 'rapide' :", options: ["Lent", "Vite", "Calme"], correct: "Vite", explanation: "'Vite' et 'rapide' ont un sens proche." },
                             { question: "Antonyme de 'monter' :", options: ["Grimper", "Descendre", "Escalader"], correct: "Descendre", explanation: "'Descendre' est l'opposé de 'monter'." }
+                        ],
+                        orthographe: [
+                            { question: "Le son [k] dans : ...ahier", options: ["c", "qu", "k", "ch"], correct: "c", explanation: "'c' devant 'a' → cahier" },
+                            { question: "Le son [s] dans : poi...on", options: ["s", "ss", "c", "ç"], correct: "ss", explanation: "Entre deux voyelles → poisson" },
+                            { question: "Le son [s] dans : gar...on", options: ["s", "ss", "c", "ç"], correct: "ç", explanation: "Devant 'o', cédille → garçon" },
+                            { question: "Le son [g] dans : ...itare", options: ["g", "gu", "gue"], correct: "gu", explanation: "Devant 'i' → guitare" },
+                            { question: "Le son [ʒ] dans : ...ardin", options: ["j", "g", "ge"], correct: "j", explanation: "Devant 'a' → jardin" },
+                            { question: "Lettre muette dans 'gran...' :", options: ["t", "d", "p", "s"], correct: "d", explanation: "grand → grande" },
+                            { question: "Lettre muette dans 'cha...' :", options: ["t", "d", "p", "s"], correct: "t", explanation: "chat → chatte" },
+                            { question: "Accent correct : 'f...te'", options: ["ê", "è", "é", "e"], correct: "ê", explanation: "fête" },
+                            { question: "Accent correct : '...cole'", options: ["é", "è", "ê", "e"], correct: "é", explanation: "école" },
+                            { question: "Double consonne : 'vit...e'", options: ["esse", "èse", "ése", "ese"], correct: "esse", explanation: "vitesse" }
+                        ],
+                        ponctuation: [
+                            { question: "Signe phrase déclarative ?", options: [".", "?", "!", "..."], correct: ".", explanation: "Le point (.)" },
+                            { question: "Signe question ?", options: [".", "?", "!", ","], correct: "?", explanation: "Point d'interrogation (?)" },
+                            { question: "Signe émotion forte ?", options: [".", "?", "!", ","], correct: "!", explanation: "Point d'exclamation (!)" },
+                            { question: "J'aime les pommes... les poires", options: [",", ".", ";", ":"], correct: ",", explanation: "Virgule énumération" },
+                            { question: "J'ai trois animaux... un chat", options: [":", ",", ".", ";"], correct: ":", explanation: "Deux-points annoncent" },
+                            { question: "Je ne sais pas...", options: ["...", ".", "!", "?"], correct: "...", explanation: "Points de suspension" },
+                            { question: "Encadre les paroles ?", options: ["« »", "( )", "[ ]", "{ }"], correct: "« »", explanation: "Guillemets" },
+                            { question: "Dialogue réplique ?", options: ["–", "*", "+", "/"], correct: "–", explanation: "Tiret" },
+                            { question: "Info supplémentaire ?", options: ["( )", "[ ]", "« »", "{ }"], correct: "( )", explanation: "Parenthèses" },
+                            { question: "Après un point ?", options: ["MAJUSCULE", "minuscule", "espace", "virgule"], correct: "MAJUSCULE", explanation: "Toujours majuscule" }
+                        ],
+                        typesphrases: [
+                            { question: "'Le chat dort.' est :", options: ["Déclarative", "Interrogative", "Exclamative", "Impérative"], correct: "Déclarative", explanation: "Information + point" },
+                            { question: "'Viens-tu ?' est :", options: ["Interrogative", "Déclarative", "Exclamative", "Impérative"], correct: "Interrogative", explanation: "Question + ?" },
+                            { question: "'Quelle belle journée !' est :", options: ["Exclamative", "Déclarative", "Interrogative", "Impérative"], correct: "Exclamative", explanation: "Émotion + !" },
+                            { question: "'Range ta chambre.' est :", options: ["Impérative", "Déclarative", "Interrogative", "Exclamative"], correct: "Impérative", explanation: "Ordre impératif" },
+                            { question: "Mot exclamatif ?", options: ["Comme", "Quand", "Pourquoi", "Comment"], correct: "Comme", explanation: "'Comme c'est beau !'" },
+                            { question: "Phrase impérative sans :", options: ["Sujet visible", "Verbe", "Ponctuation", "Sens"], correct: "Sujet visible", explanation: "Pas de sujet" },
+                            { question: "Phrase interrogative ?", options: ["Est-ce que tu viens ?", "Tu viens.", "Viens !", "Comme tu viens !"], correct: "Est-ce que tu viens ?", explanation: "Question avec ?" },
+                            { question: "Transformer 'C'est beau' exclamative ?", options: ["Comme c'est beau !", "C'est beau ?", "Sois beau.", "C'est beau."], correct: "Comme c'est beau !", explanation: "Comme + !" },
+                            { question: "'Ne cours pas !' est :", options: ["Impérative", "Déclarative", "Interrogative", "Exclamative"], correct: "Impérative", explanation: "Interdiction" },
+                            { question: "Question avec inversion ?", options: ["Où", "Donc", "Car", "Mais"], correct: "Où", explanation: "'Où vas-tu ?'" }
+                        ],
+                        classesmots: [
+                            { question: "'chat' dans 'Le chat dort' est :", options: ["Nom", "Verbe", "Adjectif", "Adverbe"], correct: "Nom", explanation: "Désigne animal" },
+                            { question: "'dort' dans 'Le chat dort' est :", options: ["Verbe", "Nom", "Adjectif", "Déterminant"], correct: "Verbe", explanation: "Action dormir" },
+                            { question: "'le' dans 'Le chat noir' est :", options: ["Déterminant", "Nom", "Verbe", "Adjectif"], correct: "Déterminant", explanation: "Article défini" },
+                            { question: "'noir' dans 'Le chat noir' est :", options: ["Adjectif", "Nom", "Verbe", "Déterminant"], correct: "Adjectif", explanation: "Qualifie chat" },
+                            { question: "'Paris' est un nom :", options: ["Propre", "Commun", "Verbe", "Adjectif"], correct: "Propre", explanation: "Majuscule lieu unique" },
+                            { question: "'vite' dans 'Il court vite' est :", options: ["Adverbe", "Adjectif", "Nom", "Verbe"], correct: "Adverbe", explanation: "Modifie verbe" },
+                            { question: "'et' dans 'Paul et Marie' est :", options: ["Conjonction", "Préposition", "Adverbe", "Interjection"], correct: "Conjonction", explanation: "Coordination" },
+                            { question: "'à' dans 'Je vais à l'école' est :", options: ["Préposition", "Conjonction", "Adverbe", "Verbe"], correct: "Préposition", explanation: "Relie complément" },
+                            { question: "'Il' remplace :", options: ["Paul", "arrive", "content", "est"], correct: "Paul", explanation: "Pronom personnel" },
+                            { question: "Classe INVARIABLE ?", options: ["Adverbe", "Nom", "Adjectif", "Déterminant"], correct: "Adverbe", explanation: "Ne change jamais" }
+                        ],
+                        lecture: [
+                            { question: "Avant de lire, observer :", options: ["Titre et images", "Seulement texte", "Dernière page", "Auteur"], correct: "Titre et images", explanation: "Observation globale" },
+                            { question: "'Qui ?' permet de trouver :", options: ["Personnages", "Lieu", "Moment", "Raison"], correct: "Personnages", explanation: "Identifie personnages" },
+                            { question: "'Où ?' permet de trouver :", options: ["Lieu", "Personnages", "Moment", "Raison"], correct: "Lieu", explanation: "Identifie lieu" },
+                            { question: "'Quand ?' permet de trouver :", options: ["Moment", "Lieu", "Personnages", "Action"], correct: "Moment", explanation: "Identifie moment" },
+                            { question: "Idée principale c'est :", options: ["Message essentiel", "Premier mot", "Dernier mot", "Titre"], correct: "Message essentiel", explanation: "Résumé en phrase" },
+                            { question: "Texte raconte histoire :", options: ["Récit", "Documentaire", "Recette", "Poème"], correct: "Récit", explanation: "Histoire personnages" },
+                            { question: "Texte donne informations :", options: ["Documentaire", "Récit", "Dialogue", "Poésie"], correct: "Documentaire", explanation: "Explique informe" },
+                            { question: "Recette cuisine est :", options: ["Prescriptif", "Narratif", "Descriptif", "Poétique"], correct: "Prescriptif", explanation: "Instructions" },
+                            { question: "Mot inconnu, d'abord :", options: ["Deviner contexte", "Abandonner", "Sauter texte", "Pleurer"], correct: "Deviner contexte", explanation: "Contexte aide" },
+                            { question: "Pour comprendre :", options: ["Relire si besoin", "Lire vite", "Sauter passages", "Pas réfléchir"], correct: "Relire si besoin", explanation: "Relecture aide" }
+                        ],
+                        production: [
+                            { question: "Avant écrire :", options: ["Brouillon", "Mise au propre", "Dessins", "Rien"], correct: "Brouillon", explanation: "Organiser idées" },
+                            { question: "Élément déclencheur est :", options: ["Problème survient", "Fin", "Début", "Héros"], correct: "Problème survient", explanation: "Lance action" },
+                            { question: "Décrire personnage :", options: ["Physique et caractère", "Vêtements", "Âge", "Nom"], correct: "Physique et caractère", explanation: "Complet" },
+                            { question: "Imparfait pour :", options: ["Décrire", "Actions principales", "Dialogues", "Ordres"], correct: "Décrire", explanation: "Descriptions" },
+                            { question: "Dialogue réplique :", options: ["Tiret –", "Point .", "Virgule ,", "Accent é"], correct: "Tiret –", explanation: "Chaque réplique" },
+                            { question: "Connecteur EN PREMIER ?", options: ["D'abord", "Ensuite", "Puis", "Enfin"], correct: "D'abord", explanation: "Première étape" },
+                            { question: "Dire doucement ?", options: ["Chuchoter", "Crier", "Hurler", "Répéter"], correct: "Chuchoter", explanation: "Voix basse" },
+                            { question: "Éviter répétitions :", options: ["Synonymes", "Même mot", "Rien", "Erreurs"], correct: "Synonymes", explanation: "Varier vocabulaire" },
+                            { question: "Après écriture :", options: ["Relire corriger", "Jeter brouillon", "Dormir", "Rien"], correct: "Relire corriger", explanation: "Toujours relire" },
+                            { question: "Situation finale est :", options: ["Fin histoire", "Début", "Problème", "Héros"], correct: "Fin histoire", explanation: "Conclut récit" }
+                        ],
+                        poesie: [
+                            { question: "Ligne poème :", options: ["Vers", "Strophe", "Rime", "Rythme"], correct: "Vers", explanation: "Une ligne" },
+                            { question: "Groupe vers :", options: ["Strophe", "Vers", "Rime", "Poème"], correct: "Strophe", explanation: "Plusieurs vers" },
+                            { question: "4 vers :", options: ["Quatrain", "Distique", "Tercet", "Sizain"], correct: "Quatrain", explanation: "Quatre = quatrain" },
+                            { question: "Rimes sont :", options: ["Fin vers", "Début vers", "Milieu vers", "Partout"], correct: "Fin vers", explanation: "Sons fin" },
+                            { question: "Alexandrin syllabes ?", options: ["12", "8", "10", "6"], correct: "12", explanation: "12 syllabes" },
+                            { question: "'Fort comme lion' est :", options: ["Comparaison", "Métaphore", "Personnification", "Anaphore"], correct: "Comparaison", explanation: "Avec 'comme'" },
+                            { question: "'Homme est lion' est :", options: ["Métaphore", "Comparaison", "Personnification", "Allitération"], correct: "Métaphore", explanation: "Sans 'comme'" },
+                            { question: "'Vent chuchote' est :", options: ["Personnification", "Comparaison", "Métaphore", "Rime"], correct: "Personnification", explanation: "Qualité humaine" },
+                            { question: "Répéter son consonne :", options: ["Allitération", "Assonance", "Rime", "Vers"], correct: "Allitération", explanation: "Consonnes" },
+                            { question: "Répéter son voyelle :", options: ["Assonance", "Allitération", "Rime", "Vers"], correct: "Assonance", explanation: "Voyelles" }
                         ]
                     },
+
 
                     selectTheme(t) {
                         this.currentTheme = t;
@@ -549,13 +697,13 @@
                     canStartQuiz(theme) {
                         const cooldownKey = `quiz_cooldown_francais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
+
                         if (!cooldownData.lastCompleted) return true;
-                        
+
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
                         const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
-                        
+
                         return timeSinceCompletion >= cooldownDuration;
                     },
 
@@ -563,19 +711,19 @@
                     getCooldownTimeRemaining(theme) {
                         const cooldownKey = `quiz_cooldown_francais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        
+
                         if (!cooldownData.lastCompleted) return null;
-                        
+
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
                         const cooldownDuration = 24 * 60 * 60 * 1000;
                         const remaining = cooldownDuration - timeSinceCompletion;
-                        
+
                         if (remaining <= 0) return null;
-                        
+
                         const hours = Math.floor(remaining / (60 * 60 * 1000));
                         const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-                        
+
                         return { hours, minutes };
                     },
 
@@ -595,7 +743,7 @@
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
+
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
@@ -604,13 +752,33 @@
                             return; // BLOQUER le démarrage
                         }
 
-                        this.showQuiz = true;
-                        this.showResults = false;
-                        this.currentQuestionIndex = this.score = 0;
-                        this.selectedAnswer = null;
+                        // ✅ INITIALISATION QUIZ
+                        this.currentQuestionIndex = 0;
+                        this.score = 0;
                         this.answered = false;
                         this.quizFinished = false;
-                        this.loadQuestion();
+
+                        // ✨ NOUVEAU : Mélanger les options des questions
+                        const quiz = this.quizQuestions[this.currentTheme] || [];
+                        this.shuffledQuiz = quiz.map(q => {
+                            const shuffledOptions = this.shuffleArray([...q.options]);
+                            return { ...q, options: shuffledOptions };
+                        });
+
+                        this.currentQuestion = this.shuffledQuiz[0];
+                        this.showQuiz = true;
+                        this.showLesson = false;
+                        this.showIllustration = false;
+                    },
+
+                    // Mélanger un tableau (algorithme Fisher-Yates)
+                    shuffleArray(array) {
+                        const shuffled = [...array];
+                        for (let i = shuffled.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                        }
+                        return shuffled;
                     },
 
                     getCurrentQuiz() {
@@ -674,30 +842,30 @@
                                 const percentage = Math.round((this.score / quizLength) * 100);
                                 const baseXP = this.score * 10;
                                 const lessonId = `francais_${this.currentDomain}_${Date.now()}`;
-                                
+
                                 // Context pour bonus automatiques
                                 const francaisData = gameSystem.getSectionData('francais');
                                 const context = {
                                     perfectScore: percentage === 100,
                                     hasActiveStreak: francaisData.streak > 0
                                 };
-                                
+
                                 // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
                                 const earnedXP = gameSystem.awardXP('francais', baseXP, context);
-                                
+
                                 // Enregistrer complétion leçon
                                 gameSystem.completeLesson('francais', lessonId, percentage, 0);
-                                
+
                                 // Mettre à jour streak quotidien
                                 gameSystem.updateStreak('francais');
-                                
+
                                 // Mettre à jour affichage badges
                                 if (typeof updateGameSystemUI === 'function') {
                                     updateGameSystemUI();
                                 }
-                                
+
                                 console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
-                                
+
                             } catch (error) {
                                 console.error('❌ Erreur MasterGameSystem:', error);
                                 // Fallback: ancien système continue de fonctionner
@@ -749,7 +917,7 @@
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-                            
+
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
@@ -793,7 +961,7 @@
                     if (typeof MasterGameSystem !== 'undefined') {
                         window.gameSystem = new MasterGameSystem();
                         console.log('✅ MasterGameSystem v3.0 initialisé pour section francais');
-                        
+
                         // Mettre à jour UI badges si fonction disponible
                         if (typeof updateGameSystemUI === 'function') {
                             updateGameSystemUI();
