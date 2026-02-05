@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test MasterGameSystem v3.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .status.success { background: #d4edda; color: #155724; }
+        .status.warning { background: #fff3cd; color: #856404; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .status.info { background: #d1ecf1; color: #0c5460; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        button.secondary {
+            background: #6c757d;
+        }
+        
+        button.danger {
+            background: #dc3545;
+        }
+        
+        button.success {
+            background: #28a745;
+        }
+        
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .stat-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        #console {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        #console .log {
+            margin: 5px 0;
+        }
+        
+        #console .log.success { color: #4ec9b0; }
+        #console .log.error { color: #f48771; }
+        #console .log.warning { color: #dcdcaa; }
+        #console .log.info { color: #9cdcfe; }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .section-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎮 MasterGameSystem v3.0 - Interface de Test</h1>
+            <p>Refactoring Système Gamification - Le Monde des Curieux</p>
+        </div>
+
+        <!-- Status -->
+        <div id="status" class="status info">
+            ⏳ Chargement des systèmes...
+        </div>
+
+        <!-- Grid principale -->
+        <div class="grid">
+            <!-- Diagnostic -->
+            <div class="card">
+                <h2>🔍 Diagnostic</h2>
+                <p>Analyser l'état actuel du localStorage</p>
+                <button onclick="runDiagnosticTest()">Lancer Diagnostic</button>
+                <div id="diagnostic-result"></div>
+            </div>
+
+            <!-- Migration -->
+            <div class="card">
+                <h2>🔄 Migration</h2>
+                <p>Migrer vers MasterGameSystem v3.0</p>
+                <button onclick="runMigrationTest()">Migrer Données</button>
+                <button class="secondary" onclick="testMigrationWithSampleData()">Test avec Données Exemple</button>
+                <div id="migration-result"></div>
+            </div>
+
+            <!-- Stats Globales -->
+            <div class="card">
+                <h2>📊 Statistiques Globales</h2>
+                <div id="global-stats">
+                    <div class="stat">
+                        <span class="stat-label">Niveau:</span>
+                        <span class="stat-value" id="stat-level">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">XP Total:</span>
+                        <span class="stat-value" id="stat-xp">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Streak:</span>
+                        <span class="stat-value" id="stat-streak">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Leçons:</span>
+                        <span class="stat-value" id="stat-lessons">-</span>
+                    </div>
+                </div>
+                <button onclick="refreshStats()">🔄 Actualiser</button>
+            </div>
+        </div>
+
+        <!-- Progression -->
+        <div class="card">
+            <h2>📈 Progression vers Niveau Suivant</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-bar" style="width: 0%">0%</div>
+            </div>
+        </div>
+
+        <!-- Sections -->
+        <div class="card">
+            <h2>📚 Sections</h2>
+            <div class="section-grid" id="sections-grid">
+                <!-- Rempli dynamiquement -->
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="card">
+            <h2>⚡ Actions de Test</h2>
+            <button class="success" onclick="testAwardXP()">Ajouter 100 XP (Maths)</button>
+            <button class="success" onclick="testCompleteLesson()">Compléter Leçon</button>
+            <button class="success" onclick="testStreak()">Tester Streak</button>
+            <button onclick="testHearts()">❤️ Tester Cœurs</button>
+            <button onclick="testExport()">📦 Export Données</button>
+            <button onclick="testBackup()">💾 Créer Backup</button>
+            <button class="danger" onclick="testReset()">🔄 Réinitialiser</button>
+            <button class="secondary" onclick="showDebug()">🐛 Debug Info</button>
+        </div>
+
+        <!-- Console -->
+        <div class="card">
+            <h2>💻 Console</h2>
+            <div id="console"></div>
+            <button class="secondary" onclick="clearConsole()">Effacer Console</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/diagnostic-storage.js"></script>
+    <script src="scripts/master-game-system.js"></script>
+    <script src="scripts/data-migrator.js"></script>
+
+    <script>
+        let gameSystem = null;
+
+        // Custom console
+        function log(message, type = 'info') {
+            const console = document.getElementById('console');
+            const line = document.createElement('div');
+            line.className = `log ${type}`;
+            line.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            console.appendChild(line);
+            console.scrollTop = console.scrollHeight;
+        }
+
+        function clearConsole() {
+            document.getElementById('console').innerHTML = '';
+        }
+
+        // Status
+        function setStatus(message, type) {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.textContent = message;
+        }
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            log('Interface de test chargée', 'success');
+            
+            // Vérifier si système existe
+            const hasMasterSystem = localStorage.getItem('masterGameSystem_v3');
+            
+            if (hasMasterSystem) {
+                gameSystem = new MasterGameSystem();
+                setStatus('✅ MasterGameSystem v3.0 chargé', 'success');
+                log('Système existant chargé', 'success');
+                refreshStats();
+            } else {
+                setStatus('⚠️ Aucun système détecté - Lancez diagnostic ou migration', 'warning');
+                log('Pas de système v3.0 détecté', 'warning');
+            }
+        });
+
+        // Diagnostic
+        function runDiagnosticTest() {
+            log('🔍 Lancement diagnostic...', 'info');
+            const report = runDiagnostic();
+            
+            const result = document.getElementById('diagnostic-result');
+            result.innerHTML = `
+                <div style="margin-top: 15px;">
+                    <p><strong>Clés total:</strong> ${report.totalKeys}</p>
+                    <p><strong>Gamification:</strong> ${report.gamificationKeys.length}</p>
+                    <p><strong>Problèmes:</strong> ${report.issues.length}</p>
+                    <p style="margin-top: 10px;">
+                        ${report.issues.length === 0 ? 
+                          '✅ Aucun problème' : 
+                          '⚠️ Voir console navigateur'}
+                    </p>
+                </div>
+            `;
+            
+            log('Diagnostic terminé', 'success');
+        }
+
+        // Migration
+        async function runMigrationTest() {
+            log('🔄 Lancement migration...', 'info');
+            setStatus('⏳ Migration en cours...', 'info');
+            
+            const report = await runMigration();
+            
+            const result = document.getElementById('migration-result');
+            
+            if (report.success) {
+                result.innerHTML = `
+                    <div style="margin-top: 15px; color: green;">
+                        <p><strong>✅ Migration réussie!</strong></p>
+                        <p>Sections: ${report.migrated.sections}/5</p>
+                        <p>XP: ${report.migrated.totalXP}</p>
+                        <p>Leçons: ${report.migrated.totalLessons}</p>
+                    </div>
+                `;
+                
+                gameSystem = new MasterGameSystem();
+                setStatus('✅ Migration terminée avec succès', 'success');
+                log('Migration réussie', 'success');
+                refreshStats();
+            } else {
+                result.innerHTML = `
+                    <div style="margin-top: 15px; color: red;">
+                        <p><strong>❌ Migration échouée</strong></p>
+                        <p>Voir console pour détails</p>
+                    </div>
+                `;
+                setStatus('❌ Erreur migration', 'error');
+                log('Migration échouée', 'error');
+            }
+        }
+
+        // Test avec données exemple
+        function testMigrationWithSampleData() {
+            log('📝 Création données exemple...', 'info');
+            
+            // Créer données test
+            localStorage.setItem('maths_xp', JSON.stringify({ total: 500 }));
+            localStorage.setItem('maths_completed', JSON.stringify(['lesson_01', 'lesson_02']));
+            localStorage.setItem('english_xp', JSON.stringify({ total: 300 }));
+            localStorage.setItem('francais_xp', JSON.stringify({ total: 200 }));
+            
+            log('Données exemple créées', 'success');
+            
+            // Lancer migration
+            runMigrationTest();
+        }
+
+        // Refresh stats
+        function refreshStats() {
+            if (!gameSystem) {
+                log('Aucun système chargé', 'warning');
+                return;
+            }
+            
+            const stats = gameSystem.getGlobalStats();
+            
+            document.getElementById('stat-level').textContent = stats.level;
+            document.getElementById('stat-xp').textContent = stats.totalXP;
+            document.getElementById('stat-streak').textContent = stats.currentStreak;
+            document.getElementById('stat-lessons').textContent = stats.totalLessons;
+            
+            // Progress bar
+            const totalXP = stats.totalXP;
+            const nextLevelXP = stats.xpForNextLevel;
+            const currentLevelXP = totalXP - nextLevelXP;
+            const levelXPRange = gameSystem.data.global.xpThresholds[stats.level] - 
+                                 gameSystem.data.global.xpThresholds[stats.level - 1] || 200;
+            
+            const progress = Math.floor((currentLevelXP / levelXPRange) * 100);
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+            
+            // Sections
+            const sectionsGrid = document.getElementById('sections-grid');
+            sectionsGrid.innerHTML = '';
+            
+            Object.entries(gameSystem.data.sections).forEach(([name, data]) => {
+                const card = document.createElement('div');
+                card.className = 'section-card';
+                card.innerHTML = `
+                    <h3>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
+                    <p>XP: ${data.xp}</p>
+                    <p>Leçons: ${data.completed.length}</p>
+                    <p>❤️ ${data.hearts}/5</p>
+                `;
+                sectionsGrid.appendChild(card);
+            });
+            
+            log('Stats actualisées', 'success');
+        }
+
+        // Test XP
+        function testAwardXP() {
+            if (!gameSystem) {
+                log('Système non initialisé', 'error');
+                return;
+            }
+            
+            const xp = gameSystem.awardXP('maths', 100);
+            log(`Ajouté ${xp} XP à Maths`, 'success');
+            refreshStats();
+        }
+
+        // Test leçon
+        function testCompleteLesson() {
+            if (!gameSystem) {
+                log('Système non initialisé', 'error');
+                return;
+            }
+            
+            const lessonId = 'test_lesson_' + Date.now();
+            gameSystem.completeLesson('english', lessonId, 95, 120);
+            gameSystem.awardXP('english', 50);
+            log(`Leçon ${lessonId} complétée`, 'success');
+            refreshStats();
+        }
+
+        // Test streak
+        function testStreak() {
+            if (!gameSystem) return;
+            
+            gameSystem.updateStreak('francais');
+            log('Streak mis à jour', 'success');
+            refreshStats();
+        }
+
+        // Test hearts
+        function testHearts() {
+            if (!gameSystem) return;
+            
+            const canContinue = gameSystem.loseHeart('sciences');
+            log(`Cœur perdu. Peut continuer: ${canContinue}`, canContinue ? 'warning' : 'error');
+            refreshStats();
+        }
+
+        // Export
+        function testExport() {
+            if (!gameSystem) return;
+            
+            const data = gameSystem.exportData();
+            console.log('Export:', data);
+            log('Export généré (voir console navigateur)', 'success');
+            
+            // Télécharger
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `curio_backup_${Date.now()}.json`;
+            a.click();
+        }
+
+        // Backup
+        function testBackup() {
+            if (!gameSystem) return;
+            
+            const key = gameSystem.createBackup();
+            log(`Backup créé: ${key}`, 'success');
+        }
+
+        // Reset
+        function testReset() {
+            if (!gameSystem) return;
+            
+            if (confirm('⚠️ Réinitialiser TOUTES les données?')) {
+                gameSystem.reset();
+                log('Système réinitialisé', 'warning');
+                refreshStats();
+            }
+        }
+
+        // Debug
+        function showDebug() {
+            if (!gameSystem) {
+                log('Aucun système chargé', 'error');
+                return;
+            }
+            
+            gameSystem.debugPrint();
+            log('Debug info affichée dans console navigateur', 'info');
+        }
+
+        // Events
+        window.addEventListener('game:levelup', (e) => {
+            log(`🎉 LEVEL UP! ${e.detail.oldLevel} → ${e.detail.newLevel}`, 'success');
+            setStatus(`🎉 Niveau ${e.detail.newLevel} atteint!`, 'success');
+            refreshStats();
+        });
+
+        window.addEventListener('game:xpawarded', (e) => {
+            log(`✨ +${e.detail.xp} XP (${e.detail.section})`, 'success');
+        });
+
+        window.addEventListener('game:advancedunlocked', (e) => {
+            log('🔓 Contenu avancé débloqué!', 'success');
+            setStatus('🔓 Contenu avancé débloqué!', 'success');
+        });
+    </script>
+</body>
+</html>

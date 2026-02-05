@@ -581,6 +581,46 @@
                             const quizLength = this.getCurrentQuiz().length;
                             if (this.score === quizLength) {
                                 window.SectionXP.addXP('histoire', window.SectionXP.rewards.PERFECT_QUIZ);
+                        // ========================================================================
+                        // NOUVEAU : MasterGameSystem v3.0 - Attribution XP Unifiée
+                        // ========================================================================
+                        if (typeof gameSystem !== 'undefined') {
+                            try {
+                                const quizLength = this.getCurrentQuiz().length;
+                                const percentage = Math.round((this.score / quizLength) * 100);
+                                const baseXP = this.score * 10;
+                                const lessonId = `histoire_${this.currentDomain}_${Date.now()}`;
+                                
+                                // Context pour bonus automatiques
+                                const histoireData = gameSystem.getSectionData('histoire');
+                                const context = {
+                                    perfectScore: percentage === 100,
+                                    hasActiveStreak: histoireData.streak > 0
+                                };
+                                
+                                // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
+                                const earnedXP = gameSystem.awardXP('histoire', baseXP, context);
+                                
+                                // Enregistrer complétion leçon
+                                gameSystem.completeLesson('histoire', lessonId, percentage, 0);
+                                
+                                // Mettre à jour streak quotidien
+                                gameSystem.updateStreak('histoire');
+                                
+                                // Mettre à jour affichage badges
+                                if (typeof updateGameSystemUI === 'function') {
+                                    updateGameSystemUI();
+                                }
+                                
+                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
+                                
+                            } catch (error) {
+                                console.error('❌ Erreur MasterGameSystem:', error);
+                                // Fallback: ancien système continue de fonctionner
+                            }
+                        }
+                        // ========================================================================
+
                             }
                         }
                     },
@@ -612,6 +652,31 @@
 
         <!-- Admin Shortcut (Ctrl+Shift+X) -->
         <script src="scripts/admin-shortcut.js"></script>
-    </body>
+            <!-- MasterGameSystem v3.0 -->
+        <script src="../js/master-game-system.js"></script>
+
+        <script>
+            // ========================================================================
+            // Initialisation automatique MasterGameSystem v3.0
+            // ========================================================================
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (typeof MasterGameSystem !== 'undefined') {
+                        window.gameSystem = new MasterGameSystem();
+                        console.log('✅ MasterGameSystem v3.0 initialisé pour section histoire');
+                        
+                        // Mettre à jour UI badges si fonction disponible
+                        if (typeof updateGameSystemUI === 'function') {
+                            updateGameSystemUI();
+                        }
+                    } else {
+                        console.error('❌ MasterGameSystem non trouvé');
+                    }
+                }, 200); // Pause 200ms pour Alpine.js
+            });
+            // ========================================================================
+        </script>
+
+</body>
 
 </html>
