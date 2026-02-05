@@ -727,6 +727,46 @@
                             }
                         }
 
+
+                        // ========================================================================
+                        // NOUVEAU : MasterGameSystem v3.0
+                        // ========================================================================
+                        if (typeof gameSystem !== 'undefined') {
+                            try {
+                                const quizLength = this.getCurrentQuiz().length;
+                                const percentage = Math.round((this.score / quizLength) * 100);
+                                const baseXP = this.score * 10;
+                                const lessonId = `maths_${this.currentDomain}_${Date.now()}`;
+                                
+                                // Context pour bonus
+                                const mathsData = gameSystem.getSectionData('maths');
+                                const context = {
+                                    perfectScore: percentage === 100,
+                                    hasActiveStreak: mathsData.streak > 0
+                                };
+                                
+                                // Attribution XP avec bonus automatiques
+                                const earnedXP = gameSystem.awardXP('maths', baseXP, context);
+                                
+                                // Enregistrer complétion leçon
+                                gameSystem.completeLesson('maths', lessonId, percentage, 0);
+                                
+                                // Mettre à jour streak quotidien
+                                gameSystem.updateStreak('maths');
+                                
+                                // Mettre à jour affichage badges
+                                if (typeof updateGameSystemUI === 'function') {
+                                    updateGameSystemUI();
+                                }
+                                
+                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
+                                
+                            } catch (error) {
+                                console.error('❌ Erreur MasterGameSystem:', error);
+                            }
+                        }
+                        // ========================================================================
+
                         // ✅ ENREGISTRER COOLDOWN (24h)
                         this.recordQuizCompletion(this.currentDomain);
                     },
@@ -769,6 +809,56 @@
 
         <!-- Admin Shortcut (Ctrl+Shift+X) -->
         <script src="scripts/admin-shortcut.js"></script>
-    </body>
+        <!-- ===== AJOUTER CES LIGNES ICI ===== -->
+    <script src="scripts/master-game-system.js"></script>
+    <script>
+        let gameSystem;
+        window.addEventListener('DOMContentLoaded', () => {
+            gameSystem = new MasterGameSystem();
+            updateGameSystemUI();
+        });
 
+        function updateGameSystemUI() {
+            const stats = gameSystem.getGlobalStats();
+            const section = getSectionName();
+
+        <!-- Admin Shortcut (Ctrl+Shift+X) -->
+        <script src="scripts/admin-shortcut.js"></script>
+        
+        <!-- MasterGameSystem v3.0 - Init Automatique -->
+        <script src="scripts/master-game-system.js"></script>
+        <script>
+            let gameSystem;
+            
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (typeof MasterGameSystem !== 'undefined') {
+                        gameSystem = new MasterGameSystem();
+                        console.log('✅ MasterGameSystem v3.0 initialisé');
+                        if (typeof updateGameSystemUI === 'function') {
+                            updateGameSystemUI();
+                        }
+                    }
+                }, 200);
+            });
+            
+            function updateGameSystemUI() {
+                try {
+                    const stats = gameSystem.getGlobalStats();
+                    const data = gameSystem.getSectionData('maths');
+                    if (document.getElementById('xp-value')) {
+                        document.getElementById('xp-value').textContent = `${data.xp} XP (Niv. ${stats.level})`;
+                    }
+                    if (document.getElementById('streak-value')) {
+                        document.getElementById('streak-value').textContent = data.streak;
+                    }
+                    if (document.getElementById('hearts-value')) {
+                        document.getElementById('hearts-value').textContent = `${data.hearts}/5`;
+                    }
+                } catch (e) {}
+            }
+            
+            function getSectionName() { return 'maths'; }
+        </script>
+    </body>
 </html>

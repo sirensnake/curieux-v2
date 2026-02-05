@@ -665,6 +665,46 @@
                             window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
                             if (isPerfect) {
                                 window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
+                        // ========================================================================
+                        // NOUVEAU : MasterGameSystem v3.0 - Attribution XP Unifiée
+                        // ========================================================================
+                        if (typeof gameSystem !== 'undefined') {
+                            try {
+                                const quizLength = this.getCurrentQuiz().length;
+                                const percentage = Math.round((this.score / quizLength) * 100);
+                                const baseXP = this.score * 10;
+                                const lessonId = `francais_${this.currentDomain}_${Date.now()}`;
+                                
+                                // Context pour bonus automatiques
+                                const francaisData = gameSystem.getSectionData('francais');
+                                const context = {
+                                    perfectScore: percentage === 100,
+                                    hasActiveStreak: francaisData.streak > 0
+                                };
+                                
+                                // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
+                                const earnedXP = gameSystem.awardXP('francais', baseXP, context);
+                                
+                                // Enregistrer complétion leçon
+                                gameSystem.completeLesson('francais', lessonId, percentage, 0);
+                                
+                                // Mettre à jour streak quotidien
+                                gameSystem.updateStreak('francais');
+                                
+                                // Mettre à jour affichage badges
+                                if (typeof updateGameSystemUI === 'function') {
+                                    updateGameSystemUI();
+                                }
+                                
+                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
+                                
+                            } catch (error) {
+                                console.error('❌ Erreur MasterGameSystem:', error);
+                                // Fallback: ancien système continue de fonctionner
+                            }
+                        }
+                        // ========================================================================
+
                             }
                         }
 
@@ -741,6 +781,31 @@
                 }));
             });
         </script>
-    </body>
+            <!-- MasterGameSystem v3.0 -->
+        <script src="../js/master-game-system.js"></script>
+
+        <script>
+            // ========================================================================
+            // Initialisation automatique MasterGameSystem v3.0
+            // ========================================================================
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (typeof MasterGameSystem !== 'undefined') {
+                        window.gameSystem = new MasterGameSystem();
+                        console.log('✅ MasterGameSystem v3.0 initialisé pour section francais');
+                        
+                        // Mettre à jour UI badges si fonction disponible
+                        if (typeof updateGameSystemUI === 'function') {
+                            updateGameSystemUI();
+                        }
+                    } else {
+                        console.error('❌ MasterGameSystem non trouvé');
+                    }
+                }, 200); // Pause 200ms pour Alpine.js
+            });
+            // ========================================================================
+        </script>
+
+</body>
 
 </html>
