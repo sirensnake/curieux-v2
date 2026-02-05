@@ -1,22 +1,22 @@
 {
-  "articles": [
+  "result": [
     {
-      "title": "🌍 Découverte d'une nouvelle espèce d'arbre",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle espèce d'arbre dans les forêts tropicales d'Amérique du Sud. Cet arbre, qui peut atteindre 30 mètres de haut, a des feuilles très particulières en forme d'étoile. Les chercheurs sont très enthousiastes car découvrir une nouvelle espèce aide à mieux comprendre les forêts et comment les protéger. Cela montre aussi qu'il y a encore beaucoup à apprendre sur notre planète !",
-      "date": "22/10/2023",
-      "link": "https://www.exemple.com/article1"
+      "title": "Découverte Surprenante dans l'Océan 🌊",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de pieuvre au fond de l'océan Pacifique. Cette pieuvre est toute petite et possède des couleurs vives comme un arc-en-ciel ! Les chercheurs l'ont trouvée en explorant des zones de l'océan qui n'avaient jamais été visitées auparavant. Cette découverte est super excitante, car elle nous aide à mieux comprendre la vie sous-marine et l'importance de protéger nos océans.",
+      "date": "30/10/2023",
+      "link": ""
     },
     {
-      "title": "🐋 Un concert pour les baleines",
-      "summary": "Un groupe de musiciens et de scientifiques s'est réuni pour créer un concert spécial qui sera joué dans l'océan pour les baleines. Avec des instruments et des haut-parleurs sous-marins, ils espèrent que la musique aidera les baleines à se détendre. Les sons sont inspirés des chants naturels des baleines et cela montre comment l'art et la science peuvent s'unir pour prendre soin de notre environnement !",
-      "date": "22/10/2023",
-      "link": "https://www.exemple.com/article2"
+      "title": "Un Nouveau Pont Écologique 🌉",
+      "summary": "Un nouveau pont a été ouvert en France, mais ce n'est pas un pont ordinaire ! Il est spécialement conçu avec des plantes et des arbres pour permettre aux animaux de traverser en sécurité sans rencontrer de voitures. Les écologues pensent que ce pont aidera à protéger de nombreuses espèces animales et à éviter des accidents. C'est une excellente nouvelle pour l'environnement et montre comment nous pouvons utiliser notre imagination pour aider la nature.",
+      "date": "30/10/2023",
+      "link": ""
     },
     {
-      "title": "🚀 Voyage vers une comète",
-      "summary": "Une sonde spatiale a été lancée pour explorer une comète qui passera près de la Terre. Les scientifiques veulent en apprendre davantage sur ces objets fascinants qui voyagent dans l'espace. Elles sont souvent faites de glace et de poussière et peuvent nous en dire beaucoup sur l'origine du système solaire. Ce projet est très excitant et montre combien de choses il reste à découvrir dans l'univers !",
-      "date": "22/10/2023",
-      "link": "https://www.exemple.com/article3"
+      "title": "Découverte Archéologique Fascinante 🏺",
+      "summary": "Des archéologues ont récemment fait une découverte incroyable en Égypte. Ils ont trouvé des tombes très anciennes qui pourraient avoir plus de 3 000 ans ! Ces tombes contiennent des trésors, comme des bijoux et des sculptures, qui nous en disent plus sur la vie des anciens Égyptiens. C'est comme ouvrir une fenêtre sur le passé et comprendre comment les gens vivaient autrefois. Cette découverte est une véritable aventure pour tous les amateurs d'histoire.",
+      "date": "30/10/2023",
+      "link": ""
     }
   ]
 }
