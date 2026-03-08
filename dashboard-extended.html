@@ -698,6 +698,32 @@
 
         <!-- STATS + ACTIVITY -->
         <div class="main-grid">
+            <!-- CONNEXION -->
+            <div class="card">
+                <h2 class="card-title"><span class="icon">📅</span> Temps de Connexion</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="big-num" x-text="connectionData.totalDays"></div>
+                        <div class="label">Jours Actifs</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="big-num" x-text="connectionData.thisWeekDays"></div>
+                        <div class="label">Cette Semaine</div>
+                    </div>
+                    <div class="stat-box" style="grid-column: span 2;">
+                        <div class="label" style="margin-bottom:8px;">Dernière visite : <strong x-text="connectionData.lastVisit"></strong></div>
+                        <div style="display:flex; gap:6px; justify-content:center; margin-top:10px;">
+                            <template x-for="day in connectionData.weekCalendar" :key="day.date">
+                                <div style="text-align:center;">
+                                    <div :style="'width:32px;height:32px;border-radius:6px;margin:0 auto 4px;background:' + (day.active ? '#27AE60' : '#2C3E50')"></div>
+                                    <div style="font-size:0.65em;color:var(--text-dim)" x-text="day.label"></div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- QUIZ STATS -->
             <div class="card">
                 <h2 class="card-title"><span class="icon">📊</span> Statistiques Quiz</h2>
@@ -758,6 +784,12 @@
                 longestStreak: 0,
                 badgesXP: 0,
                 badgesList: [],
+                connectionData: {
+                    totalDays: 0,
+                    lastVisit: null,
+                    thisWeekDays: 0,
+                    weekCalendar: []
+                },
                 sectionsList: [],
                 quizStats: {
                     totalCompleted: 0,
@@ -773,12 +805,14 @@
                 },
 
                 loadAllData() {
+                    this.recordTodayVisit();
                     this.loadXPData();
                     this.loadStreaksData();
                     this.loadBadgesData();
                     this.loadSectionsData();
                     this.loadQuizStats();
                     this.loadRecentActivity();
+                    this.loadConnectionTime();
                 },
 
                 loadXPData() {
@@ -937,6 +971,60 @@
                         }));
                     } catch (e) {
                         console.error('Erreur chargement activité:', e);
+                    }
+                },
+
+                recordTodayVisit() {
+                    try {
+                        const key = 'lemondedescurieux_visits';
+                        const visits = JSON.parse(localStorage.getItem(key) || '[]');
+                        const today = new Date().toISOString().slice(0, 10);
+                        if (!visits.includes(today)) {
+                            visits.push(today);
+                            localStorage.setItem(key, JSON.stringify(visits));
+                        }
+                    } catch(e) {}
+                },
+
+                loadConnectionTime() {
+                    try {
+                        const key = 'lemondedescurieux_visits';
+                        const visits = JSON.parse(localStorage.getItem(key) || '[]');
+
+                        // Total jours actifs
+                        this.connectionData.totalDays = visits.length;
+
+                        // Dernière visite
+                        if (visits.length > 0) {
+                            const last = visits[visits.length - 1];
+                            const lastDate = new Date(last);
+                            const today = new Date();
+                            const diffDays = Math.floor((today - lastDate) / 86400000);
+                            if (diffDays === 0) this.connectionData.lastVisit = "Aujourd'hui";
+                            else if (diffDays === 1) this.connectionData.lastVisit = "Hier";
+                            else this.connectionData.lastVisit = lastDate.toLocaleDateString('fr-FR');
+                        } else {
+                            this.connectionData.lastVisit = "Première visite !";
+                        }
+
+                        // Calendrier 7 derniers jours
+                        const calendar = [];
+                        for (let i = 6; i >= 0; i--) {
+                            const d = new Date();
+                            d.setDate(d.getDate() - i);
+                            const dateStr = d.toISOString().slice(0, 10);
+                            const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+                            calendar.push({
+                                date: dateStr,
+                                label: dayNames[d.getDay()],
+                                active: visits.includes(dateStr)
+                            });
+                        }
+                        this.connectionData.weekCalendar = calendar;
+                        this.connectionData.thisWeekDays = calendar.filter(d => d.active).length;
+
+                    } catch(e) {
+                        console.error('Erreur connexion:', e);
                     }
                 },
 
