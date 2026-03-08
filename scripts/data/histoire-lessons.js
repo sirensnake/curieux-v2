@@ -347,4 +347,456 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = histoireLessons;
 }
 
-console.log('✅ Données Histoire chargées : ' + histoireLessons.length + ' leçons');
+// ==========================================
+// LEÇONS DÉDIÉES — LOUIS XIV & RÉVOLUTION
+// Programme CM2
+// ==========================================
+
+histoireLessons.push(
+    // ========================================
+    // LEÇON 16 : LOUIS XIV ET VERSAILLES
+    // ========================================
+    {
+        id: 'histoire-16-louisxiv',
+        title: 'Louis XIV et Versailles',
+        emoji: '👑',
+        xp: 50,
+        difficulty: 'moyen',
+        period: 'tempsmodernes',
+        context: 'Louis XIV règne de 1661 à 1715, soit 54 ans ! C\'est le plus long règne de l\'histoire de France. Il concentre tous les pouvoirs et fait de Versailles le symbole de sa grandeur.',
+        contextIcon: '🏰',
+        questions: [
+            {
+                question: 'Quel surnom portait Louis XIV ?',
+                options: ['Le Roi-Soleil', 'Le Grand Roi', 'Le Roi de Fer', 'Le Roi Guerrier'],
+                correct: 0,
+                explanation: 'Louis XIV choisit le Soleil comme emblème : comme le Soleil, il éclaire et gouverne tout.'
+            },
+            {
+                question: 'Combien d\'années environ Louis XIV a-t-il régné ?',
+                options: ['30 ans', '45 ans', '72 ans', '100 ans'],
+                correct: 2,
+                explanation: 'Louis XIV règne de 1643 à 1715, soit 72 ans — le plus long règne de l\'histoire de France !'
+            },
+            {
+                question: 'Où Louis XIV a-t-il fait construire son célèbre palais ?',
+                options: ['Paris', 'Versailles', 'Fontainebleau', 'Lyon'],
+                correct: 1,
+                explanation: 'Le château de Versailles, construit à partir de 1661, est le symbole de la puissance royale.'
+            },
+            {
+                question: 'Quelle est la fameuse galerie du château de Versailles ?',
+                options: ['Galerie des Batailles', 'Galerie des Glaces', 'Grande Galerie', 'Galerie du Roi'],
+                correct: 1,
+                explanation: 'La Galerie des Glaces (357 miroirs !) est le chef-d\'œuvre de Versailles, construite en 1684.'
+            },
+            {
+                question: 'Que signifie la monarchie absolue ?',
+                options: ['Le roi partage le pouvoir', 'Le roi a tous les pouvoirs', 'Le peuple vote les lois', 'Le pape dirige la France'],
+                correct: 1,
+                explanation: 'Louis XIV concentre tous les pouvoirs. Sa devise : "L\'État, c\'est moi."'
+            },
+            {
+                question: 'Qui a conçu les jardins de Versailles ?',
+                options: ['Molière', 'Le Nôtre', 'Mansart', 'Colbert'],
+                correct: 1,
+                explanation: 'André Le Nôtre dessine les jardins à la française : symmétriques, géométriques, immenses.'
+            },
+            {
+                question: 'Quel célèbre auteur de comédies vivait à la cour de Louis XIV ?',
+                options: ['Racine', 'La Fontaine', 'Molière', 'Corneille'],
+                correct: 2,
+                explanation: 'Molière (Jean-Baptiste Poquelin) écrit ses plus grandes pièces grâce au soutien de Louis XIV.'
+            },
+            {
+                question: 'Quelle décision de Louis XIV chassa 300 000 Français de leur pays ?',
+                options: ['L\'Édit de Nantes', 'La Révocation de l\'Édit de Nantes', 'Le Traité de Westphalie', 'La Grande Ordonnance'],
+                correct: 1,
+                explanation: 'En 1685, Louis XIV révoque l\'Édit de Nantes : les protestants (huguenots) doivent fuir ou se convertir.'
+            },
+            {
+                question: 'Qui était le ministre des finances de Louis XIV, artisan de la prospérité française ?',
+                options: ['Richelieu', 'Mazarin', 'Colbert', 'Vauban'],
+                correct: 2,
+                explanation: 'Colbert organise l\'économie française, développe le commerce et les manufactures royales.'
+            },
+            {
+                question: 'Quelle ville devient la capitale royale avec Louis XIV ?',
+                options: ['Paris reste capitale', 'Versailles devient la nouvelle capitale', 'Lyon', 'Orléans'],
+                correct: 1,
+                explanation: 'En 1682, Louis XIV installe sa cour à Versailles. Toute la vie politique se déroule désormais au château.'
+            }
+        ]
+    },
+
+    // ========================================
+    // LEÇON 17 : LA RÉVOLUTION FRANÇAISE
+    // ========================================
+    {
+        id: 'histoire-17-revolution',
+        title: 'La Révolution française',
+        emoji: '🇫🇷',
+        xp: 55,
+        difficulty: 'moyen',
+        period: 'epoquecontemporaine',
+        context: 'En 1789, le peuple français, épuisé par la misère et les impôts injustes, se révolte contre le roi Louis XVI. C\'est le début d\'une transformation radicale de la France.',
+        contextIcon: '⚡',
+        questions: [
+            {
+                question: 'En quelle année a eu lieu la Révolution française ?',
+                options: ['1776', '1789', '1792', '1799'],
+                correct: 1,
+                explanation: '1789 est l\'année clé : prise de la Bastille, Déclaration des Droits de l\'Homme, fin de l\'Ancien Régime.'
+            },
+            {
+                question: 'Quel événement symbolise le début de la Révolution ?',
+                options: ['L\'exécution du roi', 'La prise de la Bastille', 'La fuite de Louis XVI', 'La proclamation de la République'],
+                correct: 1,
+                explanation: 'Le 14 juillet 1789, le peuple de Paris prend d\'assaut la Bastille, prison symbole du pouvoir royal.'
+            },
+            {
+                question: 'Quelle est la devise de la République française, née de la Révolution ?',
+                options: ['Dieu et Roi', 'Travail, Famille, Patrie', 'Liberté, Égalité, Fraternité', 'Un pour tous, tous pour un'],
+                correct: 2,
+                explanation: '"Liberté, Égalité, Fraternité" — cette devise est toujours celle de la France aujourd\'hui.'
+            },
+            {
+                question: 'Quel texte fondamental est adopté le 26 août 1789 ?',
+                options: ['La Constitution', 'La Déclaration des Droits de l\'Homme et du Citoyen', 'Le Code Civil', 'Le Traité de Paris'],
+                correct: 1,
+                explanation: 'Ce texte proclame que tous les hommes naissent libres et égaux. Il inspire encore nos lois aujourd\'hui.'
+            },
+            {
+                question: 'Qui était le roi de France au moment de la Révolution ?',
+                options: ['Louis XIV', 'Louis XV', 'Louis XVI', 'Louis XVIII'],
+                correct: 2,
+                explanation: 'Louis XVI (et son épouse Marie-Antoinette) sont arrêtés, jugés et exécutés guillotinés en 1793.'
+            },
+            {
+                question: 'Qu\'est-ce que la guillotine ?',
+                options: ['Une prison', 'Un instrument d\'exécution', 'Une arme de guerre', 'Un outil de torture'],
+                correct: 1,
+                explanation: 'Inventée pour exécuter "plus humainement", la guillotine est utilisée massivement pendant la Terreur (1793-1794).'
+            },
+            {
+                question: 'Comment s\'appellent les trois groupes sociaux (les "ordres") avant la Révolution ?',
+                options: ['Nobles, Bourgeois, Pauvres', 'Clergé, Noblesse, Tiers État', 'Roi, Ministres, Peuple', 'Seigneurs, Chevaliers, Serfs'],
+                correct: 1,
+                explanation: 'Le Tiers État (97% des Français : paysans, artisans, bourgeois) paie tous les impôts alors que nobles et clergé en sont exemptés.'
+            },
+            {
+                question: 'En quelle année la République française est-elle proclamée pour la première fois ?',
+                options: ['1789', '1790', '1792', '1795'],
+                correct: 2,
+                explanation: 'Le 21 septembre 1792, la monarchie est abolie et la Première République est proclamée.'
+            },
+            {
+                question: 'Qui est Robespierre ?',
+                options: ['Un général victorieux', 'Un chef révolutionnaire qui dirige la Terreur', 'Le frère du roi', 'Un philosophe des Lumières'],
+                correct: 1,
+                explanation: 'Robespierre dirige le Comité de Salut Public pendant la Terreur (1793-1794) : des milliers de personnes sont guillotinées.'
+            },
+            {
+                question: 'Quelle date est aujourd\'hui la fête nationale française ?',
+                options: ['1er mai', '14 juillet', '11 novembre', '8 mai'],
+                correct: 1,
+                explanation: 'Le 14 juillet commémore la prise de la Bastille en 1789, symbole de la liberté du peuple français.'
+            }
+        ]
+    }
+);
+
+
+
+// ==========================================
+// CONTENU DES LEÇONS PAR PÉRIODE
+// Externalisé depuis histoire_section_COMPLET.html
+// ==========================================
+const histoireLeconData = {
+
+    prehistoire: {
+        title: "La Préhistoire : Les débuts de l'humanité",
+        content: `
+            <h3>🦴 Qu'est-ce que la Préhistoire ?</h3>
+            <p>La Préhistoire est la période la plus longue de l'histoire humaine. Elle commence il y a <strong>environ 3 millions d'années</strong> avec les premiers hommes et se termine vers <strong>-3300 avant J.-C.</strong> avec l'invention de l'écriture.</p>
+
+            <h3>📅 Les deux grandes périodes</h3>
+            <ul>
+                <li><strong>Paléolithique</strong> (pierre ancienne, -3M → -10 000 ans) : nomades, chasseurs-cueilleurs</li>
+                <li><strong>Néolithique</strong> (pierre nouvelle, -10 000 → -3300 av. J.-C.) : sédentaires, agriculteurs, premiers villages</li>
+            </ul>
+
+            <h3>🔥 Les grandes découvertes</h3>
+            <ul>
+                <li><strong>Le feu</strong> : Maîtrisé il y a environ 400 000 ans</li>
+                <li><strong>Les outils</strong> : En pierre taillée puis polie</li>
+                <li><strong>L'art</strong> : Peintures rupestres (Lascaux, Chauvet)</li>
+                <li><strong>L'agriculture</strong> : Vers -10 000 ans</li>
+            </ul>
+
+            <h3>🪨 Les mégalithes</h3>
+            <p>Au Néolithique, les hommes dressent d'immenses pierres : <strong>menhirs</strong> (pierres dressées), <strong>dolmens</strong> (tombes), <strong>cromlechs</strong> (cercles de pierres, comme Stonehenge).</p>
+
+            <div style="background:#0d3020;border-left:4px solid #27ae60;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
+                <strong style="color:inherit;">>📌 À retenir :</strong> Préhistoire = avant l'écriture. Paléolithique = nomades. Néolithique = sédentaires et agriculteurs.
+            </div>
+        `
+    },
+
+    antiquite: {
+        title: "L'Antiquité : Les grandes civilisations",
+        content: `
+            <h3>🏛️ Qu'est-ce que l'Antiquité ?</h3>
+            <p>L'Antiquité débute avec l'<strong>invention de l'écriture</strong> vers -3300 av. J.-C. et se termine avec la <strong>chute de l'Empire romain d'Occident</strong> en <strong>476 après J.-C.</strong></p>
+
+            <h3>🏺 Les grandes civilisations</h3>
+            <ul>
+                <li><strong>Les Égyptiens</strong> : Pyramides, pharaons, hiéroglyphes, momification</li>
+                <li><strong>Les Grecs</strong> : Démocratie, philosophie, Jeux Olympiques (776 av. J.-C.)</li>
+                <li><strong>Les Romains</strong> : Empire, routes, aqueducs, droit romain</li>
+                <li><strong>Les Gaulois</strong> : Nos ancêtres, résistance à César</li>
+            </ul>
+
+            <h3>⚔️ Jules César et la Gaule</h3>
+            <p>Entre <strong>58 et 52 av. J.-C.</strong>, Jules César conquiert la Gaule. <strong>Vercingétorix</strong> résiste mais est vaincu à <strong>Alésia</strong> en 52 av. J.-C. La Gaule devient romaine pour 500 ans.</p>
+
+            <h3>🏗️ L'héritage romain</h3>
+            <p>Routes (30 000 km !), aqueducs, amphithéâtres (Colisée), thermes. Nous utilisons encore l'<strong>alphabet latin</strong> et le <strong>calendrier</strong> de Jules César.</p>
+
+            <div style="background:#0d1e2d;border-left:4px solid #2980b9;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
+                <strong style="color:inherit;">>📌 À retenir :</strong> Antiquité = de -3300 à 476. Égypte + Grèce + Rome = bases de notre civilisation.
+            </div>
+        `
+    },
+
+    moyenage: {
+        title: "Le Moyen Âge : Châteaux, chevaliers et cathédrales",
+        content: `
+            <h3>🏰 Qu'est-ce que le Moyen Âge ?</h3>
+            <p>Le Moyen Âge commence en <strong>476</strong> (chute de Rome) et se termine en <strong>1492</strong> (découverte de l'Amérique). C'est une période de <strong>1 000 ans</strong> !</p>
+
+            <h3>👑 Charlemagne (742-814)</h3>
+            <p>Roi des Francs couronné <strong>Empereur d'Occident</strong> par le pape en 800. Il unifie l'Europe et crée des écoles dans les monastères.</p>
+
+            <h3>⚔️ Le système féodal</h3>
+            <ul>
+                <li><strong>Le clergé</strong> (ceux qui prient) : moines, prêtres, évêques</li>
+                <li><strong>La noblesse</strong> (ceux qui combattent) : rois, seigneurs, chevaliers</li>
+                <li><strong>Le peuple</strong> (ceux qui travaillent) : paysans, artisans, marchands</li>
+            </ul>
+
+            <h3>⚜️ Jeanne d'Arc et la Guerre de Cent Ans</h3>
+            <p>La <strong>Guerre de Cent Ans</strong> (1337-1453) oppose la France à l'Angleterre. <strong>Jeanne d'Arc</strong>, guidée par des "voix", libère Orléans et permet à la France de gagner. Brûlée vive à 19 ans.</p>
+
+            <div style="margin-top:20px; padding:16px 18px; background:rgba(79,195,247,0.1); border:2px solid #4fc3f7; border-radius:10px;">
+                <p style="font-family:'Press Start 2P',monospace; font-size:0.55rem; color:#4fc3f7; margin-bottom:10px;">🔍 ALLER PLUS LOIN</p>
+                <p style="margin-bottom:12px; line-height:1.7;">Tu veux découvrir un vrai château du Moyen Âge ? Explore la leçon sur le <strong>château de Châteaubriant</strong> !</p>
+                <a href="lecon_chateau_chateaubriant.html" style="display:inline-block; font-family:'Press Start 2P',monospace; font-size:0.55rem; background:linear-gradient(135deg,#1a3a5c,#2d5a87); color:#4fc3f7; border:2px solid #4fc3f7; padding:10px 16px; border-radius:8px; text-decoration:none;">
+                    🏰 Leçon : Le Château de Châteaubriant →
+                </a>
+            </div>
+
+            <div style="background:#0d2a0d;border-left:4px solid #27ae60;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
+                <strong style="color:inherit;">>📌 À retenir :</strong> Moyen Âge = 476 à 1492. Féodalité, châteaux, chevaliers, cathédrales. Jeanne d'Arc = héroïne française.
+            </div>
+        `
+    },
+
+    tempsmodernes: {
+        title: "Les Temps Modernes : Découvertes et Renaissance",
+        content: `
+            <h3>⛵ Qu'est-ce que les Temps Modernes ?</h3>
+            <p>Les Temps Modernes commencent en <strong>1492</strong> avec la découverte de l'Amérique et se terminent en <strong>1789</strong> avec la Révolution française.</p>
+
+            <h3>🌍 Les grandes découvertes</h3>
+            <ul>
+                <li><strong>1492</strong> : Christophe Colomb découvre l'Amérique</li>
+                <li><strong>1498</strong> : Vasco de Gama atteint les Indes par l'Afrique</li>
+                <li><strong>1519-1522</strong> : Magellan réalise le premier tour du monde</li>
+            </ul>
+
+            <h3>📖 La Renaissance</h3>
+            <ul>
+                <li><strong>1455</strong> : Gutenberg invente l'imprimerie</li>
+                <li><strong>Léonard de Vinci</strong> : La Joconde, inventions géniales</li>
+                <li><strong>Copernic et Galilée</strong> : La Terre tourne autour du Soleil</li>
+            </ul>
+
+            <h3>👑 La monarchie absolue</h3>
+            <p><strong>Louis XIV</strong>, le "Roi-Soleil", règne 72 ans et construit <strong>Versailles</strong>. Devise : <em>"L'État, c'est moi."</em> À la fin du XVIIIe siècle, le peuple est épuisé par les impôts — la Révolution approche.</p>
+
+            <div style="background:#2a1a1a;border-left:4px solid #e74c3c;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
+                <strong style="color:inherit;">>📌 À retenir :</strong> Temps Modernes = 1492 à 1789. Découverte Amérique + Renaissance + imprimerie + Louis XIV.
+            </div>
+        `
+    },
+
+    louisxiv: {
+        title: "Louis XIV : Le Roi-Soleil et Versailles",
+        content: `
+            <h3>👑 Qui est Louis XIV ?</h3>
+            <p>Louis XIV devient roi à <strong>4 ans</strong> en 1643, après la mort de son père Louis XIII. Il prend réellement le pouvoir en <strong>1661</strong> à la mort de son ministre Mazarin. Il régnera jusqu'en <strong>1715</strong> : <strong>72 ans de règne</strong>, le plus long de l'histoire de France !</p>
+
+            <h3>☀️ Le Roi-Soleil</h3>
+            <p>Louis XIV choisit le <strong>Soleil</strong> comme emblème : comme l'astre du jour, il éclaire tout et gouverne tout. Sa devise : <em>"Nec pluribus impar"</em> (à nul autre pareil). Il concentre <strong>tous les pouvoirs</strong> — c'est la <strong>monarchie absolue</strong> : "L'État, c'est moi."</p>
+
+            <h3>🏰 Le château de Versailles</h3>
+            <p>À partir de <strong>1661</strong>, Louis XIV transforme le petit pavillon de chasse de son père en un palais gigantesque. Des <strong>30 000 ouvriers</strong> travaillent pendant 50 ans. En <strong>1682</strong>, toute la cour royale s'y installe :</p>
+            <ul>
+                <li>La <strong>Galerie des Glaces</strong> : 73 mètres de long, 357 miroirs, 20 000 bougies</li>
+                <li>Les <strong>jardins à la française</strong> d'André Le Nôtre : 800 hectares, 50 fontaines</li>
+                <li><strong>6 000 personnes</strong> vivent au château (nobles, serviteurs, gardes)</li>
+            </ul>
+
+            <h3>🎭 Le siècle de Louis XIV</h3>
+            <p>La cour de Versailles attire les plus grands artistes de France :</p>
+            <ul>
+                <li><strong>Molière</strong> : comédies (Le Bourgeois gentilhomme, L'Avare)</li>
+                <li><strong>Racine</strong> : tragédies (Phèdre, Andromaque)</li>
+                <li><strong>La Fontaine</strong> : Fables</li>
+                <li><strong>Lully</strong> : musique et opéras</li>
+            </ul>
+
+            <h3>⚔️ Les guerres et la fin du règne</h3>
+            <p>Louis XIV mène de nombreuses guerres pour agrandir la France. Mais elles coûtent très cher. En <strong>1685</strong>, il révoque l'Édit de Nantes : <strong>300 000 protestants</strong> fuient la France. À sa mort en 1715, la France est puissante mais endettée — ses arrière-petits-fils hériteront de cette dette explosive.</p>
+
+            <div style="background:#3a3010;border-left:4px solid #f39c12;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#f39c12;">📌 À retenir :</strong> Louis XIV = Roi-Soleil, 72 ans de règne, Versailles, monarchie absolue. "L'État, c'est moi."
+            </div>
+
+            <div style="margin-top:20px; padding:16px; background:rgba(243,156,18,0.1); border:2px solid #f39c12; border-radius:10px;">
+                <p style="font-family:'Press Start 2P',monospace; font-size:0.55rem; color:#f39c12; margin-bottom:12px;">🎬 VIDÉO — MAÎTRE LUCAS</p>
+                <p style="margin-bottom:12px; font-size:0.9em; line-height:1.6;">Louis XIV expliqué en dessin animé pour CM1-CM2 :</p>
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+                    <iframe
+                        src="https://www.youtube.com/embed/KO5h5J1myzc"
+                        title="Louis XIV - Maître Lucas CM1 CM2"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:8px;"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        `
+    },
+
+    revolution: {
+        title: "La Révolution française (1789)",
+        content: `
+            <h3>💥 Pourquoi une révolution ?</h3>
+            <p>En 1789, la France est en crise :</p>
+            <ul>
+                <li><strong>Le peuple a faim</strong> : mauvaises récoltes, pain très cher</li>
+                <li><strong>Les impôts</strong> écrasent les pauvres — nobles et clergé n'en paient pas</li>
+                <li><strong>Louis XVI</strong> est faible, Marie-Antoinette dépense trop</li>
+                <li>Les idées des <strong>philosophes</strong> (Rousseau, Voltaire, Montesquieu) ont semé le doute sur le pouvoir royal</li>
+            </ul>
+
+            <h3>📅 Les grandes dates</h3>
+            <ul>
+                <li><strong>5 mai 1789</strong> : Louis XVI réunit les États Généraux (clergé + noblesse + Tiers État)</li>
+                <li><strong>14 juillet 1789</strong> : Prise de la Bastille → fête nationale française</li>
+                <li><strong>4 août 1789</strong> : Abolition des privilèges de la noblesse</li>
+                <li><strong>26 août 1789</strong> : Déclaration des Droits de l'Homme et du Citoyen</li>
+                <li><strong>21 septembre 1792</strong> : Proclamation de la Première République</li>
+                <li><strong>21 janvier 1793</strong> : Exécution de Louis XVI à la guillotine</li>
+            </ul>
+
+            <h3>⚡ La Terreur (1793-1794)</h3>
+            <p><strong>Robespierre</strong> et le Comité de Salut Public gouvernent par la peur. Des milliers de personnes sont guillotinées, accusées d'être "ennemies de la Révolution". Cette période s'appelle la <strong>Terreur</strong>. Elle se termine quand Robespierre lui-même est guillotiné en juillet 1794.</p>
+
+            <h3>🇫🇷 L'héritage de la Révolution</h3>
+            <p>La Révolution change la France pour toujours :</p>
+            <ul>
+                <li>La <strong>devise</strong> : Liberté, Égalité, Fraternité</li>
+                <li>La <strong>Marseillaise</strong> : hymne national</li>
+                <li>Le <strong>drapeau tricolore</strong> bleu-blanc-rouge</li>
+                <li>L'<strong>égalité devant la loi</strong> : plus de privilèges de naissance</li>
+                <li>Le <strong>14 juillet</strong> : fête nationale</li>
+            </ul>
+
+            <div style="background:#0d2a3a;border-left:4px solid #3498db;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#3498db;">📌 À retenir :</strong> 1789 = Révolution. Bastille le 14 juillet. DDHC. République en 1792. Devise : Liberté, Égalité, Fraternité.
+            </div>
+
+            <div style="margin-top:20px; padding:16px; background:rgba(52,152,219,0.1); border:2px solid #3498db; border-radius:10px;">
+                <p style="font-family:'Press Start 2P',monospace; font-size:0.55rem; color:#3498db; margin-bottom:12px;">🎬 VIDÉO — MAÎTRE LUCAS</p>
+                <p style="margin-bottom:12px; font-size:0.9em; line-height:1.6;">La Révolution française expliquée en dessin animé pour CM1-CM2 :</p>
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+                    <iframe
+                        src="https://www.youtube.com/embed/D8fel30lK78"
+                        title="La Révolution française - Maître Lucas CM1 CM2"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:8px;"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div style="margin-top:16px; padding:16px; background:rgba(241,196,15,0.1); border:2px solid #f1c40f; border-radius:10px;">
+                <p style="font-family:'Press Start 2P',monospace; font-size:0.55rem; color:#f1c40f; margin-bottom:12px;">🎬 IL ÉTAIT UNE FOIS L'HOMME (1978)</p>
+                <p style="margin-bottom:12px; font-size:0.9em; line-height:1.6;">L'épisode classique sur la Révolution française (~25 min) :</p>
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+                    <iframe
+                        src="https://www.dailymotion.com/embed/video/x7vp1bt"
+                        title="Il était une fois l'Homme - La Révolution française"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:8px;"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        `
+    },
+
+    epoquecontemporaine: {
+        title: "L'Époque Contemporaine : De 1789 à aujourd'hui",
+        content: `
+            <h3>🏭 Qu'est-ce que l'Époque Contemporaine ?</h3>
+            <p>Elle commence en <strong>1789</strong> avec la Révolution française et continue jusqu'à aujourd'hui.</p>
+
+            <h3>🇫🇷 La Révolution française (1789)</h3>
+            <ul>
+                <li><strong>14 juillet 1789</strong> : Prise de la Bastille → fête nationale</li>
+                <li>Déclaration des Droits de l'Homme et du Citoyen</li>
+                <li>Devise : <strong>"Liberté, Égalité, Fraternité"</strong></li>
+            </ul>
+
+            <h3>⚔️ Napoléon Bonaparte (1769-1821)</h3>
+            <p>Général puis <strong>Empereur</strong> en 1804. Il réforme la France (Code Civil, lycées) et conquiert l'Europe. Vaincu à <strong>Waterloo</strong> en 1815.</p>
+
+            <h3>⚙️ La Révolution industrielle (XIXe s.)</h3>
+            <ul>
+                <li>Machine à vapeur, trains, usines, exode rural</li>
+                <li><strong>1889</strong> : Tour Eiffel pour l'Exposition Universelle</li>
+            </ul>
+
+            <h3>⚔️ Les guerres mondiales</h3>
+            <ul>
+                <li><strong>1914-1918</strong> : Première Guerre mondiale — 18 millions de morts</li>
+                <li><strong>1939-1945</strong> : Seconde Guerre mondiale — Hitler, Shoah, Libération</li>
+                <li><strong>1944</strong> : Débarquement en Normandie</li>
+            </ul>
+
+            <h3>🚀 Le monde d'aujourd'hui</h3>
+            <ul>
+                <li><strong>1957</strong> : Traité de Rome → Union Européenne</li>
+                <li><strong>1969</strong> : Neil Armstrong marche sur la Lune</li>
+                <li><strong>1989</strong> : Chute du mur de Berlin</li>
+                <li><strong>1990s</strong> : Internet</li>
+            </ul>
+
+            <div style="background:#1a0d2a;border-left:4px solid #9b59b6;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
+                <strong style="color:inherit;">>📌 À retenir :</strong> Époque contemporaine = 1789 à aujourd'hui. Révolution → Napoléon → guerres mondiales → monde actuel.
+            </div>
+        `
+    }
+};
+
+// Export global
+if (typeof window !== 'undefined') {
+    window.histoireLessons = histoireLessons;
+    window.histoireLeconData = histoireLeconData;
+}
+
+console.log('✅ Histoire chargée : ' + histoireLessons.length + ' leçons + 7 contenus de périodes');
