@@ -225,7 +225,7 @@ body {
     padding: 2.5rem;
     margin-top: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border: 2px solid #27AE60;
+    border: 2px solid #1E874A;
     animation: slideDown 0.3s ease-out;
 }
 
@@ -235,8 +235,8 @@ body {
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 4px solid #27AE60;
-    background: linear-gradient(90deg, #27AE60 0%, transparent 100%);
+    border-bottom: 4px solid #1E874A;
+    background: linear-gradient(90deg, #1E874A 0%, transparent 100%);
     padding: 1rem;
     border-radius: 8px;
 }
@@ -260,13 +260,13 @@ body {
 
 .lesson-content h3 {
     color: white;
-    background: #27AE60;
+    background: #1E874A;
     font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding: 0.8rem 1.2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 12px rgba(30, 135, 74, 0.3);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -277,12 +277,12 @@ body {
 }
 
 .lesson-content h4 {
-    color: #27AE60;
+    color: #1E874A;
     font-size: 1.15rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    border-left: 4px solid #27AE60;
+    border-left: 4px solid #1E874A;
 }
 
 .lesson-content p {
@@ -318,16 +318,13 @@ body {
 }
 
 .lesson-content li::marker {
-    color: #27AE60;
+    color: #1E874A;
     font-weight: bold;
 }
 
 .lesson-content strong {
-    color: #27AE60;
+    color: #1E874A;
     font-weight: 700;
-    background: rgba(39, 174, 96, 0.1);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
 }
 
 .lesson-content em {
@@ -337,7 +334,7 @@ body {
 
 .lesson-header .close-btn {
     background: rgba(255, 255, 255, 0.9);
-    color: #27AE60;
+    color: #1E874A;
     border: 2px solid white;
     padding: 0.5rem 1.2rem;
     border-radius: 8px;
@@ -420,7 +417,7 @@ body {
     padding: 20px;
     background: #f8f9fa;
     border-radius: 12px;
-    border-left: 4px solid #27AE60;
+    border-left: 4px solid #1E874A;
 }
 
 .answer-options {
