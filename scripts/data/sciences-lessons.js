@@ -568,11 +568,277 @@ const sciencesLessons = {
             {q: "La Lune produit-elle sa propre lumière ?", o: ["Non, elle reflète celle du Soleil", "Oui", "Parfois", "Seulement la nuit"], c: "Non, elle reflète celle du Soleil"},
             {q: "Qu'est-ce qui crée un arc-en-ciel ?", o: ["Réfraction de la lumière dans l'eau", "Magnétisme", "Électricité", "Gravité"], c: "Réfraction de la lumière dans l'eau"}
         ]
+    },
+
+    // ===== DOMAINE 4: TECHNOLOGIE =====
+    technologie: {
+        name: 'Technologie',
+        description: 'Machines, leviers et circuits',
+        imageUrl: 'images/sciences/illustration_technologie.jpg',
+        lessons: {
+            leviers: {
+                title: '⚙️ Leviers & Mécanismes',
+                content: `
+                    <h3>Qu'est-ce qu'un levier ?</h3>
+                    <p>Un levier est une <strong>barre rigide</strong> qui peut pivoter autour d'un point fixe appelé <strong>pivot</strong> (ou point d'appui). Les leviers permettent de soulever des objets lourds plus facilement !</p>
+
+                    <h3>Les 3 éléments d'un levier</h3>
+                    <ul>
+                        <li><strong>Le pivot</strong> : point fixe autour duquel tourne le levier</li>
+                        <li><strong>La charge</strong> : l'objet à déplacer ou soulever</li>
+                        <li><strong>L'effort</strong> : la force qu'on applique</li>
+                    </ul>
+
+                    <h3>Les 3 types de leviers</h3>
+                    <ul>
+                        <li><strong>Levier du 1er genre</strong> : pivot entre charge et effort (ex : balançoire, ciseaux)</li>
+                        <li><strong>Levier du 2e genre</strong> : charge entre pivot et effort (ex : brouette, casse-noix)</li>
+                        <li><strong>Levier du 3e genre</strong> : effort entre pivot et charge (ex : pince à épiler, rame)</li>
+                    </ul>
+
+                    <h3>Exemples de leviers dans la vie quotidienne</h3>
+                    <ul>
+                        <li>🪛 <strong>Pied-de-biche</strong> : arrache les clous facilement</li>
+                        <li>✂️ <strong>Ciseaux</strong> : deux leviers réunis au pivot</li>
+                        <li>🚿 <strong>Robinet</strong> : levier pour contrôler l'eau</li>
+                        <li>⚖️ <strong>Balance</strong> : levier pour comparer des masses</li>
+                    </ul>
+
+                    <h3>La transmission du mouvement</h3>
+                    <p>Les machines transmettent le mouvement de différentes façons :</p>
+                    <ul>
+                        <li><strong>Engrenages</strong> : roues dentées qui s'emboîtent et transmettent la rotation</li>
+                        <li><strong>Courroies</strong> : sangles qui relient deux roues (comme sur un vélo)</li>
+                        <li><strong>Poulies</strong> : roues avec une gorge pour les cordes, facilitent le levage</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Un levier multiplie la force : on pousse peu pour soulever beaucoup !</p>
+                    <p>📌 Plus le bras du levier est long, plus l'effort est réduit</p>
+                    <p>📌 Les engrenages peuvent accélérer ou ralentir un mouvement</p>
+                `
+            },
+            circuits_electriques: {
+                title: '🔌 Circuits Électriques',
+                content: `
+                    <h3>Rappel : qu'est-ce qu'un circuit ?</h3>
+                    <p>Un circuit électrique est un <strong>chemin fermé</strong> que suit l'électricité. Si le chemin est coupé, l'électricité ne circule plus !</p>
+
+                    <h3>Schématiser un circuit</h3>
+                    <p>Les techniciens utilisent des <strong>symboles normalisés</strong> pour représenter les circuits :</p>
+                    <ul>
+                        <li><strong>Pile</strong> : deux traits (un long, un court)</li>
+                        <li><strong>Lampe</strong> : un cercle avec une croix</li>
+                        <li><strong>Interrupteur ouvert</strong> : un trait en biais</li>
+                        <li><strong>Interrupteur fermé</strong> : un trait horizontal</li>
+                        <li><strong>Moteur</strong> : un cercle avec la lettre M</li>
+                    </ul>
+
+                    <h3>Circuit en série vs circuit en parallèle</h3>
+                    <ul>
+                        <li><strong>En série</strong> : les composants sont branchés les uns à la suite des autres. Si l'un s'éteint, tout s'éteint !</li>
+                        <li><strong>En parallèle</strong> : chaque composant a son propre chemin. Si l'un s'éteint, les autres continuent.</li>
+                    </ul>
+
+                    <h3>Construire un circuit simple</h3>
+                    <ol>
+                        <li>Une <strong>pile</strong> (source d'énergie)</li>
+                        <li>Des <strong>fils conducteurs</strong> (cuivre)</li>
+                        <li>Une <strong>lampe</strong> (récepteur)</li>
+                        <li>Un <strong>interrupteur</strong> (pour ouvrir/fermer)</li>
+                    </ol>
+
+                    <h3>Les détecteurs</h3>
+                    <p>On peut utiliser un circuit pour <strong>tester des matériaux</strong> : si la lampe s'allume quand on place l'objet dans le circuit, c'est un <strong>conducteur</strong>. Sinon, c'est un <strong>isolant</strong>.</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Circuit ouvert = éteint / Circuit fermé = allumé</p>
+                    <p>📌 En série : une panne = tout s'arrête</p>
+                    <p>📌 En parallèle : chaque appareil fonctionne indépendamment</p>
+                `
+            },
+            objets_techniques: {
+                title: '🛠️ Objets Techniques',
+                content: `
+                    <h3>Qu'est-ce qu'un objet technique ?</h3>
+                    <p>Un objet technique est un objet <strong>fabriqué par l'homme</strong> pour répondre à un besoin. Exemples : une chaise, une voiture, un téléphone, un pont...</p>
+
+                    <h3>Analyser un objet technique</h3>
+                    <p>Pour comprendre un objet, on se pose 3 questions :</p>
+                    <ul>
+                        <li>🎯 <strong>À quoi ça sert ?</strong> (fonction d'usage)</li>
+                        <li>🔧 <strong>Comment ça marche ?</strong> (principe de fonctionnement)</li>
+                        <li>🧱 <strong>De quoi c'est fait ?</strong> (matériaux)</li>
+                    </ul>
+
+                    <h3>Les matériaux et leurs propriétés</h3>
+                    <ul>
+                        <li><strong>Bois</strong> : léger, naturel, isolant, facile à travailler</li>
+                        <li><strong>Métal</strong> : solide, conducteur, résiste à la chaleur</li>
+                        <li><strong>Plastique</strong> : léger, isolant, imperméable, peu coûteux</li>
+                        <li><strong>Verre</strong> : transparent, fragile, imperméable</li>
+                        <li><strong>Tissu</strong> : souple, isolant thermique</li>
+                    </ul>
+
+                    <h3>De la conception à la fabrication</h3>
+                    <ol>
+                        <li><strong>Identifier le besoin</strong> : à quoi servira l'objet ?</li>
+                        <li><strong>Concevoir</strong> : dessiner des plans, choisir les matériaux</li>
+                        <li><strong>Fabriquer</strong> : assembler les pièces</li>
+                        <li><strong>Tester</strong> : vérifier que ça fonctionne</li>
+                        <li><strong>Améliorer</strong> : corriger les défauts</li>
+                    </ol>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Tout objet technique répond à un <strong>besoin humain</strong></p>
+                    <p>📌 Le choix des matériaux dépend des <strong>propriétés nécessaires</strong></p>
+                    <p>📌 On peut toujours <strong>améliorer</strong> un objet existant !</p>
+                `
+            }
+        },
+        quiz: [
+            {q: "Qu'est-ce qu'un levier ?", o: ["Une barre rigide pivotant autour d'un point fixe", "Un type de roue", "Un outil pour couper", "Un moteur électrique"], c: "Une barre rigide pivotant autour d'un point fixe"},
+            {q: "Comment appelle-t-on le point fixe autour duquel tourne un levier ?", o: ["Le pivot", "La charge", "L'effort", "Le bras"], c: "Le pivot"},
+            {q: "Lequel de ces objets est un levier ?", o: ["Les ciseaux", "La pile", "Le thermomètre", "Le miroir"], c: "Les ciseaux"},
+            {q: "Comment s'appelle le chemin fermé que suit l'électricité ?", o: ["Un circuit", "Un câble", "Un fil", "Un réseau"], c: "Un circuit"},
+            {q: "Que se passe-t-il si on ouvre un interrupteur dans un circuit en série ?", o: ["Tout s'éteint", "Rien ne change", "Ça brûle", "Ça accélère"], c: "Tout s'éteint"},
+            {q: "Quelle est la différence entre un circuit en série et en parallèle ?", o: ["En parallèle, chaque composant a son propre chemin", "Ils sont identiques", "Le circuit en série est plus rapide", "Le circuit en parallèle consomme plus"], c: "En parallèle, chaque composant a son propre chemin"},
+            {q: "Quel matériau utilise-t-on pour les fils électriques ?", o: ["Le cuivre", "Le plastique", "Le bois", "Le verre"], c: "Le cuivre"},
+            {q: "Comment appelle-t-on les roues dentées qui transmettent un mouvement ?", o: ["Des engrenages", "Des poulies", "Des leviers", "Des courroies"], c: "Des engrenages"},
+            {q: "Pour analyser un objet technique, quelle question NE fait PAS partie des 3 essentielles ?", o: ["Combien ça coûte ?", "À quoi ça sert ?", "Comment ça marche ?", "De quoi c'est fait ?"], c: "Combien ça coûte ?"},
+            {q: "Quel matériau est à la fois léger ET isolant électrique ?", o: ["Le plastique", "Le cuivre", "Le fer", "L'aluminium"], c: "Le plastique"},
+            {q: "À quoi sert une poulie ?", o: ["Faciliter le levage d'objets lourds", "Produire de l'électricité", "Mesurer la température", "Couper des matériaux"], c: "Faciliter le levage d'objets lourds"},
+            {q: "Quelle est la première étape pour concevoir un objet technique ?", o: ["Identifier le besoin", "Choisir les matériaux", "Fabriquer les pièces", "Tester le résultat"], c: "Identifier le besoin"}
+        ]
+    },
+
+    // ===== DOMAINE 5: DÉVELOPPEMENT DURABLE =====
+    environnement: {
+        name: 'Développement Durable',
+        description: 'Écologie et protection de la planète',
+        imageUrl: 'images/sciences/illustration_environnement.jpg',
+        lessons: {
+            ecosystemes: {
+                title: '🌿 Les Écosystèmes',
+                content: `
+                    <h3>Qu'est-ce qu'un écosystème ?</h3>
+                    <p>Un écosystème est l'ensemble formé par un <strong>milieu de vie</strong> (forêt, océan, prairie...) et tous les <strong>êtres vivants</strong> qui y habitent et interagissent entre eux.</p>
+
+                    <h3>Les grands écosystèmes de la Terre</h3>
+                    <ul>
+                        <li>🌊 <strong>Océans et mers</strong> : 71% de la surface de la Terre</li>
+                        <li>🌳 <strong>Forêts tropicales</strong> : « poumons de la planète »</li>
+                        <li>🌾 <strong>Prairies et savanes</strong> : grandes plaines herbeuses</li>
+                        <li>🏔️ <strong>Montagnes</strong> : milieux froids et rocheux</li>
+                        <li>🌵 <strong>Déserts</strong> : peu d'eau, chaleur extrême</li>
+                        <li>❄️ <strong>Zones polaires</strong> : glace et froid intense</li>
+                    </ul>
+
+                    <h3>Les relations entre êtres vivants</h3>
+                    <ul>
+                        <li><strong>Prédation</strong> : un animal en mange un autre (loup → cerf)</li>
+                        <li><strong>Symbiose</strong> : deux êtres s'aident mutuellement (abeille ↔ fleur)</li>
+                        <li><strong>Parasitisme</strong> : un être profite d'un autre en lui nuisant (tique → chien)</li>
+                        <li><strong>Compétition</strong> : deux espèces se disputent les mêmes ressources</li>
+                    </ul>
+
+                    <h3>La biodiversité</h3>
+                    <p>La <strong>biodiversité</strong>, c'est la diversité de toutes les formes de vie sur Terre. Plus un écosystème est riche en espèces, plus il est <strong>résistant</strong> aux perturbations.</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Chaque espèce a un <strong>rôle précis</strong> dans son écosystème</p>
+                    <p>📌 La disparition d'une espèce peut <strong>déstabiliser</strong> tout l'écosystème</p>
+                    <p>📌 La Terre abrite environ <strong>8,7 millions d'espèces</strong> connues !</p>
+                `
+            },
+            rechauffement: {
+                title: '🌡️ Réchauffement Climatique',
+                content: `
+                    <h3>L'effet de serre</h3>
+                    <p>La Terre est entourée d'une <strong>atmosphère</strong> composée de gaz. Certains de ces gaz (CO2, méthane...) retiennent la chaleur du Soleil comme une <strong>serre de jardin</strong>. C'est l'<strong>effet de serre</strong> : sans lui, la Terre serait à -18°C !</p>
+
+                    <h3>Le problème actuel</h3>
+                    <p>Depuis la révolution industrielle, l'être humain produit trop de <strong>gaz à effet de serre</strong> en :</p>
+                    <ul>
+                        <li>Brûlant du <strong>pétrole, charbon et gaz</strong> (voitures, chauffage, usines)</li>
+                        <li>Déforestant massivement (moins d'arbres = moins de CO2 absorbé)</li>
+                        <li>Pratiquant une agriculture intensive (méthane des élevages)</li>
+                    </ul>
+
+                    <h3>Les conséquences</h3>
+                    <ul>
+                        <li>🌡️ <strong>Températures en hausse</strong> : étés plus chauds, hivers plus doux</li>
+                        <li>🧊 <strong>Fonte des glaces</strong> : les glaciers et banquises disparaissent</li>
+                        <li>🌊 <strong>Montée des océans</strong> : des îles et côtes menacées</li>
+                        <li>🌪️ <strong>Événements extrêmes</strong> : sécheresses, inondations, tempêtes plus fréquentes</li>
+                        <li>🦋 <strong>Perte de biodiversité</strong> : des espèces disparaissent</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 L'effet de serre naturel est <strong>utile</strong>, c'est l'excès qui pose problème</p>
+                    <p>📌 La température moyenne a déjà augmenté de <strong>+1,1°C</strong> depuis 1850</p>
+                    <p>📌 Chaque geste compte : <strong>tout le monde peut agir</strong> !</p>
+                `
+            },
+            gestes_ecologiques: {
+                title: '♻️ Gestes Écologiques',
+                content: `
+                    <h3>Pourquoi agir ?</h3>
+                    <p>Notre planète a des <strong>ressources limitées</strong>. Si on continue à les gaspiller, il n'y en aura plus pour les générations futures. Le <strong>développement durable</strong>, c'est répondre à nos besoins d'aujourd'hui sans empêcher les générations futures de répondre aux leurs.</p>
+
+                    <h3>Les 3R : Réduire, Réutiliser, Recycler</h3>
+                    <ul>
+                        <li>♻️ <strong>Réduire</strong> : consommer moins (emballages, énergie, eau)</li>
+                        <li>🔄 <strong>Réutiliser</strong> : donner une seconde vie aux objets</li>
+                        <li>🗑️ <strong>Recycler</strong> : transformer les déchets en nouvelles matières</li>
+                    </ul>
+
+                    <h3>Les gestes du quotidien</h3>
+                    <ul>
+                        <li>💡 Éteindre les lumières en quittant une pièce</li>
+                        <li>🚿 Prendre des douches courtes (5 min max)</li>
+                        <li>🚶 Marcher ou faire du vélo plutôt que prendre la voiture</li>
+                        <li>🥗 Manger moins de viande (l'élevage produit beaucoup de CO2)</li>
+                        <li>🛒 Acheter local et de saison</li>
+                        <li>📱 Ne pas jeter les appareils électroniques n'importe où</li>
+                    </ul>
+
+                    <h3>Les énergies renouvelables</h3>
+                    <p>Pour remplacer le pétrole et le charbon, on développe des énergies propres :</p>
+                    <ul>
+                        <li>☀️ <strong>Solaire</strong> : panneaux photovoltaïques</li>
+                        <li>💨 <strong>Éolienne</strong> : éoliennes (moulins à vent géants)</li>
+                        <li>💧 <strong>Hydraulique</strong> : barrages sur les rivières</li>
+                        <li>🌊 <strong>Marémotrice</strong> : énergie des marées</li>
+                    </ul>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Les <strong>petits gestes quotidiens</strong> ont un grand impact collectif</p>
+                    <p>📌 Les énergies renouvelables ne <strong>s'épuisent pas</strong></p>
+                    <p>📌 Protéger la planète, c'est aussi <strong>protéger notre avenir</strong> !</p>
+                `
+            }
+        },
+        quiz: [
+            {q: "Qu'est-ce qu'un écosystème ?", o: ["Un milieu de vie avec tous ses êtres vivants", "Une forêt uniquement", "Un animal sauvage", "Une plante exotique"], c: "Un milieu de vie avec tous ses êtres vivants"},
+            {q: "Comment appelle-t-on la diversité de toutes les formes de vie sur Terre ?", o: ["La biodiversité", "L'écologie", "La géologie", "La météorologie"], c: "La biodiversité"},
+            {q: "Quel pourcentage de la surface de la Terre représentent les océans ?", o: ["71%", "30%", "50%", "90%"], c: "71%"},
+            {q: "Qu'est-ce que l'effet de serre naturel ?", o: ["Des gaz qui retiennent la chaleur du Soleil", "Une serre dans un jardin", "Un type de nuage", "La pollution des villes"], c: "Des gaz qui retiennent la chaleur du Soleil"},
+            {q: "Quelle est la principale cause du réchauffement climatique actuel ?", o: ["Les gaz à effet de serre produits par l'homme", "Les volcans", "Le Soleil", "Les océans"], c: "Les gaz à effet de serre produits par l'homme"},
+            {q: "Que signifie le 'R' de Réduire dans les 3R ?", o: ["Consommer moins", "Recycler les déchets", "Réparer les objets", "Refuser les emballages"], c: "Consommer moins"},
+            {q: "Quelle énergie est produite par des panneaux photovoltaïques ?", o: ["L'énergie solaire", "L'énergie éolienne", "L'énergie hydraulique", "L'énergie nucléaire"], c: "L'énergie solaire"},
+            {q: "Pourquoi la déforestation aggrave-t-elle le réchauffement climatique ?", o: ["Moins d'arbres = moins de CO2 absorbé", "Les arbres produisent de la chaleur", "Les forêts bloquent le vent", "Les arbres consomment de l'oxygène"], c: "Moins d'arbres = moins de CO2 absorbé"},
+            {q: "Comment appelle-t-on la relation où deux êtres vivants s'aident mutuellement ?", o: ["La symbiose", "La prédation", "Le parasitisme", "La compétition"], c: "La symbiose"},
+            {q: "Qu'est-ce que le développement durable ?", o: ["Répondre aux besoins d'aujourd'hui sans nuire aux générations futures", "Construire plus de bâtiments", "Utiliser plus d'énergie", "Produire plus de déchets"], c: "Répondre aux besoins d'aujourd'hui sans nuire aux générations futures"},
+            {q: "Quelle énergie renouvelable utilise la force des rivières ?", o: ["L'énergie hydraulique", "L'énergie solaire", "L'énergie éolienne", "L'énergie géothermique"], c: "L'énergie hydraulique"},
+            {q: "De combien la température moyenne de la Terre a-t-elle augmenté depuis 1850 ?", o: ["+1,1°C", "+5°C", "+0,1°C", "+10°C"], c: "+1,1°C"}
+        ]
     }
 };
 
+
 // Export pour utilisation dans la page HTML
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
     window.sciencesLessons = sciencesLessons;
-    console.log('✅ Sciences lessons chargées - 3 domaines, 12 thèmes, 96 questions');
+    console.log("✅ Sciences lessons chargées - 5 domaines, 17 thèmes, 120+ questions");
 }
