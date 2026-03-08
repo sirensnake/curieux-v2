@@ -56,6 +56,26 @@
                     :class="'domain-btn problemes' + (currentDomain === 'problemes' ? ' active' : '')">
                     🎲 Problèmes
                 </button>
+                <button @click="selectDomain('solides')"
+                    :class="'domain-btn solides' + (currentDomain === 'solides' ? ' active' : '')">
+                    📦 Solides
+                </button>
+                <button @click="selectDomain('proportionnalite')"
+                    :class="'domain-btn proportionnalite' + (currentDomain === 'proportionnalite' ? ' active' : '')">
+                    🔄 Proportionnalité
+                </button>
+                <button @click="selectDomain('donnees')"
+                    :class="'domain-btn donnees' + (currentDomain === 'donnees' ? ' active' : '')">
+                    📊 Données
+                </button>
+                <button @click="selectDomain('calcul_litteral')"
+                    :class="'domain-btn calcul_litteral' + (currentDomain === 'calcul_litteral' ? ' active' : '')">
+                    ⚡ Calcul littéral
+                </button>
+                <button @click="selectDomain('problemes_complexes')"
+                    :class="'domain-btn problemes_complexes' + (currentDomain === 'problemes_complexes' ? ' active' : '')">
+                    🎯 Problèmes complexes
+                </button>
             </div>
 
             <!-- Contenu domaine -->
@@ -517,6 +537,412 @@
                                 <h3>À retenir</h3>
                                 <p>📌 Un problème mathématique raconte une <strong>histoire avec des nombres</strong> !</p>
                                 <p>📌 Prends ton temps, lis plusieurs fois et réfléchis avant de calculer 🧠</p>
+                            `
+                        },
+                        solides: {
+                            title: "📐 Solides et Volumes",
+                            content: `
+                                <div class="lesson-body">
+                                    <section class="lesson-section">
+                                        <h3>📦 Les solides</h3>
+                                        <p>Un solide est une figure <strong>à trois dimensions</strong> : longueur, largeur et hauteur.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Les principaux solides :</h4>
+                                            <p><strong>🟦 Cube</strong> : 6 faces carrées identiques, 12 arêtes égales, 8 sommets</p>
+                                            <p><strong>📦 Pavé droit</strong> : 6 faces rectangulaires, angles droits</p>
+                                            <p><strong>🔵 Cylindre</strong> : 2 bases circulaires, 1 face courbe</p>
+                                            <p><strong>🔺 Pyramide</strong> : 1 base polygonale, faces triangulaires</p>
+                                            <p><strong>⚽ Sphère</strong> : tous les points à égale distance du centre</p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📏 Le volume</h3>
+                                        <p>Le volume mesure <strong>l'espace occupé</strong> par un solide (en cm³, m³, L).</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Formules :</h4>
+                                            <ul>
+                                                <li><strong>Cube</strong> : V = arête × arête × arête = a³</li>
+                                                <li><strong>Pavé</strong> : V = Longueur × largeur × hauteur</li>
+                                                <li><strong>Cylindre</strong> : V = aire de la base × hauteur</li>
+                                            </ul>
+                                            
+                                            <h4>Exemple :</h4>
+                                            <p>Pavé : L = 5 cm, l = 3 cm, h = 2 cm</p>
+                                            <p>V = 5 × 3 × 2 = <strong>30 cm³</strong></p>
+                                        </div>
+
+                                        <div class="tip-box">
+                                            💡 <strong>Équivalence :</strong> 1 L = 1 dm³ = 1 000 cm³
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🎲 Patrons et développements</h3>
+                                        <p>Un <strong>patron</strong> est le dessin à plat d'un solide qu'on peut plier pour le reconstituer.</p>
+                                        
+                                        <div class="example-box">
+                                            <p>Le cube a plusieurs patrons possibles (11 différents !)</p>
+                                            <p>Le pavé peut aussi se déplier de différentes façons</p>
+                                        </div>
+                                    </section>
+
+                                    <div class="lesson-summary">
+                                        <h3>📝 À retenir</h3>
+                                        <ul>
+                                            <li>✅ Solide = 3 dimensions (L × l × h)</li>
+                                            <li>✅ Volume = espace occupé (cm³, m³, L)</li>
+                                            <li>✅ Cube : 6 faces carrées identiques</li>
+                                            <li>✅ Pavé : 6 faces rectangulaires</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `
+                        },
+                        proportionnalite: {
+                            title: "🔄 Proportionnalité",
+                            content: `
+                                <div class="lesson-body">
+                                    <section class="lesson-section">
+                                        <h3>🔄 Qu'est-ce que la proportionnalité ?</h3>
+                                        <p>Deux grandeurs sont <strong>proportionnelles</strong> quand on les multiplie ou divise par le même nombre.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Exemple : Prix des pommes</h4>
+                                            <p>2 kg → 6€ | 4 kg → 12€ | 6 kg → 18€</p>
+                                            <p>On multiplie toujours par 3 : <strong>proportionnel !</strong></p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📊 Tableau de proportionnalité</h3>
+                                        
+                                        <div class="example-box">
+                                            <h4>Prix de pommes à 3€ le kg :</h4>
+                                            <table class="number-table">
+                                                <tr>
+                                                    <th>Masse (kg)</th>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>5</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Prix (€)</th>
+                                                    <td>3</td>
+                                                    <td>6</td>
+                                                    <td>15</td>
+                                                    <td>30</td>
+                                                </tr>
+                                            </table>
+                                            <p><strong>Coefficient de proportionnalité = 3</strong></p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📐 La règle de trois</h3>
+                                        <p>Méthode pour trouver une valeur manquante dans un tableau de proportionnalité.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Problème :</h4>
+                                            <p>3 stylos coûtent 6€. Combien coûtent 7 stylos ?</p>
+                                            
+                                            <h4>Solution :</h4>
+                                            <p>1 stylo = 6 ÷ 3 = 2€</p>
+                                            <p>7 stylos = 7 × 2 = <strong>14€</strong></p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📏 Échelles</h3>
+                                        <p>Une <strong>échelle</strong> est un rapport de proportionnalité entre une carte et la réalité.</p>
+                                        
+                                        <div class="example-box">
+                                            <p>Échelle 1/100 : 1 cm sur la carte = 100 cm (1 m) en réalité</p>
+                                            <p>Échelle 1/1000 : 1 cm sur le plan = 1 000 cm (10 m) en vrai</p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>💯 Les pourcentages</h3>
+                                        <p>Un pourcentage est une <strong>fraction sur 100</strong>.</p>
+                                        
+                                        <div class="example-box">
+                                            <p>50% = 50/100 = 1/2 (la moitié)</p>
+                                            <p>25% = 25/100 = 1/4 (un quart)</p>
+                                            <p>10% = 10/100 = 1/10 (un dixième)</p>
+                                        </div>
+                                    </section>
+
+                                    <div class="lesson-summary">
+                                        <h3>📝 À retenir</h3>
+                                        <ul>
+                                            <li>✅ Proportionnel = multiplier/diviser par le même nombre</li>
+                                            <li>✅ Coefficient de proportionnalité constant</li>
+                                            <li>✅ Règle de trois pour trouver une valeur</li>
+                                            <li>✅ Pourcentage = fraction sur 100</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `
+                        },
+                        donnees: {
+                            title: "📊 Données",
+                            content: `
+                                <div class="lesson-body">
+                                    <section class="lesson-section">
+                                        <h3>📊 Lire un graphique</h3>
+                                        <p>Un graphique permet de <strong>visualiser des données</strong> de façon claire.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Types de graphiques :</h4>
+                                            <ul>
+                                                <li><strong>Diagramme en barres</strong> : comparer des quantités</li>
+                                                <li><strong>Courbe</strong> : voir l'évolution dans le temps</li>
+                                                <li><strong>Diagramme circulaire (camembert)</strong> : voir les parts d'un tout</li>
+                                                <li><strong>Tableau</strong> : organiser les données en lignes et colonnes</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📈 Interpréter des données</h3>
+                                        <p>Pour bien comprendre un graphique :</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Questions à se poser :</h4>
+                                            <ul>
+                                                <li>📌 Quel est le titre du graphique ?</li>
+                                                <li>📌 Que représente l'axe horizontal ?</li>
+                                                <li>📌 Que représente l'axe vertical ?</li>
+                                                <li>📌 Quelles sont les unités utilisées ?</li>
+                                                <li>📌 Quelle est la valeur la plus grande / petite ?</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📋 Construire un tableau</h3>
+                                        <p>Un tableau organise les informations en <strong>lignes et colonnes</strong>.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Exemple : Températures de la semaine</h4>
+                                            <table class="number-table">
+                                                <tr>
+                                                    <th>Jour</th>
+                                                    <th>Lundi</th>
+                                                    <th>Mardi</th>
+                                                    <th>Mercredi</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Température (°C)</th>
+                                                    <td>15</td>
+                                                    <td>18</td>
+                                                    <td>12</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🧮 La moyenne</h3>
+                                        <p>La moyenne donne une <strong>valeur représentative</strong> d'un ensemble de nombres.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Calcul :</h4>
+                                            <p>Notes : 15, 12, 18, 13</p>
+                                            <p>Moyenne = (15 + 12 + 18 + 13) ÷ 4 = 58 ÷ 4 = <strong>14,5</strong></p>
+                                        </div>
+
+                                        <div class="tip-box">
+                                            💡 <strong>Méthode :</strong> Additionner toutes les valeurs, puis diviser par le nombre de valeurs
+                                        </div>
+                                    </section>
+
+                                    <div class="lesson-summary">
+                                        <h3>📝 À retenir</h3>
+                                        <ul>
+                                            <li>✅ Graphique = visualisation de données</li>
+                                            <li>✅ Toujours lire le titre et les axes</li>
+                                            <li>✅ Tableau = organiser en lignes/colonnes</li>
+                                            <li>✅ Moyenne = somme ÷ nombre de valeurs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `
+                        },
+                        calcul_litteral: {
+                            title: "⚡ Calcul littéral",
+                            content: `
+                                <div class="lesson-body">
+                                    <section class="lesson-section">
+                                        <h3>⚡ Qu'est-ce que le calcul littéral ?</h3>
+                                        <p>Le calcul littéral utilise des <strong>lettres pour représenter des nombres</strong>.</p>
+                                        
+                                        <div class="example-box">
+                                            <p>Au lieu d'écrire : "un nombre quelconque"</p>
+                                            <p>On écrit : <strong>x</strong> ou <strong>n</strong></p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🔤 Les expressions littérales</h3>
+                                        <p>Une expression littérale combine des <strong>nombres et des lettres</strong>.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Exemples :</h4>
+                                            <ul>
+                                                <li><strong>x + 5</strong> : un nombre augmenté de 5</li>
+                                                <li><strong>2 × n</strong> ou <strong>2n</strong> : le double d'un nombre</li>
+                                                <li><strong>a - 3</strong> : un nombre diminué de 3</li>
+                                                <li><strong>4x</strong> : 4 fois un nombre</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="tip-box">
+                                            💡 <strong>Astuce :</strong> 2 × x s'écrit simplement <strong>2x</strong> (on enlève le signe ×)
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🔢 Calculer la valeur d'une expression</h3>
+                                        <p>Pour calculer, on <strong>remplace la lettre par sa valeur</strong>.</p>
+                                        
+                                        <div class="example-box">
+                                            <h4>Exemple :</h4>
+                                            <p>Expression : <strong>3x + 7</strong></p>
+                                            <p>Si x = 5 :</p>
+                                            <p>3 × 5 + 7 = 15 + 7 = <strong>22</strong></p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🎯 Formules usuelles</h3>
+                                        
+                                        <div class="example-box">
+                                            <h4>Géométrie :</h4>
+                                            <ul>
+                                                <li>Périmètre carré : P = 4 × c (c = côté)</li>
+                                                <li>Aire rectangle : A = L × l</li>
+                                                <li>Périmètre rectangle : P = 2 × (L + l)</li>
+                                            </ul>
+                                            
+                                            <h4>Problèmes :</h4>
+                                            <ul>
+                                                <li>Prix de n objets à p€ : n × p</li>
+                                                <li>Âge dans a années : âge actuel + a</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <div class="lesson-summary">
+                                        <h3>📝 À retenir</h3>
+                                        <ul>
+                                            <li>✅ Une lettre représente un nombre</li>
+                                            <li>✅ 2 × x s'écrit 2x</li>
+                                            <li>✅ Pour calculer : remplacer la lettre par sa valeur</li>
+                                            <li>✅ Les formules utilisent le calcul littéral</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `
+                        },
+                        problemes_complexes: {
+                            title: "🎯 Problèmes complexes",
+                            content: `
+                                <div class="lesson-body">
+                                    <section class="lesson-section">
+                                        <h3>🎯 Qu'est-ce qu'un problème complexe ?</h3>
+                                        <p>Un problème complexe nécessite <strong>plusieurs étapes</strong> et différentes opérations pour trouver la solution.</p>
+                                        
+                                        <div class="tip-box">
+                                            💡 <strong>Stratégie :</strong> Décomposer en plusieurs petits problèmes simples
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>📝 Méthode de résolution</h3>
+                                        
+                                        <div class="example-box">
+                                            <h4>Étapes essentielles :</h4>
+                                            <ul>
+                                                <li><strong>1. Comprendre</strong> : Lire plusieurs fois, identifier toutes les données</li>
+                                                <li><strong>2. Organiser</strong> : Faire un schéma, un tableau, classer les infos</li>
+                                                <li><strong>3. Planifier</strong> : Quelles opérations ? Dans quel ordre ?</li>
+                                                <li><strong>4. Calculer</strong> : Faire les calculs étape par étape</li>
+                                                <li><strong>5. Vérifier</strong> : Le résultat est-il logique ?</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🛒 Exemple de problème à étapes</h3>
+                                        
+                                        <div class="example-box">
+                                            <h4>Énoncé :</h4>
+                                            <p>Une classe de 24 élèves va au cinéma. Le bus coûte 120€ pour tous. Chaque place de cinéma coûte 7€. L'école paie la moitié du prix total. Combien paie chaque élève ?</p>
+                                            
+                                            <h4>Solution détaillée :</h4>
+                                            <p><strong>Étape 1</strong> : Prix du cinéma</p>
+                                            <p>24 × 7 = 168€</p>
+                                            
+                                            <p><strong>Étape 2</strong> : Prix total (bus + cinéma)</p>
+                                            <p>120 + 168 = 288€</p>
+                                            
+                                            <p><strong>Étape 3</strong> : Part de l'école (moitié)</p>
+                                            <p>288 ÷ 2 = 144€</p>
+                                            
+                                            <p><strong>Étape 4</strong> : Part des élèves</p>
+                                            <p>288 - 144 = 144€</p>
+                                            
+                                            <p><strong>Étape 5</strong> : Par élève</p>
+                                            <p>144 ÷ 24 = <strong>6€</strong></p>
+                                            
+                                            <p><strong>Réponse :</strong> Chaque élève paie 6€.</p>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>🔍 Stratégies de résolution</h3>
+                                        
+                                        <div class="example-box">
+                                            <ul>
+                                                <li>✏️ <strong>Dessiner un schéma</strong> pour visualiser</li>
+                                                <li>📊 <strong>Faire un tableau</strong> pour organiser</li>
+                                                <li>🔢 <strong>Chercher des données intermédiaires</strong></li>
+                                                <li>🎯 <strong>Partir de la fin</strong> (raisonnement inverse)</li>
+                                                <li>🧮 <strong>Vérifier avec l'opération inverse</strong></li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <section class="lesson-section">
+                                        <h3>💡 Conseils pour réussir</h3>
+                                        
+                                        <div class="example-box">
+                                            <ul>
+                                                <li>✓ Ne pas se précipiter sur les calculs</li>
+                                                <li>✓ Souligner les données importantes</li>
+                                                <li>✓ Barrer les informations inutiles</li>
+                                                <li>✓ Écrire les calculs intermédiaires</li>
+                                                <li>✓ Toujours rédiger une phrase de réponse</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+
+                                    <div class="lesson-summary">
+                                        <h3>📝 À retenir</h3>
+                                        <ul>
+                                            <li>✅ Problème complexe = plusieurs étapes</li>
+                                            <li>✅ Décomposer en sous-problèmes</li>
+                                            <li>✅ Faire un schéma ou tableau aide</li>
+                                            <li>✅ Calculer étape par étape</li>
+                                            <li>✅ Toujours vérifier le résultat</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             `
                         }
                     },
