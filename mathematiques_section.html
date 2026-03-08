@@ -13,6 +13,8 @@
 
         <!-- Système XP -->
         <script src="scripts/section-xp-system.js"></script>
+        <script src="scripts/badges-system.js"></script>
+        <script src="scripts/storage-bridge.js"></script>
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
@@ -24,7 +26,7 @@
         <div class="mathematiques-container">
             <!-- Header avec bouton retour -->
             <div class="section-header">
-                <button onclick="history.back()" class="back-btn">
+                <button onclick="window.location.href='index.html'" class="back-btn">
                     ← Retour à l'accueil
                 </button>
             </div>
@@ -1250,10 +1252,10 @@
             const section = getSectionName();
 
         <!-- Admin Shortcut (Ctrl+Shift+X) -->
-        <script src="scripts/admin-shortcut.js"></script>
+        
 
         <!-- MasterGameSystem v3.0 - Init Automatique -->
-        <script src="scripts/master-game-system.js"></script>
+        
         <script>
             let gameSystem;
 
