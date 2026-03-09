@@ -1,21 +1,21 @@
 {
-  "result": [
+  "articles": [
     {
-      "title": "Découverte Surprenante dans l'Océan 🌊",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de pieuvre au fond de l'océan Pacifique. Cette pieuvre est toute petite et possède des couleurs vives comme un arc-en-ciel ! Les chercheurs l'ont trouvée en explorant des zones de l'océan qui n'avaient jamais été visitées auparavant. Cette découverte est super excitante, car elle nous aide à mieux comprendre la vie sous-marine et l'importance de protéger nos océans.",
-      "date": "30/10/2023",
+      "title": "Exploration spatiale 🚀",
+      "summary": "La NASA a annoncé une nouvelle mission pour explorer une partie de la Lune appelée le pôle Sud. Ce projet est important car le pôle Sud pourrait contenir de la glace d'eau cachée sous sa surface. Ces découvertes pourraient aider les scientifiques à comprendre davantage l'histoire de la Lune et à préparer de futures missions où les astronautes pourraient vivre et travailler. C'est une étape excitante pour l'exploration spatiale et qui invite à se poser beaucoup de questions sur ce que nous pourrions trouver là-bas !",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Un Nouveau Pont Écologique 🌉",
-      "summary": "Un nouveau pont a été ouvert en France, mais ce n'est pas un pont ordinaire ! Il est spécialement conçu avec des plantes et des arbres pour permettre aux animaux de traverser en sécurité sans rencontrer de voitures. Les écologues pensent que ce pont aidera à protéger de nombreuses espèces animales et à éviter des accidents. C'est une excellente nouvelle pour l'environnement et montre comment nous pouvons utiliser notre imagination pour aider la nature.",
-      "date": "30/10/2023",
+      "title": "Nouveaux amis dans l'océan 🐬",
+      "summary": "Les scientifiques ont découvert une nouvelle espèce de dauphins qui vivent près des côtes australiennes. Ces dauphins sont très spéciaux car ils ont des habitudes de chasse uniques et émettent des sons différents des autres dauphins. Les découvreurs de cette espèce sont très heureux car cela montre que notre planète a encore beaucoup de secrets à révéler. C’est une belle occasion d’en apprendre plus sur la vie marine et l'importance de protéger nos océans.",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte Archéologique Fascinante 🏺",
-      "summary": "Des archéologues ont récemment fait une découverte incroyable en Égypte. Ils ont trouvé des tombes très anciennes qui pourraient avoir plus de 3 000 ans ! Ces tombes contiennent des trésors, comme des bijoux et des sculptures, qui nous en disent plus sur la vie des anciens Égyptiens. C'est comme ouvrir une fenêtre sur le passé et comprendre comment les gens vivaient autrefois. Cette découverte est une véritable aventure pour tous les amateurs d'histoire.",
-      "date": "30/10/2023",
+      "title": "Mode écolo 👗🌿",
+      "summary": "Un défilé de mode en France a surpris tout le monde en utilisant uniquement des vêtements faits à partir de matériaux recyclés. Les créateurs ont transformé de vieux vêtements, des bouteilles en plastique et d'autres déchets pour créer des tenues étonnantes. Cet événement montre comment la mode peut être à la fois créative et respectueuse de l'environnement. Cela invite aussi chacun à réfléchir à la façon dont nous pouvons tous, au quotidien, faire des choix plus éco-responsables.",
+      "date": "23/10/2023",
       "link": ""
     }
   ]
