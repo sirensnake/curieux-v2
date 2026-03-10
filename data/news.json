@@ -1,22 +1,6 @@
 {
-  "articles": [
-    {
-      "title": "Exploration spatiale 🚀",
-      "summary": "La NASA a annoncé une nouvelle mission pour explorer une partie de la Lune appelée le pôle Sud. Ce projet est important car le pôle Sud pourrait contenir de la glace d'eau cachée sous sa surface. Ces découvertes pourraient aider les scientifiques à comprendre davantage l'histoire de la Lune et à préparer de futures missions où les astronautes pourraient vivre et travailler. C'est une étape excitante pour l'exploration spatiale et qui invite à se poser beaucoup de questions sur ce que nous pourrions trouver là-bas !",
-      "date": "23/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Nouveaux amis dans l'océan 🐬",
-      "summary": "Les scientifiques ont découvert une nouvelle espèce de dauphins qui vivent près des côtes australiennes. Ces dauphins sont très spéciaux car ils ont des habitudes de chasse uniques et émettent des sons différents des autres dauphins. Les découvreurs de cette espèce sont très heureux car cela montre que notre planète a encore beaucoup de secrets à révéler. C’est une belle occasion d’en apprendre plus sur la vie marine et l'importance de protéger nos océans.",
-      "date": "23/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Mode écolo 👗🌿",
-      "summary": "Un défilé de mode en France a surpris tout le monde en utilisant uniquement des vêtements faits à partir de matériaux recyclés. Les créateurs ont transformé de vieux vêtements, des bouteilles en plastique et d'autres déchets pour créer des tenues étonnantes. Cet événement montre comment la mode peut être à la fois créative et respectueuse de l'environnement. Cela invite aussi chacun à réfléchir à la façon dont nous pouvons tous, au quotidien, faire des choix plus éco-responsables.",
-      "date": "23/10/2023",
-      "link": ""
-    }
-  ]
+  "title": "Une étoile qui change de couleur 🌟",
+  "summary": "Les astronomes ont observé une étoile spéciale qui change de couleur dans le ciel. Cela se produit parce que l'étoile a des nuages géants autour d'elle qui bloquent sa lumière de temps en temps. L'étoile s'appelle Zeta Ophiuchi, et elle est très loin de nous! Ce phénomène est fascinant car il nous en apprend plus sur le fonctionnement des étoiles et les éléments qui les entourent. La prochaine fois que tu regardes le ciel, pense à toutes ces étoiles qui ont des secrets à partager avec nous!",
+  "date": "11/10/2023",
+  "link": ""
 }
