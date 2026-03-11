@@ -1,6 +1,22 @@
 {
-  "title": "Une étoile qui change de couleur 🌟",
-  "summary": "Les astronomes ont observé une étoile spéciale qui change de couleur dans le ciel. Cela se produit parce que l'étoile a des nuages géants autour d'elle qui bloquent sa lumière de temps en temps. L'étoile s'appelle Zeta Ophiuchi, et elle est très loin de nous! Ce phénomène est fascinant car il nous en apprend plus sur le fonctionnement des étoiles et les éléments qui les entourent. La prochaine fois que tu regardes le ciel, pense à toutes ces étoiles qui ont des secrets à partager avec nous!",
-  "date": "11/10/2023",
-  "link": ""
+  "articles": [
+    {
+      "title": "Lancement Spacex 🚀 : Vers les étoiles !",
+      "summary": "Hier, la fusée Falcon 9 de SpaceX a décollé avec succès depuis la Floride ! Cette fusée transporte des satellites qui permettront d'améliorer notre accès à Internet. SpaceX est une entreprise qui travaille pour rendre l'exploration de l'espace plus accessible. Ces lancements sont importants car ils aident les scientifiques à en savoir plus sur l'espace. Bientôt, SpaceX espère même envoyer des humains sur Mars ! Cette mission montre à quel point la technologie spatiale peut être impressionnante. Es-tu prêt à découvrir les mystères de l'univers ?",
+      "date": "23/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Une Nouvelle Espèce de Serpent! 🐍",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de serpent dans la jungle Amazonienne ! Ce serpent est tout petit et aime grimper dans les arbres. Il a de belles écailles brillantes qui reflètent la lumière, le rendant presque invisible parmi les feuilles. Cette découverte est très importante car chaque nouvelle espèce aide les experts à mieux comprendre la biodiversité de notre planète. Aimes-tu en apprendre plus sur les animaux fascinants qui peuplent notre Terre?",
+      "date": "23/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Festival de Lumières ✨ : La Poésie de la Nuit",
+      "summary": "Chaque année, des villes du monde entier célèbrent la fête des lumières, un événement magique qui transforme les rues en œuvres d'art lumineuses. Ce week-end, la ville de Lyon en France a ébloui ses habitants avec des installations incroyables. Les bâtiments célèbres sont illuminés de mille couleurs et des artistes du monde entier viennent présenter leurs créations. C'est une occasion de découvrir l'art moderne, tout en se promenant avec sa famille et ses amis. Cette fête montre comment la lumière peut unir les gens!",
+      "date": "23/10/2023",
+      "link": ""
+    }
+  ]
 }
