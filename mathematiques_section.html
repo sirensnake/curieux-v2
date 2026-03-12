@@ -7,9 +7,11 @@
         <title>Mathématiques - Le Monde des Curieux</title>
 
         <link rel="stylesheet" href="styles/mathematiques_alpine_COMPLETE.css">
-    </head>
+        <link rel="stylesheet" href="styles/wcag-accessibility.css">
+</head>
 
     <body x-data="mathApp" x-cloak>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
         <!-- Système XP -->
         <script src="scripts/section-xp-system.js"></script>
@@ -18,12 +20,12 @@
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
-            <button @click="hide()" class="curio-close">×</button>
+            <button @click="hide()" class="curio-close" aria-label="Fermer">×</button>
             <div class="curio-avatar">🦊</div>
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="mathematiques-container">
+        <div class="mathematiques-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <button onclick="window.location.href='index.html'" class="back-btn">
@@ -38,7 +40,7 @@
             </div>
 
             <!-- Navigation domaines -->
-            <div class="domains-nav">
+            <div class="domains-nav" role="navigation" aria-label="Domaines mathématiques">
                 <button @click="selectDomain('numeration')"
                     :class="'domain-btn numeration' + (currentDomain === 'numeration' ? ' active' : '')">
                     🔢 Numération
@@ -94,13 +96,13 @@
 
                 <!-- Boutons d'action -->
                 <div class="action-buttons">
-                    <button @click="toggleIllustration()" class="action-btn btn-visual">
+                    <button @click="toggleIllustration()" class="action-btn btn-visual" aria-label="Voir l'illustration">
                         🖼️ Voir l'illustration
                     </button>
-                    <button @click="showLesson = !showLesson" class="action-btn btn-info">
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info" aria-label="En savoir plus">
                         📖 En savoir plus
                     </button>
-                    <button @click="startQuiz()" class="action-btn btn-quiz">
+                    <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                         🎯 Quiz
                     </button>
                 </div>
@@ -110,7 +112,7 @@
             <div x-show="showLesson" x-transition class="lesson-container">
                 <div class="lesson-header">
                     <h3>📖 <span x-text="getLessonTitle()"></span></h3>
-                    <button @click="showLesson = false" class="close-btn">Fermer</button>
+                    <button @click="showLesson = false" class="close-btn" aria-label="Fermer">Fermer</button>
                 </div>
                 <div class="lesson-content" x-html="getLessonContent()"></div>
             </div>
@@ -119,7 +121,7 @@
             <div x-show="showIllustration" x-transition class="illustration-container">
                 <div class="illustration-header">
                     <h3>🖼️ <span x-text="getDomainName()"></span></h3>
-                    <button @click="showIllustration = false" class="close-btn">Fermer</button>
+                    <button @click="showIllustration = false" class="close-btn" aria-label="Fermer">Fermer</button>
                 </div>
                 <div class="illustration-content">
                     <img :src="getImageUrl()" :alt="'Illustration ' + getDomainName()" class="domain-illustration" loading="lazy">
@@ -133,7 +135,7 @@
                 <h3>🎯 Quiz <span x-text="getDomainName()"></span></h3>
                 <div class="quiz-progress">
                     <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
-                    <div class="progress-bar">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                         <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
                     </div>
                 </div>
@@ -154,7 +156,7 @@
                     </div>
 
                     <!-- Feedback -->
-                    <div x-show="answered" x-transition class="feedback-zone">
+                    <div x-show="answered" x-transition class="feedback-zone" aria-live="polite" aria-atomic="true">
                         <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
                             <span x-show="isCorrect">✅ Bravo ! C'est correct !</span>
                             <span x-show="!isCorrect">
@@ -169,7 +171,7 @@
                 </div>
 
                 <!-- Résultats finaux -->
-                <div x-show="quizFinished" x-transition class="results-zone">
+                <div x-show="quizFinished" x-transition class="results-zone" aria-live="polite">
                     <h3>🎉 Quiz terminé !</h3>
                     <div class="score-display">
                         <div class="score-circle">
@@ -180,10 +182,10 @@
                         <p class="score-message" x-text="getScoreMessage()"></p>
                     </div>
                     <div class="results-actions">
-                        <button @click="retryQuiz()" class="action-btn btn-quiz">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                             🔄 Recommencer
                         </button>
-                        <button @click="backToDomain()" class="action-btn btn-info">
+                        <button @click="backToDomain()" class="action-btn btn-info" aria-label="En savoir plus">
                             ← Retour au domaine
                         </button>
                     </div>
@@ -1325,5 +1327,8 @@
 
             function getSectionName() { return 'maths'; }
         </script>
-    </body>
+    
+    <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
+    <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
+</body>
 </html>

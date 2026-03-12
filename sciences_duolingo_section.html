@@ -4,26 +4,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sciences - Le Monde des Curieux</title>
+        <title>🧪 Sciences - Le Monde des Curieux</title>
         <link rel="stylesheet" href="styles/sciences_alpine.css">
-    </head>
+        <link rel="stylesheet" href="styles/wcag-accessibility.css">
+</head>
 
     <body x-data="sciencesApp" x-cloak>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
         <!-- Système XP -->
         <script src="scripts/section-xp-system.js"></script>
 
         <!-- Bulle Curio -->
         <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
-            <button @click="hide()" class="curio-close">×</button>
+            <button @click="hide()" class="curio-close" aria-label="Fermer">×</button>
             <div class="curio-avatar">🦊</div>
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="sciences-container">
+        <div class="sciences-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
-                <button onclick="window.location.href='index.html'" class="back-btn">
+                <button onclick="history.back()" class="back-btn">
                     ← Retour à l'accueil
                 </button>
             </div>
@@ -35,7 +37,7 @@
             </div>
 
             <!-- Navigation domaines -->
-            <div class="domains-nav">
+            <div class="domains-nav" role="navigation" aria-label="Domaines scientifiques">
                 <button @click="selectDomain('terre')"
                     :class="'domain-btn terre' + (currentDomain === 'terre' ? ' active' : '')">
                     🌍 Sciences de la Terre
@@ -67,13 +69,13 @@
 
                         <!-- Boutons actions -->
                         <div class="action-buttons">
-                            <button @click="startQuiz()" class="action-btn btn-quiz">
+                            <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                                 🎯 Lancer le Quiz
                             </button>
-                            <button @click="showIllustration = true" class="action-btn btn-visual">
+                            <button @click="showIllustration = true" class="action-btn btn-visual" aria-label="Voir l'illustration">
                                 🖼️ Voir Illustration
                             </button>
-                            <button @click="showLesson = true" class="action-btn btn-info">
+                            <button @click="showLesson = true" class="action-btn btn-info" aria-label="En savoir plus">
                                 📖 Voir la Leçon
                             </button>
                         </div>
@@ -84,7 +86,7 @@
                 <div x-show="showLesson" x-transition class="lesson-container">
                     <div class="lesson-header">
                         <h3>📖 <span x-text="getLessonTitle()"></span></h3>
-                        <button @click="showLesson = false" class="close-btn">✖ Fermer</button>
+                        <button @click="showLesson = false" class="close-btn" aria-label="Fermer">✖ Fermer</button>
                     </div>
                     <div class="lesson-content" x-html="getLessonContent()"></div>
                 </div>
@@ -93,7 +95,7 @@
                 <div x-show="showIllustration" x-transition class="illustration-container">
                     <div class="illustration-header">
                         <h3>🖼️ <span x-text="getDomainName()"></span></h3>
-                        <button @click="showIllustration = false" class="close-btn">✖ Fermer</button>
+                        <button @click="showIllustration = false" class="close-btn" aria-label="Fermer">✖ Fermer</button>
                     </div>
                     <img :src="getImageUrl()" alt="Illustration Sciences" class="domain-illustration"
                         @error="handleImageError($event)">
@@ -107,7 +109,7 @@
                             Question <span x-text="currentQuestionIndex + 1"></span> / <span
                                 x-text="getCurrentQuiz().length"></span>
                         </p>
-                        <div class="progress-bar">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                             <div class="progress-fill"
                                 :style="`width: ${((currentQuestionIndex + 1) / getCurrentQuiz().length) * 100}%`"></div>
                         </div>
@@ -127,7 +129,7 @@
                                 </template>
                             </div>
 
-                            <div x-show="answered" x-transition class="feedback-zone">
+                            <div x-show="answered" x-transition class="feedback-zone" aria-live="polite" aria-atomic="true">
                                 <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
                                     <span x-text="isCorrect ? '✅ Bravo ! Bonne réponse !' : '❌ Ce n\'est pas la bonne réponse.'"></span>
                                 </div>
@@ -142,7 +144,7 @@
 
                 <!-- Zone Résultats -->
                 <div x-show="showResults" x-transition class="quiz-container">
-                    <div class="results-zone">
+                    <div class="results-zone" aria-live="polite">
                         <h3>🏆 Quiz Terminé !</h3>
                         <div class="score-display">
                             <div class="score-circle">
@@ -152,10 +154,10 @@
                             <p class="score-message" x-text="getScoreMessage()"></p>
                         </div>
                         <div class="results-actions">
-                            <button @click="retryQuiz()" class="action-btn btn-quiz">
+                            <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                                 🔄 Refaire le Quiz
                             </button>
-                            <button @click="backToDomain()" class="action-btn btn-info">
+                            <button @click="backToDomain()" class="action-btn btn-info" aria-label="En savoir plus">
                                 ← Retour au Domaine
                             </button>
                         </div>
@@ -553,7 +555,7 @@
     <!-- Admin Shortcut (Ctrl+Shift+X) -->
     <script src="scripts/admin-shortcut.js"></script>
             <!-- MasterGameSystem v3.0 -->
-        <script src="scripts/master-game-system.js"></script>
+        <script src="../js/master-game-system.js"></script>
 
         <script>
             // ========================================================================
@@ -577,6 +579,9 @@
             // ========================================================================
         </script>
 
+
+    <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
+    <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
 </body>
 
 </html>
