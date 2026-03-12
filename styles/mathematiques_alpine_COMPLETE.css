@@ -7,6 +7,7 @@
     --geometrie-color: #2980B9;
     --mesures-color: #8E44AD;
     --problemes-color: #E74C3C;
+    --fractions-color: #F39C12;
     --math-primary: #FF6B35;
     --math-secondary: #6A4C93;
     --math-accent: #4ECDC4;
@@ -109,6 +110,7 @@ body {
 .domain-btn.donnees.active { background: #2471A3; color: white; }
 .domain-btn.calcul_litteral.active { background: #7D3C98; color: white; }
 .domain-btn.problemes_complexes.active { background: #C0392B; color: white; }
+.domain-btn.fractions.active { background: #F39C12; color: white; }
 
 .domain-content {
     background: white;
