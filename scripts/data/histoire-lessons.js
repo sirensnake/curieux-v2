@@ -790,6 +790,123 @@ const histoireLeconData = {
                 <strong style="color:inherit;">>📌 À retenir :</strong> Époque contemporaine = 1789 à aujourd'hui. Révolution → Napoléon → guerres mondiales → monde actuel.
             </div>
         `
+    },
+
+    napoleon: {
+        title: "Napoléon Bonaparte : de la Révolution à l'Empire",
+        content: `
+            <h3>🦅 Qui est Napoléon Bonaparte ?</h3>
+            <p>Né en <strong>1769 en Corse</strong>, Napoléon est un général brillant qui profite de la Révolution pour s'imposer. En <strong>1799</strong>, il prend le pouvoir et devient <strong>Premier Consul</strong>. En <strong>1804</strong>, il se fait sacrer <strong>Empereur des Français</strong> à Notre-Dame de Paris.</p>
+
+            <h3>⚔️ Le Grand Empire</h3>
+            <ul>
+                <li><strong>Austerlitz (1805)</strong> : victoire éclatante contre l'Autriche et la Russie — son chef-d'œuvre</li>
+                <li><strong>Iéna (1806)</strong> : défaite de la Prusse en quelques semaines</li>
+                <li>À son apogée, il contrôle la majeure partie de l'Europe</li>
+            </ul>
+
+            <h3>📜 Les réformes durables</h3>
+            <ul>
+                <li><strong>Le Code Civil (1804)</strong> : encore en vigueur aujourd'hui dans ses grandes lignes</li>
+                <li><strong>Les lycées</strong> : création de l'enseignement secondaire public</li>
+                <li><strong>La Légion d'honneur</strong> : décoration nationale toujours existante</li>
+                <li><strong>La Banque de France</strong> et la monnaie stable</li>
+            </ul>
+
+            <h3>📉 La chute</h3>
+            <ul>
+                <li><strong>1812</strong> : désastre de la campagne de Russie — 500 000 soldats morts dans le froid</li>
+                <li><strong>1814</strong> : abdication, exil à l'île d'Elbe</li>
+                <li><strong>1815</strong> : les Cent-Jours, puis défaite définitive à <strong>Waterloo</strong></li>
+                <li>Exil définitif à <strong>Sainte-Hélène</strong>, où il meurt en <strong>1821</strong></li>
+            </ul>
+
+            <div style="background:#3a2a10;border-left:4px solid #f39c12;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#f39c12;">📌 À retenir :</strong> Napoléon = Empereur 1804, Code Civil, Austerlitz, défaite à Waterloo 1815, exil Sainte-Hélène.
+            </div>
+        `
+    },
+
+    ww1: {
+        title: "La Première Guerre Mondiale (1914-1918)",
+        content: `
+            <h3>🪖 Comment la guerre commence-t-elle ?</h3>
+            <p>Le <strong>28 juin 1914</strong>, l'archiduc François-Ferdinand est assassiné à Sarajevo. Par un jeu d'alliances, toute l'Europe bascule dans la guerre. D'un côté : <strong>France, Royaume-Uni, Russie</strong>. De l'autre : <strong>Allemagne et Autriche-Hongrie</strong>.</p>
+
+            <h3>⛏️ La guerre des tranchées</h3>
+            <p>Les soldats français — les <strong>Poilus</strong> — vivent dans la boue, sous les obus, sur 700 km de tranchées creusées de la mer du Nord à la Suisse.</p>
+            <ul>
+                <li><strong>Verdun (1916)</strong> : 300 jours de bataille, près de 700 000 morts — symbole de l'horreur</li>
+                <li><strong>La Somme (1916)</strong> : 1 million de morts des deux côtés</li>
+                <li>Nouvelles armes terrifiantes : gaz de combat, chars d'assaut, avions</li>
+            </ul>
+
+            <h3>🕊️ L'armistice</h3>
+            <p>Le <strong>11 novembre 1918 à 11h</strong>, les canons se taisent. Le <strong>Traité de Versailles (1919)</strong> punit lourdement l'Allemagne — ce qui causera la Seconde Guerre mondiale.</p>
+            <p>Bilan : <strong>18 à 20 millions de morts</strong>. On l'appelle alors « la Der des Ders ».</p>
+
+            <div style="background:#1a2a1a;border-left:4px solid #27ae60;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#27ae60;">📌 À retenir :</strong> 1914-1918. Tranchées. Poilus. Verdun. Armistice 11 novembre 1918. 18 millions de morts.
+            </div>
+        `
+    },
+
+    ww2: {
+        title: "La Seconde Guerre Mondiale (1939-1945)",
+        content: `
+            <h3>💥 Les causes</h3>
+            <p>La crise économique des années 1930 et l'humiliation du Traité de Versailles permettent à <strong>Adolf Hitler</strong> de prendre le pouvoir en Allemagne en 1933. Il impose le nazisme et envahit l'Europe.</p>
+
+            <h3>📅 Les grandes étapes</h3>
+            <ul>
+                <li><strong>1er septembre 1939</strong> : l'Allemagne envahit la Pologne → la France et l'Angleterre déclarent la guerre</li>
+                <li><strong>Juin 1940</strong> : défaite française éclair. La France est occupée</li>
+                <li><strong>18 juin 1940</strong> : depuis Londres, <strong>de Gaulle</strong> appelle à résister — début de la <strong>Résistance</strong></li>
+                <li><strong>6 juin 1944</strong> : <strong>Débarquement en Normandie</strong> — les Alliés libèrent la France</li>
+                <li><strong>8 mai 1945</strong> : capitulation de l'Allemagne → <strong>Victoire en Europe</strong> (jour férié)</li>
+                <li><strong>Août 1945</strong> : bombes atomiques sur Hiroshima et Nagasaki → fin de la guerre</li>
+            </ul>
+
+            <h3>😢 La Shoah</h3>
+            <p>Le régime nazi organise l'extermination systématique des Juifs d'Europe. <strong>6 millions de victimes</strong> sont assassinées dans des camps comme Auschwitz. C'est l'un des crimes les plus graves de l'histoire humaine.</p>
+
+            <div style="background:#1a1a2a;border-left:4px solid #3498db;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#3498db;">📌 À retenir :</strong> 1939-1945. Hitler, occupation, Résistance, de Gaulle. Débarquement 6 juin 1944. Shoah : 6 millions de victimes. 8 mai 1945 = victoire.
+            </div>
+        `
+    },
+
+    republique: {
+        title: "La Ve République et les institutions françaises",
+        content: `
+            <h3>🏛️ Qu'est-ce qu'une République ?</h3>
+            <p>Une <strong>République</strong> est un régime politique où le pouvoir appartient au peuple, exercé par des représentants élus. La France a connu <strong>5 Républiques</strong> depuis la Révolution de 1789.</p>
+
+            <h3>📜 La naissance de la Ve République (1958)</h3>
+            <p>En <strong>1958</strong>, le général <strong>de Gaulle</strong> fait adopter une nouvelle Constitution qui renforce les pouvoirs du <strong>Président de la République</strong>. C'est la <strong>Ve République</strong>, toujours en vigueur aujourd'hui.</p>
+
+            <h3>⚖️ Les trois pouvoirs</h3>
+            <ul>
+                <li><strong>Pouvoir exécutif</strong> : Président de la République (élu pour 5 ans) + gouvernement (Premier ministre + ministres)</li>
+                <li><strong>Pouvoir législatif</strong> : Assemblée nationale (577 députés) + Sénat (348 sénateurs) — ils votent les lois</li>
+                <li><strong>Pouvoir judiciaire</strong> : tribunaux et juges — ils font respecter les lois</li>
+            </ul>
+            <p>Cette séparation des pouvoirs vient du philosophe <strong>Montesquieu</strong> au XVIIIe siècle.</p>
+
+            <h3>🗳️ La démocratie en France</h3>
+            <ul>
+                <li>Tous les citoyens de <strong>18 ans et plus</strong> peuvent voter</li>
+                <li>Le Président est élu au <strong>suffrage universel direct</strong> depuis 1962</li>
+                <li>La devise reste : <strong>Liberté, Égalité, Fraternité</strong></li>
+            </ul>
+
+            <h3>🇪🇺 La France en Europe</h3>
+            <p>La France est membre fondateur de l'<strong>Union Européenne</strong> (Traité de Rome, 1957) et partage la monnaie <strong>euro</strong> avec 19 autres pays depuis 2002.</p>
+
+            <div style="background:#0d2a3a;border-left:4px solid #9b59b6;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;">
+                <strong style="color:#9b59b6;">📌 À retenir :</strong> Ve République = 1958, de Gaulle. 3 pouvoirs séparés. Vote à 18 ans. France dans l'Union Européenne depuis 1957.
+            </div>
+        `
     }
 };
 

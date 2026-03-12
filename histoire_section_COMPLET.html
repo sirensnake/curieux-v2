@@ -70,86 +70,71 @@
 
                 <!-- Boutons d'action -->
                 <div class="action-buttons">
-                    <button @click="showTimeline = !showTimeline" class="action-btn btn-success">
-                        📜 Frise chronologique
-                    </button>
-                    <button @click="toggleMaps()" class="action-btn btn-primary">
-                        🖼️ Voir l'illustration
-                    </button>
-                    <button @click="currentLesson = null; showLesson = !showLesson" class="action-btn btn-info" aria-label="En savoir plus">
-                        📖 En savoir plus
-                    </button>
-                    <button x-show="currentPeriod === 'tempsmodernes'"
-                        @click="currentLesson = 'louisxiv'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        👑 Louis XIV
-                    </button>
-                    <button x-show="currentPeriod === 'tempsmodernes'"
-                        @click="startQuizForLesson('louisxiv')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        👑 Quiz Louis XIV
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="currentLesson = 'revolution'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        🇫🇷 Révolution
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="startQuizForLesson('revolution')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        🇫🇷 Quiz Révolution
-                    </button>
-                    <!-- AJOUT Phase 2 : Napoléon -->
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="currentLesson = 'napoleon'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        🦅 Napoléon
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="startQuizForLesson('napoleon')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        🦅 Quiz Napoléon
-                    </button>
-                    <!-- AJOUT Phase 2 : 1ère Guerre Mondiale -->
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="currentLesson = 'ww1'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        🪖 1ère Guerre Mondiale
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="startQuizForLesson('ww1')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        🪖 Quiz 1ère GM
-                    </button>
-                    <!-- AJOUT Phase 2 : 2ème Guerre Mondiale -->
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="currentLesson = 'ww2'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        ✈️ 2ème Guerre Mondiale
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="startQuizForLesson('ww2')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        ✈️ Quiz 2ème GM
-                    </button>
-                    <!-- AJOUT Phase 2 : Ve République -->
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="currentLesson = 'republique'; showLesson = true"
-                        class="action-btn btn-info" aria-label="En savoir plus">
-                        🏛️ Ve République
-                    </button>
-                    <button x-show="currentPeriod === 'epoquecontemporaine'"
-                        @click="startQuizForLesson('republique')"
-                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        🏛️ Quiz Ve République
-                    </button>
-                    <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
-                        🎯 Quiz
-                    </button>
-                </div>
-            </div>
 
-            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+                    <!-- Ligne 1 : navigation principale (toujours visible) -->
+                    <div class="action-row action-row-nav">
+                        <button @click="showTimeline = !showTimeline" class="action-btn btn-success">
+                            📜 Frise chronologique
+                        </button>
+                        <button @click="toggleMaps()" class="action-btn btn-primary">
+                            🖼️ Voir l'illustration
+                        </button>
+                        <button @click="currentLesson = null; showLesson = !showLesson" class="action-btn btn-info" aria-label="En savoir plus">
+                            📖 En savoir plus
+                        </button>
+                    </div>
+
+                    <!-- Ligne 2 : leçons dédiées Temps Modernes -->
+                    <div class="action-row action-row-lessons" x-show="currentPeriod === 'tempsmodernes'">
+                        <span class="action-row-label">📚 Leçons dédiées</span>
+                        <div class="action-lesson-pairs">
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'louisxiv'; showLesson = true" class="action-btn btn-lesson">
+                                    👑 Louis XIV
+                                </button>
+                                <button @click="startQuizForLesson('louisxiv')" class="action-btn btn-quiz">
+                                    📝 Quiz
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 : leçons dédiées Époque Contemporaine -->
+                    <div class="action-row action-row-lessons" x-show="currentPeriod === 'epoquecontemporaine'">
+                        <span class="action-row-label">📚 Leçons dédiées</span>
+                        <div class="action-lesson-pairs">
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'revolution'; showLesson = true" class="action-btn btn-lesson">🇫🇷 Révolution</button>
+                                <button @click="startQuizForLesson('revolution')" class="action-btn btn-quiz">📝 Quiz</button>
+                            </div>
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'napoleon'; showLesson = true" class="action-btn btn-lesson">🦅 Napoléon</button>
+                                <button @click="startQuizForLesson('napoleon')" class="action-btn btn-quiz">📝 Quiz</button>
+                            </div>
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'ww1'; showLesson = true" class="action-btn btn-lesson">🪖 1ère GM</button>
+                                <button @click="startQuizForLesson('ww1')" class="action-btn btn-quiz">📝 Quiz</button>
+                            </div>
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'ww2'; showLesson = true" class="action-btn btn-lesson">✈️ 2ème GM</button>
+                                <button @click="startQuizForLesson('ww2')" class="action-btn btn-quiz">📝 Quiz</button>
+                            </div>
+                            <div class="lesson-pair">
+                                <button @click="currentLesson = 'republique'; showLesson = true" class="action-btn btn-lesson">🏛️ Ve République</button>
+                                <button @click="startQuizForLesson('republique')" class="action-btn btn-quiz">📝 Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ligne 3 : quiz de période -->
+                    <div class="action-row action-row-period-quiz">
+                        <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                            🎯 Quiz de la période
+                        </button>
+                    </div>
+
+                </div>
+<!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
             <div x-show="showLesson" x-transition class="lesson-container">
                 <div class="lesson-header">
                     <h2>📖 <span x-text="getLessonTitle()"></span></h2>
