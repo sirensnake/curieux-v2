@@ -173,105 +173,6 @@
             text-decoration: underline;
         }
 
-        /* Guide d'utilisation */
-        .subsection {
-            margin: 25px 0;
-        }
-
-        .subsection h3 {
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-size: 1.05em;
-        }
-
-        .subsection ol,
-        .subsection ul {
-            padding-left: 25px;
-        }
-
-        .subsection ol li,
-        .subsection ul li {
-            margin-bottom: 8px;
-        }
-
-        .guide-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-            font-size: 0.95em;
-        }
-
-        .guide-table th {
-            background: #2c3e50;
-            color: white;
-            padding: 10px 14px;
-            text-align: left;
-        }
-
-        .guide-table td {
-            padding: 9px 14px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .guide-table tr:nth-child(even) td {
-            background: #f8f9fa;
-        }
-
-        /* Gamification parents */
-        .gamification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .gamification-card {
-            background: #f8f9ff;
-            border: 1px solid #d0d8ff;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .gamification-card h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.05em;
-        }
-
-        .gamification-card p {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .gamification-card ul {
-            padding-left: 20px;
-            margin: 8px 0;
-            font-size: 0.9em;
-        }
-
-        .gamification-card ul li {
-            margin-bottom: 4px;
-        }
-
-        .gamification-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .gamification-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .guide-table {
-                font-size: 0.85em;
-            }
-        }
-
-        .mt-10 { margin-top: 10px; }
-        .mt-20 { margin-top: 20px; }
-        .contact-subtitle { margin-top: 20px; font-size: 0.9em; }
-
         .footer {
             text-align: center;
             color: white;
@@ -310,8 +211,6 @@
                 <a href="#conformite" class="nav-btn">✅ Conformité</a>
                 <a href="#pedagogie" class="nav-btn">📚 Pédagogie</a>
                 <a href="#utilisation" class="nav-btn">💻 Utilisation</a>
-                <a href="#guide" class="nav-btn">🗺️ Guide</a>
-                <a href="#gamification-parents" class="nav-btn">🎮 Gamification</a>
                 <a href="#contact" class="nav-btn">📧 Contact</a>
             </div>
         </div>
@@ -357,8 +256,8 @@
 
             <h3>Contenu Pédagogique</h3>
             <ul>
-                <li><strong>418 questions de quiz</strong> interactifs réparties sur les 5 matières</li>
-                <li><strong>38 leçons enrichies</strong> avec illustrations professionnelles</li>
+                <li><strong>468 questions de quiz</strong> interactifs réparties sur les 5 matières</li>
+                <li><strong>43 leçons enrichies</strong> avec illustrations professionnelles</li>
                 <li><strong>Progression gamifiée</strong> : système de points d'expérience (XP), séries quotidiennes (streaks), vies (hearts)</li>
                 <li><strong>Dashboard de suivi</strong> : visualisation graphique de la progression par matière</li>
             </ul>
@@ -485,7 +384,7 @@
             <div class="highlight-box info">
                 <strong>💡 Fonctionnement :</strong><br>
                 Chaque appareil = un profil de progression indépendant. Idéal pour :
-                <ul class="mt-10">
+                <ul style="margin-top: 10px;">
                     <li>Foyers avec tablettes personnelles par enfant</li>
                     <li>Classes avec postes informatiques dédiés</li>
                     <li>Utilisation individuelle à domicile</li>
@@ -496,7 +395,7 @@
             <ul>
                 <li><strong>Autonomie :</strong> Les enfants peuvent utiliser le site sans supervision constante</li>
                 <li><strong>Progression visible :</strong> Dashboard avec graphiques de progression par matière</li>
-                <li><strong>Export PDF :</strong> Possibilité d'exporter un résumé de progression (à venir)</li>
+                <li><strong>Export PDF :</strong> Possibilité d'exporter un résumé de progression disponible depuis le tableau de bord</li>
                 <li><strong>Mode plein écran :</strong> Optimisé pour usage tablette immersif</li>
             </ul>
 
@@ -549,14 +448,14 @@
                 <li><strong>Points d'expérience (XP) :</strong> Chaque bonne réponse rapporte 5 XP, chaque quiz complété 25 XP, quiz parfait 50 XP bonus</li>
                 <li><strong>Séries quotidiennes (Streaks) :</strong> Compteur de jours consécutifs d'activité, encourageant la régularité</li>
                 <li><strong>Système de vies (Hearts) :</strong> Capital d'erreurs par session, régénération automatique après 30 minutes</li>
-                <li><strong>Badges et récompenses :</strong> Déblocage de badges selon progression (à venir)</li>
+                <li><strong>Badges et récompenses :</strong> 7 badges débloquables selon progression</li>
             </ul>
 
             <h3>Feedback Immédiat et Encourageant</h3>
             <div class="highlight-box success">
                 <strong>🦊 Mascotte Curio :</strong><br>
                 Un renard bienveillant accompagne l'enfant avec des encouragements personnalisés :
-                <ul class="mt-10">
+                <ul style="margin-top: 10px;">
                     <li>✅ Bonne réponse : "Bravo ! Continue comme ça !"</li>
                     <li>❌ Erreur : "Pas de panique ! Réessaye la prochaine question !"</li>
                     <li>🏆 Quiz terminé : Félicitations adaptées au score</li>
@@ -588,18 +487,18 @@
             <div class="contact-info">
                 <h3>Guillaume [Nom]</h3>
                 <p><strong>Développeur du projet</strong></p>
-                <p class="mt-20">
-                    📧 Email : <a href="/cdn-cgi/l/email-protection#99c2fcf4f8f0f5c4">[email]</a><br>
+                <p style="margin-top: 20px;">
+                    📧 Email : <a href="/cdn-cgi/l/email-protection#5c0739313d353001">[email]</a><br>
                     📱 Téléphone : [numéro]<br>
                     🌐 Site : <a href="https://lemondedescurieux.fr" target="_blank">lemondedescurieux.fr</a>
                 </p>
-                <p class="contact-subtitle">
+                <p style="margin-top: 20px; font-size: 0.9em;">
                     Développeur web | Préparation certification CompTIA A+<br>
                     Disponible pour démonstrations, formations, questions techniques
                 </p>
             </div>
 
-            <h3>Je suis disponible pour :</h3>
+            <h3 style="margin-top: 30px;">Je suis disponible pour :</h3>
             <ul>
                 <li>🎥 <strong>Démonstrations en visioconférence</strong> (Teams, Zoom, Google Meet)</li>
                 <li>📞 <strong>Échanges téléphoniques</strong> pour répondre à vos questions</li>
@@ -609,129 +508,18 @@
                 <li>📊 <strong>Présentation détaillée</strong> du projet en structure éducative</li>
             </ul>
 
-            <div class="highlight-box info mt-20">
+            <div class="highlight-box info" style="margin-top: 20px;">
                 <strong>💡 Retours et Suggestions :</strong><br>
                 Votre expertise d'éducateur est précieuse ! N'hésitez pas à me transmettre vos retours d'expérience, suggestions d'amélioration, ou besoins spécifiques. Ce projet évolue notamment grâce aux retours terrain.
-            </div>
-        </div>
-
-        <!-- Section Guide d'utilisation -->
-        <div class="section" id="guide">
-            <h2>🗺️ Guide d'utilisation</h2>
-
-            <p>Ce guide vous permet de démarrer rapidement avec la plateforme, que vous soyez enseignant, parent ou animateur.</p>
-
-            <div class="subsection">
-                <h3>Première connexion (5 minutes)</h3>
-                <ol>
-                    <li>Ouvrez <strong>lemondedescurieux.fr</strong> dans un navigateur (Chrome, Firefox, Safari)</li>
-                    <li>La <strong>carte interactive</strong> s'affiche : chaque bulle correspond à une matière</li>
-                    <li>Cliquez sur une matière pour accéder à ses thèmes</li>
-                    <li>Choisissez un thème, lisez la leçon, puis lancez le quiz</li>
-                    <li>Le <strong>tableau de bord</strong> (icône 📊 en haut) affiche la progression en temps réel</li>
-                </ol>
-            </div>
-
-            <div class="subsection">
-                <h3>Protocole de session type</h3>
-                <div class="highlight-box info">
-                    <strong>⏱️ Durée recommandée : 20 à 30 minutes</strong><br>
-                    Au-delà, la concentration d'un enfant de 8-12 ans diminue significativement.
-                </div>
-                <ul>
-                    <li><strong>0-5 min</strong> — Consultation du tableau de bord : vérifier la série (🔥 streak), les cœurs disponibles (❤️), les points XP</li>
-                    <li><strong>5-20 min</strong> — Travail sur 1 à 2 thèmes d'une matière (leçon + quiz)</li>
-                    <li><strong>20-25 min</strong> — Retour sur une erreur : relire la leçon correspondante</li>
-                    <li><strong>25-30 min</strong> — Bilan oral avec l'enfant : qu'est-ce qu'il a retenu ?</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h3>Progression suggérée par matière</h3>
-                <table class="guide-table">
-                    <thead>
-                        <tr><th>Matière</th><th>Point de départ conseillé</th><th>Durée estimée complète</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>🇫🇷 Français</td><td>Grammaire → Conjugaison</td><td>~4h (9 thèmes)</td></tr>
-                        <tr><td>🧮 Mathématiques</td><td>Numération → Calcul</td><td>~4h (9 thèmes)</td></tr>
-                        <tr><td>🇬🇧 Anglais</td><td>Basic Vocabulary → Phrases</td><td>~5h (10 thèmes)</td></tr>
-                        <tr><td>🧪 Sciences</td><td>Sciences de la Terre</td><td>~2h30 (5 thèmes)</td></tr>
-                        <tr><td>🏛️ Histoire</td><td>Préhistoire → chronologique</td><td>~2h30 (5 périodes)</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="subsection">
-                <h3>Accès rapide admin (pour réinitialiser)</h3>
-                <p>En cas de besoin (changement d'enfant, remise à zéro), le raccourci <strong>Ctrl+Shift+X</strong> depuis n'importe quelle section ouvre le panneau d'administration permettant de réinitialiser les données de progression.</p>
-            </div>
-        </div>
-
-        <!-- Section Mécaniques de gamification -->
-        <div class="section" id="gamification-parents">
-            <h2>🎮 Comprendre la gamification</h2>
-
-            <p>La plateforme utilise des mécaniques de jeu inspirées d'applications reconnues (Duolingo, Khan Academy) pour maintenir la motivation. Voici comment les expliquer simplement à un enfant — et à ses parents.</p>
-
-            <div class="gamification-grid">
-
-                <div class="gamification-card">
-                    <div class="gamification-icon">🔥</div>
-                    <h3>La Série (Streak)</h3>
-                    <p><strong>Ce que c'est :</strong> Un compteur de jours consécutifs où l'enfant a utilisé la plateforme.</p>
-                    <p><strong>Comment ça marche :</strong> Chaque jour d'activité incrémente le compteur. Un jour sans activité remet la série à zéro.</p>
-                    <p><strong>À dire à l'enfant :</strong> <em>« Ta flamme grandit chaque jour que tu travailles. Essaie de ne pas la perdre ! »</em></p>
-                    <div class="highlight-box success">Encourage la régularité, plus efficace que les longues sessions rares.</div>
-                </div>
-
-                <div class="gamification-card">
-                    <div class="gamification-icon">❤️</div>
-                    <h3>Les Cœurs (Vies)</h3>
-                    <p><strong>Ce que c'est :</strong> Un capital de 5 erreurs par session. Chaque mauvaise réponse coûte un cœur.</p>
-                    <p><strong>Comment ça marche :</strong> À 0 cœur, l'enfant doit patienter 30 minutes avant de continuer. Les cœurs se régénèrent automatiquement.</p>
-                    <p><strong>À dire à l'enfant :</strong> <em>« Chaque erreur te coûte un cœur, mais ce n'est pas grave — tu peux en regagner ! »</em></p>
-                    <div class="highlight-box warning">Si l'enfant perd tous ses cœurs, c'est le bon moment pour une pause et relire la leçon.</div>
-                </div>
-
-                <div class="gamification-card">
-                    <div class="gamification-icon">⭐</div>
-                    <h3>Les Points XP et Niveaux</h3>
-                    <p><strong>Ce que c'est :</strong> Des points d'expérience gagnés à chaque bonne réponse et quiz complété.</p>
-                    <p><strong>Comment ça marche :</strong> Bonne réponse = 5 XP • Quiz complété = 25 XP • Quiz parfait = 50 XP bonus. Les XP font monter de niveau selon une progression croissante.</p>
-                    <p><strong>À dire à l'enfant :</strong> <em>« Plus tu travailles, plus tu montes de niveau — comme dans un jeu vidéo ! »</em></p>
-                    <div class="highlight-box info">Le tableau de bord affiche la progression par matière pour visualiser les points forts.</div>
-                </div>
-
-                <div class="gamification-card">
-                    <div class="gamification-icon">🏅</div>
-                    <h3>Les Badges</h3>
-                    <p><strong>Ce que c'est :</strong> Des récompenses débloquées en atteignant certains objectifs.</p>
-                    <p><strong>Badges disponibles :</strong></p>
-                    <ul>
-                        <li>🔥 <strong>Semaine de feu</strong> — 7 jours de suite</li>
-                        <li>🔥 <strong>Mois de feu</strong> — 30 jours de suite</li>
-                        <li>⭐ <strong>Érudit</strong> — 1 000 XP</li>
-                        <li>⭐ <strong>Expert</strong> — 5 000 XP</li>
-                        <li>✅ <strong>Perfectionniste</strong> — 10 quiz parfaits</li>
-                        <li>✅ <strong>Centurion</strong> — 100 quiz complétés</li>
-                        <li>📚 <strong>Curieux complet</strong> — Toutes les matières explorées</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="highlight-box info">
-                <strong>💡 Conseil pour les parents :</strong> Regardez le tableau de bord ensemble une fois par semaine. Commenter les progrès à voix haute (« Waouh, tu as 340 XP en Maths ! ») renforce la motivation bien plus que les badges seuls.
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <p>&copy; 2026 Le Monde des Curieux - Guillaume [Nom]</p>
-            <p class="mt-10">
-                <a href="index.html">Accueil</a> | 
-                <a href="mentions-legales.html">Mentions Légales</a> | 
-                <a href="educateurs.html">Pour les Éducateurs</a>
+            <p style="margin-top: 10px;">
+                <a href="index.html" style="color: white;">Accueil</a> | 
+                <a href="mentions-legales.html" style="color: white;">Mentions Légales</a> | 
+                <a href="educateurs.html" style="color: white;">Pour les Éducateurs</a>
             </p>
         </di
