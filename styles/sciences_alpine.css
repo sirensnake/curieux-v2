@@ -3,7 +3,7 @@
 
 :root {
     --terre-color: #45B7D1;
-    --vivant-color: #27AE60;
+    --vivant-color: #1A7A3F;
     --matiere-color: #8E44AD;
 }
 
@@ -15,7 +15,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #27AE60 0%, #2C3E50 100%);
+    background: linear-gradient(135deg, #1A7A3F 0%, #2C3E50 100%);
     min-height: 100vh;
 }
 
@@ -152,7 +152,7 @@ body {
 }
 
 .btn-quiz {
-    background: linear-gradient(135deg, #45B7D1 0%, #27AE60 100%);
+    background: linear-gradient(135deg, #45B7D1 0%, #1A7A3F 100%);
     color: white;
 }
 
@@ -162,14 +162,14 @@ body {
 }
 
 .btn-info {
-    background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
+    background: linear-gradient(135deg, #1A7A3F 0%, #229954 100%);
     color: white;
 }
 
 .btn-info:hover {
     background: linear-gradient(135deg, #229954 0%, #1E8449 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+    box-shadow: 0 6px 20px rgba(26, 122, 63, 0.4);
 }
 
 /* ===== ILLUSTRATION ===== */
@@ -225,7 +225,7 @@ body {
     padding: 2.5rem;
     margin-top: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border: 2px solid #1E874A;
+    border: 2px solid #1A7A3F;
     animation: slideDown 0.3s ease-out;
 }
 
@@ -235,8 +235,8 @@ body {
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 4px solid #1E874A;
-    background: linear-gradient(90deg, #1E874A 0%, transparent 100%);
+    border-bottom: 4px solid #1A7A3F;
+    background: linear-gradient(90deg, #1A7A3F 0%, transparent 100%);
     padding: 1rem;
     border-radius: 8px;
 }
@@ -260,13 +260,13 @@ body {
 
 .lesson-content h3 {
     color: white;
-    background: #1E874A;
+    background: #1A7A3F;
     font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding: 0.8rem 1.2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(30, 135, 74, 0.3);
+    box-shadow: 0 4px 12px rgba(26, 122, 63, 0.3);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -277,12 +277,12 @@ body {
 }
 
 .lesson-content h4 {
-    color: #1E874A;
+    color: #1A7A3F;
     font-size: 1.15rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    border-left: 4px solid #1E874A;
+    border-left: 4px solid #1A7A3F;
 }
 
 .lesson-content p {
@@ -318,13 +318,16 @@ body {
 }
 
 .lesson-content li::marker {
-    color: #1E874A;
+    color: #1A7A3F;
     font-weight: bold;
 }
 
 .lesson-content strong {
-    color: #1E874A;
+    color: #1A7A3F;
     font-weight: 700;
+    background: rgba(26, 122, 63, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
 }
 
 .lesson-content em {
@@ -334,7 +337,7 @@ body {
 
 .lesson-header .close-btn {
     background: rgba(255, 255, 255, 0.9);
-    color: #1E874A;
+    color: #1A7A3F;
     border: 2px solid white;
     padding: 0.5rem 1.2rem;
     border-radius: 8px;
@@ -395,7 +398,7 @@ body {
 }
 
 .progress-fill {
-    background: linear-gradient(90deg, #45B7D1, #27AE60);
+    background: linear-gradient(90deg, #45B7D1, #1A7A3F);
     height: 100%;
     transition: width 0.3s;
 }
@@ -417,7 +420,7 @@ body {
     padding: 20px;
     background: #f8f9fa;
     border-radius: 12px;
-    border-left: 4px solid #1E874A;
+    border-left: 4px solid #1A7A3F;
 }
 
 .answer-options {
@@ -439,7 +442,7 @@ body {
 }
 
 .answer-btn:hover:not(:disabled) {
-    border-color: #27AE60;
+    border-color: #1A7A3F;
     background: #f0fff4;
     transform: translateX(5px);
 }
@@ -482,7 +485,7 @@ body {
 }
 
 .next-btn {
-    background: #27AE60;
+    background: #1A7A3F;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -516,7 +519,7 @@ body {
 
 .score-circle {
     display: inline-block;
-    background: linear-gradient(135deg, #45B7D1 0%, #27AE60 100%);
+    background: linear-gradient(135deg, #45B7D1 0%, #1A7A3F 100%);
     border-radius: 50%;
     padding: 40px;
     color: white;

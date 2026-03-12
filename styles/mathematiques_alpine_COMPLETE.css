@@ -2,13 +2,12 @@
 /* Ce fichier contient TOUS les styles nécessaires pour la section Mathématiques */
 
 :root {
-    --numeration-color: #FF6B35;
+    --numeration-color: #C94A1A;
     --calcul-color: #27AE60;
     --geometrie-color: #2980B9;
     --mesures-color: #8E44AD;
     --problemes-color: #E74C3C;
-    --fractions-color: #F39C12;
-    --math-primary: #FF6B35;
+    --math-primary: #C94A1A;
     --math-secondary: #6A4C93;
     --math-accent: #4ECDC4;
 }
@@ -21,7 +20,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #FF6B35 0%, #2C3E50 100%);
+    background: linear-gradient(135deg, #C94A1A 0%, #2C3E50 100%);
     min-height: 100vh;
 }
 
@@ -100,7 +99,7 @@ body {
     color: white;
 }
 
-.domain-btn.numeration.active { background: #FF6B35; color: white; }
+.domain-btn.numeration.active { background: #C94A1A; color: white; }
 .domain-btn.calcul.active { background: #27AE60; color: white; }
 .domain-btn.geometrie.active { background: #2980B9; color: white; }
 .domain-btn.mesures.active { background: #8E44AD; color: white; }
@@ -110,7 +109,6 @@ body {
 .domain-btn.donnees.active { background: #2471A3; color: white; }
 .domain-btn.calcul_litteral.active { background: #7D3C98; color: white; }
 .domain-btn.problemes_complexes.active { background: #C0392B; color: white; }
-.domain-btn.fractions.active { background: #F39C12; color: white; }
 
 .domain-content {
     background: white;
@@ -157,7 +155,7 @@ body {
 }
 
 .btn-quiz {
-    background: linear-gradient(135deg, #FF6B35 0%, #E74C3C 100%);
+    background: linear-gradient(135deg, #C94A1A 0%, #E74C3C 100%);
     color: white;
 }
 
@@ -224,7 +222,7 @@ body {
     padding: 2.5rem;
     margin-top: 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border: 2px solid #C15128;
+    border: 2px solid #C94A1A;
     animation: slideDown 0.3s ease-out;
 }
 
@@ -233,7 +231,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    background: linear-gradient(90deg, #C15128 0%, transparent 100%);
+    background: linear-gradient(90deg, #C94A1A 0%, transparent 100%);
     padding: 1rem;
     border-radius: 8px;
 }
@@ -257,24 +255,24 @@ body {
 
 .lesson-content h3 {
     color: white;
-    background: #C15128;
+    background: #C94A1A;
     font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding: 0.8rem 1.2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(193, 81, 40, 0.3);
+    box-shadow: 0 4px 12px rgba(201, 74, 26, 0.3);
 }
 
 .lesson-content h3:first-child { margin-top: 0; }
 
 .lesson-content h4 {
-    color: #C15128;
+    color: #C94A1A;
     font-size: 1.15rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    border-left: 4px solid #C15128;
+    border-left: 4px solid #C94A1A;
 }
 
 .lesson-content p {
@@ -290,7 +288,7 @@ body {
     padding: 1.5rem 1.5rem 1.5rem 2.5rem;
     border-radius: 8px;
     margin: 1rem 0;
-    border-left: 4px solid #C15128;
+    border-left: 4px solid #C94A1A;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -300,16 +298,19 @@ body {
     padding-left: 0.5rem;
 }
 
-.lesson-content li::marker { color: #C15128; font-weight: bold; }
+.lesson-content li::marker { color: #C94A1A; font-weight: bold; }
 
 .lesson-content strong {
-    color: #C15128;
+    color: #C94A1A;
     font-weight: 700;
+    background: rgba(201, 74, 26, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
 }
 
 .lesson-header .close-btn {
     background: rgba(255, 255, 255, 0.9);
-    color: #C15128;
+    color: #C94A1A;
     border: 2px solid white;
     padding: 0.5rem 1.2rem;
     border-radius: 8px;
@@ -362,7 +363,7 @@ body {
 }
 
 .number-table th, .decimal-table th {
-    background: #C15128;
+    background: #C94A1A;
     color: white;
     padding: 12px;
     text-align: center;
@@ -402,7 +403,7 @@ body {
 
 .calculation {
     background: #2c3e50;
-    color: #FF6B35;
+    color: #C94A1A;
     padding: 20px;
     border-radius: 8px;
     font-family: 'Courier New', monospace;
@@ -426,7 +427,7 @@ body {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 12px;
-    border-left: 5px solid #FF6B35;
+    border-left: 5px solid #C94A1A;
 }
 
 .step-number { font-size: 2.5em; min-width: 60px; text-align: center; }
@@ -450,12 +451,12 @@ body {
 .operation-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-color: #FF6B35;
+    border-color: #C94A1A;
 }
 
 .lesson-summary {
     background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-    border: 3px solid #FF6B35;
+    border: 3px solid #C94A1A;
     border-radius: 12px;
     padding: 25px;
     margin-top: 30px;
@@ -487,7 +488,7 @@ body {
 }
 
 .progress-fill {
-    background: linear-gradient(90deg, #FF6B35, #E74C3C);
+    background: linear-gradient(90deg, #C94A1A, #E74C3C);
     height: 100%;
     transition: width 0.3s;
 }
@@ -500,7 +501,7 @@ body {
     padding: 20px;
     background: #f8f9fa;
     border-radius: 12px;
-    border-left: 4px solid #C15128;
+    border-left: 4px solid #C94A1A;
 }
 
 .answer-options {
@@ -522,7 +523,7 @@ body {
 }
 
 .answer-btn:hover:not(:disabled) {
-    border-color: #FF6B35;
+    border-color: #C94A1A;
     background: #fff3e0;
     transform: translateX(5px);
 }
@@ -558,7 +559,7 @@ body {
 }
 
 .next-btn {
-    background: #FF6B35;
+    background: #C94A1A;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -588,7 +589,7 @@ body {
 
 .score-circle {
     display: inline-block;
-    background: linear-gradient(135deg, #FF6B35 0%, #E74C3C 100%);
+    background: linear-gradient(135deg, #C94A1A 0%, #E74C3C 100%);
     border-radius: 50%;
     padding: 40px;
     color: white;

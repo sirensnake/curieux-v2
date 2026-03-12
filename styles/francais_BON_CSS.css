@@ -277,12 +277,12 @@ body {
 }
 
 .lesson-content h4 {
-    color: #238378;
+    color: #2a9d8f;
     font-size: 1.15rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    border-left: 4px solid #238378;
+    border-left: 4px solid #2a9d8f;
 }
 
 .lesson-content p {
@@ -323,8 +323,11 @@ body {
 }
 
 .lesson-content strong {
-    color: #238378;
+    color: #1a7268;
     font-weight: 700;
+    background: rgba(26, 114, 104, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
 }
 
 .lesson-content em {

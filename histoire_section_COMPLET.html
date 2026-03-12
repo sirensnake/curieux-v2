@@ -99,6 +99,50 @@
                         class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                         🇫🇷 Quiz Révolution
                     </button>
+                    <!-- AJOUT Phase 2 : Napoléon -->
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="currentLesson = 'napoleon'; showLesson = true"
+                        class="action-btn btn-info" aria-label="En savoir plus">
+                        🦅 Napoléon
+                    </button>
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="startQuizForLesson('napoleon')"
+                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        🦅 Quiz Napoléon
+                    </button>
+                    <!-- AJOUT Phase 2 : 1ère Guerre Mondiale -->
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="currentLesson = 'ww1'; showLesson = true"
+                        class="action-btn btn-info" aria-label="En savoir plus">
+                        🪖 1ère Guerre Mondiale
+                    </button>
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="startQuizForLesson('ww1')"
+                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        🪖 Quiz 1ère GM
+                    </button>
+                    <!-- AJOUT Phase 2 : 2ème Guerre Mondiale -->
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="currentLesson = 'ww2'; showLesson = true"
+                        class="action-btn btn-info" aria-label="En savoir plus">
+                        ✈️ 2ème Guerre Mondiale
+                    </button>
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="startQuizForLesson('ww2')"
+                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        ✈️ Quiz 2ème GM
+                    </button>
+                    <!-- AJOUT Phase 2 : Ve République -->
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="currentLesson = 'republique'; showLesson = true"
+                        class="action-btn btn-info" aria-label="En savoir plus">
+                        🏛️ Ve République
+                    </button>
+                    <button x-show="currentPeriod === 'epoquecontemporaine'"
+                        @click="startQuizForLesson('republique')"
+                        class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        🏛️ Quiz Ve République
+                    </button>
                     <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                         🎯 Quiz
                     </button>
@@ -179,20 +223,6 @@
                             style="max-width: 100%; height: auto; border-radius: 8px; display: block;">
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
 
@@ -398,7 +428,57 @@
                             { question: "En quelle année la Première République est-elle proclamée ?", options: ["1789", "1790", "1792", "1795"], correct: 2 },
                             { question: "Qui dirige la Terreur en 1793-1794 ?", options: ["Napoléon", "Robespierre", "Louis XVI", "Danton"], correct: 1 },
                             { question: "Quelle est la fête nationale française ?", options: ["1er mai", "14 juillet", "11 novembre", "8 mai"], correct: 1 }
+                        ],
+                        // ===== AJOUT PHASE 2 =====
+                        napoleon: [
+                            { question: "En quelle année Napoléon devient-il Premier Consul ?", options: ["1799", "1804", "1789", "1815"], correct: 0 },
+                            { question: "En quelle année Napoléon est-il sacré Empereur ?", options: ["1799", "1802", "1804", "1810"], correct: 2 },
+                            { question: "Quelle grande victoire remporte Napoléon en 1805 ?", options: ["Waterloo", "Austerlitz", "Iéna", "Wagram"], correct: 1 },
+                            { question: "Quel code de lois Napoléon fait-il rédiger ?", options: ["Code pénal", "Code civil", "Code militaire", "Code commercial"], correct: 1 },
+                            { question: "Sur quelle île Napoléon naît-il en 1769 ?", options: ["Elbe", "Sainte-Hélène", "Corse", "Sicile"], correct: 2 },
+                            { question: "Quelle institution d'enseignement Napoléon crée-t-il ?", options: ["Collège de France", "Lycée", "Université", "École normale"], correct: 1 },
+                            { question: "Quelle bataille marque la défaite définitive de Napoléon ?", options: ["Leipzig", "Moscou", "Waterloo", "Trafalgar"], correct: 2 },
+                            { question: "Sur quelle île Napoléon est-il exilé après Waterloo ?", options: ["Elbe", "Corse", "Sainte-Hélène", "Sardaigne"], correct: 2 },
+                            { question: "Quel accord Napoléon signe-t-il avec l'Église en 1801 ?", options: ["Le Concordat", "L'Édit de Nantes", "La Paix de Paris", "Le Traité de Vienne"], correct: 0 },
+                            { question: "Quelle décoration militaire Napoléon crée-t-il en 1802 ?", options: ["Médaille militaire", "Légion d'honneur", "Croix de guerre", "Ordre national"], correct: 1 }
+                        ],
+                        ww1: [
+                            { question: "Quelles années dure la Première Guerre mondiale ?", options: ["1914-1918", "1939-1945", "1870-1871", "1912-1916"], correct: 0 },
+                            { question: "Quel événement déclenche la Première Guerre mondiale ?", options: ["L'invasion de la Belgique", "L'assassinat de François-Ferdinand", "La mobilisation russe", "La déclaration de guerre française"], correct: 1 },
+                            { question: "Comment appelle-t-on les soldats français de la Grande Guerre ?", options: ["Grognards", "Poilus", "Marsouins", "Zouaves"], correct: 1 },
+                            { question: "Quelle bataille dure 10 mois en 1916 ?", options: ["La Marne", "La Somme", "Verdun", "Chemin des Dames"], correct: 2 },
+                            { question: "Comment s'appelle le type de combat caractéristique de cette guerre ?", options: ["Guerre de mouvement", "Guerre de tranchées", "Guerre éclair", "Guerre de siège"], correct: 1 },
+                            { question: "Quand l'armistice met-il fin à la guerre ?", options: ["8 mai 1918", "11 novembre 1918", "14 juillet 1919", "28 juin 1919"], correct: 1 },
+                            { question: "Quel traité de paix est signé en 1919 ?", options: ["Traité de Paris", "Traité de Versailles", "Traité de Berlin", "Traité de Genève"], correct: 1 },
+                            { question: "Quel nouveau type d'arme est utilisé pour la première fois ?", options: ["Le fusil", "Les gaz de combat", "Le canon", "La mitrailleuse"], correct: 1 },
+                            { question: "Quel président américain entre en guerre en 1917 ?", options: ["Roosevelt", "Lincoln", "Wilson", "Taft"], correct: 2 },
+                            { question: "Combien de morts environ fait la Première Guerre mondiale ?", options: ["1 million", "5 millions", "10 millions", "20 millions"], correct: 2 }
+                        ],
+                        ww2: [
+                            { question: "Quelles années dure la Seconde Guerre mondiale ?", options: ["1939-1945", "1914-1918", "1936-1944", "1940-1946"], correct: 0 },
+                            { question: "Quel général lance l'Appel du 18 juin 1940 depuis Londres ?", options: ["Pétain", "Weygand", "De Gaulle", "Leclerc"], correct: 2 },
+                            { question: "Comment s'appelle le régime français collaborant avec l'Allemagne ?", options: ["La IVe République", "Le régime de Vichy", "La Commune", "L'État républicain"], correct: 1 },
+                            { question: "Quand a lieu le Débarquement en Normandie ?", options: ["6 juin 1944", "8 mai 1944", "15 août 1944", "25 août 1944"], correct: 0 },
+                            { question: "Comment s'appelle le génocide des Juifs d'Europe ?", options: ["La Terreur", "La Shoah", "La Déportation", "L'Exil"], correct: 1 },
+                            { question: "Quand Paris est-il libéré ?", options: ["6 juin 1944", "15 août 1944", "25 août 1944", "8 mai 1945"], correct: 2 },
+                            { question: "Quand l'Allemagne capitule-t-elle en Europe ?", options: ["25 août 1944", "30 avril 1945", "8 mai 1945", "2 septembre 1945"], correct: 2 },
+                            { question: "Sur quelles villes japonaises les bombes atomiques sont-elles larguées ?", options: ["Tokyo et Osaka", "Hiroshima et Nagasaki", "Kyoto et Hiroshima", "Nagasaki et Tokyo"], correct: 1 },
+                            { question: "Quelle organisation internationale est créée en 1945 ?", options: ["La SDN", "L'OTAN", "L'ONU", "L'UNESCO"], correct: 2 },
+                            { question: "Combien de morts environ fait la Seconde Guerre mondiale ?", options: ["10 millions", "30 millions", "50 millions", "80 millions"], correct: 3 }
+                        ],
+                        republique: [
+                            { question: "En quelle année la Ve République est-elle fondée ?", options: ["1944", "1946", "1958", "1962"], correct: 2 },
+                            { question: "Qui est le premier président de la Ve République ?", options: ["Georges Pompidou", "Charles de Gaulle", "Vincent Auriol", "René Coty"], correct: 1 },
+                            { question: "Comment le président est-il élu depuis 1962 ?", options: ["Par le Parlement", "Au suffrage universel direct", "Par les maires", "Par le Sénat"], correct: 1 },
+                            { question: "Combien de temps dure le mandat présidentiel depuis 2000 ?", options: ["4 ans", "5 ans", "7 ans", "6 ans"], correct: 1 },
+                            { question: "Quel événement marque mai 1968 en France ?", options: ["Une guerre civile", "Des grèves et manifestations étudiantes", "Un coup d'État", "Une révolution"], correct: 1 },
+                            { question: "En quelle année l'Algérie obtient-elle son indépendance ?", options: ["1958", "1960", "1962", "1968"], correct: 2 },
+                            { question: "Quelle est la devise de la République française ?", options: ["Travail, Famille, Patrie", "Liberté, Égalité, Fraternité", "Un pour tous, tous pour un", "Honneur et Patrie"], correct: 1 },
+                            { question: "Quel est le rôle du Premier ministre ?", options: ["Représenter la France à l'étranger", "Diriger le gouvernement", "Présider le Sénat", "Commander l'armée"], correct: 1 },
+                            { question: "Où siège l'Assemblée nationale ?", options: ["Le Palais de l'Élysée", "Le Palais Bourbon", "Le Palais du Luxembourg", "Matignon"], correct: 1 },
+                            { question: "Quel symbole féminin représente la République française ?", options: ["Napoléon", "Marianne", "Jeanne d'Arc", "Vauban"], correct: 1 }
                         ]
+                        // ===== FIN AJOUT PHASE 2 =====
                     },
 
                     mapData: {
@@ -470,7 +550,7 @@
                     getMapImageUrl() { return this.mapData[this.currentPeriod]?.imageUrl || ""; },
                     getMapTitle() { return this.mapData[this.currentPeriod]?.title || ""; },
 
-                    // CONTENU ÉDUCATIF : externalisé dans scripts/data/histoire-lessons.js
+                    // CONTENU ÉDUCATIF : externalisé dans scripts/data/histoire-lecons-data.js
                     getLessonTitle() {
                         const key = this.currentLesson || this.currentPeriod;
                         return (window.histoireLeconData || {})[key]?.title || "En savoir plus";
@@ -542,7 +622,7 @@
                     },
 
                     getPeriodDates() {
-                        const dates = { 'prehistoire': 'De -3 millions d\'années à -3300 av. J.-C.', 'antiquite': 'De -3300 av. J.-C. à 476 ap. J.-C.', 'moyenage': 'De 476 à 1492', 'tempsmodernes': 'De 1492 à 1789', 'epoquecontemporaine': 'De 1789 à aujourd\'hui' };
+                        const dates = { 'prehistoire': "De -3 millions d'années à -3300 av. J.-C.", 'antiquite': 'De -3300 av. J.-C. à 476 ap. J.-C.', 'moyenage': 'De 476 à 1492', 'tempsmodernes': 'De 1492 à 1789', 'epoquecontemporaine': "De 1789 à aujourd'hui" };
                         return dates[this.currentPeriod] || '';
                     },
 
@@ -586,7 +666,6 @@
             });
             // ========================================================================
         </script>
-
 
     <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
     <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
