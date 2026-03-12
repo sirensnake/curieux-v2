@@ -1,21 +1,21 @@
 {
-  "result": [
+  "articles": [
     {
-      "title": "Découverte Surprenante dans l'Océan 🌊",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de pieuvre au fond de l'océan Pacifique. Cette pieuvre est toute petite et possède des couleurs vives comme un arc-en-ciel ! Les chercheurs l'ont trouvée en explorant des zones de l'océan qui n'avaient jamais été visitées auparavant. Cette découverte est super excitante, car elle nous aide à mieux comprendre la vie sous-marine et l'importance de protéger nos océans.",
-      "date": "30/10/2023",
+      "title": "🛰️ Un satellite pour surveiller notre Terre",
+      "summary": "Une nouvelle aventure spatiale commence ! Des scientifiques ont lancé un tout nouveau satellite dans l'espace. Mais que fait-il ? Il a pour mission d'observer notre planète Terre pour mieux comprendre le climat et suivre les changements de la nature, comme la croissance des forêts ou la fonte des glaciers. Ces informations sont très importantes pour protéger notre planète et apprendre comment en prendre soin. Grâce à la technologie, nous pouvons maintenant voir ce qui se passe vraiment partout dans le monde !",
+      "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "Un Nouveau Pont Écologique 🌉",
-      "summary": "Un nouveau pont a été ouvert en France, mais ce n'est pas un pont ordinaire ! Il est spécialement conçu avec des plantes et des arbres pour permettre aux animaux de traverser en sécurité sans rencontrer de voitures. Les écologues pensent que ce pont aidera à protéger de nombreuses espèces animales et à éviter des accidents. C'est une excellente nouvelle pour l'environnement et montre comment nous pouvons utiliser notre imagination pour aider la nature.",
-      "date": "30/10/2023",
+      "title": "🐢 Une tortue très rare aperçue en mer",
+      "summary": "Bonne nouvelle pour les amoureux des animaux ! Une espèce rare de tortue, appelée tortue luth, a été vue par des chercheurs dans l'océan. Ces tortues sont les plus grandes du monde et malheureusement, elles sont en danger à cause de la pollution et des filets de pêche. Voir cet animal majestueux est un signe encourageant, montrant que les efforts pour protéger la vie marine portent leurs fruits. Cela nous rappelle qu'en prenant soin de nos océans, nous aidons aussi toutes les créatures qui y vivent.",
+      "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte Archéologique Fascinante 🏺",
-      "summary": "Des archéologues ont récemment fait une découverte incroyable en Égypte. Ils ont trouvé des tombes très anciennes qui pourraient avoir plus de 3 000 ans ! Ces tombes contiennent des trésors, comme des bijoux et des sculptures, qui nous en disent plus sur la vie des anciens Égyptiens. C'est comme ouvrir une fenêtre sur le passé et comprendre comment les gens vivaient autrefois. Cette découverte est une véritable aventure pour tous les amateurs d'histoire.",
-      "date": "30/10/2023",
+      "title": "🎨 Une nouvelle toile géante découverte",
+      "summary": "Une belle découverte a été faite dans le monde de l'art ! Une énorme peinture cachée a été trouvée dans un ancien bâtiment. Cette toile raconte une histoire fascinante avec des couleurs éclatantes et des motifs extraordinaires. Les experts sont heureux, car chaque fois qu'un tel trésor est découvert, c'est comme ouvrir un livre d'histoire. Cela nous permet de mieux comprendre comment les gens vivaient et pensaient il y a longtemps. Qui sait, peut-être un jour découvrierez-vous aussi un trésor caché !",
+      "date": "20/10/2023",
       "link": ""
     }
   ]
