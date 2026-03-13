@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🛰️ Un satellite pour surveiller notre Terre",
-      "summary": "Une nouvelle aventure spatiale commence ! Des scientifiques ont lancé un tout nouveau satellite dans l'espace. Mais que fait-il ? Il a pour mission d'observer notre planète Terre pour mieux comprendre le climat et suivre les changements de la nature, comme la croissance des forêts ou la fonte des glaciers. Ces informations sont très importantes pour protéger notre planète et apprendre comment en prendre soin. Grâce à la technologie, nous pouvons maintenant voir ce qui se passe vraiment partout dans le monde !",
+      "title": "Une Lune dans un Bocal ? 🌕",
+      "summary": "Des scientifiques ont réussi à recréer une petite version de l'atmosphère de la Lune dans un laboratoire sur Terre ! Cela veut dire qu'ils peuvent étudier comment la poussière lunaire et d'autres éléments se comportent sans devoir aller dans l'espace. Cela peut aider les astronautes à se préparer pour de futures missions sur la Lune. Apprendre à mieux connaître notre satellite naturel peut nous aider à un jour vivre plus longtemps sur la Lune et peut-être même établir une base lunaire !",
+      "date": "20/10/2023",
+      "link": "https://www.example.com/article-scientifique"
+    },
+    {
+      "title": "Un Concert Très Silencieux ! 🎻",
+      "summary": "Les musiciens d'un orchestre en Allemagne ont trouvé une façon étonnante de faire des concerts sans faire de bruit. Ils ont donné un concert silencieux où les spectateurs ont dû porter des écouteurs pour entendre la musique. Cette idée permet aux personnes d'écouter de la musique en pleine ville sans déranger les voisins. C'est une manière créative de partager l'art, tout en respectant l'environnement sonore autour de nous. Qu'en penses-tu ? Aimerais-tu essayer un tel concert ?",
       "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "🐢 Une tortue très rare aperçue en mer",
-      "summary": "Bonne nouvelle pour les amoureux des animaux ! Une espèce rare de tortue, appelée tortue luth, a été vue par des chercheurs dans l'océan. Ces tortues sont les plus grandes du monde et malheureusement, elles sont en danger à cause de la pollution et des filets de pêche. Voir cet animal majestueux est un signe encourageant, montrant que les efforts pour protéger la vie marine portent leurs fruits. Cela nous rappelle qu'en prenant soin de nos océans, nous aidons aussi toutes les créatures qui y vivent.",
+      "title": "Des Torches Solaires pour la Planète ☀️",
+      "summary": "Dans un village d'Inde, des bénévoles installent des torches solaires pour que les habitants puissent avoir de la lumière pendant la nuit. Ces petites torches fonctionnent grâce à l'énergie du soleil pendant la journée et éclairent les rues lorsque le soleil se couche. Ce projet aide les enfants à faire leurs devoirs après la tombée de la nuit et rend la vie plus sûre pour tout le monde. Utiliser l'énergie solaire est une bonne manière de protéger notre planète !",
       "date": "20/10/2023",
-      "link": ""
-    },
-    {
-      "title": "🎨 Une nouvelle toile géante découverte",
-      "summary": "Une belle découverte a été faite dans le monde de l'art ! Une énorme peinture cachée a été trouvée dans un ancien bâtiment. Cette toile raconte une histoire fascinante avec des couleurs éclatantes et des motifs extraordinaires. Les experts sont heureux, car chaque fois qu'un tel trésor est découvert, c'est comme ouvrir un livre d'histoire. Cela nous permet de mieux comprendre comment les gens vivaient et pensaient il y a longtemps. Qui sait, peut-être un jour découvrierez-vous aussi un trésor caché !",
-      "date": "20/10/2023",
-      "link": ""
+      "link": "https://www.example.com/article-environnement"
     }
   ]
 }
