@@ -1,0 +1,518 @@
+/**
+ * ==========================================
+ * GÉOGRAPHIE — CSS Section
+ * Le Monde des Curieux
+ * Style Minecraft / pixel-art
+ * Calqué sur histoire_BON_CSS.css
+ * ==========================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --geo-primary:   #1565C0;   /* bleu géographie */
+    --geo-secondary: #0D47A1;
+    --geo-accent:    #42A5F5;
+    --geo-france:    #1565C0;
+    --geo-europe:    #283593;
+    --geo-depla:     #00695C;
+    --geo-quiz:      #6A1B9A;
+    --geo-lesson:    #00695C;
+    --geo-bg:        #0a0f1e;
+    --geo-card:      #111827;
+    --geo-border:    #1e3a5f;
+    --geo-text:      #e8f0fe;
+    --geo-text-muted:#90a4ae;
+    --correct:       #27ae60;
+    --incorrect:     #e74c3c;
+    --selected:      #f39c12;
+}
+
+[x-cloak] { display: none !important; }
+
+body {
+    background: var(--geo-bg);
+    color: var(--geo-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   SKIP LINK (WCAG)
+   ========================================== */
+.skip-link {
+    position: absolute; top: -40px; left: 8px;
+    background: var(--geo-accent); color: #000;
+    padding: 8px 16px; border-radius: 4px;
+    font-family: 'Press Start 2P', monospace; font-size: 0.6rem;
+    text-decoration: none; z-index: 9999;
+    transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+.geographie-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+}
+
+/* ==========================================
+   HEADER & TITRE
+   ========================================== */
+.section-header { margin-bottom: 20px; }
+
+.back-btn {
+    background: transparent;
+    border: 2px solid var(--geo-border);
+    color: var(--geo-accent);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.back-btn:hover { background: var(--geo-border); color: #fff; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.section-title h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    color: var(--geo-accent);
+    text-shadow: 0 0 20px rgba(66, 165, 245, 0.5);
+    margin-bottom: 10px;
+}
+.section-title p {
+    color: var(--geo-text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   NAVIGATION THÈMES
+   ========================================== */
+.themes-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.theme-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 12px 16px;
+    border: 2px solid var(--geo-border);
+    border-radius: 8px;
+    background: var(--geo-card);
+    color: var(--geo-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.6;
+}
+.theme-btn:hover { transform: translateY(-2px); }
+
+.theme-btn.theme-france.active,
+.theme-btn.theme-france:hover {
+    background: linear-gradient(135deg, #0d3a6e, #1565C0);
+    border-color: #42A5F5;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.4);
+}
+.theme-btn.theme-europe.active,
+.theme-btn.theme-europe:hover {
+    background: linear-gradient(135deg, #1a237e, #283593);
+    border-color: #7986CB;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(40, 53, 147, 0.4);
+}
+.theme-btn.theme-deplacements.active,
+.theme-btn.theme-deplacements:hover {
+    background: linear-gradient(135deg, #003d33, #00695C);
+    border-color: #26A69A;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 105, 92, 0.4);
+}
+
+/* ==========================================
+   CONTENU THÈME
+   ========================================== */
+.theme-content { margin-top: 8px; }
+
+.theme-section {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+}
+.theme-section h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.65rem, 2vw, 0.9rem);
+    color: var(--geo-accent);
+    margin-bottom: 8px;
+}
+.theme-subtitle { color: var(--geo-text-muted); font-size: 0.9rem; }
+
+/* ==========================================
+   BOUTONS D'ACTION (calqué sur histoire)
+   ========================================== */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.action-row-nav {
+    justify-content: center;
+}
+
+.action-row-lessons {
+    flex-direction: column;
+    background: rgba(21, 101, 192, 0.08);
+    border: 1px solid var(--geo-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+.action-row-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    color: var(--geo-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.action-lesson-pairs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lesson-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--geo-border);
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 140px;
+}
+
+.action-row-period-quiz {
+    justify-content: center;
+    border-top: 1px solid var(--geo-border);
+    padding-top: 12px;
+}
+
+/* ==========================================
+   BOUTONS D'ACTION
+   ========================================== */
+.action-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    padding: 10px 14px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.6;
+    text-align: center;
+}
+.action-btn:hover { transform: translateY(-2px); filter: brightness(1.15); }
+
+.btn-primary {
+    background: linear-gradient(135deg, #1565C0, #0D47A1);
+    color: #fff;
+    border-color: #42A5F5;
+}
+.btn-info {
+    background: linear-gradient(135deg, #00695C, #004D40);
+    color: #fff;
+    border-color: #26A69A;
+}
+.btn-lesson {
+    background: linear-gradient(135deg, #00695C, #00796B);
+    color: #fff;
+    border-color: #26A69A;
+}
+.btn-quiz {
+    background: linear-gradient(135deg, #6A1B9A, #4A148C);
+    color: #fff;
+    border-color: #AB47BC;
+}
+
+/* ==========================================
+   LEÇON (EN SAVOIR PLUS)
+   ========================================== */
+.lesson-container {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+}
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+.lesson-header h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    color: var(--geo-accent);
+}
+.close-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--geo-border);
+    color: var(--geo-text);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.close-btn:hover { background: rgba(255,255,255,0.2); }
+
+.lesson-content h3 {
+    font-size: 1rem;
+    color: var(--geo-accent);
+    margin: 16px 0 8px;
+}
+.lesson-content p { margin-bottom: 12px; line-height: 1.7; }
+.lesson-content ul { padding-left: 20px; margin-bottom: 12px; }
+.lesson-content li { margin-bottom: 6px; line-height: 1.6; }
+.lesson-content strong { color: #fff; }
+
+/* ==========================================
+   ILLUSTRATION (CARTE)
+   ========================================== */
+.map-container {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+}
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+.map-header h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    color: var(--geo-accent);
+}
+.map-placeholder {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   QUIZ
+   ========================================== */
+.quiz-container {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+}
+.quiz-header { margin-bottom: 20px; }
+.quiz-header h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    color: var(--geo-accent);
+    margin-bottom: 12px;
+}
+.quiz-progress p { font-size: 0.85rem; color: var(--geo-text-muted); margin-bottom: 6px; }
+
+.progress-bar {
+    height: 8px;
+    background: var(--geo-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--geo-accent), #1565C0);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.question {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+
+.option-btn {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid var(--geo-border);
+    color: var(--geo-text);
+    padding: 14px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.15s;
+}
+.option-btn:hover:not(:disabled) {
+    background: rgba(66, 165, 245, 0.15);
+    border-color: var(--geo-accent);
+    transform: translateX(4px);
+}
+.option-btn.selected { border-color: var(--selected); background: rgba(243,156,18,0.15); }
+.option-btn.correct  { border-color: var(--correct); background: rgba(39,174,96,0.2); color: #2ecc71; }
+.option-btn.incorrect{ border-color: var(--incorrect); background: rgba(231,76,60,0.2); color: #e74c3c; }
+.option-btn:disabled { cursor: default; }
+
+/* ==========================================
+   RÉSULTATS
+   ========================================== */
+.results-container {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin-top: 20px;
+    text-align: center;
+}
+.results-content h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: var(--geo-accent);
+    margin-bottom: 24px;
+}
+.score-display { margin-bottom: 24px; }
+.score-circle {
+    width: 100px; height: 100px;
+    border: 4px solid var(--geo-accent);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+}
+.score-value {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.8rem;
+    color: var(--geo-accent);
+}
+.score-total { font-size: 0.9rem; color: var(--geo-text-muted); }
+.score-percentage {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.score-message { color: var(--geo-text-muted); font-size: 0.95rem; }
+
+.results-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+
+.btn-retry, .btn-back {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid;
+    transition: all 0.2s;
+}
+.btn-retry {
+    background: linear-gradient(135deg, #1565C0, #0D47A1);
+    color: #fff;
+    border-color: #42A5F5;
+}
+.btn-back {
+    background: transparent;
+    color: var(--geo-text-muted);
+    border-color: var(--geo-border);
+}
+.btn-retry:hover, .btn-back:hover { transform: translateY(-2px); filter: brightness(1.2); }
+
+/* ==========================================
+   BULLE CURIO
+   ========================================== */
+.curio-bubble {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 280px;
+    background: var(--geo-card);
+    border: 2px solid var(--geo-accent);
+    border-radius: 12px;
+    padding: 16px;
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.curio-close {
+    position: absolute; top: 8px; right: 10px;
+    background: none; border: none;
+    color: var(--geo-text-muted);
+    font-size: 1.2rem; cursor: pointer;
+}
+.curio-avatar { font-size: 2rem; margin-bottom: 8px; }
+.curio-message { font-size: 0.85rem; line-height: 1.6; }
+
+/* ==========================================
+   SCREEN READER
+   ========================================== */
+.sr-announce {
+    position: absolute;
+    left: -9999px; top: auto;
+    width: 1px; height: 1px;
+    overflow: hidden;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 600px) {
+    .themes-nav { gap: 8px; }
+    .theme-btn { font-size: 0.45rem; padding: 10px 12px; }
+    .action-btn { font-size: 0.45rem; padding: 8px 10px; }
+    .lesson-pair { min-width: 120px; }
+    .results-actions { flex-direction: column; align-items: center; }
+    .curio-bubble { width: 240px; bottom: 10px; right: 10px; }
+}
