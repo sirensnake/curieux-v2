@@ -105,6 +105,12 @@
                     <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
                         🎯 Quiz
                     </button>
+                    <button x-show="currentDomain === 'fractions'"
+                        onclick="window.location.href='maths_fractions_comprendre.html'"
+                        class="action-btn btn-fractions-link"
+                        aria-label="Page dédiée aux fractions">
+                        🍕 Page Fractions complète
+                    </button>
                 </div>
             </div>
 

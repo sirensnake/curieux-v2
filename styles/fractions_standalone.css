@@ -1,0 +1,511 @@
+/* ===================================================
+   FRACTIONS STANDALONE — styles/fractions_standalone.css
+   Le Monde des Curieux | Mars 2026
+   Couleur principale : #F57C00 (orange fractions)
+   =================================================== */
+
+:root {
+    --frac-primary:   #F57C00;
+    --frac-dark:      #E65100;
+    --frac-light:     #FFF3E0;
+    --frac-accent:    #FFB300;
+    --frac-quiz:      #6A1B9A;
+    --frac-success:   #2E7D32;
+    --frac-error:     #C62828;
+}
+
+[x-cloak] { display: none !important; }
+
+/* === LAYOUT === */
+.fractions-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* === HEADER === */
+.section-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.back-btn {
+    background: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.back-btn:hover { transform: translateY(-2px); }
+
+.back-btn-home {
+    background: #FFF3E0;
+    color: var(--frac-dark);
+}
+
+/* === TITRE === */
+.section-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+}
+
+.section-title h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
+    margin: 0 0 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.section-title p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapters-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.chapter-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    background: white;
+    color: #333;
+    transition: all 0.25s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chapter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    background: var(--frac-light);
+}
+
+.chapter-btn.active {
+    background: var(--frac-primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(245,124,0,0.4);
+    transform: scale(1.04);
+}
+
+/* === CONTENU CHAPITRE === */
+.chapter-content {
+    margin-bottom: 24px;
+}
+
+.chapter-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-top: 4px solid var(--frac-primary);
+}
+
+.chapter-card h2 {
+    font-size: 1.5em;
+    color: var(--frac-dark);
+    margin: 0 0 20px;
+}
+
+/* === CONTENU PÉDAGOGIQUE === */
+.lesson-section {
+    margin-bottom: 1.6rem;
+}
+
+.lesson-section p {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.lesson-section h3 {
+    font-size: 1.15rem;
+    color: white;
+    background: var(--frac-primary);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    margin: 1.4rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lesson-section ul {
+    background: var(--frac-light);
+    padding: 1.2rem 1.2rem 1.2rem 2.2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--frac-accent);
+    margin: 0.8rem 0;
+}
+
+.lesson-section li {
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+}
+
+.example-box {
+    background: #FFF8E1;
+    border: 2px solid var(--frac-accent);
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    margin: 0.8rem 0;
+    font-size: 1.05rem;
+}
+
+.example-box p { margin-bottom: 0.5rem; }
+.example-box p:last-child { margin-bottom: 0; }
+
+/* === FRACTION VISUELLE (intro) === */
+.fraction-visual {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--frac-light);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.fraction-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    color: var(--frac-dark);
+    line-height: 1.6;
+}
+
+.fraction-bar { font-size: 1.8rem; }
+
+.fraction-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* === GRILLE FRACTIONS USUELLES === */
+.fractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    margin: 1rem 0;
+}
+
+.fraction-card {
+    background: var(--frac-light);
+    border: 2px solid var(--frac-accent);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fraction-card strong {
+    font-size: 1.2rem;
+    color: var(--frac-dark);
+}
+
+.fraction-card em {
+    color: var(--frac-quiz);
+    font-style: normal;
+    font-weight: bold;
+}
+
+.decimaux-grid .fraction-card {
+    font-size: 0.95rem;
+}
+
+/* === COOLDOWN === */
+.cooldown-info {
+    background: #FFF3E0;
+    border: 2px solid var(--frac-accent);
+    border-radius: 10px;
+    padding: 14px 20px;
+    text-align: center;
+    color: #555;
+    margin-top: 12px;
+}
+
+/* === BOUTONS D'ACTION === */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: bold;
+    transition: all 0.25s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.action-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-quiz {
+    background: linear-gradient(135deg, var(--frac-quiz), #4A148C);
+    color: white;
+}
+
+.btn-mini-quiz {
+    background: linear-gradient(135deg, var(--frac-primary), var(--frac-dark));
+    color: white;
+}
+
+.btn-back {
+    background: linear-gradient(135deg, #546E7A, #37474F);
+    color: white;
+}
+
+.btn-dashboard {
+    background: linear-gradient(135deg, #1565C0, #0D47A1);
+    color: white;
+}
+
+/* === QUIZ CONTAINER === */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.quiz-standalone { border-top: 4px solid var(--frac-quiz); }
+.quiz-mini       { border-top: 4px solid var(--frac-primary); }
+
+.quiz-header h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0 0 16px;
+}
+
+/* Progress bar */
+.progress-bar {
+    background: #E0E0E0;
+    border-radius: 10px;
+    height: 16px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--frac-primary), var(--frac-quiz));
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+/* Question */
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 20px 0 16px;
+    line-height: 1.5;
+}
+
+.answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.answer-btn {
+    padding: 14px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.05rem;
+    transition: all 0.25s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    border-color: var(--frac-primary);
+    background: var(--frac-light);
+    transform: translateX(5px);
+}
+
+.answer-btn.correct {
+    border-color: var(--frac-success);
+    background: #E8F5E9;
+    color: var(--frac-success);
+    font-weight: bold;
+}
+
+.answer-btn.incorrect {
+    border-color: var(--frac-error);
+    background: #FFEBEE;
+    color: var(--frac-error);
+}
+
+.answer-btn:disabled { cursor: not-allowed; }
+
+/* Feedback */
+.feedback-zone { margin-top: 12px; }
+
+.feedback {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.feedback.correct {
+    background: #E8F5E9;
+    color: var(--frac-success);
+    border: 2px solid var(--frac-success);
+}
+
+.feedback.incorrect {
+    background: #FFEBEE;
+    color: var(--frac-error);
+    border: 2px solid var(--frac-error);
+}
+
+.feedback-explanation {
+    background: #FFF8E1;
+    border-left: 4px solid var(--frac-accent);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Résultats */
+.results-zone { text-align: center; padding: 20px 0; }
+.results-zone h3 { font-size: 1.8rem; color: #333; margin-bottom: 20px; }
+
+.score-display { margin-bottom: 24px; }
+
+.score-circle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, var(--frac-primary), var(--frac-quiz));
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    color: white;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 20px rgba(245,124,0,0.3);
+}
+
+.score-number { font-size: 2.4rem; font-weight: bold; line-height: 1; }
+.score-total  { font-size: 1.1rem; }
+
+.score-message {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0 20px;
+}
+
+.results-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Bulle Curio */
+.curio-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    max-width: 300px;
+    z-index: 1000;
+}
+.curio-close {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: none; border: none;
+    font-size: 24px; cursor: pointer; color: #999;
+}
+.curio-avatar { font-size: 2.5em; text-align: center; margin-bottom: 8px; }
+.curio-message { color: #333; line-height: 1.6; margin: 0; font-size: 0.9rem; }
+.curio-bubble.success { border-left: 4px solid var(--frac-success); }
+.curio-bubble.error   { border-left: 4px solid var(--frac-error); }
+.curio-bubble.info    { border-left: 4px solid #2196F3; }
+
+/* Lien skip-link WCAG */
+.skip-link {
+    position: absolute;
+    top: -40px; left: 0;
+    background: var(--frac-primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 9999;
+    border-radius: 0 0 8px 0;
+    transition: top 0.3s;
+}
+.skip-link:focus { top: 0; }
+
+/* Screen reader */
+.sr-announce {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .section-title h1 { font-size: 1.4em; }
+    .chapter-card { padding: 20px; }
+    .chapters-nav { flex-direction: column; }
+    .chapter-btn { width: 100%; text-align: center; }
+    .action-buttons { flex-direction: column; }
+    .action-btn { width: 100%; }
+    .fraction-visual { flex-direction: column; }
+    .fractions-grid { grid-template-columns: repeat(2, 1fr); }
+}
