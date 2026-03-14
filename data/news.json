@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une Lune dans un Bocal ? 🌕",
-      "summary": "Des scientifiques ont réussi à recréer une petite version de l'atmosphère de la Lune dans un laboratoire sur Terre ! Cela veut dire qu'ils peuvent étudier comment la poussière lunaire et d'autres éléments se comportent sans devoir aller dans l'espace. Cela peut aider les astronautes à se préparer pour de futures missions sur la Lune. Apprendre à mieux connaître notre satellite naturel peut nous aider à un jour vivre plus longtemps sur la Lune et peut-être même établir une base lunaire !",
-      "date": "20/10/2023",
-      "link": "https://www.example.com/article-scientifique"
+      "title": "Découverte en Antarctique 🐧",
+      "summary": "Des scientifiques ont fait une découverte incroyable en Antarctique ! Ils ont trouvé une nouvelle espèce de manchots empereurs. Ces manchots vivent dans des endroits très froids et se déplacent en groupes pour se réchauffer. Les experts ont utilisé des photos satellites pour les observer depuis le ciel sans les déranger. Cela permet d'en savoir plus sur leur nombre et où ils vivent exactement. C'est important car cela peut aider à les protéger. Découvrir de nouvelles espèces est toujours passionnant et montre que notre planète a encore beaucoup de mystères à explorer.",
+      "date": "30/10/2023",
+      "link": "https://www.exemple.com/nouvelle-espece-manchots"
     },
     {
-      "title": "Un Concert Très Silencieux ! 🎻",
-      "summary": "Les musiciens d'un orchestre en Allemagne ont trouvé une façon étonnante de faire des concerts sans faire de bruit. Ils ont donné un concert silencieux où les spectateurs ont dû porter des écouteurs pour entendre la musique. Cette idée permet aux personnes d'écouter de la musique en pleine ville sans déranger les voisins. C'est une manière créative de partager l'art, tout en respectant l'environnement sonore autour de nous. Qu'en penses-tu ? Aimerais-tu essayer un tel concert ?",
-      "date": "20/10/2023",
-      "link": ""
+      "title": "Le ciel s'illumine 🌌",
+      "summary": "As-tu remarqué que le ciel était plus lumineux récemment ? C'est à cause d'un événement spécial appelé \"aurore boréale,\" un phénomène lumineux qu'on peut voir pendant la nuit dans certaines régions du monde. Cela arrive quand des particules du soleil entrent en contact avec l'atmosphère terrestre. Ces lumières colorées dans le ciel ressemblent à des rideaux ou des vagues et se parent de teintes vertes, roses et violettes. Même si elles apparaissent souvent près des pôles, parfois elles peuvent être visibles plus au sud. Cela fascine de nombreuses personnes depuis des siècles !",
+      "date": "30/10/2023",
+      "link": "https://www.exemple.com/aurore-boreale"
     },
     {
-      "title": "Des Torches Solaires pour la Planète ☀️",
-      "summary": "Dans un village d'Inde, des bénévoles installent des torches solaires pour que les habitants puissent avoir de la lumière pendant la nuit. Ces petites torches fonctionnent grâce à l'énergie du soleil pendant la journée et éclairent les rues lorsque le soleil se couche. Ce projet aide les enfants à faire leurs devoirs après la tombée de la nuit et rend la vie plus sûre pour tout le monde. Utiliser l'énergie solaire est une bonne manière de protéger notre planète !",
-      "date": "20/10/2023",
-      "link": "https://www.example.com/article-environnement"
+      "title": "Course vers le sommet 🚴",
+      "summary": "Le Tour de France féminin, une grande course de vélo, a été annoncé pour l'été prochain ! Des cyclistes du monde entier vont participer et parcourir plusieurs villes en France. C'est un événement très attendu, car il permet de mettre en avant les performances des sportives. Les coureuses s'entraînent dur pendant des mois pour être prêtes à affronter les défis de la course, comme les montagnes et les longues routes. Participer à un tel événement est une chance unique, et cela inspire beaucoup de jeunes filles à faire du sport et croire en leurs rêves !",
+      "date": "30/10/2023",
+      "link": "https://www.exemple.com/tour-de-france-feminin"
     }
   ]
 }
