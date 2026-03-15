@@ -31,7 +31,8 @@
         <div class="francais-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
-                <button onclick="history.back()" class="back-btn">
+                <!-- FIX NAV : window.location.href à la place de history.back() -->
+                <button onclick="window.location.href='index.html'" class="back-btn">
                     ← Retour à l'accueil
                 </button>
             </div>
@@ -134,7 +135,10 @@
                 <h3>🎯 Quiz <span x-text="getThemeName()"></span></h3>
                 <div class="quiz-progress">
                     <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
+                    <!-- FIX WCAG : ajout :aria-valuenow dynamique -->
+                    <div class="progress-bar" role="progressbar"
+                        :aria-valuenow="Math.round((currentQuestionIndex + 1) / getCurrentQuiz().length * 100)"
+                        aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                         <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
                     </div>
                 </div>
@@ -696,41 +700,30 @@
                         this.showIllustration = !this.showIllustration;
                     },
 
-                    // ✅ COOLDOWN : Vérifier si quiz peut être démarré (24h)
                     canStartQuiz(theme) {
                         const cooldownKey = `quiz_cooldown_francais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-
                         if (!cooldownData.lastCompleted) return true;
-
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
-                        const cooldownDuration = 24 * 60 * 60 * 1000; // 24 heures
-
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
                         return timeSinceCompletion >= cooldownDuration;
                     },
 
-                    // Obtenir temps restant avant déblocage
                     getCooldownTimeRemaining(theme) {
                         const cooldownKey = `quiz_cooldown_francais_${theme}`;
                         const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-
                         if (!cooldownData.lastCompleted) return null;
-
                         const now = Date.now();
                         const timeSinceCompletion = now - cooldownData.lastCompleted;
                         const cooldownDuration = 24 * 60 * 60 * 1000;
                         const remaining = cooldownDuration - timeSinceCompletion;
-
                         if (remaining <= 0) return null;
-
                         const hours = Math.floor(remaining / (60 * 60 * 1000));
                         const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-
                         return { hours, minutes };
                     },
 
-                    // Enregistrer cooldown après complétion
                     recordQuizCompletion(theme) {
                         const cooldownKey = `quiz_cooldown_francais_${theme}`;
                         const cooldownData = {
@@ -738,30 +731,26 @@
                             count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
                         };
                         localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
-                        console.log(`🔒 Cooldown activé pour ${theme} jusqu'à`, new Date(cooldownData.lastCompleted + 24*60*60*1000).toLocaleString('fr-FR'));
+                        console.log(`🔒 Cooldown activé pour ${theme}`);
                     },
 
                     startQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
                                 alert(message);
                             }
-                            return; // BLOQUER le démarrage
+                            return;
                         }
 
-                        // ✅ INITIALISATION QUIZ
                         this.currentQuestionIndex = 0;
                         this.score = 0;
                         this.answered = false;
                         this.quizFinished = false;
 
-                        // ✨ NOUVEAU : Mélanger les options des questions
                         const quiz = this.quizQuestions[this.currentTheme] || [];
                         this.shuffledQuiz = quiz.map(q => {
                             const shuffledOptions = this.shuffleArray([...q.options]);
@@ -774,7 +763,6 @@
                         this.showIllustration = false;
                     },
 
-                    // Mélanger un tableau (algorithme Fisher-Yates)
                     shuffleArray(array) {
                         const shuffled = [...array];
                         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -802,19 +790,13 @@
                         if (this.isCorrect) {
                             this.score++;
                             this.playCorrectSound();
-
-                            // Ajouter XP pour bonne réponse
                             if (window.SectionXP) {
                                 window.SectionXP.addXP('francais', window.SectionXP.rewards.QUESTION_CORRECT);
                             }
                         } else {
                             this.playIncorrectSound();
                         }
-
-                        // ✅ AUTO-AVANCE : Timer 2 secondes puis question suivante
-                        setTimeout(() => {
-                            this.nextQuestion();
-                        }, 2000);
+                        setTimeout(() => { this.nextQuestion(); }, 2000);
                     },
 
                     nextQuestion() {
@@ -831,55 +813,13 @@
                         const quizLength = this.getCurrentQuiz().length;
                         const isPerfect = (this.score === quizLength);
 
-                        // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
                             if (isPerfect) {
                                 window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
-                        // ========================================================================
-                        // NOUVEAU : MasterGameSystem v3.0 - Attribution XP Unifiée
-                        // ========================================================================
-                        if (typeof gameSystem !== 'undefined') {
-                            try {
-                                const quizLength = this.getCurrentQuiz().length;
-                                const percentage = Math.round((this.score / quizLength) * 100);
-                                const baseXP = this.score * 10;
-                                const lessonId = `francais_${this.currentDomain}_${Date.now()}`;
-
-                                // Context pour bonus automatiques
-                                const francaisData = gameSystem.getSectionData('francais');
-                                const context = {
-                                    perfectScore: percentage === 100,
-                                    hasActiveStreak: francaisData.streak > 0
-                                };
-
-                                // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
-                                const earnedXP = gameSystem.awardXP('francais', baseXP, context);
-
-                                // Enregistrer complétion leçon
-                                gameSystem.completeLesson('francais', lessonId, percentage, 0);
-
-                                // Mettre à jour streak quotidien
-                                gameSystem.updateStreak('francais');
-
-                                // Mettre à jour affichage badges
-                                if (typeof updateGameSystemUI === 'function') {
-                                    updateGameSystemUI();
-                                }
-
-                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
-
-                            } catch (error) {
-                                console.error('❌ Erreur MasterGameSystem:', error);
-                                // Fallback: ancien système continue de fonctionner
-                            }
-                        }
-                        // ========================================================================
-
                             }
                         }
 
-                        // --- Mise à jour stats quiz pour badges ---
                         try {
                             const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
                             const stats = raw ? JSON.parse(raw) : {
@@ -892,45 +832,33 @@
                             if (!stats.bySubject) stats.bySubject = {};
                             stats.bySubject.francais = (stats.bySubject.francais || 0) + 1;
                             localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
-                            console.log('📊 Quiz stats mis à jour:', stats);
                         } catch(e) {
                             console.warn('[francais] Erreur stats quiz:', e);
                         }
 
-                        // ✅ ENREGISTRER COOLDOWN (24h)
                         this.recordQuizCompletion(this.currentTheme);
 
-                        // --- Vérification badges ---
                         if (window.badgeSystem) {
                             const newBadges = window.badgeSystem.checkBadges();
-                            if (newBadges.length > 0) {
-                                console.log('🏆 Nouveaux badges:', newBadges.map(b => b.name));
-                                // Notification via Curio si disponible
-                                if (window.curioBubbleInstance && newBadges[0]) {
-                                    window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
-                                }
+                            if (newBadges.length > 0 && window.curioBubbleInstance && newBadges[0]) {
+                                window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
                             }
-                            // Syncer vers dashboard
                             if (window.BRIDGE) window.BRIDGE.syncBadges();
                         }
                     },
 
                     retryQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN même pour retry
                         if (!this.canStartQuiz(this.currentTheme)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentTheme);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
-
                             if (window.curioBubbleInstance) {
                                 window.curioBubbleInstance.show(message, 'info');
                             } else {
                                 alert(message);
                             }
-                            // Fermer le quiz au lieu de retry
                             this.backToTheme();
                             return;
                         }
-
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();
@@ -952,31 +880,18 @@
                 }));
             });
         </script>
-            <!-- MasterGameSystem v3.0 -->
-        <script src="../js/master-game-system.js"></script>
 
+        <script src="scripts/master-game-system.js"></script>
         <script>
-            // ========================================================================
-            // Initialisation automatique MasterGameSystem v3.0
-            // ========================================================================
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     if (typeof MasterGameSystem !== 'undefined') {
                         window.gameSystem = new MasterGameSystem();
-                        console.log('✅ MasterGameSystem v3.0 initialisé pour section francais');
-
-                        // Mettre à jour UI badges si fonction disponible
-                        if (typeof updateGameSystemUI === 'function') {
-                            updateGameSystemUI();
-                        }
-                    } else {
-                        console.error('❌ MasterGameSystem non trouvé');
+                        if (typeof updateGameSystemUI === 'function') updateGameSystemUI();
                     }
-                }, 200); // Pause 200ms pour Alpine.js
+                }, 200);
             });
-            // ========================================================================
         </script>
-
 
     <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
     <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>

@@ -142,7 +142,10 @@
                 <h3>🎯 Quiz <span x-text="getDomainName()"></span></h3>
                 <div class="quiz-progress">
                     <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
+                    <!-- FIX WCAG : ajout :aria-valuenow dynamique -->
+                    <div class="progress-bar" role="progressbar"
+                        :aria-valuenow="Math.round((currentQuestionIndex + 1) / getCurrentQuiz().length * 100)"
+                        aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                         <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
                     </div>
                 </div>
@@ -173,7 +176,6 @@
                         <div class="feedback-explanation" x-show="currentQuestion.explanation">
                             💡 <span x-text="currentQuestion.explanation"></span>
                         </div>
-                        <!-- Bouton "Suivant" supprimé : auto-avance après 2s -->
                     </div>
                 </div>
 
@@ -189,10 +191,10 @@
                         <p class="score-message" x-text="getScoreMessage()"></p>
                     </div>
                     <div class="results-actions">
-                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
                             🔄 Recommencer
                         </button>
-                        <button @click="backToDomain()" class="action-btn btn-info" aria-label="En savoir plus">
+                        <button @click="backToDomain()" class="action-btn btn-info" aria-label="Retour au domaine">
                             ← Retour au domaine
                         </button>
                     </div>
@@ -209,7 +211,6 @@
         <!-- JS inline AVANT Alpine -->
         <script>
             document.addEventListener('alpine:init', () => {
-                console.log('🎯 Alpine:init déclenché');
 
                 Alpine.data('curioBubble', () => ({
                     visible: false,
@@ -244,12 +245,7 @@
 
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                        console.log('✅ mathApp initialisé');
-
-                        // Initialiser le système XP
-                        if (window.SectionXP) {
-                            window.SectionXP.init('maths');
-                        }
+                        if (window.SectionXP) window.SectionXP.init('maths');
                     },
 
                     playCorrectSound() {
@@ -275,785 +271,17 @@
                     },
 
                     domains: {
-                        numeration: {
-                            name: 'Numération',
-                            description: 'Découvre les nombres, les fractions et les décimaux',
-                            imageUrl: '/images/mathematiques/illustration_numeration.jpg'
-                        },
-                        calcul: {
-                            name: 'Calcul',
-                            description: 'Maîtrise l\'addition, la soustraction, la multiplication et la division',
-                            imageUrl: '/images/mathematiques/illustration_calcul.jpg'
-                        },
-                        geometrie: {
-                            name: 'Géométrie',
-                            description: 'Explore les formes, les figures et l\'espace',
-                            imageUrl: '/images/mathematiques/illustration_geometrie.jpg'
-                        },
-                        mesures: {
-                            name: 'Mesures',
-                            description: 'Apprends à mesurer les longueurs, les masses et le temps',
-                            imageUrl: '/images/mathematiques/illustration_mesures.jpg'
-                        },
-                        problemes: {
-                            name: 'Problèmes',
-                            description: 'Résous des problèmes mathématiques de la vie quotidienne',
-                            imageUrl: '/images/mathematiques/illustration_problemes.jpg'
-                        },
-                        solides: {
-                            name: 'Solides et volumes',
-                            description: 'Découvre les formes 3D et calcule des volumes',
-                            imageUrl: '/images/mathematiques/illustration_solides.jpg'
-                        },
-                        proportionnalite: {
-                            name: 'Proportionnalité',
-                            description: 'Maîtrise les tableaux de proportionnalité',
-                            imageUrl: '/images/mathematiques/illustration_proportionnalite.jpg'
-                        },
-                        donnees: {
-                            name: 'Données',
-                            description: 'Lis et interprète les graphiques et tableaux',
-                            imageUrl: '/images/mathematiques/illustration_donnees.jpg'
-                        },
-                        calcul_litteral: {
-                            name: 'Calcul littéral',
-                            description: 'Initiation aux expressions avec des lettres',
-                            imageUrl: '/images/mathematiques/illustration_calcul_litteral.jpg'
-                        },
-                        problemes_complexes: {
-                            name: 'Problèmes complexes',
-                            description: 'Résous des problèmes à plusieurs étapes',
-                            imageUrl: '/images/mathematiques/illustration_problemes_complexes.jpg'
-                        },
-                        fractions: {
-                            name: 'Fractions',
-                            description: 'Comprends et manipule les fractions pas à pas',
-                            imageUrl: '/images/mathematiques/illustration_fractions.jpg'
-                        }
-                    },
-
-                    // Contenus pédagogiques
-                    lessonData: {
-                        numeration: {
-                            title: "🔢 La Numération",
-                            content: `
-                                <h3>Qu'est-ce que la numération ?</h3>
-                                <p>La numération, c'est l'art de <strong>compter, écrire et comprendre les nombres</strong>. En CM1-CM2, tu apprends à manipuler des nombres de plus en plus grands !</p>
-
-                                <h3>Les grands nombres</h3>
-                                <p>Tu connais déjà les unités (0-9), les dizaines (10, 20, 30...) et les centaines (100, 200, 300...). Maintenant, découvre :</p>
-                                <ul>
-                                    <li><strong>Les milliers</strong> : 1 000, 2 000, 10 000...</li>
-                                    <li><strong>Les dizaines de milliers</strong> : 10 000, 20 000, 50 000...</li>
-                                    <li><strong>Les centaines de milliers</strong> : 100 000, 500 000...</li>
-                                    <li><strong>Les millions</strong> : 1 000 000 et au-delà !</li>
-                                </ul>
-
-                                <h3>Les fractions</h3>
-                                <p>Une fraction représente une <strong>partie d'un tout</strong>. Par exemple :</p>
-                                <ul>
-                                    <li><strong>1/2</strong> (un demi) = la moitié d'un gâteau</li>
-                                    <li><strong>1/4</strong> (un quart) = un quart de pizza</li>
-                                    <li><strong>3/4</strong> (trois quarts) = trois parts sur quatre</li>
-                                </ul>
-
-                                <h3>Les nombres décimaux</h3>
-                                <p>Un nombre décimal utilise une <strong>virgule</strong> pour séparer :</p>
-                                <ul>
-                                    <li>La <strong>partie entière</strong> (avant la virgule) : 12</li>
-                                    <li>La <strong>partie décimale</strong> (après la virgule) : 0,5</li>
-                                    <li>Exemple : <strong>12,5</strong> = douze et demi</li>
-                                </ul>
-
-                                <h3>À retenir</h3>
-                                <p>📌 Chaque position d'un chiffre a une <strong>valeur</strong> : unités, dizaines, centaines, milliers...</p>
-                                <p>📌 Les fractions et les décimaux permettent d'exprimer des nombres <strong>entre les entiers</strong> !</p>
-                            `
-                        },
-                        calcul: {
-                            title: "➕ Le Calcul",
-                            content: `
-                                <h3>Qu'est-ce que le calcul ?</h3>
-                                <p>Le calcul, c'est l'ensemble des <strong>opérations mathématiques</strong> qui te permettent de résoudre des problèmes : addition, soustraction, multiplication et division !</p>
-
-                                <h3>L'addition (+)</h3>
-                                <p>Additionner, c'est <strong>ajouter</strong> des quantités :</p>
-                                <ul>
-                                    <li>Exemple : <strong>23 + 47 = 70</strong></li>
-                                    <li>Astuce : Pose l'opération en colonnes (unités sous unités, dizaines sous dizaines)</li>
-                                </ul>
-
-                                <h3>La soustraction (−)</h3>
-                                <p>Soustraire, c'est <strong>retirer</strong> une quantité :</p>
-                                <ul>
-                                    <li>Exemple : <strong>85 − 32 = 53</strong></li>
-                                    <li>Attention aux <strong>retenues</strong> quand il faut emprunter !</li>
-                                </ul>
-
-                                <h3>La multiplication (×)</h3>
-                                <p>Multiplier, c'est faire une <strong>addition répétée</strong> :</p>
-                                <ul>
-                                    <li>Exemple : <strong>6 × 7 = 42</strong> (6 fois le nombre 7)</li>
-                                    <li>Apprends tes <strong>tables de multiplication</strong> jusqu'à 10 !</li>
-                                    <li>Multiplication à 2 chiffres : <strong>24 × 13 = 312</strong></li>
-                                </ul>
-
-                                <h3>La division (÷)</h3>
-                                <p>Diviser, c'est <strong>partager équitablement</strong> :</p>
-                                <ul>
-                                    <li>Exemple : <strong>20 ÷ 4 = 5</strong> (20 partagé en 4 parts égales)</li>
-                                    <li>La <strong>division euclidienne</strong> : 23 ÷ 5 = 4 (reste 3)</li>
-                                </ul>
-
-                                <h3>Le calcul mental</h3>
-                                <p>Entraîne-toi à calculer <strong>rapidement de tête</strong> :</p>
-                                <ul>
-                                    <li>Additions/soustractions simples : 8 + 7 = 15</li>
-                                    <li>Tables de multiplication : 7 × 8 = 56</li>
-                                    <li>Doubles et moitiés : double de 15 = 30, moitié de 50 = 25</li>
-                                </ul>
-
-                                <h3>À retenir</h3>
-                                <p>📌 Vérifie toujours tes calculs avec l'<strong>opération inverse</strong> !</p>
-                                <p>📌 Le calcul mental te fait gagner du temps et développe ton cerveau 🧠</p>
-                            `
-                        },
-                        geometrie: {
-                            title: "📐 La Géométrie",
-                            content: `
-                                <h3>Qu'est-ce que la géométrie ?</h3>
-                                <p>La géométrie étudie les <strong>formes, les figures et l'espace</strong>. C'est la mathématique des formes que tu vois partout autour de toi !</p>
-
-                                <h3>Les figures planes</h3>
-                                <p>Une figure plane est une forme <strong>à deux dimensions</strong> (longueur et largeur) :</p>
-                                <ul>
-                                    <li><strong>Le carré</strong> : 4 côtés égaux, 4 angles droits</li>
-                                    <li><strong>Le rectangle</strong> : 4 angles droits, côtés opposés égaux</li>
-                                    <li><strong>Le triangle</strong> : 3 côtés, 3 angles</li>
-                                    <li><strong>Le cercle</strong> : une ligne courbe fermée, tous les points sont à égale distance du centre</li>
-                                </ul>
-
-                                <h3>Le périmètre</h3>
-                                <p>Le périmètre, c'est la <strong>longueur du contour</strong> d'une figure :</p>
-                                <ul>
-                                    <li>Carré : <strong>P = côté × 4</strong></li>
-                                    <li>Rectangle : <strong>P = (longueur + largeur) × 2</strong></li>
-                                    <li>Triangle : <strong>P = côté1 + côté2 + côté3</strong></li>
-                                </ul>
-
-                                <h3>L'aire</h3>
-                                <p>L'aire, c'est la <strong>surface intérieure</strong> d'une figure (en cm², m²...) :</p>
-                                <ul>
-                                    <li>Carré : <strong>A = côté × côté</strong></li>
-                                    <li>Rectangle : <strong>A = longueur × largeur</strong></li>
-                                    <li>Triangle : <strong>A = (base × hauteur) ÷ 2</strong></li>
-                                </ul>
-
-                                <h3>La symétrie</h3>
-                                <p>Une figure est <strong>symétrique</strong> quand on peut la plier en deux et que les deux parties se superposent parfaitement. La ligne de pliage s'appelle l'<strong>axe de symétrie</strong>.</p>
-
-                                <h3>Les angles</h3>
-                                <ul>
-                                    <li><strong>Angle droit</strong> : 90° (comme le coin d'un carré)</li>
-                                    <li><strong>Angle aigu</strong> : moins de 90°</li>
-                                    <li><strong>Angle obtus</strong> : plus de 90° mais moins de 180°</li>
-                                </ul>
-
-                                <h3>À retenir</h3>
-                                <p>📌 Utilise ta <strong>règle, ton équerre et ton compas</strong> pour tracer précisément !</p>
-                                <p>📌 Le périmètre mesure le <strong>tour</strong>, l'aire mesure la <strong>surface</strong> 📏</p>
-                            `
-                        },
-                        mesures: {
-                            title: "📊 Les Mesures",
-                            content: `
-                                <h3>Qu'est-ce que mesurer ?</h3>
-                                <p>Mesurer, c'est déterminer la <strong>quantité d'une grandeur</strong> : longueur, masse, contenance, temps...</p>
-
-                                <h3>Les longueurs</h3>
-                                <p>Pour mesurer des <strong>distances</strong> :</p>
-                                <ul>
-                                    <li><strong>Le millimètre (mm)</strong> : épaisseur d'une pièce</li>
-                                    <li><strong>Le centimètre (cm)</strong> : largeur d'un doigt</li>
-                                    <li><strong>Le mètre (m)</strong> : hauteur d'une porte</li>
-                                    <li><strong>Le kilomètre (km)</strong> : distance entre deux villes</li>
-                                </ul>
-                                <p>📐 Conversions : 1 m = 100 cm = 1 000 mm | 1 km = 1 000 m</p>
-
-                                <h3>Les masses</h3>
-                                <p>Pour mesurer le <strong>poids</strong> des objets :</p>
-                                <ul>
-                                    <li><strong>Le gramme (g)</strong> : poids d'un bonbon</li>
-                                    <li><strong>Le kilogramme (kg)</strong> : poids d'un sac de farine</li>
-                                    <li><strong>La tonne (t)</strong> : poids d'une voiture</li>
-                                </ul>
-                                <p>⚖️ Conversions : 1 kg = 1 000 g | 1 t = 1 000 kg</p>
-
-                                <h3>Les contenances</h3>
-                                <p>Pour mesurer la <strong>quantité de liquide</strong> :</p>
-                                <ul>
-                                    <li><strong>Le centilitre (cL)</strong> : petite dose</li>
-                                    <li><strong>Le litre (L)</strong> : bouteille d'eau</li>
-                                </ul>
-                                <p>🥛 Conversions : 1 L = 100 cL = 1 000 mL</p>
-
-                                <h3>Le temps</h3>
-                                <p>Pour mesurer la <strong>durée</strong> :</p>
-                                <ul>
-                                    <li><strong>La seconde (s)</strong> : un battement de cœur</li>
-                                    <li><strong>La minute (min)</strong> : 60 secondes</li>
-                                    <li><strong>L'heure (h)</strong> : 60 minutes</li>
-                                    <li><strong>Le jour</strong> : 24 heures</li>
-                                    <li><strong>La semaine</strong> : 7 jours</li>
-                                    <li><strong>Le mois</strong> : environ 30 jours</li>
-                                    <li><strong>L'année</strong> : 12 mois = 365 jours</li>
-                                </ul>
-
-                                <h3>Lire l'heure</h3>
-                                <ul>
-                                    <li>La <strong>petite aiguille</strong> indique les heures</li>
-                                    <li>La <strong>grande aiguille</strong> indique les minutes</li>
-                                    <li>Exemple : 14h30 = 2h30 de l'après-midi</li>
-                                </ul>
-
-                                <h3>À retenir</h3>
-                                <p>📌 Pour convertir, utilise un <strong>tableau de conversion</strong> !</p>
-                                <p>📌 Pense aux unités dans la vie quotidienne : cuisine, sport, voyages 🏃</p>
-                            `
-                        },
-                        problemes: {
-                            title: "🎲 Résolution de Problèmes",
-                            content: `
-                                <h3>Qu'est-ce qu'un problème mathématique ?</h3>
-                                <p>Un problème mathématique est une <strong>situation de la vie réelle</strong> que tu résous en utilisant les mathématiques : calculs, logique et raisonnement !</p>
-
-                                <h3>Les étapes pour résoudre un problème</h3>
-                                <ol>
-                                    <li><strong>Lis attentivement</strong> l'énoncé du problème</li>
-                                    <li><strong>Identifie</strong> les données importantes (nombres, unités)</li>
-                                    <li><strong>Cherche</strong> ce qu'on te demande de trouver</li>
-                                    <li><strong>Choisis</strong> la ou les opérations nécessaires</li>
-                                    <li><strong>Pose et effectue</strong> les calculs</li>
-                                    <li><strong>Rédige</strong> une phrase-réponse complète</li>
-                                    <li><strong>Vérifie</strong> que ta réponse a du sens</li>
-                                </ol>
-
-                                <h3>Les types de problèmes</h3>
-
-                                <h4>🛒 Problèmes d'achat</h4>
-                                <p>Exemple : "Tu achètes 3 livres à 8€ chacun. Combien paies-tu ?"</p>
-                                <ul>
-                                    <li>Opération : <strong>multiplication</strong> (3 × 8 = 24€)</li>
-                                </ul>
-
-                                <h4>🍰 Problèmes de partage</h4>
-                                <p>Exemple : "Partage 24 bonbons équitablement entre 6 enfants."</p>
-                                <ul>
-                                    <li>Opération : <strong>division</strong> (24 ÷ 6 = 4 bonbons chacun)</li>
-                                </ul>
-
-                                <h4>📏 Problèmes de mesure</h4>
-                                <p>Exemple : "Un rectangle mesure 12 cm de long et 5 cm de large. Quel est son périmètre ?"</p>
-                                <ul>
-                                    <li>Formule : <strong>(longueur + largeur) × 2</strong></li>
-                                    <li>Calcul : (12 + 5) × 2 = 34 cm</li>
-                                </ul>
-
-                                <h4>⏰ Problèmes de durée</h4>
-                                <p>Exemple : "Le film commence à 14h30 et dure 1h45. À quelle heure finit-il ?"</p>
-                                <ul>
-                                    <li>Calcul : 14h30 + 1h45 = 16h15</li>
-                                </ul>
-
-                                <h3>Les mots-clés importants</h3>
-                                <ul>
-                                    <li><strong>"en tout", "total"</strong> → addition</li>
-                                    <li><strong>"reste", "différence"</strong> → soustraction</li>
-                                    <li><strong>"chacun", "fois"</strong> → multiplication</li>
-                                    <li><strong>"partage", "équitablement"</strong> → division</li>
-                                </ul>
-
-                                <h3>Astuces de résolution</h3>
-                                <ul>
-                                    <li>✏️ <strong>Fais un schéma</strong> ou un dessin si ça t'aide</li>
-                                    <li>📊 Utilise un <strong>tableau</strong> pour organiser les données</li>
-                                    <li>🧮 Vérifie avec l'<strong>opération inverse</strong></li>
-                                    <li>❓ Demande-toi : "Ma réponse est-elle <strong>logique</strong> ?"</li>
-                                </ul>
-
-                                <h3>À retenir</h3>
-                                <p>📌 Un problème mathématique raconte une <strong>histoire avec des nombres</strong> !</p>
-                                <p>📌 Prends ton temps, lis plusieurs fois et réfléchis avant de calculer 🧠</p>
-                            `
-                        },
-                        solides: {
-                            title: "📐 Solides et Volumes",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>📦 Les solides</h3>
-                                        <p>Un solide est une figure <strong>à trois dimensions</strong> : longueur, largeur et hauteur.</p>
-
-                                        <div class="example-box">
-                                            <h4>Les principaux solides :</h4>
-                                            <p><strong>🟦 Cube</strong> : 6 faces carrées identiques, 12 arêtes égales, 8 sommets</p>
-                                            <p><strong>📦 Pavé droit</strong> : 6 faces rectangulaires, angles droits</p>
-                                            <p><strong>🔵 Cylindre</strong> : 2 bases circulaires, 1 face courbe</p>
-                                            <p><strong>🔺 Pyramide</strong> : 1 base polygonale, faces triangulaires</p>
-                                            <p><strong>⚽ Sphère</strong> : tous les points à égale distance du centre</p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📏 Le volume</h3>
-                                        <p>Le volume mesure <strong>l'espace occupé</strong> par un solide (en cm³, m³, L).</p>
-
-                                        <div class="example-box">
-                                            <h4>Formules :</h4>
-                                            <ul>
-                                                <li><strong>Cube</strong> : V = arête × arête × arête = a³</li>
-                                                <li><strong>Pavé</strong> : V = Longueur × largeur × hauteur</li>
-                                                <li><strong>Cylindre</strong> : V = aire de la base × hauteur</li>
-                                            </ul>
-
-                                            <h4>Exemple :</h4>
-                                            <p>Pavé : L = 5 cm, l = 3 cm, h = 2 cm</p>
-                                            <p>V = 5 × 3 × 2 = <strong>30 cm³</strong></p>
-                                        </div>
-
-                                        <div class="tip-box">
-                                            💡 <strong>Équivalence :</strong> 1 L = 1 dm³ = 1 000 cm³
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🎲 Patrons et développements</h3>
-                                        <p>Un <strong>patron</strong> est le dessin à plat d'un solide qu'on peut plier pour le reconstituer.</p>
-
-                                        <div class="example-box">
-                                            <p>Le cube a plusieurs patrons possibles (11 différents !)</p>
-                                            <p>Le pavé peut aussi se déplier de différentes façons</p>
-                                        </div>
-                                    </section>
-
-                                    <div class="lesson-summary">
-                                        <h3>📝 À retenir</h3>
-                                        <ul>
-                                            <li>✅ Solide = 3 dimensions (L × l × h)</li>
-                                            <li>✅ Volume = espace occupé (cm³, m³, L)</li>
-                                            <li>✅ Cube : 6 faces carrées identiques</li>
-                                            <li>✅ Pavé : 6 faces rectangulaires</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        proportionnalite: {
-                            title: "🔄 Proportionnalité",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>🔄 Qu'est-ce que la proportionnalité ?</h3>
-                                        <p>Deux grandeurs sont <strong>proportionnelles</strong> quand on les multiplie ou divise par le même nombre.</p>
-
-                                        <div class="example-box">
-                                            <h4>Exemple : Prix des pommes</h4>
-                                            <p>2 kg → 6€ | 4 kg → 12€ | 6 kg → 18€</p>
-                                            <p>On multiplie toujours par 3 : <strong>proportionnel !</strong></p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📊 Tableau de proportionnalité</h3>
-
-                                        <div class="example-box">
-                                            <h4>Prix de pommes à 3€ le kg :</h4>
-                                            <table class="number-table">
-                                                <tr>
-                                                    <th>Masse (kg)</th>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>5</td>
-                                                    <td>10</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Prix (€)</th>
-                                                    <td>3</td>
-                                                    <td>6</td>
-                                                    <td>15</td>
-                                                    <td>30</td>
-                                                </tr>
-                                            </table>
-                                            <p><strong>Coefficient de proportionnalité = 3</strong></p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📐 La règle de trois</h3>
-                                        <p>Méthode pour trouver une valeur manquante dans un tableau de proportionnalité.</p>
-
-                                        <div class="example-box">
-                                            <h4>Problème :</h4>
-                                            <p>3 stylos coûtent 6€. Combien coûtent 7 stylos ?</p>
-
-                                            <h4>Solution :</h4>
-                                            <p>1 stylo = 6 ÷ 3 = 2€</p>
-                                            <p>7 stylos = 7 × 2 = <strong>14€</strong></p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📏 Échelles</h3>
-                                        <p>Une <strong>échelle</strong> est un rapport de proportionnalité entre une carte et la réalité.</p>
-
-                                        <div class="example-box">
-                                            <p>Échelle 1/100 : 1 cm sur la carte = 100 cm (1 m) en réalité</p>
-                                            <p>Échelle 1/1000 : 1 cm sur le plan = 1 000 cm (10 m) en vrai</p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>💯 Les pourcentages</h3>
-                                        <p>Un pourcentage est une <strong>fraction sur 100</strong>.</p>
-
-                                        <div class="example-box">
-                                            <p>50% = 50/100 = 1/2 (la moitié)</p>
-                                            <p>25% = 25/100 = 1/4 (un quart)</p>
-                                            <p>10% = 10/100 = 1/10 (un dixième)</p>
-                                        </div>
-                                    </section>
-
-                                    <div class="lesson-summary">
-                                        <h3>📝 À retenir</h3>
-                                        <ul>
-                                            <li>✅ Proportionnel = multiplier/diviser par le même nombre</li>
-                                            <li>✅ Coefficient de proportionnalité constant</li>
-                                            <li>✅ Règle de trois pour trouver une valeur</li>
-                                            <li>✅ Pourcentage = fraction sur 100</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        donnees: {
-                            title: "📊 Données",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>📊 Lire un graphique</h3>
-                                        <p>Un graphique permet de <strong>visualiser des données</strong> de façon claire.</p>
-
-                                        <div class="example-box">
-                                            <h4>Types de graphiques :</h4>
-                                            <ul>
-                                                <li><strong>Diagramme en barres</strong> : comparer des quantités</li>
-                                                <li><strong>Courbe</strong> : voir l'évolution dans le temps</li>
-                                                <li><strong>Diagramme circulaire (camembert)</strong> : voir les parts d'un tout</li>
-                                                <li><strong>Tableau</strong> : organiser les données en lignes et colonnes</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📈 Interpréter des données</h3>
-                                        <p>Pour bien comprendre un graphique :</p>
-
-                                        <div class="example-box">
-                                            <h4>Questions à se poser :</h4>
-                                            <ul>
-                                                <li>📌 Quel est le titre du graphique ?</li>
-                                                <li>📌 Que représente l'axe horizontal ?</li>
-                                                <li>📌 Que représente l'axe vertical ?</li>
-                                                <li>📌 Quelles sont les unités utilisées ?</li>
-                                                <li>📌 Quelle est la valeur la plus grande / petite ?</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📋 Construire un tableau</h3>
-                                        <p>Un tableau organise les informations en <strong>lignes et colonnes</strong>.</p>
-
-                                        <div class="example-box">
-                                            <h4>Exemple : Températures de la semaine</h4>
-                                            <table class="number-table">
-                                                <tr>
-                                                    <th>Jour</th>
-                                                    <th>Lundi</th>
-                                                    <th>Mardi</th>
-                                                    <th>Mercredi</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>Température (°C)</th>
-                                                    <td>15</td>
-                                                    <td>18</td>
-                                                    <td>12</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🧮 La moyenne</h3>
-                                        <p>La moyenne donne une <strong>valeur représentative</strong> d'un ensemble de nombres.</p>
-
-                                        <div class="example-box">
-                                            <h4>Calcul :</h4>
-                                            <p>Notes : 15, 12, 18, 13</p>
-                                            <p>Moyenne = (15 + 12 + 18 + 13) ÷ 4 = 58 ÷ 4 = <strong>14,5</strong></p>
-                                        </div>
-
-                                        <div class="tip-box">
-                                            💡 <strong>Méthode :</strong> Additionner toutes les valeurs, puis diviser par le nombre de valeurs
-                                        </div>
-                                    </section>
-
-                                    <div class="lesson-summary">
-                                        <h3>📝 À retenir</h3>
-                                        <ul>
-                                            <li>✅ Graphique = visualisation de données</li>
-                                            <li>✅ Toujours lire le titre et les axes</li>
-                                            <li>✅ Tableau = organiser en lignes/colonnes</li>
-                                            <li>✅ Moyenne = somme ÷ nombre de valeurs</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        calcul_litteral: {
-                            title: "⚡ Calcul littéral",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>⚡ Qu'est-ce que le calcul littéral ?</h3>
-                                        <p>Le calcul littéral utilise des <strong>lettres pour représenter des nombres</strong>.</p>
-
-                                        <div class="example-box">
-                                            <p>Au lieu d'écrire : "un nombre quelconque"</p>
-                                            <p>On écrit : <strong>x</strong> ou <strong>n</strong></p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🔤 Les expressions littérales</h3>
-                                        <p>Une expression littérale combine des <strong>nombres et des lettres</strong>.</p>
-
-                                        <div class="example-box">
-                                            <h4>Exemples :</h4>
-                                            <ul>
-                                                <li><strong>x + 5</strong> : un nombre augmenté de 5</li>
-                                                <li><strong>2 × n</strong> ou <strong>2n</strong> : le double d'un nombre</li>
-                                                <li><strong>a - 3</strong> : un nombre diminué de 3</li>
-                                                <li><strong>4x</strong> : 4 fois un nombre</li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="tip-box">
-                                            💡 <strong>Astuce :</strong> 2 × x s'écrit simplement <strong>2x</strong> (on enlève le signe ×)
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🔢 Calculer la valeur d'une expression</h3>
-                                        <p>Pour calculer, on <strong>remplace la lettre par sa valeur</strong>.</p>
-
-                                        <div class="example-box">
-                                            <h4>Exemple :</h4>
-                                            <p>Expression : <strong>3x + 7</strong></p>
-                                            <p>Si x = 5 :</p>
-                                            <p>3 × 5 + 7 = 15 + 7 = <strong>22</strong></p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🎯 Formules usuelles</h3>
-
-                                        <div class="example-box">
-                                            <h4>Géométrie :</h4>
-                                            <ul>
-                                                <li>Périmètre carré : P = 4 × c (c = côté)</li>
-                                                <li>Aire rectangle : A = L × l</li>
-                                                <li>Périmètre rectangle : P = 2 × (L + l)</li>
-                                            </ul>
-
-                                            <h4>Problèmes :</h4>
-                                            <ul>
-                                                <li>Prix de n objets à p€ : n × p</li>
-                                                <li>Âge dans a années : âge actuel + a</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <div class="lesson-summary">
-                                        <h3>📝 À retenir</h3>
-                                        <ul>
-                                            <li>✅ Une lettre représente un nombre</li>
-                                            <li>✅ 2 × x s'écrit 2x</li>
-                                            <li>✅ Pour calculer : remplacer la lettre par sa valeur</li>
-                                            <li>✅ Les formules utilisent le calcul littéral</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        problemes_complexes: {
-                            title: "🎯 Problèmes complexes",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>🎯 Qu'est-ce qu'un problème complexe ?</h3>
-                                        <p>Un problème complexe nécessite <strong>plusieurs étapes</strong> et différentes opérations pour trouver la solution.</p>
-
-                                        <div class="tip-box">
-                                            💡 <strong>Stratégie :</strong> Décomposer en plusieurs petits problèmes simples
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>📝 Méthode de résolution</h3>
-
-                                        <div class="example-box">
-                                            <h4>Étapes essentielles :</h4>
-                                            <ul>
-                                                <li><strong>1. Comprendre</strong> : Lire plusieurs fois, identifier toutes les données</li>
-                                                <li><strong>2. Organiser</strong> : Faire un schéma, un tableau, classer les infos</li>
-                                                <li><strong>3. Planifier</strong> : Quelles opérations ? Dans quel ordre ?</li>
-                                                <li><strong>4. Calculer</strong> : Faire les calculs étape par étape</li>
-                                                <li><strong>5. Vérifier</strong> : Le résultat est-il logique ?</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🛒 Exemple de problème à étapes</h3>
-
-                                        <div class="example-box">
-                                            <h4>Énoncé :</h4>
-                                            <p>Une classe de 24 élèves va au cinéma. Le bus coûte 120€ pour tous. Chaque place de cinéma coûte 7€. L'école paie la moitié du prix total. Combien paie chaque élève ?</p>
-
-                                            <h4>Solution détaillée :</h4>
-                                            <p><strong>Étape 1</strong> : Prix du cinéma</p>
-                                            <p>24 × 7 = 168€</p>
-
-                                            <p><strong>Étape 2</strong> : Prix total (bus + cinéma)</p>
-                                            <p>120 + 168 = 288€</p>
-
-                                            <p><strong>Étape 3</strong> : Part de l'école (moitié)</p>
-                                            <p>288 ÷ 2 = 144€</p>
-
-                                            <p><strong>Étape 4</strong> : Part des élèves</p>
-                                            <p>288 - 144 = 144€</p>
-
-                                            <p><strong>Étape 5</strong> : Par élève</p>
-                                            <p>144 ÷ 24 = <strong>6€</strong></p>
-
-                                            <p><strong>Réponse :</strong> Chaque élève paie 6€.</p>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>🔍 Stratégies de résolution</h3>
-
-                                        <div class="example-box">
-                                            <ul>
-                                                <li>✏️ <strong>Dessiner un schéma</strong> pour visualiser</li>
-                                                <li>📊 <strong>Faire un tableau</strong> pour organiser</li>
-                                                <li>🔢 <strong>Chercher des données intermédiaires</strong></li>
-                                                <li>🎯 <strong>Partir de la fin</strong> (raisonnement inverse)</li>
-                                                <li>🧮 <strong>Vérifier avec l'opération inverse</strong></li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <section class="lesson-section">
-                                        <h3>💡 Conseils pour réussir</h3>
-
-                                        <div class="example-box">
-                                            <ul>
-                                                <li>✓ Ne pas se précipiter sur les calculs</li>
-                                                <li>✓ Souligner les données importantes</li>
-                                                <li>✓ Barrer les informations inutiles</li>
-                                                <li>✓ Écrire les calculs intermédiaires</li>
-                                                <li>✓ Toujours rédiger une phrase de réponse</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-
-                                    <div class="lesson-summary">
-                                        <h3>📝 À retenir</h3>
-                                        <ul>
-                                            <li>✅ Problème complexe = plusieurs étapes</li>
-                                            <li>✅ Décomposer en sous-problèmes</li>
-                                            <li>✅ Faire un schéma ou tableau aide</li>
-                                            <li>✅ Calculer étape par étape</li>
-                                            <li>✅ Toujours vérifier le résultat</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `
-                        },
-
-                        fractions: {
-                            title: "🍕 Les Fractions",
-                            content: `
-                                <div class="lesson-body">
-                                    <section class="lesson-section">
-                                        <h3>🍕 Qu'est-ce qu'une fraction ?</h3>
-                                        <p>Une fraction représente une <strong>partie d'un tout</strong>. Elle s'écrit avec deux nombres séparés par une barre :</p>
-                                        <ul>
-                                            <li>Le <strong>numérateur</strong> (en haut) = le nombre de parts prises</li>
-                                            <li>Le <strong>dénominateur</strong> (en bas) = le nombre total de parts</li>
-                                        </ul>
-                                        <p>🍕 Exemple : <strong>3/4</strong> d'une pizza = 3 parts sur 4 au total</p>
-                                    </section>
-                                    <section class="lesson-section">
-                                        <h3>📏 Fractions usuelles à connaître</h3>
-                                        <ul>
-                                            <li><strong>1/2</strong> = un demi = la moitié</li>
-                                            <li><strong>1/4</strong> = un quart</li>
-                                            <li><strong>3/4</strong> = trois quarts</li>
-                                            <li><strong>1/3</strong> = un tiers</li>
-                                            <li><strong>2/3</strong> = deux tiers</li>
-                                            <li><strong>1/10</strong> = un dixième = 0,1</li>
-                                        </ul>
-                                    </section>
-                                    <section class="lesson-section">
-                                        <h3>⚖️ Comparer des fractions (même dénominateur)</h3>
-                                        <p>Quand les dénominateurs sont identiques, on compare les numérateurs :</p>
-                                        <ul>
-                                            <li><strong>3/8 &lt; 5/8</strong> car 3 &lt; 5</li>
-                                            <li><strong>7/10 &gt; 4/10</strong> car 7 &gt; 4</li>
-                                        </ul>
-                                    </section>
-                                    <section class="lesson-section">
-                                        <h3>➕ Additionner des fractions (même dénominateur)</h3>
-                                        <p>On additionne les numérateurs, le dénominateur reste le même :</p>
-                                        <ul>
-                                            <li><strong>2/7 + 3/7 = 5/7</strong></li>
-                                            <li><strong>1/4 + 2/4 = 3/4</strong></li>
-                                        </ul>
-                                    </section>
-                                    <section class="lesson-section">
-                                        <h3>🔄 Fraction = nombre décimal</h3>
-                                        <ul>
-                                            <li><strong>1/2 = 0,5</strong></li>
-                                            <li><strong>1/4 = 0,25</strong></li>
-                                            <li><strong>3/4 = 0,75</strong></li>
-                                            <li><strong>1/10 = 0,1</strong></li>
-                                        </ul>
-                                        <p>📌 Pour convertir : divise le numérateur par le dénominateur !</p>
-                                    </section>
-                                    <section class="lesson-section">
-                                        <h3>✅ À retenir</h3>
-                                        <ul>
-                                            <li>Numérateur (haut) = parts prises / Dénominateur (bas) = parts totales</li>
-                                            <li>Même dénominateur : comparer ou additionner les numérateurs directement</li>
-                                            <li>1/2 = 0,5 · 1/4 = 0,25 · 3/4 = 0,75</li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            `
-                        }
+                        numeration: { name: 'Numération', description: 'Découvre les nombres, les fractions et les décimaux', imageUrl: '/images/mathematiques/illustration_numeration.jpg' },
+                        calcul: { name: 'Calcul', description: 'Maîtrise l\'addition, la soustraction, la multiplication et la division', imageUrl: '/images/mathematiques/illustration_calcul.jpg' },
+                        geometrie: { name: 'Géométrie', description: 'Explore les formes, les figures et l\'espace', imageUrl: '/images/mathematiques/illustration_geometrie.jpg' },
+                        mesures: { name: 'Mesures', description: 'Apprends à mesurer les longueurs, les masses et le temps', imageUrl: '/images/mathematiques/illustration_mesures.jpg' },
+                        problemes: { name: 'Problèmes', description: 'Résous des problèmes mathématiques de la vie quotidienne', imageUrl: '/images/mathematiques/illustration_problemes.jpg' },
+                        solides: { name: 'Solides et volumes', description: 'Découvre les formes 3D et calcule des volumes', imageUrl: '/images/mathematiques/illustration_solides.jpg' },
+                        proportionnalite: { name: 'Proportionnalité', description: 'Maîtrise les tableaux de proportionnalité', imageUrl: '/images/mathematiques/illustration_proportionnalite.jpg' },
+                        donnees: { name: 'Données', description: 'Lis et interprète les graphiques et tableaux', imageUrl: '/images/mathematiques/illustration_donnees.jpg' },
+                        calcul_litteral: { name: 'Calcul littéral', description: 'Initiation aux expressions avec des lettres', imageUrl: '/images/mathematiques/illustration_calcul_litteral.jpg' },
+                        problemes_complexes: { name: 'Problèmes complexes', description: 'Résous des problèmes à plusieurs étapes', imageUrl: '/images/mathematiques/illustration_problemes_complexes.jpg' },
+                        fractions: { name: 'Fractions', description: 'Comprends et manipule les fractions pas à pas', imageUrl: '/images/mathematiques/illustration_fractions.jpg' }
                     },
 
                     selectDomain(d) {
@@ -1061,97 +289,56 @@
                         this.showQuiz = this.showResults = this.showIllustration = this.showLesson = false;
                     },
 
-                    getDomainName() {
-                        return this.domains[this.currentDomain]?.name || '';
-                    },
+                    getDomainName() { return this.domains[this.currentDomain]?.name || ''; },
+                    getDomainDescription() { return this.domains[this.currentDomain]?.description || ''; },
+                    getImageUrl() { return this.domains[this.currentDomain]?.imageUrl || ''; },
+                    getLessonTitle() { return this.domains[this.currentDomain]?.name || ''; },
+                    getLessonContent() { return '<p>Leçon en cours de rédaction.</p>'; },
+                    toggleIllustration() { this.showIllustration = !this.showIllustration; },
 
-                    getDomainDescription() {
-                        return this.domains[this.currentDomain]?.description || '';
-                    },
-
-                    getImageUrl() {
-                        return this.domains[this.currentDomain]?.imageUrl || '';
-                    },
-
-                    getLessonTitle() {
-                        return this.lessonData[this.currentDomain]?.title || '';
-                    },
-
-                    getLessonContent() {
-                        return this.lessonData[this.currentDomain]?.content || '';
-                    },
-
-                    toggleIllustration() {
-                        this.showIllustration = !this.showIllustration;
-                    },
-
-                    // ✅ COOLDOWN : Vérifier si quiz peut être démarré (24h)
                     canStartQuiz(domain) {
-                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
-                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        if (!cooldownData.lastCompleted) return true;
-                        const now = Date.now();
-                        const timeSinceCompletion = now - cooldownData.lastCompleted;
-                        const cooldownDuration = 24 * 60 * 60 * 1000;
-                        return timeSinceCompletion >= cooldownDuration;
+                        const data = JSON.parse(localStorage.getItem(`quiz_cooldown_maths_${domain}`) || '{}');
+                        if (!data.lastCompleted) return true;
+                        return (Date.now() - data.lastCompleted) >= 24 * 60 * 60 * 1000;
                     },
 
                     getCooldownTimeRemaining(domain) {
-                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
-                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
-                        if (!cooldownData.lastCompleted) return null;
-                        const now = Date.now();
-                        const timeSinceCompletion = now - cooldownData.lastCompleted;
-                        const cooldownDuration = 24 * 60 * 60 * 1000;
-                        const remaining = cooldownDuration - timeSinceCompletion;
+                        const data = JSON.parse(localStorage.getItem(`quiz_cooldown_maths_${domain}`) || '{}');
+                        if (!data.lastCompleted) return null;
+                        const remaining = (24 * 60 * 60 * 1000) - (Date.now() - data.lastCompleted);
                         if (remaining <= 0) return null;
-                        const hours = Math.floor(remaining / (60 * 60 * 1000));
-                        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-                        return { hours, minutes };
+                        return { hours: Math.floor(remaining / 3600000), minutes: Math.floor((remaining % 3600000) / 60000) };
                     },
 
                     recordQuizCompletion(domain) {
-                        const cooldownKey = `quiz_cooldown_maths_${domain}`;
-                        const cooldownData = {
-                            lastCompleted: Date.now(),
-                            count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
-                        };
-                        localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
-                        console.log(`🔒 Cooldown activé pour ${domain}`);
+                        const key = `quiz_cooldown_maths_${domain}`;
+                        const prev = JSON.parse(localStorage.getItem(key) || '{}');
+                        localStorage.setItem(key, JSON.stringify({ lastCompleted: Date.now(), count: (prev.count || 0) + 1 }));
                     },
 
                     startQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN
                         if (!this.canStartQuiz(this.currentDomain)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentDomain);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
-                            if (window.curioBubbleInstance) {
-                                window.curioBubbleInstance.show(message, 'info');
-                            } else {
-                                alert(message);
-                            }
+                            if (window.curioBubbleInstance) window.curioBubbleInstance.show(message, 'info');
+                            else alert(message);
                             return;
                         }
-
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
-                        this.selectedAnswer = null;
                         this.answered = false;
                         this.quizFinished = false;
                         this.loadQuestion();
                     },
 
                     getCurrentQuiz() {
-                        if (typeof mathsQuiz !== 'undefined') {
-                            return mathsQuiz[this.currentDomain] || [];
-                        }
+                        if (typeof mathsQuiz !== 'undefined') return mathsQuiz[this.currentDomain] || [];
                         return [];
                     },
 
                     loadQuestion() {
-                        const questions = this.getCurrentQuiz();
-                        this.currentQuestion = questions[this.currentQuestionIndex];
+                        this.currentQuestion = this.getCurrentQuiz()[this.currentQuestionIndex];
                         this.answered = false;
                         this.isCorrect = false;
                     },
@@ -1163,19 +350,11 @@
                         if (this.isCorrect) {
                             this.score++;
                             this.playCorrectSound();
-
-                            // Ajouter XP pour bonne réponse
-                            if (window.SectionXP) {
-                                window.SectionXP.addXP('maths', window.SectionXP.rewards.QUESTION_CORRECT);
-                            }
+                            if (window.SectionXP) window.SectionXP.addXP('maths', window.SectionXP.rewards.QUESTION_CORRECT);
                         } else {
                             this.playIncorrectSound();
                         }
-
-                        // ✅ AUTO-AVANCE : Timer 2 secondes puis question suivante
-                        setTimeout(() => {
-                            this.nextQuestion();
-                        }, 2000);
+                        setTimeout(() => { this.nextQuestion(); }, 2000);
                     },
 
                     nextQuestion() {
@@ -1189,76 +368,24 @@
 
                     finishQuiz() {
                         this.quizFinished = true;
-
-                        // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('maths', window.SectionXP.rewards.QUIZ_COMPLETED);
-
-                            // Bonus supplémentaire si quiz parfait
-                            const quizLength = this.getCurrentQuiz().length;
-                            if (this.score === quizLength) {
+                            if (this.score === this.getCurrentQuiz().length) {
                                 window.SectionXP.addXP('maths', window.SectionXP.rewards.PERFECT_QUIZ);
                             }
                         }
-
-
-                        // ========================================================================
-                        // NOUVEAU : MasterGameSystem v3.0
-                        // ========================================================================
-                        if (typeof gameSystem !== 'undefined') {
-                            try {
-                                const quizLength = this.getCurrentQuiz().length;
-                                const percentage = Math.round((this.score / quizLength) * 100);
-                                const baseXP = this.score * 10;
-                                const lessonId = `maths_${this.currentDomain}_${Date.now()}`;
-
-                                // Context pour bonus
-                                const mathsData = gameSystem.getSectionData('maths');
-                                const context = {
-                                    perfectScore: percentage === 100,
-                                    hasActiveStreak: mathsData.streak > 0
-                                };
-
-                                // Attribution XP avec bonus automatiques
-                                const earnedXP = gameSystem.awardXP('maths', baseXP, context);
-
-                                // Enregistrer complétion leçon
-                                gameSystem.completeLesson('maths', lessonId, percentage, 0);
-
-                                // Mettre à jour streak quotidien
-                                gameSystem.updateStreak('maths');
-
-                                // Mettre à jour affichage badges
-                                if (typeof updateGameSystemUI === 'function') {
-                                    updateGameSystemUI();
-                                }
-
-                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
-
-                            } catch (error) {
-                                console.error('❌ Erreur MasterGameSystem:', error);
-                            }
-                        }
-                        // ========================================================================
-
-                        // ✅ ENREGISTRER COOLDOWN (24h)
                         this.recordQuizCompletion(this.currentDomain);
                     },
 
                     retryQuiz() {
-                        // ✅ VÉRIFIER COOLDOWN même pour retry
                         if (!this.canStartQuiz(this.currentDomain)) {
                             const remaining = this.getCooldownTimeRemaining(this.currentDomain);
                             const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
-                            if (window.curioBubbleInstance) {
-                                window.curioBubbleInstance.show(message, 'info');
-                            } else {
-                                alert(message);
-                            }
+                            if (window.curioBubbleInstance) window.curioBubbleInstance.show(message, 'info');
+                            else alert(message);
                             this.backToDomain();
                             return;
                         }
-
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();
@@ -1273,68 +400,27 @@
                         return '📚 Continue à apprendre, tu vas y arriver !';
                     },
 
-                    backToDomain() {
-                        this.showResults = false;
-                        this.showQuiz = false;
-                    }
+                    backToDomain() { this.showResults = false; this.showQuiz = false; }
                 }));
             });
         </script>
 
         <!-- Admin Shortcut (Ctrl+Shift+X) -->
         <script src="scripts/admin-shortcut.js"></script>
-        <!-- ===== AJOUTER CES LIGNES ICI ===== -->
-    <script src="scripts/master-game-system.js"></script>
-    <script>
-        let gameSystem;
-        window.addEventListener('DOMContentLoaded', () => {
-            gameSystem = new MasterGameSystem();
-            updateGameSystemUI();
-        });
-
-        function updateGameSystemUI() {
-            const stats = gameSystem.getGlobalStats();
-            const section = getSectionName();
-
-        <!-- Admin Shortcut (Ctrl+Shift+X) -->
-        
-
-        <!-- MasterGameSystem v3.0 - Init Automatique -->
-        
+        <script src="scripts/master-game-system.js"></script>
         <script>
             let gameSystem;
-
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     if (typeof MasterGameSystem !== 'undefined') {
                         gameSystem = new MasterGameSystem();
-                        console.log('✅ MasterGameSystem v3.0 initialisé');
-                        if (typeof updateGameSystemUI === 'function') {
-                            updateGameSystemUI();
-                        }
+                        if (typeof updateGameSystemUI === 'function') updateGameSystemUI();
                     }
                 }, 200);
             });
-
-            function updateGameSystemUI() {
-                try {
-                    const stats = gameSystem.getGlobalStats();
-                    const data = gameSystem.getSectionData('maths');
-                    if (document.getElementById('xp-value')) {
-                        document.getElementById('xp-value').textContent = `${data.xp} XP (Niv. ${stats.level})`;
-                    }
-                    if (document.getElementById('streak-value')) {
-                        document.getElementById('streak-value').textContent = data.streak;
-                    }
-                    if (document.getElementById('hearts-value')) {
-                        document.getElementById('hearts-value').textContent = `${data.hearts}/5`;
-                    }
-                } catch (e) {}
-            }
-
             function getSectionName() { return 'maths'; }
         </script>
-    
+
     <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
     <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
 </body>

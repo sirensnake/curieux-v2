@@ -219,7 +219,10 @@
                 <div class="quiz-progress">
                     <p>Question <span x-text="currentQuestion + 1"></span> / <span
                             x-text="getCurrentQuiz().length"></span></p>
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
+                    <!-- FIX WCAG : ajout :aria-valuenow dynamique -->
+                    <div class="progress-bar" role="progressbar"
+                        :aria-valuenow="Math.round((currentQuestion + 1) / getCurrentQuiz().length * 100)"
+                        aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                         <div class="progress-fill"
                             :style="'width: ' + ((currentQuestion + 1) / getCurrentQuiz().length * 100) + '%'"></div>
                     </div>
@@ -301,11 +304,7 @@
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
                         console.log('✅ histoireApp initialisé');
-
-                        // Initialiser le système XP
-                        if (window.SectionXP) {
-                            window.SectionXP.init('histoire');
-                        }
+                        if (window.SectionXP) window.SectionXP.init('histoire');
                     },
 
                     playCorrectSound() {
@@ -415,7 +414,6 @@
                             { question: "Qui dirige la Terreur en 1793-1794 ?", options: ["Napoléon", "Robespierre", "Louis XVI", "Danton"], correct: 1 },
                             { question: "Quelle est la fête nationale française ?", options: ["1er mai", "14 juillet", "11 novembre", "8 mai"], correct: 1 }
                         ],
-                        // ===== AJOUT PHASE 2 =====
                         napoleon: [
                             { question: "En quelle année Napoléon devient-il Premier Consul ?", options: ["1799", "1804", "1789", "1815"], correct: 0 },
                             { question: "En quelle année Napoléon est-il sacré Empereur ?", options: ["1799", "1802", "1804", "1810"], correct: 2 },
@@ -464,30 +462,14 @@
                             { question: "Où siège l'Assemblée nationale ?", options: ["Le Palais de l'Élysée", "Le Palais Bourbon", "Le Palais du Luxembourg", "Matignon"], correct: 1 },
                             { question: "Quel symbole féminin représente la République française ?", options: ["Napoléon", "Marianne", "Jeanne d'Arc", "Vauban"], correct: 1 }
                         ]
-                        // ===== FIN AJOUT PHASE 2 =====
                     },
 
                     mapData: {
-                        prehistoire: {
-                            title: "Migrations Préhistoriques",
-                            imageUrl: "/images/histoire/carte_prehistoire.jpg"
-                        },
-                        antiquite: {
-                            title: "Empire Romain",
-                            imageUrl: "/images/histoire/carte_antiquite.jpg"
-                        },
-                        moyenage: {
-                            title: "Europe Médiévale",
-                            imageUrl: "/images/histoire/carte_moyenage.jpg"
-                        },
-                        tempsmodernes: {
-                            title: "Grandes Découvertes",
-                            imageUrl: "/images/histoire/carte_tempsmodernes.jpg"
-                        },
-                        epoquecontemporaine: {
-                            title: "Révolution Industrielle",
-                            imageUrl: "/images/histoire/carte_epoquecontemporaine.jpg"
-                        }
+                        prehistoire: { title: "Migrations Préhistoriques", imageUrl: "/images/histoire/carte_prehistoire.jpg" },
+                        antiquite: { title: "Empire Romain", imageUrl: "/images/histoire/carte_antiquite.jpg" },
+                        moyenage: { title: "Europe Médiévale", imageUrl: "/images/histoire/carte_moyenage.jpg" },
+                        tempsmodernes: { title: "Grandes Découvertes", imageUrl: "/images/histoire/carte_tempsmodernes.jpg" },
+                        epoquecontemporaine: { title: "Révolution Industrielle", imageUrl: "/images/histoire/carte_epoquecontemporaine.jpg" }
                     },
 
                     selectPeriod(p) { this.currentPeriod = p; this.currentLesson = null; this.showQuiz = this.showResults = this.showMap = false; },
@@ -504,13 +486,10 @@
                         if (idx === q.correct) {
                             this.score++;
                             this.playCorrectSound();
-
-                            // Ajouter XP pour bonne réponse
-                            if (window.SectionXP) {
-                                window.SectionXP.addXP('histoire', window.SectionXP.rewards.QUESTION_CORRECT);
-                            }
+                            if (window.SectionXP) window.SectionXP.addXP('histoire', window.SectionXP.rewards.QUESTION_CORRECT);
+                        } else {
+                            this.playIncorrectSound();
                         }
-                        else { this.playIncorrectSound(); }
                         setTimeout(() => {
                             if (this.currentQuestion < this.getCurrentQuiz().length - 1) this.nextQuestion();
                             else this.finishQuiz();
@@ -527,16 +506,10 @@
                         return '';
                     },
 
-                    toggleMaps() {
-                        this.showMap = !this.showMap;
-                        console.log('🗺️ Toggle carte:', this.showMap);
-                        console.log('📍 Période:', this.currentPeriod);
-                        console.log('🖼️ URL:', this.getMapImageUrl());
-                    },
+                    toggleMaps() { this.showMap = !this.showMap; },
                     getMapImageUrl() { return this.mapData[this.currentPeriod]?.imageUrl || ""; },
                     getMapTitle() { return this.mapData[this.currentPeriod]?.title || ""; },
 
-                    // CONTENU ÉDUCATIF : externalisé dans scripts/data/histoire-lecons-data.js
                     getLessonTitle() {
                         const key = this.currentLesson || this.currentPeriod;
                         return (window.histoireLeconData || {})[key]?.title || "En savoir plus";
@@ -545,61 +518,18 @@
                         const key = this.currentLesson || this.currentPeriod;
                         return (window.histoireLeconData || {})[key]?.content || "<p>Contenu en cours de rédaction...</p>";
                     },
+
                     finishQuiz() {
                         this.showQuiz = false;
                         this.showResults = true;
-
-                        // Bonus XP pour complétion du quiz
                         if (window.SectionXP) {
                             window.SectionXP.addXP('histoire', window.SectionXP.rewards.QUIZ_COMPLETED);
-
-                            // Bonus supplémentaire si quiz parfait
-                            const quizLength = this.getCurrentQuiz().length;
-                            if (this.score === quizLength) {
+                            if (this.score === this.getCurrentQuiz().length) {
                                 window.SectionXP.addXP('histoire', window.SectionXP.rewards.PERFECT_QUIZ);
-                        // ========================================================================
-                        // NOUVEAU : MasterGameSystem v3.0 - Attribution XP Unifiée
-                        // ========================================================================
-                        if (typeof gameSystem !== 'undefined') {
-                            try {
-                                const quizLength = this.getCurrentQuiz().length;
-                                const percentage = Math.round((this.score / quizLength) * 100);
-                                const baseXP = this.score * 10;
-                                const lessonId = `histoire_${this.currentDomain}_${Date.now()}`;
-
-                                // Context pour bonus automatiques
-                                const histoireData = gameSystem.getSectionData('histoire');
-                                const context = {
-                                    perfectScore: percentage === 100,
-                                    hasActiveStreak: histoireData.streak > 0
-                                };
-
-                                // Attribution XP avec bonus (Perfect Score x2, Streak +50%)
-                                const earnedXP = gameSystem.awardXP('histoire', baseXP, context);
-
-                                // Enregistrer complétion leçon
-                                gameSystem.completeLesson('histoire', lessonId, percentage, 0);
-
-                                // Mettre à jour streak quotidien
-                                gameSystem.updateStreak('histoire');
-
-                                // Mettre à jour affichage badges
-                                if (typeof updateGameSystemUI === 'function') {
-                                    updateGameSystemUI();
-                                }
-
-                                console.log(`✅ MasterGameSystem: +${earnedXP} XP (base: ${baseXP}, score: ${percentage}%)`);
-
-                            } catch (error) {
-                                console.error('❌ Erreur MasterGameSystem:', error);
-                                // Fallback: ancien système continue de fonctionner
-                            }
-                        }
-                        // ========================================================================
-
                             }
                         }
                     },
+
                     retryQuiz() { this.showResults = false; this.showQuiz = true; this.currentQuestion = this.score = 0; },
 
                     getPeriodTitle() {
@@ -628,29 +558,16 @@
 
         <!-- Admin Shortcut (Ctrl+Shift+X) -->
         <script src="scripts/admin-shortcut.js"></script>
-            <!-- MasterGameSystem v3.0 -->
         <script src="scripts/master-game-system.js"></script>
-
         <script>
-            // ========================================================================
-            // Initialisation automatique MasterGameSystem v3.0
-            // ========================================================================
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     if (typeof MasterGameSystem !== 'undefined') {
                         window.gameSystem = new MasterGameSystem();
-                        console.log('✅ MasterGameSystem v3.0 initialisé pour section histoire');
-
-                        // Mettre à jour UI badges si fonction disponible
-                        if (typeof updateGameSystemUI === 'function') {
-                            updateGameSystemUI();
-                        }
-                    } else {
-                        console.error('❌ MasterGameSystem non trouvé');
+                        if (typeof updateGameSystemUI === 'function') updateGameSystemUI();
                     }
-                }, 200); // Pause 200ms pour Alpine.js
+                }, 200);
             });
-            // ========================================================================
         </script>
 
     <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
