@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une Lune dans un Bocal ? 🌕",
-      "summary": "Des scientifiques ont réussi à recréer une petite version de l'atmosphère de la Lune dans un laboratoire sur Terre ! Cela veut dire qu'ils peuvent étudier comment la poussière lunaire et d'autres éléments se comportent sans devoir aller dans l'espace. Cela peut aider les astronautes à se préparer pour de futures missions sur la Lune. Apprendre à mieux connaître notre satellite naturel peut nous aider à un jour vivre plus longtemps sur la Lune et peut-être même établir une base lunaire !",
-      "date": "20/10/2023",
-      "link": "https://www.example.com/article-scientifique"
-    },
-    {
-      "title": "Un Concert Très Silencieux ! 🎻",
-      "summary": "Les musiciens d'un orchestre en Allemagne ont trouvé une façon étonnante de faire des concerts sans faire de bruit. Ils ont donné un concert silencieux où les spectateurs ont dû porter des écouteurs pour entendre la musique. Cette idée permet aux personnes d'écouter de la musique en pleine ville sans déranger les voisins. C'est une manière créative de partager l'art, tout en respectant l'environnement sonore autour de nous. Qu'en penses-tu ? Aimerais-tu essayer un tel concert ?",
+      "title": "Une nouvelle étoile repérée par des astronomes ! 🌟",
+      "summary": "Des astronomes ont découvert une nouvelle étoile brillante dans notre galaxie. Cette étoile, qui est bien plus grande que notre Soleil, se trouve à des millions de kilomètres de nous. Elle a été repérée grâce à de puissants télescopes permettant de voir loin dans l'espace. Les scientifiques pensent que cette étoile pourrait nous aider à mieux comprendre l'origine de l'univers. Quelque part dans le ciel nocturne, cette étoile chaude et lumineuse brille pour la première fois à nos yeux ici sur Terre. C'est un peu comme trouver un tout nouveau point brillant dans notre vaste voisinage interstellaire. 🪐",
       "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "Des Torches Solaires pour la Planète ☀️",
-      "summary": "Dans un village d'Inde, des bénévoles installent des torches solaires pour que les habitants puissent avoir de la lumière pendant la nuit. Ces petites torches fonctionnent grâce à l'énergie du soleil pendant la journée et éclairent les rues lorsque le soleil se couche. Ce projet aide les enfants à faire leurs devoirs après la tombée de la nuit et rend la vie plus sûre pour tout le monde. Utiliser l'énergie solaire est une bonne manière de protéger notre planète !",
+      "title": "Les pandas géants refont parler d'eux ! 🐼",
+      "summary": "Bonne nouvelle pour les amoureux des animaux ! Les pandas géants sont en train de retrouver leur habitat naturel. Grâce aux efforts de conservation en Chine, de nombreux pandas qui vivaient dans des zoos ou des réserves commencent à être réintroduits dans les forêts de bambous. Ces forêts leur offrent beaucoup de nourriture et un espace sûr pour vivre. Les pandas sont très importants pour l'équilibre de notre planète, car ils aident les forêts à rester en bonne santé. Avec ces efforts, les pandas ont un avenir plus brillant devant eux ! 🌳",
       "date": "20/10/2023",
-      "link": "https://www.example.com/article-environnement"
+      "link": ""
+    },
+    {
+      "title": "Une découverte archéologique incroyable en Égypte ! 🏺",
+      "summary": "Des archéologues en Égypte ont fait une découverte fascinante ! Ils ont trouvé une tombe ancienne remplie de trésors vieux de plusieurs milliers d'années. Dans cette tombe, il y avait des statues, des bijoux et des poteries qui nous révèlent beaucoup de choses sur la vie quotidienne à cette époque. Les archéologues sont très heureux, car ces trouvailles vont les aider à mieux comprendre l'histoire ancienne de l'Égypte et la vie des personnes qui y ont vécu. Découvrir de tels trésors, c'est comme remonter dans le temps et rencontrer des gens d'autrefois. 🏜️",
+      "date": "20/10/2023",
+      "link": ""
     }
   ]
 }
