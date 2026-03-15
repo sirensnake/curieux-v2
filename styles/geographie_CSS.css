@@ -334,15 +334,39 @@ body {
     font-size: clamp(0.6rem, 1.8vw, 0.8rem);
     color: var(--geo-accent);
 }
-.map-placeholder {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 8px;
-    min-height: 200px;
+/* ==========================================
+   ILLUSTRATION (CARTE)
+   ========================================== */
+.map-container {
+    background: var(--geo-card);
+    border: 2px solid var(--geo-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+}
+.map-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+.map-header h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    color: var(--geo-accent);
+}
+
+/* REMPLACE .map-placeholder */
+.map-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 480px;   /* hauteur max — ajuste si besoin */
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* garde les proportions, ne recadre pas */
 }
 
 /* ==========================================
