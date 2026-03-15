@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fond -->
+  <rect width="32" height="32" rx="6" fill="#0a0f1e"/>
+  <!-- Oreilles -->
+  <polygon points="7,14 9,6 13,14" fill="#E65100"/>
+  <polygon points="19,14 23,6 25,14" fill="#E65100"/>
+  <polygon points="8,13 10,8 12,13" fill="#FF8F00"/>
+  <polygon points="20,13 23,8 24,13" fill="#FF8F00"/>
+  <!-- Tête -->
+  <rect x="6" y="13" width="20" height="14" rx="4" fill="#EF6C00"/>
+  <!-- Museau -->
+  <ellipse cx="16" cy="23" rx="6" ry="4" fill="#FFF9C4"/>
+  <!-- Nez -->
+  <ellipse cx="16" cy="21" rx="2" ry="1.5" fill="#1a0a00"/>
+  <!-- Yeux -->
+  <ellipse cx="12" cy="18" rx="2.5" ry="2.5" fill="#1a0a00"/>
+  <ellipse cx="20" cy="18" rx="2.5" ry="2.5" fill="#1a0a00"/>
+  <!-- Reflets -->
+  <circle cx="13" cy="17" r="1" fill="white"/>
+  <circle cx="21" cy="17" r="1" fill="white"/>
+</svg>
