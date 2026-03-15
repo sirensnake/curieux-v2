@@ -112,11 +112,12 @@
         <div class="quiz-progress">
             <p>Question <span x-text="currentQuestionIndex + 1"></span> /
                <span x-text="quizQuestions.length"></span></p>
+            <!-- FIX WCAG : protection division par zéro sur aria-valuenow et width -->
             <div class="progress-bar" role="progressbar"
-                :aria-valuenow="Math.round((currentQuestionIndex+1)/quizQuestions.length*100)"
+                :aria-valuenow="quizQuestions.length ? Math.round((currentQuestionIndex+1)/quizQuestions.length*100) : 0"
                 aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
                 <div class="progress-fill"
-                    :style="'width:' + ((currentQuestionIndex+1)/quizQuestions.length*100) + '%'">
+                    :style="'width:' + (quizQuestions.length ? ((currentQuestionIndex+1)/quizQuestions.length*100) : 0) + '%'">
                 </div>
             </div>
         </div>
@@ -156,7 +157,8 @@
                     <span class="score-number" x-text="score"></span>
                     <span class="score-total" x-text="'/ ' + quizQuestions.length"></span>
                 </div>
-                <p class="score-percentage" x-text="Math.round((score/quizQuestions.length)*100) + '%'"></p>
+                <!-- FIX WCAG : protection NaN% avant hydratation Alpine -->
+                <p class="score-percentage" x-text="quizQuestions.length ? Math.round((score/quizQuestions.length)*100) + '%' : '0%'"></p>
                 <p class="score-message" x-text="getScoreMessage()"></p>
             </div>
             <div class="results-actions">
@@ -179,11 +181,12 @@
         <div class="quiz-progress">
             <p>Question <span x-text="miniCurrentIndex + 1"></span> /
                <span x-text="miniQuizQuestions.length"></span></p>
+            <!-- FIX WCAG : protection division par zéro mini-quiz -->
             <div class="progress-bar" role="progressbar"
-                :aria-valuenow="Math.round((miniCurrentIndex+1)/miniQuizQuestions.length*100)"
-                aria-valuemin="0" aria-valuemax="100">
+                :aria-valuenow="miniQuizQuestions.length ? Math.round((miniCurrentIndex+1)/miniQuizQuestions.length*100) : 0"
+                aria-valuemin="0" aria-valuemax="100" aria-label="Progression du mini-quiz">
                 <div class="progress-fill"
-                    :style="'width:' + ((miniCurrentIndex+1)/miniQuizQuestions.length*100) + '%'">
+                    :style="'width:' + (miniQuizQuestions.length ? ((miniCurrentIndex+1)/miniQuizQuestions.length*100) : 0) + '%'">
                 </div>
             </div>
         </div>
@@ -293,13 +296,14 @@ document.addEventListener('alpine:init', () => {
                     <div class="lesson-section">
                         <p>Une fraction représente une <strong>partie d'un tout</strong>.
                         Elle s'écrit avec deux nombres séparés par une barre :</p>
-                        <div class="fraction-visual">
+                        <!-- FIX WCAG : role="img" + aria-label pour accessibilité lecteur d'écran -->
+                        <div class="fraction-visual" role="img" aria-label="Fraction : 3 sur 4">
                             <div class="fraction-display">
                                 <span class="numerator">3</span>
                                 <span class="fraction-bar">―</span>
                                 <span class="denominator">4</span>
                             </div>
-                            <div class="fraction-labels">
+                            <div class="fraction-labels" aria-hidden="true">
                                 <span>← numérateur (parts prises)</span>
                                 <span>← dénominateur (parts totales)</span>
                             </div>
