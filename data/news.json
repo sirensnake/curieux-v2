@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Nouvelle planète repérée ! 🪐",
-      "summary": "Les astronomes ont découvert une nouvelle planète en dehors de notre système solaire, appelée \"Kepler-186f\". Cette planète est un peu plus grande que la Terre et se trouve dans une zone où il pourrait y avoir de l'eau liquide, ce qui est essentiel pour la vie. Les scientifiques sont très enthousiastes à l'idée d'en apprendre plus sur cette planète. Cela nous rappelle à quel point notre univers est vaste et plein de mystères à découvrir.",
-      "date": "06/10/2023",
-      "link": ""
+      "title": "Grande découverte dans l'espace! 🚀",
+      "summary": "Des astronomes ont aperçu une nouvelle planète qui ressemble beaucoup à la Terre! Elle se trouve dans une autre galaxie, mais les scientifiques pensent qu'elle pourrait avoir de l'eau et peut-être même des formes de vie. Cette découverte est très excitante car elle nous aide à mieux comprendre l'univers. Les astronomes utilisent de grands télescopes pour regarder très loin dans l'espace et ainsi faire des découvertes incroyables. Qui sait ce qu'ils trouveront ensuite?",
+      "date": "28/10/2023",
+      "link": "https://www.sciencespace.com/news/new-planet-discovery"
     },
     {
-      "title": "Les baleines reviennent ! 🐋",
-      "summary": "De bonnes nouvelles pour les amoureux des animaux ! Une nouvelle étude montre que le nombre de baleines bleues dans l'océan Pacifique est en hausse. Cela est dû aux efforts de conservation pour protéger ces géants des mers, qui étaient autrefois en danger d'extinction. Les scientifiques surveillent attentivement leur retour pour s'assurer qu'ils continuent de se multiplier. Cela prouve que travailler ensemble pour préserver notre planète peut vraiment aider les espèces en difficulté.",
-      "date": "06/10/2023",
-      "link": ""
+      "title": "Les pandas géants, héros de l'environnement! 🐼",
+      "summary": "Bonne nouvelle pour les pandas géants: leur population augmente! Les efforts des scientifiques et des réserves naturelles pour protéger leur habitat portent leurs fruits. Ces animaux adorables vivent principalement en Chine et leur survie est importante pour l'équilibre de la nature. Préserver les pandas aide aussi d'autres animaux à prospérer. C'est un bel exemple de ce que nous pouvons accomplir pour la nature quand nous travaillons ensemble.",
+      "date": "28/10/2023",
+      "link": "https://www.animalplanet.com/news/panda-recovery-success"
     },
     {
-      "title": "Fête de la culture du monde ! 🌍",
-      "summary": "Un grand festival culturel international a lieu en ce moment, rassemblant des artistes du monde entier pour célébrer la diversité. Des musiciens, des danseurs, et des artistes plasticiens partagent leurs talents et traditions, offrant un spectacle riche en couleurs et en émotions. Ce type d'événement nous rappelle l'importance de la diversité culturelle et comment elle rend notre monde plus beau et intéressant. Découvrir de nouvelles cultures peut être amusant et nous aider à mieux comprendre notre monde.",
-      "date": "06/10/2023",
-      "link": ""
+      "title": "Un festival coloré en Inde! 🎨",
+      "summary": "En Inde, on célèbre Diwali, une fête connue comme le festival des lumières. Les gens décorent leurs maisons avec des lanternes et des bougies, échangent des cadeaux et mangent des douceurs. C'est un moment de joie et de partage. Diwali symbolise la victoire de la lumière sur l'obscurité, et beaucoup de gens profitent de cette occasion pour se retrouver en famille et avec des amis. Participer à de telles fêtes aide à mieux comprendre la diversité des cultures.",
+      "date": "28/10/2023",
+      "link": "https://www.festivalworld.com/diwali-celebration"
     }
   ]
 }
