@@ -189,10 +189,140 @@
             .stats-grid { grid-template-columns: 1fr; }
             .user-info h1 { font-size: 1.1em; }
         }
+
+        /* ── Modale Custom Reset ──────────────────────────────── */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            z-index: 9000;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .modal-box {
+            background: var(--bg-card);
+            border: 3px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 36px 40px;
+            max-width: 480px; width: 100%;
+            box-shadow: 0 0 0 6px rgba(231,76,60,0.15), 0 24px 48px rgba(0,0,0,0.6);
+            text-align: center; position: relative;
+            animation: modalIn 0.2s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .modal-box.step2 {
+            box-shadow: 0 0 0 6px rgba(231,76,60,0.3), 0 24px 48px rgba(0,0,0,0.6);
+        }
+        .modal-icon { font-size: 3.5em; margin-bottom: 16px; display: block; filter: drop-shadow(0 4px 8px rgba(231,76,60,0.5)); }
+        .modal-title {
+            font-family: 'Press Start 2P', monospace; font-size: 0.9em;
+            color: var(--accent-red); margin-bottom: 16px;
+            line-height: 1.5; text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+        }
+        .modal-title.orange { color: var(--accent-orange); }
+        .modal-body { font-size: 0.88em; color: var(--text-dim); line-height: 1.7; margin-bottom: 28px; }
+        .modal-list {
+            list-style: none; text-align: left;
+            margin: 12px 0 16px 0; padding: 14px 18px;
+            background: rgba(231,76,60,0.08); border-radius: 10px;
+            border: 1px solid rgba(231,76,60,0.3);
+        }
+        .modal-list li { padding: 5px 0; font-size: 0.85em; color: var(--text-light); }
+        .modal-list li::before { content: 'x  '; color: var(--accent-red); font-weight: bold; }
+        .modal-warning {
+            font-size: 0.8em; color: var(--accent-orange); font-weight: 700;
+            margin-top: 10px; padding: 8px 14px;
+            background: rgba(230,126,34,0.1); border-radius: 8px;
+            border: 1px solid rgba(230,126,34,0.3);
+        }
+        .modal-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .modal-btn {
+            font-family: 'Press Start 2P', monospace; font-size: 0.65em;
+            padding: 12px 22px; border: 3px solid #000; border-radius: 8px;
+            cursor: pointer; transition: all 0.2s ease;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.4); text-transform: uppercase; min-width: 120px;
+        }
+        .modal-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.4); }
+        .modal-btn:active { transform: translateY(1px); box-shadow: 0 2px 0 rgba(0,0,0,0.4); }
+        .modal-btn-cancel { background: var(--bg-section); color: var(--text-light); border-color: var(--border); }
+        .modal-btn-cancel:hover { background: var(--border); }
+        .modal-btn-confirm { background: var(--accent-red); color: white; border-color: #c0392b; }
+        .modal-btn-confirm:hover { background: #c0392b; }
+        .modal-btn-confirm2 {
+            background: linear-gradient(135deg, #c0392b, #922b21);
+            color: white; border-color: #7b241c;
+            animation: pulseRed 1.5s ease-in-out infinite;
+        }
+        @keyframes pulseRed {
+            0%,100% { box-shadow: 0 4px 0 rgba(0,0,0,0.4), 0 0 0 0 rgba(231,76,60,0); }
+            50%      { box-shadow: 0 4px 0 rgba(0,0,0,0.4), 0 0 0 8px rgba(231,76,60,0.2); }
+        }
+        .modal-step-indicator {
+            position: absolute; top: 14px; right: 18px;
+            font-size: 0.65em; color: var(--text-dim);
+            font-family: 'Press Start 2P', monospace;
+        }
+
     </style>
 </head>
 
 <body x-data="dashboardApp" x-cloak>
+
+    <!-- Modale confirmation reinitialisation -->
+    <div x-show="resetModal.open" x-cloak class="modal-overlay"
+         @keydown.escape.window="resetModal.open = false"
+         role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+        <!-- Etape 1 -->
+        <div x-show="resetModal.step === 1" class="modal-box" @click.stop>
+            <span class="modal-step-indicator">1 / 2</span>
+            <span class="modal-icon">🗑️</span>
+            <p class="modal-title" id="modal-title">REINITIALISER ?</p>
+            <div class="modal-body">
+                Cette action va <strong style="color:var(--accent-red)">supprimer definitivement</strong> toutes tes donnees :
+                <ul class="modal-list">
+                    <li>Tous les XP et niveaux</li>
+                    <li>Tous les badges debloques</li>
+                    <li>L'historique des quiz</li>
+                    <li>Les streaks et records</li>
+                    <li>L'historique de connexion</li>
+                </ul>
+                <div class="modal-warning">Action irreversible</div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-cancel" @click="resetModal.open = false">
+                    Annuler
+                </button>
+                <button class="modal-btn modal-btn-confirm" @click="resetModal.step = 2">
+                    Continuer
+                </button>
+            </div>
+        </div>
+
+        <!-- Etape 2 -->
+        <div x-show="resetModal.step === 2" class="modal-box step2" @click.stop>
+            <span class="modal-step-indicator">2 / 2</span>
+            <span class="modal-icon">💀</span>
+            <p class="modal-title orange">DERNIERE CHANCE</p>
+            <div class="modal-body">
+                Es-tu <strong style="color:var(--text-light)">absolument certain(e)</strong> ?<br><br>
+                Toutes tes donnees seront <strong style="color:var(--accent-red)">perdues pour toujours</strong>.
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-cancel" @click="resetModal.open = false; resetModal.step = 1">
+                    Non, garder
+                </button>
+                <button class="modal-btn modal-btn-confirm2" @click="confirmReset()">
+                    Tout effacer
+                </button>
+            </div>
+        </div>
+
+    </div>
+
     <div class="container">
         <div class="btn-container">
             <button class="btn btn-back" @click="goBack()">← RETOUR</button>
@@ -381,6 +511,7 @@
                 sectionsList: [],
                 quizStats: { totalCompleted: 0, perfectCount: 0, successRate: 0, subjectsCompleted: 0 },
                 recentActivity: [],
+                resetModal: { open: false, step: 1 },
 
                 init() {
                     this.loadAllData();
@@ -603,23 +734,27 @@
                 goToSection(link) { window.location.href = link; },
                 goBack() { window.location.href = 'index.html'; },
 
-                resetAllData() {
-                    if (!confirm('⚠️ ATTENTION !\n\nCette action va SUPPRIMER TOUTES tes données :\n\n• Tous les XP\n• Tous les badges\n• Toutes les statistiques\n• Tout l\'historique\n• Tous les streaks\n\nCette action est IRRÉVERSIBLE !\n\nEs-tu vraiment sûr(e) ?')) return;
-                    if (!confirm('🔴 DERNIÈRE CONFIRMATION\n\nTu es sur le point de perdre TOUTES tes données.\n\nContinuer ?')) return;
-                    try {
-                        localStorage.removeItem('lemondedescurieux_xp');
-                        localStorage.removeItem('lemondedescurieux_streaks');
-                        localStorage.removeItem('lemondedescurieux_badges');
-                        localStorage.removeItem('lemondedescurieux_quiz_stats');
-                        localStorage.removeItem('userBadges');
-                        localStorage.removeItem('curio_xp');
-                        localStorage.removeItem('xp_data');
-                        alert('✅ Toutes les données ont été supprimées !\n\nLe dashboard va se recharger.');
-                        window.location.reload();
-                    } catch (e) {
-                        alert('❌ Erreur lors de la réinitialisation : ' + e.message);
-                    }
-                },
+                                resetAllData() {
+                                    this.resetModal.step = 1;
+                                    this.resetModal.open = true;
+                                },
+
+                                confirmReset() {
+                                    this.resetModal.open = false;
+                                    this.resetModal.step = 1;
+                                    try {
+                                        localStorage.removeItem('lemondedescurieux_xp');
+                                        localStorage.removeItem('lemondedescurieux_streaks');
+                                        localStorage.removeItem('lemondedescurieux_badges');
+                                        localStorage.removeItem('lemondedescurieux_quiz_stats');
+                                        localStorage.removeItem('userBadges');
+                                        localStorage.removeItem('curio_xp');
+                                        localStorage.removeItem('xp_data');
+                                        window.location.reload();
+                                    } catch (e) {
+                                        console.error('Erreur reset :', e);
+                                    }
+                                },
 
                 exportPDF() {
                     const now = new Date();
