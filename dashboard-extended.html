@@ -8,6 +8,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Le Monde des Curieux">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -182,13 +190,6 @@
             .user-info h1 { font-size: 1.1em; }
         }
     </style>
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Le Monde des Curieux">
-    <link rel="apple-touch-icon" href="images/favicon.svg">
 </head>
 
 <body x-data="dashboardApp" x-cloak>
@@ -402,7 +403,6 @@
                         const xpData = JSON.parse(localStorage.getItem('lemondedescurieux_xp') || '{}');
                         const bySection = xpData.bySection || {};
 
-                        // ✅ Toutes les sections incluant géographie
                         this.totalXP = (
                             (bySection.francais      || 0) +
                             (bySection.anglais       || 0) +
@@ -477,7 +477,6 @@
 
                         this.badgesXP = bySection.badges || 0;
 
-                        // ✅ Géographie ajoutée
                         this.sectionsList = [
                             { id: 'francais',    name: 'Français',       emoji: '📚', link: 'francais_duolingo_section.html',  xp: bySection.francais   || 0 },
                             { id: 'anglais',     name: 'English',        emoji: '🇬🇧', link: 'english_duolingo_section.html',   xp: bySection.anglais    || 0 },
@@ -567,7 +566,6 @@
                     } catch(e) {}
                 },
 
-                // ✅ Géographie ajoutée
                 getSectionName(id) {
                     const names = {
                         francais:   'Français',
@@ -634,7 +632,6 @@
                     const badges = JSON.parse(localStorage.getItem('lemondedescurieux_badges') || '[]');
                     const visits = JSON.parse(localStorage.getItem('lemondedescurieux_visits') || '[]');
 
-                    // ✅ totalXP inclut géographie
                     const totalXP = (
                         (bySection.francais   || 0) + (bySection.anglais    || 0) +
                         (bySection.maths      || 0) + (bySection.sciences   || 0) +
@@ -656,7 +653,6 @@
                     const successRate = quizData.successRate || 0;
                     const totalDays = visits.length || 0;
 
-                    // ✅ Géographie ajoutée dans le tableau sections du PDF
                     const sections = [
                         { name: 'Francais',      emoji: 'FR', xp: bySection.francais   || 0 },
                         { name: 'Mathematiques', emoji: 'MA', xp: bySection.maths      || 0 },
@@ -745,18 +741,7 @@
                         '<div class="section-full"><h2>Progression par matiere</h2>' + subjectRows + '</div>',
                         '<div class="section-full"><h2>Badges</h2><ul class="badge-list">' + badgeItems + '</ul></div>',
                         '<div class="footer">Le Monde des Curieux - lemondedescurieux.fr - Donnees stockees localement, aucune collecte</div>',
-                        '
-    <!-- Service Worker PWA -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log('[PWA] SW enregistré :', reg.scope))
-                    .catch(err => console.warn('[PWA] SW échec :', err));
-            });
-        }
-    </script>
-</body></html>'
+                        '</body></html>'
                     ];
 
                     const html = lines.join('\n');
@@ -775,5 +760,16 @@
 
     <script src="scripts/badges-system.js"></script>
     <script src="scripts/admin-shortcut.js"></script>
+
+    <!-- Service Worker PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('[PWA] SW enregistré :', reg.scope))
+                    .catch(err => console.warn('[PWA] SW échec :', err));
+            });
+        }
+    </script>
 </body>
 </html>
