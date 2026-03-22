@@ -24,7 +24,6 @@
             color: #333;
         }
 
-        /* Header Navigation */
         .main-header {
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -83,7 +82,6 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -126,14 +124,12 @@
             margin-bottom: 10px;
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Section Enfants */
         .section {
             background: white;
             border-radius: 16px;
@@ -151,7 +147,6 @@
             text-shadow: 2px 2px 0 rgba(102, 126, 234, 0.2);
         }
 
-        /* Grille matières - Style Minecraft */
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -233,13 +228,17 @@
             z-index: 1;
         }
 
+        /* Carte Fractions — thème orange */
+        .fractions-card {
+            background: linear-gradient(135deg, #F57C00 0%, #E65100 100%);
+        }
+
         /* Carte spéciale Mindmap */
         .mindmap-card {
             background: linear-gradient(135deg, #27AE60 0%, #1E8449 100%);
             grid-column: span 2;
         }
 
-        /* Section Éducateurs */
         .educators-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border: 3px solid #667eea;
@@ -304,7 +303,6 @@
             box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
         }
 
-        /* Section À Propos */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -327,7 +325,6 @@
             line-height: 1.8;
         }
 
-        /* Footer */
         .main-footer {
             background: rgba(255, 255, 255, 0.95);
             padding: 30px 20px;
@@ -359,49 +356,17 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .logo {
-                font-size: 0.9em;
-            }
-
-            .hero h1 {
-                font-size: 1.5em;
-            }
-
-            .hero .subtitle {
-                font-size: 1em;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .section {
-                padding: 20px;
-            }
-
-            .subjects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mindmap-card {
-                grid-column: span 1;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                font-size: 5em;
-            }
-
-            .nav-links {
-                width: 100%;
-                justify-content: center;
-                margin-top: 10px;
-            }
+            .logo { font-size: 0.9em; }
+            .hero h1 { font-size: 1.5em; }
+            .hero .subtitle { font-size: 1em; }
+            .hero-stats { gap: 20px; }
+            .section { padding: 20px; }
+            .subjects-grid { grid-template-columns: 1fr; }
+            .mindmap-card { grid-column: span 1; }
+            .about-content { grid-template-columns: 1fr; }
+            .about-image { font-size: 5em; }
+            .nav-links { width: 100%; justify-content: center; margin-top: 10px; }
         }
     </style>
 </head>
@@ -430,15 +395,15 @@
         <p class="subtitle">Plateforme éducative gratuite pour CM2</p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">518</span>
+                <span class="stat-number">628</span>
                 <span>Questions</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">47</span>
+                <span class="stat-number">63</span>
                 <span>Leçons</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">6</span>
+                <span class="stat-number">7</span>
                 <span>Matières</span>
             </div>
             <div class="stat-item">
@@ -466,6 +431,13 @@
                     <span class="subject-emoji">🔢</span>
                     <div class="subject-name">Mathématiques</div>
                     <div class="subject-desc">Calcul, Géométrie, Problèmes</div>
+                </a>
+
+                <!-- Fractions -->
+                <a href="maths_fractions_comprendre.html" class="subject-card fractions-card">
+                    <span class="subject-emoji">🍕</span>
+                    <div class="subject-name">Fractions</div>
+                    <div class="subject-desc">Comprendre, comparer, calculer</div>
                 </a>
 
                 <!-- Anglais -->
