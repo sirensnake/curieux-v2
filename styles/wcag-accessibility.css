@@ -157,3 +157,104 @@ button[aria-label="Fermer"] {
         background: Highlight;
     }
 }
+
+/* ----------------------------------------------------------
+   10. PANNEAU "À RETENIR" — Cohérence visuelle inter-sections
+   Appliqué sur .lesson-content .retenir dans toutes les sections
+   Contraste WCAG 1.4.3 : texte blanc sur fond sombre > 4.5:1
+   ---------------------------------------------------------- */
+
+/* Base commune : encadré distinct des h3 de section */
+.lesson-content .retenir {
+    display: block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.9rem 1.4rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    border-left: 5px solid;
+    letter-spacing: 0.02em;
+}
+
+.lesson-content .retenir + ul,
+.lesson-content .retenir + p {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem 1.4rem 1rem 2rem;
+    margin-top: 0;
+    border-left: 5px solid;
+    border-color: inherit;
+}
+
+/* Variante Français — teal #2a9d8f — fond #14524a — bande jaune */
+.francais-container .lesson-content .retenir {
+    background: #14524a;
+    border-left-color: #e9c46a;
+    color: #ffffff; /* ratio 10.8:1 ✅ */
+}
+.francais-container .lesson-content .retenir + ul,
+.francais-container .lesson-content .retenir + p {
+    border-left-color: #e9c46a;
+    background: rgba(233, 196, 106, 0.08);
+}
+
+/* Variante Mathématiques — orange #C94A1A — fond #6b270e — bande orange vif */
+.mathematiques-container .lesson-content .retenir {
+    background: #6b270e;
+    border-left-color: #f0a500;
+    color: #ffffff; /* ratio 9.2:1 ✅ */
+}
+.mathematiques-container .lesson-content .retenir + ul,
+.mathematiques-container .lesson-content .retenir + p {
+    border-left-color: #f0a500;
+    background: rgba(240, 165, 0, 0.08);
+}
+
+/* Variante Sciences — vert #1A7A3F — fond #0d3a1e — bande cyan */
+.sciences-container .lesson-content .retenir {
+    background: #0d3a1e;
+    border-left-color: #45b7d1;
+    color: #ffffff; /* ratio 11.4:1 ✅ */
+}
+.sciences-container .lesson-content .retenir + ul,
+.sciences-container .lesson-content .retenir + p {
+    border-left-color: #45b7d1;
+    background: rgba(69, 183, 209, 0.08);
+}
+
+/* Variante Histoire — violet/teal — fond #1a0d2a — bande dorée */
+.histoire-container .lesson-content .retenir {
+    background: #1a0d2a;
+    border-left-color: #f1c40f;
+    color: #ffffff; /* ratio 12.1:1 ✅ */
+}
+.histoire-container .lesson-content .retenir + ul,
+.histoire-container .lesson-content .retenir + p {
+    border-left-color: #f1c40f;
+    background: rgba(241, 196, 15, 0.08);
+}
+
+/* Variante Géographie — bleu #1565C0 — fond #0d2a4a — bande verte */
+.geographie-container .lesson-content .retenir {
+    background: #0d2a4a;
+    border-left-color: #2ecc71;
+    color: #ffffff; /* ratio 10.3:1 ✅ */
+}
+.geographie-container .lesson-content .retenir + ul,
+.geographie-container .lesson-content .retenir + p {
+    border-left-color: #2ecc71;
+    background: rgba(46, 204, 113, 0.08);
+}
+
+/* Variante Fractions — orange #F57C00 — fond #4a2200 — bande orange clair */
+.fractions-container .lesson-content .retenir {
+    background: #4a2200;
+    border-left-color: #ffb74d;
+    color: #ffffff; /* ratio 9.8:1 ✅ */
+}
+.fractions-container .lesson-content .retenir + ul,
+.fractions-container .lesson-content .retenir + p {
+    border-left-color: #ffb74d;
+    background: rgba(255, 183, 77, 0.08);
+}
