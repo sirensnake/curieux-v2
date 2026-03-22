@@ -25,7 +25,7 @@
         <p class="curio-message" x-text="currentMessage"></p>
     </div>
 
-    <div class="geographie-container" id="main-content">
+    <main class="geographie-container" id="main-content">
 
         <!-- Header -->
         <div class="section-header">
@@ -43,15 +43,15 @@
         <!-- Navigation thèmes -->
         <nav class="themes-nav" role="navigation" aria-label="Thèmes de géographie">
             <button @click="selectTheme('france')"
-                :class="'theme-btn theme-france' + (currentTheme === 'france' ? ' active' : '')">
+                :class="'theme-btn theme-france' + (currentTheme === 'france' ? ' active' : '')" :aria-pressed="currentTheme === 'france'">
                 🇫🇷 La France
             </button>
             <button @click="selectTheme('europe')"
-                :class="'theme-btn theme-europe' + (currentTheme === 'europe' ? ' active' : '')">
+                :class="'theme-btn theme-europe' + (currentTheme === 'europe' ? ' active' : '')" :aria-pressed="currentTheme === 'europe'">
                 🇪🇺 L'Europe
             </button>
             <button @click="selectTheme('deplacements')"
-                :class="'theme-btn theme-deplacements' + (currentTheme === 'deplacements' ? ' active' : '')">
+                :class="'theme-btn theme-deplacements' + (currentTheme === 'deplacements' ? ' active' : '')" :aria-pressed="currentTheme === 'deplacements'">
                 🚆 Déplacements & Mobilités
             </button>
         </nav>
@@ -212,7 +212,7 @@
                 </div>
             </div>
 
-        </div>
+        </main>
 
         <!-- QUIZ -->
         <div x-show="showQuiz" x-transition class="quiz-container">
@@ -223,7 +223,7 @@
                         <span x-text="getCurrentQuiz().length"></span>
                     </p>
                     <div class="progress-bar" role="progressbar"
-                        :aria-valuenow="currentQuestion + 1"
+                        :aria-valuenow="getCurrentQuiz().length ? Math.round((currentQuestion + 1) / getCurrentQuiz().length * 100) : 0"
                         :aria-valuemax="getCurrentQuiz().length"
                         aria-valuemin="0"
                         aria-label="Progression du quiz">

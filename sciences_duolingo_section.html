@@ -23,7 +23,7 @@
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="sciences-container" id="main-content">
+        <main class="sciences-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <!-- FIX NAV : window.location.href à la place de history.back() -->
@@ -41,23 +41,23 @@
             <!-- Navigation domaines -->
             <div class="domains-nav" role="navigation" aria-label="Domaines scientifiques">
                 <button @click="selectDomain('terre')"
-                    :class="'domain-btn terre' + (currentDomain === 'terre' ? ' active' : '')">
+                    :class="'domain-btn terre' + (currentDomain === 'terre' ? ' active' : '')" :aria-pressed="currentDomain === 'terre'">
                     🌍 Sciences de la Terre
                 </button>
                 <button @click="selectDomain('vivant')"
-                    :class="'domain-btn vivant' + (currentDomain === 'vivant' ? ' active' : '')">
+                    :class="'domain-btn vivant' + (currentDomain === 'vivant' ? ' active' : '')" :aria-pressed="currentDomain === 'vivant'">
                     🌱 Le Vivant
                 </button>
                 <button @click="selectDomain('matiere')"
-                    :class="'domain-btn matiere' + (currentDomain === 'matiere' ? ' active' : '')">
+                    :class="'domain-btn matiere' + (currentDomain === 'matiere' ? ' active' : '')" :aria-pressed="currentDomain === 'matiere'">
                     ⚗️ Matière & Énergie
                 </button>
                 <button @click="selectDomain('technologie')"
-                    :class="'domain-btn technologie' + (currentDomain === 'technologie' ? ' active' : '')">
+                    :class="'domain-btn technologie' + (currentDomain === 'technologie' ? ' active' : '')" :aria-pressed="currentDomain === 'technologie'">
                     ⚙️ Technologie
                 </button>
                 <button @click="selectDomain('environnement')"
-                    :class="'domain-btn environnement' + (currentDomain === 'environnement' ? ' active' : '')">
+                    :class="'domain-btn environnement' + (currentDomain === 'environnement' ? ' active' : '')" :aria-pressed="currentDomain === 'environnement'">
                     🌿 Développement Durable
                 </button>
             </div>
@@ -158,17 +158,17 @@
                             <p class="score-message" x-text="getScoreMessage()"></p>
                         </div>
                         <div class="results-actions">
-                            <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                            <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
                                 🔄 Refaire le Quiz
                             </button>
-                            <button @click="backToDomain()" class="action-btn btn-info" aria-label="En savoir plus">
+                            <button @click="backToDomain()" class="action-btn btn-info" aria-label="Retour au domaine">
                                 ← Retour au Domaine
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- Données leçons -->
         <script src="scripts/data/sciences-lessons.js"></script>

@@ -25,7 +25,7 @@
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="english-container" id="main-content">
+        <main class="english-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <!-- FIX NAV : window.location.href à la place de history.back() -->
@@ -41,45 +41,45 @@
             </div>
 
             <!-- Navigation thèmes -->
-            <div class="themes-nav">
+            <div class="themes-nav" role="navigation" aria-label="Thèmes disponibles">
                 <button @click="selectTheme('vocabulary')"
-                    :class="'theme-btn vocabulary' + (currentTheme === 'vocabulary' ? ' active' : '')">
+                    :class="'theme-btn vocabulary' + (currentTheme === 'vocabulary' ? ' active' : '')" :aria-pressed="currentTheme === 'vocabulary'">
                     📚 Basic Vocabulary
                 </button>
                 <button @click="selectTheme('phrases')"
-                    :class="'theme-btn phrases' + (currentTheme === 'phrases' ? ' active' : '')">
+                    :class="'theme-btn phrases' + (currentTheme === 'phrases' ? ' active' : '')" :aria-pressed="currentTheme === 'phrases'">
                     💬 Everyday Phrases
                 </button>
                 <button @click="selectTheme('grammar')"
-                    :class="'theme-btn grammar' + (currentTheme === 'grammar' ? ' active' : '')">
+                    :class="'theme-btn grammar' + (currentTheme === 'grammar' ? ' active' : '')" :aria-pressed="currentTheme === 'grammar'">
                     📖 Grammar Basics
                 </button>
                 <button @click="selectTheme('numbers')"
-                    :class="'theme-btn numbers' + (currentTheme === 'numbers' ? ' active' : '')">
+                    :class="'theme-btn numbers' + (currentTheme === 'numbers' ? ' active' : '')" :aria-pressed="currentTheme === 'numbers'">
                     🔢 Numbers & Time
                 </button>
                 <button @click="selectTheme('school')"
-                    :class="'theme-btn school' + (currentTheme === 'school' ? ' active' : '')">
+                    :class="'theme-btn school' + (currentTheme === 'school' ? ' active' : '')" :aria-pressed="currentTheme === 'school'">
                     🏫 At School
                 </button>
                 <button @click="selectTheme('body')"
-                    :class="'theme-btn body' + (currentTheme === 'body' ? ' active' : '')">
+                    :class="'theme-btn body' + (currentTheme === 'body' ? ' active' : '')" :aria-pressed="currentTheme === 'body'">
                     🧍 My Body & Health
                 </button>
                 <button @click="selectTheme('home')"
-                    :class="'theme-btn home' + (currentTheme === 'home' ? ' active' : '')">
+                    :class="'theme-btn home' + (currentTheme === 'home' ? ' active' : '')" :aria-pressed="currentTheme === 'home'">
                     🏠 At Home
                 </button>
                 <button @click="selectTheme('hobbies')"
-                    :class="'theme-btn hobbies' + (currentTheme === 'hobbies' ? ' active' : '')">
+                    :class="'theme-btn hobbies' + (currentTheme === 'hobbies' ? ' active' : '')" :aria-pressed="currentTheme === 'hobbies'">
                     ⚽ Hobbies & Sports
                 </button>
                 <button @click="selectTheme('food')"
-                    :class="'theme-btn food' + (currentTheme === 'food' ? ' active' : '')">
+                    :class="'theme-btn food' + (currentTheme === 'food' ? ' active' : '')" :aria-pressed="currentTheme === 'food'">
                     🍽️ Food & Meals
                 </button>
                 <button @click="selectTheme('weather')"
-                    :class="'theme-btn weather' + (currentTheme === 'weather' ? ' active' : '')">
+                    :class="'theme-btn weather' + (currentTheme === 'weather' ? ' active' : '')" :aria-pressed="currentTheme === 'weather'">
                     ☀️ Weather & Seasons
                 </button>
             </div>
@@ -124,7 +124,7 @@
                     <img :src="getImageUrl()" :alt="'Illustration ' + getThemeName()" class="theme-illustration" loading="lazy">
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- QUIZ -->
         <div x-show="showQuiz" x-transition class="quiz-container">
@@ -181,10 +181,10 @@
                         <p class="score-message" x-text="getScoreMessage()"></p>
                     </div>
                     <div class="results-actions">
-                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
                             🔄 Recommencer
                         </button>
-                        <button @click="backToTheme()" class="action-btn btn-info" aria-label="En savoir plus">
+                        <button @click="backToTheme()" class="action-btn btn-info" aria-label="Retour au thème">
                             ← Retour au thème
                         </button>
                     </div>

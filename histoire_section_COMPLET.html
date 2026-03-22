@@ -24,7 +24,7 @@
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="histoire-container" id="main-content">
+        <main class="histoire-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <button onclick="window.location.href='index.html'" class="back-btn">
@@ -41,23 +41,23 @@
             <!-- Navigation périodes -->
             <div class="periods-nav" role="navigation" aria-label="Périodes historiques">
                 <button @click="selectPeriod('prehistoire')"
-                    :class="'period-btn prehistoire' + (currentPeriod === 'prehistoire' ? ' active' : '')">
+                    :class="'period-btn prehistoire' + (currentPeriod === 'prehistoire' ? ' active' : '')" :aria-pressed="currentPeriod === 'prehistoire'">
                     🦴 Préhistoire
                 </button>
                 <button @click="selectPeriod('antiquite')"
-                    :class="'period-btn antiquite' + (currentPeriod === 'antiquite' ? ' active' : '')">
+                    :class="'period-btn antiquite' + (currentPeriod === 'antiquite' ? ' active' : '')" :aria-pressed="currentPeriod === 'antiquite'">
                     🏛️ Antiquité
                 </button>
                 <button @click="selectPeriod('moyenage')"
-                    :class="'period-btn moyenage' + (currentPeriod === 'moyenage' ? ' active' : '')">
+                    :class="'period-btn moyenage' + (currentPeriod === 'moyenage' ? ' active' : '')" :aria-pressed="currentPeriod === 'moyenage'">
                     🏰 Moyen Âge
                 </button>
                 <button @click="selectPeriod('tempsmodernes')"
-                    :class="'period-btn tempsmodernes' + (currentPeriod === 'tempsmodernes' ? ' active' : '')">
+                    :class="'period-btn tempsmodernes' + (currentPeriod === 'tempsmodernes' ? ' active' : '')" :aria-pressed="currentPeriod === 'tempsmodernes'">
                     ⛵ Temps Modernes
                 </button>
                 <button @click="selectPeriod('epoquecontemporaine')"
-                    :class="'period-btn epoquecontemporaine' + (currentPeriod === 'epoquecontemporaine' ? ' active' : '')">
+                    :class="'period-btn epoquecontemporaine' + (currentPeriod === 'epoquecontemporaine' ? ' active' : '')" :aria-pressed="currentPeriod === 'epoquecontemporaine'">
                     🏭 Époque Contemporaine
                 </button>
             </div>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- QUIZ -->
         <div x-show="showQuiz" x-transition class="quiz-container">

@@ -26,7 +26,7 @@
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="mathematiques-container" id="main-content">
+        <main class="mathematiques-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <button onclick="window.location.href='index.html'" class="back-btn">
@@ -43,47 +43,47 @@
             <!-- Navigation domaines -->
             <div class="domains-nav" role="navigation" aria-label="Domaines mathématiques">
                 <button @click="selectDomain('numeration')"
-                    :class="'domain-btn numeration' + (currentDomain === 'numeration' ? ' active' : '')">
+                    :class="'domain-btn numeration' + (currentDomain === 'numeration' ? ' active' : '')" :aria-pressed="currentDomain === 'numeration'">
                     🔢 Numération
                 </button>
                 <button @click="selectDomain('calcul')"
-                    :class="'domain-btn calcul' + (currentDomain === 'calcul' ? ' active' : '')">
+                    :class="'domain-btn calcul' + (currentDomain === 'calcul' ? ' active' : '')" :aria-pressed="currentDomain === 'calcul'">
                     ➕ Calcul
                 </button>
                 <button @click="selectDomain('geometrie')"
-                    :class="'domain-btn geometrie' + (currentDomain === 'geometrie' ? ' active' : '')">
+                    :class="'domain-btn geometrie' + (currentDomain === 'geometrie' ? ' active' : '')" :aria-pressed="currentDomain === 'geometrie'">
                     📐 Géométrie
                 </button>
                 <button @click="selectDomain('mesures')"
-                    :class="'domain-btn mesures' + (currentDomain === 'mesures' ? ' active' : '')">
+                    :class="'domain-btn mesures' + (currentDomain === 'mesures' ? ' active' : '')" :aria-pressed="currentDomain === 'mesures'">
                     📊 Mesures
                 </button>
                 <button @click="selectDomain('problemes')"
-                    :class="'domain-btn problemes' + (currentDomain === 'problemes' ? ' active' : '')">
+                    :class="'domain-btn problemes' + (currentDomain === 'problemes' ? ' active' : '')" :aria-pressed="currentDomain === 'problemes'">
                     🎲 Problèmes
                 </button>
                 <button @click="selectDomain('solides')"
-                    :class="'domain-btn solides' + (currentDomain === 'solides' ? ' active' : '')">
+                    :class="'domain-btn solides' + (currentDomain === 'solides' ? ' active' : '')" :aria-pressed="currentDomain === 'solides'">
                     📦 Solides
                 </button>
                 <button @click="selectDomain('proportionnalite')"
-                    :class="'domain-btn proportionnalite' + (currentDomain === 'proportionnalite' ? ' active' : '')">
+                    :class="'domain-btn proportionnalite' + (currentDomain === 'proportionnalite' ? ' active' : '')" :aria-pressed="currentDomain === 'proportionnalite'">
                     🔄 Proportionnalité
                 </button>
                 <button @click="selectDomain('donnees')"
-                    :class="'domain-btn donnees' + (currentDomain === 'donnees' ? ' active' : '')">
+                    :class="'domain-btn donnees' + (currentDomain === 'donnees' ? ' active' : '')" :aria-pressed="currentDomain === 'donnees'">
                     📊 Données
                 </button>
                 <button @click="selectDomain('calcul_litteral')"
-                    :class="'domain-btn calcul_litteral' + (currentDomain === 'calcul_litteral' ? ' active' : '')">
+                    :class="'domain-btn calcul_litteral' + (currentDomain === 'calcul_litteral' ? ' active' : '')" :aria-pressed="currentDomain === 'calcul_litteral'">
                     ⚡ Calcul littéral
                 </button>
                 <button @click="selectDomain('problemes_complexes')"
-                    :class="'domain-btn problemes_complexes' + (currentDomain === 'problemes_complexes' ? ' active' : '')">
+                    :class="'domain-btn problemes_complexes' + (currentDomain === 'problemes_complexes' ? ' active' : '')" :aria-pressed="currentDomain === 'problemes_complexes'">
                     🎯 Problèmes complexes
                 </button>
                 <button @click="selectDomain('fractions')"
-                    :class="'domain-btn fractions' + (currentDomain === 'fractions' ? ' active' : '')">
+                    :class="'domain-btn fractions' + (currentDomain === 'fractions' ? ' active' : '')" :aria-pressed="currentDomain === 'fractions'">
                     🍕 Fractions
                 </button>
             </div>
@@ -136,7 +136,7 @@
                     <img :src="getImageUrl()" :alt="'Illustration ' + getDomainName()" class="domain-illustration" loading="lazy">
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- QUIZ -->
         <div x-show="showQuiz" x-transition class="quiz-container">

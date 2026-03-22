@@ -27,7 +27,7 @@
     <p class="curio-message" x-text="currentMessage"></p>
 </div>
 
-<div class="fractions-container" id="main-content">
+<main class="fractions-container" id="main-content">
 
     <!-- Header -->
     <div class="section-header">
@@ -48,27 +48,27 @@
     <!-- Navigation chapitres -->
     <nav class="chapters-nav" role="navigation" aria-label="Chapitres fractions">
         <button @click="selectChapter('intro')"
-            :class="'chapter-btn' + (currentChapter === 'intro' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'intro' ? ' active' : '')" :aria-pressed="currentChapter === 'intro'">
             📖 C'est quoi ?
         </button>
         <button @click="selectChapter('usuelles')"
-            :class="'chapter-btn' + (currentChapter === 'usuelles' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'usuelles' ? ' active' : '')" :aria-pressed="currentChapter === 'usuelles'">
             📏 Fractions usuelles
         </button>
         <button @click="selectChapter('comparer')"
-            :class="'chapter-btn' + (currentChapter === 'comparer' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'comparer' ? ' active' : '')" :aria-pressed="currentChapter === 'comparer'">
             ⚖️ Comparer
         </button>
         <button @click="selectChapter('additionner')"
-            :class="'chapter-btn' + (currentChapter === 'additionner' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'additionner' ? ' active' : '')" :aria-pressed="currentChapter === 'additionner'">
             ➕ Additionner
         </button>
         <button @click="selectChapter('decimaux')"
-            :class="'chapter-btn' + (currentChapter === 'decimaux' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'decimaux' ? ' active' : '')" :aria-pressed="currentChapter === 'decimaux'">
             🔢 Décimaux
         </button>
         <button @click="selectChapter('simplifier')"
-            :class="'chapter-btn' + (currentChapter === 'simplifier' ? ' active' : '')">
+            :class="'chapter-btn' + (currentChapter === 'simplifier' ? ' active' : '')" :aria-pressed="currentChapter === 'simplifier'">
             ✂️ Simplifier
         </button>
     </nav>
@@ -103,7 +103,7 @@
             </p>
         </div>
     </div>
-</div>
+</main>
 
 <!-- QUIZ COMPLET (20 questions) -->
 <div x-show="showQuiz" x-transition class="quiz-container quiz-standalone">

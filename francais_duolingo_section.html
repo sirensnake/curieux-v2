@@ -28,7 +28,7 @@
             <p class="curio-message" x-text="currentMessage"></p>
         </div>
 
-        <div class="francais-container" id="main-content">
+        <main class="francais-container" id="main-content">
             <!-- Header avec bouton retour -->
             <div class="section-header">
                 <!-- FIX NAV : window.location.href à la place de history.back() -->
@@ -44,45 +44,45 @@
             </div>
 
             <!-- Navigation thèmes -->
-            <div class="themes-nav">
+            <div class="themes-nav" role="navigation" aria-label="Thèmes de français">
                 <button @click="selectTheme('grammaire')"
-                    :class="'theme-btn grammaire' + (currentTheme === 'grammaire' ? ' active' : '')">
+                    :class="'theme-btn grammaire' + (currentTheme === 'grammaire' ? ' active' : '')" :aria-pressed="currentTheme === 'grammaire'">
                     📚 Grammaire
                 </button>
                 <button @click="selectTheme('conjugaison')"
-                    :class="'theme-btn conjugaison' + (currentTheme === 'conjugaison' ? ' active' : '')">
+                    :class="'theme-btn conjugaison' + (currentTheme === 'conjugaison' ? ' active' : '')" :aria-pressed="currentTheme === 'conjugaison'">
                     🔄 Conjugaison
                 </button>
                 <button @click="selectTheme('vocabulaire')"
-                    :class="'theme-btn vocabulaire' + (currentTheme === 'vocabulaire' ? ' active' : '')">
+                    :class="'theme-btn vocabulaire' + (currentTheme === 'vocabulaire' ? ' active' : '')" :aria-pressed="currentTheme === 'vocabulaire'">
                     📖 Vocabulaire
                 </button>
                 <button @click="selectTheme('orthographe')"
-                    :class="'theme-btn orthographe' + (currentTheme === 'orthographe' ? ' active' : '')">
+                    :class="'theme-btn orthographe' + (currentTheme === 'orthographe' ? ' active' : '')" :aria-pressed="currentTheme === 'orthographe'">
                     ✍️ Orthographe
                 </button>
                 <button @click="selectTheme('ponctuation')"
-                    :class="'theme-btn ponctuation' + (currentTheme === 'ponctuation' ? ' active' : '')">
+                    :class="'theme-btn ponctuation' + (currentTheme === 'ponctuation' ? ' active' : '')" :aria-pressed="currentTheme === 'ponctuation'">
                     🔣 Ponctuation
                 </button>
                 <button @click="selectTheme('typesphrases')"
-                    :class="'theme-btn typesphrases' + (currentTheme === 'typesphrases' ? ' active' : '')">
+                    :class="'theme-btn typesphrases' + (currentTheme === 'typesphrases' ? ' active' : '')" :aria-pressed="currentTheme === 'typesphrases'">
                     💬 Types de Phrases
                 </button>
                 <button @click="selectTheme('classesmots')"
-                    :class="'theme-btn classesmots' + (currentTheme === 'classesmots' ? ' active' : '')">
+                    :class="'theme-btn classesmots' + (currentTheme === 'classesmots' ? ' active' : '')" :aria-pressed="currentTheme === 'classesmots'">
                     🏷️ Classes de Mots
                 </button>
                 <button @click="selectTheme('lecture')"
-                    :class="'theme-btn lecture' + (currentTheme === 'lecture' ? ' active' : '')">
+                    :class="'theme-btn lecture' + (currentTheme === 'lecture' ? ' active' : '')" :aria-pressed="currentTheme === 'lecture'">
                     📖 Lecture
                 </button>
                 <button @click="selectTheme('production')"
-                    :class="'theme-btn production' + (currentTheme === 'production' ? ' active' : '')">
+                    :class="'theme-btn production' + (currentTheme === 'production' ? ' active' : '')" :aria-pressed="currentTheme === 'production'">
                     ✍️ Production
                 </button>
                 <button @click="selectTheme('poesie')"
-                    :class="'theme-btn poesie' + (currentTheme === 'poesie' ? ' active' : '')">
+                    :class="'theme-btn poesie' + (currentTheme === 'poesie' ? ' active' : '')" :aria-pressed="currentTheme === 'poesie'">
                     🎭 Poésie
                 </button>
             </div>
@@ -127,7 +127,7 @@
                     <img :src="getImageUrl()" :alt="'Illustration ' + getThemeName()" class="theme-illustration" loading="lazy">
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- QUIZ -->
         <div x-show="showQuiz" x-transition class="quiz-container">
@@ -185,10 +185,10 @@
                         <p class="score-message" x-text="getScoreMessage()"></p>
                     </div>
                     <div class="results-actions">
-                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
                             🔄 Recommencer
                         </button>
-                        <button @click="backToTheme()" class="action-btn btn-info" aria-label="En savoir plus">
+                        <button @click="backToTheme()" class="action-btn btn-info" aria-label="Retour au thème">
                             ← Retour au thème
                         </button>
                     </div>
