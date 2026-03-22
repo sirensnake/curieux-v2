@@ -100,7 +100,7 @@
                         <button @click="showIllustration = false" class="close-btn" aria-label="Fermer">✖ Fermer</button>
                     </div>
                     <img :src="getImageUrl()" alt="Illustration Sciences" class="domain-illustration"
-                        @error="handleImageError($event)">
+                        @error="handleImageError($event)" loading="lazy">
                 </div>
 
                 <!-- Zone Quiz -->
