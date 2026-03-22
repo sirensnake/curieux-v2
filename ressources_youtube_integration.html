@@ -732,6 +732,13 @@
             }
         }
     </style>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Le Monde des Curieux">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
 </head>
 <body>
     <header class="section-header-styled">
@@ -1068,6 +1075,17 @@
             }
             observer.observe(card);
         });
+    </script>
+
+    <!-- Service Worker PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('[PWA] SW enregistré :', reg.scope))
+                    .catch(err => console.warn('[PWA] SW échec :', err));
+            });
+        }
     </script>
 </body>
 </html>
