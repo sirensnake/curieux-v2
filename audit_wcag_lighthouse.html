@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit WCAG — Le Monde des Curieux</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0f1e;
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        h1 {
+            font-family: 'Courier New', monospace;
+            color: #ffd700;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 0.95em;
+            color: #aaa;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .file-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .file-btn {
+            background: #1a2040;
+            border: 2px solid #334;
+            color: #ccc;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82em;
+            transition: all 0.2s;
+        }
+        .file-btn:hover { border-color: #ffd700; color: #ffd700; }
+        .file-btn.active { border-color: #ffd700; color: #ffd700; background: #1e2a10; }
+        #drop-zone {
+            border: 2px dashed #444;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+        #drop-zone:hover, #drop-zone.dragover { border-color: #ffd700; color: #ffd700; }
+        #file-input { display: none; }
+        .audit-panel { display: none; }
+        .audit-panel.active { display: block; }
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .check-item {
+            background: #111828;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border-left: 4px solid #334;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .check-item.pass { border-left-color: #2ecc71; }
+        .check-item.fail { border-left-color: #e74c3c; }
+        .check-item.warn { border-left-color: #f39c12; }
+        .check-item.info { border-left-color: #3498db; }
+        .check-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88em;
+            font-weight: bold;
+        }
+        .status-badge {
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .pass .status-badge { background: #1a4a2a; color: #2ecc71; }
+        .fail .status-badge { background: #4a1a1a; color: #e74c3c; }
+        .warn .status-badge { background: #4a3a0a; color: #f39c12; }
+        .info .status-badge { background: #1a2a4a; color: #3498db; }
+        .check-detail {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 4px;
+        }
+        .check-detail code {
+            background: #0d1520;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #7ec8e3;
+            font-size: 0.9em;
+        }
+        .fix-hint {
+            font-size: 0.78em;
+            color: #f39c12;
+            background: #1a1500;
+            border-radius: 4px;
+            padding: 6px 10px;
+            margin-top: 4px;
+            border-left: 3px solid #f39c12;
+        }
+        .score-summary {
+            background: #111828;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .score-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            font-weight: bold;
+            border: 4px solid;
+        }
+        .score-circle.green { border-color: #2ecc71; color: #2ecc71; }
+        .score-circle.orange { border-color: #f39c12; color: #f39c12; }
+        .score-circle.red { border-color: #e74c3c; color: #e74c3c; }
+        .score-stats { display: flex; flex-direction: column; gap: 6px; }
+        .stat-line { font-size: 0.85em; color: #999; }
+        .stat-line span { font-weight: bold; color: #eee; }
+        #loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .filename-display {
+            font-size: 0.8em;
+            color: #777;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        .section-label {
+            display: inline-block;
+            background: #1a2040;
+            color: #7ec8e3;
+            font-size: 0.72em;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        .no-file {
+            text-align: center;
+            padding: 60px 20px;
+            color: #444;
+        }
+        .no-file span { font-size: 3em; display: block; margin-bottom: 10px; }
+        button.run-btn {
+            background: #1e3a1e;
+            border: 2px solid #2ecc71;
+            color: #2ecc71;
+            padding: 10px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.2s;
+        }
+        button.run-btn:hover { background: #2ecc71; color: #0a0f1e; }
+    </style>
+</head>
+<body>
+
+<h1>🔍 Audit WCAG Lighthouse — Le Monde des Curieux</h1>
+
+<p style="color:#888; font-size:0.85em; margin-bottom:20px;">
+    Glisse un fichier HTML ou clique pour charger. Analyse locale, aucune donnée envoyée.
+</p>
+
+<!-- Zone de drop / sélection fichier -->
+<div id="drop-zone" onclick="document.getElementById('file-input').click()">
+    <span style="font-size:2em">📂</span><br>
+    Glisse un fichier HTML ici ou clique pour en choisir un<br>
+    <small>(francais_duolingo_section.html, mathematiques_section.html, english_duolingo_section.html, etc.)</small>
+</div>
+<input type="file" id="file-input" accept=".html">
+
+<div id="loading" style="display:none">⏳ Analyse en cours...</div>
+<div id="no-file" class="no-file">
+    <span>🔍</span>
+    Charge un fichier HTML pour lancer l'audit
+</div>
+<div id="results" style="display:none"></div>
+
+<script>
+// ─── RÈGLES D'AUDIT ───────────────────────────────────────────
+const AUDIT_RULES = [
+    {
+        id: 'html-lang',
+        label: 'Attribut lang sur <html>',
+        wcag: '3.1.1 (A)',
+        lighthouse: 'html-has-lang',
+        check(dom, filename) {
+            const html = dom.querySelector('html');
+            const lang = html?.getAttribute('lang');
+            if (!lang) return { status: 'fail', detail: 'Attribut lang absent sur <html>', fix: 'Ajouter lang="fr" sur <html lang="fr">' };
+            if (filename.includes('english') && lang === 'fr') return { status: 'warn', detail: `lang="${lang}" — page en anglais mais lang=fr`, fix: 'Conserver lang="fr" pour l\'interface, ajouter lang="en" sur les éléments de contenu anglais (ex: questions)' };
+            return { status: 'pass', detail: `lang="${lang}" présent` };
+        }
+    },
+    {
+        id: 'skip-link',
+        label: 'Skip link "Aller au contenu"',
+        wcag: '2.4.1 (A)',
+        lighthouse: 'bypass',
+        check(dom) {
+            const skip = dom.querySelector('.skip-link, a[href^="#main"], a[href="#contenu"]');
+            if (!skip) return { status: 'fail', detail: 'Aucun skip link trouvé', fix: 'Ajouter <a class="skip-link" href="#main-content">Aller au contenu principal</a> comme premier enfant de <body>' };
+            const href = skip.getAttribute('href');
+            const target = href ? dom.querySelector(href) : null;
+            if (!target) return { status: 'warn', detail: `Skip link trouvé (href="${href}") mais cible introuvable dans le DOM statique`, fix: `Vérifier que id="${href?.replace('#','')}" existe bien sur le conteneur principal` };
+            return { status: 'pass', detail: `Skip link trouvé → cible "${href}"` };
+        }
+    },
+    {
+        id: 'main-landmark',
+        label: 'Repère main / id="main-content"',
+        wcag: '1.3.6 / 2.4.1',
+        lighthouse: 'landmark-one-main',
+        check(dom) {
+            const main = dom.querySelector('main');
+            const mainId = dom.querySelector('#main-content');
+            if (main) return { status: 'pass', detail: 'Élément <main> présent' };
+            if (mainId) return { status: 'warn', detail: 'id="main-content" présent mais pas de <main> sémantique', fix: 'Idéalement remplacer le <div id="main-content"> par <main id="main-content">' };
+            return { status: 'fail', detail: 'Ni <main> ni id="main-content" trouvé', fix: 'Ajouter role="main" ou <main> sur le conteneur principal' };
+        }
+    },
+    {
+        id: 'nav-landmark',
+        label: 'Navigation thèmes — <nav> ou role="navigation"',
+        wcag: '1.3.6',
+        lighthouse: 'landmark-complementary-is-top-level',
+        check(dom) {
+            const navs = dom.querySelectorAll('nav, [role="navigation"]');
+            const themesNav = dom.querySelector('.themes-nav, .domains-nav');
+            if (!themesNav) return { status: 'info', detail: 'Pas de .themes-nav ou .domains-nav dans ce fichier' };
+            const isNav = themesNav.tagName === 'NAV' || themesNav.getAttribute('role') === 'navigation';
+            const hasAriaLabel = themesNav.hasAttribute('aria-label');
+            if (!isNav) return { status: 'fail', detail: 'La nav thèmes est un <div> sans role="navigation"', fix: 'Ajouter role="navigation" aria-label="Thèmes disponibles" sur .themes-nav / .domains-nav' };
+            if (!hasAriaLabel) return { status: 'warn', detail: '<nav> présent mais sans aria-label', fix: 'Ajouter aria-label="Thèmes disponibles" ou aria-labelledby' };
+            return { status: 'pass', detail: `Navigation sémantique avec aria-label="${themesNav.getAttribute('aria-label')}"` };
+        }
+    },
+    {
+        id: 'theme-btn-aria-pressed',
+        label: 'Boutons thèmes — aria-pressed',
+        wcag: '4.1.2 (A)',
+        lighthouse: 'aria-required-attr',
+        check(dom) {
+            const btns = dom.querySelectorAll('.theme-btn, .domain-btn');
+            if (btns.length === 0) return { status: 'info', detail: 'Pas de .theme-btn ou .domain-btn dans ce fichier' };
+            const withPressed = [...btns].filter(b => b.hasAttribute('aria-pressed') || b.hasAttribute(':aria-pressed'));
+            if (withPressed.length === 0) return {
+                status: 'fail',
+                detail: `${btns.length} boutons thèmes sans aria-pressed`,
+                fix: 'Ajouter :aria-pressed="currentTheme === \'xxx\'" sur chaque bouton theme-btn'
+            };
+            if (withPressed.length < btns.length) return { status: 'warn', detail: `${withPressed.length}/${btns.length} boutons ont aria-pressed`, fix: 'Compléter les boutons manquants' };
+            return { status: 'pass', detail: `Tous les ${btns.length} boutons ont aria-pressed` };
+        }
+    },
+    {
+        id: 'progressbar-aria',
+        label: 'Barre de progression — aria-valuenow dynamique',
+        wcag: '4.1.2 (A)',
+        lighthouse: 'aria-progressbar-name',
+        check(dom) {
+            const bars = dom.querySelectorAll('[role="progressbar"]');
+            if (bars.length === 0) return { status: 'warn', detail: 'Aucune barre role="progressbar" trouvée', fix: 'Ajouter role="progressbar" aria-valuenow aria-valuemin aria-valuemax aria-label sur la barre de quiz' };
+            const issues = [];
+            bars.forEach((bar, i) => {
+                if (!bar.hasAttribute('aria-valuemin')) issues.push(`barre ${i+1}: aria-valuemin absent`);
+                if (!bar.hasAttribute('aria-valuemax')) issues.push(`barre ${i+1}: aria-valuemax absent`);
+                if (!bar.hasAttribute('aria-label') && !bar.hasAttribute('aria-labelledby')) issues.push(`barre ${i+1}: aria-label absent`);
+            });
+            if (issues.length > 0) return { status: 'warn', detail: issues.join(' | '), fix: 'Compléter les attributs aria manquants' };
+            return { status: 'pass', detail: `${bars.length} barre(s) progressbar correctement configurée(s)` };
+        }
+    },
+    {
+        id: 'img-alt',
+        label: 'Images — attribut alt présent',
+        wcag: '1.1.1 (A)',
+        lighthouse: 'image-alt',
+        check(dom) {
+            const imgs = dom.querySelectorAll('img');
+            if (imgs.length === 0) return { status: 'info', detail: 'Aucune image statique dans ce fichier' };
+            const missing = [...imgs].filter(img => {
+                const alt = img.getAttribute('alt');
+                const bindAlt = img.getAttribute(':alt');
+                return !alt && !bindAlt;
+            });
+            const dynamic = [...imgs].filter(img => img.hasAttribute(':alt') || img.hasAttribute(':src'));
+            if (missing.length > 0) return {
+                status: 'fail',
+                detail: `${missing.length} image(s) sans alt`,
+                fix: 'Ajouter alt="" ou alt="description" sur chaque <img>'
+            };
+            if (dynamic.length > 0) return {
+                status: 'warn',
+                detail: `${dynamic.length} image(s) avec alt dynamique Alpine (OK runtime, mais Lighthouse peut manquer)`,
+                fix: 'Ajouter un alt statique de fallback : alt="Illustration" :alt="\'Illustration \' + getThemeName()"'
+            };
+            return { status: 'pass', detail: `${imgs.length} image(s) avec alt correct` };
+        }
+    },
+    {
+        id: 'button-aria-label',
+        label: 'Boutons résultats — aria-label cohérent',
+        wcag: '4.1.2 (A)',
+        lighthouse: 'button-name',
+        check(dom) {
+            const btns = dom.querySelectorAll('.results-actions button, .results-zone button');
+            if (btns.length === 0) return { status: 'info', detail: 'Pas de .results-actions dans ce fichier (zone quiz résultats)' };
+            const issues = [];
+            btns.forEach(btn => {
+                const label = btn.getAttribute('aria-label');
+                const text = btn.textContent.trim();
+                // Patterns incohérents connus
+                if (text.includes('Recommencer') && label && label.includes('Démarrer')) {
+                    issues.push(`"${text}" a aria-label="${label}" (incohérent)`);
+                }
+                if ((text.includes('Retour') || text.includes('retour')) && label && (label.includes('En savoir') || label.includes('plus'))) {
+                    issues.push(`"${text}" a aria-label="${label}" (incohérent)`);
+                }
+                if (!label && !text) {
+                    issues.push('Bouton sans aria-label ni texte visible');
+                }
+            });
+            if (issues.length > 0) return {
+                status: 'fail',
+                detail: 'aria-label incohérents : ' + issues.join(' | '),
+                fix: 'Corriger : aria-label="Recommencer le quiz" et aria-label="Retour au thème"'
+            };
+            return { status: 'pass', detail: `${btns.length} bouton(s) résultats — aria-labels cohérents` };
+        }
+    },
+    {
+        id: 'color-contrast-css',
+        label: 'Contraste — classes feedback correct/incorrect',
+        wcag: '1.4.3 (AA)',
+        lighthouse: 'color-contrast',
+        check(dom) {
+            // Vérification par présence de la class wcag-accessibility.css
+            const links = dom.querySelectorAll('link[rel="stylesheet"]');
+            const hasWcagCss = [...links].some(l => l.href?.includes('wcag-accessibility') || l.getAttribute('href')?.includes('wcag-accessibility'));
+            if (!hasWcagCss) return { status: 'fail', detail: 'wcag-accessibility.css non chargé', fix: 'Ajouter <link rel="stylesheet" href="styles/wcag-accessibility.css">' };
+            return { status: 'pass', detail: 'wcag-accessibility.css chargé (contrastes définis)' };
+        }
+    },
+    {
+        id: 'aria-live-feedback',
+        label: 'Zone feedback — aria-live annoncé',
+        wcag: '4.1.3 (AA)',
+        lighthouse: 'aria-live-region-updates',
+        check(dom) {
+            const feedbackZones = dom.querySelectorAll('.feedback-zone, [aria-live]');
+            if (feedbackZones.length === 0) return { status: 'fail', detail: 'Aucune zone aria-live trouvée', fix: 'Ajouter aria-live="polite" aria-atomic="true" sur .feedback-zone' };
+            const withLive = [...feedbackZones].filter(z => z.hasAttribute('aria-live'));
+            if (withLive.length < feedbackZones.length) return { status: 'warn', detail: `${withLive.length}/${feedbackZones.length} zones ont aria-live`, fix: 'Compléter les zones manquantes' };
+            return { status: 'pass', detail: `${feedbackZones.length} zone(s) aria-live configurée(s)` };
+        }
+    },
+    {
+        id: 'sr-announcer',
+        label: 'Zone d\'annonces lecteur d\'écran — sr-announce',
+        wcag: '4.1.3 (AA)',
+        lighthouse: 'aria-live-region',
+        check(dom) {
+            const sr = dom.querySelector('#sr-announcer, .sr-announce[aria-live]');
+            if (!sr) return { status: 'fail', detail: 'Zone #sr-announcer absente', fix: 'Ajouter <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div> avant </body>' };
+            const live = sr.getAttribute('aria-live');
+            if (!live) return { status: 'warn', detail: 'Zone sr-announce sans aria-live', fix: 'Ajouter aria-live="assertive"' };
+            return { status: 'pass', detail: `Zone sr-announce avec aria-live="${live}"` };
+        }
+    },
+    {
+        id: 'focus-visible',
+        label: 'Focus visible — wcag-accessibility.css',
+        wcag: '2.4.7 (AA)',
+        lighthouse: 'focus-traps',
+        check(dom) {
+            const links = dom.querySelectorAll('link[rel="stylesheet"]');
+            const hasWcagCss = [...links].some(l => l.getAttribute('href')?.includes('wcag-accessibility'));
+            if (!hasWcagCss) return { status: 'fail', detail: 'wcag-accessibility.css non chargé → :focus-visible non défini', fix: 'Charger wcag-accessibility.css' };
+            return { status: 'pass', detail: 'wcag-accessibility.css chargé (focus-visible défini)' };
+        }
+    },
+    {
+        id: 'reduced-motion',
+        label: 'Réduction de mouvement — prefers-reduced-motion',
+        wcag: '2.3.3',
+        lighthouse: 'prefers-reduced-motion',
+        check(dom) {
+            const links = dom.querySelectorAll('link[rel="stylesheet"]');
+            const hasWcagCss = [...links].some(l => l.getAttribute('href')?.includes('wcag-accessibility'));
+            if (!hasWcagCss) return { status: 'warn', detail: 'wcag-accessibility.css non chargé', fix: 'Charger wcag-accessibility.css pour le media query prefers-reduced-motion' };
+            return { status: 'pass', detail: 'Media query prefers-reduced-motion dans wcag-accessibility.css' };
+        }
+    },
+    {
+        id: 'heading-hierarchy',
+        label: 'Hiérarchie des titres (h1→h2→h3)',
+        wcag: '1.3.1 (A)',
+        lighthouse: 'heading-order',
+        check(dom) {
+            const headings = [...dom.querySelectorAll('h1,h2,h3,h4,h5,h6')];
+            if (headings.length === 0) return { status: 'warn', detail: 'Aucun titre trouvé', fix: 'Ajouter au moins un h1' };
+            const h1s = headings.filter(h => h.tagName === 'H1');
+            if (h1s.length === 0) return { status: 'fail', detail: 'Pas de h1 dans la page', fix: 'Ajouter un h1 principal' };
+            if (h1s.length > 1) return { status: 'warn', detail: `${h1s.length} h1 trouvés`, fix: 'Une seule balise h1 par page recommandée' };
+            // Vérifier les sauts de niveau
+            let prev = 0;
+            const skips = [];
+            headings.forEach(h => {
+                const level = parseInt(h.tagName[1]);
+                if (prev > 0 && level > prev + 1) {
+                    skips.push(`Saut de h${prev} à h${level}`);
+                }
+                prev = level;
+            });
+            if (skips.length > 0) return { status: 'warn', detail: 'Sauts de niveaux : ' + skips.join(', '), fix: 'Corriger la hiérarchie des titres' };
+            return { status: 'pass', detail: `${h1s.length} h1, hiérarchie correcte (${headings.length} titres)` };
+        }
+    }
+];
+
+// ─── MOTEUR D'AUDIT ───────────────────────────────────────────
+function runAudit(htmlContent, filename) {
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(htmlContent, 'text/html');
+
+    const results = AUDIT_RULES.map(rule => {
+        try {
+            const result = rule.check(dom, filename);
+            return { ...rule, ...result };
+        } catch(e) {
+            return { ...rule, status: 'info', detail: `Erreur d'analyse : ${e.message}` };
+        }
+    });
+
+    return results;
+}
+
+function statusIcon(status) {
+    const icons = { pass: '✅', fail: '❌', warn: '⚠️', info: 'ℹ️' };
+    return icons[status] || '?';
+}
+
+function statusLabel(status) {
+    const labels = { pass: 'OK', fail: 'ÉCHEC', warn: 'ATTENTION', info: 'INFO' };
+    return labels[status] || status;
+}
+
+function estimateLighthouseGain(results) {
+    const fails = results.filter(r => r.status === 'fail').length;
+    const warns = results.filter(r => r.status === 'warn').length;
+    // Estimation heuristique basée sur les pondérations Lighthouse connues
+    const gainPerFail = 1.5;
+    const gainPerWarn = 0.5;
+    return Math.min(12, fails * gainPerFail + warns * gainPerWarn);
+}
+
+function renderResults(results, filename) {
+    const fails = results.filter(r => r.status === 'fail').length;
+    const warns = results.filter(r => r.status === 'warn').length;
+    const passes = results.filter(r => r.status === 'pass').length;
+    const infos = results.filter(r => r.status === 'info').length;
+    const gain = estimateLighthouseGain(results);
+    const currentScore = 88;
+    const projectedScore = Math.min(100, currentScore + gain);
+
+    const scoreColor = fails === 0 && warns <= 1 ? 'green' : fails <= 2 ? 'orange' : 'red';
+
+    const html = `
+        <div class="filename-display">📄 ${filename}</div>
+
+        <div class="score-summary">
+            <div class="score-circle ${scoreColor}">${projectedScore}+</div>
+            <div class="score-stats">
+                <div class="stat-line">Score actuel estimé : <span>88/100</span></div>
+                <div class="stat-line">Score projeté si corrections : <span>${projectedScore}/100</span></div>
+                <div class="stat-line">✅ Réussites : <span>${passes}</span></div>
+                <div class="stat-line">❌ Échecs : <span style="color:#e74c3c">${fails}</span></div>
+                <div class="stat-line">⚠️ Avertissements : <span style="color:#f39c12">${warns}</span></div>
+                <div class="stat-line">ℹ️ Infos : <span>${infos}</span></div>
+            </div>
+            ${fails === 0 && warns === 0 ? '<div style="color:#2ecc71; font-size:1.2em;">🏆 Aucun problème détecté !</div>' : ''}
+        </div>
+
+        <h2>Détail des vérifications</h2>
+        <div class="results-grid">
+            ${results.map(r => `
+                <div class="check-item ${r.status}">
+                    <div class="check-header">
+                        ${statusIcon(r.status)}
+                        <span>${r.label}</span>
+                        <span class="status-badge">${statusLabel(r.status)}</span>
+                        <span style="font-size:0.72em; color:#555; margin-left:auto;">WCAG ${r.wcag}</span>
+                    </div>
+                    <div class="check-detail">${r.detail}${r.lighthouse ? ` <code>${r.lighthouse}</code>` : ''}</div>
+                    ${r.fix && r.status !== 'pass' ? `<div class="fix-hint">💡 Fix : ${r.fix}</div>` : ''}
+                </div>
+            `).join('')}
+        </div>
+
+        ${fails > 0 ? `
+        <div style="margin-top:20px; padding:16px; background:#1a0a0a; border-radius:8px; border:1px solid #e74c3c;">
+            <div style="color:#e74c3c; font-weight:bold; margin-bottom:8px;">❌ ${fails} point(s) à corriger en priorité</div>
+            ${results.filter(r => r.status === 'fail').map(r => `<div style="font-size:0.82em; color:#cc9; margin:4px 0;">→ <strong>${r.label}</strong> : ${r.fix || r.detail}</div>`).join('')}
+        </div>` : ''}
+    `;
+
+    document.getElementById('results').innerHTML = html;
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('no-file').style.display = 'none';
+}
+
+// ─── GESTION FICHIERS ─────────────────────────────────────────
+function processFile(file) {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('no-file').style.display = 'none';
+
+    const reader = new FileReader();
+    reader.onload = e => {
+        document.getElementById('loading').style.display = 'none';
+        const content = e.target.result;
+        const results = runAudit(content, file.name);
+        renderResults(results, file.name);
+    };
+    reader.readAsText(file);
+}
+
+document.getElementById('file-input').addEventListener('change', e => {
+    if (e.target.files[0]) processFile(e.target.files[0]);
+});
+
+const dropZone = document.getElementById('drop-zone');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    if (e.dataTransfer.files[0]) processFile(e.dataTransfer.files[0]);
+});
+</script>
+
+</body>
+</html>

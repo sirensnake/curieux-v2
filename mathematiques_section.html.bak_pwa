@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mathématiques - Le Monde des Curieux</title>
+
+        <link rel="stylesheet" href="styles/mathematiques_alpine_COMPLETE.css">
+        <link rel="stylesheet" href="styles/wcag-accessibility.css">
+</head>
+
+    <body x-data="mathApp" x-cloak>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+        <!-- Système XP -->
+        <script src="scripts/section-xp-system.js"></script>
+        <script src="scripts/badges-system.js"></script>
+        <script src="scripts/storage-bridge.js"></script>
+
+        <!-- Bulle Curio -->
+        <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
+            <button @click="hide()" class="curio-close" aria-label="Fermer">×</button>
+            <div class="curio-avatar">🦊</div>
+            <p class="curio-message" x-text="currentMessage"></p>
+        </div>
+
+        <main class="mathematiques-container" id="main-content">
+            <!-- Header avec bouton retour -->
+            <div class="section-header">
+                <button onclick="window.location.href='index.html'" class="back-btn">
+                    ← Retour à l'accueil
+                </button>
+            </div>
+
+            <!-- Titre section -->
+            <div class="section-title">
+                <h1>🧮 Mathématiques</h1>
+                <p>Explore les nombres, les formes et résous des problèmes passionnants !</p>
+            </div>
+
+            <!-- Navigation domaines -->
+            <div class="domains-nav" role="navigation" aria-label="Domaines mathématiques">
+                <button @click="selectDomain('numeration')"
+                    :class="'domain-btn numeration' + (currentDomain === 'numeration' ? ' active' : '')" :aria-pressed="currentDomain === 'numeration'">
+                    🔢 Numération
+                </button>
+                <button @click="selectDomain('calcul')"
+                    :class="'domain-btn calcul' + (currentDomain === 'calcul' ? ' active' : '')" :aria-pressed="currentDomain === 'calcul'">
+                    ➕ Calcul
+                </button>
+                <button @click="selectDomain('geometrie')"
+                    :class="'domain-btn geometrie' + (currentDomain === 'geometrie' ? ' active' : '')" :aria-pressed="currentDomain === 'geometrie'">
+                    📐 Géométrie
+                </button>
+                <button @click="selectDomain('mesures')"
+                    :class="'domain-btn mesures' + (currentDomain === 'mesures' ? ' active' : '')" :aria-pressed="currentDomain === 'mesures'">
+                    📊 Mesures
+                </button>
+                <button @click="selectDomain('problemes')"
+                    :class="'domain-btn problemes' + (currentDomain === 'problemes' ? ' active' : '')" :aria-pressed="currentDomain === 'problemes'">
+                    🎲 Problèmes
+                </button>
+                <button @click="selectDomain('solides')"
+                    :class="'domain-btn solides' + (currentDomain === 'solides' ? ' active' : '')" :aria-pressed="currentDomain === 'solides'">
+                    📦 Solides
+                </button>
+                <button @click="selectDomain('proportionnalite')"
+                    :class="'domain-btn proportionnalite' + (currentDomain === 'proportionnalite' ? ' active' : '')" :aria-pressed="currentDomain === 'proportionnalite'">
+                    🔄 Proportionnalité
+                </button>
+                <button @click="selectDomain('donnees')"
+                    :class="'domain-btn donnees' + (currentDomain === 'donnees' ? ' active' : '')" :aria-pressed="currentDomain === 'donnees'">
+                    📊 Données
+                </button>
+                <button @click="selectDomain('calcul_litteral')"
+                    :class="'domain-btn calcul_litteral' + (currentDomain === 'calcul_litteral' ? ' active' : '')" :aria-pressed="currentDomain === 'calcul_litteral'">
+                    ⚡ Calcul littéral
+                </button>
+                <button @click="selectDomain('problemes_complexes')"
+                    :class="'domain-btn problemes_complexes' + (currentDomain === 'problemes_complexes' ? ' active' : '')" :aria-pressed="currentDomain === 'problemes_complexes'">
+                    🎯 Problèmes complexes
+                </button>
+                <button @click="selectDomain('fractions')"
+                    :class="'domain-btn fractions' + (currentDomain === 'fractions' ? ' active' : '')" :aria-pressed="currentDomain === 'fractions'">
+                    🍕 Fractions
+                </button>
+            </div>
+
+            <!-- Contenu domaine -->
+            <div class="domain-content" x-show="currentDomain" x-cloak>
+                <div class="domain-section">
+                    <h2 x-text="getDomainName()"></h2>
+                    <p class="domain-description" x-text="getDomainDescription()"></p>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <!-- Illustration masquée pour fractions (illustration à venir) -->
+                    <button x-show="currentDomain !== 'fractions'"
+                        @click="toggleIllustration()" class="action-btn btn-visual" aria-label="Voir l'illustration">
+                        🖼️ Voir l'illustration
+                    </button>
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info" aria-label="En savoir plus">
+                        📖 En savoir plus
+                    </button>
+                    <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        🎯 Quiz
+                    </button>
+                    <button x-show="currentDomain === 'fractions'"
+                        onclick="window.location.href='maths_fractions_comprendre.html'"
+                        class="action-btn btn-fractions-link"
+                        aria-label="Page dédiée aux fractions">
+                        🍕 Page Fractions complète
+                    </button>
+                </div>
+            </div>
+
+            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+            <div x-show="showLesson" x-transition class="lesson-container">
+                <div class="lesson-header">
+                    <h3>📖 <span x-text="getLessonTitle()"></span></h3>
+                    <button @click="showLesson = false" class="close-btn" aria-label="Fermer">Fermer</button>
+                </div>
+                <div class="lesson-content" x-html="getLessonContent()"></div>
+            </div>
+
+            <!-- ILLUSTRATION -->
+            <div x-show="showIllustration" x-transition class="illustration-container">
+                <div class="illustration-header">
+                    <h3>🖼️ <span x-text="getDomainName()"></span></h3>
+                    <button @click="showIllustration = false" class="close-btn" aria-label="Fermer">Fermer</button>
+                </div>
+                <div class="illustration-content">
+                    <img :src="getImageUrl()" :alt="'Illustration ' + getDomainName()" class="domain-illustration" loading="lazy">
+                </div>
+            </div>
+        </main>
+
+        <!-- QUIZ -->
+        <div x-show="showQuiz" x-transition class="quiz-container">
+            <div class="quiz-header">
+                <h3>🎯 Quiz <span x-text="getDomainName()"></span></h3>
+                <div class="quiz-progress">
+                    <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
+                    <!-- FIX WCAG : ajout :aria-valuenow dynamique -->
+                    <div class="progress-bar" role="progressbar"
+                        :aria-valuenow="Math.round((currentQuestionIndex + 1) / getCurrentQuiz().length * 100)"
+                        aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
+                        <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div x-show="!quizFinished" class="question-zone">
+                    <div class="question-text">
+                        <span x-text="currentQuestion.question"></span>
+                    </div>
+
+                    <!-- Options de réponse -->
+                    <div class="answer-options">
+                        <template x-for="(option, index) in currentQuestion.options" :key="index">
+                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option">
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div x-show="answered" x-transition class="feedback-zone" aria-live="polite" aria-atomic="true">
+                        <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
+                            <span x-show="isCorrect">✅ Bravo ! C'est correct !</span>
+                            <span x-show="!isCorrect">
+                                ❌ Pas tout à fait... La bonne réponse était : <strong x-text="currentQuestion.correct"></strong>
+                            </span>
+                        </div>
+                        <div class="feedback-explanation" x-show="currentQuestion.explanation">
+                            💡 <span x-text="currentQuestion.explanation"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Résultats finaux -->
+                <div x-show="quizFinished" x-transition class="results-zone" aria-live="polite">
+                    <h3>🎉 Quiz terminé !</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span class="score-number" x-text="score"></span>
+                            <span class="score-total" x-text="'/ ' + getCurrentQuiz().length"></span>
+                        </div>
+                        <p class="score-percentage" x-text="Math.round((score / getCurrentQuiz().length) * 100) + '%'"></p>
+                        <p class="score-message" x-text="getScoreMessage()"></p>
+                    </div>
+                    <div class="results-actions">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
+                            🔄 Recommencer
+                        </button>
+                        <button @click="backToDomain()" class="action-btn btn-info" aria-label="Retour au domaine">
+                            ← Retour au domaine
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Alpine.js CDN -->
+        <script src="scripts/data/maths-quiz.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+
+                Alpine.data('curioBubble', () => ({
+                    visible: false,
+                    currentMessage: '',
+                    variant: 'info',
+                    autoHideTimer: null,
+                    init() { window.curioBubbleInstance = this; },
+                    show(m, v = 'info') {
+                        if (this.autoHideTimer) clearTimeout(this.autoHideTimer);
+                        this.currentMessage = m;
+                        this.variant = v;
+                        this.visible = true;
+                        this.autoHideTimer = setTimeout(() => this.hide(), 5000);
+                    },
+                    hide() { this.visible = false; }
+                }));
+
+                Alpine.data('mathApp', () => ({
+                    currentDomain: 'numeration',
+                    showIllustration: false,
+                    showLesson: false,
+                    showQuiz: false,
+                    showResults: false,
+                    currentQuestionIndex: 0,
+                    score: 0,
+                    selectedAnswer: null,
+                    answered: false,
+                    isCorrect: false,
+                    quizFinished: false,
+                    currentQuestion: null,
+                    audioContext: null,
+
+                    init() {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        if (window.SectionXP) window.SectionXP.init('maths');
+                    },
+
+                    playCorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 523; o.type = 'sine';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.2);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.2);
+                        } catch (e) { }
+                    },
+
+                    playIncorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 185; o.type = 'triangle';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.3);
+                        } catch (e) { }
+                    },
+
+                    domains: {
+                        numeration: { name: 'Numération', description: 'Découvre les nombres, les fractions et les décimaux', imageUrl:'images/mathematiques/illustration_numeration.webp' },
+                        calcul: { name: 'Calcul', description: 'Maîtrise l\'addition, la soustraction, la multiplication et la division', imageUrl:'images/mathematiques/illustration_calcul.webp' },
+                        geometrie: { name: 'Géométrie', description: 'Explore les formes, les figures et l\'espace', imageUrl:'images/mathematiques/illustration_geometrie.webp' },
+                        mesures: { name: 'Mesures', description: 'Apprends à mesurer les longueurs, les masses et le temps', imageUrl:'images/mathematiques/illustration_mesures.webp' },
+                        problemes: { name: 'Problèmes', description: 'Résous des problèmes mathématiques de la vie quotidienne', imageUrl:'images/mathematiques/illustration_problemes.webp' },
+                        solides: { name: 'Solides et volumes', description: 'Découvre les formes 3D et calcule des volumes', imageUrl:'images/mathematiques/illustration_solides.webp' },
+                        proportionnalite: { name: 'Proportionnalité', description: 'Maîtrise les tableaux de proportionnalité', imageUrl:'images/mathematiques/illustration_proportionnalite.webp' },
+                        donnees: { name: 'Données', description: 'Lis et interprète les graphiques et tableaux', imageUrl:'images/mathematiques/illustration_donnees.webp' },
+                        calcul_litteral: { name: 'Calcul littéral', description: 'Initiation aux expressions avec des lettres', imageUrl:'images/mathematiques/illustration_calcul_litteral.webp' },
+                        problemes_complexes: { name: 'Problèmes complexes', description: 'Résous des problèmes à plusieurs étapes', imageUrl:'images/mathematiques/illustration_problemes_complexes.webp' },
+                        fractions: { name: 'Fractions', description: 'Comprends et manipule les fractions pas à pas', imageUrl:'images/mathematiques/illustration_fractions.webp' }
+                    },
+
+                    selectDomain(d) {
+                        this.currentDomain = d;
+                        this.showQuiz = this.showResults = this.showIllustration = this.showLesson = false;
+                    },
+
+                    getDomainName() { return this.domains[this.currentDomain]?.name || ''; },
+                    getDomainDescription() { return this.domains[this.currentDomain]?.description || ''; },
+                    getImageUrl() { return this.domains[this.currentDomain]?.imageUrl || ''; },
+                    getLessonTitle() { return this.domains[this.currentDomain]?.name || ''; },
+                    getLessonContent() { return '<p>Leçon en cours de rédaction.</p>'; },
+                    toggleIllustration() { this.showIllustration = !this.showIllustration; },
+
+                    canStartQuiz(domain) {
+                        const data = JSON.parse(localStorage.getItem(`quiz_cooldown_maths_${domain}`) || '{}');
+                        if (!data.lastCompleted) return true;
+                        return (Date.now() - data.lastCompleted) >= 24 * 60 * 60 * 1000;
+                    },
+
+                    getCooldownTimeRemaining(domain) {
+                        const data = JSON.parse(localStorage.getItem(`quiz_cooldown_maths_${domain}`) || '{}');
+                        if (!data.lastCompleted) return null;
+                        const remaining = (24 * 60 * 60 * 1000) - (Date.now() - data.lastCompleted);
+                        if (remaining <= 0) return null;
+                        return { hours: Math.floor(remaining / 3600000), minutes: Math.floor((remaining % 3600000) / 60000) };
+                    },
+
+                    recordQuizCompletion(domain) {
+                        const key = `quiz_cooldown_maths_${domain}`;
+                        const prev = JSON.parse(localStorage.getItem(key) || '{}');
+                        localStorage.setItem(key, JSON.stringify({ lastCompleted: Date.now(), count: (prev.count || 0) + 1 }));
+                    },
+
+                    startQuiz() {
+                        if (!this.canStartQuiz(this.currentDomain)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentDomain);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
+                            if (window.curioBubbleInstance) window.curioBubbleInstance.show(message, 'info');
+                            else alert(message);
+                            return;
+                        }
+                        this.showQuiz = true;
+                        this.showResults = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.answered = false;
+                        this.quizFinished = false;
+                        this.loadQuestion();
+                    },
+
+                    getCurrentQuiz() {
+                        if (typeof mathsQuiz !== 'undefined') return mathsQuiz[this.currentDomain] || [];
+                        return [];
+                    },
+
+                    loadQuestion() {
+                        this.currentQuestion = this.getCurrentQuiz()[this.currentQuestionIndex];
+                        this.answered = false;
+                        this.isCorrect = false;
+                    },
+
+                    checkAnswer(selectedOption) {
+                        if (this.answered) return;
+                        this.answered = true;
+                        this.isCorrect = (selectedOption === this.currentQuestion.correct);
+                        if (this.isCorrect) {
+                            this.score++;
+                            this.playCorrectSound();
+                            if (window.SectionXP) window.SectionXP.addXP('maths', window.SectionXP.rewards.QUESTION_CORRECT);
+                        } else {
+                            this.playIncorrectSound();
+                        }
+                        setTimeout(() => { this.nextQuestion(); }, 2000);
+                    },
+
+                    nextQuestion() {
+                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                            this.currentQuestionIndex++;
+                            this.loadQuestion();
+                        } else {
+                            this.finishQuiz();
+                        }
+                    },
+
+                    finishQuiz() {
+                        this.quizFinished = true;
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('maths', window.SectionXP.rewards.QUIZ_COMPLETED);
+                            if (this.score === this.getCurrentQuiz().length) {
+                                window.SectionXP.addXP('maths', window.SectionXP.rewards.PERFECT_QUIZ);
+                            }
+                        }
+                        this.recordQuizCompletion(this.currentDomain);
+                    },
+
+                    retryQuiz() {
+                        if (!this.canStartQuiz(this.currentDomain)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentDomain);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min.`;
+                            if (window.curioBubbleInstance) window.curioBubbleInstance.show(message, 'info');
+                            else alert(message);
+                            this.backToDomain();
+                            return;
+                        }
+                        this.quizFinished = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.loadQuestion();
+                    },
+
+                    getScoreMessage() {
+                        const percentage = (this.score / this.getCurrentQuiz().length) * 100;
+                        if (percentage === 100) return '🏆 Parfait ! Tu maîtrises ce domaine !';
+                        if (percentage >= 80) return '🌟 Excellent ! Très bien joué !';
+                        if (percentage >= 60) return '👍 Bien ! Continue comme ça !';
+                        if (percentage >= 40) return '💪 Pas mal ! Révise encore un peu !';
+                        return '📚 Continue à apprendre, tu vas y arriver !';
+                    },
+
+                    backToDomain() { this.showResults = false; this.showQuiz = false; }
+                }));
+            });
+        </script>
+
+        <!-- Admin Shortcut (Ctrl+Shift+X) -->
+        <script src="scripts/admin-shortcut.js"></script>
+        <script src="scripts/master-game-system.js"></script>
+        <script>
+            let gameSystem;
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (typeof MasterGameSystem !== 'undefined') {
+                        gameSystem = new MasterGameSystem();
+                        if (typeof updateGameSystemUI === 'function') updateGameSystemUI();
+                    }
+                }, 200);
+            });
+            function getSectionName() { return 'maths'; }
+        </script>
+
+    <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
+    <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
+</body>
+</html>

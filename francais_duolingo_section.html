@@ -160,7 +160,7 @@
                     <!-- Options de réponse -->
                     <div class="answer-options">
                         <template x-for="(option, index) in currentQuestion.options" :key="index">
-                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option">
+                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option" :aria-label="option">
                             </button>
                         </template>
                     </div>
