@@ -271,6 +271,9 @@
 
 <body x-data="dashboardApp" x-cloak>
 
+    <!-- Skip link WCAG 2.4.1 -->
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
     <!-- Modale confirmation reinitialisation -->
     <div x-show="resetModal.open" x-cloak class="modal-overlay"
          @keydown.escape.window="resetModal.open = false"
@@ -323,6 +326,7 @@
 
     </div>
 
+    <main id="main-content">
     <div class="container">
         <div class="btn-container">
             <button class="btn btn-back" @click="goBack()">← RETOUR</button>
@@ -490,7 +494,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- /.container -->
+    </main><!-- /#main-content -->
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
