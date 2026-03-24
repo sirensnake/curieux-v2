@@ -5,7 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Parcours - Le Monde des Curieux</title>
+    <meta name="description" content="Tableau de bord de progression — XP, badges, streaks et statistiques de quiz sur Le Monde des Curieux.">
 
+    <!-- Preconnect pour réduire latence fonts et CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- font-display=swap : évite le layout shift (CLS) -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- PWA Manifest -->
@@ -898,8 +904,8 @@
         });
     </script>
 
-    <script src="scripts/badges-system.js"></script>
-    <script src="scripts/admin-shortcut.js"></script>
+    <script src="scripts/badges-system.js" defer></script>
+    <script src="scripts/admin-shortcut.js" defer></script>
 
     <!-- Service Worker PWA -->
     <script>
