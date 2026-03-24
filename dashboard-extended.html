@@ -35,7 +35,7 @@
             --accent-orange: #e67e22;
             --accent-red: #e74c3c;
             --text-light: #ecf0f1;
-            --text-dim: #b2bec3;
+            --text-dim: #c8d6df;
             --border: #34495e;
             --shadow: rgba(0,0,0,0.3);
         }
@@ -109,7 +109,7 @@
             text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
         }
 
-        .user-subtitle { font-size: 0.9em; color: var(--text-dim); font-weight: 300; }
+        .user-subtitle { font-size: 0.9em; color: var(--text-dim); font-weight: 400; }
         .user-subtitle .name { color: var(--accent-blue); font-weight: 600; }
 
         .header-stats { display: flex; gap: 20px; flex-wrap: wrap; }
@@ -134,7 +134,7 @@
 
         .stat-icon { font-size: 1.8em; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); }
         .stat-content .value { display: block; font-size: 1.4em; font-weight: 700; line-height: 1; margin-bottom: 2px; }
-        .stat-content .label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); font-weight: 600; }
+        .stat-content .label { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); font-weight: 600; }
 
         .level-progress { margin-top: 24px; position: relative; z-index: 1; }
         .level-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
@@ -167,8 +167,8 @@
         .badge-item.locked { opacity: 0.4; filter: grayscale(1); }
         .badge-item:hover { transform: scale(1.05); }
         .badge-emoji { font-size: 2.5em; margin-bottom: 6px; display: block; }
-        .badge-name { font-size: 0.7em; font-weight: 600; line-height: 1.2; }
-        .badge-date { font-size: 0.65em; color: var(--text-dim); margin-top: 4px; }
+        .badge-name { font-size: 0.75em; font-weight: 600; line-height: 1.2; }
+        .badge-date { font-size: 0.75em; color: var(--text-dim); margin-top: 4px; }
 
         .sections-list { display: flex; flex-direction: column; gap: 12px; }
         .section-row { background: rgba(255,255,255,0.03); border: 2px solid var(--border); border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 16px; transition: all 0.3s ease; cursor: pointer; }
@@ -196,14 +196,14 @@
         .activity-item .desc { font-weight: 600; }
         .activity-item .xp-gain { color: var(--accent-green); font-weight: 700; }
 
-        .btn { font-family: 'Press Start 2P', monospace; font-size: 0.7em; padding: 12px 24px; border: 3px solid #000; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 0 rgba(0,0,0,0.3); text-transform: uppercase; }
+        .btn { font-family: 'Press Start 2P', monospace; font-size: 0.75em; padding: 12px 24px; border: 3px solid #000; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 0 rgba(0,0,0,0.3); text-transform: uppercase; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.3); }
         .btn:active { transform: translateY(1px); box-shadow: 0 2px 0 rgba(0,0,0,0.3); }
         .btn-back { background: var(--accent-red); color: white; margin-bottom: 20px; }
         .btn-back:hover { background: #c0392b; }
-        .btn-reset { background: var(--accent-orange); color: white; font-size: 0.6em; padding: 10px 20px; margin-left: 10px; }
+        .btn-reset { background: var(--accent-orange); color: white; font-size: 0.75em; padding: 10px 20px; margin-left: 10px; }
         .btn-reset:hover { background: #d35400; }
-        .btn-pdf { background: var(--accent-blue); color: white; font-size: 0.6em; padding: 10px 20px; }
+        .btn-pdf { background: var(--accent-blue); color: white; font-size: 0.75em; padding: 10px 20px; }
         .btn-pdf:hover { background: #2980b9; }
         .btn-container { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
 
@@ -286,7 +286,7 @@
         }
         .modal-step-indicator {
             position: absolute; top: 14px; right: 18px;
-            font-size: 0.65em; color: var(--text-dim);
+            font-size: 0.75em; color: var(--text-dim);
             font-family: 'Press Start 2P', monospace;
         }
 
