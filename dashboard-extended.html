@@ -14,6 +14,7 @@
     <!-- font-display=swap : évite le layout shift (CLS) -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="styles/wcag-accessibility.css">
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#667eea">
@@ -50,23 +51,7 @@
 
         [x-cloak] { display: none !important; }
 
-        /* Skip link : masqué visuellement, visible au focus clavier (WCAG 2.4.1) */
-        .skip-link {
-            position: fixed;
-            top: -100px;
-            left: 0;
-            background: #1a7a42;
-            color: white;
-            padding: 8px 16px;
-            z-index: 10000;
-            font-size: 0.85em;
-            border-radius: 0 0 8px 0;
-            text-decoration: none;
-            transition: top 0.2s;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
+        /* Skip link : géré par wcag-accessibility.css */
 
         .container { max-width: 1400px; margin: 0 auto; }
 
