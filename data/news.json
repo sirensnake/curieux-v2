@@ -1,22 +1,6 @@
 {
-  "articles": [
-    {
-      "title": "Lumière sur Mars 🚀",
-      "summary": "Des scientifiques ont découvert de nouvelles informations passionnantes sur Mars, la planète rouge ! Grâce à un robot explorateur, ils ont trouvé des signes d'anciennes rivières et lacs, ce qui pourrait signifier que la vie a pu exister sur Mars dans le passé. Les chercheurs continuent d'étudier les données pour comprendre si cette planète abritait de petites formes de vie, comme des microbes, il y a très longtemps. Cette découverte nous aide à en savoir plus sur notre voisin dans le système solaire et pourrait un jour nous aider à trouver des preuves de vie ailleurs dans l'univers.",
-      "date": "01/11/2023",
-      "link": ""
-    },
-    {
-      "title": "Une mystérieuse baleine 🐋",
-      "summary": "Une équipe de scientifiques a rencontré une baleine très spéciale dans l'océan près de l'Antarctique. Cette baleine, dont l'espèce n'avait jamais été aperçue auparavant, possède des caractéristiques uniques, ce qui a beaucoup surpris les chercheurs. Leur découverte montre à quel point nos océans sont riches de créatures fascinantes que nous avons encore beaucoup à apprendre. En apprenant à mieux connaître ces animaux, nous pouvons aussi mieux les protéger. Cela encourage la préservation des océans pour que toutes les espèces rares puissent y vivre en paix.",
-      "date": "01/11/2023",
-      "link": ""
-    },
-    {
-      "title": "Les arbres parlent ! 🌳",
-      "summary": "Des scientifiques ont trouvé une manière incroyable d'écouter comment les arbres communiquent entre eux. En utilisant des outils spéciaux, ils ont découvert que les arbres envoient des signaux à travers leurs racines pour échanger des informations sur l'eau ou les nutriments disponibles dans le sol. Ce réseau de communication entre les arbres est parfois appelé le 'Wood Wide Web'. Grâce à cette découverte, nous comprenons mieux comment les arbres prennent soin les uns des autres, et cela nous aide à les protéger pour que nos forêts restent en bonne santé.",
-      "date": "01/11/2023",
-      "link": ""
-    }
-  ]
+  "title": "Découverte d'un nouvel animal sous-marin 🐠",
+  "summary": "Des scientifiques ont découvert une nouvelle espèce de poisson dans les profondeurs de l'océan Indien. Ce poisson, très coloré, a des nageoires semblables à des rubans et mesure environ 10 centimètres de long. Ils l'ont trouvé en utilisant des caméras sous-marines spéciales qui peuvent filmer dans le noir complet. Cette découverte nous en apprend plus sur les mystérieuses créatures qui vivent dans les abysses, là où la lumière du soleil ne pénètre pas. Les chercheurs espèrent que ce poisson pourra révéler des secrets sur l'évolution de la vie sous-marine. C'est une belle preuve de combien la nature est riche et pleine de surprises ! 🌊",
+  "date": "03/11/2023",
+  "link": ""
 }
