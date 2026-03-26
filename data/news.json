@@ -1,6 +1,22 @@
 {
-  "title": "Découverte d'un nouvel animal sous-marin 🐠",
-  "summary": "Des scientifiques ont découvert une nouvelle espèce de poisson dans les profondeurs de l'océan Indien. Ce poisson, très coloré, a des nageoires semblables à des rubans et mesure environ 10 centimètres de long. Ils l'ont trouvé en utilisant des caméras sous-marines spéciales qui peuvent filmer dans le noir complet. Cette découverte nous en apprend plus sur les mystérieuses créatures qui vivent dans les abysses, là où la lumière du soleil ne pénètre pas. Les chercheurs espèrent que ce poisson pourra révéler des secrets sur l'évolution de la vie sous-marine. C'est une belle preuve de combien la nature est riche et pleine de surprises ! 🌊",
-  "date": "03/11/2023",
-  "link": ""
+  "articles": [
+    {
+      "title": "Un Minuscule Explorateur de l'Espace 🚀",
+      "summary": "Un tout petit satellite, pas plus gros qu'une boîte de chaussures, a été lancé dans l'espace ! Ce mini-satellite a pour mission d'étudier comment les plantes réagissent à l'absence de gravité. Cela va aider les scientifiques à comprendre comment faire pousser des plantes dans l'espace, ce qui pourrait être très utile pour les futures missions spatiales. Imagine pouvoir cultiver ses légumes préférés tout en flottant dans l'espace ! C'est une idée qui pourrait devenir réalité grâce à ces recherches.",
+      "date": "23/10/2023",
+      "link": "https://www.nasa.gov"
+    },
+    {
+      "title": "La Découverte d'un Nouveau Dinosaure 🦖",
+      "summary": "Des chercheurs viennent de découvrir un nouveau type de dinosaure en Argentine. Ce dinosaure vivait il y a des millions d'années et mesurait environ la taille d'un éléphant ! Les scientifiques pensent qu'il mangeait des plantes et se nourrissait en bandes. Cette découverte est importante car elle nous en apprend plus sur la vie des dinosaures et sur l'époque à laquelle ils vivaient. Qui sait ? Peut-être qu'un jour, tu seras celui qui découvrira un nouveau dinosaure !",
+      "date": "23/10/2023",
+      "link": "https://www.nature.com"
+    },
+    {
+      "title": "Les Petits Secrets des Coraux🌊",
+      "summary": "Des scientifiques ont découvert que certains coraux peuvent s’adapter à des eaux plus chaudes. C'est une bonne nouvelle pour les récifs coralliens qui sont menacés par le changement climatique. Les coraux sont très importants pour la vie marine car ils offrent un abri à beaucoup de poissons et d’autres créatures marines. Ces recherches nous aident à mieux comprendre comment protéger ces écosystèmes précieux, afin qu’ils continuent de prospérer.",
+      "date": "23/10/2023",
+      "link": "https://www.science.org"
+    }
+  ]
 }
