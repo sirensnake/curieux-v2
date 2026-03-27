@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un Minuscule Explorateur de l'Espace 🚀",
-      "summary": "Un tout petit satellite, pas plus gros qu'une boîte de chaussures, a été lancé dans l'espace ! Ce mini-satellite a pour mission d'étudier comment les plantes réagissent à l'absence de gravité. Cela va aider les scientifiques à comprendre comment faire pousser des plantes dans l'espace, ce qui pourrait être très utile pour les futures missions spatiales. Imagine pouvoir cultiver ses légumes préférés tout en flottant dans l'espace ! C'est une idée qui pourrait devenir réalité grâce à ces recherches.",
-      "date": "23/10/2023",
-      "link": "https://www.nasa.gov"
+      "title": "La Tour Eiffel s'habille en vert ! 🌿",
+      "summary": "En ce moment, la célèbre Tour Eiffel est éclairée avec des lumières vertes spéciales pour célébrer l'importance de la protection de l'environnement. Cet événement encourage tout le monde à réfléchir à comment nous pouvons protéger notre planète. Par exemple, on peut économiser de l'eau ou recycler. Le changement de couleur de la tour montre aux visiteurs et habitants de Paris que chacun peut faire une petite différence pour la Terre. C'est un joli message lumineux qui nous rappelle l'importance de prendre soin de notre planète chaque jour.",
+      "date": "26/10/2023",
+      "link": ""
     },
     {
-      "title": "La Découverte d'un Nouveau Dinosaure 🦖",
-      "summary": "Des chercheurs viennent de découvrir un nouveau type de dinosaure en Argentine. Ce dinosaure vivait il y a des millions d'années et mesurait environ la taille d'un éléphant ! Les scientifiques pensent qu'il mangeait des plantes et se nourrissait en bandes. Cette découverte est importante car elle nous en apprend plus sur la vie des dinosaures et sur l'époque à laquelle ils vivaient. Qui sait ? Peut-être qu'un jour, tu seras celui qui découvrira un nouveau dinosaure !",
-      "date": "23/10/2023",
-      "link": "https://www.nature.com"
+      "title": "Nouvelle étoile découverte dans l'espace ! 🌟",
+      "summary": "Des astronomes viennent de découvrir une nouvelle étoile très lointaine dans notre galaxie, la Voie Lactée. Cette étoile brille beaucoup et aide les scientifiques à en savoir plus sur l'univers. Elle est bien plus grande que notre Soleil et se trouve à des centaines de milliers d'années-lumière de la Terre. Les astronomes utilisent de puissants télescopes pour observer de telles étoiles et comprendre comment elles naissent et grandissent. Ces découvertes sont passionnantes, car elles montrent à quel point notre univers est vaste et plein de mystères à explorer !",
+      "date": "26/10/2023",
+      "link": ""
     },
     {
-      "title": "Les Petits Secrets des Coraux🌊",
-      "summary": "Des scientifiques ont découvert que certains coraux peuvent s’adapter à des eaux plus chaudes. C'est une bonne nouvelle pour les récifs coralliens qui sont menacés par le changement climatique. Les coraux sont très importants pour la vie marine car ils offrent un abri à beaucoup de poissons et d’autres créatures marines. Ces recherches nous aident à mieux comprendre comment protéger ces écosystèmes précieux, afin qu’ils continuent de prospérer.",
-      "date": "23/10/2023",
-      "link": "https://www.science.org"
+      "title": "Les pandas ont maintenant leur propre film ! 🎬",
+      "summary": "Un nouveau film vient de sortir au cinéma et il est uniquement consacré aux pandas ! Ce film montre comment ces adorables animaux vivent dans leur habitat naturel en Chine. Les spectateurs peuvent voir comment les pandas trouvent leur nourriture préférée, le bambou, et comment ils prennent soin de leurs petits. Le film est aussi un bon rappel de l'importance de protéger ces animaux en danger et de préserver leurs maisons, les forêts de bambous. C'est une belle aventure qui invite les familles à en apprendre plus sur ces créatures fascinantes et à s'engager pour la nature.",
+      "date": "26/10/2023",
+      "link": ""
     }
   ]
 }
