@@ -307,6 +307,7 @@
                     selectedAnswer: null,
                     answerChecked: false,
                     audioContext: null,
+                    shuffledQuiz: null,
 
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -480,9 +481,22 @@
                     },
 
                     selectPeriod(p) { this.currentPeriod = p; this.currentLesson = null; this.showQuiz = this.showResults = this.showMap = false; },
-                    startQuiz() { this.showQuiz = true; this.showResults = false; this.currentQuestion = this.score = 0; this.selectedAnswer = null; this.answerChecked = false; },
+                    startQuiz() {
+                        // Mélange aléatoire de l'ordre des questions uniquement
+                        // (les options ne sont PAS mélangées car correct est un index numérique)
+                        const quiz = this.getCurrentQuizRaw();
+                        this.shuffledQuiz = [...quiz].sort(() => Math.random() - 0.5);
+                        this.showQuiz = true; this.showResults = false;
+                        this.currentQuestion = this.score = 0;
+                        this.selectedAnswer = null; this.answerChecked = false;
+                    },
                     startQuizForLesson(key) { this.currentLesson = key; this.startQuiz(); },
-                    getCurrentQuiz() { return this.quizData[this.currentLesson || this.currentPeriod] || []; },
+                    getCurrentQuizRaw() { return this.quizData[this.currentLesson || this.currentPeriod] || []; },
+                    getCurrentQuiz() {
+                        // Pendant le quiz, retourne le tableau mélangé pour un ordre cohérent
+                        if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
+                        return this.getCurrentQuizRaw();
+                    },
                     getCurrentQuestionData() { return this.getCurrentQuiz()[this.currentQuestion] || {}; },
 
                     selectAnswer(idx) {
@@ -537,7 +551,12 @@
                         }
                     },
 
-                    retryQuiz() { this.showResults = false; this.showQuiz = true; this.currentQuestion = this.score = 0; },
+                    retryQuiz() {
+                        // Re-mélange pour un nouvel ordre à chaque retry
+                        this.shuffledQuiz = [...this.getCurrentQuizRaw()].sort(() => Math.random() - 0.5);
+                        this.showResults = false; this.showQuiz = true;
+                        this.currentQuestion = this.score = 0;
+                    },
 
                     getPeriodTitle() {
                         const titles = { 'prehistoire': 'Préhistoire', 'antiquite': 'Antiquité', 'moyenage': 'Moyen Âge', 'tempsmodernes': 'Temps Modernes', 'epoquecontemporaine': 'Époque Contemporaine' };
