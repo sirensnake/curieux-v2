@@ -317,6 +317,7 @@
                 selectedAnswer: null,
                 answerChecked: false,
                 audioContext: null,
+                shuffledQuiz: null,
 
                 init() {
                     this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -501,6 +502,10 @@
                 },
 
                 startQuiz() {
+                    // Mélange aléatoire de l'ordre des questions uniquement
+                    // (les options ne sont PAS mélangées car correct est un index numérique)
+                    const quiz = this.getCurrentQuizRaw();
+                    this.shuffledQuiz = [...quiz].sort(() => Math.random() - 0.5);
                     this.showQuiz = true;
                     this.showResults = false;
                     this.currentQuestion = 0;
@@ -511,11 +516,14 @@
 
                 startQuizForLesson(key) {
                     this.currentLesson = key;
-                    this.startQuiz();
+                    this.startQuiz(); // startQuiz() gère le mélange
                 },
 
+                getCurrentQuizRaw() { return this.quizData[this.currentLesson || this.currentTheme] || []; },
                 getCurrentQuiz() {
-                    return this.quizData[this.currentLesson || this.currentTheme] || [];
+                    // Pendant le quiz, retourne le tableau mélangé pour un ordre cohérent
+                    if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
+                    return this.getCurrentQuizRaw();
                 },
 
                 getCurrentQuestionData() {
@@ -569,6 +577,8 @@
                 },
 
                 retryQuiz() {
+                    // Re-mélange pour un nouvel ordre à chaque retry
+                    this.shuffledQuiz = [...this.getCurrentQuizRaw()].sort(() => Math.random() - 0.5);
                     this.showResults = false;
                     this.showQuiz = true;
                     this.currentQuestion = 0;
