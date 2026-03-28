@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Monde des Curieux — Guide Parents</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Format A4 exact pour impression */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  :root {
+    --vert:       #2d5a3d;
+    --vert-clair: #e8f0eb;
+    --vert-mid:   #4a7c5f;
+    --orange:     #d4622a;
+    --orange-pale:#fdf0ea;
+    --beige:      #f7f3ee;
+    --beige-bord: #e2d9cf;
+    --gris:       #6b7280;
+    --noir:       #1a1a1a;
+    --blanc:      #ffffff;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--blanc);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  .header {
+    background: var(--vert);
+    padding: 22px 28px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .header-left { flex: 1; }
+
+  .header-left h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--blanc);
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+
+  .header-left p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 4px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-header {
+    background: var(--orange);
+    color: var(--blanc);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  /* ── INTRO ───────────────────────────────── */
+  .intro {
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--beige-bord);
+  }
+
+  .intro p {
+    font-size: 11px;
+    color: var(--gris);
+    text-align: center;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .intro strong { color: var(--vert); font-weight: 600; }
+
+  /* ── CARTES ──────────────────────────────── */
+  .cartes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 16px 28px;
+  }
+
+  .carte {
+    border: 1.5px solid var(--beige-bord);
+    border-radius: 10px;
+    padding: 14px 14px 16px;
+    background: var(--blanc);
+  }
+
+  .carte-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .carte-icon.orange { background: var(--orange-pale); }
+  .carte-icon.rouge  { background: #fdecea; }
+  .carte-icon.or     { background: #fdf6e3; }
+
+  .carte h3 {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 6px;
+    letter-spacing: -0.1px;
+  }
+
+  .carte p {
+    font-size: 10px;
+    color: var(--gris);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ── SECTION BAS ─────────────────────────── */
+  .section-bas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 28px 16px;
+    flex: 1;
+  }
+
+  /* ── ENCADRÉS ────────────────────────────── */
+  .encadre {
+    border-radius: 10px;
+    padding: 16px 16px 18px;
+  }
+
+  .encadre.conseils {
+    background: var(--vert-clair);
+    border: 1.5px solid #c2d9c9;
+  }
+
+  .encadre.protocole {
+    background: var(--beige);
+    border: 1.5px solid var(--beige-bord);
+  }
+
+  .encadre h3 {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--vert);
+    margin-bottom: 12px;
+    letter-spacing: -0.1px;
+  }
+
+  .encadre.protocole h3 { color: var(--noir); }
+
+  /* Conseils */
+  .conseil-item {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 9px;
+    align-items: flex-start;
+  }
+
+  .conseil-item:last-child { margin-bottom: 0; }
+
+  .conseil-num {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    background: var(--vert);
+    color: var(--blanc);
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .conseil-item p {
+    font-size: 10px;
+    color: #2d4a36;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* Protocole — étapes */
+  .etape {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--beige-bord);
+  }
+
+  .etape:last-child { border-bottom: none; padding-bottom: 0; }
+  .etape:first-child { padding-top: 0; }
+
+  .etape-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--beige-bord);
+    min-width: 22px;
+    line-height: 1;
+  }
+
+  .etape-contenu { flex: 1; }
+
+  .etape-contenu strong {
+    display: block;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 1px;
+  }
+
+  .etape-contenu span {
+    font-size: 9.5px;
+    color: var(--gris);
+    font-weight: 400;
+  }
+
+  .etape-duree {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--vert);
+    background: var(--vert-clair);
+    padding: 2px 7px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ──────────────────────────────── */
+  .footer {
+    background: var(--vert);
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .footer p {
+    font-size: 9px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    letter-spacing: 0.2px;
+  }
+
+  .footer strong {
+    color: var(--blanc);
+    font-weight: 500;
+  }
+
+  .footer .url {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── PRINT ───────────────────────────────── */
+  @media print {
+    body { background: none; padding: 0; }
+    .page { width: 210mm; min-height: 297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <h1>Le Monde des Curieux</h1>
+      <p>Guide pour les parents · lemondedescurieux.fr</p>
+    </div>
+    <div class="badge-header">Gratuit · Sans pub<br>Sans compte</div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>Votre enfant apprend chaque jour avec <strong>Curio le renard 🦊</strong>. Ce guide explique en 3 minutes comment fonctionne son système de récompenses pour que vous puissiez l'encourager au mieux.</p>
+  </div>
+
+  <!-- 3 CARTES -->
+  <div class="cartes">
+
+    <div class="carte">
+      <div class="carte-icon orange">🔥</div>
+      <h3>Série quotidienne</h3>
+      <p>Chaque jour où votre enfant fait au moins un quiz, son compteur de jours consécutifs augmente. Des trophées spéciaux sont débloqués à <strong>7 jours</strong> et <strong>30 jours</strong> d'affilée. S'il passe une journée sans jouer, le compteur repart de zéro.</p>
+    </div>
+
+    <div class="carte">
+      <div class="carte-icon rouge">❤️</div>
+      <h3>Vies disponibles</h3>
+      <p>Votre enfant dispose de <strong>5 vies</strong> par session. Il perd une vie à chaque mauvaise réponse. Les vies se régénèrent automatiquement après 30 minutes — ce système encourage la réflexion plutôt que les réponses au hasard.</p>
+    </div>
+
+    <div class="carte">
+      <div class="carte-icon or">🏅</div>
+      <h3>7 Trophées à débloquer</h3>
+      <p>7 jours de suite · 30 jours de suite · 1 000 points · 5 000 points · 10 quiz parfaits · 100 quiz complétés · Toutes les matières explorées.</p>
+    </div>
+
+  </div>
+
+  <!-- SECTION BAS : conseils + protocole -->
+  <div class="section-bas">
+
+    <!-- 5 CONSEILS -->
+    <div class="encadre conseils">
+      <h3>5 conseils pour maintenir la série</h3>
+
+      <div class="conseil-item">
+        <div class="conseil-num">1</div>
+        <p>Choisissez un <strong>moment fixe</strong> chaque jour : après le goûter, avant le dîner. La régularité compte plus que la durée.</p>
+      </div>
+      <div class="conseil-item">
+        <div class="conseil-num">2</div>
+        <p>Montrez-lui son compteur : <em>« Tu es à 5 jours, encore 2 et tu débloques un trophée ! »</em></p>
+      </div>
+      <div class="conseil-item">
+        <div class="conseil-num">3</div>
+        <p>Les jours chargés, <strong>un seul quiz rapide</strong> suffit à maintenir la série.</p>
+      </div>
+      <div class="conseil-item">
+        <div class="conseil-num">4</div>
+        <p>Consultez ensemble la <strong>fiche de résultats imprimable</strong> depuis le tableau de suivi pour célébrer les progrès.</p>
+      </div>
+      <div class="conseil-item">
+        <div class="conseil-num">5</div>
+        <p>Si la série est perdue, aidez-le à voir ça comme un <strong>nouveau défi</strong>, pas comme un échec.</p>
+      </div>
+    </div>
+
+    <!-- PROTOCOLE DE SESSION -->
+    <div class="encadre protocole">
+      <h3>Une session type (10–15 min)</h3>
+
+      <div class="etape">
+        <div class="etape-num">1</div>
+        <div class="etape-contenu">
+          <strong>Choisir une matière</strong>
+          <span>Français, Maths, Anglais, Sciences, Histoire ou Géographie</span>
+        </div>
+        <div class="etape-duree">2 min</div>
+      </div>
+
+      <div class="etape">
+        <div class="etape-num">2</div>
+        <div class="etape-contenu">
+          <strong>Lire la leçon « À retenir »</strong>
+          <span>Résumé essentiel du thème choisi</span>
+        </div>
+        <div class="etape-duree">3 min</div>
+      </div>
+
+      <div class="etape">
+        <div class="etape-num">3</div>
+        <div class="etape-contenu">
+          <strong>Répondre aux 10 questions</strong>
+          <span>Quiz interactif avec correction immédiate</span>
+        </div>
+        <div class="etape-duree">5–8 min</div>
+      </div>
+
+      <div class="etape">
+        <div class="etape-num">4</div>
+        <div class="etape-contenu">
+          <strong>Lire son bilan de session</strong>
+          <span>Score, XP gagnés, badges débloqués</span>
+        </div>
+        <div class="etape-duree">2 min</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><strong>Aucune donnée personnelle collectée</strong> · Progression stockée uniquement sur l'appareil · Conforme RGPD</p>
+    <span class="url">lemondedescurieux.fr</span>
+  </footer>
+
+</div>
+</body>
+</html>
