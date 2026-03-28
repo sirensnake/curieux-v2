@@ -1,7 +1,7 @@
 // ========================================
 // SCIENCES LESSONS DATA - Alpine.js Format
 // Le Monde des Curieux
-// 96 questions CM1/CM2 réparties en 3 domaines
+// 106 questions CM1/CM2 réparties en 5 domaines
 // ========================================
 
 const sciencesLessons = {
@@ -708,7 +708,10 @@ const sciencesLessons = {
             {q: "Pour analyser un objet technique, quelle question NE fait PAS partie des 3 essentielles ?", o: ["Combien ça coûte ?", "À quoi ça sert ?", "Comment ça marche ?", "De quoi c'est fait ?"], c: "Combien ça coûte ?"},
             {q: "Quel matériau est à la fois léger ET isolant électrique ?", o: ["Le plastique", "Le cuivre", "Le fer", "L'aluminium"], c: "Le plastique"},
             {q: "À quoi sert une poulie ?", o: ["Faciliter le levage d'objets lourds", "Produire de l'électricité", "Mesurer la température", "Couper des matériaux"], c: "Faciliter le levage d'objets lourds"},
-            {q: "Quelle est la première étape pour concevoir un objet technique ?", o: ["Identifier le besoin", "Choisir les matériaux", "Fabriquer les pièces", "Tester le résultat"], c: "Identifier le besoin"}
+            {q: "Quelle est la première étape pour concevoir un objet technique ?", o: ["Identifier le besoin", "Choisir les matériaux", "Fabriquer les pièces", "Tester le résultat"], c: "Identifier le besoin"},
+            // Questions avancées ajoutées le 28 mars 2026 — tag badge-ingénieur
+            {q: "Une casserole a un manche en plastique et un fond en métal. Pourquoi ce choix de matériaux ?", o: ["Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler", "Le plastique conduit la chaleur, le métal isole", "Les deux conduisent la chaleur de la même façon", "Ce choix est uniquement esthétique"], c: "Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler"},
+            {q: "Sur un vélo, comment l'énergie musculaire du cycliste est-elle transmise à la roue arrière ?", o: ["Par une chaîne qui relie le pédalier à la roue", "Par un moteur électrique", "Par un câble direct", "Par friction directe des pieds"], c: "Par une chaîne qui relie le pédalier à la roue"}
         ]
     },
 
@@ -840,5 +843,5 @@ const sciencesLessons = {
 // Export pour utilisation dans la page HTML
 if (typeof window !== "undefined") {
     window.sciencesLessons = sciencesLessons;
-    console.log("✅ Sciences lessons chargées - 5 domaines, 17 thèmes, 120+ questions");
+    console.log("✅ Sciences lessons chargées - 5 domaines, 17 thèmes, 106 questions");
 }
