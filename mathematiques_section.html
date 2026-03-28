@@ -250,6 +250,7 @@
                     quizFinished: false,
                     currentQuestion: null,
                     audioContext: null,
+                    shuffledQuiz: null,
 
                     init() {
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -332,6 +333,13 @@
                             else alert(message);
                             return;
                         }
+                        // Mélange aléatoire : ordre des questions ET options de chaque question
+                        const quiz = typeof mathsQuiz !== 'undefined' ? (mathsQuiz[this.currentDomain] || []) : [];
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: [...q.options].sort(() => Math.random() - 0.5)
+                        }));
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
@@ -341,6 +349,8 @@
                     },
 
                     getCurrentQuiz() {
+                        // Pendant le quiz, retourne le tableau mélangé pour un ordre cohérent
+                        if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
                         if (typeof mathsQuiz !== 'undefined') return mathsQuiz[this.currentDomain] || [];
                         return [];
                     },
@@ -394,6 +404,13 @@
                             this.backToDomain();
                             return;
                         }
+                        // Re-mélange pour un nouvel ordre à chaque retry
+                        const quiz = typeof mathsQuiz !== 'undefined' ? (mathsQuiz[this.currentDomain] || []) : [];
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: [...q.options].sort(() => Math.random() - 0.5)
+                        }));
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();
