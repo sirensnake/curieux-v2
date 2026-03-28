@@ -457,8 +457,13 @@
                             else alert(message);
                             return;
                         }
+                        // Mélange aléatoire : ordre des questions ET options de chaque question
                         const quiz = this.quizQuestions[this.currentTheme] || [];
-                        this.shuffledQuiz = quiz.map(q => ({ ...q, options: this.shuffleArray([...q.options]) }));
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: this.shuffleArray([...q.options])
+                        }));
                         this.showQuiz = true;
                         this.showResults = false;
                         this.currentQuestionIndex = this.score = 0;
@@ -467,7 +472,11 @@
                         this.loadQuestion();
                     },
 
-                    getCurrentQuiz() { return this.shuffledQuiz || this.quizQuestions[this.currentTheme] || []; },
+                    getCurrentQuiz() {
+                        // Pendant le quiz, retourne le tableau mélangé pour un ordre cohérent
+                        if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
+                        return this.quizQuestions[this.currentTheme] || [];
+                    },
 
                     loadQuestion() {
                         this.currentQuestion = this.getCurrentQuiz()[this.currentQuestionIndex];
@@ -538,6 +547,13 @@
                             this.backToTheme();
                             return;
                         }
+                        // Re-mélange pour un nouvel ordre à chaque retry
+                        const quiz = this.quizQuestions[this.currentTheme] || [];
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: this.shuffleArray([...q.options])
+                        }));
                         this.quizFinished = false;
                         this.currentQuestionIndex = this.score = 0;
                         this.loadQuestion();
