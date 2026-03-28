@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 28 Mars 2026*
+*Dernière mise à jour : 28 Mars 2026 (session soir)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -19,10 +19,10 @@
 | Mathématiques | `mathematiques_section.html` | 11 | 110 | ✅ Complet |
 | Fractions | `maths_fractions_comprendre.html` | 6 | 20 | ✅ Complet |
 | Anglais | `english_duolingo_section.html` | 10 | 100 | ✅ Complet |
-| Sciences | `sciences_duolingo_section.html` | 5 | 88 | ✅ Complet |
+| Sciences | `sciences_duolingo_section.html` | 5 | 90 | ✅ Complet |
 | Histoire | `histoire_section_COMPLET.html` | 12 | 120 | ✅ Complet |
 | Géographie | `geographie_section.html` | 10 | 100 | ✅ Complet |
-| **TOTAL** | | **63** | **628** | **7 matières** |
+| **TOTAL** | | **63** | **630** | **7 matières** |
 
 ---
 
@@ -57,6 +57,7 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | Cœurs/vies | via section-xp-system.js | ✅ Actif | 5 par session, régén. 30 min |
 | Cooldown 24h | dans chaque section HTML | ✅ Actif | Par domaine/thème |
 | Export PDF | `dashboard-extended.html` | ✅ Actif | Toutes métriques incluses |
+| Shuffle quiz | dans chaque section HTML | ✅ Actif | Questions mélangées à chaque session |
 
 ---
 
@@ -117,7 +118,7 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 | Icône 192px | `images/icons/icon-192.png` | ✅ Commité |
 | Icône 512px | `images/icons/icon-512.png` | ✅ Commité |
 | Favicon | `images/favicon.svg` | ✅ Commité |
-| Service Worker | `sw.js` | ❌ Non implémenté — Phase 3 |
+| Service Worker | `sw.js` | ✅ Actif | Cache-first assets, Network-first HTML, offline Curio |
 
 ---
 
@@ -127,7 +128,14 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 Toute la navigation harmonisée, conversion WebP (-88%), scores Lighthouse
 atteints, corrections WCAG dashboard, icônes PWA, favicon Curio, classe
 `.retenir` 6 variantes, géographie intégrée, fractions intégrées, 4 leçons
-Histoire CM2 (Napoléon, 1GM, 2GM, Ve République).
+Histoire CM2 (Napoléon, 1GM, 2GM, Ve République), corrections WCAG massives
+88→96 (aria-pressed, main, nav, skip-link, progressbar — 66 corrections sur
+7 fichiers), Service Worker PWA complet (`sw.js` — offline Curio, 3 stratégies
+de cache), espace éducateurs enrichi (protocole session, gamification parents),
+**shuffle quiz aléatoire sur les 6 sections** (Sciences déjà fait, Français +
+Anglais + Maths + Histoire + Géographie ajoutés le 28/03/2026 — pattern
+`shuffledQuiz` avec mélange questions + options pour Famille A / questions seules
+pour Famille B à index numérique).
 
 ### 🔄 En cours / Pending
 
@@ -135,9 +143,8 @@ Histoire CM2 (Napoléon, 1GM, 2GM, Ve République).
 |---|---|---|---|
 | Illustration Fractions | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
-| Service Worker | Performance & PWA | 🟡 Moyenne | Dernière tâche PWA |
-| Accessibilité 92→93+ | Accessibility Auditor | 🟡 Moyenne | Sans refonte charte |
-| Espace éducateurs | Dossier Éducateur | 🟡 Moyenne | Page présente, contenu à enrichir |
+| Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
+| Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre sciences-lessons.js au projet pour éviter doublons |
 | Répétition espacée SM-2 | Gamification Designer | 🟢 Basse | Phase 4 — H2 2026 |
 | Interface parents | Gamification Designer | 🟢 Basse | Phase 4 — H2 2026 |
 
@@ -155,6 +162,11 @@ Ces règles s'appliquent à TOUS les agents sans exception.
 **Navigation** : `window.location.href='index.html'` — jamais `history.back()`.
 **Backups** : `.bak_[suffixe]` avant modification de fichier critique — seulement si `.bak` inexistant.
 **Google Fonts** : chaque famille supplémentaire est un risque de CLS. Lexend supprimé. Press Start 2P conservé uniquement sur titres/boutons.
+
+**Règle shuffle quiz (ajoutée 28/03/2026) :**
+Famille A (correct par texte — Français, Anglais, Maths, Sciences) : mélanger questions ET options.
+Famille B (correct par index numérique — Histoire, Géographie) : mélanger questions uniquement, ne pas toucher aux options.
+Ne jamais appliquer le shuffle sur `maths_fractions_comprendre.html` sans vérifier d'abord la structure `correct` de ses données.
 
 ---
 
@@ -180,7 +192,7 @@ qui ont changé. Les sections les plus fréquemment modifiées sont :
 
 La **section 1** (contenu) dès qu'une nouvelle leçon ou question est ajoutée.
 La **section 2** (Lighthouse) après chaque série de commits significatifs.
-La **section 7** (PWA) quand le Service Worker sera implémenté.
+La **section 7** (PWA) — Service Worker désormais actif, section stable sauf ajout de nouvelles stratégies de cache.
 La **section 8** (pending) pour cocher les tâches terminées et ajouter les nouvelles.
 
 Les sections 3, 4, 5, 6, 9 et 10 sont stables — elles ne changent qu'en cas
