@@ -219,6 +219,7 @@
                     isCorrect: false,
                     quizFinished: false,
                     currentQuestion: null,
+                    shuffledQuiz: null,
                     audioContext: null,
 
                     init() {
@@ -298,6 +299,8 @@
                     },
 
                     getCurrentQuiz() {
+                        // Pendant le quiz, retourne le tableau mélangé pour un ordre aléatoire cohérent
+                        if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
                         if (!window.sciencesLessons) return [];
                         return window.sciencesLessons[this.currentDomain]?.quiz || [];
                     },
@@ -349,6 +352,9 @@
                             }
                             return;
                         }
+
+                        // Mélange aléatoire une fois pour toute la session
+                        this.shuffledQuiz = [...quiz].sort(() => Math.random() - 0.5);
 
                         this.showQuiz = true;
                         this.showResults = false;
