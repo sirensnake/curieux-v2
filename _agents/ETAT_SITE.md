@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 28 Mars 2026 (session soir)*
+*Dernière mise à jour : 29 Mars 2026 (session après-midi SEO)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -19,10 +19,10 @@
 | Mathématiques | `mathematiques_section.html` | 11 | 110 | ✅ Complet |
 | Fractions | `maths_fractions_comprendre.html` | 6 | 20 | ✅ Complet |
 | Anglais | `english_duolingo_section.html` | 10 | 100 | ✅ Complet |
-| Sciences | `sciences_duolingo_section.html` | 5 | 90 | ✅ Complet |
+| Sciences | `sciences_duolingo_section.html` | 6 | 98 | ✅ Complet |
 | Histoire | `histoire_section_COMPLET.html` | 12 | 120 | ✅ Complet |
 | Géographie | `geographie_section.html` | 10 | 100 | ✅ Complet |
-| **TOTAL** | | **63** | **630** | **7 matières** |
+| **TOTAL** | | **64** | **638** | **7 matières** |
 
 ---
 
@@ -105,6 +105,10 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `images/icons/icon-192.png` | `.png` | 1 | PWA — généré Pillow |
 | `images/icons/icon-512.png` | `.png` | 1 | PWA — généré Pillow |
 
+**Image manquante :**
+`images/og-preview.webp` — 1200×630px — Open Graph card pour partages réseaux sociaux.
+Prompt Ideogram fourni par agent SEO le 29/03/2026. En attente crédits Ideogram.
+
 **Règle absolue :** tout nouveau fichier image doit être en `.webp`.
 Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 
@@ -122,9 +126,32 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 
 ---
 
-## 8. Tâches en cours et pending
+## 8. SEO — État (mis à jour 29/03/2026)
 
-### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle)
+| Élément SEO | Fichier | Statut | Notes |
+|---|---|---|---|
+| Schema.org `Course` + `Quiz` | 7 sections HTML | ✅ Commité 29/03/2026 | Script `seo_schema_patch.py` |
+| Schema.org `EducationalOrganization` + `WebSite` | `index.html` | ✅ Commité 29/03/2026 | Script `seo_index_and_sitemap.py` |
+| OpenGraph + Twitter Cards | Toutes les pages | ✅ Commité 29/03/2026 | Image `og-preview.webp` manquante |
+| `sitemap.xml` statique | Racine du dépôt | ✅ Commité + soumis 29/03/2026 | 14 URLs |
+| Google Search Console | `lemondedescurieux.fr` | ✅ Vérifié 29/03/2026 | Méthode DNS TXT via Hostinger |
+| Scores Lighthouse SEO | `index.html` + dashboard | ✅ 100/100 | Stable |
+| Rich Results Test | À relancer | ⏳ Dans 24-48h | Attendre crawl Google |
+
+**Registrar du domaine :** Hostinger (`hpanel.hostinger.com`)
+**DNS TXT Google :** `google-site-verification=AbBRfdwKcCOAXi254bQmqyJHzfbtIpZlKApiQI8xaHM`
+**Ne jamais supprimer cet enregistrement DNS** — Search Console le recheck périodiquement.
+
+**Scripts SEO disponibles dans `_agents/seo/` :**
+- `seo_schema_patch.py` — insère Course + Quiz JSON-LD sur les 7 sections (idempotent)
+- `seo_index_and_sitemap.py` — patch index.html + génère sitemap.xml
+
+---
+
+## 9. Tâches en cours et pending
+
+### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle + SEO)
+
 Toute la navigation harmonisée, conversion WebP (-88%), scores Lighthouse
 atteints, corrections WCAG dashboard, icônes PWA, favicon Curio, classe
 `.retenir` 6 variantes, géographie intégrée, fractions intégrées, 4 leçons
@@ -135,22 +162,43 @@ de cache), espace éducateurs enrichi (protocole session, gamification parents),
 **shuffle quiz aléatoire sur les 6 sections** (Sciences déjà fait, Français +
 Anglais + Maths + Histoire + Géographie ajoutés le 28/03/2026 — pattern
 `shuffledQuiz` avec mélange questions + options pour Famille A / questions seules
-pour Famille B à index numérique).
+pour Famille B à index numérique),
+**Sciences — domaine Technologie & Objets techniques** (10 questions ajoutées
+le 28/03/2026 — 4F/4I/2A, tag `badge-ingénieur` posé sur Q9-Q10),
+**Fiche parents HTML** (`documents/fiche_parents_lemondedescurieux.html` —
+ajoutée le 29/03/2026, accessible depuis la section Ressources de l'espace
+éducateurs, explique streaks/cœurs/badges en langage non-technique),
+**Espace éducateurs mis à jour** (`educateurs.html` — section Ressources
+ajoutée avec lien fiche parents, compteurs mis à jour 638 questions / 64 leçons),
+**SEO — Schema.org + OpenGraph** (ajouté le 29/03/2026 — Course + Quiz JSON-LD
+sur 7 sections, EducationalOrganization + WebSite sur index.html, OpenGraph +
+Twitter Cards sur toutes les pages — scripts `seo_schema_patch.py` +
+`seo_index_and_sitemap.py`),
+**SEO — sitemap.xml** (14 URLs, généré et soumis à Google Search Console
+le 29/03/2026),
+**SEO — Google Search Console** (propriété `lemondedescurieux.fr` vérifiée
+par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté).
 
 ### 🔄 En cours / Pending
 
 | Tâche | Agent concerné | Priorité | Notes |
 |---|---|---|---|
-| Illustration Fractions | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
+| Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt Ideogram/ChatGPT/Copilot fourni le 29/03/2026 — en attente crédits |
+| Rich Results Test — validation Schema.org | SEO Éducatif | 🟡 Moyenne | Relancer dans 24-48h sur search.google.com/test/rich-results |
+| Pearltrees — collection CM2 | SEO Éducatif | 🟡 Moyenne | Textes prêts, action ~45 min |
+| Viaéduc — présentation site | SEO Éducatif | 🟡 Moyenne | Texte prêt, action ~1h |
+| Soumission Éduscol | SEO Éducatif | 🔵 Basse | Fiche description prête |
+| Illustration `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
 | Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
 | Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre sciences-lessons.js au projet pour éviter doublons |
-| Répétition espacée SM-2 | Gamification Designer | 🟢 Basse | Phase 4 — H2 2026 |
-| Interface parents | Gamification Designer | 🟢 Basse | Phase 4 — H2 2026 |
+| Badge "Jeune ingénieur" dans `badges-system.js` | Gamification Designer | 🟡 Moyenne | Tag `badge-ingénieur` déjà posé sur Q9-Q10 Sciences Technologie |
+| Répétition espacée SM-2 | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
+| Interface parents | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
 
 ---
 
-## 9. Règles de développement — Rappel
+## 10. Règles de développement — Rappel
 
 Ces règles s'appliquent à TOUS les agents sans exception.
 
@@ -168,9 +216,15 @@ Famille A (correct par texte — Français, Anglais, Maths, Sciences) : mélange
 Famille B (correct par index numérique — Histoire, Géographie) : mélanger questions uniquement, ne pas toucher aux options.
 Ne jamais appliquer le shuffle sur `maths_fractions_comprendre.html` sans vérifier d'abord la structure `correct` de ses données.
 
+**Règle SEO (ajoutée 29/03/2026) :**
+Les blocs Schema.org JSON-LD sont insérés après `</title>` dans le `<head>`.
+Les scripts `seo_schema_patch.py` et `seo_index_and_sitemap.py` sont idempotents — ils skippent les fichiers déjà patchés.
+Ne jamais supprimer l'enregistrement DNS TXT Google de Hostinger.
+Mettre à jour `sitemap.xml` après chaque ajout de page significative.
+
 ---
 
-## 10. Dépendances entre agents — Ordre de sollicitation
+## 11. Dépendances entre agents — Ordre de sollicitation
 
 Ce tableau indique dans quel ordre solliciter les agents selon l'objectif.
 
@@ -182,24 +236,27 @@ Ce tableau indique dans quel ordre solliciter les agents selon l'objectif.
 | Fin de phase (Phase 2, 3...) | Portfolio TAI (capitalisation compétences) |
 | Améliorer la gamification | Gamification Designer → Python Patch Scripter (implémentation) |
 | Optimiser les performances | Performance & PWA → Python Patch Scripter (si patches HTML) |
+| Améliorer le SEO | SEO Éducatif → Python Patch Scripter (si patches HTML) → Search Console (validation) |
 
 ---
 
-## 11. Comment mettre ce fichier à jour
+## 12. Comment mettre ce fichier à jour
 
 Après chaque session de travail, mettre à jour uniquement les sections
 qui ont changé. Les sections les plus fréquemment modifiées sont :
 
 La **section 1** (contenu) dès qu'une nouvelle leçon ou question est ajoutée.
 La **section 2** (Lighthouse) après chaque série de commits significatifs.
+La **section 6** (assets) dès qu'une nouvelle image est ajoutée ou manquante.
 La **section 7** (PWA) — Service Worker désormais actif, section stable sauf ajout de nouvelles stratégies de cache.
-La **section 8** (pending) pour cocher les tâches terminées et ajouter les nouvelles.
+La **section 8** (SEO) après chaque action SEO (nouveau Schema.org, soumission sitemap, vérification Search Console).
+La **section 9** (pending) pour cocher les tâches terminées et ajouter les nouvelles.
 
-Les sections 3, 4, 5, 6, 9 et 10 sont stables — elles ne changent qu'en cas
+Les sections 3, 4, 5, 10 et 11 sont stables — elles ne changent qu'en cas
 de modification architecturale majeure (nouveau système JS, nouveau schéma
-localStorage, nouveau badge, etc.).
+localStorage, nouveau badge, nouvelle règle de développement).
 
 ---
 
-*Le Monde des Curieux · Guillaume · Mars 2026 · lemondedescurieux.fr*
+*Le Monde des Curieux · Guillaume · 29 Mars 2026 · lemondedescurieux.fr*
 *Mettre à jour la date en en-tête à chaque modification.*
