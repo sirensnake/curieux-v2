@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Super découverte sur Mars ! 🚀",
-      "summary": "Des scientifiques ont découvert qu'il y a eu beaucoup d'eau sur Mars il y a très longtemps. Cette découverte est importante car l'eau est essentielle à la vie. Les chercheurs pensent que la planète rouge pourrait avoir hébergé des formes de vie, même si aujourd'hui, elle est sèche et déserte. Ils utilisent des robots pour explorer la surface de Mars et étudier les roches. Ces robots envoient des images et des informations à la Terre pour aider les scientifiques à en apprendre plus. Quelle incroyable aventure spatiale !",
-      "date": "27/10/2023",
-      "link": ""
+      "title": "Lune en Images 🌓",
+      "summary": "Des scientifiques ont utilisé un nouveau télescope pour prendre des photos incroyables de la Lune ! Ce télescope, situé à Hawaii, est l'un des plus puissants au monde. Il permet de voir les détails de la surface lunaire comme s'ils étaient juste devant nous. Ces images aident les chercheurs à en apprendre plus sur notre satellite naturel préféré et à peut-être découvrir des secrets encore cachés. Regarder la Lune et les étoiles peut nous inspirer à explorer l'univers !",
+      "date": "05/10/2023",
+      "link": "https://www.nasa.gov"
     },
     {
-      "title": "Un ami à plumes en visite en ville ! 🦜",
-      "summary": "Un grand perroquet a été vu en plein cœur de la ville de Londres ! Ce remarquable oiseau multicolore a surpris les passants en se posant sur un arbre du parc. Les experts pensent qu'il pourrait s'être échappé d'une volière ou d'une maison. Les habitants sont invités à signaler toute observation pour l'aider à rentrer chez lui. En attendant, il semble bien profiter de son escapade citadine, explorant les environs et grappillant quelques fruits au passage.",
-      "date": "27/10/2023",
-      "link": ""
+      "title": "Koalas en Sécurité 🐨",
+      "summary": "Les koalas bénéficient d'un espace protégé en Australie ! Le gouvernement a créé une nouvelle réserve naturelle. Les koalas y seront en sécurité, tout comme d'autres animaux. En protégeant leur habitat, on s'assure que ces adorables créatures auront un foyer sûr. Cela contribue aussi à la préservation de la nature, car les koalas jouent un rôle important dans leur écosystème. C'est une belle nouvelle pour les amoureux des animaux et de l'environnement !",
+      "date": "05/10/2023",
+      "link": "https://www.worldwildlife.org"
     },
     {
-      "title": "Course de robots sous-marins ! 🤖🌊",
-      "summary": "Une compétition unique a eu lieu en Australie où des robots sous-marins se sont affrontés dans une course palpitante. Ces robots, conçus par des étudiants ingénieurs, devaient naviguer et accomplir différentes tâches sous l'eau, comme ramasser des objets et éviter les obstacles. Ce challenge vise à encourager l'innovation et à trouver de nouvelles façons d'explorer les océans. Les gagnants ont impressionné le jury par leurs idées créatives et leurs compétences techniques. Qui sait, peut-être qu'un jour, nous aurons des robots pour explorer les océans de fond en comble !",
-      "date": "27/10/2023",
-      "link": ""
+      "title": "Découverte d'une Cité Cachée 🗺️",
+      "summary": "Des archéologues ont découvert une ancienne cité cachée au Pérou ! En utilisant des technologies spéciales, ils ont trouvé des vestiges d'une civilisation qui vivait il y a des milliers d'années. Cela nous aide à comprendre comment ces gens construisaient leurs villes et vivaient. Les découvertes archéologiques sont comme des machines à remonter le temps, nous aidant à mieux connaître notre passé. Qui sait quelles autres surprises se cachent encore sous terre ?",
+      "date": "05/10/2023",
+      "link": "https://www.archaeology.org"
     }
   ]
 }
