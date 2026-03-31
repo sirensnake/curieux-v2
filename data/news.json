@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Lune en Images 🌓",
-      "summary": "Des scientifiques ont utilisé un nouveau télescope pour prendre des photos incroyables de la Lune ! Ce télescope, situé à Hawaii, est l'un des plus puissants au monde. Il permet de voir les détails de la surface lunaire comme s'ils étaient juste devant nous. Ces images aident les chercheurs à en apprendre plus sur notre satellite naturel préféré et à peut-être découvrir des secrets encore cachés. Regarder la Lune et les étoiles peut nous inspirer à explorer l'univers !",
-      "date": "05/10/2023",
-      "link": "https://www.nasa.gov"
+      "title": "Découverte Spatiale 🚀",
+      "summary": "Des scientifiques ont récemment découvert une nouvelle planète en dehors de notre système solaire. Cette planète, appelée une 'exoplanète', est plus grande que Jupiter, la plus grosse planète de notre système. Elle se trouve à des milliers d'années-lumière de la Terre, mais grâce à de puissants télescopes, les astronomes peuvent l'observer. Cette découverte aide les chercheurs à mieux comprendre l'Univers et à chercher des endroits où la vie pourrait exister. C'est fascinant de penser qu'il y a tant à explorer dans le cosmos !",
+      "date": "19/10/2023",
+      "link": ""
     },
     {
-      "title": "Koalas en Sécurité 🐨",
-      "summary": "Les koalas bénéficient d'un espace protégé en Australie ! Le gouvernement a créé une nouvelle réserve naturelle. Les koalas y seront en sécurité, tout comme d'autres animaux. En protégeant leur habitat, on s'assure que ces adorables créatures auront un foyer sûr. Cela contribue aussi à la préservation de la nature, car les koalas jouent un rôle important dans leur écosystème. C'est une belle nouvelle pour les amoureux des animaux et de l'environnement !",
-      "date": "05/10/2023",
-      "link": "https://www.worldwildlife.org"
+      "title": "Les ouragans sous surveillance 🌀",
+      "summary": "Les météorologues surveillent un ouragan qui se forme actuellement dans l'océan Atlantique. Les ouragans sont des tempêtes très puissantes avec des vents forts et des pluies intenses. Grâce aux satellites, les scientifiques peuvent prévoir la trajectoire de l'ouragan et alerter les gens pour qu'ils prennent des précautions. Les tempêtes nous rappellent l'importance de comprendre et de respecter la nature. En attendant, surveillons de près l'évolution de cette tempête pour voir comment elle se développe.",
+      "date": "19/10/2023",
+      "link": ""
     },
     {
-      "title": "Découverte d'une Cité Cachée 🗺️",
-      "summary": "Des archéologues ont découvert une ancienne cité cachée au Pérou ! En utilisant des technologies spéciales, ils ont trouvé des vestiges d'une civilisation qui vivait il y a des milliers d'années. Cela nous aide à comprendre comment ces gens construisaient leurs villes et vivaient. Les découvertes archéologiques sont comme des machines à remonter le temps, nous aidant à mieux connaître notre passé. Qui sait quelles autres surprises se cachent encore sous terre ?",
-      "date": "05/10/2023",
-      "link": "https://www.archaeology.org"
+      "title": "Festival de Lumières ✨",
+      "summary": "Un magnifique festival de lumières a débuté dans une grande ville, attirant des milliers de visiteurs chaque soir. Les artistes ont créé des sculptures lumineuses incroyables, transformant les rues en véritables galeries d'art en plein air. Les couleurs et les formes illuminent la nuit et émerveillent les spectateurs. Ce festival est une manière de célébrer la créativité et la joie, en apportant un peu de magie et de féerie. C'est l'occasion de sortir en famille et de découvrir l'art sous un nouvel angle !",
+      "date": "19/10/2023",
+      "link": ""
     }
   ]
 }
