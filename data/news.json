@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte Spatiale 🚀",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle planète en dehors de notre système solaire. Cette planète, appelée une 'exoplanète', est plus grande que Jupiter, la plus grosse planète de notre système. Elle se trouve à des milliers d'années-lumière de la Terre, mais grâce à de puissants télescopes, les astronomes peuvent l'observer. Cette découverte aide les chercheurs à mieux comprendre l'Univers et à chercher des endroits où la vie pourrait exister. C'est fascinant de penser qu'il y a tant à explorer dans le cosmos !",
-      "date": "19/10/2023",
+      "title": "Découverte d'un ancien trésor 🏺",
+      "summary": "Des archéologues ont découvert un ancien trésor en Égypte. Il s'agit de plusieurs pots remplis de pièces de monnaie datant de plusieurs centaines d'années. Ces trouvailles aident les chercheurs à mieux comprendre comment les gens vivaient à cette époque. C'est comme si on découvrait un petit morceau de l'histoire du monde ! Les archéologues sont très excités par cette découverte, car elle pourrait révéler de nouveaux secrets sur les civilisations anciennes.",
+      "date": "07/10/2023",
       "link": ""
     },
     {
-      "title": "Les ouragans sous surveillance 🌀",
-      "summary": "Les météorologues surveillent un ouragan qui se forme actuellement dans l'océan Atlantique. Les ouragans sont des tempêtes très puissantes avec des vents forts et des pluies intenses. Grâce aux satellites, les scientifiques peuvent prévoir la trajectoire de l'ouragan et alerter les gens pour qu'ils prennent des précautions. Les tempêtes nous rappellent l'importance de comprendre et de respecter la nature. En attendant, surveillons de près l'évolution de cette tempête pour voir comment elle se développe.",
-      "date": "19/10/2023",
+      "title": "Un concert géant pour la planète 🌍",
+      "summary": "Des musiciens du monde entier ont organisé un grand concert pour sensibiliser à la protection de la planète. Ce concert était diffusé en ligne pour que des millions de personnes puissent y assister. Les artistes espèrent encourager tout le monde à prendre soin de la Terre en recyclant, en économisant l'eau et en plantant des arbres. Même les petits gestes comptent pour faire une grande différence !",
+      "date": "07/10/2023",
       "link": ""
     },
     {
-      "title": "Festival de Lumières ✨",
-      "summary": "Un magnifique festival de lumières a débuté dans une grande ville, attirant des milliers de visiteurs chaque soir. Les artistes ont créé des sculptures lumineuses incroyables, transformant les rues en véritables galeries d'art en plein air. Les couleurs et les formes illuminent la nuit et émerveillent les spectateurs. Ce festival est une manière de célébrer la créativité et la joie, en apportant un peu de magie et de féerie. C'est l'occasion de sortir en famille et de découvrir l'art sous un nouvel angle !",
-      "date": "19/10/2023",
+      "title": "Une découverte spatiale spectaculaire 🚀",
+      "summary": "Des scientifiques ont découvert une nouvelle planète située loin dans notre galaxie. Cette planète est très différente de la Terre, car elle est entièrement recouverte de gaz. Les chercheurs utilisent des télescopes puissants pour en savoir plus sur cette planète et sur ce qui pourrait s'y trouver. Découvrir de nouvelles planètes permet aux scientifiques d'apprendre comment les étoiles et les planètes se forment et évoluent dans l'univers.",
+      "date": "07/10/2023",
       "link": ""
     }
   ]
