@@ -1,22 +1,23 @@
 {
+  "date": "13/01/2026",
   "articles": [
     {
-      "title": "Un mini zoo 🚸 dans une école!",
-      "summary": "Une école en France a créé un mini zoo pour permettre aux élèves de découvrir les animaux de près! Ce zoo abrite de petits animaux comme des lapins, des poules et même des poissons. L'objectif est d'apprendre aux enfants à prendre soin des animaux tout en apprenant des faits amusants sur chacun d'eux. Les élèves peuvent ainsi mieux comprendre la nature et l'importance de la protéger. C'est une belle façon de rendre l'apprentissage amusant et interactif!",
-      "date": "03/11/2023",
-      "link": ""
+      "title": "🌌 Une nouvelle étoile observée dans l'espace",
+      "summary": "Des astronomes ont découvert une nouvelle étoile dans notre galaxie. Cette étoile est très spéciale car elle brille beaucoup plus que les autres, ce qui intrigue les scientifiques. Grâce à de puissants télescopes, ils espèrent en apprendre plus sur elle et sa composition. Observer de nouvelles étoiles aide les scientifiques à mieux comprendre l'univers et les nombreuses étoiles qui le peuplent. Cela nous rappelle aussi combien l'espace est grand et mystérieux!",
+      "link": "",
+      "date": "13/01/2026"
     },
     {
-      "title": "Une découverte spatiale 🚀 fascinante!",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle planète en dehors de notre système solaire. Cette planète est très spéciale car elle est un peu comme la Terre, mais beaucoup plus grande! Elle se trouve dans une zone où il pourrait y avoir de l'eau, ce qui fait rêver beaucoup de chercheurs qui cherchent des signes de vie ailleurs dans l'univers. Ces découvertes nous rappellent combien l'espace est vaste et mystérieux, et ils encouragent les jeunes à rester curieux et passionnés par l'exploration spatiale.",
-      "date": "03/11/2023",
-      "link": ""
+      "title": "🎨 Une exposition d'art par des enfants",
+      "summary": "Dans une grande ville, une exposition d'art a été ouverte pour montrer les créations d'enfants de différentes écoles. Ces œuvres d'art sont uniques, utilisant des matériaux recyclés et beaucoup d'imagination. Les visiteurs sont impressionnés par la créativité et le message de protection de la nature que ces travaux révèlent. Cette exposition prouve que même les plus jeunes artistes peuvent avoir un impact positif sur le monde.",
+      "link": "",
+      "date": "13/01/2026"
     },
     {
-      "title": "Un festival de lanternes ✨ magique",
-      "summary": "En Chine, un extraordinaire festival de lanternes a récemment illuminé le ciel nocturne. Des milliers de lanternes de toutes formes et couleurs ont été lancées dans le ciel, créant un spectacle éblouissant. C'est une ancienne tradition qui célèbre l'harmonie et le bonheur. Cette année, avec des lanternes en forme d'animaux, de fleurs et même de petits personnages, le festival a apporté de la joie et de la lumière aux participants! Ces événements culturels permettent aux gens de se rassembler et de partager des moments de magie ensemble.",
-      "date": "03/11/2023",
-      "link": ""
+      "title": "🐢 Sauvetage de tortues sur les plages",
+      "summary": "Sur une plage, des bénévoles se sont rassemblés pour aider des bébés tortues marines à se rendre en toute sécurité jusqu'à la mer. Chaque année, ces tortues naissent sur la plage et entament un long voyage jusqu'à l'océan. Cependant, elles peuvent rencontrer des obstacles et avoir besoin d'aide. Ce projet de sauvetage montre l'importance de protéger les animaux et leur environnement. Grâce à ces actions, plus de bébés tortues ont pu commencer leur aventure en mer.",
+      "link": "",
+      "date": "13/01/2026"
     }
   ]
 }
