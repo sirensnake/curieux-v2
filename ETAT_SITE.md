@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 05 Avril 2026 (session SEO plateformes éducatives)*
+*Dernière mise à jour : 05 Avril 2026 (session badge Jeune ingénieur)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -49,7 +49,7 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | Système | Fichier JS | Statut | Notes |
 |---|---|---|---|
 | XP + niveaux | `section-xp-system.js` | ✅ Actif | Algo : `200 × 1.5^level` |
-| Badges (7) | `badges-system.js` | ✅ Actif | Voir section 4 |
+| Badges (8) | `badges-system.js` | ✅ Actif | Voir section 4 |
 | Pont localStorage | `storage-bridge.js` | ✅ Actif | Inter-sections |
 | Orchestrateur | `master-game-system.js` | ✅ Actif | |
 | Panel admin | `admin-shortcut.js` | ✅ Actif | `Ctrl+Shift+X` |
@@ -71,7 +71,12 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `xp_5000` | 5 000 XP cumulés | Progression |
 | `perfect_10` | 10 quiz parfaits | Performance |
 | `quiz_100` | 100 quiz complétés | Volume |
-| `all_subjects` | 1 quiz dans les 7 matières | Exploration |
+| `all_subjects` | 1 quiz dans les 7 matières (géographie incluse) | Exploration |
+| `jeune_ingenieur` | Réussir Q13 + Q14 du quiz Technologie (Sciences) | Performance |
+
+**localStorage badge Jeune ingénieur :**
+- `curieux_badge_ingenieur_count` — compteur (0→2) écrit par `sciences_duolingo_section.html`
+- `curieux_badge_ingenieur` — flag `'true'` quand count ≥ 2, lu par `badges-system.js`
 
 ---
 
@@ -85,6 +90,8 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `curieux_{section}_cooldown` | Timestamp dernier quiz | Chaque section HTML |
 | `curieux_hearts` | Entier 0-5 + timestamp régén. | `section-xp-system.js` |
 | `curieux_active_days` | Tableau de dates (calendrier 7j) | `dashboard-extended.html` |
+| `curieux_badge_ingenieur_count` | Entier 0-2 | `sciences_duolingo_section.html` |
+| `curieux_badge_ingenieur` | `'true'` quand débloqué | `sciences_duolingo_section.html` |
 
 **Clé réservée Phase 4 (SM-2, H2 2026 — ne pas implémenter avant) :**
 `curieux_sm2_queue` → `[{questionId, interval, easeFactor, nextReview}]`
@@ -108,6 +115,8 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 **Image manquante :**
 `images/og-preview.webp` — 1200×630px — Open Graph card pour partages réseaux sociaux.
 Prompt Ideogram fourni par agent SEO le 29/03/2026. En attente crédits Ideogram.
+`images/sciences/illustration_technologie.webp` — illustration domaine Technologie.
+Prompt prêt. En attente crédits Ideogram.
 
 **Règle absolue :** tout nouveau fichier image doit être en `.webp`.
 Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
@@ -136,7 +145,7 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 | `sitemap.xml` statique | Racine du dépôt | ✅ Commité + soumis 29/03/2026 | 14 URLs |
 | Google Search Console | `lemondedescurieux.fr` | ✅ Vérifié 29/03/2026 | Méthode DNS TXT via Hostinger |
 | Scores Lighthouse SEO | `index.html` + dashboard | ✅ 100/100 | Stable |
-| Rich Results Test | À relancer | ⏳ Dans 24-48h | Attendre crawl Google |
+| Rich Results Test | ✅ Validé 05/04/2026 | Course + Quiz détectés sur francais_duolingo_section.html |
 
 **Registrar du domaine :** Hostinger (`hpanel.hostinger.com`)
 **DNS TXT Google :** `google-site-verification=AbBRfdwKcCOAXi254bQmqyJHzfbtIpZlKApiQI8xaHM`
@@ -150,7 +159,7 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 
 ## 9. Tâches en cours et pending
 
-### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle + SEO)
+### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle + SEO + Gamification)
 
 Toute la navigation harmonisée, conversion WebP (-88%), scores Lighthouse
 atteints, corrections WCAG dashboard, icônes PWA, favicon Curio, classe
@@ -164,7 +173,7 @@ Anglais + Maths + Histoire + Géographie ajoutés le 28/03/2026 — pattern
 `shuffledQuiz` avec mélange questions + options pour Famille A / questions seules
 pour Famille B à index numérique),
 **Sciences — domaine Technologie & Objets techniques** (10 questions ajoutées
-le 28/03/2026 — 4F/4I/2A, tag `badge-ingénieur` posé sur Q9-Q10),
+le 28/03/2026 — 4F/4I/2A, tags `badge-ingenieur` sur Q13-Q14),
 **Fiche parents HTML** (`documents/fiche_parents_lemondedescurieux.html` —
 ajoutée le 29/03/2026, accessible depuis la section Ressources de l'espace
 éducateurs, explique streaks/cœurs/badges en langage non-technique),
@@ -177,23 +186,21 @@ Twitter Cards sur toutes les pages — scripts `seo_schema_patch.py` +
 **SEO — sitemap.xml** (14 URLs, généré et soumis à Google Search Console
 le 29/03/2026),
 **SEO — Google Search Console** (propriété `lemondedescurieux.fr` vérifiée
-par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté).
+par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté),
+**Badge ⚙️ Jeune ingénieur** (05/04/2026 — défini dans `badges-system.js`,
+tags `badge-ingenieur` sur Q13-Q14 de `sciences-lessons.js`, flag
+`curieux_badge_ingenieur` posé par `sciences_duolingo_section.html`,
+`all_subjects` mis à jour 7 matières, `quizBySubject` inclut géographie).
 
 ### 🔄 En cours / Pending
 
 | Tâche | Agent concerné | Priorité | Notes |
 |---|---|---|---|
-| Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt Ideogram/ChatGPT/Copilot fourni le 29/03/2026 — en attente crédits |
-| Rich Results Test — validation Schema.org | SEO Éducatif | ✅ Validé 05/04/2026 | Course + Quiz détectés sur francais_duolingo_section.html |
-| Pearltrees — collection CM2 | SEO Éducatif | ✅ Terminé 05/04/2026 | 12 perles, 3 abonnements (Ateliers CM2, Enseignants, Cycle 3), lien dans educateurs.html |
-| Viaéduc — FERMÉ depuis 01/10/2025 | SEO Éducatif | ❌ Abandonné | Remplacé par Réseau Canopé — à évaluer |
-| Soumission Primàbord (Éduscol) | SEO Éducatif | ✅ Soumis 05/04/2026 | En attente réponse comité éditorial |
-| Email Atelier Canopé 44 Nantes | SEO Éducatif | ✅ Envoyé 05/04/2026 | En attente réponse — peut faire remonter via référents Primàbord |
-| Illustration `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
+| Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt prêt — en attente crédits Ideogram/Copilot |
+| Image `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Prompt prêt — en attente crédits Ideogram |
+| Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre `sciences-lessons.js` au projet pour éviter doublons |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
 | Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
-| Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre sciences-lessons.js au projet pour éviter doublons |
-| Badge "Jeune ingénieur" dans `badges-system.js` | Gamification Designer | 🟡 Moyenne | Tag `badge-ingénieur` déjà posé sur Q9-Q10 Sciences Technologie |
 | Répétition espacée SM-2 | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
 | Interface parents | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
 
@@ -223,6 +230,12 @@ Les scripts `seo_schema_patch.py` et `seo_index_and_sitemap.py` sont idempotents
 Ne jamais supprimer l'enregistrement DNS TXT Google de Hostinger.
 Mettre à jour `sitemap.xml` après chaque ajout de page significative.
 
+**Règle badges (ajoutée 05/04/2026) :**
+Tout nouveau badge nécessite 3 fichiers : définition dans `badges-system.js`,
+tag sur les questions concernées dans le fichier data, flag localStorage dans
+la section HTML correspondante. Les scripts de patch vérifient d'abord si le
+travail est déjà fait (`if "badge-id" in content`) avant de modifier.
+
 ---
 
 ## 11. Dépendances entre agents — Ordre de sollicitation
@@ -238,6 +251,7 @@ Ce tableau indique dans quel ordre solliciter les agents selon l'objectif.
 | Améliorer la gamification | Gamification Designer → Python Patch Scripter (implémentation) |
 | Optimiser les performances | Performance & PWA → Python Patch Scripter (si patches HTML) |
 | Améliorer le SEO | SEO Éducatif → Python Patch Scripter (si patches HTML) → Search Console (validation) |
+| Ajouter un badge | Gamification Designer → Python Patch Scripter (3 fichiers) → vérification production |
 
 ---
 
