@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 05 Avril 2026 (session badge Jeune ingénieur)*
+*Dernière mise à jour : 05 Avril 2026 (session badge Jeune ingénieur + Énergies renouvelables)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -19,10 +19,10 @@
 | Mathématiques | `mathematiques_section.html` | 11 | 110 | ✅ Complet |
 | Fractions | `maths_fractions_comprendre.html` | 6 | 20 | ✅ Complet |
 | Anglais | `english_duolingo_section.html` | 10 | 100 | ✅ Complet |
-| Sciences | `sciences_duolingo_section.html` | 6 | 98 | ✅ Complet |
+| Sciences | `sciences_duolingo_section.html` | 7 | 108 | ✅ Complet |
 | Histoire | `histoire_section_COMPLET.html` | 12 | 120 | ✅ Complet |
 | Géographie | `geographie_section.html` | 10 | 100 | ✅ Complet |
-| **TOTAL** | | **64** | **638** | **7 matières** |
+| **TOTAL** | | **65** | **648** | **7 matières** |
 
 ---
 
@@ -187,7 +187,7 @@ Twitter Cards sur toutes les pages — scripts `seo_schema_patch.py` +
 le 29/03/2026),
 **SEO — Google Search Console** (propriété `lemondedescurieux.fr` vérifiée
 par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté),
-**Badge ⚙️ Jeune ingénieur** (05/04/2026 — défini dans `badges-system.js`,
+**Sciences — domaine Environnement & Énergie renouvelable** (05/04/2026 — leçon ⚡ Énergies Renouvelables ajoutée dans `sciences-lessons.js`, 10 nouvelles questions, domaine environnement : 4 leçons / 22 questions),
 tags `badge-ingenieur` sur Q13-Q14 de `sciences-lessons.js`, flag
 `curieux_badge_ingenieur` posé par `sciences_duolingo_section.html`,
 `all_subjects` mis à jour 7 matières, `quizBySubject` inclut géographie).
@@ -198,7 +198,7 @@ tags `badge-ingenieur` sur Q13-Q14 de `sciences-lessons.js`, flag
 |---|---|---|---|
 | Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt prêt — en attente crédits Ideogram/Copilot |
 | Image `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Prompt prêt — en attente crédits Ideogram |
-| Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre `sciences-lessons.js` au projet pour éviter doublons |
+**Badge ⚙️ Jeune ingénieur** (05/04/2026 — défini dans `badges-system.js`,
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
 | Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
 | Répétition espacée SM-2 | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
