@@ -820,6 +820,41 @@ const sciencesLessons = {
                     <p>📌 Les énergies renouvelables ne <strong>s'épuisent pas</strong></p>
                     <p>📌 Protéger la planète, c'est aussi <strong>protéger notre avenir</strong> !</p>
                 `
+            },
+            energies_renouvelables: {
+                title: '⚡ Énergies Renouvelables',
+                content: `
+                    <h3>Pourquoi changer d'énergie ?</h3>
+                    <p>Le pétrole, le charbon et le gaz naturel sont des <strong>énergies fossiles</strong> : elles se sont formées en millions d'années et vont s'<strong>épuiser</strong>. De plus, en brûlant, elles rejettent du CO2 qui aggrave le <strong>réchauffement climatique</strong>.</p>
+
+                    <h3>Les énergies renouvelables — le détail</h3>
+                    <p>Les énergies renouvelables se <strong>régénèrent naturellement</strong> et ne produisent pas (ou très peu) de CO2 :</p>
+
+                    <ul>
+                        <li>☀️ <strong>Solaire photovoltaïque</strong> : les panneaux convertissent la lumière du Soleil en électricité grâce à des cellules en silicium. Idéal sur les toits !</li>
+                        <li>☀️ <strong>Solaire thermique</strong> : capte la chaleur du Soleil pour chauffer l'eau sanitaire.</li>
+                        <li>💨 <strong>Éolienne</strong> : le vent fait tourner des pales reliées à un générateur. Une éolienne produit de l'électricité dès 12 km/h de vent.</li>
+                        <li>💧 <strong>Hydraulique</strong> : l'eau des rivières ou des marées fait tourner des turbines dans les barrages.</li>
+                        <li>🌿 <strong>Biomasse</strong> : on brûle des matières organiques (bois, déchets agricoles) pour produire chaleur ou électricité.</li>
+                        <li>🌋 <strong>Géothermie</strong> : on utilise la chaleur naturelle du sous-sol terrestre.</li>
+                    </ul>
+
+                    <h3>Avantages et limites</h3>
+                    <ul>
+                        <li>✅ <strong>Inépuisables</strong> : soleil, vent, eau ne disparaissent pas</li>
+                        <li>✅ <strong>Propres</strong> : peu ou pas de CO2 pendant la production</li>
+                        <li>⚠️ <strong>Intermittentes</strong> : pas de soleil la nuit, pas de vent par temps calme</li>
+                        <li>⚠️ <strong>Stockage difficile</strong> : l'électricité produite doit être utilisée ou stockée (batteries)</li>
+                    </ul>
+
+                    <h3>En France</h3>
+                    <p>La France produit environ <strong>25% de son électricité</strong> grâce aux énergies renouvelables (hydraulique en tête, puis éolien et solaire). L'objectif est d'atteindre <strong>40% en 2030</strong>.</p>
+
+                    <h3>À retenir</h3>
+                    <p>📌 Renouvelable = la source se <strong>régénère naturellement</strong></p>
+                    <p>📌 L'énergie solaire et éolienne sont <strong>intermittentes</strong> — il faut savoir stocker</p>
+                    <p>📌 Chaque région du monde a ses <strong>ressources propres</strong> : soleil au sud, vent en mer, géothermie en Islande</p>
+                `
             }
         },
         quiz: [
@@ -834,7 +869,17 @@ const sciencesLessons = {
             {q: "Comment appelle-t-on la relation où deux êtres vivants s'aident mutuellement ?", o: ["La symbiose", "La prédation", "Le parasitisme", "La compétition"], c: "La symbiose"},
             {q: "Qu'est-ce que le développement durable ?", o: ["Répondre aux besoins d'aujourd'hui sans nuire aux générations futures", "Construire plus de bâtiments", "Utiliser plus d'énergie", "Produire plus de déchets"], c: "Répondre aux besoins d'aujourd'hui sans nuire aux générations futures"},
             {q: "Quelle énergie renouvelable utilise la force des rivières ?", o: ["L'énergie hydraulique", "L'énergie solaire", "L'énergie éolienne", "L'énergie géothermique"], c: "L'énergie hydraulique"},
-            {q: "De combien la température moyenne de la Terre a-t-elle augmenté depuis 1850 ?", o: ["+1,1°C", "+5°C", "+0,1°C", "+10°C"], c: "+1,1°C"}
+            {q: "De combien la température moyenne de la Terre a-t-elle augmenté depuis 1850 ?", o: ["+1,1°C", "+5°C", "+0,1°C", "+10°C"], c: "+1,1°C"},
+            {q: "Que signifie 'énergie renouvelable' ?", o: ["Une énergie dont la source se régénère naturellement", "Une énergie très chère", "Une énergie qui se recycle", "Une énergie inventée récemment"], c: "Une énergie dont la source se régénère naturellement"},
+            {q: "Quel est le principal inconvénient de l'énergie solaire ?", o: ["Elle n'est pas produite la nuit", "Elle pollue beaucoup", "Elle est trop chère à installer", "Elle n'existe pas en France"], c: "Elle n'est pas produite la nuit"},
+            {q: "Comment fonctionne une éolienne ?", o: ["Le vent fait tourner des pales reliées à un générateur", "Le vent chauffe directement l'air", "Le vent produit du gaz", "Le vent recharge des batteries solaires"], c: "Le vent fait tourner des pales reliées à un générateur"},
+            {q: "Qu'est-ce qu'une énergie fossile ?", o: ["Une énergie formée en millions d'années qui va s'épuiser", "Une énergie très ancienne mais inépuisable", "Une énergie produite par des fossiles de dinosaures", "Une énergie renouvelable"], c: "Une énergie formée en millions d'années qui va s'épuiser"},
+            {q: "Quelle énergie renouvelable est la plus utilisée en France ?", o: ["L'énergie hydraulique", "L'énergie solaire", "L'énergie éolienne", "La géothermie"], c: "L'énergie hydraulique"},
+            {q: "Qu'est-ce que la géothermie ?", o: ["L'utilisation de la chaleur du sous-sol terrestre", "L'énergie produite par les volcans uniquement", "La chaleur du Soleil captée par des panneaux", "L'énergie des marées"], c: "L'utilisation de la chaleur du sous-sol terrestre"},
+            {q: "Quel pays est particulièrement connu pour son usage de la géothermie ?", o: ["L'Islande", "Le Maroc", "L'Australie", "Le Brésil"], c: "L'Islande"},
+            {q: "Quel est l'objectif de la France pour les énergies renouvelables en 2030 ?", o: ["40% de l'électricité", "100% de l'électricité", "10% de l'électricité", "25% de l'électricité"], c: "40% de l'électricité"},
+            {q: "Qu'est-ce que la biomasse comme source d'énergie ?", o: ["Brûler des matières organiques pour produire chaleur ou électricité", "Utiliser l'énergie des animaux", "Capturer l'énergie des plantes vivantes", "Recycler les plastiques en carburant"], c: "Brûler des matières organiques pour produire chaleur ou électricité"},
+            {q: "Pourquoi doit-on stocker l'électricité produite par les panneaux solaires ?", o: ["Parce qu'elle n'est produite que quand il y a du soleil", "Parce qu'elle est trop puissante", "Parce qu'elle se perd dans les fils", "Parce qu'elle est instable"], c: "Parce qu'elle n'est produite que quand il y a du soleil"}
         ]
     }
 };
@@ -843,5 +888,5 @@ const sciencesLessons = {
 // Export pour utilisation dans la page HTML
 if (typeof window !== "undefined") {
     window.sciencesLessons = sciencesLessons;
-    console.log("✅ Sciences lessons chargées - 5 domaines, 17 thèmes, 106 questions");
+    console.log("✅ Sciences lessons chargées - 5 domaines, 18 thèmes, 116 questions");
 }
