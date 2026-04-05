@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 05 Avril 2026 (session badge Jeune ingénieur + Énergies renouvelables)*
+*Dernière mise à jour : 05 Avril 2026 (session badge Jeune ingénieur + Énergies renouvelables + og-preview)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -108,13 +108,12 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `images/geographie/` | `.webp` + `.svg` | 5 + 2 cartes SVG | Cartes CC BY-SA 4.0 |
 | `images/english/` | `.webp` | 5 | Converti Phase 3 |
 | `images/histoire/` | `.webp` | 6 | Converti Phase 3 |
+| `images/og-preview.webp` | `.webp` | 1 | Social card 1200×630 — Open Graph — commité 29/03/2026 |
 | `images/favicon.svg` | `.svg` | 1 | Curio pixel-art 32×32 |
 | `images/icons/icon-192.png` | `.png` | 1 | PWA — généré Pillow |
 | `images/icons/icon-512.png` | `.png` | 1 | PWA — généré Pillow |
 
 **Image manquante :**
-`images/og-preview.webp` — 1200×630px — Open Graph card pour partages réseaux sociaux.
-Prompt Ideogram fourni par agent SEO le 29/03/2026. En attente crédits Ideogram.
 `images/sciences/illustration_technologie.webp` — illustration domaine Technologie.
 Prompt prêt. En attente crédits Ideogram.
 
@@ -141,7 +140,7 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 |---|---|---|---|
 | Schema.org `Course` + `Quiz` | 7 sections HTML | ✅ Commité 29/03/2026 | Script `seo_schema_patch.py` |
 | Schema.org `EducationalOrganization` + `WebSite` | `index.html` | ✅ Commité 29/03/2026 | Script `seo_index_and_sitemap.py` |
-| OpenGraph + Twitter Cards | Toutes les pages | ✅ Commité 29/03/2026 | Image `og-preview.webp` manquante |
+| OpenGraph + Twitter Cards | Toutes les pages | ✅ Commité 29/03/2026 | Image `og-preview.webp` ✅ commitée 29/03/2026 |
 | `sitemap.xml` statique | Racine du dépôt | ✅ Commité + soumis 29/03/2026 | 14 URLs |
 | Google Search Console | `lemondedescurieux.fr` | ✅ Vérifié 29/03/2026 | Méthode DNS TXT via Hostinger |
 | Scores Lighthouse SEO | `index.html` + dashboard | ✅ 100/100 | Stable |
@@ -196,7 +195,6 @@ tags `badge-ingenieur` sur Q13-Q14 de `sciences-lessons.js`, flag
 
 | Tâche | Agent concerné | Priorité | Notes |
 |---|---|---|---|
-| Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt prêt — en attente crédits Ideogram/Copilot |
 | Image `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Prompt prêt — en attente crédits Ideogram |
 **Badge ⚙️ Jeune ingénieur** (05/04/2026 — défini dans `badges-system.js`,
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
