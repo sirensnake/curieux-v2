@@ -186,7 +186,7 @@ par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté).
 | Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt Ideogram/ChatGPT/Copilot fourni le 29/03/2026 — en attente crédits |
 | Rich Results Test — validation Schema.org | SEO Éducatif | 🟡 Moyenne | Relancer dans 24-48h sur search.google.com/test/rich-results |
 | Pearltrees — collection CM2 | SEO Éducatif | ✅ Terminé 05/04/2026 | 12 perles, 3 abonnements (Ateliers CM2, Enseignants, Cycle 3), lien dans educateurs.html |
-| Viaéduc — présentation site | SEO Éducatif | 🟡 Moyenne | Texte prêt, action ~1h |
+| Viaéduc — FERMÉ depuis 01/10/2025 | SEO Éducatif | ❌ Abandonné | Remplacé par Réseau Canopé — à évaluer |
 | Soumission Éduscol | SEO Éducatif | 🔵 Basse | Fiche description prête |
 | Illustration `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
