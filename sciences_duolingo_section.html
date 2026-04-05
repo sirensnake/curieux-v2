@@ -440,6 +440,18 @@
                         this.isCorrect = (answer === this.currentQuestion.c);
                         if (this.isCorrect) {
                             this.score++;
+
+                            // Badge Jeune ingénieur — poser flag si question taggée
+                            if (this.currentQuestion?.tags && this.currentQuestion.tags.includes('badge-ingenieur')) {
+                                const countKey = 'curieux_badge_ingenieur_count';
+                                const count = parseInt(localStorage.getItem(countKey) || '0') + 1;
+                                localStorage.setItem(countKey, String(count));
+                                if (count >= 2) {
+                                    localStorage.setItem('curieux_badge_ingenieur', 'true');
+                                    console.log('⚙️ Badge Jeune ingénieur débloqué !');
+                                }
+                            }
+
                             this.playCorrectSound();
                             if (window.curioBubbleInstance) window.curioBubbleInstance.show('✅ Bravo ! Continue comme ça !', 'success');
                             if (window.SectionXP) window.SectionXP.addXP('sciences', window.SectionXP.rewards.CORRECT_ANSWER);
