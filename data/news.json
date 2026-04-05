@@ -1,23 +1,22 @@
 {
-  "date": "13/01/2026",
   "articles": [
     {
-      "title": "🌌 Une nouvelle étoile observée dans l'espace",
-      "summary": "Des astronomes ont découvert une nouvelle étoile dans notre galaxie. Cette étoile est très spéciale car elle brille beaucoup plus que les autres, ce qui intrigue les scientifiques. Grâce à de puissants télescopes, ils espèrent en apprendre plus sur elle et sa composition. Observer de nouvelles étoiles aide les scientifiques à mieux comprendre l'univers et les nombreuses étoiles qui le peuplent. Cela nous rappelle aussi combien l'espace est grand et mystérieux!",
-      "link": "",
-      "date": "13/01/2026"
+      "title": "Un nouveau dinosaure découvert ! 🦖",
+      "summary": "Des scientifiques en Argentine ont trouvé les restes d'un nouveau dinosaure qui vivait il y a environ 70 millions d'années ! Ce dinosaure avait un long cou et mesurait environ 10 mètres. Découvrir de nouveaux dinosaures aide les chercheurs à mieux comprendre comment la Terre était il y a très longtemps. C'est un peu comme un gigantesque puzzle où chaque nouvelle découverte ajoute une pièce importante. Qui sait quel autre dinosaure unique attend d'être découvert dans le monde ?",
+      "date": "02/11/2023",
+      "link": ""
     },
     {
-      "title": "🎨 Une exposition d'art par des enfants",
-      "summary": "Dans une grande ville, une exposition d'art a été ouverte pour montrer les créations d'enfants de différentes écoles. Ces œuvres d'art sont uniques, utilisant des matériaux recyclés et beaucoup d'imagination. Les visiteurs sont impressionnés par la créativité et le message de protection de la nature que ces travaux révèlent. Cette exposition prouve que même les plus jeunes artistes peuvent avoir un impact positif sur le monde.",
-      "link": "",
-      "date": "13/01/2026"
+      "title": "Un vortex lumineux dans le ciel nocturne ! 🌌",
+      "summary": "Les habitants d'une petite ville en Norvège ont eu une surprise magique : un superbe vortex lumineux a illuminé le ciel ! Ce phénomène est dû à des particules solaires qui interagissent avec l'atmosphère terrestre. C'est un peu comme une aurore boréale mais avec une forme tourbillonnante. Ces vues merveilleuses nous rappellent à quel point notre planète est extraordinaire et nous encouragent à lever les yeux pour admirer le ciel nocturne.",
+      "date": "02/11/2023",
+      "link": ""
     },
     {
-      "title": "🐢 Sauvetage de tortues sur les plages",
-      "summary": "Sur une plage, des bénévoles se sont rassemblés pour aider des bébés tortues marines à se rendre en toute sécurité jusqu'à la mer. Chaque année, ces tortues naissent sur la plage et entament un long voyage jusqu'à l'océan. Cependant, elles peuvent rencontrer des obstacles et avoir besoin d'aide. Ce projet de sauvetage montre l'importance de protéger les animaux et leur environnement. Grâce à ces actions, plus de bébés tortues ont pu commencer leur aventure en mer.",
-      "link": "",
-      "date": "13/01/2026"
+      "title": "Un grand pas pour l'énergie solaire ☀️",
+      "summary": "En Australie, des chercheurs ont mis au point une nouvelle technologie solaire qui pourrait produire plus d'énergie même quand le soleil ne brille pas beaucoup. Ils ont trouvé un moyen d'améliorer les panneaux solaires pour qu'ils soient plus efficaces, ce qui pourrait aider à réduire notre dépendance aux combustibles fossiles. Cette innovation est un grand pas vers un avenir plus propre et montre l'importance de continuer à chercher des solutions pour protéger notre planète.",
+      "date": "02/11/2023",
+      "link": ""
     }
   ]
 }
