@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 29 Mars 2026 (session après-midi SEO)*
+*Dernière mise à jour : 05 Avril 2026 (session SEO plateformes éducatives)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -184,10 +184,11 @@ par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté).
 | Tâche | Agent concerné | Priorité | Notes |
 |---|---|---|---|
 | Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt Ideogram/ChatGPT/Copilot fourni le 29/03/2026 — en attente crédits |
-| Rich Results Test — validation Schema.org | SEO Éducatif | 🟡 Moyenne | Relancer dans 24-48h sur search.google.com/test/rich-results |
+| Rich Results Test — validation Schema.org | SEO Éducatif | ✅ Validé 05/04/2026 | Course + Quiz détectés sur francais_duolingo_section.html |
 | Pearltrees — collection CM2 | SEO Éducatif | ✅ Terminé 05/04/2026 | 12 perles, 3 abonnements (Ateliers CM2, Enseignants, Cycle 3), lien dans educateurs.html |
 | Viaéduc — FERMÉ depuis 01/10/2025 | SEO Éducatif | ❌ Abandonné | Remplacé par Réseau Canopé — à évaluer |
-| Soumission Éduscol | SEO Éducatif | 🔵 Basse | Fiche description prête |
+| Soumission Primàbord (Éduscol) | SEO Éducatif | ✅ Soumis 05/04/2026 | En attente réponse comité éditorial |
+| Email Atelier Canopé 44 Nantes | SEO Éducatif | ✅ Envoyé 05/04/2026 | En attente réponse — peut faire remonter via référents Primàbord |
 | Illustration `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
 | Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
@@ -258,5 +259,5 @@ localStorage, nouveau badge, nouvelle règle de développement).
 
 ---
 
-*Le Monde des Curieux · Guillaume · 29 Mars 2026 · lemondedescurieux.fr*
+*Le Monde des Curieux · Guillaume · 05 Avril 2026 · lemondedescurieux.fr*
 *Mettre à jour la date en en-tête à chaque modification.*
