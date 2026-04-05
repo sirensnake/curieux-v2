@@ -710,8 +710,8 @@ const sciencesLessons = {
             {q: "À quoi sert une poulie ?", o: ["Faciliter le levage d'objets lourds", "Produire de l'électricité", "Mesurer la température", "Couper des matériaux"], c: "Faciliter le levage d'objets lourds"},
             {q: "Quelle est la première étape pour concevoir un objet technique ?", o: ["Identifier le besoin", "Choisir les matériaux", "Fabriquer les pièces", "Tester le résultat"], c: "Identifier le besoin"},
             // Questions avancées ajoutées le 28 mars 2026 — tag badge-ingénieur
-            {q: "Une casserole a un manche en plastique et un fond en métal. Pourquoi ce choix de matériaux ?", o: ["Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler", "Le plastique conduit la chaleur, le métal isole", "Les deux conduisent la chaleur de la même façon", "Ce choix est uniquement esthétique"], c: "Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler"},
-            {q: "Sur un vélo, comment l'énergie musculaire du cycliste est-elle transmise à la roue arrière ?", o: ["Par une chaîne qui relie le pédalier à la roue", "Par un moteur électrique", "Par un câble direct", "Par friction directe des pieds"], c: "Par une chaîne qui relie le pédalier à la roue"}
+            {q: "Une casserole a un manche en plastique et un fond en métal. Pourquoi ce choix de matériaux ?", o: ["Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler", "Le plastique conduit la chaleur, le métal isole", "Les deux conduisent la chaleur de la même façon", "Ce choix est uniquement esthétique"], c: "Le métal conduit la chaleur, le plastique l'isole pour ne pas se brûler", tags: ["badge-ingenieur"]},
+            {q: "Sur un vélo, comment l'énergie musculaire du cycliste est-elle transmise à la roue arrière ?", o: ["Par une chaîne qui relie le pédalier à la roue", "Par un moteur électrique", "Par un câble direct", "Par friction directe des pieds"], c: "Par une chaîne qui relie le pédalier à la roue", tags: ["badge-ingenieur"]}
         ]
     },
 
