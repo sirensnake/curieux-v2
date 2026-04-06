@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un nouveau dinosaure découvert ! 🦖",
-      "summary": "Des scientifiques en Argentine ont trouvé les restes d'un nouveau dinosaure qui vivait il y a environ 70 millions d'années ! Ce dinosaure avait un long cou et mesurait environ 10 mètres. Découvrir de nouveaux dinosaures aide les chercheurs à mieux comprendre comment la Terre était il y a très longtemps. C'est un peu comme un gigantesque puzzle où chaque nouvelle découverte ajoute une pièce importante. Qui sait quel autre dinosaure unique attend d'être découvert dans le monde ?",
-      "date": "02/11/2023",
-      "link": ""
+      "title": "🌋 Un volcan se réveille !",
+      "summary": "Un volcan en Islande, nommé Fagradalsfjall, s'est réveillé récemment ! Lorsqu'un volcan entre en éruption, il libère de la lave et de la cendre. Les scientifiques étudient ces phénomènes pour mieux comprendre la Terre. Ne t'inquiète pas, les habitants ont été prévenus et se tiennent à distance pour éviter tout danger. Les volcans sont comme des fenêtres sur les profondeurs de notre planète, ils nous aident à en apprendre plus sur son fonctionnement.",
+      "date": "27/10/2023",
+      "link": "https://example.com/article1"
     },
     {
-      "title": "Un vortex lumineux dans le ciel nocturne ! 🌌",
-      "summary": "Les habitants d'une petite ville en Norvège ont eu une surprise magique : un superbe vortex lumineux a illuminé le ciel ! Ce phénomène est dû à des particules solaires qui interagissent avec l'atmosphère terrestre. C'est un peu comme une aurore boréale mais avec une forme tourbillonnante. Ces vues merveilleuses nous rappellent à quel point notre planète est extraordinaire et nous encouragent à lever les yeux pour admirer le ciel nocturne.",
-      "date": "02/11/2023",
-      "link": ""
+      "title": "🐘 Un succès pour les éléphants !",
+      "summary": "Bonne nouvelle pour les éléphants ! Grâce aux efforts de plusieurs pays d'Afrique, le nombre d'éléphants augmente. À cause du braconnage et de la destruction de leur habitat, ils étaient en danger. Mais maintenant, avec des lois plus strictes et des réserves naturelles, leur avenir semble plus prometteur. Protéger les espèces est crucial pour préserver la biodiversité, c'est-à-dire la variété des formes de vie sur Terre.",
+      "date": "27/10/2023",
+      "link": "https://example.com/article2"
     },
     {
-      "title": "Un grand pas pour l'énergie solaire ☀️",
-      "summary": "En Australie, des chercheurs ont mis au point une nouvelle technologie solaire qui pourrait produire plus d'énergie même quand le soleil ne brille pas beaucoup. Ils ont trouvé un moyen d'améliorer les panneaux solaires pour qu'ils soient plus efficaces, ce qui pourrait aider à réduire notre dépendance aux combustibles fossiles. Cette innovation est un grand pas vers un avenir plus propre et montre l'importance de continuer à chercher des solutions pour protéger notre planète.",
-      "date": "02/11/2023",
-      "link": ""
+      "title": "🚀 Un voyage vers Mars",
+      "summary": "Une nouvelle mission spatiale est en route vers Mars ! Cette mission, dirigée par l'agence spatiale NASA, vise à envoyer un rover pour explorer la planète rouge. Les scientifiques espèrent découvrir si Mars a pu abriter la vie. Ce genre de missions nous aide à comprendre notre univers et à imaginer des possibilités futures, comme peut-être un jour vivre sur une autre planète ! Cela prend du temps et de la créativité pour explorer l'espace.",
+      "date": "27/10/2023",
+      "link": "https://example.com/article3"
     }
   ]
 }
