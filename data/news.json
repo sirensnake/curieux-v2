@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌋 Un volcan se réveille !",
-      "summary": "Un volcan en Islande, nommé Fagradalsfjall, s'est réveillé récemment ! Lorsqu'un volcan entre en éruption, il libère de la lave et de la cendre. Les scientifiques étudient ces phénomènes pour mieux comprendre la Terre. Ne t'inquiète pas, les habitants ont été prévenus et se tiennent à distance pour éviter tout danger. Les volcans sont comme des fenêtres sur les profondeurs de notre planète, ils nous aident à en apprendre plus sur son fonctionnement.",
-      "date": "27/10/2023",
-      "link": "https://example.com/article1"
+      "title": "🦕 Une nouvelle espèce de dinosaure découverte !",
+      "summary": "Des scientifiques viennent de découvrir une nouvelle espèce de dinosaure en Chine ! Ce dinosaure vivait il y a environ 120 millions d'années, à l'époque des premiers oiseaux. Ce dinosaure avait des plumes colorées, ce qui est très rare ! Les chercheurs pensent qu'il les utilisait pour se camoufler ou pour se montrer. Ça montre à quel point la nature est incroyable et pleine de surprises. Grâce à des ossements, ils ont pu apprendre comment il vivait et se déplaçait. Les découvertes comme celles-ci nous aident à comprendre la vie sur Terre d'il y a très longtemps ! 🦖",
+      "date": "20/10/2023",
+      "link": ""
     },
     {
-      "title": "🐘 Un succès pour les éléphants !",
-      "summary": "Bonne nouvelle pour les éléphants ! Grâce aux efforts de plusieurs pays d'Afrique, le nombre d'éléphants augmente. À cause du braconnage et de la destruction de leur habitat, ils étaient en danger. Mais maintenant, avec des lois plus strictes et des réserves naturelles, leur avenir semble plus prometteur. Protéger les espèces est crucial pour préserver la biodiversité, c'est-à-dire la variété des formes de vie sur Terre.",
-      "date": "27/10/2023",
-      "link": "https://example.com/article2"
+      "title": "🍃 Planter des arbres pour la planète",
+      "summary": "Ton école a peut-être déjà planté des arbres, mais sais-tu pourquoi c'est important ? Partout dans le monde, des gens se rassemblent pour planter des millions d'arbres. Ces arbres peuvent aider à réduire la pollution et donner un abri à beaucoup d'animaux. Récemment, un grand projet en Afrique a été lancé pour planter un \"Mur Vert\" de millions d'arbres pour lutter contre la désertification. C'est comme un grand jardin qui aide la nature. Donc, planter un arbre, même si c'est petit, peut avoir un grand impact pour notre planète et le futur ! 🌳",
+      "date": "20/10/2023",
+      "link": ""
     },
     {
-      "title": "🚀 Un voyage vers Mars",
-      "summary": "Une nouvelle mission spatiale est en route vers Mars ! Cette mission, dirigée par l'agence spatiale NASA, vise à envoyer un rover pour explorer la planète rouge. Les scientifiques espèrent découvrir si Mars a pu abriter la vie. Ce genre de missions nous aide à comprendre notre univers et à imaginer des possibilités futures, comme peut-être un jour vivre sur une autre planète ! Cela prend du temps et de la créativité pour explorer l'espace.",
-      "date": "27/10/2023",
-      "link": "https://example.com/article3"
+      "title": "🎮 Un championnat mondial de jeux vidéo passionnant",
+      "summary": "Le grand championnat mondial de jeux vidéo vient de se terminer et c'était incroyable ! De jeunes joueurs du monde entier se sont rassemblés pour montrer leurs talents dans leurs jeux préférés. Ils ont joué à des jeux de stratégie, de tirs et même des jeux de société virtuels. C'est un peu comme un grand tournoi sportif, mais avec des écrans et des manettes. Les gagnants ont remporté des trophées et des prix en argent. Jouer à des jeux vidéo peut aussi être une vraie compétence, et ces compétitions montrent l'importance du travail d'équipe et de la stratégie. 🕹️",
+      "date": "20/10/2023",
+      "link": ""
     }
   ]
 }
