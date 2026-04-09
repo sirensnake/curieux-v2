@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 29 Mars 2026 (session après-midi SEO)*
+*Dernière mise à jour : 05 Avril 2026 (session Community Manager — LinkedIn + Instagram)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -19,10 +19,10 @@
 | Mathématiques | `mathematiques_section.html` | 11 | 110 | ✅ Complet |
 | Fractions | `maths_fractions_comprendre.html` | 6 | 20 | ✅ Complet |
 | Anglais | `english_duolingo_section.html` | 10 | 100 | ✅ Complet |
-| Sciences | `sciences_duolingo_section.html` | 6 | 98 | ✅ Complet |
+| Sciences | `sciences_duolingo_section.html` | 7 | 108 | ✅ Complet |
 | Histoire | `histoire_section_COMPLET.html` | 12 | 120 | ✅ Complet |
 | Géographie | `geographie_section.html` | 10 | 100 | ✅ Complet |
-| **TOTAL** | | **64** | **638** | **7 matières** |
+| **TOTAL** | | **65** | **648** | **7 matières** |
 
 ---
 
@@ -33,8 +33,10 @@
 
 | Page | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
-| `index.html` | 95 | 96 | 100 | 100 |
+| `index.html` | 95 | 100 | 100 | 100 |
 | `dashboard-extended.html` | 90-95 | 92 | 100 | 100 |
+
+**Note Lighthouse (05/04/2026) :** Lighthouse = Chrome DevTools uniquement (navigation privée, prod). Jamais Firefox, jamais localhost.
 
 **Limite structurelle connue — ne pas chercher à corriger :**
 Le score Accessibility de `dashboard-extended.html` plafonne à 92.
@@ -49,7 +51,7 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | Système | Fichier JS | Statut | Notes |
 |---|---|---|---|
 | XP + niveaux | `section-xp-system.js` | ✅ Actif | Algo : `200 × 1.5^level` |
-| Badges (7) | `badges-system.js` | ✅ Actif | Voir section 4 |
+| Badges (8) | `badges-system.js` | ✅ Actif | Voir section 4 |
 | Pont localStorage | `storage-bridge.js` | ✅ Actif | Inter-sections |
 | Orchestrateur | `master-game-system.js` | ✅ Actif | |
 | Panel admin | `admin-shortcut.js` | ✅ Actif | `Ctrl+Shift+X` |
@@ -71,7 +73,12 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `xp_5000` | 5 000 XP cumulés | Progression |
 | `perfect_10` | 10 quiz parfaits | Performance |
 | `quiz_100` | 100 quiz complétés | Volume |
-| `all_subjects` | 1 quiz dans les 7 matières | Exploration |
+| `all_subjects` | 1 quiz dans les 7 matières (géographie incluse) | Exploration |
+| `jeune_ingenieur` | Réussir Q13 + Q14 du quiz Technologie (Sciences) | Performance |
+
+**localStorage badge Jeune ingénieur :**
+- `curieux_badge_ingenieur_count` — compteur (0→2) écrit par `sciences_duolingo_section.html`
+- `curieux_badge_ingenieur` — flag `'true'` quand count ≥ 2, lu par `badges-system.js`
 
 ---
 
@@ -85,6 +92,8 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `curieux_{section}_cooldown` | Timestamp dernier quiz | Chaque section HTML |
 | `curieux_hearts` | Entier 0-5 + timestamp régén. | `section-xp-system.js` |
 | `curieux_active_days` | Tableau de dates (calendrier 7j) | `dashboard-extended.html` |
+| `curieux_badge_ingenieur_count` | Entier 0-2 | `sciences_duolingo_section.html` |
+| `curieux_badge_ingenieur` | `'true'` quand débloqué | `sciences_duolingo_section.html` |
 
 **Clé réservée Phase 4 (SM-2, H2 2026 — ne pas implémenter avant) :**
 `curieux_sm2_queue` → `[{questionId, interval, easeFactor, nextReview}]`
@@ -101,13 +110,14 @@ Corriger ces 8 points impliquerait une refonte complète de la charte.
 | `images/geographie/` | `.webp` + `.svg` | 5 + 2 cartes SVG | Cartes CC BY-SA 4.0 |
 | `images/english/` | `.webp` | 5 | Converti Phase 3 |
 | `images/histoire/` | `.webp` | 6 | Converti Phase 3 |
+| `images/og-preview.webp` | `.webp` | 1 | Social card 1200×630 — Open Graph — commité 29/03/2026 |
 | `images/favicon.svg` | `.svg` | 1 | Curio pixel-art 32×32 |
 | `images/icons/icon-192.png` | `.png` | 1 | PWA — généré Pillow |
 | `images/icons/icon-512.png` | `.png` | 1 | PWA — généré Pillow |
 
 **Image manquante :**
-`images/og-preview.webp` — 1200×630px — Open Graph card pour partages réseaux sociaux.
-Prompt Ideogram fourni par agent SEO le 29/03/2026. En attente crédits Ideogram.
+`images/sciences/illustration_technologie.webp` — illustration domaine Technologie.
+Prompt prêt. En attente crédits Ideogram.
 
 **Règle absolue :** tout nouveau fichier image doit être en `.webp`.
 Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
@@ -132,11 +142,11 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 |---|---|---|---|
 | Schema.org `Course` + `Quiz` | 7 sections HTML | ✅ Commité 29/03/2026 | Script `seo_schema_patch.py` |
 | Schema.org `EducationalOrganization` + `WebSite` | `index.html` | ✅ Commité 29/03/2026 | Script `seo_index_and_sitemap.py` |
-| OpenGraph + Twitter Cards | Toutes les pages | ✅ Commité 29/03/2026 | Image `og-preview.webp` manquante |
+| OpenGraph + Twitter Cards | Toutes les pages | ✅ Commité 29/03/2026 | Image `og-preview.webp` ✅ commitée 29/03/2026 |
 | `sitemap.xml` statique | Racine du dépôt | ✅ Commité + soumis 29/03/2026 | 14 URLs |
 | Google Search Console | `lemondedescurieux.fr` | ✅ Vérifié 29/03/2026 | Méthode DNS TXT via Hostinger |
 | Scores Lighthouse SEO | `index.html` + dashboard | ✅ 100/100 | Stable |
-| Rich Results Test | À relancer | ⏳ Dans 24-48h | Attendre crawl Google |
+| Rich Results Test | ✅ Validé 05/04/2026 | Course + Quiz détectés sur francais_duolingo_section.html |
 
 **Registrar du domaine :** Hostinger (`hpanel.hostinger.com`)
 **DNS TXT Google :** `google-site-verification=AbBRfdwKcCOAXi254bQmqyJHzfbtIpZlKApiQI8xaHM`
@@ -150,7 +160,7 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 
 ## 9. Tâches en cours et pending
 
-### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle + SEO)
+### ✅ Terminé (Phase 1 + Phase 2 + Phase 3 partielle + SEO + Gamification + Communication)
 
 Toute la navigation harmonisée, conversion WebP (-88%), scores Lighthouse
 atteints, corrections WCAG dashboard, icônes PWA, favicon Curio, classe
@@ -164,7 +174,7 @@ Anglais + Maths + Histoire + Géographie ajoutés le 28/03/2026 — pattern
 `shuffledQuiz` avec mélange questions + options pour Famille A / questions seules
 pour Famille B à index numérique),
 **Sciences — domaine Technologie & Objets techniques** (10 questions ajoutées
-le 28/03/2026 — 4F/4I/2A, tag `badge-ingénieur` posé sur Q9-Q10),
+le 28/03/2026 — 4F/4I/2A, tags `badge-ingenieur` sur Q13-Q14),
 **Fiche parents HTML** (`documents/fiche_parents_lemondedescurieux.html` —
 ajoutée le 29/03/2026, accessible depuis la section Ressources de l'espace
 éducateurs, explique streaks/cœurs/badges en langage non-technique),
@@ -177,22 +187,22 @@ Twitter Cards sur toutes les pages — scripts `seo_schema_patch.py` +
 **SEO — sitemap.xml** (14 URLs, généré et soumis à Google Search Console
 le 29/03/2026),
 **SEO — Google Search Console** (propriété `lemondedescurieux.fr` vérifiée
-par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté).
+par DNS TXT Hostinger le 29/03/2026, sitemap soumis et accepté),
+**Sciences — domaine Environnement & Énergie renouvelable** (05/04/2026 — leçon ⚡ Énergies Renouvelables ajoutée dans `sciences-lessons.js`, 10 nouvelles questions, domaine environnement : 4 leçons / 22 questions),
+tags `badge-ingenieur` sur Q13-Q14 de `sciences-lessons.js`, flag
+`curieux_badge_ingenieur` posé par `sciences_duolingo_section.html`,
+`all_subjects` mis à jour 7 matières, `quizBySubject` inclut géographie),
+**Communication — LinkedIn + Instagram** (05/04/2026 — voir section 13).
 
 ### 🔄 En cours / Pending
 
 | Tâche | Agent concerné | Priorité | Notes |
 |---|---|---|---|
-| Image `og-preview.webp` (Open Graph) | SEO Éducatif | 🔴 Haute | Prompt Ideogram/ChatGPT/Copilot fourni le 29/03/2026 — en attente crédits |
-| Rich Results Test — validation Schema.org | SEO Éducatif | 🟡 Moyenne | Relancer dans 24-48h sur search.google.com/test/rich-results |
-| Pearltrees — collection CM2 | SEO Éducatif | 🟡 Moyenne | Textes prêts, action ~45 min |
-| Viaéduc — présentation site | SEO Éducatif | 🟡 Moyenne | Texte prêt, action ~1h |
-| Soumission Éduscol | SEO Éducatif | 🔵 Basse | Fiche description prête |
-| Illustration `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Ideogram, crédits à venir — prompt prêt |
+| Image `illustration_technologie.webp` | Content Generator | 🟡 Moyenne | Prompt prêt — en attente crédits Ideogram |
 | Minification CSS/JS | Performance & PWA | 🟡 Moyenne | Phase 3 restante |
-| Accessibilité 96→100 | Accessibility Auditor | 🟡 Moyenne | Points résiduels sur sous-pages |
-| Sciences : Environnement & Énergie renouvelable | Content Generator | 🟡 Moyenne | Joindre sciences-lessons.js au projet pour éviter doublons |
-| Badge "Jeune ingénieur" dans `badges-system.js` | Gamification Designer | 🟡 Moyenne | Tag `badge-ingénieur` déjà posé sur Q9-Q10 Sciences Technologie |
+| Photo de profil LinkedIn | Guillaume | 🟡 Moyenne | À ajouter dès que possible |
+| Lien bio Instagram | Guillaume | 🟡 Moyenne | Bug Instagram nouveaux comptes — réessayer dans 24h |
+| Soumission ressource Canopé | Community Manager | 🟡 Moyenne | Canopé = successeur Viaéduc (fermé oct. 2025) |
 | Répétition espacée SM-2 | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
 | Interface parents | Gamification Designer | 🔵 Basse | Phase 4 — H2 2026 |
 
@@ -222,6 +232,12 @@ Les scripts `seo_schema_patch.py` et `seo_index_and_sitemap.py` sont idempotents
 Ne jamais supprimer l'enregistrement DNS TXT Google de Hostinger.
 Mettre à jour `sitemap.xml` après chaque ajout de page significative.
 
+**Règle badges (ajoutée 05/04/2026) :**
+Tout nouveau badge nécessite 3 fichiers : définition dans `badges-system.js`,
+tag sur les questions concernées dans le fichier data, flag localStorage dans
+la section HTML correspondante. Les scripts de patch vérifient d'abord si le
+travail est déjà fait (`if "badge-id" in content`) avant de modifier.
+
 ---
 
 ## 11. Dépendances entre agents — Ordre de sollicitation
@@ -237,6 +253,8 @@ Ce tableau indique dans quel ordre solliciter les agents selon l'objectif.
 | Améliorer la gamification | Gamification Designer → Python Patch Scripter (implémentation) |
 | Optimiser les performances | Performance & PWA → Python Patch Scripter (si patches HTML) |
 | Améliorer le SEO | SEO Éducatif → Python Patch Scripter (si patches HTML) → Search Console (validation) |
+| Ajouter un badge | Gamification Designer → Python Patch Scripter (3 fichiers) → vérification production |
+| Publier sur les réseaux sociaux | Community Manager (posts + visuels) |
 
 ---
 
@@ -251,6 +269,7 @@ La **section 6** (assets) dès qu'une nouvelle image est ajoutée ou manquante.
 La **section 7** (PWA) — Service Worker désormais actif, section stable sauf ajout de nouvelles stratégies de cache.
 La **section 8** (SEO) après chaque action SEO (nouveau Schema.org, soumission sitemap, vérification Search Console).
 La **section 9** (pending) pour cocher les tâches terminées et ajouter les nouvelles.
+La **section 13** (Communication) après chaque session Community Manager.
 
 Les sections 3, 4, 5, 10 et 11 sont stables — elles ne changent qu'en cas
 de modification architecturale majeure (nouveau système JS, nouveau schéma
@@ -258,5 +277,51 @@ localStorage, nouveau badge, nouvelle règle de développement).
 
 ---
 
-*Le Monde des Curieux · Guillaume · 29 Mars 2026 · lemondedescurieux.fr*
+## 13. Communication — État (ajouté 05/04/2026)
+
+### LinkedIn — Profil Guillaume Zaragosa
+
+| Élément | Statut | Notes |
+|---|---|---|
+| Compte | ✅ Existant | linkedin.com/in/guillaume-zaragosa-916582321 |
+| Titre | ✅ À mettre à jour | `Agent de production · La Poste \| Créateur de Le Monde des Curieux · lemondedescurieux.fr` |
+| Section À propos | ✅ Rédigée et intégrée | Angle "père qui construit pour son fils" |
+| Photo de profil | ❌ Manquante | Priorité — sans photo le profil est invisible |
+| Post de présentation | ✅ Publié 05/04/2026 | "J'ai construit ce site pour mon fils. Puis je l'ai ouvert à tous." |
+| Calendrier éditorial | ✅ Rédigé | 6 semaines · avr-mai 2026 · 2 posts/semaine · mardi + vendredi |
+
+**Prochains posts LinkedIn :**
+- Mardi 7 avril — Zoom Sciences / Énergies renouvelables
+- Vendredi 10 avril — Fait pédagogique / 648 questions
+
+### Instagram — Compte @lemondedescurieux
+
+| Élément | Statut | Notes |
+|---|---|---|
+| Compte | ✅ Créé 05/04/2026 | instagram.com/lemondedescurieux |
+| Bio | ✅ Remplie | 🦊 Révisions CM1-CM2 gratuites · 65 leçons · 648 questions |
+| Lien bio | ❌ Bug Instagram | Réessayer dans 24h — bug nouveaux comptes |
+| Photo de profil | ❌ Manquante | À ajouter |
+| Premier carrousel | ✅ Publié 05/04/2026 | 3 slides · légende rédigée |
+
+**Workflow visuel validé :**
+ChatGPT (génération fond Minecraft) → GIMP (retouche 1080x1080, suppression texte) → Canva (ajout texte via "Texte" + fond défini comme arrière-plan) → Instagram (publication PC)
+
+**Template slides Instagram :**
+- Fond : image ChatGPT style Minecraft pixel art, définie comme arrière-plan dans Canva
+- Texte : ajouté manuellement via "Texte" dans Canva — NE PAS utiliser "Demander à Canva" pour le texte
+- Format : 1080x1080 px carré
+
+### Réseaux en attente
+
+| Réseau | Statut | Notes |
+|---|---|---|
+| Viaéduc | ❌ Fermé oct. 2025 | Remplacé par Réseau Canopé |
+| Canopé | 📋 À explorer | Soumettre le site comme ressource pédagogique |
+| YouTube Shorts | 📋 Phase 2 | Démo du site en 60 secondes — juin 2026 |
+| Mastodon #EduMastodon | 📋 Phase 3 | Niche numérique éducatif — basse priorité |
+
+---
+
+*Le Monde des Curieux · Guillaume · 05 Avril 2026 · lemondedescurieux.fr*
 *Mettre à jour la date en en-tête à chaque modification.*
