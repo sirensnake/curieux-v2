@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte céleste🌟",
-      "summary": "Les astronautes de la Station Spatiale Internationale ont observé une nouvelle étoile brillante dans notre ciel ! Cette étoile, qui est très lointaine, aide les scientifiques à mieux comprendre l'univers. En cherchant et en découvrant de nouvelles étoiles, nous apprenons aussi comment notre propre système solaire fonctionne. Qui sait ce qu'ils trouveront la prochaine fois ? Le ciel a toujours des mystères à révéler !",
-      "date": "19/10/2023",
+      "title": "La Lune brille de mille feux 🌕",
+      "summary": "La nuit dernière, des millions de personnes à travers le monde ont pu admirer un phénomène spectaculaire : une superbe lune pleine, aussi appelée la 'super lune'. Une super lune se produit lorsque la lune est au plus proche de la Terre dans son orbite. Ce n'est pas seulement une belle vue, mais elle peut aussi sembler plus grande et plus lumineuse que d'habitude. Les astronomes disent que c'est une excellente occasion d'apprendre davantage sur notre satellite naturel, la Lune, et de s'intéresser à l'astronomie. C'est un spectacle que l'on peut apprécier en regardant le ciel, sans aucun équipement spécial.",
+      "date": "17/10/2023",
       "link": ""
     },
     {
-      "title": "École sous les arbres🌳",
-      "summary": "En Afrique, dans un pays appelé Madagascar, des élèves assistent à des cours sous les arbres ! C'est parce que beaucoup d'écoles n'ont pas de toit. Les enfants sont tout de même très heureux d'apprendre, et les professeurs sont créatifs. Ils utilisent ce que la nature offre pour enseigner. Cette façon d'apprendre leur permet aussi de découvrir leur environnement d'une manière amusante et intéressante.",
-      "date": "19/10/2023",
+      "title": "Une découverte sous-marine fascinante 🐙",
+      "summary": "Des scientifiques ont récemment découvert une nouvelle espèce de pieuvre dans l'océan Pacifique. Cette pieuvre a des couleurs éclatantes et un comportement très curieux, qui intrigue les chercheurs. Elle vit dans les profondeurs de l'océan, ce qui rend son observation difficile mais passionnante. Cette découverte montre à quel point les océans cachent encore des mystères. Les chercheurs espèrent que cela encouragera plus de personnes à s'intéresser et à protéger nos espaces marins. C'est aussi une belle occasion pour les jeunes de rêver d'explorations sous-marines et d'aventures!",
+      "date": "17/10/2023",
       "link": ""
     },
     {
-      "title": "Courir pour la planète👟",
-      "summary": "Un marathon spécial a eu lieu en Nouvelle-Zélande, où les participants couraient pour sensibiliser les gens à la protection des océans. Ce que ce marathon a de spécial, c'est que les coureurs ramassaient des déchets sur leur chemin. L'objectif était de montrer que même en courant, on peut aider notre planète ! Grâce à cet événement, beaucoup de personnes ont appris l'importance de ne pas jeter de déchets dans la nature.",
-      "date": "19/10/2023",
+      "title": "Une victoire historique au football féminin ⚽",
+      "summary": "L'équipe nationale féminine de football d'un petit pays a remporté un tournoi important hier. Cette victoire est spéciale car c'est la première fois qu'elles gagnent ce tournoi, et cela inspire beaucoup de jeunes filles à travers le monde à jouer au football. Les joueuses ont montré qu'il faut croire en ses rêves et travailler dur pour atteindre ses objectifs. C'est une belle histoire de courage et de détermination qui souligne l'importance du sport pour tous. Alors, qui sait, peut-être qu'un jour tu auras aussi la chance de marquer l'histoire du sport!",
+      "date": "17/10/2023",
       "link": ""
     }
   ]
