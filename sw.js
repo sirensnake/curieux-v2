@@ -4,7 +4,7 @@
  * Compatible GitHub Pages / lemondedescurieux.fr
  */
 
-const CACHE_NAME = 'curieux-v2-2026-03';
+const CACHE_NAME = 'curieux-v2-2026-04';
 const CACHE_STATIC = 'curieux-static-v2';
 
 // ─── Assets à précacher au premier chargement ──────────────────
@@ -20,6 +20,8 @@ const PRECACHE_ASSETS = [
   '/maths_fractions_comprendre.html',
   '/dashboard-extended.html',
   '/mindmap.html',
+  '/actualites.html',
+  '/article.html',
   '/manifest.json',
   '/images/favicon.svg',
 
@@ -106,6 +108,18 @@ self.addEventListener('fetch', event => {
   // CDN (Alpine.js, Google Fonts) — Stale-while-revalidate
   if (CDN_HOSTS.some(host => url.hostname.includes(host))) {
     event.respondWith(staleWhileRevalidate(request, CACHE_STATIC));
+    return;
+  }
+
+  // Articles JSON du Journal — Network-first (contenu hebdomadaire)
+  if (url.pathname.startsWith('/articles/') && url.pathname.endsWith('.json')) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  // news.json — Network-first (index des semaines)
+  if (url.pathname === '/news.json') {
+    event.respondWith(networkFirst(request));
     return;
   }
 
