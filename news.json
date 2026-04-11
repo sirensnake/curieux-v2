@@ -1,14 +1,50 @@
 {
-  "articles": [
+  "semaines": [
     {
-      "date": "10/01/2026",
-      "title": "Les pingouins sur Mars 🚀",
-      "summary": "Après l'océan, nos amis les pingouins explorent maintenant la planète rouge avec des combinaisons spatiales en blocs de glace !"
-    },
-    {
-      "date": "10/01/2026",
-      "title": "L'école des Sorciers du Code 🧙‍♂️",
-      "summary": "Une nouvelle quête JavaScript est apparue. Apprends à lancer des sorts de fonctions pour vaincre les bugs."
+      "id": "2026-S16",
+      "date_publication": "2026-04-14",
+      "articles": [
+        {
+          "id": "2026-S16-0",
+          "titre": "Les astronautes d'Artemis II sont rentrés de la Lune !",
+          "accroche": "Cette semaine, quatre astronautes ont réussi quelque chose d'extraordinaire : ils ont fait le tour de la Lune et sont revenus sains et saufs ! C'est la première fois depuis 1972 que des humains s'aventurent aussi loin dans l'espace. Leur vaisseau, appelé Integrity, s'est posé dans l'océan Pacifique le 11 avril. Un voyage de dix jours et plus d'un million de kilomètres parcourus !",
+          "theme": "sciences",
+          "emoji": "🚀",
+          "data-quiz-ready": "true"
+        },
+        {
+          "id": "2026-S16-1",
+          "titre": "Des baleines à quatre pattes découvertes dans le désert !",
+          "accroche": "Des scientifiques ont trouvé des fossiles incroyables en Égypte, dans un endroit qu'on appelle la Vallée des Baleines. Ces fossiles prouvent qu'il y a 43 millions d'années, les baleines avaient quatre pattes et pouvaient marcher sur terre ! Aujourd'hui, elles nagent dans les océans. Incroyable comme les animaux peuvent changer au fil du temps, non ?",
+          "theme": "sciences",
+          "emoji": "🐋",
+          "data-quiz-ready": "true"
+        },
+        {
+          "id": "2026-S16-2",
+          "titre": "Beauval ouvre une zone dédiée aux animaux d'Australie",
+          "accroche": "Le zoo de Beauval, l'un des plus grands de France, vient d'ouvrir un nouvel espace appelé Les Terres Rouges. On peut y voir des animaux venus tout droit d'Australie : des kangourous, des wallabies et même des wombats, une espèce jamais présentée en France jusqu'ici ! Le wombat ressemble à un gros hamster qui creuse des terriers. Adorable !",
+          "theme": "nature",
+          "emoji": "🦘",
+          "data-quiz-ready": "true"
+        },
+        {
+          "id": "2026-S16-3",
+          "titre": "La Cité des sciences fête ses 40 ans !",
+          "accroche": "La Cité des sciences et de l'industrie de Paris, ce grand musée dédié aux sciences et aux découvertes, célèbre ses 40 ans d'existence en 2026 ! Pour les familles, des expositions amusantes attendent les visiteurs jusqu'à l'été : une expo sur les chiens et les chats, une autre sur le jardinage, et même un espace spécial pour explorer l'Univers au planétarium. De quoi passer une super journée !",
+          "theme": "culture",
+          "emoji": "🏛️",
+          "data-quiz-ready": "true"
+        },
+        {
+          "id": "2026-S16-4",
+          "titre": "Un astronome repère 45 planètes qui pourraient abriter la vie !",
+          "accroche": "Des chercheurs ont annoncé avoir identifié 45 exoplanètes proches de notre système solaire qui pourraient être habitables. Une exoplanète, c'est une planète qui tourne autour d'une autre étoile que notre Soleil. Ces planètes sont dans ce qu'on appelle la zone habitable, là où l'eau pourrait rester liquide. Y a-t-il de la vie ailleurs dans l'Univers ? La question reste ouverte !",
+          "theme": "sciences",
+          "emoji": "🪐",
+          "data-quiz-ready": "true"
+        }
+      ]
     }
   ]
 }
