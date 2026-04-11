@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Journal de Curio</title>
+  <meta name="description" content="Article du Journal de Curio — Le Monde des Curieux" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles/article.css" />
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="article-header" id="article-header">
+    <div class="header-inner">
+      <button class="btn-retour" onclick="window.location.href='actualites.html'" aria-label="Retour au Journal de Curio">
+        ← Journal
+      </button>
+      <div class="header-meta" id="header-meta" aria-live="polite">
+        <!-- injecté dynamiquement -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENU ===== -->
+  <main class="article-main" id="article-main" aria-live="polite">
+
+    <!-- État de chargement -->
+    <div class="loading-state" id="loading-state" role="status" aria-label="Chargement de l'article">
+      <span class="loading-emoji" aria-hidden="true">🦊</span>
+      <p>Curio cherche l'article…</p>
+    </div>
+
+    <!-- Corps de l'article (masqué jusqu'au chargement) -->
+    <div class="article-body" id="article-body" hidden>
+
+      <div class="article-hero" id="article-hero"></div>
+
+      <article class="article-content" id="article-content">
+        <!-- paragraphes injectés -->
+      </article>
+
+      <!-- ── Section quiz ── -->
+      <section class="quiz-section" id="quiz-section" aria-labelledby="quiz-title" hidden>
+        <h2 id="quiz-title" class="quiz-title">
+          <span aria-hidden="true">🎯</span> Teste tes connaissances !
+        </h2>
+        <div class="quiz-questions" id="quiz-questions">
+          <!-- questions injectées -->
+        </div>
+        <div class="quiz-actions">
+          <button class="btn-valider" id="btn-valider" disabled>Valider mes réponses</button>
+        </div>
+        <div class="quiz-result" id="quiz-result" hidden role="alert"></div>
+        <button class="btn-rejouer" id="btn-rejouer" hidden>🔄 Rejouer</button>
+      </section>
+
+    </div>
+
+    <!-- État d'erreur -->
+    <div class="error-state" id="error-state" hidden role="alert">
+      <span aria-hidden="true">😕</span>
+      <p id="error-message">Article introuvable.</p>
+      <button class="btn-retour-inline" onclick="window.location.href='actualites.html'">
+        ← Retour au Journal
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="article-footer">
+    <p>Le Monde des Curieux &bull;
+      <a href="actualites.html">Journal</a> &bull;
+      <a href="index.html">Accueil</a>
+    </p>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────
+    //  Constantes
+    // ─────────────────────────────────────────────
+    const THEMES_LABELS = {
+      sciences: 'Sciences', societe: 'Société',
+      culture: 'Culture',   insolite: 'Insolite', nature: 'Nature'
+    };
+
+    // ─────────────────────────────────────────────
+    //  Utilitaires DOM
+    // ─────────────────────────────────────────────
+    const $ = id => document.getElementById(id);
+
+    function showError(msg) {
+      $('loading-state').hidden = true;
+      $('article-body').hidden  = true;
+      $('error-message').textContent = msg;
+      $('error-state').hidden = false;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Lecture de l'id en querystring
+    // ─────────────────────────────────────────────
+    function getArticleId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id') || null;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu de l'en-tête
+    // ─────────────────────────────────────────────
+    function renderHeader(article) {
+      const themeLabel = THEMES_LABELS[article.theme] || article.theme;
+      $('article-header').setAttribute('data-theme', article.theme);
+      $('header-meta').innerHTML = `
+        <span class="header-theme header-theme--${article.theme}">${themeLabel}</span>
+      `;
+      // Mise à jour du <title> de la page
+      document.title = `${article.titre} — Le Journal de Curio`;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu du hero (emoji + titre + date)
+    // ─────────────────────────────────────────────
+    function renderHero(article) {
+      const date = new Date(article.date_publication + 'T00:00:00');
+      const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+      $('article-hero').innerHTML = `
+        <div class="hero-emoji" aria-hidden="true">${article.emoji}</div>
+        <h1 class="hero-titre">${article.titre}</h1>
+        <p class="hero-date">Publié le ${dateStr}</p>
+      `;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu du contenu éditorial
+    // ─────────────────────────────────────────────
+    function renderContent(contenu) {
+      const container = $('article-content');
+      container.innerHTML = '';
+      contenu.forEach(block => {
+        if (block.type === 'paragraph') {
+          const p = document.createElement('p');
+          p.className = 'content-paragraph';
+          p.textContent = block.text;
+          container.appendChild(p);
+        } else if (block.type === 'encart') {
+          const div = document.createElement('div');
+          div.className = 'content-encart';
+          div.innerHTML = `<p>${block.text}</p>`;
+          container.appendChild(div);
+        }
+      });
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu du quiz
+    // ─────────────────────────────────────────────
+    function renderQuiz(quiz) {
+      if (!quiz || quiz.length === 0) return;
+
+      const container = $('quiz-questions');
+      container.innerHTML = '';
+      const userAnswers = new Array(quiz.length).fill(null);
+
+      quiz.forEach((q, qi) => {
+        const block = document.createElement('div');
+        block.className = 'quiz-question-block';
+        block.setAttribute('data-qi', qi);
+
+        const qTitle = document.createElement('p');
+        qTitle.className = 'quiz-question-text';
+        qTitle.textContent = `${qi + 1}. ${q.question}`;
+        block.appendChild(qTitle);
+
+        const optList = document.createElement('ul');
+        optList.className = 'quiz-options';
+        optList.setAttribute('role', 'radiogroup');
+        optList.setAttribute('aria-label', q.question);
+
+        q.options.forEach((opt, oi) => {
+          const li = document.createElement('li');
+          li.className = 'quiz-option';
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'quiz-option-btn';
+          btn.textContent = opt;
+          btn.setAttribute('aria-pressed', 'false');
+          btn.setAttribute('data-qi', qi);
+          btn.setAttribute('data-oi', oi);
+
+          btn.addEventListener('click', () => {
+            // Déselectionner les autres options de cette question
+            optList.querySelectorAll('.quiz-option-btn').forEach(b => {
+              b.classList.remove('selected');
+              b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('selected');
+            btn.setAttribute('aria-pressed', 'true');
+            userAnswers[qi] = oi;
+
+            // Activer le bouton valider si toutes les questions ont une réponse
+            const allAnswered = userAnswers.every(a => a !== null);
+            $('btn-valider').disabled = !allAnswered;
+          });
+
+          li.appendChild(btn);
+          optList.appendChild(li);
+        });
+
+        block.appendChild(optList);
+
+        // Encart explication (masqué avant validation)
+        const expl = document.createElement('div');
+        expl.className = 'quiz-explication';
+        expl.id = `expl-${qi}`;
+        expl.hidden = true;
+        block.appendChild(expl);
+
+        container.appendChild(block);
+      });
+
+      // ── Bouton valider ──
+      const btnValider = $('btn-valider');
+      btnValider.addEventListener('click', () => {
+        let score = 0;
+
+        quiz.forEach((q, qi) => {
+          const block = container.querySelector(`[data-qi="${qi}"]`);
+          const chosen = userAnswers[qi];
+          const correct = q.correct;
+          const isOk = chosen === correct;
+          if (isOk) score++;
+
+          // Colorier les boutons
+          block.querySelectorAll('.quiz-option-btn').forEach(btn => {
+            const oi = parseInt(btn.getAttribute('data-oi'));
+            btn.disabled = true;
+            if (oi === correct) btn.classList.add('correct');
+            else if (oi === chosen && !isOk) btn.classList.add('wrong');
+          });
+
+          // Afficher l'explication
+          const expl = $(`expl-${qi}`);
+          expl.hidden = false;
+          expl.innerHTML = `<span aria-hidden="true">${isOk ? '✅' : '❌'}</span> ${q.explication}`;
+          expl.classList.add(isOk ? 'expl--correct' : 'expl--wrong');
+        });
+
+        // Résultat global
+        const result = $('quiz-result');
+        result.hidden = false;
+        const pct = Math.round((score / quiz.length) * 100);
+        let mention = '';
+        if (pct === 100) mention = '🏆 Parfait, tu es un champion !';
+        else if (pct >= 75) mention = '⭐ Très bien, continue comme ça !';
+        else if (pct >= 50) mention = '👍 Pas mal ! Relis l\'article pour progresser.';
+        else mention = '💪 Continue d\'apprendre, tu vas y arriver !';
+
+        result.innerHTML = `
+          <p class="result-score">${score} / ${quiz.length} — ${pct}%</p>
+          <p class="result-mention">${mention}</p>
+        `;
+
+        btnValider.hidden = true;
+        $('btn-rejouer').hidden = false;
+      });
+
+      // ── Bouton rejouer ──
+      $('btn-rejouer').addEventListener('click', () => {
+        renderQuiz(quiz);
+        $('btn-valider').disabled = true;
+        $('quiz-result').hidden = true;
+        $('btn-valider').hidden = false;
+        $('btn-rejouer').hidden = true;
+      });
+
+      $('quiz-section').hidden = false;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Chargement principal
+    // ─────────────────────────────────────────────
+    async function loadArticle() {
+      const id = getArticleId();
+      if (!id) {
+        showError('Aucun article sélectionné. Retourne au Journal pour en choisir un !');
+        return;
+      }
+
+      // Validation basique de l'id (alphanumérique + tirets)
+      if (!/^[\w-]+$/.test(id)) {
+        showError('Identifiant d\'article invalide.');
+        return;
+      }
+
+      try {
+        const response = await fetch(`articles/${id}.json`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const article = await response.json();
+
+        renderHeader(article);
+        renderHero(article);
+        renderContent(article.contenu || []);
+        renderQuiz(article.quiz || []);
+
+        $('loading-state').hidden = true;
+        $('article-body').hidden  = false;
+
+      } catch (err) {
+        console.error('[Journal de Curio]', err);
+        showError('Curio ne trouve pas cet article. Retourne au Journal et réessaie !');
+      }
+    }
+
+    // Lancement
+    loadArticle();
+  </script>
+
+</body>
+</html>
