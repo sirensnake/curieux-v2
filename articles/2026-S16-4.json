@@ -1,0 +1,60 @@
+{
+  "id": "2026-S16-4",
+  "semaine": "2026-S16",
+  "titre": "Un astronome repère 45 planètes qui pourraient abriter la vie !",
+  "theme": "sciences",
+  "emoji": "🪐",
+  "date_publication": "2026-04-14",
+  "contenu": [
+    {
+      "type": "paragraph",
+      "text": "Est-ce qu'il existe de la vie ailleurs dans l'Univers ? C'est l'une des plus grandes questions que se posent les scientifiques. Cette semaine, des astronomes ont annoncé une découverte passionnante : ils ont identifié 45 exoplanètes proches qui pourraient peut-être abriter la vie !"
+    },
+    {
+      "type": "encart",
+      "text": "🌍 C'est quoi une exoplanète ? Une exoplanète est une planète qui tourne autour d'une autre étoile que notre Soleil. On ne peut pas les voir directement avec nos yeux, car elles sont beaucoup trop loin et trop petites. Les astronomes les détectent grâce à des télescopes très puissants."
+    },
+    {
+      "type": "paragraph",
+      "text": "Pour qu'une vie similaire à celle sur Terre soit possible, une planète doit se trouver dans ce qu'on appelle la zone habitable autour de son étoile. Pas trop près (sinon il ferait trop chaud et l'eau s'évaporerait), pas trop loin (sinon l'eau gèlerait). C'est ce que les astronomes appellent parfois la zone Boucle d'Or, comme dans le conte où la petite fille cherche ce qui n'est ni trop chaud ni trop froid, mais juste comme il faut !"
+    },
+    {
+      "type": "paragraph",
+      "text": "Les 45 exoplanètes identifiées sont considérées comme proches à l'échelle de l'Univers. Mais attention, même la plus proche se trouve à des milliers d'années-lumière. Une année-lumière, c'est la distance que la lumière parcourt en une année : environ 9 500 milliards de kilomètres !"
+    },
+    {
+      "type": "encart",
+      "text": "🔬 Pour l'instant, on ne sait pas si de la vie existe sur ces planètes. Les scientifiques doivent d'abord analyser leur atmosphère à distance grâce à des télescopes spéciaux comme le James Webb Space Telescope. C'est un travail de longue haleine !"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cette découverte montre à quel point l'Univers est immense et plein de mystères. Il existe des milliards de galaxies, chacune avec des milliards d'étoiles, et beaucoup de ces étoiles ont des planètes. La question n'est peut-être plus \"y a-t-il de la vie ailleurs ?\" mais \"quand allons-nous la découvrir ?\""
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Qu'est-ce qu'une exoplanète ?",
+      "options": ["Une planète de notre système solaire", "Une planète qui tourne autour d'une autre étoile que le Soleil", "Une planète artificielle créée par l'Homme", "La planète la plus éloignée du Soleil"],
+      "correct": 1,
+      "explication": "Une exoplanète est une planète qui orbite autour d'une autre étoile que notre Soleil. On en a découvert des milliers grâce aux télescopes modernes !"
+    },
+    {
+      "question": "Comment s'appelle la zone autour d'une étoile où la vie est possible ?",
+      "options": ["La zone froide", "La zone de danger", "La zone habitable", "La zone orbitale"],
+      "correct": 2,
+      "explication": "La zone habitable est la région autour d'une étoile où les températures permettent à l'eau d'exister à l'état liquide. C'est essentiel pour la vie telle qu'on la connaît !"
+    },
+    {
+      "question": "Qu'est-ce qu'une année-lumière ?",
+      "options": ["La durée d'une année sur une autre planète", "La distance parcourue par la lumière en un an", "La luminosité d'une étoile", "L'âge de l'Univers"],
+      "correct": 1,
+      "explication": "Une année-lumière est la distance que la lumière parcourt en une année, soit environ 9 500 milliards de kilomètres. C'est l'unité utilisée pour mesurer les distances dans l'Univers !"
+    },
+    {
+      "question": "Quel télescope spatial aide les scientifiques à analyser l'atmosphère des exoplanètes ?",
+      "options": ["Hubble", "Chandra", "James Webb Space Telescope", "Spitzer"],
+      "correct": 2,
+      "explication": "Le James Webb Space Telescope, lancé en 2021, est le télescope spatial le plus puissant jamais construit. Il peut analyser la lumière qui traverse l'atmosphère des exoplanètes pour chercher des signes de vie."
+    }
+  ]
+}

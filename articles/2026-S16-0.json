@@ -1,0 +1,60 @@
+{
+  "id": "2026-S16-0",
+  "semaine": "2026-S16",
+  "titre": "Les astronautes d'Artemis II sont rentrés de la Lune !",
+  "theme": "sciences",
+  "emoji": "🚀",
+  "date_publication": "2026-04-14",
+  "contenu": [
+    {
+      "type": "paragraph",
+      "text": "Le 1er avril 2026, une fusée géante a décollé de Floride aux États-Unis. À son bord, quatre astronautes avaient une mission très spéciale : faire le tour de la Lune et revenir sur Terre sains et saufs. Cette mission s'appelait Artemis II."
+    },
+    {
+      "type": "encart",
+      "text": "🌕 Le savais-tu ? La dernière fois que des humains sont allés aussi loin dans l'espace, c'était en 1972, il y a plus de 50 ans ! Tes parents n'étaient peut-être même pas encore nés."
+    },
+    {
+      "type": "paragraph",
+      "text": "Le vaisseau spatial s'appelait Orion, et l'équipage l'avait baptisé Integrity, ce qui veut dire « intégrité » en anglais. Les quatre astronautes étaient Reid Wiseman, Victor Glover, Christina Koch et Jeremy Hansen. Ils ont voyagé pendant dix jours et parcouru plus d'un million de kilomètres !"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dans la nuit du 6 au 7 avril, ils ont survolé la face cachée de la Lune — la partie qu'on ne voit jamais depuis la Terre. Puis ils ont commencé leur retour. Le 11 avril, leur capsule a plongé dans l'atmosphère à plus de 38 000 km/h, protégée par un bouclier thermique qui peut résister à 2 700 degrés. Finalement, d'immenses parachutes ont ralenti la capsule avant qu'elle s'amarre doucement dans l'océan Pacifique."
+    },
+    {
+      "type": "encart",
+      "text": "🏆 Record battu ! L'équipage d'Artemis II s'est aventuré plus loin de la Terre que n'importe quel humain dans l'histoire : environ 407 000 kilomètres. Le record précédent était détenu depuis 1970 par l'équipage d'Apollo 13."
+    },
+    {
+      "type": "paragraph",
+      "text": "Cette mission est le début d'un grand programme : la NASA veut envoyer des astronautes marcher sur la Lune dès 2028, et peut-être un jour atteindre Mars. Artemis II prouve que c'est possible. La prochaine grande aventure spatiale est en route !"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Comment s'appelait le vaisseau de la mission Artemis II ?",
+      "options": ["Challenger", "Orion Integrity", "Discovery", "Apollo 18"],
+      "correct": 1,
+      "explication": "Le vaisseau s'appelait Orion, et l'équipage lui avait donné le surnom Integrity, qui signifie « intégrité » en anglais."
+    },
+    {
+      "question": "Combien de jours a duré la mission Artemis II ?",
+      "options": ["3 jours", "5 jours", "10 jours", "30 jours"],
+      "correct": 2,
+      "explication": "La mission a duré dix jours, du décollage le 1er avril jusqu'à l'amerrissage le 11 avril 2026."
+    },
+    {
+      "question": "Où la capsule Orion s'est-elle posée pour rentrer sur Terre ?",
+      "options": ["Dans l'océan Atlantique", "Dans l'océan Indien", "Dans la mer Méditerranée", "Dans l'océan Pacifique"],
+      "correct": 3,
+      "explication": "La capsule Orion a amerri dans l'océan Pacifique, au large de la Californie, ralentie par de grands parachutes."
+    },
+    {
+      "question": "Quelle partie de la Lune les astronautes ont-ils survolée ?",
+      "options": ["La face visible depuis la Terre", "La face cachée de la Lune", "Le pôle Nord lunaire", "La mer de la Tranquillité"],
+      "correct": 1,
+      "explication": "Les astronautes ont survolé la face cachée de la Lune, celle qu'on ne peut jamais voir depuis notre planète !"
+    }
+  ]
+}

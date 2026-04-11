@@ -1,0 +1,60 @@
+{
+  "id": "2026-S16-3",
+  "semaine": "2026-S16",
+  "titre": "La Cité des sciences fête ses 40 ans !",
+  "theme": "culture",
+  "emoji": "🏛️",
+  "date_publication": "2026-04-14",
+  "contenu": [
+    {
+      "type": "paragraph",
+      "text": "La Cité des sciences et de l'industrie de Paris célèbre ses 40 ans en 2026 ! Ce grand musée, situé dans le quartier de La Villette, a ouvert ses portes pour la première fois en 1986. Depuis, il accueille chaque année des millions de visiteurs qui viennent découvrir les sciences, la technologie et l'histoire de l'Univers."
+    },
+    {
+      "type": "encart",
+      "text": "🔭 C'est quoi la Cité des sciences ? C'est l'un des plus grands musées scientifiques d'Europe. On y trouve des expositions interactives, un planétarium pour observer les étoiles, et même un espace spécial pour les enfants de 5 à 10 ans appelé la Cité des enfants."
+    },
+    {
+      "type": "paragraph",
+      "text": "Pour fêter cet anniversaire, le musée propose plein d'activités et d'expositions spéciales. En ce moment, on peut voir une expo sur les chiens et les chats qui explique leur comportement et leur intelligence, une expo sur le jardinage et les défis de l'environnement, et une expo-magazine sur les exoplanètes et les promesses de la science."
+    },
+    {
+      "type": "paragraph",
+      "text": "Le musée propose aussi un planétarium, géré par La Géode, où un écran géant en forme de demi-sphère projette des films sur l'espace et la nature. C'est une expérience immersive impressionnante, comme si tu étais propulsé au milieu des étoiles !"
+    },
+    {
+      "type": "encart",
+      "text": "💡 Le savoir, c'est pour tout le monde ! La Cité des sciences a été construite pour que chacun puisse comprendre la science, qu'on soit enfant ou adulte, débutant ou expert. C'est l'idée qui guide le musée depuis 40 ans."
+    },
+    {
+      "type": "paragraph",
+      "text": "Pendant les vacances de printemps (du 18 avril au 2 mai), des ateliers numériques gratuits sont organisés pour les enfants. Une occasion parfaite de coder, fabriquer et expérimenter en famille !"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "En quelle année la Cité des sciences a-t-elle ouvert ses portes ?",
+      "options": ["1976", "1986", "1996", "2006"],
+      "correct": 1,
+      "explication": "La Cité des sciences et de l'industrie a ouvert en 1986. En 2026, elle fête donc ses 40 ans !"
+    },
+    {
+      "question": "Dans quel quartier de Paris se trouve la Cité des sciences ?",
+      "options": ["Montmartre", "Le Marais", "La Villette", "La Défense"],
+      "correct": 2,
+      "explication": "La Cité des sciences est située dans le quartier de La Villette, dans le nord-est de Paris."
+    },
+    {
+      "question": "Comment s'appelle la zone du musée spécialement conçue pour les enfants de 5 à 10 ans ?",
+      "options": ["La Cité des petits", "La Cité des enfants", "La Cité junior", "La Cité curieuse"],
+      "correct": 1,
+      "explication": "La Cité des enfants est l'espace du musée dédié aux 5-10 ans, avec des jeux d'eau, des expériences à toucher et plein d'activités interactives !"
+    },
+    {
+      "question": "Qu'est-ce qu'un planétarium ?",
+      "options": ["Un endroit pour observer les plantes", "Une salle où on projette des images du ciel étoilé", "Un laboratoire de chimie", "Une bibliothèque scientifique"],
+      "correct": 1,
+      "explication": "Un planétarium est une salle avec un écran en forme de dôme où on projette des images du ciel, des étoiles et des planètes. C'est comme voyager dans l'espace sans quitter son siège !"
+    }
+  ]
+}

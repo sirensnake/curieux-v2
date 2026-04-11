@@ -1,0 +1,60 @@
+{
+  "id": "2026-S16-1",
+  "semaine": "2026-S16",
+  "titre": "Des baleines à quatre pattes découvertes dans le désert !",
+  "theme": "sciences",
+  "emoji": "🐋",
+  "date_publication": "2026-04-14",
+  "contenu": [
+    {
+      "type": "paragraph",
+      "text": "Imagine une baleine qui marche ! Ça paraît impossible, et pourtant des scientifiques ont découvert des preuves que les ancêtres des baleines pouvaient faire exactement ça. Leurs fossiles ont été retrouvés dans un endroit très surprenant : un désert en Égypte !"
+    },
+    {
+      "type": "encart",
+      "text": "🦴 C'est quoi un fossile ? Un fossile, c'est le reste d'un animal ou d'une plante qui a vécu il y a très longtemps, conservé dans la roche. En étudiant les fossiles, les scientifiques peuvent comprendre comment les êtres vivants ont évolué."
+    },
+    {
+      "type": "paragraph",
+      "text": "L'endroit où ces fossiles ont été trouvés s'appelle la Vallée des Baleines. C'est un désert sablonneux en Égypte, mais il y a des millions d'années, c'était une mer ! Les animaux qui vivaient là se sont transformés très lentement au fil du temps pour s'adapter à leur environnement."
+    },
+    {
+      "type": "paragraph",
+      "text": "Les fossiles découverts appartiennent à une baleine vieille de 43 millions d'années. À cette époque, ces baleines avaient encore quatre pattes et pouvaient marcher sur terre tout en sachant nager. Au fil des millions d'années, leurs pattes ont disparu progressivement et elles sont devenues les grandes baleines que l'on connaît aujourd'hui."
+    },
+    {
+      "type": "encart",
+      "text": "⏳ Pour te donner une idée : 43 millions d'années, c'est tellement long que même les dinosaures avaient disparu depuis 23 millions d'années déjà à cette époque !"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cette transformation progressive d'un animal au fil du temps s'appelle l'évolution. Les scientifiques qui étudient les fossiles sont appelés des paléontologues. Grâce à leur travail, on comprend mieux comment la vie sur Terre a changé depuis des millions d'années."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Dans quel pays se trouve la Vallée des Baleines ?",
+      "options": ["En France", "En Australie", "En Égypte", "Au Brésil"],
+      "correct": 2,
+      "explication": "La Vallée des Baleines se trouve dans le désert égyptien. Il y a des millions d'années, cette région était recouverte par la mer !"
+    },
+    {
+      "question": "Il y a combien d'années vivait cette ancêtre de la baleine à quatre pattes ?",
+      "options": ["1 million d'années", "10 millions d'années", "43 millions d'années", "200 millions d'années"],
+      "correct": 2,
+      "explication": "Les fossiles découverts ont environ 43 millions d'années. À cette époque, les baleines pouvaient encore marcher sur leurs quatre pattes !"
+    },
+    {
+      "question": "Comment s'appelle la transformation progressive d'un animal au fil du temps ?",
+      "options": ["La révolution", "L'évolution", "La mutation", "La migration"],
+      "correct": 1,
+      "explication": "L'évolution, c'est le processus par lequel les animaux se transforment très lentement au fil des millions d'années pour s'adapter à leur environnement."
+    },
+    {
+      "question": "Comment s'appelle un scientifique qui étudie les fossiles ?",
+      "options": ["Un géologue", "Un biologiste", "Un paléontologue", "Un archéologue"],
+      "correct": 2,
+      "explication": "Un paléontologue est un scientifique spécialisé dans l'étude des fossiles. C'est grâce à eux qu'on découvre l'histoire des êtres vivants !"
+    }
+  ]
+}

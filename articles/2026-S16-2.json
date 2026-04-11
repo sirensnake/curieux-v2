@@ -1,0 +1,60 @@
+{
+  "id": "2026-S16-2",
+  "semaine": "2026-S16",
+  "titre": "Beauval ouvre une zone dédiée aux animaux d'Australie",
+  "theme": "nature",
+  "emoji": "🦘",
+  "date_publication": "2026-04-14",
+  "contenu": [
+    {
+      "type": "paragraph",
+      "text": "Le ZooParc de Beauval, situé en région Centre-Val de Loire, est l'un des plus grands et plus beaux zoos de France. Ce printemps, il a inauguré un tout nouvel espace appelé Les Terres Rouges, entièrement consacré aux animaux d'Australie !"
+    },
+    {
+      "type": "encart",
+      "text": "🌏 L'Australie, c'est loin ! Ce pays est aussi grand que l'Europe entière, mais il se trouve de l'autre côté de la planète. Les animaux qui y vivent sont souvent très différents de ceux qu'on connaît en France."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dans cette nouvelle zone, on peut découvrir des kangourous roux, des wallabies (des cousins plus petits des kangourous) et des émeus, de grands oiseaux qui ne savent pas voler mais qui courent très vite. Mais la grande vedette, c'est le wombat ! Cet animal ressemble à un gros hamster trapu et creuse de profonds terriers dans le sol. C'est la première fois qu'on peut voir un wombat en France !"
+    },
+    {
+      "type": "encart",
+      "text": "🐾 Le savais-tu ? Les kangourous, les wallabies et les wombats sont des marsupiaux. Les femelles ont une poche sur le ventre pour transporter leur bébé, appelé un joey, jusqu'à ce qu'il soit assez grand pour se débrouiller seul."
+    },
+    {
+      "type": "paragraph",
+      "text": "Beauval a aussi ouvert en parallèle un espace appelé Bucolia, une grande ferme d'un hectare dédiée aux races d'animaux anciens et menacés de France : moutons solognots, ânes noirs du Berry, chèvres poitevines… Un beau rappel que la biodiversité est aussi à protéger près de chez nous !"
+    },
+    {
+      "type": "paragraph",
+      "text": "Les zoos jouent un rôle important pour sensibiliser le public à la protection des espèces animales. Beaucoup d'entre eux participent à des programmes d'élevage pour sauver des espèces menacées de disparition. Beauval fait partie de ces zoos engagés."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Quel est le nom du nouvel espace australien ouvert à Beauval ?",
+      "options": ["Les Pistes Rouges", "Les Terres Rouges", "L'Outback Sauvage", "Le Continent Sud"],
+      "correct": 1,
+      "explication": "Le nouvel espace s'appelle Les Terres Rouges, en référence aux sols rouges caractéristiques de l'Australie."
+    },
+    {
+      "question": "Qu'est-ce qu'un marsupial ?",
+      "options": ["Un animal qui vit dans l'eau", "Un animal qui hiberne l'hiver", "Un animal dont la femelle a une poche ventrale", "Un animal qui ne mange que des plantes"],
+      "correct": 2,
+      "explication": "Les marsupiaux sont des animaux dont la femelle possède une poche sur le ventre pour transporter son bébé. Le kangourou, le wallaby et le wombat sont tous des marsupiaux !"
+    },
+    {
+      "question": "Quelle est la particularité du wombat ?",
+      "options": ["Il vole comme un oiseau", "Il creuse des terriers dans le sol", "Il vit uniquement dans l'eau", "Il change de couleur comme un caméléon"],
+      "correct": 1,
+      "explication": "Le wombat est un animal trapu qui creuse de profonds terriers dans le sol. C'est un peu le lapin géant de l'Australie !"
+    },
+    {
+      "question": "Comment s'appelle le bébé kangourou ?",
+      "options": ["Un cub", "Un joey", "Un kit", "Un pup"],
+      "correct": 1,
+      "explication": "Le bébé kangourou s'appelle un joey ! Il naît très petit et finit de grandir dans la poche de sa maman pendant plusieurs mois."
+    }
+  ]
+}
