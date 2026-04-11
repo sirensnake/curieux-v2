@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Journal de Curio</title>
+  <meta name="description" content="Le Journal de Curio — L'actu de la semaine expliquée aux CM1-CM2 par Curio le renard curieux." />
+  <meta property="og:title" content="Le Journal de Curio" />
+  <meta property="og:description" content="5 articles de la semaine expliqués simplement pour les enfants de CM1-CM2." />
+  <meta property="og:image" content="images/og-preview.webp" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles/actualites.css" />
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="journal-header">
+    <div class="header-inner">
+      <button class="btn-retour" onclick="window.location.href='index.html'" aria-label="Retour à l'accueil">
+        ← Accueil
+      </button>
+      <div class="header-title">
+        <span class="header-emoji" aria-hidden="true">📰</span>
+        <h1>Le Journal de Curio</h1>
+        <p class="header-subtitle">L'actu de la semaine expliquée par Curio&nbsp;!</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENU PRINCIPAL ===== -->
+  <main class="journal-main" id="main-content">
+
+    <!-- Semaine en cours -->
+    <section class="semaine-courante" id="semaine-courante" aria-labelledby="titre-semaine-courante">
+      <h2 id="titre-semaine-courante" class="section-title">
+        <span aria-hidden="true">⭐</span> Cette semaine
+      </h2>
+      <div class="articles-grid" id="articles-grid" aria-live="polite">
+        <!-- Chargement dynamique -->
+        <div class="loading-state" role="status" aria-label="Chargement des articles en cours">
+          <span class="loading-emoji" aria-hidden="true">🦊</span>
+          <p>Curio cherche les actus…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archives -->
+    <section class="archives" id="archives" aria-labelledby="titre-archives">
+      <h2 id="titre-archives" class="section-title">
+        <span aria-hidden="true">📁</span> Archives
+      </h2>
+      <div class="archives-list" id="archives-list">
+        <!-- Chargement dynamique -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="journal-footer">
+    <p>Le Monde des Curieux &bull; <a href="index.html">Retour aux leçons</a></p>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────
+    //  Utilitaires
+    // ─────────────────────────────────────────────
+    const THEMES_LABELS = {
+      sciences : 'Sciences',
+      societe  : 'Société',
+      culture  : 'Culture',
+      insolite : 'Insolite',
+      nature   : 'Nature'
+    };
+
+    function formatDate(isoDate) {
+      const d = new Date(isoDate + 'T00:00:00');
+      return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu d'une carte article
+    // ─────────────────────────────────────────────
+    function buildArticleCard(article) {
+      const themeLabel = THEMES_LABELS[article.theme] || article.theme;
+      const quizReady  = article['data-quiz-ready'] === 'true';
+      const hasId      = Boolean(article.id);
+
+      // Wrapper : lien cliquable si l'article a un id, sinon div statique
+      const card = hasId
+        ? document.createElement('a')
+        : document.createElement('article');
+
+      card.className = 'article-card';
+      if (hasId) {
+        card.href = `article.html?id=${encodeURIComponent(article.id)}`;
+        card.setAttribute('aria-label', article.titre);
+      }
+      card.setAttribute('data-quiz-ready', quizReady ? 'true' : 'false');
+      card.setAttribute('data-theme', article.theme);
+
+      card.innerHTML = `
+        <div class="card-emoji" aria-hidden="true">${article.emoji}</div>
+        <div class="card-body">
+          <span class="card-theme card-theme--${article.theme}">${themeLabel}</span>
+          <h3 class="card-titre">${article.titre}</h3>
+          <p class="card-accroche">${article.accroche}</p>
+          ${hasId ? '<span class="card-lire" aria-hidden="true">Lire →</span>' : ''}
+        </div>
+      `;
+      return card;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu d'un accordéon de semaine archivée
+    // ─────────────────────────────────────────────
+    function buildArchiveBlock(semaine, index) {
+      const id = `archive-${semaine.id}`;
+      const panelId = `panel-${semaine.id}`;
+      const block = document.createElement('div');
+      block.className = 'archive-block';
+
+      const header = document.createElement('button');
+      header.className = 'archive-header';
+      header.setAttribute('aria-expanded', 'false');
+      header.setAttribute('aria-controls', panelId);
+      header.id = id;
+      header.innerHTML = `
+        <span class="archive-date">Semaine du ${formatDate(semaine.date_publication)}</span>
+        <span class="archive-count">${semaine.articles.length} article${semaine.articles.length > 1 ? 's' : ''}</span>
+        <span class="archive-chevron" aria-hidden="true">▼</span>
+      `;
+
+      const panel = document.createElement('div');
+      panel.className = 'archive-panel';
+      panel.id = panelId;
+      panel.setAttribute('role', 'region');
+      panel.setAttribute('aria-labelledby', id);
+      panel.hidden = true;
+
+      const grid = document.createElement('div');
+      grid.className = 'articles-grid articles-grid--archive';
+      semaine.articles.forEach(a => grid.appendChild(buildArticleCard(a)));
+      panel.appendChild(grid);
+
+      header.addEventListener('click', () => {
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        header.setAttribute('aria-expanded', String(!expanded));
+        panel.hidden = expanded;
+        header.querySelector('.archive-chevron').textContent = expanded ? '▼' : '▲';
+      });
+
+      block.appendChild(header);
+      block.appendChild(panel);
+      return block;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Rendu erreur
+    // ─────────────────────────────────────────────
+    function showError(container, message) {
+      container.innerHTML = `
+        <div class="error-state" role="alert">
+          <span aria-hidden="true">😕</span>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    // ─────────────────────────────────────────────
+    //  Chargement principal
+    // ─────────────────────────────────────────────
+    async function loadJournal() {
+      const grid    = document.getElementById('articles-grid');
+      const archList = document.getElementById('archives-list');
+
+      try {
+        const response = await fetch('news.json');
+        if (!response.ok) throw new Error('Impossible de charger les actus.');
+        const data = await response.json();
+
+        if (!data.semaines || data.semaines.length === 0) {
+          showError(grid, 'Aucune actu disponible pour le moment. Reviens bientôt !');
+          archList.hidden = true;
+          return;
+        }
+
+        // Semaine la plus récente = index 0
+        const [courante, ...archives] = data.semaines;
+
+        // ── Semaine courante ──
+        grid.innerHTML = '';
+        courante.articles.forEach(a => grid.appendChild(buildArticleCard(a)));
+
+        // ── Archives ──
+        if (archives.length === 0) {
+          archList.innerHTML = '<p class="archives-empty">Les semaines précédentes apparaîtront ici.</p>';
+        } else {
+          archList.innerHTML = '';
+          archives.forEach((s, i) => archList.appendChild(buildArchiveBlock(s, i)));
+        }
+
+      } catch (err) {
+        showError(grid, 'Curio n\'arrive pas à charger les actus. Vérifie ta connexion !');
+        console.error('[Journal de Curio]', err);
+      }
+    }
+
+    // Lancement
+    loadJournal();
+  </script>
+
+</body>
+</html>

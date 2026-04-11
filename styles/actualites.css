@@ -1,0 +1,398 @@
+/* ═══════════════════════════════════════════════════════════
+   actualites.css — Le Journal de Curio
+   Charte : Press Start 2P sur titres, palette site existant,
+   aucun style inline autorisé, compatible PWA.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tokens couleurs (reprend la palette du site) ── */
+:root {
+  --color-primary:     #e67e22;   /* orange principal */
+  --color-primary-dk:  #cf6d17;   /* orange foncé hover */
+  --color-secondary:   #3498db;   /* bleu */
+  --color-secondary-dk:#217dbb;
+  --color-bg:          #f0f4f8;   /* fond général */
+  --color-surface:     #ffffff;   /* fond cartes */
+  --color-text:        #2c3e50;   /* texte principal */
+  --color-text-muted:  #6c7a89;   /* texte secondaire */
+  --color-border:      #dce3ec;   /* bordures */
+  --color-success:     #27ae60;
+  --color-sciences:    #3498db;
+  --color-societe:     #9b59b6;
+  --color-culture:     #e67e22;
+  --color-insolite:    #e74c3c;
+  --color-nature:      #27ae60;
+
+  --radius-card:  12px;
+  --radius-btn:   8px;
+  --shadow-card:  0 2px 12px rgba(0,0,0,.08);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,.14);
+  --font-pixel:   'Press Start 2P', monospace;
+  --font-body:    system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --transition:   0.2s ease;
+}
+
+/* ── Reset minimal ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══════════════════════════════════════
+   EN-TÊTE
+═══════════════════════════════════════ */
+.journal-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dk) 100%);
+  color: #fff;
+  padding: 1.25rem 1rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-retour {
+  background: rgba(255,255,255,.2);
+  border: 2px solid rgba(255,255,255,.5);
+  color: #fff;
+  font-family: var(--font-pixel);
+  font-size: .55rem;
+  padding: .5rem .9rem;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.btn-retour:hover,
+.btn-retour:focus-visible {
+  background: rgba(255,255,255,.35);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.btn-retour:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.header-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.header-title h1 {
+  font-family: var(--font-pixel);
+  font-size: clamp(.75rem, 2.5vw, 1.1rem);
+  letter-spacing: .03em;
+}
+
+.header-subtitle {
+  font-size: .9rem;
+  opacity: .9;
+}
+
+/* ═══════════════════════════════════════
+   CONTENU PRINCIPAL
+═══════════════════════════════════════ */
+.journal-main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Titres de section ── */
+.section-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(.65rem, 1.8vw, .85rem);
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: .6rem;
+}
+
+/* ═══════════════════════════════════════
+   GRILLE D'ARTICLES
+═══════════════════════════════════════ */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Carte article cliquable (balise <a>) ── */
+a.article-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+a.article-card:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.card-lire {
+  margin-top: auto;
+  padding-top: .6rem;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  align-self: flex-end;
+}
+
+/* ── Carte article ── */
+.article-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.article-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.card-emoji {
+  font-size: 2.8rem;
+  text-align: center;
+  padding: 1.1rem 1rem .6rem;
+  background: var(--color-bg);
+}
+
+.card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+}
+
+.card-theme {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.card-theme--sciences  { background: var(--color-sciences); }
+.card-theme--societe   { background: var(--color-societe); }
+.card-theme--culture   { background: var(--color-culture); }
+.card-theme--insolite  { background: var(--color-insolite); }
+.card-theme--nature    { background: var(--color-nature); }
+
+.card-titre {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.card-accroche {
+  font-size: .88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* ── États loading / erreur ── */
+.loading-state,
+.error-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  padding: 2.5rem 1rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.loading-emoji {
+  font-size: 2.5rem;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+/* ═══════════════════════════════════════
+   ARCHIVES — ACCORDÉON
+═══════════════════════════════════════ */
+.archives-list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.archive-block {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.archive-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .9rem 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition);
+}
+
+.archive-header:hover,
+.archive-header:focus-visible {
+  background: var(--color-bg);
+  outline: none;
+}
+
+.archive-header:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: -3px;
+}
+
+.archive-date {
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.archive-count {
+  font-size: .8rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  padding: .2rem .6rem;
+  border-radius: 999px;
+}
+
+.archive-chevron {
+  font-size: .75rem;
+  color: var(--color-primary);
+  transition: transform var(--transition);
+}
+
+.archive-header[aria-expanded="true"] .archive-chevron {
+  transform: rotate(180deg);
+}
+
+.archive-panel {
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.articles-grid--archive {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.archives-empty {
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  padding: .5rem 0;
+}
+
+/* ═══════════════════════════════════════
+   PIED DE PAGE
+═══════════════════════════════════════ */
+.journal-footer {
+  background: var(--color-text);
+  color: #cdd3da;
+  text-align: center;
+  padding: 1.1rem 1rem;
+  font-size: .82rem;
+}
+
+.journal-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.journal-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .articles-grid--archive {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-header {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+}
+
+/* ═══════════════════════════════════════
+   ACCESSIBILITÉ — Réduction de mouvement
+═══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .article-card,
+  .btn-retour,
+  .loading-emoji {
+    transition: none;
+    animation: none;
+  }
+}
