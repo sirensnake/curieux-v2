@@ -515,30 +515,216 @@ histoireLessons.push(
 const histoireLeconData = {
 
     prehistoire: {
-        title: "La Préhistoire : Les débuts de l'humanité",
+        title: "🦴 La Préhistoire",
         content: `
-            <h3>🦴 Qu'est-ce que la Préhistoire ?</h3>
-            <p>La Préhistoire est la période la plus longue de l'histoire humaine. Elle commence il y a <strong>environ 3 millions d'années</strong> avec les premiers hommes et se termine vers <strong>-3300 avant J.-C.</strong> avec l'invention de l'écriture.</p>
+            <div class="lecon-bloc">
 
-            <h3>📅 Les deux grandes périodes</h3>
-            <ul>
-                <li><strong>Paléolithique</strong> (pierre ancienne, -3M → -10 000 ans) : nomades, chasseurs-cueilleurs</li>
-                <li><strong>Néolithique</strong> (pierre nouvelle, -10 000 → -3300 av. J.-C.) : sédentaires, agriculteurs, premiers villages</li>
+            <h3>🌍 Il était une fois… le tout début</h3>
+            <p>Pour comprendre à quel point la Préhistoire est longue, voici une image.
+            Imagine que toute l'histoire de l'humanité tient en une seule journée de 24 heures.
+            La Préhistoire occuperait alors <strong>23 heures et 56 minutes</strong>.
+            Toute l'histoire que tu étudies à l'école — l'Antiquité, le Moyen Âge, les rois de France,
+            les guerres mondiales — se passerait dans les <strong>4 dernières minutes</strong>.</p>
+
+            <p>La Préhistoire commence il y a environ <strong>3 millions d'années</strong>,
+            quelque part en Afrique de l'Est, quand un être debout aux mains habiles commence
+            à tailler des cailloux pour en faire des outils. Elle se termine vers
+            <strong>3300 avant Jésus-Christ</strong>, quand des marchands mésopotamiens inventent
+            l'écriture pour tenir leurs comptes. Entre ces deux moments : une aventure humaine
+            immense, silencieuse, que nous reconstituons patiemment grâce aux ossements,
+            aux outils et aux peintures que ces hommes ont laissés derrière eux.</p>
+
+            <hr class="lecon-sep">
+            <h3>🦴 Le Paléolithique : des millions d'années de nomadisme</h3>
+
+            <p>La première grande période s'appelle le <strong>Paléolithique</strong>,
+            ce qui signifie "âge de la pierre ancienne" en grec. Elle s'étend de -3 millions
+            d'années à environ -10 000 ans. C'est de loin la plus longue période de toute
+            l'histoire humaine.</p>
+
+            <p>Les hommes du Paléolithique sont des <strong>nomades</strong> : ils ne s'installent
+            jamais vraiment quelque part. Chaque saison, ils suivent les grands troupeaux —
+            mammouths laineux, rennes, bisons, aurochs — sur des dizaines, parfois des centaines
+            de kilomètres. Ils connaissent leur territoire par cœur : où trouver une source d'eau,
+            où se réfugier quand l'orage arrive, quelles plantes sont comestibles et lesquelles
+            sont dangereuses.</p>
+
+            <p>Ils vivent dans des <strong>grottes</strong> quand ils en trouvent, ou construisent
+            des abris temporaires : une armature en os de mammouth plantée dans le sol,
+            recouverte de peaux tendues et fixées avec des pierres. Pas très grand, pas très
+            confortable — mais efficace pour passer l'hiver à −20°C.</p>
+
+            <p>Pour se nourrir, les hommes chassent en groupe. Imaginez la scène : une dizaine
+            d'individus qui encerclent silencieusement un mammouth, armés de sagaies à pointe
+            de silex. La chasse est dangereuse — un mammouth adulte pèse six tonnes et peut tuer
+            un homme d'un coup de défense. Mais un seul mammouth peut nourrir tout un groupe
+            pendant plusieurs semaines. La <strong>cueillette</strong> complète l'alimentation :
+            baies, racines, champignons, œufs d'oiseaux, miel sauvage.</p>
+
+            <div class="lecon-encart">
+                <span class="lecon-encart-icon">🔥</span>
+                <p><strong>La découverte du feu</strong>, il y a environ 400 000 ans, est sans doute
+                la plus grande invention de toute la Préhistoire. Avant, les hommes récupéraient
+                parfois du feu naturel après un orage ou un incendie de forêt. Apprendre à en
+                produire soi-même, en frottant deux silex ou deux morceaux de bois, c'est une
+                révolution totale : on peut se chauffer, cuire la viande (ce qui la rend plus digeste
+                et tue les parasites), fabriquer de meilleures armes en durcissant les pointes au feu,
+                et repousser les prédateurs. Le soir, autour du foyer, le groupe se retrouve.
+                C'est peut-être là que naît le langage élaboré.</p>
+            </div>
+
+            <hr class="lecon-sep">
+            <h3>🎨 L'art des cavernes : le mystère de Lascaux</h3>
+
+            <p>Voilà ce qui est peut-être le plus étonnant dans la Préhistoire : ces hommes qui
+            luttaient chaque jour pour survivre prenaient pourtant le temps de <strong>créer
+            des œuvres d'art</strong>. Et pas n'importe lesquelles.</p>
+
+            <p>En septembre 1940, quatre adolescents du Périgord suivent leur chien Marcel
+            dans un trou du sol et découvrent une galerie ornée de <strong>600 peintures</strong>
+            et <strong>1 500 gravures</strong> représentant des chevaux, des bisons, des aurochs,
+            des cerfs. Ces images ont <strong>17 000 ans</strong>. Elles sont d'une précision et
+            d'une beauté stupéfiantes. C'est la grotte de <strong>Lascaux</strong>, en Dordogne.</p>
+
+            <p>Encore plus ancienne : la grotte <strong>Chauvet</strong>, découverte en Ardèche
+            en 1994. Ses peintures datent de <strong>36 000 ans</strong>. Trente-six mille ans —
+            à cette époque, le mammouth laineux arpentait encore les steppes d'Europe.</p>
+
+            <p>Comment faisaient-ils ? Les artistes préhistoriques broyaient des minéraux
+            pour obtenir leurs couleurs : l'<strong>ocre rouge et jaune</strong> (oxyde de fer),
+            le <strong>noir</strong> (charbon de bois ou manganèse), le <strong>blanc</strong>
+            (argile ou calcaire). Ils mélangeaient ces pigments avec de la graisse animale ou
+            de l'eau. Certains soufflaient la peinture à travers des os creux — comme une vraie
+            bombe de spray préhistorique.</p>
+
+            <p>Pourquoi peignaient-ils ? Les chercheurs pensent que ces grottes étaient des
+            lieux sacrés, des sanctuaires. Peut-être que représenter un animal sur la paroi
+            était une façon de s'assurer une bonne chasse. Peut-être une manière de transmettre
+            des connaissances aux générations suivantes. Ou simplement le besoin humain,
+            universel et intemporel, de <strong>créer de la beauté</strong>.</p>
+
+            <hr class="lecon-sep">
+            <h3>🌾 Le Néolithique : quand tout a changé</h3>
+
+            <p>Il y a environ <strong>10 000 ans</strong>, quelque chose d'extraordinaire se produit
+            au Moyen-Orient, dans une région qu'on appelle le "croissant fertile" (aujourd'hui
+            Irak, Syrie, Turquie, Israël). Des groupes humains découvrent qu'ils peuvent
+            <strong>semer des graines</strong> et revenir les récolter plus tard. Ils apprennent
+            à <strong>domestiquer des animaux</strong> : le mouton, la chèvre, le porc, puis
+            le bœuf. Cette double révolution — l'agriculture et l'élevage — va transformer
+            le mode de vie de l'humanité entière.</p>
+
+            <p>Si tu peux cultiver et élever des animaux, tu n'as plus besoin de te déplacer
+            sans cesse. Tu peux rester au même endroit, construire une vraie maison, stocker
+            des réserves pour l'hiver. Les premiers <strong>villages</strong> apparaissent.
+            Cette sédentarisation entraîne une cascade d'inventions : la <strong>poterie</strong>
+            pour stocker les céréales, le <strong>tissage</strong> pour se vêtir mieux,
+            la <strong>hache polie</strong> pour défricher, puis la <strong>charrue</strong>
+            tirée par des bœufs. La population augmente, le commerce se développe, et à la fin
+            du Néolithique apparaissent les premières inégalités.</p>
+
+            <div class="lecon-encart">
+                <span class="lecon-encart-icon">🦊</span>
+                <p><strong>Curio te dit :</strong> La transition vers le Néolithique n'a pas été
+                instantanée. En France, elle s'étale sur des centaines d'années. Pendant longtemps,
+                des groupes de chasseurs-nomades et des groupes d'agriculteurs-sédentaires ont coexisté
+                sur le même territoire — parfois en échangeant des marchandises, parfois en se battant.</p>
+            </div>
+
+            <hr class="lecon-sep">
+            <h3>🪨 Stonehenge et les mystères mégalithiques</h3>
+
+            <p>Le Néolithique laisse des monuments colossaux : les <strong>mégalithes</strong>
+            (du grec <em>mega</em> = grand et <em>lithos</em> = pierre). En France, la Bretagne
+            en est couverte. À <strong>Carnac</strong>, dans le Morbihan, plus de 3 000 menhirs
+            sont alignés sur 4 kilomètres. En Angleterre, <strong>Stonehenge</strong> est construit
+            à partir de -3000 : certaines pierres pèsent 50 tonnes et ont été transportées depuis
+            300 kilomètres. Comment ? En traîneaux sur des rondins de bois, grâce à des centaines
+            de personnes travaillant ensemble. Ces constructions montrent que les sociétés
+            néolithiques étaient organisées, capables de planifier sur des années.</p>
+
+            <table class="lecon-tableau">
+                <caption>Les trois types de mégalithes</caption>
+                <thead>
+                    <tr><th>Nom</th><th>Description</th><th>Exemple célèbre</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Menhir</strong></td>
+                        <td>Pierre unique dressée verticalement — jusqu'à 20 m de haut</td>
+                        <td>Grand Menhir de Locmariaquer (Bretagne) — 280 tonnes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dolmen</strong></td>
+                        <td>Chambre funéraire en pierres plates — tombeau collectif</td>
+                        <td>La Roche-aux-Fées (Ille-et-Vilaine) — 19 m de long</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cromlech</strong></td>
+                        <td>Cercle ou demi-cercle de pierres dressées</td>
+                        <td>Stonehenge (Angleterre) — construit de -3000 à -1500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="lecon-sep">
+            <h3>🏺 Qui étions-nous ?</h3>
+
+            <p>L'être humain moderne n'est pas apparu d'un seul coup. Pendant des millions
+            d'années, plusieurs espèces se sont succédé ou ont coexisté :</p>
+
+            <ul class="lecon-liste-humains">
+                <li><strong>Homo habilis</strong> (−2,5 millions d'années) —
+                    "l'homme habile" : premiers outils en pierre taillée</li>
+                <li><strong>Homo erectus</strong> (−1,8 million d'années) —
+                    "l'homme debout" : maîtrise du feu, premier à quitter l'Afrique</li>
+                <li><strong>Homme de Néandertal</strong> (−400 000 à −30 000 ans) —
+                    enterrait ses morts, soignait ses blessés, cerveau aussi gros que le nôtre</li>
+                <li><strong>Homo sapiens</strong> (−300 000 ans → aujourd'hui) —
+                    "l'homme sage" : notre ancêtre direct, auteur des peintures de Lascaux</li>
             </ul>
 
-            <h3>🔥 Les grandes découvertes</h3>
-            <ul>
-                <li><strong>Le feu</strong> : Maîtrisé il y a environ 400 000 ans</li>
-                <li><strong>Les outils</strong> : En pierre taillée puis polie</li>
-                <li><strong>L'art</strong> : Peintures rupestres (Lascaux, Chauvet)</li>
-                <li><strong>L'agriculture</strong> : Vers -10 000 ans</li>
-            </ul>
+            <p>Une question passionne les chercheurs : pourquoi Néandertal a-t-il disparu ?
+            Les analyses d'ADN récentes montrent qu'entre 1 et 4 % de l'ADN des Européens
+            vient de Néandertal. Nous sommes tous, un peu, des Néandertaliens.</p>
 
-            <h3>🪨 Les mégalithes</h3>
-            <p>Au Néolithique, les hommes dressent d'immenses pierres : <strong>menhirs</strong> (pierres dressées), <strong>dolmens</strong> (tombes), <strong>cromlechs</strong> (cercles de pierres, comme Stonehenge).</p>
+            <div style="background:#0d3020;border-left:4px solid #27ae60;padding:12px 16px;border-radius:8px;margin:1.5rem 0;color:#e0e0e0;">
+                <strong style="color:#27ae60;">📌 À retenir :</strong>
+                Préhistoire = avant l'écriture (−3 millions → −3300). Paléolithique = nomades + feu + art rupestre.
+                Néolithique = agriculture + villages + mégalithes. Nous avons tous un peu d'ADN de Néandertal.
+            </div>
 
-            <div style="background:#0d3020;border-left:4px solid #27ae60;padding:12px 16px;border-radius:8px;margin-top:16px;color:#fff;" + " color:#fff;">
-                <strong style="color:inherit;">>📌 À retenir :</strong> Préhistoire = avant l'écriture. Paléolithique = nomades. Néolithique = sédentaires et agriculteurs.
+            <hr class="lecon-sep">
+            <h3>🎬 Pour aller plus loin</h3>
+            <p class="lecon-video-intro">Deux documentaires pour plonger dans la vie de nos ancêtres 🦴</p>
+
+            <div class="lecon-videos">
+                <div class="lecon-video-bloc">
+                    <p class="lecon-video-titre">📽️ La vie au Paléolithique — Chasse, feu et art rupestre</p>
+                    <div class="lecon-video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/vxD_G8_WMVE"
+                            title="Documentaire Préhistoire — Paléolithique"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"
+                            aria-label="Vidéo documentaire sur la vie au Paléolithique">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="lecon-video-bloc">
+                    <p class="lecon-video-titre">📽️ La révolution du Néolithique — Agriculture et premiers villages</p>
+                    <div class="lecon-video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/S0-6syqOxdU"
+                            title="Documentaire Préhistoire — Néolithique"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"
+                            aria-label="Vidéo documentaire sur la révolution néolithique">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
             </div>
         `
     },
