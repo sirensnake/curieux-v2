@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 11 Avril 2026 — Intégration Journal complète (index, sw.js, sitemap 16 URLs, Search Console OK)*
+*Dernière mise à jour : 12 Avril 2026 — Suppression liens `informations_section.html` obsolètes (nav + footer index.html)*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -208,7 +208,8 @@ Toute image via `<img>` ne peut pas être stylisée depuis CSS externe.
 **Journal de Curio — v1** (11/04/2026 — `actualites.html` + `article.html?id=` + `news.json` + 5 articles S16 avec 4 QCM chacun, CSS dédié, zéro backend),
 **Journal de Curio — intégration index** (11/04/2026 — carte `.journal-card` bleu dans `subjects-grid`, lien nav header + footer, stats 678q/65 leçons, `minecraft-override.css` mis à jour),
 **sw.js — cache Journal** (11/04/2026 — `actualites.html` + `article.html` précachés, `articles/*.json` + `news.json` en Network-first, CACHE_NAME bumped v2026-04),
-**sitemap.xml — 16 URLs** (11/04/2026 — `actualites.html` + `article.html` ajoutés, soumis et validé Google Search Console).
+**sitemap.xml — 16 URLs** (11/04/2026 — `actualites.html` + `article.html` ajoutés, soumis et validé Google Search Console),
+**Nettoyage navigation** (12/04/2026 — liens `informations_section.html` supprimés de la nav principale et du footer de `index.html` — page remplacée par le Journal de Curio).
 
 ### 🔄 En cours / Pending
 
@@ -402,5 +403,5 @@ styles/
 
 ---
 
-*Le Monde des Curieux · Guillaume · 11 Avril 2026 · lemondedescurieux.fr*
+*Le Monde des Curieux · Guillaume · 12 Avril 2026 · lemondedescurieux.fr*
 *Mettre à jour la date en en-tête à chaque modification.*
