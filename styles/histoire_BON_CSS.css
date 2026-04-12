@@ -740,6 +740,53 @@ body {
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Surcharge quand le contenu utilise lecon-bloc (fond sombre) */
+.lesson-content:has(.lecon-bloc) {
+    background: #12192b;
+    color: #e0e0e0;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset des surcharges de lesson-content sur les éléments lecon-bloc */
+.lesson-content .lecon-bloc h3,
+.lesson-content .lecon-bloc p,
+.lesson-content .lecon-bloc li,
+.lesson-content .lecon-bloc td,
+.lesson-content .lecon-bloc strong,
+.lesson-content .lecon-bloc em {
+    color: inherit;
+}
+
+.lesson-content .lecon-bloc strong {
+    color: #ffffff;
+    background: none;
+    padding: 0;
+}
+
+.lesson-content .lecon-bloc h3 {
+    color: #f0f0f0;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.lesson-content .lecon-bloc ul {
+    background: rgba(255,255,255,0.05);
+    border-left-color: rgba(255,183,77,0.6);
+    box-shadow: none;
+}
+
+.lesson-content .lecon-bloc li {
+    color: #e0e0e0;
+}
+
+.lesson-content .lecon-bloc li::marker {
+    color: #ffb74d;
+}
+
 .lesson-content h3 {
     color: white;
     background: var(--period-primary, #2a9d8f);
@@ -865,4 +912,203 @@ body {
     .lesson-content ul {
         padding: 1rem 1rem 1rem 2rem;
     }
+}
+
+/* ============================================================
+   LEÇONS "EN SAVOIR PLUS" — styles ajoutés via patch_lecon_css.py
+   ============================================================ */
+
+/* ── Structure principale du bloc leçon ─────────────────── */
+.lecon-bloc {
+    padding: 0.5rem 0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    background: transparent;
+}
+
+.lecon-bloc h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    margin: 1.5rem 0 0.75rem;
+    letter-spacing: 0.03em;
+    color: #f0f0f0;
+}
+
+.lecon-bloc p,
+.lecon-bloc ul,
+.lecon-bloc li {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.92rem;
+    color: #e0e0e0;
+}
+
+.lecon-bloc strong {
+    color: #ffffff;
+}
+
+.lecon-bloc em {
+    color: #ffe082;
+}
+
+.lecon-bloc ul {
+    padding-left: 1.4rem;
+}
+
+.lecon-bloc li {
+    margin-bottom: 0.4rem;
+}
+
+.lecon-sep {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0;
+}
+
+/* ── Encart Curio ────────────────────────────────────────── */
+.lecon-encart {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255, 183, 77, 0.1);
+    border-left: 3px solid #ffb74d;
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+.lecon-encart-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.lecon-encart p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #e0e0e0;
+}
+
+/* ── Tableau pédagogique ─────────────────────────────────── */
+.lecon-tableau {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lecon-tableau caption {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    text-align: left;
+    color: var(--text-muted, #aaa);
+    caption-side: top;
+}
+
+.lecon-tableau th {
+    background: rgba(255, 183, 77, 0.2);
+    color: #ffb74d;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.lecon-tableau td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    vertical-align: top;
+    color: #e0e0e0;
+}
+
+.lecon-tableau tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lecon-tableau tbody tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Liste humains préhistoriques ────────────────────────── */
+.lecon-liste-humains {
+    list-style: none;
+    padding: 0;
+}
+
+.lecon-liste-humains li {
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid rgba(255, 183, 77, 0.7);
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0 6px 6px 0;
+    color: #e0e0e0;
+}
+
+/* ── Section vidéos ──────────────────────────────────────── */
+.lecon-video-intro {
+    color: #bbbbbb;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+.lecon-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0.5rem 0 1rem;
+}
+
+@media (max-width: 640px) {
+    .lecon-videos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lecon-video-bloc {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.lecon-video-titre {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+    color: #e8e8e8;
+    line-height: 1.4;
+}
+
+/* Conteneur 16:9 responsive */
+.lecon-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+
+.lecon-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+/* ── Placeholder périodes non encore rédigées ────────────── */
+.lecon-placeholder {
+    color: #bbbbbb;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 1rem;
 }
