@@ -1,7 +1,7 @@
 # 📊 ETAT_SITE.md — Le Monde des Curieux
 
 **Fichier de synchronisation inter-agents**
-*Dernière mise à jour : 12 Avril 2026 — Suppression liens `informations_section.html` obsolètes (nav + footer index.html)*
+*Dernière mise à jour : 12 Avril 2026 — fix(seo): Sciences SEO/Schema.org 108→100 questions*
 
 > Ce fichier est la source de vérité partagée entre tous les agents.
 > Il doit être joint à chaque Projet Claude et mis à jour après chaque
@@ -19,10 +19,10 @@
 | Mathématiques | `mathematiques_section.html` | 11 | 110 | ✅ Complet |
 | Fractions | `maths_fractions_comprendre.html` | 6 | 20 | ✅ Complet |
 | Anglais | `english_duolingo_section.html` | 10 | 100 | ✅ Complet |
-| Sciences | `sciences_duolingo_section.html` | 7 | 108 | ✅ Complet |
+| Sciences | `sciences_duolingo_section.html` | 7 | 100 | ✅ Complet |
 | Histoire | `histoire_section_COMPLET.html` | 12 | 120 | ✅ Complet |
 | Géographie | `geographie_section.html` | 10 | 100 | ✅ Complet |
-| **TOTAL matières** | | **65** | **678** | **7 matières** |
+| **TOTAL matières** | | **65** | **670** | **7 matières** |
 
 ### Journal de Curio — État
 
@@ -333,7 +333,7 @@ localStorage, nouveau badge, nouvelle règle de développement).
 | Élément | Statut | Notes |
 |---|---|---|
 | Compte | ✅ Créé 05/04/2026 | instagram.com/lemondedescurieux |
-| Bio | ✅ Remplie | 🦊 Révisions CM1-CM2 gratuites · 65 leçons · 678 questions |
+| Bio | ✅ Remplie | 🦊 Révisions CM1-CM2 gratuites · 65 leçons · 670 questions |
 | Lien bio | ❌ Bug Instagram | Réessayer dans 24h — bug nouveaux comptes |
 | Photo de profil | ❌ Manquante | À ajouter |
 | Premier carrousel | ✅ Publié 05/04/2026 | 3 slides · légende rédigée |
