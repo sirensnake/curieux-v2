@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Un magnifique anneau autour d'une planète lointaine 🌌",
-      "summary": "Les astronomes ont découvert un joli anneau autour d'une planète qui s'appelle Quaoar. C'est très loin de la Terre, dans notre système solaire. Ce qui est spécial avec cet anneau, c'est qu'il est plus grand que ceux que nous connaissons, comme celui de Saturne. Les scientifiques étudient pourquoi cet anneau n'est pas devenu une petite lune. C'est une découverte passionnante qui nous aide à mieux comprendre notre univers !",
-      "date": "13/11/2023",
+      "title": "Les robots explorent Mars 🤖",
+      "summary": "Cette semaine, des scientifiques ont partagé des nouvelles passionnantes concernant les robots envoyés sur Mars. Ces robots, appelés rovers, aident à explorer et étudier la planète rouge. Récemment, des découvertes intéressantes ont été faites sur le sol martien, qui pourrait autrefois avoir eu de l'eau. Cette information aide les chercheurs à comprendre si la vie a pu exister sur Mars. C'est une aventure fascinante qui montre à quel point la science peut être passionnante et pleine de découvertes inattendues.",
+      "date": "15/01/2024",
       "link": ""
     },
     {
-      "title": "Des artistes en herbe au musée 🎨",
-      "summary": "Une exposition unique vient d'ouvrir ses portes à Paris. Elle montre des œuvres d'art réalisées par des enfants de différents pays. Ces jeunes artistes ont entre 8 et 12 ans comme toi ! Leurs tableaux et sculptures sont exposés aux côtés de grandes œuvres connues. L'idée est de montrer combien les enfants peuvent être créatifs et talentueux. Si tu aimes dessiner ou peindre, cette exposition pourrait te donner plein d'idées !",
-      "date": "13/11/2023",
+      "title": "Une baleine rare aperçue en Californie 🐋",
+      "summary": "Des chercheurs et des amateurs de nature ont eu la chance d'observer une baleine bleue rare au large des côtes californiennes. Ces animaux marins géants sont les plus grands de la planète et sont malheureusement en danger. L'observation de cette baleine est un rappel de l'importance de préserver nos océans et leurs habitants. Les scientifiques étudient ces créatures pour apprendre comment mieux les protéger et s'assurer qu'elles continuent de nager librement dans nos mers.",
+      "date": "15/01/2024",
       "link": ""
     },
     {
-      "title": "Course de bateaux solaires sur un lac 🚤",
-      "summary": "Ce week-end, une compétition passionnante s'est déroulée sur le lac Léman en Suisse : une course de bateaux solaires ! Ces bateaux se déplacent grâce à l'énergie du soleil, ce qui ne pollue pas. Des équipes du monde entier ont participé pour montrer leurs inventions et voir qui est le plus rapide. C'est une belle façon de penser aux futures technologies qui protègent notre planète. Peut-être qu'un jour, tu inventeras toi aussi un moyen de transport écologique !",
-      "date": "13/11/2023",
+      "title": "Les merveilles des sculptures de neige ⛄",
+      "summary": "Dans un festival d'hiver organisé dans une ville du Canada, des artistes talentueux ont sculpté de magnifiques œuvres d'art dans la neige. Ces sculptures temporaires attirent des visiteurs du monde entier, émerveillés par la taille et la beauté des créations. C'est une merveilleuse façon de célébrer l'hiver et de profiter de la neige tout en encourageant la créativité. Les festivals de neige sont une occasion de découvrir des talents artistiques et de s'amuser en famille dans un cadre magique.",
+      "date": "15/01/2024",
       "link": ""
     }
   ]
