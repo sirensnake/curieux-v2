@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une éclipse solaire spectaculaire 🌞🌑",
-      "summary": "Il y a deux jours, une éclipse solaire a eu lieu dans certaines parties du monde. Pendant une éclipse solaire, la Lune passe devant le Soleil, cachant sa lumière pendant un court instant. C'est un événement unique qui ravit toujours les amateurs de science. Beaucoup de gens ont utilisé des lunettes spéciales pour regarder ce phénomène sans se blesser les yeux. Certaines écoles ont même organisé des sorties pour que les élèves observent l'éclipse ensemble. Cet événement nous rappelle combien notre système solaire est fascinant et combien il reste à apprendre. Les éclipses solaires sont rares, alors la prochaine fois, demande à tes amis ou à ta famille si vous pouvez la regarder ensemble !",
-      "date": "29/10/2023",
+      "title": "🐝 Découverte fascinante sur les abeilles !",
+      "summary": "Des scientifiques ont récemment découvert que certains types d'abeilles peuvent reconnaître les visages humains. Comme nous, elles utilisent leurs petites antennes et leurs yeux pour se souvenir des visages familiers. Cette découverte est importante car cela pourrait nous aider à mieux comprendre comment les abeilles interagissent avec leur environnement et améliorer la façon dont nous les protégeons. Après tout, les abeilles sont cruciales pour la pollinisation des fleurs et des plantes, ce qui nous permet de cultiver de délicieux fruits et légumes !",
+      "date": "01/11/2023",
+      "link": "https://www.nationalgeographic.com/animals/article/bee-face-recognition"
+    },
+    {
+      "title": "🏆 Un match légendaire au foot !",
+      "summary": "Hier, les équipes de France et du Brésil se sont affrontées dans un match amical de football très attendu. Les deux équipes ont montré des performances impressionnantes, mais finalement, c'est la France qui a remporté la victoire avec un score de 3-2. Ce match était l'occasion pour certains jeunes joueurs de prouver leur talent sur le terrain. L'esprit sportif était au rendez-vous et c'était un vrai spectacle pour les fans du monde entier !",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "Le mystère des poissons volants 🐟✈️",
-      "summary": "Des scientifiques ont récemment étudié des poissons volants pour mieux comprendre comment ces étonnantes créatures réussissent à planer au-dessus de l'eau. Ces poissons utilisent leurs nageoires comme des ailes pour s'élancer hors de l'eau et parcourir de courtes distances dans les airs. Cette technique les aide à échapper à des prédateurs marins affamés. Les chercheurs espèrent que leurs découvertes pourront inspirer de nouvelles technologies dans l'aviation ou la robotique. En observant la nature, nous pouvons souvent trouver des idées pour améliorer nos inventions humaines. Alors, la prochaine fois que tu verras un poisson sauter, pense à tous les mystères qu'il peut encore révéler !",
-      "date": "29/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Une nouvelle œuvre pour Frida Kahlo 🎨",
-      "summary": "Une exposition dédiée à l'artiste mexicaine Frida Kahlo a ouvert ses portes la semaine dernière dans une grande ville. Frida Kahlo est l'une des artistes les plus célèbres du monde, connue pour ses peintures vibrantes et ses représentations uniques d'elle-même. Sa nouvelle exposition comprend des œuvres qui montrent comment elle exprimait ses pensées et ses sentiments à travers l'art. De nombreux visiteurs, jeunes et moins jeunes, viennent admirer ses tableaux et en apprendre davantage sur sa vie. Les musées sont des endroits formidables pour découvrir de nouvelles formes d'art et développer sa créativité. Qu'en dis-tu d'une visite lors de tes prochaines vacances ?",
-      "date": "29/10/2023",
-      "link": ""
+      "title": "🌍 Une journée pour notre planète",
+      "summary": "Hier, le monde a célébré la Journée Mondiale de l'Écologie. Divers événements ont été organisés pour sensibiliser les gens à l'importance de protéger notre environnement. Des écoles ont planté des arbres, et des villes ont tenu des conférences sur le recyclage et l'économie d'énergie. Cette journée nous rappelle l'importance de prendre soin de notre planète, car chaque petit geste compte pour la préserver pour les générations futures.",
+      "date": "01/11/2023",
+      "link": "https://www.earthday.org/"
     }
   ]
 }
