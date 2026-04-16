@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🐝 Découverte fascinante sur les abeilles !",
-      "summary": "Des scientifiques ont récemment découvert que certains types d'abeilles peuvent reconnaître les visages humains. Comme nous, elles utilisent leurs petites antennes et leurs yeux pour se souvenir des visages familiers. Cette découverte est importante car cela pourrait nous aider à mieux comprendre comment les abeilles interagissent avec leur environnement et améliorer la façon dont nous les protégeons. Après tout, les abeilles sont cruciales pour la pollinisation des fleurs et des plantes, ce qui nous permet de cultiver de délicieux fruits et légumes !",
-      "date": "01/11/2023",
-      "link": "https://www.nationalgeographic.com/animals/article/bee-face-recognition"
-    },
-    {
-      "title": "🏆 Un match légendaire au foot !",
-      "summary": "Hier, les équipes de France et du Brésil se sont affrontées dans un match amical de football très attendu. Les deux équipes ont montré des performances impressionnantes, mais finalement, c'est la France qui a remporté la victoire avec un score de 3-2. Ce match était l'occasion pour certains jeunes joueurs de prouver leur talent sur le terrain. L'esprit sportif était au rendez-vous et c'était un vrai spectacle pour les fans du monde entier !",
-      "date": "01/11/2023",
+      "title": "Découverte de la semaine : Un nouvel emoji 👾",
+      "summary": "Cette semaine, un nouvel emoji a été ajouté à notre collection digitale ! Il s'agit d'un petit extraterrestre amusant. Les emojis sont comme des petits dessins qu'on utilise dans nos messages pour exprimer des émotions ou des idées. Celui-ci a été inspiré par les aliens des films de science-fiction. Il a été créé pour ajouter un peu de fun et de curiosité à nos conversations. Utiliser des emojis peut rendre le texte plus vivant et aider à transmettre des sentiments de manière simple et rapide.",
+      "date": "17/10/2023",
       "link": ""
     },
     {
-      "title": "🌍 Une journée pour notre planète",
-      "summary": "Hier, le monde a célébré la Journée Mondiale de l'Écologie. Divers événements ont été organisés pour sensibiliser les gens à l'importance de protéger notre environnement. Des écoles ont planté des arbres, et des villes ont tenu des conférences sur le recyclage et l'économie d'énergie. Cette journée nous rappelle l'importance de prendre soin de notre planète, car chaque petit geste compte pour la préserver pour les générations futures.",
-      "date": "01/11/2023",
-      "link": "https://www.earthday.org/"
+      "title": "Sauver les océans : Une invention géniale 🌊",
+      "summary": "Un jeune inventeur a mis au point une machine incroyable pour nettoyer nos océans. Cette nouvelle invention flotte sur l'eau et attrape les déchets, tels que les bouteilles en plastique. Elle peut même fonctionner grâce à l'énergie solaire, ce qui est bon pour l'environnement ! Les océans regorgent de vie et sont très importants pour notre planète, donc cette machine est une excellente nouvelle pour préserver la nature. Elle montre aussi comment de petits changements peuvent avoir un impact positif sur le monde.",
+      "date": "17/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Festival en vue : La fête des Lumières ✨",
+      "summary": "Bientôt, la célèbre Fête des Lumières se tiendra dans une ville en France! Cet événement lumineux a lieu chaque année et attire des milliers de visiteurs du monde entier. Les bâtiments sont décorés avec de belles lumières colorées, transformant la ville en un véritable spectacle artistique. Les artistes utilisent la lumière pour créer des œuvres d'art et raconter des histoires. C'est une occasion parfaite pour s'émerveiller, découvrir de nouvelles cultures et célébrer l'art et la créativité ensemble.",
+      "date": "17/10/2023",
+      "link": ""
     }
   ]
 }
