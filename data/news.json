@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte de la semaine : Un nouvel emoji 👾",
-      "summary": "Cette semaine, un nouvel emoji a été ajouté à notre collection digitale ! Il s'agit d'un petit extraterrestre amusant. Les emojis sont comme des petits dessins qu'on utilise dans nos messages pour exprimer des émotions ou des idées. Celui-ci a été inspiré par les aliens des films de science-fiction. Il a été créé pour ajouter un peu de fun et de curiosité à nos conversations. Utiliser des emojis peut rendre le texte plus vivant et aider à transmettre des sentiments de manière simple et rapide.",
-      "date": "17/10/2023",
+      "title": "Découverte sous-marine : Un récif corallien caché 🌊",
+      "summary": "Des scientifiques ont découvert un récif corallien caché dans l'océan Atlantique Sud. Les récifs coralliens sont comme de grandes villes sous-marines où vivent des milliers d'espèces de poissons et d'autres créatures marines. Ce nouveau récif est très grand et semble en bonne santé, ce qui est une excellente nouvelle pour la planète, car les récifs coralliens aident à maintenir l'équilibre des océans. Cette découverte encourage les chercheurs à mieux protéger les océans du monde entier.",
+      "date": "13/10/2023",
       "link": ""
     },
     {
-      "title": "Sauver les océans : Une invention géniale 🌊",
-      "summary": "Un jeune inventeur a mis au point une machine incroyable pour nettoyer nos océans. Cette nouvelle invention flotte sur l'eau et attrape les déchets, tels que les bouteilles en plastique. Elle peut même fonctionner grâce à l'énergie solaire, ce qui est bon pour l'environnement ! Les océans regorgent de vie et sont très importants pour notre planète, donc cette machine est une excellente nouvelle pour préserver la nature. Elle montre aussi comment de petits changements peuvent avoir un impact positif sur le monde.",
-      "date": "17/10/2023",
+      "title": "Un sport ancien de retour : Le Frisbee volant 🥏",
+      "summary": "Le frisbee, un jeu que beaucoup aiment jouer dans les parcs, est devenu un vrai sport compétitif! L'Ultimate Frisbee, où des équipes se lancent un frisbee pour marquer des points, gagne en popularité dans le monde entier. Ce sport est amusant parce qu'il mélange des éléments de course, de lancer et d'esprit d'équipe. Plein de jeunes s'y intéressent, et des compétitions sont même organisées dans différentes écoles et villes. C’est une belle façon de rester actif tout en s’amusant dehors.",
+      "date": "13/10/2023",
       "link": ""
     },
     {
-      "title": "Festival en vue : La fête des Lumières ✨",
-      "summary": "Bientôt, la célèbre Fête des Lumières se tiendra dans une ville en France! Cet événement lumineux a lieu chaque année et attire des milliers de visiteurs du monde entier. Les bâtiments sont décorés avec de belles lumières colorées, transformant la ville en un véritable spectacle artistique. Les artistes utilisent la lumière pour créer des œuvres d'art et raconter des histoires. C'est une occasion parfaite pour s'émerveiller, découvrir de nouvelles cultures et célébrer l'art et la créativité ensemble.",
-      "date": "17/10/2023",
+      "title": "Une nouvelle étoile dans notre ciel 🌟",
+      "summary": "Les astronomes ont découvert une nouvelle étoile un peu particulière dans le ciel. Elle s'appelle 'Taurora' et se trouve dans la constellation du Taureau. Ce qui rend Taurora spéciale, c'est sa grande luminosité et sa proximité relative de la Terre, ce qui permet de l'observer facilement avec un petit télescope. Les étoiles sont des boules géantes de gaz qui brillent dans l'espace et cette découverte aide les scientifiques à mieux comprendre notre univers. Alors, la prochaine fois que tu observes le ciel, essaie de repérer Taurora!",
+      "date": "13/10/2023",
       "link": ""
     }
   ]
