@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "results": [
     {
-      "title": "Découverte sous-marine : Un récif corallien caché 🌊",
-      "summary": "Des scientifiques ont découvert un récif corallien caché dans l'océan Atlantique Sud. Les récifs coralliens sont comme de grandes villes sous-marines où vivent des milliers d'espèces de poissons et d'autres créatures marines. Ce nouveau récif est très grand et semble en bonne santé, ce qui est une excellente nouvelle pour la planète, car les récifs coralliens aident à maintenir l'équilibre des océans. Cette découverte encourage les chercheurs à mieux protéger les océans du monde entier.",
-      "date": "13/10/2023",
+      "title": "Les Tortues Marinettes 🐢",
+      "summary": "Une nouvelle étude montre que les tortues marines ont des habitudes de voyage incroyables ! Elles peuvent parcourir des milliers de kilomètres dans les océans pour trouver des endroits parfaits pour pondre leurs œufs. Les scientifiques utilisent des balises spéciales pour suivre ces tortues marines et comprendre comment elles se déplacent. Cette découverte aide à protéger ces animaux merveilleux qui sont souvent en danger à cause des déchets plastiques et du changement climatique.",
+      "date": "24/10/2023",
       "link": ""
     },
     {
-      "title": "Un sport ancien de retour : Le Frisbee volant 🥏",
-      "summary": "Le frisbee, un jeu que beaucoup aiment jouer dans les parcs, est devenu un vrai sport compétitif! L'Ultimate Frisbee, où des équipes se lancent un frisbee pour marquer des points, gagne en popularité dans le monde entier. Ce sport est amusant parce qu'il mélange des éléments de course, de lancer et d'esprit d'équipe. Plein de jeunes s'y intéressent, et des compétitions sont même organisées dans différentes écoles et villes. C’est une belle façon de rester actif tout en s’amusant dehors.",
-      "date": "13/10/2023",
+      "title": "Le Soleil Intelligent ☀️",
+      "summary": "Les chercheurs travaillent sur une nouvelle technologie qui utilise l'énergie du soleil pour créer de l'électricité, même quand il fait nuageux ! Ces nouvelles cellules solaires sont plus efficaces et pourraient aider à produire de l'énergie propre pour les maisons et les écoles. C'est une bonne nouvelle pour notre planète, car elle permet de réduire la pollution et de protéger l'environnement. L'utilisation de l'énergie solaire pourrait devenir encore plus courante dans le futur grâce à ces innovations.",
+      "date": "24/10/2023",
       "link": ""
     },
     {
-      "title": "Une nouvelle étoile dans notre ciel 🌟",
-      "summary": "Les astronomes ont découvert une nouvelle étoile un peu particulière dans le ciel. Elle s'appelle 'Taurora' et se trouve dans la constellation du Taureau. Ce qui rend Taurora spéciale, c'est sa grande luminosité et sa proximité relative de la Terre, ce qui permet de l'observer facilement avec un petit télescope. Les étoiles sont des boules géantes de gaz qui brillent dans l'espace et cette découverte aide les scientifiques à mieux comprendre notre univers. Alors, la prochaine fois que tu observes le ciel, essaie de repérer Taurora!",
-      "date": "13/10/2023",
+      "title": "Safari Photo Virtuel 📷",
+      "summary": "Une équipe de photographes passionnés par la nature a créé un safari photo virtuel unique en son genre. Grâce à des caméras spéciales placées dans la jungle africaine, les enfants du monde entier peuvent maintenant observer des animaux sauvages en temps réel depuis chez eux. Lions, éléphants, et zèbres peuvent être vus dans leur habitat naturel. Ce projet vise à sensibiliser les jeunes à la conservation des espèces en voie de disparition et à leur donner envie de protéger la faune sauvage.",
+      "date": "24/10/2023",
       "link": ""
     }
   ]
