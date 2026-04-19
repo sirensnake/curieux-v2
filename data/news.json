@@ -1,21 +1,21 @@
 {
-  "results": [
+  "articles": [
     {
-      "title": "Les Tortues Marinettes 🐢",
-      "summary": "Une nouvelle étude montre que les tortues marines ont des habitudes de voyage incroyables ! Elles peuvent parcourir des milliers de kilomètres dans les océans pour trouver des endroits parfaits pour pondre leurs œufs. Les scientifiques utilisent des balises spéciales pour suivre ces tortues marines et comprendre comment elles se déplacent. Cette découverte aide à protéger ces animaux merveilleux qui sont souvent en danger à cause des déchets plastiques et du changement climatique.",
-      "date": "24/10/2023",
+      "title": "🌌 Une comète visite notre ciel",
+      "summary": "Une nouvelle comète, appelée Nishimura, illumine le ciel en ce moment. Découverte par un astronome japonais, elle est visible tôt le matin. Les comètes sont comme des boules de neige géantes faites de glace et de poussière. Lorsqu'elles s'approchent du soleil, elles se réchauffent et forment une belle chevelure lumineuse, appelée 'queue'. C'est l'occasion de sortir les jumelles et d'observer ce spectacle céleste. Allez voir cette belle visiteuse avant qu'elle ne s'éloigne pour de bon !",
+      "date": "09/10/2023",
       "link": ""
     },
     {
-      "title": "Le Soleil Intelligent ☀️",
-      "summary": "Les chercheurs travaillent sur une nouvelle technologie qui utilise l'énergie du soleil pour créer de l'électricité, même quand il fait nuageux ! Ces nouvelles cellules solaires sont plus efficaces et pourraient aider à produire de l'énergie propre pour les maisons et les écoles. C'est une bonne nouvelle pour notre planète, car elle permet de réduire la pollution et de protéger l'environnement. L'utilisation de l'énergie solaire pourrait devenir encore plus courante dans le futur grâce à ces innovations.",
-      "date": "24/10/2023",
+      "title": "🐼 Naissance géante chez les pandas",
+      "summary": "Bonne nouvelle pour les pandas ! Un zoo en Chine a récemment accueilli deux bébés pandas géants. Ces petites boules de poils sont nées le même jour, ce qui est assez rare. Les pandas géants sont en danger dans la nature, donc ces naissances sont très importantes. Les bébés pandas sont très petits à la naissance, mais ils grandissent rapidement. Ils sont très joueurs et apportent beaucoup de joie à tous ceux qui les voient. Suivez-les pour découvrir comment ils grandissent et apprennent à grimper !",
+      "date": "09/10/2023",
       "link": ""
     },
     {
-      "title": "Safari Photo Virtuel 📷",
-      "summary": "Une équipe de photographes passionnés par la nature a créé un safari photo virtuel unique en son genre. Grâce à des caméras spéciales placées dans la jungle africaine, les enfants du monde entier peuvent maintenant observer des animaux sauvages en temps réel depuis chez eux. Lions, éléphants, et zèbres peuvent être vus dans leur habitat naturel. Ce projet vise à sensibiliser les jeunes à la conservation des espèces en voie de disparition et à leur donner envie de protéger la faune sauvage.",
-      "date": "24/10/2023",
+      "title": "🌎 Le monde se mobilise pour le climat",
+      "summary": "Cette semaine, des dirigeants du monde entier se sont réunis pour discuter des problèmes climatiques lors d'un grand sommet. Le climat est très important car il influence notre météo, notre environnement et notre vie quotidienne. Lors de ces réunions, les pays essaient de trouver des solutions pour rendre notre planète plus saine et plus propre. C'est comme une équipe géante avec un objectif commun : protéger notre Terre pour les générations futures.",
+      "date": "09/10/2023",
       "link": ""
     }
   ]
