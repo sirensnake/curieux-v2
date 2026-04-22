@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Des nouvelles du système solaire 🪐",
-      "summary": "Les scientifiques ont découvert une nouvelle lune qui tourne autour de Jupiter ! Cette lune est petite, beaucoup plus petite que notre Lune, mais elle est très intéressante pour les chercheurs. En étudiant ces lunes, les scientifiques peuvent en savoir plus sur comment Jupiter et ses lunes se sont formées il y a très longtemps. C'est un peu comme résoudre un grand mystère spatial pour comprendre notre système solaire ! Qui sait, peut-être que tu deviendras un jour un explorateur ou une exploratrice de l'espace ?",
-      "date": "01/11/2023",
+      "title": "🐻 Découverte d'un nouvel ours au Pérou",
+      "summary": "Une nouvelle espèce d'ours a été découverte dans les montagnes du Pérou ! Jusqu'à présent, on ne connaissait que très peu d'informations sur cet animal mystérieux. Des scientifiques ont observé cet ours unique grâce à des caméras cachées dans la forêt. Il est un peu plus petit que les autres ours et a une fourrure avec des motifs distinctifs. Les chercheurs espèrent en apprendre plus sur lui pour le protéger et l’étudier. Cette découverte montre à quel point notre planète est pleine de surprises, même si nous pensons déjà tout savoir !",
+      "date": "08/10/2023",
       "link": ""
     },
     {
-      "title": "Une amitié spéciale sous la mer 🐬",
-      "summary": "Des chercheurs ont observé une nouvelle fois des dauphins jouer avec des poissons dans les océans près de l'Australie. Il est rare pour certaines espèces de coopérer entre elles comme cela, mais les dauphins sont très intelligents et aiment s'amuser. En jouant ensemble, ils construisent une sorte d'amitié sous-marine. Ces découvertes montrent à quel point la vie marine est incroyable et complexe. Cela rappelle aussi l'importance de protéger nos océans et les animaux qui y vivent.",
-      "date": "01/11/2023",
+      "title": "🌍 Explorer la Lune : Une avancée incroyable",
+      "summary": "L'agence spatiale européenne a annoncé une nouvelle mission pour explorer davantage la Lune. Ils veulent découvrir des ressources naturelles qui pourraient nous aider à explorer d'autres planètes ou même à habiter la Lune un jour. Ce projet utilisera de nouveaux robots et technologies pour étudier le sol lunaire. Les scientifiques sont très enthousiastes à l'idée de trouver de nouvelles opportunités pour l'humanité, comme des minéraux rares. C'est une étape passionnante vers un futur où nous pourrions vivre sur plusieurs planètes !",
+      "date": "08/10/2023",
       "link": ""
     },
     {
-      "title": "Le goûter génial de la culture 🌍",
-      "summary": "Dans un festival célébrant la nourriture du monde entier qui s'est tenu récemment à Londres, les enfants ont pu goûter à des plats venant de différents pays, comme les tacos du Mexique et les pierogis de Pologne. Ce genre d'événement est une belle occasion de découvrir et de valoriser différentes cultures par leur cuisine. Manger des plats d'autres pays peut être un moyen amusant et délicieux d'apprendre sur le monde qui nous entoure. Peut-être pourrais-tu essayer un plat étranger avec ta famille ?",
-      "date": "01/11/2023",
+      "title": "🎨 La musique qui illumine la ville",
+      "summary": "À Lyon, en France, une incroyable exposition de lumière a été lancée avec un thème musical ! Les rues sont décorées par des artistes qui utilisent des effets de lumière spectaculaires pour transformer la ville en une œuvre d'art géante. Chaque installation s'inspire de différentes musiques venant du monde entier, rendant l'expérience encore plus magique. Les visiteurs peuvent se promener et profiter des spectacles tout en écoutant des morceaux qui correspondent aux illuminations. C'est une belle façon d'apprécier l'art et la musique dans notre quotidien.",
+      "date": "08/10/2023",
       "link": ""
     }
   ]
