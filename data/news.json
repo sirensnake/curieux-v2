@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🐻 Découverte d'un nouvel ours au Pérou",
-      "summary": "Une nouvelle espèce d'ours a été découverte dans les montagnes du Pérou ! Jusqu'à présent, on ne connaissait que très peu d'informations sur cet animal mystérieux. Des scientifiques ont observé cet ours unique grâce à des caméras cachées dans la forêt. Il est un peu plus petit que les autres ours et a une fourrure avec des motifs distinctifs. Les chercheurs espèrent en apprendre plus sur lui pour le protéger et l’étudier. Cette découverte montre à quel point notre planète est pleine de surprises, même si nous pensons déjà tout savoir !",
-      "date": "08/10/2023",
+      "title": "Nouvelle planète découverte ! 🪐",
+      "summary": "Des scientifiques ont découvert une nouvelle planète qui se trouve très loin de la Terre ! Cette planète est particulièrement fascinante car elle est couverte de glace et pourrait en dire plus sur la façon dont notre système solaire s'est formé. Les scientifiques utilisent de grands télescopes pour l'observer. Ils espèrent que cela aidera à comprendre comment d'autres planètes se forment et évoluent. C'est comme chercher de nouveaux amis dans l'espace !",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "🌍 Explorer la Lune : Une avancée incroyable",
-      "summary": "L'agence spatiale européenne a annoncé une nouvelle mission pour explorer davantage la Lune. Ils veulent découvrir des ressources naturelles qui pourraient nous aider à explorer d'autres planètes ou même à habiter la Lune un jour. Ce projet utilisera de nouveaux robots et technologies pour étudier le sol lunaire. Les scientifiques sont très enthousiastes à l'idée de trouver de nouvelles opportunités pour l'humanité, comme des minéraux rares. C'est une étape passionnante vers un futur où nous pourrions vivre sur plusieurs planètes !",
-      "date": "08/10/2023",
+      "title": "Les pandas géants se portent bien 🐼",
+      "summary": "Bonne nouvelle ! Le célèbre zoo de Chine annonce que ses pandas géants connaissent une belle croissance. Les pandas sont connus pour être en danger, mais grâce aux soins des gardiens et à la protection de leur habitat, ils se portent mieux. Les bébés pandas, aussi appelés \"nounours\", deviennent rapidement une grande attraction pour les visiteurs. Protéger ces adorables animaux et leur habitat naturel est important pour leur survie. Imagine, un monde sans pandas ?",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "🎨 La musique qui illumine la ville",
-      "summary": "À Lyon, en France, une incroyable exposition de lumière a été lancée avec un thème musical ! Les rues sont décorées par des artistes qui utilisent des effets de lumière spectaculaires pour transformer la ville en une œuvre d'art géante. Chaque installation s'inspire de différentes musiques venant du monde entier, rendant l'expérience encore plus magique. Les visiteurs peuvent se promener et profiter des spectacles tout en écoutant des morceaux qui correspondent aux illuminations. C'est une belle façon d'apprécier l'art et la musique dans notre quotidien.",
-      "date": "08/10/2023",
+      "title": "Des robots sous l'eau ? 🤖🌊",
+      "summary": "Des chercheurs ont créé des robots spécialement conçus pour explorer les océans. Ces robots peuvent aller très profondément, là où les humains ne peuvent pas aller facilement. Leur mission est d'étudier les créatures marines et la santé des océans. Les robots envoient leurs découvertes directement aux scientifiques. C'est un peu comme avoir des super agents secrets sous l'eau ! Avec ces nouvelles technologies, nous pouvons en apprendre plus sur le monde sous-marin et comment le protéger.",
+      "date": "01/11/2023",
       "link": ""
     }
   ]
