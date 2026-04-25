@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un poisson robot 🐟",
-      "summary": "Des scientifiques ont inventé un poisson robot qui peut se déplacer dans l'eau comme un vrai poisson ! Ce robot a été créé pour explorer l'océan et surveiller la santé des récifs coralliens. Les récifs coralliens sont très importants pour la vie marine, car ils abritent de nombreuses espèces de poissons et d'autres créatures. Avec ce poisson robot, les chercheurs espèrent mieux comprendre comment protéger ces habitats naturels. Il nage en utilisant une queue spéciale qui imite les mouvements d'un vrai poisson, ce qui lui permet de se faufiler sans effrayer les autres animaux.",
-      "date": "01/11/2023",
+      "title": "Lune du Chasseur brillante 🌕",
+      "summary": "La nuit dernière, une magnifique pleine lune appelée la 'Lune du Chasseur' a illuminé le ciel. Ce phénomène se produit généralement chaque octobre et marque une période où, autrefois, les chasseurs utilisaient ce clair de lune pour préparer l'hiver. Observer la lune est un excellent moyen de découvrir notre espace. Si tu l'as manquée la nuit dernière, ne t'inquiète pas, il y aura d'autres pleines lunes à admirer ! N'oublie pas, lorsque tu observes le ciel, il est toujours fascinant de penser à la façon dont les anciens utilisaient les étoiles et la lune pour se repérer et faire leurs activités quotidiennes.",
+      "date": "29/10/2023",
+      "link": "https://www.space.com/full-moon-october-2023"
+    },
+    {
+      "title": "Insectes à découvrir! 🦋",
+      "summary": "Le Muséum national d'Histoire naturelle a ouvert une nouvelle exposition passionnante où tu peux découvrir le monde incroyable des insectes. Ces petites créatures ont un impact énorme sur notre monde, y compris les abeilles qui pollinisent les plantes et de nombreux autres qui aident à décomposer la matière pour enrichir le sol. Cette exposition utilise des créations artistiques et des technologies interactives pour te permettre de voir et d'apprendre sur les insectes comme jamais auparavant. C'est une belle opportunité de voir comment des êtres si petits peuvent avoir une importance si grande et de découvrir leur rôle essentiel dans la nature.",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Un festival de couleurs 🎨",
-      "summary": "En Inde, les gens célèbrent Diwali, la fête des lumières. C'est un moment magique où les rues s'illuminent de milliers de lampes ! Diwali est une fête très joyeuse où l'on souhaite de bonnes choses à nos proches. Les familles se réunissent pour partager des repas spéciaux, échanger des cadeaux, et même faire des feux d'artifice. Les lumières symbolisent la victoire du bien sur le mal et de la lumière sur l'obscurité. Cette année, beaucoup de gens ont également décidé de célébrer cette fête avec des décorations écologiques pour protéger la nature.",
-      "date": "01/11/2023",
-      "link": ""
-    },
-    {
-      "title": "Une comète à observer 🌠",
-      "summary": "Une comète appelée Nishimura est visible dans le ciel cette semaine ! Les comètes sont des boules de glace et de poussière qui voyagent dans l'espace. Elles forment souvent une jolie queue lumineuse lorsqu'elles se rapprochent du Soleil. C'est un spectacle rare, et tu peux peut-être l'observer tôt le matin ou le soir depuis chez toi ! Pour bien la voir, il faut se trouver dans un endroit loin des lumières de la ville. Alors si le ciel est dégagé, lève les yeux, et tu auras peut-être la chance d'apercevoir cette belle visiteuse du cosmos.",
-      "date": "01/11/2023",
-      "link": ""
+      "title": "Nouvelle découverte marine 🌊",
+      "summary": "Des scientifiques ont récemment découvert une nouvelle espèce de poisson près de l'Australie. Ce petit poisson coloré vit dans les récifs coralliens et a été nommé d'après ses couleurs vives. Sa découverte nous rappelle à quel point les océans sont encore pleins de mystères. Protéger ces habitats est crucial pour que d'autres espèces puissent être découvertes et étudiées. Les récifs coralliens, en particulier, sont des lieux importants pour la biodiversité marine. Cette découverte encourage les chercheurs à continuer leurs explorations sous-marines fascinantes et à nous en apprendre plus sur la vie sous la mer.",
+      "date": "29/10/2023",
+      "link": "https://www.bbc.com/news/science-environment-marine-discoveries"
     }
   ]
 }
