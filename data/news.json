@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Lune du Chasseur brillante 🌕",
-      "summary": "La nuit dernière, une magnifique pleine lune appelée la 'Lune du Chasseur' a illuminé le ciel. Ce phénomène se produit généralement chaque octobre et marque une période où, autrefois, les chasseurs utilisaient ce clair de lune pour préparer l'hiver. Observer la lune est un excellent moyen de découvrir notre espace. Si tu l'as manquée la nuit dernière, ne t'inquiète pas, il y aura d'autres pleines lunes à admirer ! N'oublie pas, lorsque tu observes le ciel, il est toujours fascinant de penser à la façon dont les anciens utilisaient les étoiles et la lune pour se repérer et faire leurs activités quotidiennes.",
-      "date": "29/10/2023",
-      "link": "https://www.space.com/full-moon-october-2023"
-    },
-    {
-      "title": "Insectes à découvrir! 🦋",
-      "summary": "Le Muséum national d'Histoire naturelle a ouvert une nouvelle exposition passionnante où tu peux découvrir le monde incroyable des insectes. Ces petites créatures ont un impact énorme sur notre monde, y compris les abeilles qui pollinisent les plantes et de nombreux autres qui aident à décomposer la matière pour enrichir le sol. Cette exposition utilise des créations artistiques et des technologies interactives pour te permettre de voir et d'apprendre sur les insectes comme jamais auparavant. C'est une belle opportunité de voir comment des êtres si petits peuvent avoir une importance si grande et de découvrir leur rôle essentiel dans la nature.",
-      "date": "29/10/2023",
+      "title": "Découverte spatiale 🚀",
+      "summary": "Les scientifiques de la NASA ont récemment découvert une nouvelle planète située dans une galaxie lointaine, grâce à un télescope puissant appelé James Webb. Cette planète, qui est un peu plus grande que la Terre, est recouverte de gaz et est très lumineuse. Bien qu'elle soit trop loin pour être habitée par des humains pour le moment, cette découverte aide les scientifiques à mieux comprendre le fonctionnement de l'univers. C'est passionnant de penser à tout ce qui reste à découvrir dans l'espace !",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "Nouvelle découverte marine 🌊",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle espèce de poisson près de l'Australie. Ce petit poisson coloré vit dans les récifs coralliens et a été nommé d'après ses couleurs vives. Sa découverte nous rappelle à quel point les océans sont encore pleins de mystères. Protéger ces habitats est crucial pour que d'autres espèces puissent être découvertes et étudiées. Les récifs coralliens, en particulier, sont des lieux importants pour la biodiversité marine. Cette découverte encourage les chercheurs à continuer leurs explorations sous-marines fascinantes et à nous en apprendre plus sur la vie sous la mer.",
-      "date": "29/10/2023",
-      "link": "https://www.bbc.com/news/science-environment-marine-discoveries"
+      "title": "Un trésor sous-marin 🐠",
+      "summary": "Des plongeurs ont découvert une épave d'un ancien navire au fond de la mer Méditerranée. Ce navire, qui date de l'époque romaine, transportait des amphores, des sortes de pots en terre cuite, remplies d'huile d'olive et de vin. Cette découverte est importante car elle offre des indices sur le commerce et la vie quotidienne des Romains il y a des milliers d'années. C'est fascinant de voir comment des objets du passé peuvent nous raconter des histoires aujourd'hui !",
+      "date": "02/11/2023",
+      "link": ""
+    },
+    {
+      "title": "Un ami pour la nature 🌳",
+      "summary": "Dans un village en Inde, une nouvelle initiative géniale a été lancée pour planter des arbres. Les habitants ont organisé une grande fête pour sensibiliser tout le monde à l'importance des arbres. Ils ont planté plus de 10 000 jeunes arbres pour favoriser la biodiversité et combattre les effets du réchauffement climatique. Ces arbres aideront non seulement à purifier l'air, mais aussi à offrir un habitat aux animaux. C'est une belle façon de montrer qu'on peut tous être amis de la nature !",
+      "date": "02/11/2023",
+      "link": ""
     }
   ]
 }
