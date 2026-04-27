@@ -2,20 +2,20 @@
   "articles": [
     {
       "title": "Découverte spatiale 🚀",
-      "summary": "Les scientifiques de la NASA ont récemment découvert une nouvelle planète située dans une galaxie lointaine, grâce à un télescope puissant appelé James Webb. Cette planète, qui est un peu plus grande que la Terre, est recouverte de gaz et est très lumineuse. Bien qu'elle soit trop loin pour être habitée par des humains pour le moment, cette découverte aide les scientifiques à mieux comprendre le fonctionnement de l'univers. C'est passionnant de penser à tout ce qui reste à découvrir dans l'espace !",
-      "date": "02/11/2023",
-      "link": ""
+      "summary": "Des scientifiques ont découvert une nouvelle exoplanète qui ressemble beaucoup à notre Terre. Elle est située dans une zone où l'eau pourrait exister sous forme liquide, ce qui pourrait signifier qu'elle est habitable. Cette planète est à des années-lumière de chez nous, donc pas de visite prévue bientôt, mais c'est super de savoir que notre univers est rempli de surprises. Chercher et découvrir ces mondes lointains nous aide à mieux comprendre notre univers.",
+      "date": "11/10/2023",
+      "link": "https://www.nasa.gov"
     },
     {
-      "title": "Un trésor sous-marin 🐠",
-      "summary": "Des plongeurs ont découvert une épave d'un ancien navire au fond de la mer Méditerranée. Ce navire, qui date de l'époque romaine, transportait des amphores, des sortes de pots en terre cuite, remplies d'huile d'olive et de vin. Cette découverte est importante car elle offre des indices sur le commerce et la vie quotidienne des Romains il y a des milliers d'années. C'est fascinant de voir comment des objets du passé peuvent nous raconter des histoires aujourd'hui !",
-      "date": "02/11/2023",
-      "link": ""
+      "title": "Aventures sous-marines 🌊",
+      "summary": "Des chercheurs ont filmé des images rares d'un calmar géant au fond de l'océan. Ce calmar est aussi long qu'un bus scolaire et vit dans des profondeurs sombres où il est difficile de le voir. Observer ces créatures extraordinaires nous aide à connaître et protéger la vie marine. Chaque nouvelle observation est précieuse pour mieux comprendre ce qui vit dans les parties inexplorées de notre planète.",
+      "date": "11/10/2023",
+      "link": "https://www.nationalgeographic.com"
     },
     {
-      "title": "Un ami pour la nature 🌳",
-      "summary": "Dans un village en Inde, une nouvelle initiative géniale a été lancée pour planter des arbres. Les habitants ont organisé une grande fête pour sensibiliser tout le monde à l'importance des arbres. Ils ont planté plus de 10 000 jeunes arbres pour favoriser la biodiversité et combattre les effets du réchauffement climatique. Ces arbres aideront non seulement à purifier l'air, mais aussi à offrir un habitat aux animaux. C'est une belle façon de montrer qu'on peut tous être amis de la nature !",
-      "date": "02/11/2023",
+      "title": "Succès sportif! ⚽",
+      "summary": "L'équipe française de football des moins de 17 ans a remporté un grand tournoi international en battant leurs adversaires avec brio. Les jeunes joueurs ont montré un grand esprit d'équipe et beaucoup de talent. Ce genre de victoire inspire d'autres jeunes à s'engager dans le sport et travailler dur pour réaliser leurs rêves. Qui sait? Peut-être que tu pourrais un jour faire partie d'une équipe victorieuse comme celle-là!",
+      "date": "11/10/2023",
       "link": ""
     }
   ]
