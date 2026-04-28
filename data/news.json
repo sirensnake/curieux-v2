@@ -1,22 +1,22 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Découverte spatiale 🚀",
-      "summary": "Des scientifiques ont découvert une nouvelle exoplanète qui ressemble beaucoup à notre Terre. Elle est située dans une zone où l'eau pourrait exister sous forme liquide, ce qui pourrait signifier qu'elle est habitable. Cette planète est à des années-lumière de chez nous, donc pas de visite prévue bientôt, mais c'est super de savoir que notre univers est rempli de surprises. Chercher et découvrir ces mondes lointains nous aide à mieux comprendre notre univers.",
-      "date": "11/10/2023",
-      "link": "https://www.nasa.gov"
+      "title": "Explorer Mars ! 🚀",
+      "summary": "Des scientifiques ont découvert des signes prometteurs de la présence d'eau sur Mars ! Cela signifie qu'un jour, les astronautes pourraient peut-être y vivre plus facilement. L'eau est très importante car elle pourrait aider à cultiver des plantes et offrir de l'oxygène. Pour l'instant, les robots d'exploration, comme Perseverance, continuent de creuser et d'étudier le sol martien pour en savoir plus. Qui sait, peut-être qu'un jour, tu pourras aussi explorer cette planète rouge fascinante !",
+      "date": "16/11/2023",
+      "link": "https://mars.nasa.gov"
     },
     {
-      "title": "Aventures sous-marines 🌊",
-      "summary": "Des chercheurs ont filmé des images rares d'un calmar géant au fond de l'océan. Ce calmar est aussi long qu'un bus scolaire et vit dans des profondeurs sombres où il est difficile de le voir. Observer ces créatures extraordinaires nous aide à connaître et protéger la vie marine. Chaque nouvelle observation est précieuse pour mieux comprendre ce qui vit dans les parties inexplorées de notre planète.",
-      "date": "11/10/2023",
-      "link": "https://www.nationalgeographic.com"
-    },
-    {
-      "title": "Succès sportif! ⚽",
-      "summary": "L'équipe française de football des moins de 17 ans a remporté un grand tournoi international en battant leurs adversaires avec brio. Les jeunes joueurs ont montré un grand esprit d'équipe et beaucoup de talent. Ce genre de victoire inspire d'autres jeunes à s'engager dans le sport et travailler dur pour réaliser leurs rêves. Qui sait? Peut-être que tu pourrais un jour faire partie d'une équipe victorieuse comme celle-là!",
-      "date": "11/10/2023",
+      "title": "Le Grand Froid en Antarctique ! ❄️",
+      "summary": "En Antarctique, une équipe de chercheurs a récemment enregistré une température incroyablement froide ! Cette région est connue pour être le plus grand désert de glace au monde. Les scientifiques y étudient le climat pour comprendre les effets du changement climatique. Même si ces températures sont très basses, la glace fond plus rapidement à cause du réchauffement climatique. C'est pourquoi il est important de protéger notre planète pour que les animaux polaires puissent continuer à vivre en sécurité.",
+      "date": "16/11/2023",
       "link": ""
+    },
+    {
+      "title": "Un Concert Unique de Baleines 🎶",
+      "summary": "Des chercheurs ont découvert que certaines baleines au large du Pacifique chantent des chansons étonnantes pour communiquer entre elles. Ce qui est incroyable, c'est que chaque groupe de baleines a son propre répertoire musical ! Ces chants aident les baleines à rester ensemble et à trouver de la nourriture. Les scientifiques étudient ces sons pour mieux protéger ces grands mammifères marins. Alors, la prochaine fois que tu es près de l'océan, pense à ces magnifiques concerts sous-marins.",
+      "date": "16/11/2023",
+      "link": "https://www.nationalgeographic.com"
     }
   ]
 }
