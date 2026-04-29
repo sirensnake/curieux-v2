@@ -1,22 +1,22 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Explorer Mars ! 🚀",
-      "summary": "Des scientifiques ont découvert des signes prometteurs de la présence d'eau sur Mars ! Cela signifie qu'un jour, les astronautes pourraient peut-être y vivre plus facilement. L'eau est très importante car elle pourrait aider à cultiver des plantes et offrir de l'oxygène. Pour l'instant, les robots d'exploration, comme Perseverance, continuent de creuser et d'étudier le sol martien pour en savoir plus. Qui sait, peut-être qu'un jour, tu pourras aussi explorer cette planète rouge fascinante !",
-      "date": "16/11/2023",
-      "link": "https://mars.nasa.gov"
-    },
-    {
-      "title": "Le Grand Froid en Antarctique ! ❄️",
-      "summary": "En Antarctique, une équipe de chercheurs a récemment enregistré une température incroyablement froide ! Cette région est connue pour être le plus grand désert de glace au monde. Les scientifiques y étudient le climat pour comprendre les effets du changement climatique. Même si ces températures sont très basses, la glace fond plus rapidement à cause du réchauffement climatique. C'est pourquoi il est important de protéger notre planète pour que les animaux polaires puissent continuer à vivre en sécurité.",
-      "date": "16/11/2023",
+      "title": "Un rare bébé éléphant 🐘 est né en Afrique",
+      "summary": "Un bébé éléphant a récemment vu le jour dans un parc national en Afrique ! Les éléphants sont des animaux très importants pour leur environnement. En effet, ils aident les forêts à rester en bonne santé car ils mangent beaucoup de plantes, ce qui permet la croissance de nouvelles. Ce bébé est spécial parce que les éléphants sont malheureusement en danger à cause du braconnage et de la perte de leur habitat. Chaque naissance est donc une bonne nouvelle pour leur protection. Les rangers du parc, qui s'occupent des animaux, sont très contents de ce nouvel arrivant. C’est encore mieux qu’un dessin animé d’éléphant, non ?",
+      "date": "22/11/2023",
       "link": ""
     },
     {
-      "title": "Un Concert Unique de Baleines 🎶",
-      "summary": "Des chercheurs ont découvert que certaines baleines au large du Pacifique chantent des chansons étonnantes pour communiquer entre elles. Ce qui est incroyable, c'est que chaque groupe de baleines a son propre répertoire musical ! Ces chants aident les baleines à rester ensemble et à trouver de la nourriture. Les scientifiques étudient ces sons pour mieux protéger ces grands mammifères marins. Alors, la prochaine fois que tu es près de l'océan, pense à ces magnifiques concerts sous-marins.",
-      "date": "16/11/2023",
-      "link": "https://www.nationalgeographic.com"
+      "title": "Une nouvelle découverte sous-marine 🌊",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de poisson dans les profondeurs de l'océan ! Ce poisson est unique car il est doté de nageoires lumineuses. Les profondeurs océaniques sont encore en grande partie inexplorées, et chaque nouvelle découverte nous en apprend plus sur cette mystérieuse partie de notre planète. La lumière que produit ce poisson pourrait l'aider à attirer ses proies ou à communiquer avec d'autres poissons. Les scientifiques étudient comment cette espèce s'adapte à vivre dans l'obscurité totale. Passionnant, n’est-ce pas ?",
+      "date": "22/11/2023",
+      "link": ""
+    },
+    {
+      "title": "Un immense concert pour l'environnement 🎵",
+      "summary": "Récemment, un grand concert a été organisé pour sensibiliser le public à la protection de l'environnement. De nombreux artistes célèbres du monde entier ont participé et chanté pour encourager les gens à prendre soin de notre planète. Ces événements sont souvent appelés \"concerts caritatifs\", car ils visent à récolter des fonds pour des bonnes causes. Les organisateurs espèrent que la musique aidera à sensibiliser davantage de personnes à l'importance de protéger la nature. On peut aussi protéger notre Terre en adoptant de petites actions, comme recycler ou économiser l'énergie.",
+      "date": "22/11/2023",
+      "link": ""
     }
   ]
 }
