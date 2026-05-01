@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte Spatiale 🌌",
-      "summary": "Des scientifiques ont découvert une nouvelle planète dans notre galaxie ! Cette planète est différente car elle est beaucoup plus grande que la Terre et tourne autour de deux soleils, comme dans un film de science-fiction. Cette découverte nous aide à comprendre comment les planètes se forment et si d'autres formes de vie pourraient exister ailleurs dans l'univers. Les astronomes utilisent de nouveaux télescopes très puissants pour explorer l'espace. Qui sait quelles autres merveilles restent à découvrir ?",
-      "date": "29/10/2023",
+      "title": "🌌 Une nouvelle étoile découverte",
+      "summary": "Les astronomes ont découvert une nouvelle étoile très lointaine dans notre galaxie. Cette étoile est spéciale car elle est très vieille et pourrait nous en apprendre plus sur l'univers. Les scientifiques utilisent de puissants télescopes pour l'étudier et comprendre sa composition. Découvrir de nouvelles étoiles aide aussi à mieux connaître les autres étoiles dans l'espace et comment elles évoluent au fil du temps. Peut-être qu'un jour, grâce à ces découvertes, on saura davantage sur l'origine de notre propre système solaire.",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Festival Gourmand 🎉",
-      "summary": "Cette semaine commence un festival où des chefs cuisiniers du monde entier se réunissent pour partager leurs meilleurs plats. C'est une belle occasion de découvrir et goûter des spécialités de cultures différentes, comme les épices indiennes, les sushis japonais, ou encore les tacos mexicains. Ce festival permet aussi de parler d'alimentation durable, en montrant comment cuisiner en respectant notre planète. Qui sait, cela pourrait te donner des idées pour essayer de nouvelles recettes à la maison avec ta famille !",
-      "date": "29/10/2023",
+      "title": "🐾 Un panda géant fête son anniversaire",
+      "summary": "Un célèbre panda géant d'un zoo en Chine vient de fêter ses 20 ans ! Les pandas géants, avec leur fourrure noire et blanche, sont adorés dans le monde entier. Pour son anniversaire, le panda a reçu un gâteau spécial à base de bambou, ses friandises préférées. Les pandas géants sont une espèce en danger, mais grâce aux efforts des zoos et des réserves naturelles, leur nombre augmente. Les anniversaires de pandas sont une belle occasion de réfléchir à l'importance de protéger ces animaux magnifiques.",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Marathon des Couleurs 🏃🌈",
-      "summary": "Aujourd'hui, dans une grande ville, a lieu un marathon très spécial : le marathon des couleurs. Les participants courent tout en se faisant asperger de poudres de couleurs vives. Ce n'est pas une compétition pour arriver le premier, mais plutôt pour s'amuser et célébrer l'activité physique ensemble. En courant, des personnes de tous âges profitent de l'exercice tout en passant un bon moment. C'est un excellent moyen d'encourager tout le monde à rester en forme et à s'amuser !",
-      "date": "29/10/2023",
+      "title": "🏃‍♂️ Une course à pied sous-marine incroyable",
+      "summary": "Une course à pied unique s'est déroulée récemment sous l'eau ! Des sportifs aventureux se sont réunis pour courir avec des vêtements spéciaux sous la mer. Pour cet événement, ils ont chaussé des palmes et porté des masques de plongée. Cette course amusante avait lieu pour sensibiliser le public à la préservation des océans. Participer à des événements originaux comme celui-ci aide les gens à se rappeler que nos mers et océans ont besoin d'être protégés pour que leurs richesses sous-marines puissent s'épanouir.",
+      "date": "10/10/2023",
       "link": ""
     }
   ]
