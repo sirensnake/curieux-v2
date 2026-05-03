@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle amie en bois 🌳",
-      "summary": "Une équipe de scientifiques a créé un skate en bois imprimé en 3D ! Ils ont utilisé une imprimante spéciale pour transformer de la poudre de bois en un skateboard solide et amusant. C'est une bonne nouvelle pour notre planète, car cela utilise moins de plastique et recycle du bois. Les skates sont très populaires et maintenant, on peut en avoir un tout en aidant notre planète. Qui sait ? Peut-être verras-tu bientôt ces skates en bois dans ton parc de skate local ?",
-      "date": "30/10/2023",
+      "title": "Nouveau dinosaure découvert ! 🦕",
+      "summary": "Des chercheurs ont trouvé une nouvelle espèce de dinosaure en Amérique du Sud. Ce dinosaure, qui vivait il y a environ 70 millions d'années, était un herbivore, ce qui veut dire qu'il mangeait des plantes. Sa particularité : avoir un long cou, un peu comme les girafes ! Grâce à ces découvertes, les scientifiques en apprennent plus sur la vie sur Terre il y a très longtemps.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Une année en glace 🧊",
-      "summary": "Une équipe de chercheurs vient de terminer une aventure d'un an en Antarctique ! Leur mission était d'étudier comment la glace fond avec le changement climatique. Ils ont vécu dans le froid extrême, se sont fait des amis pingouins et ont récolté plein d'informations importantes. Grâce à eux, on comprend mieux comment le réchauffement de la planète affecte notre environnement. Qui sait, plus tard, avec ces découvertes, nous pourrons peut-être mieux protéger notre belle planète.",
-      "date": "30/10/2023",
+      "title": "Un robot cuisinier en action ! 🤖🍽️",
+      "summary": "Dans certains restaurants, on peut maintenant voir des robots cuisiner ! Ces robots sont programmés pour préparer des plats délicieux et suivre des recettes à la lettre. Cela permet aux cuisiniers humains de se concentrer sur l'innovation et la création de nouvelles recettes. Les robots cuisiniers sont un bon exemple de la façon dont la technologie peut aider les gens dans leur travail.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Étoiles filantes en vue ! 🌠",
-      "summary": "Prépare-toi à lever les yeux au ciel ! Une pluie de météores est prévue cette semaine. Ces petites étoiles filantes sont des poussières d'astéroïdes entrant dans notre atmosphère et brillent comme des étoiles dans le ciel. C'est une superbe occasion pour passer un moment en famille dehors et apprécier la beauté de notre univers. N'oublie pas tes souhaits, car on dit que les étoiles filantes peuvent les exaucer !",
-      "date": "30/10/2023",
+      "title": "Le retour des oiseaux migrateurs ✈️🐦",
+      "summary": "C'est la saison où de nombreux oiseaux migrateurs reviennent dans leurs habitats d'hiver après un long voyage. Ces oiseaux parcourent des milliers de kilomètres pour trouver un climat plus chaud. C'est un moment merveilleux pour observer différentes espèces d'oiseaux dans nos jardins et nos parcs. Leur retour est important pour l'équilibre de la nature, car ils jouent un rôle essentiel dans la pollinisation et le contrôle des insectes.",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
