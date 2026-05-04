@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Nouveau dinosaure découvert ! 🦕",
-      "summary": "Des chercheurs ont trouvé une nouvelle espèce de dinosaure en Amérique du Sud. Ce dinosaure, qui vivait il y a environ 70 millions d'années, était un herbivore, ce qui veut dire qu'il mangeait des plantes. Sa particularité : avoir un long cou, un peu comme les girafes ! Grâce à ces découvertes, les scientifiques en apprennent plus sur la vie sur Terre il y a très longtemps.",
-      "date": "26/10/2023",
+      "title": "Une nouvelle étoile découverte dans le ciel 🌟",
+      "summary": "Des astronomes ont découvert une étoile très spéciale qui se trouve loin de la Terre. Elle est très brillante et ils pensent qu'elle pourrait nous aider à en savoir plus sur l'espace et les étoiles. Les scientifiques sont très contents car chaque nouvelle découverte nous en apprend plus sur notre univers. Peut-être un jour, les jeunes d'aujourd'hui pourront aussi explorer l'espace et faire leurs propres découvertes étonnantes!",
+      "date": "12/11/2023",
       "link": ""
     },
     {
-      "title": "Un robot cuisinier en action ! 🤖🍽️",
-      "summary": "Dans certains restaurants, on peut maintenant voir des robots cuisiner ! Ces robots sont programmés pour préparer des plats délicieux et suivre des recettes à la lettre. Cela permet aux cuisiniers humains de se concentrer sur l'innovation et la création de nouvelles recettes. Les robots cuisiniers sont un bon exemple de la façon dont la technologie peut aider les gens dans leur travail.",
-      "date": "26/10/2023",
+      "title": "Un zoo accueille un bébé panda 🐼",
+      "summary": "Un zoo en Chine est très heureux de présenter son nouveau bébé panda. Les pandas sont très aimés car ils sont mignons et rares, ce qui fait de chaque naissance un événement spécial. Ce petit panda va rester avec sa maman pour apprendre à grimper et se nourrir de bambou. Les visiteurs du zoo peuvent déjà voir le bébé à travers des vidéos car il est encore trop jeune pour être visible directement au public.",
+      "date": "12/11/2023",
       "link": ""
     },
     {
-      "title": "Le retour des oiseaux migrateurs ✈️🐦",
-      "summary": "C'est la saison où de nombreux oiseaux migrateurs reviennent dans leurs habitats d'hiver après un long voyage. Ces oiseaux parcourent des milliers de kilomètres pour trouver un climat plus chaud. C'est un moment merveilleux pour observer différentes espèces d'oiseaux dans nos jardins et nos parcs. Leur retour est important pour l'équilibre de la nature, car ils jouent un rôle essentiel dans la pollinisation et le contrôle des insectes.",
-      "date": "26/10/2023",
+      "title": "La journée mondiale de la gentillesse est célébrée 🌍",
+      "summary": "Chaque année, des gens du monde entier fêtent la Journée mondiale de la gentillesse. C'est un moment pour penser à faire des actions aimables, comme remercier quelqu'un, sourire ou faire une bonne action. Cette journée existe pour nous rappeler que de petits gestes peuvent rendre les autres heureux et améliorer la vie de tous. Peut-être as-tu une idée de gentillesse que tu pourrais faire aujourd'hui?",
+      "date": "12/11/2023",
       "link": ""
     }
   ]
