@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Découverte spatiale 🚀",
-      "summary": "Des scientifiques ont découvert une nouvelle planète qui ressemble à la Terre ! Cette planète se trouve très loin, à des milliers d'années-lumière, mais elle intrigue beaucoup les chercheurs. On l'appelle «TOI-700 e». Elle est dans une zone où l'eau pourrait exister. C'est intéressant car l'eau est essentielle à la vie, comme pour les plantes et les animaux ici sur Terre. Les scientifiques utilisent de puissants télescopes pour étudier cette planète et voir si elle pourrait abriter des formes de vie. Peut-être que dans le futur, nous en apprendrons encore plus sur cette planète fascinante!",
-      "date": "19/11/2023",
+      "title": "Une Planète de Feu! 🔥",
+      "summary": "Les astronomes ont découvert une nouvelle planète très spéciale! Elle s'appelle 'TOI-1518b' et elle est tellement proche de son étoile qu'elle est plus chaude que certaines étoiles! Cette découverte est importante car elle nous aide à mieux comprendre les différents types de planètes dans notre galaxie. Même si elle paraît infernale, personne ne pourrait y vivre. Ce genre de découvertes stimule la curiosité des scientifiques et les pousse à chercher encore plus de secrets dans l'univers.",
+      "date": "25/10/2023",
       "link": ""
     },
     {
-      "title": "Les jeunes footballeurs brillent ⚽",
-      "summary": "Un tournoi de jeunes footballeurs s'est récemment déroulé avec succès, mettant en lumière de nombreux talents prometteurs ! Des équipes venues de différentes régions se sont affrontées amicalement. Les enfants ont montré un formidable esprit d'équipe et une grande passion pour le jeu. Non seulement cela leur a permis de s'amuser et de se faire de nouveaux amis, mais c'était aussi une belle occasion pour eux de progresser et d'apprendre de nouvelles techniques. Les gagnants ont reçu des médailles, mais chaque joueur est reparti avec des souvenirs inoubliables et des encouragements pour continuer à s'améliorer dans ce sport.",
-      "date": "19/11/2023",
+      "title": "Étoiles de L'Art Urbain 🌟",
+      "summary": "Un festival d'art urbain a récemment eu lieu dans une grande ville, rassemblant des artistes qui transforment les rues avec leurs magnifiques oeuvres! Les murs des bâtiments se sont remplis de couleurs et d'histoires, rendant les quartiers lumineux et joyeux. Ce type d'art est appelé 'street art'. Cela montre combien l'art peut embellir notre environnement quotidien et susciter l'admiration des passants. C'est une vraie explosion de créativité qui aide les gens à mieux se connecter à leur ville.",
+      "date": "25/10/2023",
       "link": ""
     },
     {
-      "title": "Origami pour la planète 🌍",
-      "summary": "Un groupe d'enfants a organisé un atelier d'origami pour sensibiliser à la protection de l'environnement ! L'événement avait pour but de recycler du papier usagé en créant de jolies figures en origami, comme des animaux et des fleurs. C'était un moyen créatif de montrer comment nous pouvons réutiliser et réduire nos déchets. En plus de passer un bon moment à plier du papier, ils ont discuté de l'importance de respecter notre planète, en économisant de l'eau et en plantant des arbres. Ce projet a prouvé que même de petits gestes, faits par de jeunes mains, peuvent aider à préserver notre Terre.",
-      "date": "19/11/2023",
+      "title": "Les Laboratoires Vivants des Océans 🌊",
+      "summary": "Des scientifiques ont découvert de nouvelles espèces de poissons dans les eaux profondes de l'océan. Ces poissons sont très différents de ceux que nous connaissons; certains brillent dans le noir! Cette découverte est importante car elle montre que notre océan cache encore bien des mystères. En étudiant ces poissons, les experts espèrent comprendre comment ils survivent dans des conditions aussi extrêmes. Cela pourrait nous enseigner beaucoup sur la vie sur Terre et sur l'importance de protéger nos océans.",
+      "date": "25/10/2023",
       "link": ""
     }
   ]
