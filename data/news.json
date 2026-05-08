@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Une Planète de Feu! 🔥",
-      "summary": "Les astronomes ont découvert une nouvelle planète très spéciale! Elle s'appelle 'TOI-1518b' et elle est tellement proche de son étoile qu'elle est plus chaude que certaines étoiles! Cette découverte est importante car elle nous aide à mieux comprendre les différents types de planètes dans notre galaxie. Même si elle paraît infernale, personne ne pourrait y vivre. Ce genre de découvertes stimule la curiosité des scientifiques et les pousse à chercher encore plus de secrets dans l'univers.",
-      "date": "25/10/2023",
+      "title": "Un Nouvel Ami à Quatre Pattes au Zoo 🦒",
+      "summary": "Le zoo de Paris a accueilli un nouveau membre adorable : un girafon (bébé girafe) est né il y a deux jours ! Ce petit girafon est déjà debout sur ses longues jambes et se promène sous l'œil attentif de sa maman. Les girafes sont les plus grands animaux terrestres, et ce girafon va lui aussi grandir très vite. Le public peut déjà le voir dans son enclos spécial pour bébés. Cet événement est important, car certaines girafes sont menacées dans la nature. Les zoos aident à protéger ces espèces et à sensibiliser les gens à leur préservation.",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "Étoiles de L'Art Urbain 🌟",
-      "summary": "Un festival d'art urbain a récemment eu lieu dans une grande ville, rassemblant des artistes qui transforment les rues avec leurs magnifiques oeuvres! Les murs des bâtiments se sont remplis de couleurs et d'histoires, rendant les quartiers lumineux et joyeux. Ce type d'art est appelé 'street art'. Cela montre combien l'art peut embellir notre environnement quotidien et susciter l'admiration des passants. C'est une vraie explosion de créativité qui aide les gens à mieux se connecter à leur ville.",
-      "date": "25/10/2023",
+      "title": "L'automne Arrive en Force ! 🍂",
+      "summary": "La saison d'automne est enfin arrivée, apportant avec elle des feuilles colorées qui tombent des arbres. L'un des signes les plus visibles de l'automne, c'est quand les feuilles changent de vert à rouge, orange et jaune. Ce phénomène se produit parce que les arbres se préparent pour l'hiver et conservent leur énergie. Les promenades en forêt deviennent magiques avec toutes ces couleurs éclatantes. Profitez de cette période pour ramasser des feuilles et réaliser des bricolages ou admirer la nature qui change doucement autour de nous.",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "Les Laboratoires Vivants des Océans 🌊",
-      "summary": "Des scientifiques ont découvert de nouvelles espèces de poissons dans les eaux profondes de l'océan. Ces poissons sont très différents de ceux que nous connaissons; certains brillent dans le noir! Cette découverte est importante car elle montre que notre océan cache encore bien des mystères. En étudiant ces poissons, les experts espèrent comprendre comment ils survivent dans des conditions aussi extrêmes. Cela pourrait nous enseigner beaucoup sur la vie sur Terre et sur l'importance de protéger nos océans.",
-      "date": "25/10/2023",
+      "title": "Des Secrets Cachés sous le Sable d'Égypte 🏺",
+      "summary": "En Égypte, des archéologues (scientifiques qui étudient l'histoire à travers les objets anciens) ont découvert des trésors extraordinaires près de la ville d'Alexandrie. Des statues, des poteries et des bijoux datant de milliers d'années ont été trouvés sous le sable. Ces découvertes aident les chercheurs à mieux comprendre comment vivaient les anciens Égyptiens. C'est un peu comme résoudre un vieux mystère du passé ! Les archéologues continuent de fouiller avec soin pour éviter d'abîmer ces précieux objets et espèrent dévoiler encore plus de secrets dans les semaines à venir.",
+      "date": "12/10/2023",
       "link": ""
     }
   ]
