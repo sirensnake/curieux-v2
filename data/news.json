@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Un dinosaure tout doux découvert 🦕",
-      "summary": "Des scientifiques ont découvert un nouveau type de dinosaure avec des plumes colorées ! Ce dinosaure vivait il y a environ 120 millions d'années, en Chine. Les plumes de ces dinosaures étaient peut-être utilisées pour attirer les autres, un peu comme les paons le font aujourd'hui. Ces nouvelles découvertes aident les chercheurs à mieux comprendre comment vivaient les dinosaures. Grâce aux fossiles, ils apprennent aussi beaucoup sur l'évolution des oiseaux. N'est-ce pas incroyable de penser que ces énormes créatures étaient peut-être aussi joliment colorées ? Qui sait quels autres secrets cachent encore les dinosaures ?",
-      "date": "27/10/2023",
+      "title": "Une étoile filante ! 🌠",
+      "summary": "Les astronomes ont récemment découvert une nouvelle comète dans le ciel ! C'est un gros morceau de glace et de poussière spatiale qui traverse l'espace. Cette comète est visible depuis la Terre et brillera jusqu'à la fin du mois. Alors, si tu te lèves tôt le matin, tu pourras peut-être la voir. C'est comme une grande étoile filante avec une belle queue lumineuse. Observer les étoiles et les comètes est un excellent moyen d'en apprendre plus sur notre univers magique.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Course effrénée des tortues 🐢",
-      "summary": "En Australie, des chercheurs ont organisé une course de tortues pour mieux comprendre comment elles se déplacent. Cette course, qui a semblé lente pour nous, est en réalité un moyen parfait pour observer les différentes techniques de nage. Savoir comment les tortues se déplacent est important pour protéger leur habitat naturel et s'assurer qu'elles puissent continuer à vivre heureuses et en sécurité dans l'océan. C'est incroyable de penser que même les créatures les plus lentes ont tant de choses à nous enseigner !",
-      "date": "27/10/2023",
+      "title": "Festival des Lumières en Inde 🪔",
+      "summary": "C'est le moment des célébrations en Inde avec un festival appelé Diwali ! Connu comme la fête des lumières, Diwali est une période où les gens allument des lampes spéciales, appelées diyas, pour illuminer leurs maisons. Ce festival est un moment de joie et de partage, marqué par des feux d'artifice et de délicieux plats. Il permet de célébrer la victoire de la lumière sur l'obscurité. Les enfants adorent participer à ces réjouissances colorées et brillantes.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "Un concert qui brille de mille feux 🎶",
-      "summary": "À Paris, un orchestre a donné un concert très spécial en utilisant des lumières LED. Pendant le spectacle, la musique et les lumières changeaient ensemble, créant une ambiance magique. Les musiciens ont travaillé avec des designers de lumières pour rendre chaque note visuelle. C'était comme si les sons prenaient vie sous forme de couleurs et de motifs. Ce type de concert montre que l'art peut se combiner pour créer de nouvelles expériences incroyables. Qui sait? Peut-être que la prochaine fois, on verra aussi des odeurs synchronisées avec la musique !",
-      "date": "27/10/2023",
+      "title": "Des héros à plumes ! 🦅",
+      "summary": "Des scientifiques ont découvert que les aigles à tête blanche au Canada aident à maintenir l'équilibre des écosystèmes. Ces grands oiseaux mangent des poissons et des petits animaux, ce qui aide à contrôler les populations de certaines espèces. Leurs journées de chasse contribuent à garder les lacs et les rivières en bonne santé. En observant les aigles, les chercheurs peuvent aussi apprendre comment les habitats naturels changent avec le temps. C'est un bel exemple de la façon dont la nature s'autorégule.",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
