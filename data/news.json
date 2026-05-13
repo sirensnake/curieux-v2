@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Une étoile filante ! 🌠",
-      "summary": "Les astronomes ont récemment découvert une nouvelle comète dans le ciel ! C'est un gros morceau de glace et de poussière spatiale qui traverse l'espace. Cette comète est visible depuis la Terre et brillera jusqu'à la fin du mois. Alors, si tu te lèves tôt le matin, tu pourras peut-être la voir. C'est comme une grande étoile filante avec une belle queue lumineuse. Observer les étoiles et les comètes est un excellent moyen d'en apprendre plus sur notre univers magique.",
-      "date": "26/10/2023",
+      "title": "La découverte d'une nouvelle étoile brillante 🌟",
+      "summary": "Des astronomes, qui sont des scientifiques qui étudient les étoiles et l'espace, ont découvert une nouvelle étoile très lumineuse dans le ciel. Elle se trouve dans une partie de l'espace que l'on appelle la galaxie d'Andromède, qui est l'une des galaxies voisines de la nôtre. Cette découverte aidera les scientifiques à mieux comprendre comment les étoiles se forment et évoluent. Observer cette étoile peut aussi nous en apprendre plus sur notre propre galaxie, la Voie lactée. N'est-ce pas fascinant de savoir qu'il y a tant de choses à découvrir dans l'univers ?",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Festival des Lumières en Inde 🪔",
-      "summary": "C'est le moment des célébrations en Inde avec un festival appelé Diwali ! Connu comme la fête des lumières, Diwali est une période où les gens allument des lampes spéciales, appelées diyas, pour illuminer leurs maisons. Ce festival est un moment de joie et de partage, marqué par des feux d'artifice et de délicieux plats. Il permet de célébrer la victoire de la lumière sur l'obscurité. Les enfants adorent participer à ces réjouissances colorées et brillantes.",
-      "date": "26/10/2023",
+      "title": "Record mondial pour la plus longue pizza 🍕",
+      "summary": "En Italie, des chefs ont collaboré pour battre le record du monde de la plus longue pizza jamais réalisée ! La pizza mesure plus de 2 kilomètres de long. Pour réussir cet exploit, ils ont utilisé des milliers de kilos de farine, de tomates, de fromage et d'autres ingrédients, en travaillant ensemble pendant des heures. Faire une pizza aussi grande est un défi de taille, mais cela montre qu'en unissant leurs forces, les gens peuvent accomplir de grandes choses. Et en plus, toutes ces parts de pizza ont été partagées avec les personnes présentes pour ne pas être gaspillées.",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Des héros à plumes ! 🦅",
-      "summary": "Des scientifiques ont découvert que les aigles à tête blanche au Canada aident à maintenir l'équilibre des écosystèmes. Ces grands oiseaux mangent des poissons et des petits animaux, ce qui aide à contrôler les populations de certaines espèces. Leurs journées de chasse contribuent à garder les lacs et les rivières en bonne santé. En observant les aigles, les chercheurs peuvent aussi apprendre comment les habitats naturels changent avec le temps. C'est un bel exemple de la façon dont la nature s'autorégule.",
-      "date": "26/10/2023",
+      "title": "Nouvelle espèce de grenouille découverte 🐸",
+      "summary": "Dans les forêts tropicales de l'Amérique du Sud, des chercheurs ont découvert une nouvelle espèce de grenouille. Cette petite créature possède des couleurs vives et des motifs uniques sur sa peau, ce qui la rend difficile à confondre avec d'autres grenouilles. Les scientifiques sont toujours excités de découvrir de nouvelles espèces car cela nous aide à comprendre mieux la biodiversité et l'importance de préserver les habitats naturels. Protéger ces endroits permet de continuer à découvrir les merveilles de la nature !",
+      "date": "29/10/2023",
       "link": ""
     }
   ]
