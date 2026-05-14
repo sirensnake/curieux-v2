@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "La découverte d'une nouvelle étoile brillante 🌟",
-      "summary": "Des astronomes, qui sont des scientifiques qui étudient les étoiles et l'espace, ont découvert une nouvelle étoile très lumineuse dans le ciel. Elle se trouve dans une partie de l'espace que l'on appelle la galaxie d'Andromède, qui est l'une des galaxies voisines de la nôtre. Cette découverte aidera les scientifiques à mieux comprendre comment les étoiles se forment et évoluent. Observer cette étoile peut aussi nous en apprendre plus sur notre propre galaxie, la Voie lactée. N'est-ce pas fascinant de savoir qu'il y a tant de choses à découvrir dans l'univers ?",
-      "date": "29/10/2023",
+      "title": "Découverte sous-marine : Un poisson brillant 🌊",
+      "summary": "Une nouvelle espèce de poisson a été découverte dans les profondeurs de l'océan Atlantique ! Ce poisson, qui ressemble à une petite ampoule lumineuse, utilise sa lueur pour communiquer avec d'autres poissons. Les scientifiques sont ravis car chaque nouvelle espèce nous aide à mieux comprendre la vie sous-marine. Découvrir ce poisson permet aussi de réfléchir à la protection des océans et de leurs habitants. C'est un moment excitant pour ceux qui étudient la nature et une belle opportunité d'en savoir plus sur notre planète.",
+      "date": "03/10/2023",
       "link": ""
     },
     {
-      "title": "Record mondial pour la plus longue pizza 🍕",
-      "summary": "En Italie, des chefs ont collaboré pour battre le record du monde de la plus longue pizza jamais réalisée ! La pizza mesure plus de 2 kilomètres de long. Pour réussir cet exploit, ils ont utilisé des milliers de kilos de farine, de tomates, de fromage et d'autres ingrédients, en travaillant ensemble pendant des heures. Faire une pizza aussi grande est un défi de taille, mais cela montre qu'en unissant leurs forces, les gens peuvent accomplir de grandes choses. Et en plus, toutes ces parts de pizza ont été partagées avec les personnes présentes pour ne pas être gaspillées.",
-      "date": "29/10/2023",
+      "title": "La magie des aurores boréales 🌌",
+      "summary": "Récemment, des aurores boréales exceptionnellement colorées ont illuminé le ciel au-dessus de quelques pays nordiques comme la Norvège et la Finlande. Ces lumières magiques sont créées lorsque les vents solaires, chargés de particules, rencontrent l'atmosphère de la Terre. Observer une aurore boréale, c'est comme voir un spectacle de lumière naturel dans le ciel ! Elles nous rappellent aussi l'importance de notre atmosphère et des phénomènes naturels incroyables qui se produisent autour de nous.",
+      "date": "03/10/2023",
       "link": ""
     },
     {
-      "title": "Nouvelle espèce de grenouille découverte 🐸",
-      "summary": "Dans les forêts tropicales de l'Amérique du Sud, des chercheurs ont découvert une nouvelle espèce de grenouille. Cette petite créature possède des couleurs vives et des motifs uniques sur sa peau, ce qui la rend difficile à confondre avec d'autres grenouilles. Les scientifiques sont toujours excités de découvrir de nouvelles espèces car cela nous aide à comprendre mieux la biodiversité et l'importance de préserver les habitats naturels. Protéger ces endroits permet de continuer à découvrir les merveilles de la nature !",
-      "date": "29/10/2023",
+      "title": "Un astronaute raconte l'espace 🛰️",
+      "summary": "Un astronaute tout juste revenu de la Station spatiale internationale a partagé ses histoires fascinantes avec des élèves lors d'une conférence. Il a décrit à quel point la Terre est belle vue de l'espace et combien il est important de protéger notre planète. Les enfants ont posé plein de questions, curieux d'en savoir plus sur la vie en apesanteur et les expériences scientifiques réalisées là-haut. C'est une belle occasion pour tous de rêver à explorer les étoiles un jour !",
+      "date": "03/10/2023",
       "link": ""
     }
   ]
