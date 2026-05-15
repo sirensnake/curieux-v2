@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte sous-marine : Un poisson brillant 🌊",
-      "summary": "Une nouvelle espèce de poisson a été découverte dans les profondeurs de l'océan Atlantique ! Ce poisson, qui ressemble à une petite ampoule lumineuse, utilise sa lueur pour communiquer avec d'autres poissons. Les scientifiques sont ravis car chaque nouvelle espèce nous aide à mieux comprendre la vie sous-marine. Découvrir ce poisson permet aussi de réfléchir à la protection des océans et de leurs habitants. C'est un moment excitant pour ceux qui étudient la nature et une belle opportunité d'en savoir plus sur notre planète.",
-      "date": "03/10/2023",
-      "link": ""
+      "title": "Nouveaux Horizons pour la Planète Rouge 🚀",
+      "summary": "La NASA a récemment partagé des nouvelles passionnantes sur Mars ! Un rover, appelé 'Perseverance', a découvert des roches qui pourraient révéler des secrets sur l'ancienne vie sur la planète rouge. Ces roches contiennent des minéraux qui se forment habituellement en présence d'eau. Cela rend les scientifiques très curieux, car l'eau est essentielle pour la vie telle que nous la connaissons. L'exploration de Mars continue d'étonner et inspire les chercheurs à rêver de ce que l'avenir réserve pour l'exploration spatiale.",
+      "date": "20/10/2023",
+      "link": "https://www.nasa.gov/mars2023update"
     },
     {
-      "title": "La magie des aurores boréales 🌌",
-      "summary": "Récemment, des aurores boréales exceptionnellement colorées ont illuminé le ciel au-dessus de quelques pays nordiques comme la Norvège et la Finlande. Ces lumières magiques sont créées lorsque les vents solaires, chargés de particules, rencontrent l'atmosphère de la Terre. Observer une aurore boréale, c'est comme voir un spectacle de lumière naturel dans le ciel ! Elles nous rappellent aussi l'importance de notre atmosphère et des phénomènes naturels incroyables qui se produisent autour de nous.",
-      "date": "03/10/2023",
-      "link": ""
+      "title": "Un Nouveau Panda Gigantesque Né en Chine 🐼",
+      "summary": "Dans un centre de recherche en Chine, une maman panda a donné naissance à un adorable bébé panda ! Les pandas géants, qui vivent principalement en Chine, sont une espèce menacée. Chaque nouveau-né est une excellente nouvelle pour leur préservation. Les soigneurs s'assurent que le bébé panda et sa maman se portent bien et sont en bonne santé. Ce petit panda va devenir une source de joie et d'espoir pour tous ceux qui travaillent à protéger ces magnifiques animaux.",
+      "date": "19/10/2023",
+      "link": "https://www.worldwildlife.org/species/panda"
     },
     {
-      "title": "Un astronaute raconte l'espace 🛰️",
-      "summary": "Un astronaute tout juste revenu de la Station spatiale internationale a partagé ses histoires fascinantes avec des élèves lors d'une conférence. Il a décrit à quel point la Terre est belle vue de l'espace et combien il est important de protéger notre planète. Les enfants ont posé plein de questions, curieux d'en savoir plus sur la vie en apesanteur et les expériences scientifiques réalisées là-haut. C'est une belle occasion pour tous de rêver à explorer les étoiles un jour !",
-      "date": "03/10/2023",
+      "title": "Inventions Écologiques en Ébullition 🌱",
+      "summary": "Des étudiants d'une université ont inventé une machine incroyable : elle transforme les déchets plastiques en matériaux de construction robustes. Cette invention pourrait réduire la pollution plastique tout en fournissant une nouvelle façon de construire des maisons. Ces jeunes inventeurs espèrent que leur machine sera utilisée dans les pays où le plastique s'accumule et provoque des problèmes environnementaux. C'est un bel exemple de comment la créativité peut améliorer notre monde.",
+      "date": "20/10/2023",
       "link": ""
     }
   ]
