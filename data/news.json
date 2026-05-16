@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Nouveaux Horizons pour la Planète Rouge 🚀",
-      "summary": "La NASA a récemment partagé des nouvelles passionnantes sur Mars ! Un rover, appelé 'Perseverance', a découvert des roches qui pourraient révéler des secrets sur l'ancienne vie sur la planète rouge. Ces roches contiennent des minéraux qui se forment habituellement en présence d'eau. Cela rend les scientifiques très curieux, car l'eau est essentielle pour la vie telle que nous la connaissons. L'exploration de Mars continue d'étonner et inspire les chercheurs à rêver de ce que l'avenir réserve pour l'exploration spatiale.",
-      "date": "20/10/2023",
-      "link": "https://www.nasa.gov/mars2023update"
+      "title": "Des étoiles dans l'eau 🌟",
+      "summary": "Des scientifiques ont découvert un nouveau type de méduse dans l'océan Pacifique. Cette méduse brille dans le noir ! C'est grâce à une protéine spéciale qui produit de la lumière, comme certains lucioles ou poissons des abysses. Ces découvertes aident les chercheurs à mieux comprendre les océans et les animaux qui y vivent. Les océans sont pleins de vie fascinante et chaque nouvelle découverte est une façon de mieux les protéger.",
+      "date": "24/10/2023",
+      "link": ""
     },
     {
-      "title": "Un Nouveau Panda Gigantesque Né en Chine 🐼",
-      "summary": "Dans un centre de recherche en Chine, une maman panda a donné naissance à un adorable bébé panda ! Les pandas géants, qui vivent principalement en Chine, sont une espèce menacée. Chaque nouveau-né est une excellente nouvelle pour leur préservation. Les soigneurs s'assurent que le bébé panda et sa maman se portent bien et sont en bonne santé. Ce petit panda va devenir une source de joie et d'espoir pour tous ceux qui travaillent à protéger ces magnifiques animaux.",
-      "date": "19/10/2023",
-      "link": "https://www.worldwildlife.org/species/panda"
+      "title": "Un gigantesque pas spatiale 🚀",
+      "summary": "Une fusée de la NASA a été envoyée dans l'espace pour une mission spéciale. Son but est d'étudier une partie de l'espace appelée l'astéroïde Bennu. Cet astéroïde intéresse beaucoup les scientifiques car il peut nous apprendre des choses sur la formation de notre système solaire. En étudiant Bennu, les chercheurs espèrent découvrir des secrets sur la manière dont la Terre s'est formée il y a des milliards d'années.",
+      "date": "24/10/2023",
+      "link": ""
     },
     {
-      "title": "Inventions Écologiques en Ébullition 🌱",
-      "summary": "Des étudiants d'une université ont inventé une machine incroyable : elle transforme les déchets plastiques en matériaux de construction robustes. Cette invention pourrait réduire la pollution plastique tout en fournissant une nouvelle façon de construire des maisons. Ces jeunes inventeurs espèrent que leur machine sera utilisée dans les pays où le plastique s'accumule et provoque des problèmes environnementaux. C'est un bel exemple de comment la créativité peut améliorer notre monde.",
-      "date": "20/10/2023",
+      "title": "Une forêt devient internationale 🌍",
+      "summary": "Une grande forêt en Amazonie a été classée comme réserve mondiale par l'UNESCO. Cela signifie qu'elle est protégée et que de nombreux pays travaillent ensemble pour la préserver. Les forêts comme celle-ci sont très importantes car elles abritent des milliers d'espèces de plantes et d'animaux. En plus, elles aident à purifier l'air que nous respirons. Protéger les forêts est essentiel pour la santé de notre planète.",
+      "date": "24/10/2023",
       "link": ""
     }
   ]
