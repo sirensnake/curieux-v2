@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Un bébé rhinocéros est né ! 🦏",
-      "summary": "Bonne nouvelle ! Un magnifique bébé rhinocéros est né dans un parc naturel en Afrique du Sud. Cette naissance est très importante car les rhinocéros sont en danger d'extinction. Cela signifie qu'il n'y en a plus beaucoup dans la nature. Les gardiens du parc sont très heureux et prennent bien soin de la maman et de son bébé. Ils espèrent que d'autres rhinocéros naîtront bientôt pour aider à protéger cette espèce. Les rhinocéros sont des animaux incroyables avec une grande corne sur le nez qui les rends uniques dans le monde animal.",
-      "date": "23/10/2023",
-      "link": "https://www.exemple.com/article-rhinoceros"
+      "title": "🌟 Une étoile filante très spéciale",
+      "summary": "Des astronomes ont récemment observé une étoile filante incroyablement brillante dans le ciel. Ce phénomène est appelé une 'bolide', une sorte de météore très lumineux qui traverse notre atmosphère. Ce type de spectacle est toujours surprenant et magnifique à voir, et il nous rappelle combien notre univers est vaste et plein de mystères. Si tu ne l'as pas vu cette fois-ci, pas de souci, il y a souvent des pluies de météores régulières tout au long de l'année. Être curieux du ciel nocturne peut mener à des découvertes passionnantes !",
+      "date": "29/11/2023",
+      "link": ""
     },
     {
-      "title": "Mission spatiale : vers Mars ! 🚀",
-      "summary": "La NASA a récemment lancé une nouvelle mission spatiale vers Mars pour en apprendre plus sur la planète rouge. Un satellite spécial, rempli d'instruments scientifiques, a été envoyé pour explorer l'atmosphère et la surface de Mars. Les scientifiques espèrent ainsi récolter des informations qui pourraient nous révéler de nouveaux secrets sur cette planète fascinante. Ces découvertes nous aident à nous préparer pour de futures explorations humaines, peut-être même des voyages sur Mars ! C'est une aventure passionnante pour tous les passionnés d'espace.",
-      "date": "23/10/2023",
-      "link": "https://www.exemple.com/mars-spatiale"
+      "title": "🐨 De bonnes nouvelles pour les koalas",
+      "summary": "En Australie, un projet spécial aide à protéger les koalas, qui sont des animaux emblématiques du pays. Des équipes ont planté de nouveaux arbres pour reconstruire leur habitat naturel. Les koalas aiment grimper et se nourrir des feuilles d'eucalyptus. Ce projet est important car il aide à assurer la survie des koalas, qui sont menacés par la perte de leur habitat. Ce sont des efforts comme celui-ci qui montrent combien il est important de prendre soin de notre planète et des animaux qui l'habitent.",
+      "date": "29/11/2023",
+      "link": ""
     },
     {
-      "title": "Festival des lumières de Diwali 🎆",
-      "summary": "Diwali, le festival de la lumière, est célébré par des millions de personnes à travers le monde, surtout en Inde. Pendant ce festival, les maisons sont décorées avec des lampes et des bougies, et des feux d'artifice illuminent le ciel. C'est un moment de joie pour passer du temps en famille, échanger des cadeaux et préparer de délicieux plats traditionnels. Diwali symbolise la victoire de la lumière sur les ténèbres et du bien sur le mal. C'est une chance d'apprendre sur d'autres cultures et d'apprécier la beauté des traditions.",
-      "date": "23/10/2023",
+      "title": "🎨 Un robot qui peint des chefs-d'œuvre",
+      "summary": "En France, un groupe de chercheurs a mis au point un robot capable de peindre des tableaux inspirés par les grands artistes. Ce robot utilise une sorte de 'cerveau artificiel' pour imaginer et créer des œuvres uniques. Même si les machines ne remplacent pas le talent humain, elles peuvent aider à explorer de nouvelles manières de créer de l'art. C'est un bel exemple de la façon dont la technologie et la créativité peuvent se combiner pour produire quelque chose de nouveau et d'excitant.",
+      "date": "29/11/2023",
       "link": ""
     }
   ]
