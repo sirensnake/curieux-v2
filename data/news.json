@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🌟 Une étoile filante très spéciale",
-      "summary": "Des astronomes ont récemment observé une étoile filante incroyablement brillante dans le ciel. Ce phénomène est appelé une 'bolide', une sorte de météore très lumineux qui traverse notre atmosphère. Ce type de spectacle est toujours surprenant et magnifique à voir, et il nous rappelle combien notre univers est vaste et plein de mystères. Si tu ne l'as pas vu cette fois-ci, pas de souci, il y a souvent des pluies de météores régulières tout au long de l'année. Être curieux du ciel nocturne peut mener à des découvertes passionnantes !",
-      "date": "29/11/2023",
+      "title": "🚀 Un nouvel ami dans l'espace !",
+      "summary": "Un nouveau satellite a été lancé dans l'espace hier ! Il s'appelle 'Sentinel-6', et il a une mission très importante : mesurer la hauteur des océans partout sur notre planète. C'est comme un thermomètre géant pour l'eau ! Grâce à lui, les scientifiques pourront mieux comprendre comment le climat change et comment cela affecte la mer. C'est un outil précieux pour aider à protéger notre Terre.",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "🐨 De bonnes nouvelles pour les koalas",
-      "summary": "En Australie, un projet spécial aide à protéger les koalas, qui sont des animaux emblématiques du pays. Des équipes ont planté de nouveaux arbres pour reconstruire leur habitat naturel. Les koalas aiment grimper et se nourrir des feuilles d'eucalyptus. Ce projet est important car il aide à assurer la survie des koalas, qui sont menacés par la perte de leur habitat. Ce sont des efforts comme celui-ci qui montrent combien il est important de prendre soin de notre planète et des animaux qui l'habitent.",
-      "date": "29/11/2023",
+      "title": "🐼 Un bébé panda voit le jour !",
+      "summary": "Au zoo de Washington, un adorable bébé panda vient de naître. Les pandas géants sont des animaux en danger, donc chaque naissance est une grande nouvelle ! Le petit panda est encore très fragile et passe son temps à dormir et boire du lait. Les responsables du zoo prennent bien soin de lui. Cette naissance est une belle étape pour la conservation des pandas.",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "🎨 Un robot qui peint des chefs-d'œuvre",
-      "summary": "En France, un groupe de chercheurs a mis au point un robot capable de peindre des tableaux inspirés par les grands artistes. Ce robot utilise une sorte de 'cerveau artificiel' pour imaginer et créer des œuvres uniques. Même si les machines ne remplacent pas le talent humain, elles peuvent aider à explorer de nouvelles manières de créer de l'art. C'est un bel exemple de la façon dont la technologie et la créativité peuvent se combiner pour produire quelque chose de nouveau et d'excitant.",
-      "date": "29/11/2023",
+      "title": "🌿 Un pas de géant pour une forêt !",
+      "summary": "En Amazonie, des efforts sont en cours pour planter des milliers de nouveaux arbres ! Cette énorme forêt est comme les poumons de notre planète, car elle produit beaucoup d'oxygène et abrite des millions d'animaux. Replanter des arbres aide à remplacer ceux qui ont été coupés et à protéger cette biodiversité incroyable. C'est une belle preuve que nous pouvons aider la nature à se rétablir.",
+      "date": "29/10/2023",
       "link": ""
     }
   ]
