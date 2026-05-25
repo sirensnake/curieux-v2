@@ -1,22 +1,6 @@
 {
-  "articles": [
-    {
-      "title": "Les Grands Chiens de Mer 🦈",
-      "summary": "Des chercheurs ont récemment découvert que les grands requins blancs de l'océan Atlantique ont un rôle important dans l'équilibre de la vie marine. Ces incroyables animaux se déplacent sur de longues distances pour chercher leur nourriture, aidant ainsi à maintenir des populations saines de poissons plus petits. En protégeant les requins, nous protégeons aussi la biodiversité marine. Alors, la prochaine fois que tu penseras aux requins, souviens-toi qu'ils sont les gardiens de nos océans et qu'ils méritent d'être respectés et protégés !",
-      "date": "23/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Le Mystère de l'Arc-en-Ciel 🌈",
-      "summary": "Un événement étonnant a eu lieu cette semaine en Norvège : un arc-en-ciel est apparu et a duré plusieurs heures ! Habituellement, les arcs-en-ciel ne restent que quelques minutes. Ce phénomène s'est produit grâce à des conditions météorologiques parfaites combinant pluie et soleil. Les scientifiques sont ravis car c'est une occasion rare d'observer comment les couleurs de l'arc-en-ciel se forment et interagissent. La nature n'arrête jamais de nous surprendre avec ses beautés colorées, te rappellant qu'il y a toujours de la magie dans le ciel si on sait où regarder.",
-      "date": "23/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Séances de Dessin en Suspension 🎨",
-      "summary": "Un musée en Italie teste une nouvelle idée amusante pour encourager les enfants à visiter : des séances de dessin suspendues. Les jeunes artistes sont invités à dessiner tout en étant suspendus dans l'air grâce à des harnais spéciaux. Cela permet de voir les œuvres d'art sous un nouvel angle (parfois littéralement !). Cette initiative vise à rendre l'art amusant et interactif, tout en permettant aux enfants d'explorer leur créativité de manière audacieuse. Peut-être verrons-nous bientôt ces séances de dessin aérien dans d'autres musées ailleurs ?",
-      "date": "23/10/2023",
-      "link": ""
-    }
-  ]
+  "title": "Nouveau Dinosaure Découvert 🦖",
+  "summary": "Des scientifiques viennent de découvrir une nouvelle espèce de dinosaure en Argentine, appelée \"Chucarosaurus\". Ce dinosaure était un herbivore géant qui vivait il y a environ 90 millions d'années. Il mesurait presque 30 mètres de long, soit presque la taille de trois autobus scolaires ! Les chercheurs sont très heureux de cette découverte car cela leur permet de mieux comprendre comment ces créatures incroyables vivaient et se déplaçaient sur notre planète. Cela nous rappelle aussi à quel point la Terre a pu être différente autrefois avec des créatures incroyables qui n'existent plus aujourd'hui.",
+  "date": "02/11/2023",
+  "link": ""
 }
