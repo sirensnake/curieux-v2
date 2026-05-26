@@ -1,6 +1,22 @@
 {
-  "title": "Nouveau Dinosaure Découvert 🦖",
-  "summary": "Des scientifiques viennent de découvrir une nouvelle espèce de dinosaure en Argentine, appelée \"Chucarosaurus\". Ce dinosaure était un herbivore géant qui vivait il y a environ 90 millions d'années. Il mesurait presque 30 mètres de long, soit presque la taille de trois autobus scolaires ! Les chercheurs sont très heureux de cette découverte car cela leur permet de mieux comprendre comment ces créatures incroyables vivaient et se déplaçaient sur notre planète. Cela nous rappelle aussi à quel point la Terre a pu être différente autrefois avec des créatures incroyables qui n'existent plus aujourd'hui.",
-  "date": "02/11/2023",
-  "link": ""
+  "articles": [
+    {
+      "title": "🌍 Une journée pour notre planète",
+      "summary": "Le 24 octobre est une journée spéciale où des gens du monde entier se sont rassemblés pour parler du climat et de l'environnement. Ce jour-là, ils partagent des idées sur comment protéger notre Terre, comme planter des arbres ou recycler. Les enfants sont aussi encouragés à participer en apprenant comment économiser l'eau et l'énergie. C'est une journée pour comprendre que chaque petit geste peut aider à garder notre planète en bonne santé !",
+      "date": "25/10/2023",
+      "link": ""
+    },
+    {
+      "title": "🐦 Les oiseaux migrent toujours plus tôt",
+      "summary": "Les scientifiques ont remarqué que certains oiseaux migrateurs commencent leur voyage plus tôt qu'avant. Du côté de la France, ils suivent ces oiseaux avec attention. En mesurant leurs trajets, les chercheurs essaient de comprendre pourquoi ils partent si tôt. Peut-être qu'ils sentent que les saisons changent avec le réchauffement de la planète. Cela nous apprend comment les animaux s'adaptent aux changements rapides dans leur environnement.",
+      "date": "25/10/2023",
+      "link": ""
+    },
+    {
+      "title": "🚀 Une chasse aux comètes amusante",
+      "summary": "Récemment, des astronomes ont trouvé une nouvelle comète dans notre ciel. Ils ont utilisé de grands télescopes et beaucoup de patience pour la repérer. Ces passionnés de l'espace étudient ces comètes pour en apprendre plus sur l'univers. Les comètes sont comme des voyageurs de l'espace, faites de glace et de poussière. En les observant, nous pouvons découvrir des secrets sur la naissance de notre système solaire.",
+      "date": "25/10/2023",
+      "link": ""
+    }
+  ]
 }
