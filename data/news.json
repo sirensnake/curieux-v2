@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌍 Une journée pour notre planète",
-      "summary": "Le 24 octobre est une journée spéciale où des gens du monde entier se sont rassemblés pour parler du climat et de l'environnement. Ce jour-là, ils partagent des idées sur comment protéger notre Terre, comme planter des arbres ou recycler. Les enfants sont aussi encouragés à participer en apprenant comment économiser l'eau et l'énergie. C'est une journée pour comprendre que chaque petit geste peut aider à garder notre planète en bonne santé !",
-      "date": "25/10/2023",
-      "link": ""
+      "title": "🌍 Éclipse Solaire : Un Spectacle du Ciel",
+      "summary": "Un phénomène étonnant s'est produit récemment : une éclipse solaire ! Cela se passe lorsque la Lune se glisse entre la Terre et le Soleil, cachant temporairement la lumière du Soleil. Dans certaines régions du monde, on pouvait voir un « anneau de feu » formé par le Soleil tout autour de la Lune. C'est un événement rare qui montre à quel point notre univers est fascinant. Plusieurs écoles ont encouragé les élèves à observer ce spectacle à travers des lunettes spéciales pour protéger leurs yeux. As-tu déjà vu une éclipse ?",
+      "date": "13/10/2023",
+      "link": "https://www.example.com/eclipse"
     },
     {
-      "title": "🐦 Les oiseaux migrent toujours plus tôt",
-      "summary": "Les scientifiques ont remarqué que certains oiseaux migrateurs commencent leur voyage plus tôt qu'avant. Du côté de la France, ils suivent ces oiseaux avec attention. En mesurant leurs trajets, les chercheurs essaient de comprendre pourquoi ils partent si tôt. Peut-être qu'ils sentent que les saisons changent avec le réchauffement de la planète. Cela nous apprend comment les animaux s'adaptent aux changements rapides dans leur environnement.",
-      "date": "25/10/2023",
-      "link": ""
+      "title": "🐶 Un Prix pour Protéger les Animaux",
+      "summary": "Un célèbre prix a été décerné à une petite organisation qui protège les animaux. Leur mission est de sauver les animaux en danger et de sensibiliser le public à l'importance de respecter tous les êtres vivants. Grâce à des actions courageuses, ils ont pu sauver des centaines d'animaux cette année. En recevant ce prix, ils espèrent inspirer plus de gens à prendre soin de la nature autour d'eux. Qui sait, peut-être qu'un jour tu travailleras aussi pour aider les animaux !",
+      "date": "13/10/2023",
+      "link": "https://www.example.com/animal-protection"
     },
     {
-      "title": "🚀 Une chasse aux comètes amusante",
-      "summary": "Récemment, des astronomes ont trouvé une nouvelle comète dans notre ciel. Ils ont utilisé de grands télescopes et beaucoup de patience pour la repérer. Ces passionnés de l'espace étudient ces comètes pour en apprendre plus sur l'univers. Les comètes sont comme des voyageurs de l'espace, faites de glace et de poussière. En les observant, nous pouvons découvrir des secrets sur la naissance de notre système solaire.",
-      "date": "25/10/2023",
-      "link": ""
+      "title": "🎮 Tournoi International de Jeux Vidéo",
+      "summary": "Un grand tournoi de jeux vidéo a eu lieu récemment, rassemblant des joueurs de différents pays. Des équipes se sont affrontées dans des jeux variés, montrant leurs compétences et leur travail d'équipe. Les jeux vidéo ne sont pas seulement pour s'amuser, ils nécessitent aussi de la stratégie et de la concentration. Les gagnants ont remporté un trophée et un prix en argent. Cet événement a prouvé que les compétitions de jeux vidéo sont de plus en plus populaires et permettent aux joueurs de se rencontrer et de partager leur passion.",
+      "date": "13/10/2023",
+      "link": "https://www.example.com/gaming-tournament"
     }
   ]
 }
