@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌍 Éclipse Solaire : Un Spectacle du Ciel",
-      "summary": "Un phénomène étonnant s'est produit récemment : une éclipse solaire ! Cela se passe lorsque la Lune se glisse entre la Terre et le Soleil, cachant temporairement la lumière du Soleil. Dans certaines régions du monde, on pouvait voir un « anneau de feu » formé par le Soleil tout autour de la Lune. C'est un événement rare qui montre à quel point notre univers est fascinant. Plusieurs écoles ont encouragé les élèves à observer ce spectacle à travers des lunettes spéciales pour protéger leurs yeux. As-tu déjà vu une éclipse ?",
-      "date": "13/10/2023",
-      "link": "https://www.example.com/eclipse"
+      "title": "Nouvelle planète découverte dans l'espace! 🌌",
+      "summary": "Les astronomes ont découvert une nouvelle planète dans notre galaxie. C'est très excitant car chaque nouvelle planète peut nous apprendre plein de choses sur l'univers! Cette planète est située très loin de la Terre, mais grâce aux télescopes puissants, les scientifiques peuvent encore en apprendre beaucoup à son sujet. Les scientifiques essaient maintenant de comprendre sa composition et s'il y a des éléments comme de l'eau ou de l'air. Cette découverte montre à quel point l'espace est fascinant et combien il y a encore à explorer!",
+      "date": "27/11/2023",
+      "link": ""
     },
     {
-      "title": "🐶 Un Prix pour Protéger les Animaux",
-      "summary": "Un célèbre prix a été décerné à une petite organisation qui protège les animaux. Leur mission est de sauver les animaux en danger et de sensibiliser le public à l'importance de respecter tous les êtres vivants. Grâce à des actions courageuses, ils ont pu sauver des centaines d'animaux cette année. En recevant ce prix, ils espèrent inspirer plus de gens à prendre soin de la nature autour d'eux. Qui sait, peut-être qu'un jour tu travailleras aussi pour aider les animaux !",
-      "date": "13/10/2023",
-      "link": "https://www.example.com/animal-protection"
+      "title": "Une ville en LEGO! 🏙️",
+      "summary": "Un incroyable événement a eu lieu en Allemagne où des amateurs de LEGO ont construit une énorme ville en utilisant des milliers de briques LEGO. La ville a des maisons, des voitures, et même des parcs! Les participants ont passé des heures à assembler les pièces pour en faire une maquette détaillée. Ce type de projet encourage la créativité et la collaboration, en montrant comment des petites pièces peuvent former de grandes choses quand on travaille ensemble. C'est aussi une chance pour les visiteurs de voir à quel point le jeu et l'imagination sont importants!",
+      "date": "27/11/2023",
+      "link": ""
     },
     {
-      "title": "🎮 Tournoi International de Jeux Vidéo",
-      "summary": "Un grand tournoi de jeux vidéo a eu lieu récemment, rassemblant des joueurs de différents pays. Des équipes se sont affrontées dans des jeux variés, montrant leurs compétences et leur travail d'équipe. Les jeux vidéo ne sont pas seulement pour s'amuser, ils nécessitent aussi de la stratégie et de la concentration. Les gagnants ont remporté un trophée et un prix en argent. Cet événement a prouvé que les compétitions de jeux vidéo sont de plus en plus populaires et permettent aux joueurs de se rencontrer et de partager leur passion.",
-      "date": "13/10/2023",
-      "link": "https://www.example.com/gaming-tournament"
+      "title": "Un festival des lumières éblouissant! 💡",
+      "summary": "À Lyon, en France, des milliers de personnes se rassemblent pour admirer un incroyable festival des lumières. Chaque année, des artistes du monde entier décorent les rues et les bâtiments avec des installations lumineuses colorées. Cela transforme la ville en un véritable spectacle de lumière. Ce genre d'événement inspire de la magie dans le quotidien et montre à quel point l'art peut être beau et joyeux. Les visiteurs peuvent se promener dans les rues tout en admirant ces illuminations uniques. C'est un moment idéal pour apprécier la créativité humaine!",
+      "date": "27/11/2023",
+      "link": ""
     }
   ]
 }
