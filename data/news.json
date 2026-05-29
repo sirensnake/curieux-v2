@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Nouvelle planète découverte dans l'espace! 🌌",
-      "summary": "Les astronomes ont découvert une nouvelle planète dans notre galaxie. C'est très excitant car chaque nouvelle planète peut nous apprendre plein de choses sur l'univers! Cette planète est située très loin de la Terre, mais grâce aux télescopes puissants, les scientifiques peuvent encore en apprendre beaucoup à son sujet. Les scientifiques essaient maintenant de comprendre sa composition et s'il y a des éléments comme de l'eau ou de l'air. Cette découverte montre à quel point l'espace est fascinant et combien il y a encore à explorer!",
-      "date": "27/11/2023",
+      "title": "La magie des aurores boréales 🌌",
+      "summary": "Un magnifique spectacle de lumières a illuminé le ciel dans certaines parties du monde, l'une des plus marquantes cette semaine. Ces lumières, appelées aurores boréales, se produisent lorsque des particules du soleil rencontrent l'atmosphère de la Terre. Ce phénomène est visible dans des endroits proches des pôles, comme en Norvège ou au Canada. Les couleurs vertes, roses et parfois rouges dansent dans le ciel, émerveillant tous ceux qui ont la chance de les observer. Cela montre à quel point la nature peut être incroyable et riche en surprises !",
+      "date": "19/10/2023",
       "link": ""
     },
     {
-      "title": "Une ville en LEGO! 🏙️",
-      "summary": "Un incroyable événement a eu lieu en Allemagne où des amateurs de LEGO ont construit une énorme ville en utilisant des milliers de briques LEGO. La ville a des maisons, des voitures, et même des parcs! Les participants ont passé des heures à assembler les pièces pour en faire une maquette détaillée. Ce type de projet encourage la créativité et la collaboration, en montrant comment des petites pièces peuvent former de grandes choses quand on travaille ensemble. C'est aussi une chance pour les visiteurs de voir à quel point le jeu et l'imagination sont importants!",
-      "date": "27/11/2023",
+      "title": "Une nouvelle île découverte ! 🏝️",
+      "summary": "Des scientifiques ont récemment découvert une toute petite île au large de la côte du Groenland. Elle s'est formée à partir de débris amenés par un glacier. Cette île, qui n'a pas encore de nom, est très spéciale car elle change constamment à cause du vent et des courants marins. Découvrir de nouvelles îles aide les scientifiques à comprendre comment les paysages et les environnements changent avec le temps. Cette découverte est un rappel que notre monde est en constante évolution !",
+      "date": "19/10/2023",
       "link": ""
     },
     {
-      "title": "Un festival des lumières éblouissant! 💡",
-      "summary": "À Lyon, en France, des milliers de personnes se rassemblent pour admirer un incroyable festival des lumières. Chaque année, des artistes du monde entier décorent les rues et les bâtiments avec des installations lumineuses colorées. Cela transforme la ville en un véritable spectacle de lumière. Ce genre d'événement inspire de la magie dans le quotidien et montre à quel point l'art peut être beau et joyeux. Les visiteurs peuvent se promener dans les rues tout en admirant ces illuminations uniques. C'est un moment idéal pour apprécier la créativité humaine!",
-      "date": "27/11/2023",
+      "title": "Marathon des records à Chicago 🏃‍♂️",
+      "summary": "Lors du marathon de Chicago, un coureur kényan a battu un nouveau record du monde ! Ce marathon, qui est l'un des plus célèbres, est une course très longue de plus de 42 kilomètres. Il y avait beaucoup de participants du monde entier, chacun courant pour battre leurs propres temps ou pour une cause spéciale. Courir un marathon demande des mois d'entraînement et une grande volonté. Ce record montre que même les records les plus anciens peuvent être battus avec beaucoup d'efforts et de détermination.",
+      "date": "19/10/2023",
       "link": ""
     }
   ]
