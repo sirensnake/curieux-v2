@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Nouvelles Amies Poilues au Zoo 🐨",
-      "summary": "Un zoo en Australie vient d'accueillir deux adorables koalas, prêtes à rencontrer les visiteurs. Ces petits marsupiaux viennent d'un programme spécial pour protéger les animaux en voie de disparition. Les koalas aiment manger des feuilles d'eucalyptus et dormir dans les arbres. Grâce à des soins attentifs, ces nouvelles résidentes espèrent se sentir chez elles dans leur nouvel habitat. Les visiteurs du zoo peuvent en apprendre davantage sur la façon de protéger ces créatures mignonnes et leur environnement naturel.",
-      "date": "17/10/2023",
-      "link": ""
+      "title": "🚀 Une mission spatiale pleine de succès !",
+      "summary": "Cette semaine, la fusée européenne Ariane 5 a réussi un lancement important depuis la Guyane française. Ariane 5 a envoyé plusieurs satellites dans l'espace pour améliorer les communications sur Terre. Ces satellites aideront les gens à appeler, envoyer des messages et même se connecter à Internet. C'est un grand pas pour l'Europe dans l'exploration de l'espace et cela montre à quel point la technologie évolue vite ! Peut-être qu'un jour, toi aussi, tu travailleras à envoyer des fusées dans l'espace. Rêver de l'espace, c'est merveilleux car il reste encore plein de choses à découvrir là-haut !",
+      "date": "19/10/2023",
+      "link": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_5_launches_benchmark_mission"
     },
     {
-      "title": "Découverte Éblouissante dans le Ciel Nocturne 🌌",
-      "summary": "Les astronomes ont découvert une nouvelle comète qui traverse notre système solaire. Cette comète, visible à l'œil nu, est apparue comme une boule de glace et de poussière lumineuse dans le ciel. C'est une grande occasion pour les amoureux des étoiles d'observer un phénomène rare. Les comètes sont comme des visiteurs venant de loin, et leur présence nous rappelle combien l'Univers est vaste et mystérieux. N'oublie pas de regarder vers le ciel et d'imaginer ces merveilles intergalactiques.",
-      "date": "17/10/2023",
-      "link": ""
+      "title": "🐳 Une baleine bienveillante",
+      "summary": "Dans l'océan près de l'Australie, des scientifiques ont observé un comportement incroyable chez une baleine. Elle a aidé un phoque à échapper à un requin en l'emmenant sur son dos ! C'est fascinant de voir les animaux s'entraider, même entre espèces différentes. Les baleines sont d'énormes créatures marines qui sont souvent très intelligentes et curieuses. Cette belle histoire nous rappelle combien la nature est incroyable et pleine de surprises. En observant les animaux, nous apprenons aussi beaucoup sur la coopération et l'entraide. N'oublie pas que chaque petit geste de bonté compte, même dans l'océan !",
+      "date": "19/10/2023",
+      "link": "https://www.nationalgeographic.com/animals/article/humpback-whale-saves-seal-shark-predator-encounter"
     },
     {
-      "title": "La Technologie Rencontre la Nature 🌿",
-      "summary": "Des scientifiques en Suède ont créé des capteurs spéciaux, en utilisant des matériaux verts, qui aident à surveiller la santé des forêts. Ces capteurs vérifient les niveaux d'humidité et la température, aidant à garder les arbres en bonne santé. Ce projet utilise des ressources naturelles pour ne pas polluer l'environnement, montrant comment la technologie peut être amie avec la nature. C'est une étape importante pour aider à protéger nos poumons verts, les forêts, qui sont essentielles pour l'air que nous respirons.",
-      "date": "17/10/2023",
-      "link": ""
+      "title": "🌿 Un pas de plus vers la protection de la nature",
+      "summary": "En Équateur, un parc national a récemment été agrandi pour protéger encore plus d'espaces naturels. Les autorités ont décidé d'ajouter une grande région remplie de forêts, de rivières et d'animaux sauvages. Cette décision aide à préserver les habitats des animaux et à combattre les changements climatiques. Les parcs nationaux sont des endroits spéciaux où la nature est protégée. Ça permet aux animaux de vivre en paix et aux plantes de pousser sans être dérangées. C'est aussi un lieu où les gens peuvent aller pour voir la beauté de la nature et apprendre à la respecter.",
+      "date": "19/10/2023",
+      "link": "https://www.theguardian.com/environment/national-rainforest-expansion-ecuador"
     }
   ]
 }
