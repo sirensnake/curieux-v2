@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une étoile filante incroyable ! 🌠",
-      "summary": "La nuit dernière, une étoile filante très spéciale a illuminé le ciel dans certaines régions du monde. Les étoiles filantes, connues sous le nom de météores, sont de petites particules qui brûlent en entrant dans notre atmosphère, créant une belle traînée lumineuse. Celle-ci était particulièrement brillante, offrant un spectacle époustouflant. Les scientifiques adorent ces événements car ils peuvent en apprendre davantage sur notre système solaire et ses mystères. Regardez souvent le ciel, vous pourriez peut-être en voir une aussi !",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Un Nouveau Copain à Écailles 🐢",
+      "summary": "Une nouvelle espèce de tortue a été découverte en Amérique du Sud ! Cette tortue a des motifs uniques sur sa carapace qui ressemblent à des œuvres d'art. Les scientifiques sont très excités car cela nous aide à mieux comprendre la diversité des tortues et l'importance de protéger leur habitat. Ces trouvailles nous rappellent que notre planète est pleine de mystères à découvrir et qu'il est essentiel de prendre soin de la nature pour conserver ses richesses.",
+      "date": "29/10/2023",
+      "link": "https://www.example.com/tortue-nouvelle-espece"
     },
     {
-      "title": "La fête des couleurs joyeuses en Inde 🎨",
-      "summary": "En Inde, les gens célèbrent une fête magnifique appelée Diwali, qui a commencé aujourd'hui. Diwali, aussi connu comme la fête des lumières, est un moment spécial où les gens allument des lampes, décorent leurs maisons avec des couleurs vibrantes et partagent des délices sucrés avec leurs amis et familles. C'est un moment de bonheur et de rassemblement. Même si tu n'es pas en Inde, tu peux participer en apprenant sur cette belle célébration et pourquoi elle est importante pour beaucoup de gens.",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Danser pour le Climat 💃",
+      "summary": "Un grand festival de danse est organisé dans plusieurs villes à travers le monde pour sensibiliser au changement climatique. Des gens de tous âges se réunissent pour danser, apprendre et partager des idées sur comment protéger notre planète. Participer à ces événements montre que chacun peut faire un geste pour l'environnement, tout en s'amusant. C'est aussi une belle occasion de découvrir de nouvelles danses et de rencontrer des personnes qui partagent le même intérêt pour la planète.",
+      "date": "29/10/2023",
+      "link": "https://www.example.com/festival-danse-climat"
     },
     {
-      "title": "Un super robot plongeur sous-marin 🤖",
-      "summary": "Des scientifiques ont créé un nouveau robot plongeur qui aide à explorer les océans ! Ce robot sous-marin peut plonger très profondément et prendre des photos incroyables des créatures marines. Les océans cachent beaucoup de secrets, et les scientifiques espèrent en découvrir de nouveaux grâce à ce robot. En étudiant les océans, nous pouvons mieux comprendre comment protéger notre planète bleue. Qui sait, un jour, tu pourrais devenir un explorateur ou un inventeur comme ces scientifiques!",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Course Solidaire 🚴‍♂️",
+      "summary": "En Europe, une grande course à vélo a été organisée pour collecter des fonds pour les écoles dans le besoin. Les participants parcourent des centaines de kilomètres, et chaque kilomètre parcouru aide à financer l'éducation des enfants. Cet événement montre l'importance de l'entraide et de la solidarité. Même en pédalant, on peut faire une différence dans la vie des autres et améliorer le monde. La course est aussi un excellent moyen de rester actif et en bonne santé.",
+      "date": "29/10/2023",
+      "link": "https://www.example.com/course-solidaire-velo"
     }
   ]
 }
