@@ -1,22 +1,22 @@
 {
-  "articles": [
+  "content": [
     {
-      "title": "Un Nouveau Copain à Écailles 🐢",
-      "summary": "Une nouvelle espèce de tortue a été découverte en Amérique du Sud ! Cette tortue a des motifs uniques sur sa carapace qui ressemblent à des œuvres d'art. Les scientifiques sont très excités car cela nous aide à mieux comprendre la diversité des tortues et l'importance de protéger leur habitat. Ces trouvailles nous rappellent que notre planète est pleine de mystères à découvrir et qu'il est essentiel de prendre soin de la nature pour conserver ses richesses.",
-      "date": "29/10/2023",
-      "link": "https://www.example.com/tortue-nouvelle-espece"
+      "title": "🚀 Découverte incroyable sur Mars !",
+      "summary": "Récemment, les scientifiques ont découvert de nouvelles preuves d'anciens ruisseaux sur Mars ! Cela signifie qu'il y a longtemps, de l'eau a coulé sur la planète rouge, tout comme sur Terre. Cette découverte est importante car elle nous aide à comprendre si la vie a pu exister sur Mars dans le passé. Les chercheurs utilisent de supers robots envoyés dans l'espace pour explorer la planète et en apprendre plus. Qui sait ce qu'ils découvriront ensuite ? Peut-être même des indices sur des formes de vie anciennes !",
+      "date": "18/10/2023",
+      "link": ""
     },
     {
-      "title": "Danser pour le Climat 💃",
-      "summary": "Un grand festival de danse est organisé dans plusieurs villes à travers le monde pour sensibiliser au changement climatique. Des gens de tous âges se réunissent pour danser, apprendre et partager des idées sur comment protéger notre planète. Participer à ces événements montre que chacun peut faire un geste pour l'environnement, tout en s'amusant. C'est aussi une belle occasion de découvrir de nouvelles danses et de rencontrer des personnes qui partagent le même intérêt pour la planète.",
-      "date": "29/10/2023",
-      "link": "https://www.example.com/festival-danse-climat"
+      "title": "🐋 Une baleine visite un port !",
+      "summary": "Un événement inhabituel a eu lieu dans une petite ville portuaire hier. Une baleine est entrée dans le port, fascinant les habitants et les touristes. Ces géants des mers ne viennent pas souvent si près des côtes, alors tout le monde était excité de voir un tel spectacle. Les biologistes marins surveillent maintenant la baleine pour s'assurer qu'elle est en sécurité et reste en bonne santé avant qu'elle ne retourne dans l'océan. C'est toujours spécial de voir de si grands animaux de si près, et cela nous rappelle de protéger les océans.",
+      "date": "18/10/2023",
+      "link": ""
     },
     {
-      "title": "Course Solidaire 🚴‍♂️",
-      "summary": "En Europe, une grande course à vélo a été organisée pour collecter des fonds pour les écoles dans le besoin. Les participants parcourent des centaines de kilomètres, et chaque kilomètre parcouru aide à financer l'éducation des enfants. Cet événement montre l'importance de l'entraide et de la solidarité. Même en pédalant, on peut faire une différence dans la vie des autres et améliorer le monde. La course est aussi un excellent moyen de rester actif et en bonne santé.",
-      "date": "29/10/2023",
-      "link": "https://www.example.com/course-solidaire-velo"
+      "title": "🔍 Une nouvelle découverte en Égypte !",
+      "summary": "Les archéologues ont fait une découverte passionnante en Égypte ! Ils ont trouvé un ancien tombeau rempli de trésors vieux de plusieurs milliers d'années. Ce tombeau appartenait probablement à un personnage important de l'ancienne Egypte. Les objets retrouvés aident les chercheurs à mieux comprendre la vie à cette époque. À chaque découverte, c'est comme résoudre un puzzle historique géant, ce qui permet de mieux connaître les civilisations du passé et comment elles vivaient.",
+      "date": "18/10/2023",
+      "link": ""
     }
   ]
 }
