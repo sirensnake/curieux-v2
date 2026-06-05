@@ -1,21 +1,21 @@
 {
-  "content": [
+  "articles": [
     {
-      "title": "🚀 Découverte incroyable sur Mars !",
-      "summary": "Récemment, les scientifiques ont découvert de nouvelles preuves d'anciens ruisseaux sur Mars ! Cela signifie qu'il y a longtemps, de l'eau a coulé sur la planète rouge, tout comme sur Terre. Cette découverte est importante car elle nous aide à comprendre si la vie a pu exister sur Mars dans le passé. Les chercheurs utilisent de supers robots envoyés dans l'espace pour explorer la planète et en apprendre plus. Qui sait ce qu'ils découvriront ensuite ? Peut-être même des indices sur des formes de vie anciennes !",
-      "date": "18/10/2023",
+      "title": "Une découverte spatiale ! 🚀",
+      "summary": "Des scientifiques ont découvert une nouvelle exoplanète, c'est-à-dire une planète située en dehors de notre système solaire. Elle se trouve dans une zone où l'eau pourrait exister sous forme liquide, ce qui est important pour la vie. Cette découverte est fascinante car elle nous aide à comprendre l'univers et à imaginer ce qui pourrait exister ailleurs dans l'espace.",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "🐋 Une baleine visite un port !",
-      "summary": "Un événement inhabituel a eu lieu dans une petite ville portuaire hier. Une baleine est entrée dans le port, fascinant les habitants et les touristes. Ces géants des mers ne viennent pas souvent si près des côtes, alors tout le monde était excité de voir un tel spectacle. Les biologistes marins surveillent maintenant la baleine pour s'assurer qu'elle est en sécurité et reste en bonne santé avant qu'elle ne retourne dans l'océan. C'est toujours spécial de voir de si grands animaux de si près, et cela nous rappelle de protéger les océans.",
-      "date": "18/10/2023",
+      "title": "Les mystères des océans 🐠",
+      "summary": "Une équipe de chercheurs a exploré les profondeurs de l'océan Pacifique et a découvert plusieurs nouvelles espèces de poissons lumineux ! Ces créatures vivent très profondément, où la lumière du soleil ne pénètre pas. Cette expédition nous montre à quel point les océans sont encore pleins de surprises et pourquoi il est important de les protéger.",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "🔍 Une nouvelle découverte en Égypte !",
-      "summary": "Les archéologues ont fait une découverte passionnante en Égypte ! Ils ont trouvé un ancien tombeau rempli de trésors vieux de plusieurs milliers d'années. Ce tombeau appartenait probablement à un personnage important de l'ancienne Egypte. Les objets retrouvés aident les chercheurs à mieux comprendre la vie à cette époque. À chaque découverte, c'est comme résoudre un puzzle historique géant, ce qui permet de mieux connaître les civilisations du passé et comment elles vivaient.",
-      "date": "18/10/2023",
+      "title": "Retour des papillons monarques 🦋",
+      "summary": "Les papillons monarques font leur migration annuelle spectaculaire du Canada au Mexique. Ces papillons voyagent sur des milliers de kilomètres pour atteindre des endroits où ils peuvent passer l'hiver au chaud. Leur longue migration est fascinante et montre la force de la nature. Observer la vie de ces papillons aide les scientifiques à comprendre les changements climatiques.",
+      "date": "28/10/2023",
       "link": ""
     }
   ]
