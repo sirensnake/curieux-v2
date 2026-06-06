@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une découverte spatiale ! 🚀",
-      "summary": "Des scientifiques ont découvert une nouvelle exoplanète, c'est-à-dire une planète située en dehors de notre système solaire. Elle se trouve dans une zone où l'eau pourrait exister sous forme liquide, ce qui est important pour la vie. Cette découverte est fascinante car elle nous aide à comprendre l'univers et à imaginer ce qui pourrait exister ailleurs dans l'espace.",
-      "date": "28/10/2023",
+      "title": "🌍 Une nouvelle cartographie des fonds marins",
+      "summary": "Des scientifiques ont récemment créé une carte très détaillée des fonds marins de notre planète. Cela aide à mieux comprendre les océans et leurs secrets. Par exemple, ils peuvent ainsi découvrir de nouvelles montagnes sous-marines ou des fosses océaniques profondes. Avoir ces cartes précises est important car elles permettent de protéger la vie sous-marine et de mieux comprendre les effets du réchauffement climatique sur nos océans. Les chercheurs utilisent des technologies avancées, comme des satellites et des robots sous-marins, pour réaliser ces cartes incroyables.",
+      "date": "07/10/2023",
       "link": ""
     },
     {
-      "title": "Les mystères des océans 🐠",
-      "summary": "Une équipe de chercheurs a exploré les profondeurs de l'océan Pacifique et a découvert plusieurs nouvelles espèces de poissons lumineux ! Ces créatures vivent très profondément, où la lumière du soleil ne pénètre pas. Cette expédition nous montre à quel point les océans sont encore pleins de surprises et pourquoi il est important de les protéger.",
-      "date": "28/10/2023",
+      "title": "🐘 Un bébé éléphant sauvage sauvé",
+      "summary": "Un bébé éléphant a été sauvé dans un parc naturel après s'être coincé dans une fosse. Heureusement, une équipe de gardes forestiers et de vétérinaires est intervenue à temps pour le remettre en sécurité. Les éléphants sont des animaux incroyables mais aussi très vulnérables, c'est pourquoi les efforts de protection sont si importants. Ces actions montrent l'importance de respecter la nature et d'aider les animaux en danger. Grâce à eux, ce petit éléphant est maintenant sain et sauf.",
+      "date": "07/10/2023",
       "link": ""
     },
     {
-      "title": "Retour des papillons monarques 🦋",
-      "summary": "Les papillons monarques font leur migration annuelle spectaculaire du Canada au Mexique. Ces papillons voyagent sur des milliers de kilomètres pour atteindre des endroits où ils peuvent passer l'hiver au chaud. Leur longue migration est fascinante et montre la force de la nature. Observer la vie de ces papillons aide les scientifiques à comprendre les changements climatiques.",
-      "date": "28/10/2023",
+      "title": "🎨 Une œuvre d'art géante dans le désert",
+      "summary": "Un groupe d'artistes a réalisé une œuvre d'art spectaculaire dans le désert. Ils ont utilisé des outils écologiques pour créer un dessin géant visible depuis le ciel. Cette réalisation est destinée à encourager la protection de l'environnement et à rappeler que la nature est précieuse. En utilisant des matériaux sans impact négatif sur le sol, les artistes montrent comment l'art peut être fait de manière durable. C'est une belle manière d'allier créativité et respect de la Terre.",
+      "date": "07/10/2023",
       "link": ""
     }
   ]
