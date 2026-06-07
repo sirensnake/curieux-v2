@@ -1,0 +1,144 @@
+/* ============================================
+   MINECRAFT STYLE OVERRIDES
+   À inclure APRÈS le CSS principal
+   ============================================ */
+
+/* Cartes matières - Vraiment style Minecraft maintenant */
+.subject-card {
+    border-radius: 4px !important;  /* Coins presque carrés */
+    border: 6px solid rgba(0, 0, 0, 0.4) !important;  /* Bordure épaisse noire */
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3) !important;  /* Ombre DURE sans blur */
+    transition: all 0.15s ease !important;  /* Animation rapide type clic */
+}
+
+/* Texture grille pixelisée Minecraft */
+.subject-card::before {
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(0, 0, 0, 0.08) 4px,
+            rgba(0, 0, 0, 0.08) 8px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 4px,
+            rgba(0, 0, 0, 0.08) 4px,
+            rgba(0, 0, 0, 0.08) 8px
+        ) !important;
+    animation: none !important;  /* Pas d'animation, texture fixe */
+}
+
+/* Effet clic de bloc Minecraft */
+.subject-card:hover {
+    transform: translateY(-4px) translateX(-4px) !important;
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.subject-card:active {
+    transform: translateY(0) translateX(0) !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Carte mindmap - Style bloc terre/herbe Minecraft */
+.mindmap-card {
+    border-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+.mindmap-card:hover {
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Sections principales - Style conteneurs Minecraft */
+.section {
+    border-radius: 8px !important;
+    border: 5px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Section éducateurs - Style panneau info Minecraft */
+.educators-section {
+    background: #f8f9fa !important;
+    border: 6px solid #667eea !important;
+    box-shadow: 8px 8px 0 rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Cartes info - Style blocs d'inventaire */
+.info-card {
+    border-radius: 4px !important;
+    border: 4px solid #e0e0e0 !important;
+    border-left-width: 4px !important;  /* Override border-left spécifique */
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Boutons CTA - Style boutons Minecraft */
+.cta-button {
+    border-radius: 4px !important;
+    border: 4px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.15s ease !important;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px) translateX(-2px) !important;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.cta-button:active {
+    transform: translateY(0) translateX(0) !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Stats hero - Style affichage score Minecraft */
+.stat-item {
+    border-radius: 4px !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Header - Style barre GUI Minecraft */
+.main-header {
+    border-radius: 0 !important;  /* Pas de coins arrondis */
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1) !important;  /* Ombre dure */
+}
+
+/* Footer - Style barre info Minecraft */
+.main-footer {
+    border-radius: 0 !important;
+    box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Navigation links - Style boutons sélection */
+.nav-links a {
+    border-radius: 4px !important;
+    border: 2px solid transparent !important;
+    transition: all 0.15s ease !important;
+}
+
+.nav-links a:hover {
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Hero section - Style écran titre Minecraft */
+.hero {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero h1 {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Emoji/Icônes - Pixelisés légèrement */
+.subject-emoji {
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.3)) !important;
+}
+
+.logo-emoji {
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.2)) !important;
+}

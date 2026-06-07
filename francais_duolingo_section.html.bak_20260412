@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Français - Le Monde des Curieux</title>
+    <!-- SEO — Schema.org & Open Graph (généré par seo_schema_patch.py) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Français CM2 — Grammaire, Conjugaison, Orthographe",
+  "description": "9 leçons et 90 questions interactives pour réviser le programme de Français CM2 : grammaire, conjugaison, orthographe. Quiz gamifié avec XP, badges et streaks.",
+  "url": "https://lemondedescurieux.fr/francais_duolingo_section.html",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Le Monde des Curieux",
+    "url": "https://lemondedescurieux.fr"
+  },
+  "educationalLevel": "CM2",
+  "teaches": "Grammaire française, conjugaison, orthographe niveau CM2",
+  "courseMode": "online",
+  "isAccessibleForFree": true,
+  "inLanguage": "fr-FR",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT9H"
+  }
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Quiz Français CM2",
+  "description": "90 questions de Français niveau CM2 avec feedback immédiat et système de gamification.",
+  "url": "https://lemondedescurieux.fr/francais_duolingo_section.html",
+  "educationalLevel": "CM2",
+  "isAccessibleForFree": true,
+  "inLanguage": "fr-FR",
+  "about": {
+    "@type": "Thing",
+    "name": "Français CM2"
+  }
+}
+</script>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Français CM2 | Le Monde des Curieux">
+    <meta property="og:description" content="90 questions de Français CM2 : grammaire, conjugaison, orthographe. Gamifié avec XP et badges. Gratuit, sans pub, sans inscription.">
+    <meta property="og:url" content="https://lemondedescurieux.fr/francais_duolingo_section.html">
+    <meta property="og:image" content="https://lemondedescurieux.fr/images/og-preview.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Le Monde des Curieux — Français CM2 avec Curio le renard">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Le Monde des Curieux">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Français CM2 | Le Monde des Curieux">
+    <meta name="twitter:description" content="90 questions de Français CM2 : grammaire, conjugaison, orthographe. Gamifié avec XP et badges. Gratuit, sans pub, sans inscription.">
+    <meta name="twitter:image" content="https://lemondedescurieux.fr/images/og-preview.webp">
+    <meta name="twitter:image:alt" content="Le Monde des Curieux — Français CM2 avec Curio le renard">
+    <!-- /SEO -->
+        <link rel="stylesheet" href="styles/francais_BON_CSS.css">
+        <link rel="stylesheet" href="styles/wcag-accessibility.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Le Monde des Curieux">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
+</head>
+
+    <body x-data="francaisApp" x-cloak>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+        <!-- Système XP + Badges -->
+        <script src="scripts/section-xp-system.js"></script>
+        <script src="scripts/badges-system.js"></script>
+        <script src="scripts/storage-bridge.js"></script>
+
+        <!-- Admin Shortcut (Ctrl+Shift+A) -->
+        <script src="scripts/admin-shortcut.js"></script>
+
+        <!-- Bulle Curio -->
+        <div x-data="curioBubble" x-show="visible" x-transition :class="'curio-bubble ' + variant">
+            <button @click="hide()" class="curio-close" aria-label="Fermer">×</button>
+            <div class="curio-avatar">🦊</div>
+            <p class="curio-message" x-text="currentMessage"></p>
+        </div>
+
+        <main class="francais-container" id="main-content">
+            <!-- Header avec bouton retour -->
+            <div class="section-header">
+                <!-- FIX NAV : window.location.href à la place de history.back() -->
+                <button onclick="window.location.href='index.html'" class="back-btn">
+                    ← Retour à l'accueil
+                </button>
+            </div>
+
+            <!-- Titre section -->
+            <div class="section-title">
+                <h1>🇫🇷 Français</h1>
+                <p>Maîtrise la langue française : grammaire, conjugaison et vocabulaire !</p>
+            </div>
+
+            <!-- Navigation thèmes -->
+            <div class="themes-nav" role="navigation" aria-label="Thèmes de français">
+                <button @click="selectTheme('grammaire')"
+                    :class="'theme-btn grammaire' + (currentTheme === 'grammaire' ? ' active' : '')" :aria-pressed="currentTheme === 'grammaire'">
+                    📚 Grammaire
+                </button>
+                <button @click="selectTheme('conjugaison')"
+                    :class="'theme-btn conjugaison' + (currentTheme === 'conjugaison' ? ' active' : '')" :aria-pressed="currentTheme === 'conjugaison'">
+                    🔄 Conjugaison
+                </button>
+                <button @click="selectTheme('vocabulaire')"
+                    :class="'theme-btn vocabulaire' + (currentTheme === 'vocabulaire' ? ' active' : '')" :aria-pressed="currentTheme === 'vocabulaire'">
+                    📖 Vocabulaire
+                </button>
+                <button @click="selectTheme('orthographe')"
+                    :class="'theme-btn orthographe' + (currentTheme === 'orthographe' ? ' active' : '')" :aria-pressed="currentTheme === 'orthographe'">
+                    ✍️ Orthographe
+                </button>
+                <button @click="selectTheme('ponctuation')"
+                    :class="'theme-btn ponctuation' + (currentTheme === 'ponctuation' ? ' active' : '')" :aria-pressed="currentTheme === 'ponctuation'">
+                    🔣 Ponctuation
+                </button>
+                <button @click="selectTheme('typesphrases')"
+                    :class="'theme-btn typesphrases' + (currentTheme === 'typesphrases' ? ' active' : '')" :aria-pressed="currentTheme === 'typesphrases'">
+                    💬 Types de Phrases
+                </button>
+                <button @click="selectTheme('classesmots')"
+                    :class="'theme-btn classesmots' + (currentTheme === 'classesmots' ? ' active' : '')" :aria-pressed="currentTheme === 'classesmots'">
+                    🏷️ Classes de Mots
+                </button>
+                <button @click="selectTheme('lecture')"
+                    :class="'theme-btn lecture' + (currentTheme === 'lecture' ? ' active' : '')" :aria-pressed="currentTheme === 'lecture'">
+                    📖 Lecture
+                </button>
+                <button @click="selectTheme('production')"
+                    :class="'theme-btn production' + (currentTheme === 'production' ? ' active' : '')" :aria-pressed="currentTheme === 'production'">
+                    ✍️ Production
+                </button>
+                <button @click="selectTheme('poesie')"
+                    :class="'theme-btn poesie' + (currentTheme === 'poesie' ? ' active' : '')" :aria-pressed="currentTheme === 'poesie'">
+                    🎭 Poésie
+                </button>
+            </div>
+
+            <!-- Contenu thème -->
+            <div class="theme-content" x-show="currentTheme" x-cloak>
+                <div class="theme-section">
+                    <h2 x-text="getThemeName()"></h2>
+                    <p class="theme-description" x-text="getThemeDescription()"></p>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <button @click="toggleIllustration()" class="action-btn btn-visual" aria-label="Voir l'illustration">
+                        🖼️ Voir l'illustration
+                    </button>
+                    <button @click="showLesson = !showLesson" class="action-btn btn-info" aria-label="En savoir plus">
+                        📖 En savoir plus
+                    </button>
+                    <button @click="startQuiz()" class="action-btn btn-quiz" aria-label="Démarrer le quiz">
+                        🎯 Quiz
+                    </button>
+                </div>
+            </div>
+
+            <!-- EN SAVOIR PLUS - CONTENU ÉDUCATIF -->
+            <div x-show="showLesson" x-transition class="lesson-container">
+                <div class="lesson-header">
+                    <h3>📖 <span x-text="getLessonTitle()"></span></h3>
+                    <button @click="showLesson = false" class="close-btn" aria-label="Fermer">Fermer</button>
+                </div>
+                <div class="lesson-content" x-html="getLessonContent()"></div>
+            </div>
+
+            <!-- ILLUSTRATION -->
+            <div x-show="showIllustration" x-transition class="illustration-container">
+                <div class="illustration-header">
+                    <h3>🖼️ <span x-text="getThemeName()"></span></h3>
+                    <button @click="showIllustration = false" class="close-btn" aria-label="Fermer">Fermer</button>
+                </div>
+                <div class="illustration-content">
+                    <img :src="getImageUrl()" :alt="'Illustration ' + getThemeName()" class="theme-illustration" loading="lazy">
+                </div>
+            </div>
+        </main>
+
+        <!-- QUIZ -->
+        <div x-show="showQuiz" x-transition class="quiz-container">
+            <div class="quiz-header">
+                <h3>🎯 Quiz <span x-text="getThemeName()"></span></h3>
+                <div class="quiz-progress">
+                    <p>Question <span x-text="currentQuestionIndex + 1"></span> / <span x-text="getCurrentQuiz().length"></span></p>
+                    <!-- FIX WCAG : ajout :aria-valuenow dynamique -->
+                    <div class="progress-bar" role="progressbar"
+                        :aria-valuenow="Math.round((currentQuestionIndex + 1) / getCurrentQuiz().length * 100)"
+                        aria-valuemin="0" aria-valuemax="100" aria-label="Progression du quiz">
+                        <div class="progress-fill" :style="'width: ' + ((currentQuestionIndex + 1) / getCurrentQuiz().length * 100) + '%'"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div x-show="!quizFinished" class="question-zone">
+                    <div class="question-text">
+                        <span x-text="currentQuestion.question"></span>
+                    </div>
+
+                    <!-- Options de réponse -->
+                    <div class="answer-options">
+                        <template x-for="(option, index) in currentQuestion.options" :key="index">
+                            <button @click="checkAnswer(option)" class="answer-btn" :disabled="answered" x-text="option" :aria-label="option">
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div x-show="answered" x-transition class="feedback-zone" aria-live="polite" aria-atomic="true">
+                        <div :class="'feedback ' + (isCorrect ? 'correct' : 'incorrect')">
+                            <span x-show="isCorrect">✅ Bravo ! C'est correct !</span>
+                            <span x-show="!isCorrect">
+                                ❌ Pas tout à fait... La bonne réponse était : <strong x-text="currentQuestion.correct"></strong>
+                            </span>
+                        </div>
+                        <div class="feedback-explanation" x-show="currentQuestion.explanation">
+                            💡 <span x-text="currentQuestion.explanation"></span>
+                        </div>
+                        <!-- Bouton "Suivant" supprimé : auto-avance après 2s -->
+                    </div>
+                </div>
+
+                <!-- Résultats finaux -->
+                <div x-show="quizFinished" x-transition class="results-zone" aria-live="polite">
+                    <h3>🎉 Quiz terminé !</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span class="score-number" x-text="score"></span>
+                            <span class="score-total" x-text="'/ ' + getCurrentQuiz().length"></span>
+                        </div>
+                        <p class="score-percentage" x-text="Math.round((score / getCurrentQuiz().length) * 100) + '%'"></p>
+                        <p class="score-message" x-text="getScoreMessage()"></p>
+                    </div>
+                    <div class="results-actions">
+                        <button @click="retryQuiz()" class="action-btn btn-quiz" aria-label="Recommencer le quiz">
+                            🔄 Recommencer
+                        </button>
+                        <button @click="backToTheme()" class="action-btn btn-info" aria-label="Retour au thème">
+                            ← Retour au thème
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Alpine.js CDN -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <!-- JS inline AVANT Alpine -->
+        <script>
+            document.addEventListener('alpine:init', () => {
+                console.log('🎯 Alpine:init déclenché');
+
+                Alpine.data('curioBubble', () => ({
+                    visible: false,
+                    currentMessage: '',
+                    variant: 'info',
+                    autoHideTimer: null,
+                    init() { window.curioBubbleInstance = this; },
+                    show(m, v = 'info') {
+                        if (this.autoHideTimer) clearTimeout(this.autoHideTimer);
+                        this.currentMessage = m;
+                        this.variant = v;
+                        this.visible = true;
+                        this.autoHideTimer = setTimeout(() => this.hide(), 5000);
+                    },
+                    hide() { this.visible = false; }
+                }));
+
+                Alpine.data('francaisApp', () => ({
+                    currentTheme: 'grammaire',
+                    showIllustration: false,
+                    showLesson: false,
+                    showQuiz: false,
+                    showResults: false,
+                    currentQuestionIndex: 0,
+                    score: 0,
+                    selectedAnswer: null,
+                    answered: false,
+                    isCorrect: false,
+                    quizFinished: false,
+                    currentQuestion: null,
+                    audioContext: null,
+                    shuffledQuiz: null,
+
+                    init() {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        console.log('✅ francaisApp initialisé');
+
+                        // Initialiser le système XP
+                        if (window.SectionXP) {
+                            window.SectionXP.init('francais');
+                        }
+                    },
+
+                    playCorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 523; o.type = 'sine';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.2);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.2);
+                        } catch (e) { }
+                    },
+
+                    playIncorrectSound() {
+                        try {
+                            const o = this.audioContext.createOscillator(), g = this.audioContext.createGain();
+                            o.connect(g); g.connect(this.audioContext.destination);
+                            o.frequency.value = 185; o.type = 'triangle';
+                            g.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+                            g.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                            o.start(); o.stop(this.audioContext.currentTime + 0.3);
+                        } catch (e) { }
+                    },
+
+                    themes: {
+                        grammaire: {
+                            name: 'Grammaire',
+                            description: 'Maîtrise les règles essentielles : homophones, accords, COD/COI',
+                            imageUrl:'/images/francais/illustration_grammaire.webp'
+                        },
+                        conjugaison: {
+                            name: 'Conjugaison',
+                            description: 'Apprends les temps : présent, futur, imparfait, passé composé',
+                            imageUrl:'/images/francais/illustration_conjugaison.webp'
+                        },
+                        vocabulaire: {
+                            name: 'Vocabulaire',
+                            description: 'Enrichis ton vocabulaire : synonymes, antonymes, expressions',
+                            imageUrl:'/images/francais/illustration_vocabulaire.webp'
+                        },
+                        orthographe: {
+                            name: 'Orthographe',
+                            description: 'Maîtrise les sons complexes et les lettres muettes',
+                            imageUrl:'/images/francais/illustration_orthographe.webp'
+                        },
+                        ponctuation: {
+                            name: 'Ponctuation',
+                            description: 'Apprends à utiliser les signes de ponctuation correctement',
+                            imageUrl:'/images/francais/illustration_ponctuation.webp'
+                        },
+                        typesphrases: {
+                            name: 'Types de Phrases',
+                            description: 'Distingue les phrases déclaratives, interrogatives, exclamatives et impératives',
+                            imageUrl:'/images/francais/illustration_phrases.webp'
+                        },
+                        classesmots: {
+                            name: 'Classes de Mots',
+                            description: 'Identifie les noms, verbes, adjectifs et déterminants',
+                            imageUrl:'/images/francais/illustration_classes.webp'
+                        },
+                        lecture: {
+                            name: 'Lecture & Compréhension',
+                            description: 'Comprends un texte et trouve l\'idée principale',
+                            imageUrl:'/images/francais/illustration_lecture.webp'
+                        },
+                        production: {
+                            name: 'Production d\'Écrit',
+                            description: 'Rédige des récits, descriptions et dialogues',
+                            imageUrl:'/images/francais/illustration_ecriture.webp'
+                        },
+                        poesie: {
+                            name: 'Poésie',
+                            description: 'Découvre les rimes, les vers et les figures de style',
+                            imageUrl:'/images/francais/illustration_poesie.webp'
+                        }
+                    },
+
+                    // Contenus pédagogiques
+                    lessonData: {
+                        grammaire: {
+                            title: "📚 La Grammaire",
+                            content: `
+                                <h3>Pourquoi la grammaire ?</h3>
+                                <p>La grammaire, ce sont les <strong>règles de la langue</strong>. Elle t'aide à bien écrire et à te faire comprendre !</p>
+
+                                <h3>Les homophones</h3>
+                                <p>Les homophones sont des mots qui <strong>se prononcent pareil</strong> mais s'écrivent différemment :</p>
+                                <ul>
+                                    <li><strong>a / à</strong> : "Il <span class="correct">a</span> un chat" / "Il va <span class="correct">à</span> l'école"</li>
+                                    <li><strong>et / est</strong> : "Paul <span class="correct">et</span> Marie" / "Il <span class="correct">est</span> grand"</li>
+                                    <li><strong>son / sont</strong> : "<span class="correct">Son</span> vélo" / "Ils <span class="correct">sont</span> contents"</li>
+                                    <li><strong>ou / où</strong> : "Pomme <span class="correct">ou</span> poire ?" / "<span class="correct">Où</span> est-il ?"</li>
+                                    <li><strong>ce / se</strong> : "<span class="correct">Ce</span> livre" / "Il <span class="correct">se</span> lave"</li>
+                                </ul>
+
+                                <h3>Les accords</h3>
+                                <h4>Accord en genre et nombre</h4>
+                                <ul>
+                                    <li><strong>Masculin/Féminin</strong> : un chat <span class="correct">noir</span> / une chatte <span class="correct">noire</span></li>
+                                    <li><strong>Singulier/Pluriel</strong> : un livre <span class="correct">intéressant</span> / des livres <span class="correct">intéressants</span></li>
+                                </ul>
+
+                                <h4>Accord du participe passé</h4>
+                                <ul>
+                                    <li>Avec <strong>être</strong> : "Elle est <span class="correct">partie</span>" (accord avec le sujet)</li>
+                                    <li>Avec <strong>avoir</strong> : "Il a <span class="correct">mangé</span>" (pas d'accord) MAIS "La pomme qu'il a <span class="correct">mangée</span>" (accord avec le COD placé avant)</li>
+                                </ul>
+
+                                <h3>COD et COI</h3>
+                                <h4>Le COD (Complément d'Objet Direct)</h4>
+                                <p>Il répond à la question <strong>"quoi ?" ou "qui ?"</strong> :</p>
+                                <div class="example">
+                                    "Je mange <strong>une pomme</strong>" → Je mange quoi ? Une pomme (COD)
+                                </div>
+
+                                <h4>Le COI (Complément d'Objet Indirect)</h4>
+                                <p>Il répond à la question <strong>"à qui ?", "à quoi ?", "de qui ?", "de quoi ?"</strong> :</p>
+                                <div class="example">
+                                    "Je parle <strong>à Marie</strong>" → Je parle à qui ? À Marie (COI)
+                                </div>
+
+                                <h3>Les pluriels</h3>
+                                <ul>
+                                    <li>Règle générale : <strong>+ s</strong> → chat → chats</li>
+                                    <li>Mots en <strong>-eu, -au, -eau</strong> : + x → jeu → jeux, château → châteaux</li>
+                                    <li>Mots en <strong>-al</strong> : → -aux → cheval → chevaux</li>
+                                    <li>Mots en <strong>-ou</strong> : + s SAUF 7 exceptions (bijou, caillou, chou, genou, hibou, joujou, pou) → + x</li>
+                                    <li>Mots en <strong>-s, -x, -z</strong> : ne changent pas → souris → souris</li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Relis toujours tes phrases pour vérifier les accords !</p>
+                                <p>📌 Pour les homophones, demande-toi quel est le sens de la phrase 🤔</p>
+                            `
+                        },
+                        conjugaison: {
+                            title: "🔄 La Conjugaison",
+                            content: `
+                                <h3>Pourquoi conjuguer ?</h3>
+                                <p>La conjugaison permet de situer une action dans le <strong>temps</strong> (passé, présent, futur) et d'indiquer <strong>qui</strong> fait l'action !</p>
+
+                                <h3>Le Présent</h3>
+                                <p>Le présent exprime une action qui <strong>se passe maintenant</strong> ou une vérité générale.</p>
+
+                                <h4>Verbes du 1er groupe (-er)</h4>
+                                <p>Exemple : <strong>CHANTER</strong></p>
+                                <ul>
+                                    <li>Je chant<strong>e</strong></li>
+                                    <li>Tu chant<strong>es</strong></li>
+                                    <li>Il/Elle chant<strong>e</strong></li>
+                                    <li>Nous chant<strong>ons</strong></li>
+                                    <li>Vous chant<strong>ez</strong></li>
+                                    <li>Ils/Elles chant<strong>ent</strong></li>
+                                </ul>
+
+                                <h4>Verbes du 2ème groupe (-ir)</h4>
+                                <p>Exemple : <strong>FINIR</strong></p>
+                                <ul>
+                                    <li>Je fin<strong>is</strong></li>
+                                    <li>Tu fin<strong>is</strong></li>
+                                    <li>Il/Elle fin<strong>it</strong></li>
+                                    <li>Nous fin<strong>issons</strong></li>
+                                    <li>Vous fin<strong>issez</strong></li>
+                                    <li>Ils/Elles fin<strong>issent</strong></li>
+                                </ul>
+
+                                <h4>Verbes fréquents du 3ème groupe</h4>
+                                <ul>
+                                    <li><strong>ÊTRE</strong> : je suis, tu es, il est, nous sommes, vous êtes, ils sont</li>
+                                    <li><strong>AVOIR</strong> : j'ai, tu as, il a, nous avons, vous avez, ils ont</li>
+                                    <li><strong>ALLER</strong> : je vais, tu vas, il va, nous allons, vous allez, ils vont</li>
+                                    <li><strong>FAIRE</strong> : je fais, tu fais, il fait, nous faisons, vous faites, ils font</li>
+                                </ul>
+
+                                <h3>Le Futur Simple</h3>
+                                <p>Le futur exprime une action qui <strong>se passera plus tard</strong>.</p>
+                                <p>Formation : <strong>infinitif + terminaisons</strong> (-ai, -as, -a, -ons, -ez, -ont)</p>
+
+                                <div class="example">
+                                    <strong>CHANTER</strong> : je chanter<strong>ai</strong>, tu chanter<strong>as</strong>, il chanter<strong>a</strong>, nous chanter<strong>ons</strong>, vous chanter<strong>ez</strong>, ils chanter<strong>ont</strong>
+                                </div>
+
+                                <h4>Verbes irréguliers au futur</h4>
+                                <ul>
+                                    <li><strong>ÊTRE</strong> → je ser<strong>ai</strong></li>
+                                    <li><strong>AVOIR</strong> → j'aur<strong>ai</strong></li>
+                                    <li><strong>ALLER</strong> → j'ir<strong>ai</strong></li>
+                                    <li><strong>FAIRE</strong> → je fer<strong>ai</strong></li>
+                                    <li><strong>VOIR</strong> → je verr<strong>ai</strong></li>
+                                </ul>
+
+                                <h3>L'Imparfait</h3>
+                                <p>L'imparfait exprime une action <strong>du passé qui durait</strong> ou une habitude.</p>
+                                <p>Formation : <strong>radical (nous au présent) + terminaisons</strong> (-ais, -ais, -ait, -ions, -iez, -aient)</p>
+
+                                <div class="example">
+                                    <strong>CHANTER</strong> (nous chant-ons) : je chant<strong>ais</strong>, tu chant<strong>ais</strong>, il chant<strong>ait</strong>, nous chant<strong>ions</strong>, vous chant<strong>iez</strong>, ils chant<strong>aient</strong>
+                                </div>
+
+                                <h3>Le Passé Composé</h3>
+                                <p>Le passé composé exprime une action <strong>du passé terminée</strong>.</p>
+                                <p>Formation : <strong>auxiliaire (être/avoir au présent) + participe passé</strong></p>
+
+                                <h4>Avec AVOIR (la majorité)</h4>
+                                <div class="example">
+                                    J'<strong>ai mangé</strong>, tu <strong>as fini</strong>, il <strong>a couru</strong>
+                                </div>
+
+                                <h4>Avec ÊTRE (14 verbes + les pronominaux)</h4>
+                                <p>Verbes de déplacement et d'état : aller, venir, arriver, partir, entrer, sortir, monter, descendre, naître, mourir, rester, tomber, retourner, passer</p>
+                                <div class="example">
+                                    Je <strong>suis allé</strong>(e), tu <strong>es venu</strong>(e), il <strong>est parti</strong>
+                                </div>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Au passé composé avec <strong>être</strong>, le participe passé s'accorde avec le sujet !</p>
+                                <p>📌 Apprends les verbes irréguliers par cœur, ils sont très utilisés 📝</p>
+                            `
+                        },
+                        vocabulaire: {
+                            title: "📖 Le Vocabulaire",
+                            content: `
+                                <h3>Pourquoi enrichir son vocabulaire ?</h3>
+                                <p>Plus tu connais de mots, mieux tu peux <strong>t'exprimer</strong> et <strong>comprendre</strong> ce que tu lis !</p>
+
+                                <h3>Les synonymes</h3>
+                                <p>Les synonymes sont des mots qui ont <strong>un sens proche ou identique</strong> :</p>
+                                <ul>
+                                    <li><strong>Content</strong> = heureux, joyeux, ravi, enchanté</li>
+                                    <li><strong>Maison</strong> = habitation, demeure, logement, résidence</li>
+                                    <li><strong>Grand</strong> = immense, gigantesque, énorme, colossal</li>
+                                    <li><strong>Dire</strong> = raconter, expliquer, déclarer, affirmer</li>
+                                    <li><strong>Beau</strong> = joli, magnifique, splendide, superbe</li>
+                                </ul>
+
+                                <h3>Les antonymes (contraires)</h3>
+                                <p>Les antonymes sont des mots qui ont <strong>un sens opposé</strong> :</p>
+                                <ul>
+                                    <li><strong>Grand</strong> ≠ petit</li>
+                                    <li><strong>Chaud</strong> ≠ froid</li>
+                                    <li><strong>Rapide</strong> ≠ lent</li>
+                                    <li><strong>Monter</strong> ≠ descendre</li>
+                                    <li><strong>Rire</strong> ≠ pleurer</li>
+                                    <li><strong>Facile</strong> ≠ difficile</li>
+                                </ul>
+
+                                <h3>Les familles de mots</h3>
+                                <p>Une famille de mots regroupe tous les mots formés à partir d'un <strong>radical commun</strong> :</p>
+
+                                <h4>Famille de "terre"</h4>
+                                <ul>
+                                    <li>terr<strong>ain</strong></li>
+                                    <li>terr<strong>asse</strong></li>
+                                    <li>terr<strong>estre</strong></li>
+                                    <li>terr<strong>itoire</strong></li>
+                                    <li>enter<strong>rer</strong></li>
+                                    <li>déterr<strong>er</strong></li>
+                                </ul>
+
+                                <h3>Les préfixes et suffixes</h3>
+                                <h4>Préfixes (au début du mot)</h4>
+                                <ul>
+                                    <li><strong>dé-</strong> (défaire, décoller) = contraire</li>
+                                    <li><strong>re-</strong> (refaire, relire) = à nouveau</li>
+                                    <li><strong>in-/im-</strong> (impossible, invisible) = négation</li>
+                                    <li><strong>pré-</strong> (préhistoire, prévenir) = avant</li>
+                                </ul>
+
+                                <h4>Suffixes (à la fin du mot)</h4>
+                                <ul>
+                                    <li><strong>-eur/-euse</strong> (chanteur, danseuse) = celui qui fait</li>
+                                    <li><strong>-tion</strong> (addition, natation) = action</li>
+                                    <li><strong>-ment</strong> (rapidement, doucement) = manière</li>
+                                    <li><strong>-able</strong> (mangeable, lavable) = qui peut être</li>
+                                </ul>
+
+                                <h3>Les expressions</h3>
+                                <p>Les expressions sont des <strong>groupes de mots</strong> dont le sens n'est pas littéral :</p>
+                                <ul>
+                                    <li><strong>"Avoir un chat dans la gorge"</strong> = être enroué</li>
+                                    <li><strong>"Poser un lapin"</strong> = ne pas venir à un rendez-vous</li>
+                                    <li><strong>"Casser les pieds"</strong> = embêter, ennuyer</li>
+                                    <li><strong>"Tomber dans les pommes"</strong> = s'évanouir</li>
+                                    <li><strong>"Avoir le cafard"</strong> = être triste</li>
+                                </ul>
+
+                                <h3>Les niveaux de langue</h3>
+                                <ul>
+                                    <li><strong>Familier</strong> : "J'ai la flemme" / "Ça craint"</li>
+                                    <li><strong>Courant</strong> : "Je n'ai pas envie" / "C'est dommage"</li>
+                                    <li><strong>Soutenu</strong> : "Je n'ai guère l'inclination" / "Cela est regrettable"</li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Lis beaucoup pour découvrir de nouveaux mots ! 📚</p>
+                                <p>📌 Note les mots que tu ne connais pas et cherche leur définition 📝</p>
+                                <p>📌 Utilise des synonymes pour éviter les répétitions dans tes textes ✍️</p>
+                            `
+                        },
+                        orthographe: {
+                            title: "✍️ L'Orthographe",
+                            content: `
+                                <h3>Pourquoi l'orthographe ?</h3>
+                                <p>Une bonne orthographe permet d'être <strong>compris par tout le monde</strong> et montre le soin que tu mets dans ton écriture !</p>
+
+                                <h3>Les sons complexes</h3>
+                                <h4>Le son [k]</h4>
+                                <ul>
+                                    <li><strong>c</strong> devant a, o, u → <em>camion, coeur, cure</em></li>
+                                    <li><strong>qu</strong> devant e, i → <em>querelle, qui</em></li>
+                                    <li><strong>k</strong> → <em>kilo, kangourou</em></li>
+                                </ul>
+                                <h4>Le son [s]</h4>
+                                <ul>
+                                    <li><strong>s</strong> en début de mot → <em>soleil</em></li>
+                                    <li><strong>ss</strong> entre deux voyelles → <em>poisson, tasse</em></li>
+                                    <li><strong>c</strong> devant e, i, y → <em>cerise, cigale</em></li>
+                                    <li><strong>ç</strong> devant a, o, u → <em>garçon, leçon</em></li>
+                                </ul>
+                                <h4>Le son [g]</h4>
+                                <ul>
+                                    <li><strong>g</strong> devant a, o, u → <em>gare, gorge</em></li>
+                                    <li><strong>gu</strong> devant e, i → <em>guitare, guêpe</em></li>
+                                </ul>
+                                <h4>Le son [ʒ]</h4>
+                                <ul>
+                                    <li><strong>j</strong> devant a, o, u → <em>jardin, jonquille</em></li>
+                                    <li><strong>g</strong> devant e, i → <em>genou, girafe</em></li>
+                                    <li><strong>ge</strong> devant a, o → <em>geai, pigeon</em></li>
+                                </ul>
+
+                                <h3>Les lettres muettes</h3>
+                                <p>Certaines lettres ne se prononcent pas mais sont importantes pour l'écriture :</p>
+                                <ul>
+                                    <li>Lettres finales muettes : <strong>gran<em>d</em></strong> (mais grande), <strong>cha<em>t</em></strong> (mais chatte), <strong>gro<em>s</em></strong> (mais grosse)</li>
+                                    <li>Le <strong>h</strong> muet : <em>homme, heure, herbe</em> → on fait la liaison : l'homme</li>
+                                    <li>Le <strong>h</strong> aspiré : <em>hibou, haricot</em> → pas de liaison : le hibou</li>
+                                </ul>
+
+                                <h3>Les accents</h3>
+                                <ul>
+                                    <li><strong>accent aigu (é)</strong> : son "é" → école, été</li>
+                                    <li><strong>accent grave (è)</strong> : son "è" → fève, mère</li>
+                                    <li><strong>accent circonflexe (ê)</strong> : souvent indique lettre disparue → fête (du latin "festa"), île</li>
+                                    <li><strong>tréma (ë, ï)</strong> : indique deux voyelles séparées → Noël, naïf</li>
+                                    <li><strong>cédille (ç)</strong> : son [s] devant a, o, u → façon, garçon</li>
+                                </ul>
+
+                                <h3>Les homophones graphiques courants</h3>
+                                <ul>
+                                    <li><strong>ou / où</strong> : "pomme <em>ou</em> poire" / "<em>Où</em> vas-tu ?"</li>
+                                    <li><strong>on / ont</strong> : "<em>On</em> joue" / "Ils <em>ont</em> faim"</li>
+                                    <li><strong>mais / mes</strong> : "<em>Mais</em> oui !" / "<em>Mes</em> livres"</li>
+                                    <li><strong>peu / peut</strong> : "Un <em>peu</em>" / "Il <em>peut</em> venir"</li>
+                                    <li><strong>sa / ça</strong> : "<em>Sa</em> maison" / "<em>Ça</em> marche"</li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Pour les sons [k] et [s], pense toujours à la voyelle qui suit !</p>
+                                <p>📌 Pour trouver une lettre muette finale, mets le mot au féminin ou cherche un mot de la même famille 🔍</p>
+                            `
+                        },
+                        ponctuation: {
+                            title: "🔣 La Ponctuation",
+                            content: `
+                                <h3>À quoi sert la ponctuation ?</h3>
+                                <p>La ponctuation donne du <strong>rythme</strong> à notre écriture, indique les <strong>pauses</strong> et le <strong>ton</strong> des phrases. Sans elle, les textes seraient impossibles à comprendre !</p>
+
+                                <h3>Les signes de fin de phrase</h3>
+                                <ul>
+                                    <li><strong>Le point (.)</strong> : termine une phrase déclarative → <em>Le chat dort.</em></li>
+                                    <li><strong>Le point d'interrogation (?)</strong> : pose une question → <em>Viens-tu ?</em></li>
+                                    <li><strong>Le point d'exclamation (!)</strong> : exprime une émotion forte → <em>Quelle chance !</em></li>
+                                    <li><strong>Les points de suspension (...)</strong> : indiquent un inachèvement ou une hésitation → <em>Je ne sais pas...</em></li>
+                                </ul>
+
+                                <h3>Les signes à l'intérieur des phrases</h3>
+                                <ul>
+                                    <li><strong>La virgule (,)</strong> : sépare des éléments dans une énumération, encadre une explication → <em>J'aime les pommes, les poires et les cerises.</em></li>
+                                    <li><strong>Le point-virgule (;)</strong> : sépare deux parties liées d'une phrase → <em>Il fait beau ; nous allons au parc.</em></li>
+                                    <li><strong>Les deux-points (:)</strong> : annoncent une liste, une citation ou une explication → <em>J'ai trois animaux : un chat, un chien et un lapin.</em></li>
+                                </ul>
+
+                                <h3>Les signes d'encadrement</h3>
+                                <ul>
+                                    <li><strong>Les guillemets (« »)</strong> : encadrent les paroles ou une citation → <em>Il dit : « Je reviendrai. »</em></li>
+                                    <li><strong>Le tiret (–)</strong> : introduit les répliques dans un dialogue → <em>– Bonjour ! dit Marie.</em></li>
+                                    <li><strong>Les parenthèses ( )</strong> : ajoutent une information secondaire → <em>Curio (notre renard) adore apprendre.</em></li>
+                                </ul>
+
+                                <h3>Règles importantes</h3>
+                                <ul>
+                                    <li>Après un <strong>point, ?, !</strong> → toujours une <strong>MAJUSCULE</strong></li>
+                                    <li>Pas d'espace avant <strong>,  ;  :  .  ?  !</strong> → espace après</li>
+                                    <li>La virgule <strong>ne sépare pas</strong> le sujet du verbe</li>
+                                </ul>
+
+                                <div class="example">
+                                    <strong>Exemple de dialogue bien ponctué :</strong><br>
+                                    – Tu viens jouer ? demanda Paul.<br>
+                                    – Oui, bien sûr ! répondit Marie. J'arrive dans cinq minutes.<br>
+                                    – Super, dit Paul. Apporte ton vélo !
+                                </div>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Lis ta phrase à voix haute : là où tu t'arrêtes pour respirer, il faut souvent une virgule ou un point !</p>
+                                <p>📌 Les deux-points annoncent toujours quelque chose 🔍</p>
+                            `
+                        },
+                        typesphrases: {
+                            title: "💬 Les Types de Phrases",
+                            content: `
+                                <h3>Qu'est-ce qu'un type de phrase ?</h3>
+                                <p>Il existe <strong>4 types de phrases</strong> en français. Chacun exprime quelque chose de différent et se termine par un signe de ponctuation particulier !</p>
+
+                                <h3>1. La phrase déclarative</h3>
+                                <p>Elle <strong>donne une information</strong>. Elle se termine par un <strong>point (.)</strong>.</p>
+                                <div class="example">
+                                    Le soleil brille aujourd'hui.<br>
+                                    Curio est un renard très curieux.
+                                </div>
+
+                                <h3>2. La phrase interrogative</h3>
+                                <p>Elle <strong>pose une question</strong>. Elle se termine par un <strong>point d'interrogation (?)</strong>.</p>
+                                <div class="example">
+                                    <strong>Trois façons de poser une question :</strong><br>
+                                    • Inversion : <em>Viens-tu au parc ?</em><br>
+                                    • Est-ce que : <em>Est-ce que tu viens au parc ?</em><br>
+                                    • Intonation : <em>Tu viens au parc ?</em>
+                                </div>
+                                <p>Mots interrogatifs : <strong>qui, que, quoi, où, quand, comment, pourquoi, combien, lequel</strong></p>
+
+                                <h3>3. La phrase exclamative</h3>
+                                <p>Elle exprime une <strong>émotion forte</strong> (joie, surprise, colère, admiration). Elle se termine par un <strong>point d'exclamation (!)</strong>.</p>
+                                <div class="example">
+                                    Comme c'est beau !<br>
+                                    Quelle surprise !<br>
+                                    Quel courageux garçon tu es !
+                                </div>
+                                <p>Mots exclamatifs courants : <strong>comme, que, quel(le), combien</strong></p>
+
+                                <h3>4. La phrase impérative</h3>
+                                <p>Elle donne un <strong>ordre, un conseil ou une interdiction</strong>. Le verbe est à l'impératif. Le sujet n'est pas exprimé !</p>
+                                <div class="example">
+                                    Range ta chambre. (ordre)<br>
+                                    Ne cours pas dans les couloirs ! (interdiction)<br>
+                                    Mange tes légumes. (conseil)
+                                </div>
+
+                                <h3>Formes des phrases</h3>
+                                <p>En plus du type, chaque phrase peut être :</p>
+                                <ul>
+                                    <li><strong>Forme affirmative</strong> : <em>Je mange une pomme.</em></li>
+                                    <li><strong>Forme négative</strong> : <em>Je ne mange pas une pomme.</em> (ne...pas, ne...jamais, ne...plus, ne...rien)</li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Type = ce qu'on exprime (info, question, émotion, ordre) → 4 types</p>
+                                <p>📌 Forme = affirmative ou négative → 2 formes</p>
+                                <p>📌 On peut combiner : une question négative → <em>Ne viens-tu pas ?</em> 🤔</p>
+                            `
+                        },
+                        classesmots: {
+                            title: "🏷️ Les Classes de Mots",
+                            content: `
+                                <h3>Pourquoi classer les mots ?</h3>
+                                <p>Connaître la classe d'un mot, c'est comprendre son <strong>rôle dans la phrase</strong> et savoir comment le faire varier (en genre, nombre, personne…).</p>
+
+                                <h3>Les classes variables</h3>
+                                <p>Ces mots <strong>changent de forme</strong> selon leur utilisation.</p>
+
+                                <h4>Le nom</h4>
+                                <p>Désigne une personne, un animal, une chose, un lieu, une idée. Peut être <strong>commun</strong> (chat, ville) ou <strong>propre</strong> (Curio, Paris).</p>
+                                <div class="example">un <strong>chat</strong>, la <strong>France</strong>, des <strong>idées</strong></div>
+
+                                <h4>Le déterminant</h4>
+                                <p>Accompagne toujours un nom. Articles, possessifs, démonstratifs…</p>
+                                <ul>
+                                    <li><strong>Définis</strong> : le, la, les, l'</li>
+                                    <li><strong>Indéfinis</strong> : un, une, des</li>
+                                    <li><strong>Possessifs</strong> : mon, ton, son, ma, ta, sa, notre, votre, leur…</li>
+                                    <li><strong>Démonstratifs</strong> : ce, cet, cette, ces</li>
+                                </ul>
+
+                                <h4>L'adjectif qualificatif</h4>
+                                <p>Qualifie ou précise un nom. S'accorde en genre et en nombre avec lui.</p>
+                                <div class="example">un chat <strong>noir</strong> / une chatte <strong>noire</strong> / des chats <strong>noirs</strong></div>
+
+                                <h4>Le verbe</h4>
+                                <p>Exprime une action ou un état. Se conjugue selon le sujet, le temps, le mode.</p>
+                                <div class="example">Il <strong>court</strong>. Elle <strong>est</strong> heureuse. Ils <strong>chanteront</strong>.</div>
+
+                                <h4>Le pronom</h4>
+                                <p>Remplace un nom pour éviter les répétitions.</p>
+                                <ul>
+                                    <li><strong>Personnels</strong> : je, tu, il, elle, nous, vous, ils, elles, me, te, le, la, lui…</li>
+                                    <li><strong>Possessifs</strong> : le mien, le tien…</li>
+                                    <li><strong>Démonstratifs</strong> : celui, celle, ceux, ceci, cela</li>
+                                    <li><strong>Relatifs</strong> : qui, que, dont, où</li>
+                                </ul>
+
+                                <h3>Les classes invariables</h3>
+                                <p>Ces mots <strong>ne changent jamais</strong> de forme.</p>
+                                <ul>
+                                    <li><strong>L'adverbe</strong> : modifie un verbe, un adjectif ou un autre adverbe → <em>vite, bien, très, souvent, ici, hier</em></li>
+                                    <li><strong>La préposition</strong> : relie des éléments → <em>à, de, dans, sur, sous, avec, pour, par, entre, chez</em></li>
+                                    <li><strong>La conjonction</strong> :
+                                        <ul>
+                                            <li>Coordination : <em>mais, ou, et, donc, or, ni, car</em> → (MAIS OU EST DONC OR NI CAR)</li>
+                                            <li>Subordination : <em>que, parce que, quand, si, comme, lorsque…</em></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>L'interjection</strong> : exprime une émotion → <em>Oh !, Aïe !, Bravo !, Hélas !</em></li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Pour identifier la classe d'un mot, pose-toi la question : <em>Est-ce que ce mot change de forme ?</em></p>
+                                <p>📌 Astuce conjonctions de coordination : <strong>MAIS OU EST DONC OR NI CAR</strong> 🎵</p>
+                            `
+                        },
+                        lecture: {
+                            title: "📖 Lecture & Compréhension",
+                            content: `
+                                <h3>Pourquoi apprendre à bien lire ?</h3>
+                                <p>Lire, c'est bien plus que déchiffrer des mots ! C'est <strong>comprendre</strong>, <strong>analyser</strong> et <strong>réfléchir</strong> sur un texte.</p>
+
+                                <h3>Avant de lire : l'observation globale</h3>
+                                <p>Avant de commencer, observe :</p>
+                                <ul>
+                                    <li>Le <strong>titre</strong> : de quoi parle le texte ?</li>
+                                    <li>Les <strong>illustrations</strong> : que vois-tu ?</li>
+                                    <li>La <strong>mise en page</strong> : paragraphes, dialogue, poème…</li>
+                                    <li>La <strong>source</strong> : roman, documentaire, article…</li>
+                                </ul>
+
+                                <h3>Les questions essentielles (5W)</h3>
+                                <ul>
+                                    <li><strong>Qui ?</strong> → Les personnages</li>
+                                    <li><strong>Quoi ?</strong> → L'action principale</li>
+                                    <li><strong>Où ?</strong> → Le lieu</li>
+                                    <li><strong>Quand ?</strong> → L'époque, le moment</li>
+                                    <li><strong>Pourquoi ?</strong> → Les raisons, les motivations</li>
+                                </ul>
+
+                                <h3>Les types de textes</h3>
+                                <ul>
+                                    <li><strong>Narratif (récit)</strong> : raconte une histoire avec des personnages → roman, conte, fable</li>
+                                    <li><strong>Descriptif</strong> : décrit un lieu, une personne, un objet</li>
+                                    <li><strong>Documentaire/informatif</strong> : donne des informations → encyclopédie, article</li>
+                                    <li><strong>Prescriptif</strong> : donne des instructions → recette, mode d'emploi</li>
+                                    <li><strong>Argumentatif</strong> : défend un point de vue → lettre, éditorial</li>
+                                    <li><strong>Poétique</strong> : joue avec les sons et les images → poème</li>
+                                </ul>
+
+                                <h3>Trouver l'idée principale</h3>
+                                <p>L'idée principale, c'est le <strong>message essentiel</strong> du texte. Pour la trouver :</p>
+                                <ol>
+                                    <li>Lis tout le texte</li>
+                                    <li>Demande-toi : de <strong>quoi parle principalement</strong> ce texte ?</li>
+                                    <li>Formule en une phrase</li>
+                                </ol>
+
+                                <h3>Stratégies pour les mots inconnus</h3>
+                                <ul>
+                                    <li><strong>Le contexte</strong> : les mots autour t'aident à deviner</li>
+                                    <li><strong>La famille de mots</strong> : reconnais le radical</li>
+                                    <li><strong>Les préfixes/suffixes</strong> : dé-, re-, -tion, -ment…</li>
+                                    <li>Le <strong>dictionnaire</strong> : en dernier recours !</li>
+                                </ul>
+
+                                <div class="example">
+                                    <strong>Exemple :</strong> "Le félin agile bondit sur sa proie."<br>
+                                    "Félin" → famille des chats (lion, tigre, chat) → c'est un animal de la famille des chats<br>
+                                    "Bondit" → fait penser à "bond" → sauta
+                                </div>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Relis le texte si tu n'as pas compris : la compréhension s'améliore à chaque lecture !</p>
+                                <p>📌 Souligne les mots importants et l'idée principale 📝</p>
+                            `
+                        },
+                        production: {
+                            title: "✍️ La Production d'Écrit",
+                            content: `
+                                <h3>Écrire, c'est un art qui s'apprend !</h3>
+                                <p>Bien écrire, c'est <strong>organiser ses idées</strong>, choisir les <strong>bons mots</strong> et respecter les <strong>règles</strong> de la langue française.</p>
+
+                                <h3>Les étapes de l'écriture</h3>
+                                <ol>
+                                    <li><strong>Planifier</strong> : Qui ? Quoi ? Où ? Quand ? Comment ? → Notes sur brouillon</li>
+                                    <li><strong>Rédiger</strong> : Écrire en respectant le plan</li>
+                                    <li><strong>Relire et corriger</strong> : Orthographe, grammaire, ponctuation, sens</li>
+                                    <li><strong>Améliorer</strong> : Enrichir le vocabulaire, varier les structures</li>
+                                </ol>
+
+                                <h3>La structure d'un récit</h3>
+                                <ul>
+                                    <li><strong>Situation initiale</strong> : Présente les personnages, le lieu, le moment → <em>Il était une fois...</em></li>
+                                    <li><strong>Élément déclencheur</strong> : Un problème survient, quelque chose change</li>
+                                    <li><strong>Péripéties</strong> : Les aventures, les obstacles à surmonter</li>
+                                    <li><strong>Résolution</strong> : Le problème se résout</li>
+                                    <li><strong>Situation finale</strong> : La nouvelle situation, la morale éventuelle</li>
+                                </ul>
+
+                                <h3>Décrire un personnage</h3>
+                                <ul>
+                                    <li><strong>Portrait physique</strong> : taille, couleur des yeux/cheveux, vêtements</li>
+                                    <li><strong>Portrait moral (caractère)</strong> : courageux, curieux, timide, généreux…</li>
+                                    <li><strong>Actions</strong> : ce qu'il fait révèle sa personnalité</li>
+                                    <li><strong>Paroles</strong> : le dialogue montre le caractère</li>
+                                </ul>
+
+                                <h3>Les temps du récit</h3>
+                                <ul>
+                                    <li><strong>Imparfait</strong> : descriptions, actions de fond, habitudes → <em>La maison était vieille...</em></li>
+                                    <li><strong>Passé simple</strong> : actions principales (littéraire) → <em>Il courut vers la porte.</em></li>
+                                    <li><strong>Passé composé</strong> : actions principales (courant) → <em>Il a couru vers la porte.</em></li>
+                                    <li><strong>Présent</strong> : récit vivant → <em>Il court vers la porte.</em></li>
+                                </ul>
+
+                                <h3>Les mots de liaison (connecteurs)</h3>
+                                <ul>
+                                    <li><strong>Temps</strong> : d'abord, ensuite, puis, enfin, soudain, tout à coup, le lendemain</li>
+                                    <li><strong>Cause</strong> : parce que, car, puisque, comme</li>
+                                    <li><strong>Conséquence</strong> : donc, alors, ainsi, c'est pourquoi</li>
+                                    <li><strong>Opposition</strong> : mais, cependant, pourtant, malgré</li>
+                                </ul>
+
+                                <h3>Enrichir son écriture</h3>
+                                <ul>
+                                    <li>Utiliser des <strong>synonymes</strong> pour éviter les répétitions</li>
+                                    <li>Ajouter des <strong>adjectifs</strong> pour décrire</li>
+                                    <li>Varier les <strong>verbes de parole</strong> : dire, crier, murmurer, s'exclamer, répondre</li>
+                                    <li>Utiliser des <strong>comparaisons</strong> : <em>courait comme le vent</em></li>
+                                </ul>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Toujours relire son travail en se demandant : <em>Est-ce que quelqu'un qui ne connaît pas l'histoire peut comprendre ?</em></p>
+                                <p>📌 Le brouillon n'est pas une perte de temps : c'est là que se construit le texte ! ✍️</p>
+                            `
+                        },
+                        poesie: {
+                            title: "🎭 La Poésie",
+                            content: `
+                                <h3>Qu'est-ce que la poésie ?</h3>
+                                <p>La poésie est un art qui <strong>joue avec les sons, les rythmes et les images</strong> pour exprimer des émotions et des sensations. Un poème, c'est de la musique avec des mots !</p>
+
+                                <h3>La structure du poème</h3>
+                                <ul>
+                                    <li><strong>Le vers</strong> : une ligne d'un poème</li>
+                                    <li><strong>La strophe</strong> : un groupe de vers séparés par des espaces</li>
+                                    <li>Noms des strophes :
+                                        <ul>
+                                            <li>2 vers = <strong>distique</strong></li>
+                                            <li>3 vers = <strong>tercet</strong></li>
+                                            <li>4 vers = <strong>quatrain</strong></li>
+                                            <li>6 vers = <strong>sizain</strong></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <h3>Les rimes</h3>
+                                <p>Les rimes, ce sont les <strong>sons identiques à la fin des vers</strong> :</p>
+                                <ul>
+                                    <li><strong>Rimes suivies (AABB)</strong> : 1er et 2e riment, 3e et 4e riment</li>
+                                    <li><strong>Rimes croisées (ABAB)</strong> : 1er et 3e riment, 2e et 4e riment</li>
+                                    <li><strong>Rimes embrassées (ABBA)</strong> : 1er et 4e riment, 2e et 3e riment</li>
+                                </ul>
+
+                                <h3>Le rythme — les syllabes</h3>
+                                <p>On compte les <strong>syllabes</strong> dans chaque vers pour créer un rythme régulier :</p>
+                                <ul>
+                                    <li><strong>Octosyllabe</strong> : 8 syllabes</li>
+                                    <li><strong>Décasyllabe</strong> : 10 syllabes</li>
+                                    <li><strong>Alexandrin</strong> : 12 syllabes (le plus courant en poésie française classique)</li>
+                                </ul>
+
+                                <h3>Les figures de style</h3>
+                                <h4>La comparaison</h4>
+                                <p>Rapproche deux éléments avec un mot comparatif (<strong>comme, tel, pareil à, semblable à</strong>)</p>
+                                <div class="example">Il est <strong>fort comme</strong> un lion. / Elle court <strong>telle</strong> le vent.</div>
+
+                                <h4>La métaphore</h4>
+                                <p>Compare deux éléments SANS mot comparatif : on dit qu'une chose EN EST une autre.</p>
+                                <div class="example">Cet homme <strong>est un lion</strong>. / La vie <strong>est un long fleuve</strong>.</div>
+
+                                <h4>La personnification</h4>
+                                <p>Donne des qualités humaines à un objet, un animal ou une idée.</p>
+                                <div class="example">Le vent <strong>chuchote</strong> son secret. / La nuit <strong>étend son manteau</strong> noir.</div>
+
+                                <h4>L'allitération</h4>
+                                <p>Répétition d'un même son <strong>consonantique</strong> au début des mots.</p>
+                                <div class="example"><strong>Pour qui sont ces serpents qui sifflent sur vos têtes ?</strong> (son [s] répété)</div>
+
+                                <h4>L'assonance</h4>
+                                <p>Répétition d'un même son <strong>vocalique</strong>.</p>
+                                <div class="example">Je fais des r<strong>ê</strong>ves d'or sous les tr<strong>e</strong>mb<strong>e</strong>s<strong>è</strong>res... (son [ɛ] répété)</div>
+
+                                <h4>L'anaphore</h4>
+                                <p>Répétition d'un mot ou groupe de mots au <strong>début de plusieurs vers</strong>.</p>
+                                <div class="example"><strong>J'ai</strong> vu les étoiles. <strong>J'ai</strong> vu la mer. <strong>J'ai</strong> rêvé.</div>
+
+                                <h3 class="retenir">📌 À retenir</h3>
+                                <p>📌 Lis les poèmes à voix haute : c'est la meilleure façon d'en sentir la musique !</p>
+                                <p>📌 Pour écrire un poème, commence par les sons qui t'inspirent 🎶</p>
+                            `
+                        },
+                    },
+
+                    // Questions quiz (10 par thème)
+                    quizQuestions: {
+                        grammaire: [
+                            { question: "Il ... un vélo. (a/à)", options: ["a", "à"], correct: "a", explanation: "'a' est le verbe avoir. 'à' est une préposition." },
+                            { question: "Paul ... Marie sont amis. (et/est)", options: ["et", "est"], correct: "et", explanation: "'et' relie deux éléments. 'est' est le verbe être." },
+                            { question: "Ils ... contents. (son/sont)", options: ["son", "sont"], correct: "sont", explanation: "'sont' est le verbe être (3e personne du pluriel). 'son' est un déterminant possessif." },
+                            { question: "... est mon livre ? (ou/où)", options: ["ou", "où"], correct: "où", explanation: "'où' indique un lieu. 'ou' est un choix." },
+                            { question: "Les chat... noir...", options: ["s noirs", "s noir", "noir", "noirs"], correct: "s noirs", explanation: "'chats' prend un 's' au pluriel, et 'noirs' s'accorde en genre et nombre." },
+                            { question: "Elle est ... (parti/partie)", options: ["parti", "partie"], correct: "partie", explanation: "Avec 'être', le participe passé s'accorde avec le sujet féminin." },
+                            { question: "Je mange une pomme. 'une pomme' est :", options: ["COD", "COI", "Sujet"], correct: "COD", explanation: "Je mange quoi ? Une pomme (COD = réponse à 'quoi ?')" },
+                            { question: "Pluriel de 'cheval' :", options: ["chevals", "chevaux", "chevaus"], correct: "chevaux", explanation: "Les mots en '-al' font leur pluriel en '-aux'." },
+                            { question: "Pluriel de 'jeu' :", options: ["jeus", "jeux"], correct: "jeux", explanation: "Les mots en '-eu' prennent un 'x' au pluriel." },
+                            { question: "Elle va ... l'école. (a/à)", options: ["a", "à"], correct: "à", explanation: "'à' est une préposition indiquant un lieu. 'a' est le verbe avoir." }
+                        ],
+                        conjugaison: [
+                            { question: "Je ... (chanter, présent)", options: ["chante", "chantes", "chantons"], correct: "chante", explanation: "1ère personne du singulier : -e" },
+                            { question: "Nous ... (finir, présent)", options: ["finons", "finissons", "finisons"], correct: "finissons", explanation: "Verbe du 2ème groupe : nous finissons" },
+                            { question: "Ils ... (être, présent)", options: ["es", "sont", "êtes"], correct: "sont", explanation: "Ils sont (3ème personne du pluriel)" },
+                            { question: "J'... (avoir, présent)", options: ["a", "ai", "as"], correct: "ai", explanation: "J'ai (1ère personne du singulier)" },
+                            { question: "Tu ... (chanter, futur)", options: ["chantera", "chanteras", "chanterai"], correct: "chanteras", explanation: "Futur : infinitif + as" },
+                            { question: "Je ... (être, futur)", options: ["serai", "sera", "seras"], correct: "serai", explanation: "Futur irrégulier de être : je serai" },
+                            { question: "Nous ... (chanter, imparfait)", options: ["chantions", "chantons", "chanterions"], correct: "chantions", explanation: "Imparfait : nous chantions" },
+                            { question: "Il ... (manger, passé composé)", options: ["a mangé", "est mangé", "ai mangé"], correct: "a mangé", explanation: "Passé composé avec 'avoir' : il a mangé" },
+                            { question: "Elle ... (aller, passé composé)", options: ["a allé", "est allé", "est allée"], correct: "est allée", explanation: "'Aller' utilise 'être', accord avec le sujet féminin" },
+                            { question: "Vous ... (faire, présent)", options: ["faisez", "faites", "fasez"], correct: "faites", explanation: "Verbe irrégulier : vous faites" }
+                        ],
+                        vocabulaire: [
+                            { question: "Synonyme de 'content' :", options: ["Triste", "Heureux", "Fâché"], correct: "Heureux", explanation: "'Heureux' et 'content' ont un sens proche." },
+                            { question: "Antonyme de 'grand' :", options: ["Petit", "Large", "Haut"], correct: "Petit", explanation: "'Petit' est le contraire de 'grand'." },
+                            { question: "Synonyme de 'maison' :", options: ["Voiture", "Habitation", "Jardin"], correct: "Habitation", explanation: "'Habitation' est un synonyme de 'maison'." },
+                            { question: "Antonyme de 'chaud' :", options: ["Tiède", "Froid", "Doux"], correct: "Froid", explanation: "'Froid' est l'opposé de 'chaud'." },
+                            { question: "Famille du mot 'terre' :", options: ["Terrible", "Terrain", "Terre-neuve"], correct: "Terrain", explanation: "'Terrain' vient du radical 'terr-'." },
+                            { question: "Préfixe de 'refaire' :", options: ["re-", "dé-", "pré-"], correct: "re-", explanation: "Le préfixe 're-' signifie 'à nouveau'." },
+                            { question: "Suffixe de 'chanteur' :", options: ["-tion", "-eur", "-ment"], correct: "-eur", explanation: "Le suffixe '-eur' indique 'celui qui fait'." },
+                            { question: "'Avoir un chat dans la gorge' signifie :", options: ["Avoir un animal", "Être enroué", "Avoir faim"], correct: "Être enroué", explanation: "C'est une expression qui signifie être enroué." },
+                            { question: "Synonyme de 'rapide' :", options: ["Lent", "Vite", "Calme"], correct: "Vite", explanation: "'Vite' et 'rapide' ont un sens proche." },
+                            { question: "Antonyme de 'monter' :", options: ["Grimper", "Descendre", "Escalader"], correct: "Descendre", explanation: "'Descendre' est l'opposé de 'monter'." }
+                        ],
+                        orthographe: [
+                            { question: "Le son [k] dans : ...ahier", options: ["c", "qu", "k", "ch"], correct: "c", explanation: "'c' devant 'a' → cahier" },
+                            { question: "Le son [s] dans : poi...on", options: ["s", "ss", "c", "ç"], correct: "ss", explanation: "Entre deux voyelles → poisson" },
+                            { question: "Le son [s] dans : gar...on", options: ["s", "ss", "c", "ç"], correct: "ç", explanation: "Devant 'o', cédille → garçon" },
+                            { question: "Le son [g] dans : ...itare", options: ["g", "gu", "gue"], correct: "gu", explanation: "Devant 'i' → guitare" },
+                            { question: "Le son [ʒ] dans : ...ardin", options: ["j", "g", "ge"], correct: "j", explanation: "Devant 'a' → jardin" },
+                            { question: "Lettre muette dans 'gran...' :", options: ["t", "d", "p", "s"], correct: "d", explanation: "grand → grande" },
+                            { question: "Lettre muette dans 'cha...' :", options: ["t", "d", "p", "s"], correct: "t", explanation: "chat → chatte" },
+                            { question: "Accent correct : 'f...te'", options: ["ê", "è", "é", "e"], correct: "ê", explanation: "fête" },
+                            { question: "Accent correct : '...cole'", options: ["é", "è", "ê", "e"], correct: "é", explanation: "école" },
+                            { question: "Double consonne : 'vit...e'", options: ["esse", "èse", "ése", "ese"], correct: "esse", explanation: "vitesse" },
+                            /* --- BATCH 2 ajouté 11/04/2026 --- */
+                            { question: "Comment s'écrit le son [s] dans 'pois...' (le légume) ?", options: ["ss", "s", "c", "ç"], correct: "ss", explanation: "Entre deux voyelles, le son [s] s'écrit 'ss' : p-o-i-ss-on. Un seul 's' entre deux voyelles ferait le son [z] !" },
+                            { question: "Quel accent porte le mot 'île' ?", options: ["accent circonflexe", "accent aigu", "accent grave", "tréma"], correct: "accent circonflexe", explanation: "L'accent circonflexe sur 'î' rappelle souvent une lettre disparue dans l'histoire du français : î-le vient du latin 'insula'." },
+                            { question: "Dans 'Noël', le tréma sert à :", options: ["séparer deux sons de voyelles", "indiquer un e muet", "remplacer un accent", "marquer le pluriel"], correct: "séparer deux sons de voyelles", explanation: "Le tréma indique que les deux voyelles se prononcent séparément : No-ël (et non 'Noel' en un seul son)." },
+                            { question: "Laquelle de ces phrases utilise correctement 'ou' / 'où' ?", options: ["Où vas-tu, à la mer ou à la montagne ?", "Ou vas-tu, à la mer où à la montagne ?", "Où vas-tu, à la mer où à la montagne ?", "Ou vas-tu, à la mer ou à la montagne ?"], correct: "Où vas-tu, à la mer ou à la montagne ?", explanation: "'Où' avec accent grave indique un lieu ou pose une question de lieu. 'Ou' sans accent exprime un choix." },
+                            { question: "Comment écrire correctement : 'Il ___ faim.' (verbe avoir) ?", options: ["a", "à", "as", "â"], correct: "a", explanation: "'Il a faim' = il possède la faim → verbe avoir (3e personne). 'À' sans accent est une préposition : 'Je vais à l'école'." },
+                            { question: "Quel mot contient un 'h' aspiré (pas de liaison) ?", options: ["hibou", "homme", "heure", "herbe"], correct: "hibou", explanation: "On dit 'le hibou' (pas de liaison). Mais 'l'homme', 'l'heure', 'l'herbe' → le h est muet, on fait la liaison." },
+                            { question: "Pour trouver la lettre muette finale de 'gros', on cherche :", options: ["le féminin : grosse", "le pluriel : gros", "un synonyme", "un antonyme"], correct: "le féminin : grosse", explanation: "Mettre un mot au féminin révèle les lettres muettes : gros → grosse, donc le 's' final existe bien !" },
+                            { question: "Dans 'façon', la cédille sous le 'c' indique :", options: ["le son [s] devant 'o'", "le son [k] devant 'o'", "le son [z] devant 'o'", "le son [ʃ] devant 'o'"], correct: "le son [s] devant 'o'", explanation: "La cédille (ç) transforme le 'c' en son [s] devant les voyelles a, o, u : façon, leçon, garçon, reçu." },
+                            { question: "Laquelle de ces paires est un couple d'homophones ?", options: ["peu / peut", "chat / rat", "grand / gros", "beau / bel"], correct: "peu / peut", explanation: "'Peu' (une petite quantité) et 'peut' (verbe pouvoir) se prononcent exactement pareil mais s'écrivent différemment." },
+                            { question: "Dans quelle phrase le mot 'on' est-il correctement distingué de 'ont' ?", options: ["On mange ensemble, ils ont faim.", "Ont mange ensemble, ils on faim.", "On mange ensemble, ils on faim.", "Ont mange ensemble, ils ont faim."], correct: "On mange ensemble, ils ont faim.", explanation: "'On' = pronom sujet (remplacez par 'il'). 'Ont' = verbe avoir (remplacez par 'avaient' : ils avaient faim → ça marche)." }
+                        ],
+                        ponctuation: [
+                            { question: "Signe phrase déclarative ?", options: [".", "?", "!", "..."], correct: ".", explanation: "Le point (.)" },
+                            { question: "Signe question ?", options: [".", "?", "!", ","], correct: "?", explanation: "Point d'interrogation (?)" },
+                            { question: "Signe émotion forte ?", options: [".", "?", "!", ","], correct: "!", explanation: "Point d'exclamation (!)" },
+                            { question: "J'aime les pommes... les poires", options: [",", ".", ";", ":"], correct: ",", explanation: "Virgule énumération" },
+                            { question: "J'ai trois animaux... un chat", options: [":", ",", ".", ";"], correct: ":", explanation: "Deux-points annoncent" },
+                            { question: "Je ne sais pas...", options: ["...", ".", "!", "?"], correct: "...", explanation: "Points de suspension" },
+                            { question: "Encadre les paroles ?", options: ["« »", "( )", "[ ]", "{ }"], correct: "« »", explanation: "Guillemets" },
+                            { question: "Dialogue réplique ?", options: ["–", "*", "+", "/"], correct: "–", explanation: "Tiret" },
+                            { question: "Info supplémentaire ?", options: ["( )", "[ ]", "« »", "{ }"], correct: "( )", explanation: "Parenthèses" },
+                            { question: "Après un point ?", options: ["MAJUSCULE", "minuscule", "espace", "virgule"], correct: "MAJUSCULE", explanation: "Toujours majuscule" },
+                            /* --- BATCH 2 ajouté 11/04/2026 --- */
+                            { question: "La virgule peut-elle séparer le sujet de son verbe ?", options: ["Non, jamais", "Oui, toujours", "Oui, parfois", "Cela dépend du verbe"], correct: "Non, jamais", explanation: "Règle absolue : on ne met jamais de virgule entre le sujet et son verbe. On écrit 'Le chat dort.' et non 'Le chat, dort.'" },
+                            { question: "Quelle ponctuation manque ici : 'Bonjour comment vas-tu _'", options: ["?", "!", ".", ","], correct: "?", explanation: "La phrase pose une question → elle se termine par un point d'interrogation (?). 'Comment vas-tu ?' est une phrase interrogative." },
+                            { question: "Où place-t-on une espace avant la ponctuation en français ?", options: ["Devant : ; ? !", "Devant , et .", "Devant tous les signes", "Devant aucun signe"], correct: "Devant : ; ? !", explanation: "En français typographique, on met une espace (fine) AVANT : ; ? ! mais PAS avant , et . Ces règles viennent de la tradition d'imprimerie française." },
+                            { question: "À quoi servent les points de suspension (...) ?", options: ["Indiquer une hésitation ou une phrase inachevée", "Remplacer un point final", "Ouvrir une liste", "Encadrer une citation"], correct: "Indiquer une hésitation ou une phrase inachevée", explanation: "Les points de suspension ... indiquent qu'il reste quelque chose à dire, une hésitation ou un silence : 'Euh... je ne sais pas...'" },
+                            { question: "Dans un dialogue, la ponctuation AVANT les guillemets fermants est :", options: ["à l'intérieur des guillemets", "après les guillemets", "supprimée", "dédoublée"], correct: "à l'intérieur des guillemets", explanation: "Le point (ou ? ou !) de la parole rapportée se place AVANT le guillemet fermant : Il dit : « Je viendrai demain. »" },
+                            { question: "Que signifie la virgule dans : 'Marie, range ta chambre !'", options: ["Elle isole le nom de la personne à qui on parle", "Elle indique une énumération", "Elle remplace un point", "Elle annonce une liste"], correct: "Elle isole le nom de la personne à qui on parle", explanation: "Quand on s'adresse directement à quelqu'un, on isole son prénom avec une virgule : 'Marie, viens ici !' ou 'Viens ici, Marie !'" },
+                            { question: "Le point-virgule (;) sert à :", options: ["Séparer deux idées liées mais indépendantes", "Introduire une liste", "Encadrer une citation", "Indiquer une hésitation"], correct: "Séparer deux idées liées mais indépendantes", explanation: "Le point-virgule est plus fort que la virgule mais moins fort que le point : 'Il fait beau ; nous allons au parc.' Les deux idées sont liées." },
+                            { question: "Laquelle de ces phrases est correctement ponctuée ?", options: ["Il a trois animaux : un chat, un chien et un lapin.", "Il a trois animaux, un chat un chien et un lapin.", "Il a trois animaux. Un chat, un chien et un lapin.", "Il a trois animaux ; un chat, un chien et un lapin."], correct: "Il a trois animaux : un chat, un chien et un lapin.", explanation: "Les deux-points (:) annoncent une liste. Les virgules séparent les éléments de la liste. Le point clôt la phrase." },
+                            { question: "Combien de points composent les points de suspension ?", options: ["3", "2", "4", "5"], correct: "3", explanation: "Les points de suspension sont toujours composés exactement de TROIS points : ... Ni deux, ni quatre !" },
+                            { question: "Dans un texte, les parenthèses ( ) encadrent :", options: ["Une information secondaire ou une précision", "Une parole rapportée", "Un titre de livre", "Une liste de mots"], correct: "Une information secondaire ou une précision", explanation: "Les parenthèses ajoutent une précision facultative : 'Curio (notre renard préféré) adore les quiz !' On peut retirer le contenu des parenthèses sans changer le sens principal." }
+                        ],
+                        typesphrases: [
+                            { question: "'Le chat dort.' est :", options: ["Déclarative", "Interrogative", "Exclamative", "Impérative"], correct: "Déclarative", explanation: "Information + point" },
+                            { question: "'Viens-tu ?' est :", options: ["Interrogative", "Déclarative", "Exclamative", "Impérative"], correct: "Interrogative", explanation: "Question + ?" },
+                            { question: "'Quelle belle journée !' est :", options: ["Exclamative", "Déclarative", "Interrogative", "Impérative"], correct: "Exclamative", explanation: "Émotion + !" },
+                            { question: "'Range ta chambre.' est :", options: ["Impérative", "Déclarative", "Interrogative", "Exclamative"], correct: "Impérative", explanation: "Ordre impératif" },
+                            { question: "Mot exclamatif ?", options: ["Comme", "Quand", "Pourquoi", "Comment"], correct: "Comme", explanation: "'Comme c'est beau !'" },
+                            { question: "Phrase impérative sans :", options: ["Sujet visible", "Verbe", "Ponctuation", "Sens"], correct: "Sujet visible", explanation: "Pas de sujet" },
+                            { question: "Phrase interrogative ?", options: ["Est-ce que tu viens ?", "Tu viens.", "Viens !", "Comme tu viens !"], correct: "Est-ce que tu viens ?", explanation: "Question avec ?" },
+                            { question: "Transformer 'C'est beau' exclamative ?", options: ["Comme c'est beau !", "C'est beau ?", "Sois beau.", "C'est beau."], correct: "Comme c'est beau !", explanation: "Comme + !" },
+                            { question: "'Ne cours pas !' est :", options: ["Impérative", "Déclarative", "Interrogative", "Exclamative"], correct: "Impérative", explanation: "Interdiction" },
+                            { question: "Question avec inversion ?", options: ["Où", "Donc", "Car", "Mais"], correct: "Où", explanation: "'Où vas-tu ?'" },
+                            /* --- BATCH 2 ajouté 11/04/2026 --- */
+                            { question: "Combien existe-t-il de types de phrases en français ?", options: ["4", "2", "3", "5"], correct: "4", explanation: "Il y a 4 types de phrases : déclarative, interrogative, exclamative et impérative. Chacun exprime quelque chose de différent !" },
+                            { question: "Quelle phrase est de forme négative ?", options: ["Je ne mange pas de bonbons.", "Je mange des bonbons.", "Mange des bonbons !", "Est-ce que tu manges des bonbons ?"], correct: "Je ne mange pas de bonbons.", explanation: "La forme négative utilise des mots comme ne...pas, ne...jamais, ne...plus, ne...rien. Ici 'ne...pas' transforme la phrase en négation." },
+                            { question: "Une phrase déclarative se termine toujours par :", options: ["Un point", "Un point d'exclamation", "Un point d'interrogation", "Des points de suspension"], correct: "Un point", explanation: "La phrase déclarative donne une information et se termine par un point simple (.). Exemple : 'Le soleil se lève à l'est.'" },
+                            { question: "'Comme tu es courageux !' est une phrase :", options: ["Exclamative", "Interrogative", "Déclarative", "Impérative"], correct: "Exclamative", explanation: "'Comme' suivi d'un point d'exclamation indique une phrase exclamative. Elle exprime l'admiration." },
+                            { question: "Transforme en phrase interrogative avec 'est-ce que' : 'Tu aimes la lecture.'", options: ["Est-ce que tu aimes la lecture ?", "Tu aimes la lecture ?", "Aimes-tu la lecture ?", "Que tu aimes la lecture !"], correct: "Est-ce que tu aimes la lecture ?", explanation: "Pour transformer avec 'est-ce que', on place cette formule au début : Est-ce que + sujet + verbe ? C'est la façon la plus simple !" },
+                            { question: "Laquelle de ces phrases est impérative ?", options: ["Ferme la porte, s'il te plaît.", "Est-ce que tu fermes la porte ?", "La porte est fermée.", "Quelle porte fermée !"], correct: "Ferme la porte, s'il te plaît.", explanation: "'Ferme' est un verbe à l'impératif (tu fermes → ferme !). La phrase impérative donne un ordre ou un conseil, sans sujet exprimé." },
+                            { question: "Dans quelle phrase le type ET la forme sont correctement identifiés ?", options: ["'Ne pars pas !' → Impérative négative", "'Ne pars pas !' → Déclarative négative", "'Ne pars pas !' → Interrogative affirmative", "'Ne pars pas !' → Exclamative négative"], correct: "'Ne pars pas !' → Impérative négative", explanation: "'Ne pars pas !' est un ordre à l'impératif (type = impérative) avec 'ne...pas' (forme = négative). On peut combiner type et forme !" },
+                            { question: "Quel mot interrogatif utilise-t-on pour demander la raison ?", options: ["Pourquoi", "Quand", "Où", "Comment"], correct: "Pourquoi", explanation: "'Pourquoi' demande la raison ou la cause : 'Pourquoi pleures-tu ?' Les autres mots interrogatifs : où (lieu), quand (temps), comment (manière)." },
+                            { question: "Quelle phrase est à la fois exclamative ET négative ?", options: ["Comme il ne fait pas beau !", "Comme il fait beau !", "Il ne fait pas beau.", "Il fait beau ?"], correct: "Comme il ne fait pas beau !", explanation: "On peut combiner type exclamatif (Comme... + !) avec la forme négative (ne...pas). Les types et les formes se combinent librement." },
+                            { question: "Dans la phrase impérative 'Mangeons ensemble !', le sujet est :", options: ["Sous-entendu : nous", "Nous (exprimé)", "On (exprimé)", "Il n'y a pas de sujet du tout"], correct: "Sous-entendu : nous", explanation: "'Mangeons' est la 1ère personne du pluriel de l'impératif. Le sujet 'nous' est sous-entendu mais pas écrit. À l'impératif, le sujet n'est jamais exprimé." }
+                        ],
+                        classesmots: [
+                            { question: "'chat' dans 'Le chat dort' est :", options: ["Nom", "Verbe", "Adjectif", "Adverbe"], correct: "Nom", explanation: "Désigne animal" },
+                            { question: "'dort' dans 'Le chat dort' est :", options: ["Verbe", "Nom", "Adjectif", "Déterminant"], correct: "Verbe", explanation: "Action dormir" },
+                            { question: "'le' dans 'Le chat noir' est :", options: ["Déterminant", "Nom", "Verbe", "Adjectif"], correct: "Déterminant", explanation: "Article défini" },
+                            { question: "'noir' dans 'Le chat noir' est :", options: ["Adjectif", "Nom", "Verbe", "Déterminant"], correct: "Adjectif", explanation: "Qualifie chat" },
+                            { question: "'Paris' est un nom :", options: ["Propre", "Commun", "Verbe", "Adjectif"], correct: "Propre", explanation: "Majuscule lieu unique" },
+                            { question: "'vite' dans 'Il court vite' est :", options: ["Adverbe", "Adjectif", "Nom", "Verbe"], correct: "Adverbe", explanation: "Modifie verbe" },
+                            { question: "'et' dans 'Paul et Marie' est :", options: ["Conjonction", "Préposition", "Adverbe", "Interjection"], correct: "Conjonction", explanation: "Coordination" },
+                            { question: "\"à\" dans \"Je vais à l'école\" est :", options: ["Préposition", "Conjonction", "Adverbe", "Verbe"], correct: "Préposition", explanation: "Relie complément" },
+                            { question: "'Il' remplace :", options: ["Paul", "arrive", "content", "est"], correct: "Paul", explanation: "Pronom personnel" },
+                            { question: "Classe INVARIABLE ?", options: ["Adverbe", "Nom", "Adjectif", "Déterminant"], correct: "Adverbe", explanation: "Ne change jamais" }
+                        ],
+                        lecture: [
+                            { question: "Avant de lire, observer :", options: ["Titre et images", "Seulement texte", "Dernière page", "Auteur"], correct: "Titre et images", explanation: "Observation globale" },
+                            { question: "'Qui ?' permet de trouver :", options: ["Personnages", "Lieu", "Moment", "Raison"], correct: "Personnages", explanation: "Identifie personnages" },
+                            { question: "'Où ?' permet de trouver :", options: ["Lieu", "Personnages", "Moment", "Raison"], correct: "Lieu", explanation: "Identifie lieu" },
+                            { question: "'Quand ?' permet de trouver :", options: ["Moment", "Lieu", "Personnages", "Action"], correct: "Moment", explanation: "Identifie moment" },
+                            { question: "Idée principale c'est :", options: ["Message essentiel", "Premier mot", "Dernier mot", "Titre"], correct: "Message essentiel", explanation: "Résumé en phrase" },
+                            { question: "Texte raconte histoire :", options: ["Récit", "Documentaire", "Recette", "Poème"], correct: "Récit", explanation: "Histoire personnages" },
+                            { question: "Texte donne informations :", options: ["Documentaire", "Récit", "Dialogue", "Poésie"], correct: "Documentaire", explanation: "Explique informe" },
+                            { question: "Recette cuisine est :", options: ["Prescriptif", "Narratif", "Descriptif", "Poétique"], correct: "Prescriptif", explanation: "Instructions" },
+                            { question: "Mot inconnu, d'abord :", options: ["Deviner contexte", "Abandonner", "Sauter texte", "Pleurer"], correct: "Deviner contexte", explanation: "Contexte aide" },
+                            { question: "Pour comprendre :", options: ["Relire si besoin", "Lire vite", "Sauter passages", "Pas réfléchir"], correct: "Relire si besoin", explanation: "Relecture aide" }
+                        ],
+                        production: [
+                            { question: "Avant écrire :", options: ["Brouillon", "Mise au propre", "Dessins", "Rien"], correct: "Brouillon", explanation: "Organiser idées" },
+                            { question: "Élément déclencheur est :", options: ["Problème survient", "Fin", "Début", "Héros"], correct: "Problème survient", explanation: "Lance action" },
+                            { question: "Décrire personnage :", options: ["Physique et caractère", "Vêtements", "Âge", "Nom"], correct: "Physique et caractère", explanation: "Complet" },
+                            { question: "Imparfait pour :", options: ["Décrire", "Actions principales", "Dialogues", "Ordres"], correct: "Décrire", explanation: "Descriptions" },
+                            { question: "Dialogue réplique :", options: ["Tiret –", "Point .", "Virgule ,", "Accent é"], correct: "Tiret –", explanation: "Chaque réplique" },
+                            { question: "Connecteur EN PREMIER ?", options: ["D'abord", "Ensuite", "Puis", "Enfin"], correct: "D'abord", explanation: "Première étape" },
+                            { question: "Dire doucement ?", options: ["Chuchoter", "Crier", "Hurler", "Répéter"], correct: "Chuchoter", explanation: "Voix basse" },
+                            { question: "Éviter répétitions :", options: ["Synonymes", "Même mot", "Rien", "Erreurs"], correct: "Synonymes", explanation: "Varier vocabulaire" },
+                            { question: "Après écriture :", options: ["Relire corriger", "Jeter brouillon", "Dormir", "Rien"], correct: "Relire corriger", explanation: "Toujours relire" },
+                            { question: "Situation finale est :", options: ["Fin histoire", "Début", "Problème", "Héros"], correct: "Fin histoire", explanation: "Conclut récit" }
+                        ],
+                        poesie: [
+                            { question: "Ligne poème :", options: ["Vers", "Strophe", "Rime", "Rythme"], correct: "Vers", explanation: "Une ligne" },
+                            { question: "Groupe vers :", options: ["Strophe", "Vers", "Rime", "Poème"], correct: "Strophe", explanation: "Plusieurs vers" },
+                            { question: "4 vers :", options: ["Quatrain", "Distique", "Tercet", "Sizain"], correct: "Quatrain", explanation: "Quatre = quatrain" },
+                            { question: "Rimes sont :", options: ["Fin vers", "Début vers", "Milieu vers", "Partout"], correct: "Fin vers", explanation: "Sons fin" },
+                            { question: "Alexandrin syllabes ?", options: ["12", "8", "10", "6"], correct: "12", explanation: "12 syllabes" },
+                            { question: "'Fort comme lion' est :", options: ["Comparaison", "Métaphore", "Personnification", "Anaphore"], correct: "Comparaison", explanation: "Avec 'comme'" },
+                            { question: "'Homme est lion' est :", options: ["Métaphore", "Comparaison", "Personnification", "Allitération"], correct: "Métaphore", explanation: "Sans 'comme'" },
+                            { question: "'Vent chuchote' est :", options: ["Personnification", "Comparaison", "Métaphore", "Rime"], correct: "Personnification", explanation: "Qualité humaine" },
+                            { question: "Répéter son consonne :", options: ["Allitération", "Assonance", "Rime", "Vers"], correct: "Allitération", explanation: "Consonnes" },
+                            { question: "Répéter son voyelle :", options: ["Assonance", "Allitération", "Rime", "Vers"], correct: "Assonance", explanation: "Voyelles" }
+                        ]
+                    },
+
+
+                    selectTheme(t) {
+                        this.currentTheme = t;
+                        this.showQuiz = this.showResults = this.showIllustration = this.showLesson = false;
+                    },
+
+                    getThemeName() {
+                        return this.themes[this.currentTheme]?.name || '';
+                    },
+
+                    getThemeDescription() {
+                        return this.themes[this.currentTheme]?.description || '';
+                    },
+
+                    getImageUrl() {
+                        return this.themes[this.currentTheme]?.imageUrl || '';
+                    },
+
+                    getLessonTitle() {
+                        return this.lessonData[this.currentTheme]?.title || '';
+                    },
+
+                    getLessonContent() {
+                        return this.lessonData[this.currentTheme]?.content || '';
+                    },
+
+                    toggleIllustration() {
+                        this.showIllustration = !this.showIllustration;
+                    },
+
+                    canStartQuiz(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        if (!cooldownData.lastCompleted) return true;
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
+                        return timeSinceCompletion >= cooldownDuration;
+                    },
+
+                    getCooldownTimeRemaining(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = JSON.parse(localStorage.getItem(cooldownKey) || '{}');
+                        if (!cooldownData.lastCompleted) return null;
+                        const now = Date.now();
+                        const timeSinceCompletion = now - cooldownData.lastCompleted;
+                        const cooldownDuration = 24 * 60 * 60 * 1000;
+                        const remaining = cooldownDuration - timeSinceCompletion;
+                        if (remaining <= 0) return null;
+                        const hours = Math.floor(remaining / (60 * 60 * 1000));
+                        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+                        return { hours, minutes };
+                    },
+
+                    recordQuizCompletion(theme) {
+                        const cooldownKey = `quiz_cooldown_francais_${theme}`;
+                        const cooldownData = {
+                            lastCompleted: Date.now(),
+                            count: (JSON.parse(localStorage.getItem(cooldownKey) || '{}').count || 0) + 1
+                        };
+                        localStorage.setItem(cooldownKey, JSON.stringify(cooldownData));
+                        console.log(`🔒 Cooldown activé pour ${theme}`);
+                    },
+
+                    startQuiz() {
+                        if (!this.canStartQuiz(this.currentTheme)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            return;
+                        }
+
+                        this.currentQuestionIndex = 0;
+                        this.score = 0;
+                        this.answered = false;
+                        this.quizFinished = false;
+
+                        // Mélange aléatoire : ordre des questions ET options de chaque question
+                        const quiz = this.quizQuestions[this.currentTheme] || [];
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: this.shuffleArray([...q.options])
+                        }));
+
+                        this.currentQuestion = this.shuffledQuiz[0];
+                        this.showQuiz = true;
+                        this.showLesson = false;
+                        this.showIllustration = false;
+                    },
+
+                    shuffleArray(array) {
+                        const shuffled = [...array];
+                        for (let i = shuffled.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                        }
+                        return shuffled;
+                    },
+
+                    getCurrentQuiz() {
+                        // Pendant le quiz, retourne le tableau mélangé pour un ordre cohérent
+                        if (this.showQuiz && this.shuffledQuiz) return this.shuffledQuiz;
+                        return this.quizQuestions[this.currentTheme] || [];
+                    },
+
+                    loadQuestion() {
+                        const questions = this.getCurrentQuiz();
+                        this.currentQuestion = questions[this.currentQuestionIndex];
+                        this.answered = false;
+                        this.isCorrect = false;
+                    },
+
+                    checkAnswer(selectedOption) {
+                        if (this.answered) return;
+                        this.answered = true;
+                        this.isCorrect = (selectedOption === this.currentQuestion.correct);
+                        if (this.isCorrect) {
+                            this.score++;
+                            this.playCorrectSound();
+                            if (window.SectionXP) {
+                                window.SectionXP.addXP('francais', window.SectionXP.rewards.QUESTION_CORRECT);
+                            }
+                        } else {
+                            this.playIncorrectSound();
+                        }
+                        setTimeout(() => { this.nextQuestion(); }, 2000);
+                    },
+
+                    nextQuestion() {
+                        if (this.currentQuestionIndex < this.getCurrentQuiz().length - 1) {
+                            this.currentQuestionIndex++;
+                            this.loadQuestion();
+                        } else {
+                            this.finishQuiz();
+                        }
+                    },
+
+                    finishQuiz() {
+                        this.quizFinished = true;
+                        const quizLength = this.getCurrentQuiz().length;
+                        const isPerfect = (this.score === quizLength);
+
+                        if (window.SectionXP) {
+                            window.SectionXP.addXP('francais', window.SectionXP.rewards.QUIZ_COMPLETED);
+                            if (isPerfect) {
+                                window.SectionXP.addXP('francais', window.SectionXP.rewards.PERFECT_QUIZ);
+                            }
+                        }
+
+                        try {
+                            const raw = localStorage.getItem('lemondedescurieux_quiz_stats');
+                            const stats = raw ? JSON.parse(raw) : {
+                                totalCompleted: 0,
+                                perfectCount: 0,
+                                bySubject: { francais: 0, anglais: 0, maths: 0, sciences: 0, histoire: 0 }
+                            };
+                            stats.totalCompleted = (stats.totalCompleted || 0) + 1;
+                            if (isPerfect) stats.perfectCount = (stats.perfectCount || 0) + 1;
+                            if (!stats.bySubject) stats.bySubject = {};
+                            stats.bySubject.francais = (stats.bySubject.francais || 0) + 1;
+                            localStorage.setItem('lemondedescurieux_quiz_stats', JSON.stringify(stats));
+                        } catch(e) {
+                            console.warn('[francais] Erreur stats quiz:', e);
+                        }
+
+                        this.recordQuizCompletion(this.currentTheme);
+
+                        if (window.badgeSystem) {
+                            const newBadges = window.badgeSystem.checkBadges();
+                            if (newBadges.length > 0 && window.curioBubbleInstance && newBadges[0]) {
+                                window.curioBubbleInstance.show('🏆 Badge débloqué : ' + newBadges[0].name + ' !', 'success');
+                            }
+                            if (window.BRIDGE) window.BRIDGE.syncBadges();
+                        }
+                    },
+
+                    retryQuiz() {
+                        if (!this.canStartQuiz(this.currentTheme)) {
+                            const remaining = this.getCooldownTimeRemaining(this.currentTheme);
+                            const message = `⏰ Quiz déjà complété aujourd'hui !\n\nReviens dans ${remaining.hours}h ${remaining.minutes}min pour le refaire.`;
+                            if (window.curioBubbleInstance) {
+                                window.curioBubbleInstance.show(message, 'info');
+                            } else {
+                                alert(message);
+                            }
+                            this.backToTheme();
+                            return;
+                        }
+                        // Re-mélange pour un nouvel ordre à chaque retry
+                        const quiz = this.quizQuestions[this.currentTheme] || [];
+                        const shuffledOrder = [...quiz].sort(() => Math.random() - 0.5);
+                        this.shuffledQuiz = shuffledOrder.map(q => ({
+                            ...q,
+                            options: this.shuffleArray([...q.options])
+                        }));
+                        this.quizFinished = false;
+                        this.currentQuestionIndex = this.score = 0;
+                        this.loadQuestion();
+                    },
+
+                    getScoreMessage() {
+                        const percentage = (this.score / this.getCurrentQuiz().length) * 100;
+                        if (percentage === 100) return '🏆 Parfait ! Tu maîtrises ce thème !';
+                        if (percentage >= 80) return '🌟 Excellent ! Très bien joué !';
+                        if (percentage >= 60) return '👍 Bien ! Continue comme ça !';
+                        if (percentage >= 40) return '💪 Pas mal ! Révise encore un peu !';
+                        return '📚 Continue à apprendre, tu vas y arriver !';
+                    },
+
+                    backToTheme() {
+                        this.showResults = false;
+                        this.showQuiz = false;
+                    }
+                }));
+            });
+        </script>
+
+        <script src="scripts/master-game-system.js"></script>
+        <script>
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (typeof MasterGameSystem !== 'undefined') {
+                        window.gameSystem = new MasterGameSystem();
+                        if (typeof updateGameSystemUI === 'function') updateGameSystemUI();
+                    }
+                }, 200);
+            });
+        </script>
+
+    <!-- Zone d'annonces pour lecteurs d'écran (WCAG 4.1.3) -->
+    <div class="sr-announce" aria-live="assertive" aria-atomic="true" id="sr-announcer"></div>
+
+    <!-- Service Worker PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('[PWA] SW enregistré :', reg.scope))
+                    .catch(err => console.warn('[PWA] SW échec :', err));
+            });
+        }
+    </script>
+</body>
+
+</html>

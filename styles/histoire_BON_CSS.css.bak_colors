@@ -1,0 +1,1053 @@
+/* ===== CSS COMPLET HISTOIRE - 665 lignes ===== */
+/* Ce fichier contient TOUS les styles nécessaires pour la section Histoire */
+
+:root {
+    --prehistoire-color: #8B4513;
+    --antiquite-color: #DAA520;
+    --moyenage-color: #4169E1;
+    --tempsmodernes-color: #DC143C;
+    --epoquecontemporaine-color: #2F4F4F;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.histoire-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.section-title h1 {
+    font-size: 3em;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-title p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.periods-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.period-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    background: white;
+    color: #333;
+}
+
+.period-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.period-btn.active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.period-btn.prehistoire.active {
+    background: var(--prehistoire-color);
+    color: white;
+}
+
+.period-btn.antiquite.active {
+    background: var(--antiquite-color);
+    color: white;
+}
+
+.period-btn.moyenage.active {
+    background: var(--moyenage-color);
+    color: white;
+}
+
+.period-btn.tempsmodernes.active {
+    background: var(--tempsmodernes-color);
+    color: white;
+}
+
+.period-btn.epoquecontemporaine.active {
+    background: var(--epoquecontemporaine-color);
+    color: white;
+}
+
+.period-content {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.period-section h2 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.period-dates {
+    font-size: 1.2em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.period-description {
+    line-height: 1.8;
+    color: #444;
+}
+
+.period-description h3 {
+    font-size: 1.5em;
+    margin: 25px 0 15px 0;
+    color: #555;
+}
+
+.period-description ul {
+    padding-left: 25px;
+}
+
+.period-description li {
+    margin-bottom: 10px;
+}
+
+.period-description strong {
+    color: #333;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.action-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+/* ===== FRISE CHRONOLOGIQUE - IMPORTANT ===== */
+.timeline-container {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.timeline-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.close-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+    transform: translateX(-50%);
+}
+
+.timeline-period {
+    position: relative;
+    padding: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.timeline-period:nth-child(odd) {
+    text-align: right;
+    padding-right: 55%;
+}
+
+.timeline-period:nth-child(even) {
+    text-align: left;
+    padding-left: 55%;
+}
+
+.timeline-period:hover {
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.timeline-period.active {
+    background: #e8eaf6;
+    border-radius: 10px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 4px solid #667eea;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+.timeline-period:hover .timeline-dot {
+    width: 32px;
+    height: 32px;
+    border-width: 5px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.timeline-dates {
+    margin: 0;
+    color: #666;
+    font-style: italic;
+}
+
+/* ===== CARTES HISTORIQUES ===== */
+.map-container {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.map-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.map-content {
+    text-align: center;
+}
+
+.map-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 60px;
+    margin: 20px 0;
+}
+
+.map-emoji {
+    font-size: 5em;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.map-placeholder p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.map-legend {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.map-legend h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* ===== QUIZ - IMPORTANT ===== */
+.quiz-container {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-header {
+    margin-bottom: 30px;
+}
+
+.quiz-header h2 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.quiz-progress {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.quiz-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.1em;
+    transition: all 0.3s;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: #667eea;
+    background: #f8f9ff;
+    transform: translateX(5px);
+}
+
+.option-btn.selected {
+    border-color: #667eea;
+    background: #e8eaf6;
+}
+
+.option-btn.correct {
+    border-color: #4caf50;
+    background: #e8f5e9;
+}
+
+.option-btn.incorrect {
+    border-color: #f44336;
+    background: #ffebee;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-check,
+.btn-next,
+.btn-finish {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-check {
+    background: #667eea;
+    color: white;
+}
+
+.btn-next {
+    background: #4facfe;
+    color: white;
+}
+
+.btn-finish {
+    background: #f5576c;
+    color: white;
+}
+
+.btn-check:hover,
+.btn-next:hover,
+.btn-finish:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RÉSULTATS ===== */
+.results-container {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.results-content h2 {
+    margin: 0 0 30px 0;
+    color: #333;
+    font-size: 2.5em;
+}
+
+.score-display {
+    margin-bottom: 30px;
+}
+
+.score-circle {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    padding: 40px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.score-value {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.score-total {
+    font-size: 2em;
+}
+
+.score-percentage {
+    font-size: 2.5em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.score-message {
+    font-size: 1.3em;
+    color: #666;
+    margin: 20px 0 30px 0;
+}
+
+.results-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-retry,
+.btn-back {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-retry {
+    background: #667eea;
+    color: white;
+}
+
+.btn-back {
+    background: #f5576c;
+    color: white;
+}
+
+.btn-retry:hover,
+.btn-back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== BULLE CURIO ===== */
+.curio-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+    z-index: 1000;
+}
+
+.curio-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.curio-close:hover {
+    color: #333;
+}
+
+.curio-avatar {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.curio-message {
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.curio-bubble.success {
+    border-left: 4px solid #4caf50;
+}
+
+.curio-bubble.error {
+    border-left: 4px solid #f44336;
+}
+
+.curio-bubble.info {
+    border-left: 4px solid #2196f3;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .section-title h1 {
+        font-size: 2em;
+    }
+
+    .periods-nav {
+        flex-direction: column;
+    }
+
+    .period-btn {
+        width: 100%;
+    }
+
+    .timeline-period:nth-child(odd),
+    .timeline-period:nth-child(even) {
+        text-align: left;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+
+/* === BOUTON EN SAVOIR PLUS === */
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #138496 0%, #117a8b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+}
+
+/* === SECTION LEÇON === */
+.lesson-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 2px solid var(--period-secondary, #e9c46a);
+    animation: slideDown 0.3s ease-out;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 4px solid var(--period-primary, #2a9d8f);
+    background: linear-gradient(90deg, var(--period-primary, #2a9d8f) 0%, transparent 100%);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.lesson-header h2 {
+    font-size: 1.6rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-content {
+    line-height: 1.9;
+    color: #2c3e50;
+    font-size: 1.05rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-content h3 {
+    color: white;
+    background: var(--period-primary, #2a9d8f);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lesson-content h3:first-child {
+    margin-top: 0;
+}
+
+.lesson-content p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    padding: 0.5rem 0;
+    line-height: 1.8;
+}
+
+.lesson-content ul {
+    background: #f8f9fa;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--period-secondary, #e9c46a);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-content li {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.lesson-content li::marker {
+    color: var(--period-primary, #2a9d8f);
+    font-weight: bold;
+}
+
+.lesson-content strong {
+    color: var(--period-primary, #2a9d8f);
+    font-weight: 700;
+    background: rgba(42, 157, 143, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.lesson-content em {
+    color: var(--period-accent, #e76f51);
+    font-style: italic;
+}
+
+/* Bouton Fermer amélioré */
+.lesson-header .close-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--period-primary, #2a9d8f);
+    border: 2px solid white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-header .close-btn:hover {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Séparateurs visuels */
+.lesson-content p+h3 {
+    margin-top: 2.5rem;
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lesson-container {
+        padding: 1.5rem;
+    }
+
+    .lesson-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .lesson-header h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .lesson-content {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .lesson-content h3 {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .lesson-content ul {
+        padding: 1rem 1rem 1rem 2rem;
+    }
+}
+
+/* ============================================================
+   LEÇONS "EN SAVOIR PLUS" — styles ajoutés via patch_lecon_css.py
+   ============================================================ */
+
+/* ── Structure principale du bloc leçon ─────────────────── */
+.lecon-bloc {
+    padding: 0.5rem 0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: var(--text-primary, #e8e8e8);
+}
+
+.lecon-bloc h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    margin: 1.5rem 0 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.lecon-bloc p,
+.lecon-bloc ul,
+.lecon-bloc li {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.92rem;
+}
+
+.lecon-bloc ul {
+    padding-left: 1.4rem;
+}
+
+.lecon-bloc li {
+    margin-bottom: 0.4rem;
+}
+
+.lecon-sep {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 1.5rem 0;
+}
+
+/* ── Encart Curio ────────────────────────────────────────── */
+.lecon-encart {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255, 183, 77, 0.1);
+    border-left: 3px solid #ffb74d;
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+.lecon-encart-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.lecon-encart p {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+/* ── Tableau pédagogique ─────────────────────────────────── */
+.lecon-tableau {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lecon-tableau caption {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    text-align: left;
+    color: var(--text-muted, #aaa);
+    caption-side: top;
+}
+
+.lecon-tableau th {
+    background: rgba(255, 183, 77, 0.2);
+    color: #ffb74d;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.lecon-tableau td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: top;
+}
+
+.lecon-tableau tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lecon-tableau tbody tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Liste humains préhistoriques ────────────────────────── */
+.lecon-liste-humains {
+    list-style: none;
+    padding: 0;
+}
+
+.lecon-liste-humains li {
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid rgba(255, 183, 77, 0.5);
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 6px 6px 0;
+}
+
+/* ── Section vidéos ──────────────────────────────────────── */
+.lecon-video-intro {
+    color: var(--text-muted, #aaa);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+.lecon-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0.5rem 0 1rem;
+}
+
+@media (max-width: 640px) {
+    .lecon-videos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lecon-video-bloc {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.lecon-video-titre {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+    color: var(--text-primary, #e8e8e8);
+    line-height: 1.4;
+}
+
+/* Conteneur 16:9 responsive */
+.lecon-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+
+.lecon-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+/* ── Placeholder périodes non encore rédigées ────────────── */
+.lecon-placeholder {
+    color: var(--text-muted, #aaa);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}

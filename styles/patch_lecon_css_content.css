@@ -1,0 +1,197 @@
+/* ============================================================
+   PATCH — STYLES LEÇONS "EN SAVOIR PLUS"
+   Fichier cible : styles/histoire_BON_CSS.css
+   À appliquer via patch_lecon_css.py
+   ============================================================
+
+   MÉTHODE D'APPLICATION :
+   Copier ce bloc à la fin de styles/histoire_BON_CSS.css
+   (ou exécuter patch_lecon_css.py)
+   ============================================================ */
+
+
+/* ── Structure principale du bloc leçon ─────────────────── */
+.lecon-bloc {
+    padding: 0.5rem 0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: var(--text-primary, #e8e8e8);
+}
+
+.lecon-bloc h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    margin: 1.5rem 0 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.lecon-bloc p,
+.lecon-bloc ul,
+.lecon-bloc li {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.92rem;
+}
+
+.lecon-bloc ul {
+    padding-left: 1.4rem;
+}
+
+.lecon-bloc li {
+    margin-bottom: 0.4rem;
+}
+
+.lecon-sep {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 1.5rem 0;
+}
+
+
+/* ── Encart Curio ────────────────────────────────────────── */
+.lecon-encart {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255, 183, 77, 0.1);
+    border-left: 3px solid #ffb74d;
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+.lecon-encart-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.lecon-encart p {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+
+/* ── Tableau pédagogique ─────────────────────────────────── */
+.lecon-tableau {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lecon-tableau caption {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    text-align: left;
+    color: var(--text-muted, #aaa);
+    caption-side: top;
+}
+
+.lecon-tableau th {
+    background: rgba(255, 183, 77, 0.2);
+    color: #ffb74d;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.lecon-tableau td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: top;
+}
+
+.lecon-tableau tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lecon-tableau tbody tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* ── Liste humains préhistoriques ────────────────────────── */
+.lecon-liste-humains {
+    list-style: none;
+    padding: 0;
+}
+
+.lecon-liste-humains li {
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid rgba(255, 183, 77, 0.5);
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 6px 6px 0;
+}
+
+
+/* ── Section vidéos ──────────────────────────────────────── */
+.lecon-video-intro {
+    color: var(--text-muted, #aaa);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+.lecon-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0.5rem 0 1rem;
+}
+
+@media (max-width: 640px) {
+    .lecon-videos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lecon-video-bloc {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.lecon-video-titre {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+    color: var(--text-primary, #e8e8e8);
+    line-height: 1.4;
+}
+
+/* Conteneur 16:9 responsive */
+.lecon-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* ratio 16:9 */
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+
+.lecon-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+
+/* ── Placeholder périodes non encore rédigées ────────────── */
+.lecon-placeholder {
+    color: var(--text-muted, #aaa);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
