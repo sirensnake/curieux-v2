@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🦕 Un nouveau dinosaure découvert !",
-      "summary": "Des scientifiques ont découvert un nouveau type de dinosaure en Chine ! Ce dinosaure vivait il y a environ 160 millions d'années et avait d'immenses ailes, comme un dragon. Les chercheurs pensent qu'il est lié aux oiseaux d'aujourd'hui. Cette découverte est importante car elle nous aide à mieux comprendre comment certains dinosaures ont évolué pour devenir des oiseaux. Cela montre aussi combien de types de dinosaures existent encore à découvrir !",
-      "date": "10/11/2023",
+      "title": "Les Robots Explorent la Lune 🌕",
+      "summary": "Récemment, des scientifiques ont envoyé un robot sur la Lune pour en apprendre davantage sur notre satellite naturel. Ce robot est équipé de caméras et d'outils spéciaux pour étudier le sol. Sa mission : découvrir des informations qui pourraient un jour aider les humains à y vivre ou à y travailler. Les chercheurs espèrent mieux comprendre comment la Lune s'est formée et ce qu'elle peut nous dire sur la Terre. C'est une aventure fascinante pour la science et l'exploration spatiale!",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "🌱 Nouvelle plante au sommet !",
-      "summary": "Au sommet des Andes, les montagnes d'Amérique du Sud, une nouvelle espèce de plante a été découverte par des botanistes. Elle s'appelle \"Viola andina\" et ressemble à une petite violette avec des fleurs blanches et jaunes. Trouver une nouvelle espèce montre à quel point notre planète est encore remplie de découvertes surprises. Les scientifiques espèrent que cette plante pourra nous en apprendre davantage sur la vie dans des environnements extrêmes.",
-      "date": "10/11/2023",
+      "title": "Une Découverte Très Poisson 🐠",
+      "summary": "Dans les océans du Pacifique, des scientifiques ont découvert une nouvelle espèce de poisson! Ce poisson a des couleurs éclatantes et vit à de grandes profondeurs. Il est unique en son genre car il peut changer de couleur pour se camoufler et se protéger des prédateurs. Ces découvertes sont importantes car elles nous aident à comprendre la richesse de la vie marine et l'importance de protéger nos océans. Qui sait quelles autres créatures incroyables peuvent encore être trouvées?",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "🚀 Véhicule lunaire prêt au décollage",
-      "summary": "Une équipe de chercheurs et d'ingénieurs chinois a testé avec succès un nouveau type de véhicule lunaire. Ce véhicule est conçu pour explorer la surface de la Lune et récolter des informations précieuses sur notre satellite naturel. Le projet vise à envoyer ce véhicule dans l'espace dans les prochaines années. Cela pourrait nous aider à mieux comprendre la Lune et à préparer de futures missions habitées. La science et la technologie s'unissent pour rendre ce rêve possible !",
-      "date": "10/11/2023",
+      "title": "Festival des Lumières en Asie 🎆",
+      "summary": "En Asie, un festival incroyable a commencé où des millions de lumières illuminent les villes! Ce festival célèbre la joie, la famille et la prospérité. Les rues se parent de lanternes colorées, et les gens créent des motifs lumineux à l'extérieur de leurs maisons. C'est l'occasion pour les familles de se retrouver et d'échanger des cadeaux. Ce festival spécial sensibilise aussi à l'importance de la lumière et du respect des traditions. C'est un spectacle magique à voir!",
+      "date": "10/10/2023",
       "link": ""
     }
   ]
