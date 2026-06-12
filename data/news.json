@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Un pas de géant pour la science spatiale! 🚀",
-      "summary": "Aujourd'hui, les scientifiques ont réussi à envoyer un nouveau téléscope spatial dans l'espace. Ce téléscope est comme des super jumelles qui nous aideront à voir très loin dans les étoiles et à découvrir comment l'univers s'est formé. Les chercheurs pensent qu'il pourrait même trouver des planètes semblables à la Terre! C'est une grande aventure scientifique qui nous aide à mieux comprendre notre place dans l'univers. Si tu aimes l'espace, c'est le moment de rêver aux merveilles cachées au-delà des étoiles!",
-      "date": "16/11/2023",
+      "title": "Découverte d'une Exoplanète 🌍",
+      "summary": "Les scientifiques ont récemment découvert une nouvelle exoplanète, c’est-à-dire une planète située en dehors de notre système solaire. Cette planète est très spéciale car elle pourrait avoir des conditions similaires à la Terre, ce qui signifie qu'elle pourrait peut-être abriter la vie ! Les explorations continuent pour en savoir plus sur cette planète mystérieuse située à des milliards de kilomètres de nous. Les astronomes utilisent de puissants télescopes pour observer ces mondes lointains, éveillant ainsi notre curiosité sur les galaxies et univers qui nous entourent.",
+      "date": "24/10/2023",
       "link": ""
     },
     {
-      "title": "Des amis à plumes reviennent en force! 🦜",
-      "summary": "Bonne nouvelle pour les fans d'animaux: les populations de perroquets en Amérique du Sud sont en augmentation! Grâce aux efforts de conservation, ces oiseaux colorés ont maintenant plus de forêts sûres pour vivre et se reproduire. Certains perroquets étaient en danger parce que leur habitat était détruit, mais maintenant, les gens travaillent dur pour protéger leurs maisons naturelles. Alors, prêt à admirer ces magnifiques oiseaux aux couleurs vives qui chantent et volent joyeusement?",
-      "date": "16/11/2023",
+      "title": "Migration des Papillons Monarques 🦋",
+      "summary": "En ce moment, les papillons monarques entreprennent un incroyable voyage de migration. Chaque année, ces petits insectes colorés traversent des milliers de kilomètres pour passer l’hiver dans des régions plus chaudes comme le Mexique. Cette longue aventure dure plusieurs générations de papillons. Grâce à cet extraordinaire phénomène naturel, les monarques aident les scientifiques à mieux comprendre la migration des animaux et les défis qu'ils doivent surmonter. Suivez les monarques dans leur périple spectaculaire jusqu'à destination !",
+      "date": "24/10/2023",
       "link": ""
     },
     {
-      "title": "La culture fait le plein de couleurs! 🎨",
-      "summary": "Un grand festival d'art se déroule cette semaine dans de nombreuses villes autour du monde. Des artistes viennent partager leurs peintures, sculptures et autres créations. C'est une opportunité pour apprendre et apprécier différents styles artistiques provenant de divers pays et cultures. Certaines œuvres sont même interactives et les visiteurs peuvent participer à leur création! Ce festival montre que l'art est un excellent moyen de rassembler les gens et de partager une grande diversité d'idées.",
-      "date": "16/11/2023",
+      "title": "La Musique du Futur 🎶",
+      "summary": "Un nouveau festival de musique à Londres met en avant les derniers instruments de musique futuristes. Les participants ont pu découvrir des instruments utilisant la technologie pour créer des sons incroyables. Certains instruments sont même contrôlés par les mouvements des mains ! Cette innovation artistique inspire de nombreux jeunes musiciens à explorer de nouvelles façons de faire de la musique. Ces nouveaux instruments montrent comment la technologie et la créativité travaillent ensemble pour créer des expériences musicales uniques et excitantes.",
+      "date": "24/10/2023",
       "link": ""
     }
   ]
