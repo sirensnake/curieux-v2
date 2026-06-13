@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte d'une Exoplanète 🌍",
-      "summary": "Les scientifiques ont récemment découvert une nouvelle exoplanète, c’est-à-dire une planète située en dehors de notre système solaire. Cette planète est très spéciale car elle pourrait avoir des conditions similaires à la Terre, ce qui signifie qu'elle pourrait peut-être abriter la vie ! Les explorations continuent pour en savoir plus sur cette planète mystérieuse située à des milliards de kilomètres de nous. Les astronomes utilisent de puissants télescopes pour observer ces mondes lointains, éveillant ainsi notre curiosité sur les galaxies et univers qui nous entourent.",
-      "date": "24/10/2023",
+      "title": "🌱 Un Nouvel Espoir pour les Plantes",
+      "summary": "Des scientifiques ont découvert un moyen d'aider les plantes à pousser plus vite et en meilleure santé, même dans des environnements difficiles. En utilisant des microbes spéciaux, ils ont réussi à améliorer la croissance des plantes dans des sols très secs ou pauvres en nutriments. Cela pourrait aider à cultiver plus de nourriture dans des endroits où il est difficile de faire pousser des plantes. Cette découverte est très positive, car elle pourrait contribuer à réduire la faim dans le monde et à protéger l'environnement.",
+      "date": "22/10/2023",
       "link": ""
     },
     {
-      "title": "Migration des Papillons Monarques 🦋",
-      "summary": "En ce moment, les papillons monarques entreprennent un incroyable voyage de migration. Chaque année, ces petits insectes colorés traversent des milliers de kilomètres pour passer l’hiver dans des régions plus chaudes comme le Mexique. Cette longue aventure dure plusieurs générations de papillons. Grâce à cet extraordinaire phénomène naturel, les monarques aident les scientifiques à mieux comprendre la migration des animaux et les défis qu'ils doivent surmonter. Suivez les monarques dans leur périple spectaculaire jusqu'à destination !",
-      "date": "24/10/2023",
+      "title": "🦋 Une Nouvelle Espèce de Papillon Découverte",
+      "summary": "Des explorateurs en Amazonie ont découvert une nouvelle espèce de papillon aux ailes éclatantes. Ce papillon, incroyablement coloré, a été trouvé dans une région de forêt tropicale dense. Les scientifiques étudient actuellement cet insecte pour comprendre ses habitudes de vie et son rôle dans l'écosystème. Découvrir de nouvelles espèces rappelle à quel point notre planète est diverse et qu'il y a encore beaucoup à apprendre sur la nature.",
+      "date": "22/10/2023",
       "link": ""
     },
     {
-      "title": "La Musique du Futur 🎶",
-      "summary": "Un nouveau festival de musique à Londres met en avant les derniers instruments de musique futuristes. Les participants ont pu découvrir des instruments utilisant la technologie pour créer des sons incroyables. Certains instruments sont même contrôlés par les mouvements des mains ! Cette innovation artistique inspire de nombreux jeunes musiciens à explorer de nouvelles façons de faire de la musique. Ces nouveaux instruments montrent comment la technologie et la créativité travaillent ensemble pour créer des expériences musicales uniques et excitantes.",
-      "date": "24/10/2023",
+      "title": "🎨 Un Musée Entre dans le Monde Virtuel",
+      "summary": "Un célèbre musée de New York a décidé d'ouvrir ses portes en ligne, grâce à la réalité virtuelle. Désormais, les visiteurs du monde entier peuvent explorer ses expositions depuis chez eux, comme s'ils y étaient. Cela permet aux enfants qui aiment l'art et l'histoire d'en apprendre davantage sans voyager. Cette initiative rend la culture accessible à tous et montre comment la technologie peut être utilisée pour partager le savoir à travers le monde.",
+      "date": "22/10/2023",
       "link": ""
     }
   ]
