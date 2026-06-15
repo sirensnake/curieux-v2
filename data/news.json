@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Des nuages de glace sur Pluton ❄️",
-      "summary": "Des scientifiques ont récemment découvert des nuages faits de glace sur Pluton, une planète naine située loin dans notre système solaire. Cela a été possible grâce à des images envoyées par une sonde qui a survolé Pluton. Ces nuages sont composés de minuscules particules de glace de méthane et montrent que même à des milliards de kilomètres de distance, il y a des surprises! Les chercheurs espèrent en apprendre plus sur l'atmosphère et l'histoire de Pluton grâce à cette découverte fascinante.",
-      "date": "21/11/2023",
+      "title": "🌍 Une nouvelle carte mondiale des océans !",
+      "summary": "Des scientifiques ont créé une nouvelle carte des océans du monde ! Cette carte très détaillée aide à comprendre où se trouvent les montagnes sous-marines et les profondes fosses océaniques. En utilisant des satellites, ils ont pu voir sous l'eau plus clairement que jamais. Cela aide les chercheurs à mieux comprendre comment les océans influencent notre climat et la vie marine. En étudiant ces cartes, les scientifiques peuvent aussi découvrir de nouvelles espèces qui vivent dans les profondeurs marines.",
+      "date": "29/10/2023",
+      "link": "https://www.exemplelienactus.com"
+    },
+    {
+      "title": "🐦 Une ville pour les oiseaux migrateurs",
+      "summary": "Une ville en Allemagne a transformé ses espaces verts pour accueillir les oiseaux migrateurs. Chaque année, ces oiseaux voyagent sur des milliers de kilomètres pour trouver un endroit plus chaud. Les habitants ont planté de nouvelles espèces de plantes et construit des nichoirs pour aider les oiseaux à se reposer et se nourrir. Cette initiative ne rend pas seulement la ville plus belle, mais elle aide aussi à protéger les oiseaux menacés par le changement climatique.",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Un ballet de papillons en ville 🦋",
-      "summary": "De nombreux papillons ont envahi plusieurs villes cette semaine! Il s'agit d'une migration annuelle où ces créatures colorées voyagent pour trouver des climats plus chauds. Cette année, ils sont particulièrement visibles dans les parcs et jardins, offrant un spectacle étonnant aux citadins. Les papillons suivent souvent des 'autoroutes aériennes' qu'on appelle des corridors écologiques. Observez autour de vous: vous pourriez apercevoir des espèces rarement vues! Cette migration est essentielle pour leur survie et pour l'équilibre de la nature.",
-      "date": "21/11/2023",
-      "link": ""
-    },
-    {
-      "title": "Des géants en ballon traversent le ciel 🎈",
-      "summary": "Chaque année, à la même époque, de gigantesques ballons en forme de personnages célèbres défilent dans le ciel pendant une parade spéciale. C'est un moment très attendu par les enfants et les familles qui viennent admirer ces ballons incroyables lors d'une marche festive. Cette tradition permet de rassembler de nombreuses personnes pour célébrer ensemble, tout en profitant de la créativité et de l'imagination derrière chaque ballon. Cet événement est aussi un bon moyen de célébrer l'amitié et le partage.",
-      "date": "21/11/2023",
-      "link": ""
+      "title": "🖌️ Une exposition d'art pour jeunes talents",
+      "summary": "Une exposition d'art spéciale a été organisée en France, mettant en valeur les œuvres d'artistes âgés de 8 à 18 ans. Ces jeunes talents ont créé des peintures, des sculptures et même des installations numériques. L'idée est d'encourager les enfants à explorer leur créativité et de montrer que tout le monde peut être artiste. Les œuvres exposées reflètent les idées des jeunes sur des sujets comme la nature, l'amitié et les rêves pour le futur.",
+      "date": "29/10/2023",
+      "link": "https://www.exemplelienart.com"
     }
   ]
 }
