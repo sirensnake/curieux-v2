@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌍 Une nouvelle carte mondiale des océans !",
-      "summary": "Des scientifiques ont créé une nouvelle carte des océans du monde ! Cette carte très détaillée aide à comprendre où se trouvent les montagnes sous-marines et les profondes fosses océaniques. En utilisant des satellites, ils ont pu voir sous l'eau plus clairement que jamais. Cela aide les chercheurs à mieux comprendre comment les océans influencent notre climat et la vie marine. En étudiant ces cartes, les scientifiques peuvent aussi découvrir de nouvelles espèces qui vivent dans les profondeurs marines.",
-      "date": "29/10/2023",
-      "link": "https://www.exemplelienactus.com"
-    },
-    {
-      "title": "🐦 Une ville pour les oiseaux migrateurs",
-      "summary": "Une ville en Allemagne a transformé ses espaces verts pour accueillir les oiseaux migrateurs. Chaque année, ces oiseaux voyagent sur des milliers de kilomètres pour trouver un endroit plus chaud. Les habitants ont planté de nouvelles espèces de plantes et construit des nichoirs pour aider les oiseaux à se reposer et se nourrir. Cette initiative ne rend pas seulement la ville plus belle, mais elle aide aussi à protéger les oiseaux menacés par le changement climatique.",
-      "date": "29/10/2023",
+      "title": "Une nouvelle étoile découverte ! 🌟",
+      "summary": "Des astronomes ont découvert une nouvelle étoile qui brille dans notre galaxie, la Voie lactée. Cette étoile, appelée \"Étoile Rêveuse\", est spéciale car elle émet une lumière légèrement bleutée. Découvrir de nouvelles étoiles aide les scientifiques à mieux comprendre le cosmos mystérieux. Qui sait, peut-être qu'un jour, l'avenir de l'espace et de ses secrets sera entre tes mains !",
+      "date": "16/11/2023",
       "link": ""
     },
     {
-      "title": "🖌️ Une exposition d'art pour jeunes talents",
-      "summary": "Une exposition d'art spéciale a été organisée en France, mettant en valeur les œuvres d'artistes âgés de 8 à 18 ans. Ces jeunes talents ont créé des peintures, des sculptures et même des installations numériques. L'idée est d'encourager les enfants à explorer leur créativité et de montrer que tout le monde peut être artiste. Les œuvres exposées reflètent les idées des jeunes sur des sujets comme la nature, l'amitié et les rêves pour le futur.",
-      "date": "29/10/2023",
-      "link": "https://www.exemplelienart.com"
+      "title": "Des baleines à bosse font du spectacle ! 🐋",
+      "summary": "En Australie, les gens ont eu la chance d'observer des baleines à bosse qui sautaient et tournaient dans l'eau. C'est la saison où ces baleines migrent pour trouver des eaux plus chaudes. Elles sont connues pour être de très bonnes acrobates. Ces spectacles naturels rappellent l'importance de protéger nos océans et ses incroyables habitants.",
+      "date": "16/11/2023",
+      "link": ""
+    },
+    {
+      "title": "Les championnats de robotique ont débuté ! 🤖",
+      "summary": "Les jeunes du monde entier se réunissent pour participer aux championnats de robotique ! Ils conçoivent et construisent des robots incroyables capables de réaliser des tâches variées, comme ramasser des objets ou résoudre des puzzles. Cette compétition encourage la coopération et l'ingéniosité. Qui sait, peut-être que tu créerais un robot utile un jour ?",
+      "date": "16/11/2023",
+      "link": ""
     }
   ]
 }
