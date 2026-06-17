@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle étoile découverte ! 🌟",
-      "summary": "Des astronomes ont découvert une nouvelle étoile qui brille dans notre galaxie, la Voie lactée. Cette étoile, appelée \"Étoile Rêveuse\", est spéciale car elle émet une lumière légèrement bleutée. Découvrir de nouvelles étoiles aide les scientifiques à mieux comprendre le cosmos mystérieux. Qui sait, peut-être qu'un jour, l'avenir de l'espace et de ses secrets sera entre tes mains !",
-      "date": "16/11/2023",
+      "title": "Les chiens sur Mars ? 🐕🚀",
+      "summary": "Récemment, les scientifiques étudient si les chiens pourraient un jour aller sur Mars ! On sait que les chiens sont des compagnons incroyables sur Terre, et de nouvelles recherches examinent comment ils pourraient aider les humains lors de futures missions sur la planète rouge. Les chiens pourraient apporter du réconfort aux astronautes et même les aider à explorer. C'est une idée passionnante où la technologie et l'amitié se rencontrent dans l'espace.",
+      "date": "25/10/2023",
       "link": ""
     },
     {
-      "title": "Des baleines à bosse font du spectacle ! 🐋",
-      "summary": "En Australie, les gens ont eu la chance d'observer des baleines à bosse qui sautaient et tournaient dans l'eau. C'est la saison où ces baleines migrent pour trouver des eaux plus chaudes. Elles sont connues pour être de très bonnes acrobates. Ces spectacles naturels rappellent l'importance de protéger nos océans et ses incroyables habitants.",
-      "date": "16/11/2023",
+      "title": "Un océan sous la glace 🌊❄️",
+      "summary": "Des scientifiques ont découvert qu'il y a un océan caché sous la glace de l'une des lunes de Jupiter appelée Europe. Cet océan pourrait être très grand et remplit d'eau salée. Les chercheurs pensent même qu'il pourrait y avoir des formes de vie ! C'est incroyable de penser qu'il y a peut-être des petits êtres vivant si loin de notre planète. Cette découverte nous enseigne beaucoup sur l'univers et les différentes manières dont la vie pourrait exister.",
+      "date": "25/10/2023",
       "link": ""
     },
     {
-      "title": "Les championnats de robotique ont débuté ! 🤖",
-      "summary": "Les jeunes du monde entier se réunissent pour participer aux championnats de robotique ! Ils conçoivent et construisent des robots incroyables capables de réaliser des tâches variées, comme ramasser des objets ou résoudre des puzzles. Cette compétition encourage la coopération et l'ingéniosité. Qui sait, peut-être que tu créerais un robot utile un jour ?",
-      "date": "16/11/2023",
+      "title": "Festival des couleurs en Inde 🎨🇮🇳",
+      "summary": "En Inde, on célèbre en ce moment un festival très joyeux appelé Diwali. C'est une fête des lumières où les familles allument des bougies et des lampes pour symboliser la victoire de la lumière sur les ténèbres. On voit aussi des feux d'artifice et les gens échangent des cadeaux. Les rues sont décorées de belles couleurs et les plats délicieux sont partagés entre amis et famille. C'est un moment de joie, de partage et de paix, célébré par de nombreuses personnes à travers le monde.",
+      "date": "25/10/2023",
       "link": ""
     }
   ]
