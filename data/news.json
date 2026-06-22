@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🚀 Une nouvelle aventure vers Mars commence!",
-      "summary": "La NASA a annoncé qu'elle prépare une nouvelle mission pour explorer Mars. Ce projet ambitieux a pour but de mieux comprendre la planète rouge en envoyant un robot plein de capteurs. Ces missions sont comme des détectives de l'espace qui aident les scientifiques à découvrir de nouvelles choses sur notre voisin planétaire. Peut-être qu'un jour, grâce à ces explorations, des humains pourront marcher sur Mars! N'est-ce pas incroyable?",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "La lune se rapproche des étoiles 🌕✨",
+      "summary": "Un phénomène magique a eu lieu dans le ciel : une éclipse lunaire ! Cela se passe quand la Terre, la Lune et le Soleil s'alignent et que la Terre cache la lumière du Soleil qui éclaire la Lune. Cette semaine, les gens ont pu voir la Lune devenir rouge pendant un court moment. C'est souvent appelé une \"Lune de sang\" à cause de sa couleur spéciale. Ce phénomène se produit souvent, mais chaque fois, c'est une surprise. Regarder les étoiles et comprendre ces merveilles de l'espace nous donne envie d'en savoir plus sur notre univers.",
+      "date": "26/10/2023",
+      "link": "https://www.nasa.gov"
     },
     {
-      "title": "🐾 Un nouveau refuge pour les animaux sauvages",
-      "summary": "Bonne nouvelle pour les animaux en Inde! Un nouveau sanctuaire vient d'être créé pour protéger les tigres et les éléphants. Ces animaux majestueux, qui vivent dans la forêt, sont parfois menacés par la déforestation. Ce refuge leur offre un endroit sûr où ils peuvent vivre et se reproduire. Les gardes forestiers veillent à leur sécurité et à la préservation de leur habitat naturel.",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "Une nouvelle maison pour les pandas 🐼",
+      "summary": "Bonne nouvelle pour les amoureux des animaux : un nouvel habitat a été créé pour les pandas au zoo de Paris ! Les pandas sont des animaux très spéciaux et rares car ils vivent principalement en Chine. Dans leur nouvel espace, ils auront plus de place pour grimper, jouer et manger leur aliment préféré, le bambou. Les responsables du zoo espèrent que cela aidera ces animaux à être plus heureux et en meilleure santé. Découvrir comment nous pouvons aider à protéger les animaux peut être un sujet passionnant pour tous.",
+      "date": "26/10/2023",
+      "link": "https://www.zoo-paris.com"
     },
     {
-      "title": "🎨 Des tableaux du passé révélés grâce à la technologie",
-      "summary": "Des chercheurs ont utilisé une technologie spéciale pour découvrir des peintures cachées sous des chefs-d'œuvre célèbres. Ces tableaux avaient été peints par-dessus et étaient invisibles à l'œil nu depuis des centaines d'années. Cette découverte permet de mieux comprendre l'histoire de l'art et les techniques des artistes du passé. Ainsi, à travers ces révélations, nous en apprenons davantage sur notre patrimoine culturel!",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "Une plante qui éclaire la nuit 🌱💡",
+      "summary": "Des chercheurs ont créé une plante qui brille dans le noir ! En utilisant des techniques spéciales, ils ont modifié des plantes pour qu'elles produisent une lumière douce, un peu comme les lucioles. Cette découverte pourrait être utile un jour pour éclairer les rues, économiser de l'énergie ou même aider les gens à cultiver des plantes en intérieur plus facilement. Imaginer un monde où les plantes éclairent nos chemins ressemble à de la magie, non ? Les avancées en science et en technologie nous montrent chaque jour comment les idées créatives peuvent devenir réalité.",
+      "date": "26/10/2023",
+      "link": "https://www.sciencenews.org"
     }
   ]
 }
