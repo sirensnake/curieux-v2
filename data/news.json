@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "La lune se rapproche des étoiles 🌕✨",
-      "summary": "Un phénomène magique a eu lieu dans le ciel : une éclipse lunaire ! Cela se passe quand la Terre, la Lune et le Soleil s'alignent et que la Terre cache la lumière du Soleil qui éclaire la Lune. Cette semaine, les gens ont pu voir la Lune devenir rouge pendant un court moment. C'est souvent appelé une \"Lune de sang\" à cause de sa couleur spéciale. Ce phénomène se produit souvent, mais chaque fois, c'est une surprise. Regarder les étoiles et comprendre ces merveilles de l'espace nous donne envie d'en savoir plus sur notre univers.",
-      "date": "26/10/2023",
-      "link": "https://www.nasa.gov"
+      "title": "Découverte de Planète Lointaine 🌌",
+      "summary": "Des astronomes ont récemment découvert une nouvelle planète située très loin de la Terre. Ils l'ont appelée TOI-700 e! Cette planète pourrait avoir des conditions similaires à celles de notre planète. Cela signifie qu'elle pourrait être à la bonne température pour avoir de l'eau à sa surface. Les scientifiques utilisent de puissants télescopes pour observer et apprendre davantage sur ce monde lointain. Qui sait ce qu'ils pourraient trouver ? Peut-être des indices sur la possibilité de vie ailleurs que sur Terre !",
+      "date": "27/10/2023",
+      "link": "https://www.example.com"
     },
     {
-      "title": "Une nouvelle maison pour les pandas 🐼",
-      "summary": "Bonne nouvelle pour les amoureux des animaux : un nouvel habitat a été créé pour les pandas au zoo de Paris ! Les pandas sont des animaux très spéciaux et rares car ils vivent principalement en Chine. Dans leur nouvel espace, ils auront plus de place pour grimper, jouer et manger leur aliment préféré, le bambou. Les responsables du zoo espèrent que cela aidera ces animaux à être plus heureux et en meilleure santé. Découvrir comment nous pouvons aider à protéger les animaux peut être un sujet passionnant pour tous.",
-      "date": "26/10/2023",
-      "link": "https://www.zoo-paris.com"
+      "title": "Retour des Tortues Marinas 🐢",
+      "summary": "Bonne nouvelle pour les amoureux des animaux ! Les tortues marines reviennent en nombre sur certaines plages du monde pour déposer leurs œufs. Grâce aux efforts de protection des plages, les tortues se sentent en sécurité pour laisser leurs petits grandir. Des bénévoles se mobilisent pour surveiller les plages et s'assurer que les tortues et leurs bébés ne soient pas dérangés. Cela aidera à augmenter le nombre de tortues dans les océans, un geste important pour la nature.",
+      "date": "27/10/2023",
+      "link": ""
     },
     {
-      "title": "Une plante qui éclaire la nuit 🌱💡",
-      "summary": "Des chercheurs ont créé une plante qui brille dans le noir ! En utilisant des techniques spéciales, ils ont modifié des plantes pour qu'elles produisent une lumière douce, un peu comme les lucioles. Cette découverte pourrait être utile un jour pour éclairer les rues, économiser de l'énergie ou même aider les gens à cultiver des plantes en intérieur plus facilement. Imaginer un monde où les plantes éclairent nos chemins ressemble à de la magie, non ? Les avancées en science et en technologie nous montrent chaque jour comment les idées créatives peuvent devenir réalité.",
-      "date": "26/10/2023",
-      "link": "https://www.sciencenews.org"
+      "title": "Festival des Lumières en Inde 🎆",
+      "summary": "C'est l'heure du Diwali, le célèbre festival des lumières en Inde ! Pendant cette célébration, les familles allument de nombreuses petites lampes appelées 'diyas' chez elles et dans les rues. C'est une fête pleine de couleurs et de joies. Les gens achètent de nouveaux vêtements, partagent des desserts délicieux, et offrent des cadeaux. Diwali symbolise la victoire de la lumière sur l'obscurité et du bien sur le mal. C'est aussi un temps fort pour passer du temps en famille et avec les amis.",
+      "date": "27/10/2023",
+      "link": ""
     }
   ]
 }
