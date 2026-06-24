@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte de Planète Lointaine 🌌",
-      "summary": "Des astronomes ont récemment découvert une nouvelle planète située très loin de la Terre. Ils l'ont appelée TOI-700 e! Cette planète pourrait avoir des conditions similaires à celles de notre planète. Cela signifie qu'elle pourrait être à la bonne température pour avoir de l'eau à sa surface. Les scientifiques utilisent de puissants télescopes pour observer et apprendre davantage sur ce monde lointain. Qui sait ce qu'ils pourraient trouver ? Peut-être des indices sur la possibilité de vie ailleurs que sur Terre !",
-      "date": "27/10/2023",
-      "link": "https://www.example.com"
-    },
-    {
-      "title": "Retour des Tortues Marinas 🐢",
-      "summary": "Bonne nouvelle pour les amoureux des animaux ! Les tortues marines reviennent en nombre sur certaines plages du monde pour déposer leurs œufs. Grâce aux efforts de protection des plages, les tortues se sentent en sécurité pour laisser leurs petits grandir. Des bénévoles se mobilisent pour surveiller les plages et s'assurer que les tortues et leurs bébés ne soient pas dérangés. Cela aidera à augmenter le nombre de tortues dans les océans, un geste important pour la nature.",
-      "date": "27/10/2023",
+      "title": "Une fantastique éclipse solaire 🌞🎭",
+      "summary": "Le 14 octobre 2023, une éclipse solaire annulaire a été observée dans plusieurs régions du monde. Pendant une éclipse solaire annulaire, la Lune passe devant le Soleil, mais elle est trop loin pour le cacher complètement. Cela crée un anneau lumineux dans le ciel, souvent appelé \"anneau de feu\". C'est un événement merveilleux que beaucoup de gens ont observé avec des lunettes spéciales pour protéger leurs yeux. Le prochain rendez-vous pour une éclipse similaire est en 2024 !",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Festival des Lumières en Inde 🎆",
-      "summary": "C'est l'heure du Diwali, le célèbre festival des lumières en Inde ! Pendant cette célébration, les familles allument de nombreuses petites lampes appelées 'diyas' chez elles et dans les rues. C'est une fête pleine de couleurs et de joies. Les gens achètent de nouveaux vêtements, partagent des desserts délicieux, et offrent des cadeaux. Diwali symbolise la victoire de la lumière sur l'obscurité et du bien sur le mal. C'est aussi un temps fort pour passer du temps en famille et avec les amis.",
-      "date": "27/10/2023",
+      "title": "Découverte d'un fossile incroyable 🦕",
+      "summary": "Des scientifiques au Colorado, aux États-Unis, ont découvert le fossile d'un dinosaure rare. Il est vieux de 150 millions d'années ! Ce dinosaure, appelé sauropode, était immense, avec un long cou et une longue queue. Les fossiles comme celui-ci aident les paléontologues à comprendre comment vivaient ces créatures incroyables. En étudiant les dinosaures, on apprend aussi des choses sur l'histoire de la Terre et les changements qui s'y sont produits.",
+      "date": "15/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Festival des lumières en Inde 🎆",
+      "summary": "En Inde, le festival Diwali a débuté le 15 octobre 2023. Diwali est une fête très joyeuse, aussi appelée la fête des lumières. Lors de cet événement, les gens allument des lampes et des bougies pour symboliser la lumière qui triomphe sur l'obscurité et le bien qui triomphe sur le mal. C'est aussi l'occasion de partager des moments joyeux en famille et avec des amis, d'échanger des cadeaux et de déguster de délicieux plats traditionnels. La fête dure plusieurs jours et est célébrée par des millions de personnes dans le monde entier.",
+      "date": "15/10/2023",
       "link": ""
     }
   ]
