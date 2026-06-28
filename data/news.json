@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Le Grand Marathon de New York 🏃‍♂️",
-      "summary": "Le marathon de New York a eu lieu récemment, où des milliers de coureurs du monde entier se sont rassemblés pour participer. Un marathon, c'est une longue course de 42 kilomètres. Cette année, un coureur du Brésil a gagné chez les hommes, et une coureuse du Kenya a remporté la première place chez les femmes. Beaucoup de coureurs participent pour collecter des fonds pour des œuvres de charité ou simplement pour le plaisir de relever un grand défi. C'est un événement où tout le monde est encouragé et applaudi, peu importe le temps qu'ils mettent pour finir!",
-      "date": "06/11/2023",
+      "title": "Une forêt magique de coraux 🪸",
+      "summary": "Des scientifiques ont récemment découvert une nouvelle forêt de coraux sous l'océan Pacifique. Ces coraux sont très colorés et abritent des milliers de petits poissons et créatures marines. C'est un peu comme une forêt enchantée sous l'eau ! Les coraux sont très importants pour la santé de nos océans. Ils hébergent des tas d'animaux et protègent les côtes. Les chercheurs disent qu'il est essentiel de prendre soin de ces forêts sous-marines, car elles aident à garder l'océan en bonne santé. Peut-être qu'un jour, on pourra tous aider à protéger les coraux en faisant attention à notre planète !",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "Découverte d'une Nouvelle Étoile 🌟",
-      "summary": "Des astronomes ont récemment découvert une nouvelle étoile dans notre galaxie, la Voie Lactée ! Cette étoile est plus grande et plus brillante que notre soleil. Les scientifiques l'ont aperçue grâce à de puissants télescopes qui permettent de voir très loin dans l'espace. Chaque nouvelle découverte dans l'espace nous aide à mieux comprendre notre univers. Les enfants peuvent aussi observer les étoiles à l'aide de télescopes plus petits et en apprendre davantage sur les constellations dans le ciel nocturne.",
-      "date": "06/11/2023",
+      "title": "Les secrets de la Lune 🌕",
+      "summary": "Une mission spatiale vient de révéler des informations passionnantes sur la Lune ! Les scientifiques ont découvert de minuscules traces d'eau cachées dans les roches lunaires. Cela pourrait aider un jour les astronautes à vivre sur la Lune. Imagine pouvoir faire du jus de fruit lunaire en utilisant l'eau découverte là-bas ! Les recherches continuent pour voir comment cette eau pourrait être utilisée. Cela permettrait peut-être d'aider à construire une base lunaire dans le futur. Le rêve de vivre sur la Lune se rapproche un peu plus !",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "Une Méga Montage de LEGO 🧱",
-      "summary": "Au Danemark, un groupe de passionnés de LEGO a construit l'une des plus grandes structures jamais réalisées avec des briques en plastique. Cette immense sculpture représente un célèbre château de contes de fées et est composée de millions de petites pièces LEGO. Des enfants et des adultes du monde entier visitent cette exposition pour admirer la construction et puiser de l'inspiration. Les LEGO ne sont pas seulement amusants à jouer, ils aident aussi à développer la créativité et les compétences en ingénierie chez les enfants en construisant tout ce qui sort de leur imagination.",
-      "date": "06/11/2023",
+      "title": "Un champion à roulettes 🛹",
+      "summary": "Un jeune garçon de 12 ans a remporté une compétition internationale de skate en Italie ! Il a impressionné les juges avec ses figures acrobatiques et sa vitesse. Le skate est un sport qui demande beaucoup d'équilibre et de pratique. Ce garçon s'entraîne dur tous les jours et rêve de participer aux Jeux olympiques un jour. Il nous montre qu'avec de la passion et de l'entraînement, on peut réaliser ses rêves. Peut-être qu'un jour, tu pourrais être la prochaine star du skate !",
+      "date": "01/11/2023",
       "link": ""
     }
   ]
