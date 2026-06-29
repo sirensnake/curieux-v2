@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Une forêt magique de coraux 🪸",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle forêt de coraux sous l'océan Pacifique. Ces coraux sont très colorés et abritent des milliers de petits poissons et créatures marines. C'est un peu comme une forêt enchantée sous l'eau ! Les coraux sont très importants pour la santé de nos océans. Ils hébergent des tas d'animaux et protègent les côtes. Les chercheurs disent qu'il est essentiel de prendre soin de ces forêts sous-marines, car elles aident à garder l'océan en bonne santé. Peut-être qu'un jour, on pourra tous aider à protéger les coraux en faisant attention à notre planète !",
-      "date": "01/11/2023",
+      "title": "Le grand bond des astronautes 🚀",
+      "summary": "Deux astronautes ont participé cette semaine à une incroyable sortie dans l'espace pour réparer une antenne sur la Station Spatiale Internationale (ISS). La sortie dans l'espace, appelée aussi \"sortie extravéhiculaire\", leur a permis de flotter dans le vide pendant environ 7 heures en utilisant des outils spéciaux. Ces réparations sont importantes pour garder l'ISS en bon état et soutiennent les missions de recherche qui aident les scientifiques à mieux comprendre l'espace et notre monde. Imagine-toi flotter en apesanteur avec la Terre juste en dessous de toi !",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Les secrets de la Lune 🌕",
-      "summary": "Une mission spatiale vient de révéler des informations passionnantes sur la Lune ! Les scientifiques ont découvert de minuscules traces d'eau cachées dans les roches lunaires. Cela pourrait aider un jour les astronautes à vivre sur la Lune. Imagine pouvoir faire du jus de fruit lunaire en utilisant l'eau découverte là-bas ! Les recherches continuent pour voir comment cette eau pourrait être utilisée. Cela permettrait peut-être d'aider à construire une base lunaire dans le futur. Le rêve de vivre sur la Lune se rapproche un peu plus !",
-      "date": "01/11/2023",
+      "title": "Les pandas géants en visite 🐼",
+      "summary": "Deux adorables pandas géants, You You et Qing Qing, ont voyagé toute la semaine de la Chine à un zoo en France. Ils sont arrivés en toute sécurité après un long vol dans un avion spécialement aménagé pour eux. Les pandas géants, connus pour leur pelage noir et blanc et leur amour du bambou, suscitent toujours la curiosité. En les accueillant, le zoo participe à un programme de conservation pour protéger cette espèce menacée. Les pandas sont des symboles de la nature et de la nécessité de protéger notre planète et ses habitants.",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Un champion à roulettes 🛹",
-      "summary": "Un jeune garçon de 12 ans a remporté une compétition internationale de skate en Italie ! Il a impressionné les juges avec ses figures acrobatiques et sa vitesse. Le skate est un sport qui demande beaucoup d'équilibre et de pratique. Ce garçon s'entraîne dur tous les jours et rêve de participer aux Jeux olympiques un jour. Il nous montre qu'avec de la passion et de l'entraînement, on peut réaliser ses rêves. Peut-être qu'un jour, tu pourrais être la prochaine star du skate !",
-      "date": "01/11/2023",
+      "title": "Une vallée cachée découverte en Antarctique ❄️",
+      "summary": "Des scientifiques ont récemment dévoilé l'existence d'une vallée cachée sous la glace de l'Antarctique ! Grâce à une technologie spéciale qui permet de 'voir' sous la glace avec des radars, ils ont découvert cette grande vallée qui mesure près de 300 kilomètres de long. Cette découverte aide les chercheurs à mieux comprendre comment les glaciers se déplacent et comment le climat change notre planète. C’est fascinant de penser à toutes les merveilles encore cachées sous les glaces ou les océans que nous pourrions découvrir à l'avenir !",
+      "date": "15/10/2023",
       "link": ""
     }
   ]
