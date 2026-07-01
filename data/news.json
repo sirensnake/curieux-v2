@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle lune 🌕 pour Saturne !",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle lune qui orbite autour de Saturne. Cette planète, connue pour ses magnifiques anneaux, a déjà plus de 80 lunes. Cette découverte est excitante pour les astronomes, car elle les aide à mieux comprendre l'univers. Savais-tu que les lunes sont comme des petits compagnons pour les planètes ? Découvrir une nouvelle lune, c'est comme ajouter un nouvel ami à une grande famille !",
-      "date": "02/11/2023",
+      "title": "Découverte d'une Nouvelle Espèce d'Oiseau ! 🐦",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce d'oiseau dans une forêt éloignée en Amazonie. Cet oiseau a des plumes aux couleurs vives : bleu, vert et jaune. Les chercheurs disent que cette découverte est importante car elle nous aide à mieux comprendre la biodiversité et pourquoi nous devons protéger l'habitat de ces animaux. Cela montre aussi qu'il y a encore beaucoup à apprendre sur les créatures qui vivent sur notre planète. C'est comme un trésor caché que nous venons de trouver !",
+      "date": "24/10/2023",
+      "link": "https://www.exemple.com/article-oiseau"
+    },
+    {
+      "title": "La Fête des Lanternes Éblouit la Chine 🎆",
+      "summary": "En Chine, des milliers de personnes ont célébré la fête des lanternes. Ce festival marque la fin des célébrations du Nouvel An lunaire. Les rues étaient illuminées par des lanternes colorées aux formes variées : animaux, mangas, maisons et fleurs. Les gens ont profité de la musique, des spectacles de danse et des délicieux plats traditionnels. Cette fête est un moment pour se réunir en famille et apprécier la beauté de la lumière, tout en partageant des histoires et des rires.",
+      "date": "24/10/2023",
       "link": ""
     },
     {
-      "title": "Les manchots et leurs nouvelles aventures 🐧",
-      "summary": "Une équipe de chercheurs a trouvé un groupe de manchots dans un endroit inattendu en Antarctique. Ces adorables oiseaux ne peuvent pas voler, mais ils sont d'excellents nageurs. Les scientifiques étudient leur comportement pour apprendre comment ils s'adaptent aux changements climatiques. Découvrir où vivent ces manchots aide à les protéger, et à garantir qu'ils auront assez de poisson pour manger.",
-      "date": "02/11/2023",
-      "link": ""
-    },
-    {
-      "title": "Un festival de musique plein de couleurs 🎶",
-      "summary": "En Inde, un festival de musique a réuni des musiciens du monde entier. Cet événement célèbre la musique traditionnelle et moderne, et c'est un moment où beaucoup de personnes partagent leur culture et leur joie. La musique est un langage universel qui permet de rassembler les gens et d'apprendre de nouvelles choses. Qui sait, peut-être que la prochaine fois, tu entendras une chanson que tu auras envie de jouer avec tes amis !",
-      "date": "02/11/2023",
+      "title": "Des Pêcheurs Sauvent un Dauphin Enchevêtré 🐬",
+      "summary": "Des pêcheurs en mer ont récemment sauvé un dauphin qui s'était pris dans un filet en plastique. Les pêcheurs ont remarqué que le dauphin avait du mal à nager et ont agi rapidement pour libérer l'animal. Le dauphin, après avoir été relâché, a fait quelques sauts hors de l'eau, comme pour les remercier. Cette histoire rappelle l'importance de garder nos océans propres pour protéger la vie marine. C'est un bel exemple de comment nous pouvons aider les animaux en détresse.",
+      "date": "24/10/2023",
       "link": ""
     }
   ]
