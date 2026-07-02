@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte d'une Nouvelle Espèce d'Oiseau ! 🐦",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce d'oiseau dans une forêt éloignée en Amazonie. Cet oiseau a des plumes aux couleurs vives : bleu, vert et jaune. Les chercheurs disent que cette découverte est importante car elle nous aide à mieux comprendre la biodiversité et pourquoi nous devons protéger l'habitat de ces animaux. Cela montre aussi qu'il y a encore beaucoup à apprendre sur les créatures qui vivent sur notre planète. C'est comme un trésor caché que nous venons de trouver !",
-      "date": "24/10/2023",
-      "link": "https://www.exemple.com/article-oiseau"
-    },
-    {
-      "title": "La Fête des Lanternes Éblouit la Chine 🎆",
-      "summary": "En Chine, des milliers de personnes ont célébré la fête des lanternes. Ce festival marque la fin des célébrations du Nouvel An lunaire. Les rues étaient illuminées par des lanternes colorées aux formes variées : animaux, mangas, maisons et fleurs. Les gens ont profité de la musique, des spectacles de danse et des délicieux plats traditionnels. Cette fête est un moment pour se réunir en famille et apprécier la beauté de la lumière, tout en partageant des histoires et des rires.",
-      "date": "24/10/2023",
+      "title": "Une nouvelle planète découverte ! 🌍🪐",
+      "summary": "Des astronomes, qui sont des scientifiques qui étudient le ciel, ont découvert une nouvelle planète. Elle se trouve très loin de la Terre, dans une autre partie de notre galaxie. Cette planète est spéciale car elle est de la même taille que la Terre et pourrait peut-être avoir de l'eau. Les scientifiques utilisent de puissants télescopes pour observer le ciel et en apprendre davantage sur cette nouvelle planète. N’est-ce pas incroyable de penser qu’il y a encore tant de choses à découvrir dans l'espace ? Peut-être qu'un jour, toi aussi, tu pourras explorer les étoiles !",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "Des Pêcheurs Sauvent un Dauphin Enchevêtré 🐬",
-      "summary": "Des pêcheurs en mer ont récemment sauvé un dauphin qui s'était pris dans un filet en plastique. Les pêcheurs ont remarqué que le dauphin avait du mal à nager et ont agi rapidement pour libérer l'animal. Le dauphin, après avoir été relâché, a fait quelques sauts hors de l'eau, comme pour les remercier. Cette histoire rappelle l'importance de garder nos océans propres pour protéger la vie marine. C'est un bel exemple de comment nous pouvons aider les animaux en détresse.",
-      "date": "24/10/2023",
+      "title": "Une semaine de chocolat à Paris ! 🍫🎉",
+      "summary": "À Paris, une grande fête dédiée au chocolat a commencé. C'est un événement où les gens viennent goûter du chocolat de toutes sortes et découvrir comment il est fabriqué. Il y a même des sculptures en chocolat ! Les chocolatiers, qui sont des spécialistes du chocolat, montrent leurs créations et partagent leur passion. Cet événement attire des visiteurs du monde entier qui aiment le chocolat ou qui travaillent avec lui. Si tu aimes le chocolat, ce festival est un véritable paradis !",
+      "date": "28/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Des jardins sur les toits ! 🌿🏢",
+      "summary": "Dans plusieurs villes du monde, des gens ont commencé à cultiver des jardins sur les toits des immeubles. Ces jardins aident à améliorer l'air que nous respirons et à créer des endroits plus frais pendant l'été. Les plantes, les fleurs et même les légumes poussent ainsi en hauteur, et les abeilles et les papillons adorent y passer du temps. Ces jardins apportent un peu de nature en ville et aident les gens à se sentir bien. C’est une belle manière d’utiliser l’espace des toits pour contribuer à un environnement plus vert !",
+      "date": "28/10/2023",
       "link": ""
     }
   ]
