@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle planète découverte ! 🌍🪐",
-      "summary": "Des astronomes, qui sont des scientifiques qui étudient le ciel, ont découvert une nouvelle planète. Elle se trouve très loin de la Terre, dans une autre partie de notre galaxie. Cette planète est spéciale car elle est de la même taille que la Terre et pourrait peut-être avoir de l'eau. Les scientifiques utilisent de puissants télescopes pour observer le ciel et en apprendre davantage sur cette nouvelle planète. N’est-ce pas incroyable de penser qu’il y a encore tant de choses à découvrir dans l'espace ? Peut-être qu'un jour, toi aussi, tu pourras explorer les étoiles !",
-      "date": "28/10/2023",
+      "title": "Un petit robot sur Mars 🚀",
+      "summary": "Un petit robot appelé Perseverance explore Mars, notre voisin rouge dans le ciel ! Il a récemment découvert des indices qui pourraient nous aider à comprendre s'il y a eu de la vie sur cette planète. Ce robot utilise des outils super modernes, comme des caméras et des lasers, pour étudier les roches et le sol martiens. C'est important pour les scientifiques qui veulent en savoir plus sur l'histoire de Mars et peut-être, un jour, envoyer des humains là-bas !",
+      "date": "06/11/2023",
+      "link": "https://mars.nasa.gov/news"
+    },
+    {
+      "title": "Un record de cercles de culture 🌾",
+      "summary": "Des cultivateurs en Angleterre ont créé le plus grand cercle de culture jamais réalisé ! Ces motifs géants apparaissent dans les champs de blé et sont souvent considérés comme mystérieux. En réalité, ils sont faits par des personnes très créatives qui aiment faire de l'art dans les champs. Ce nouveau motif est incroyable et représente une figure géométrique complexe. Les visiteurs viennent de partout pour admirer cette œuvre d'art qui disparaîtra dès que le blé sera récolté.",
+      "date": "06/11/2023",
       "link": ""
     },
     {
-      "title": "Une semaine de chocolat à Paris ! 🍫🎉",
-      "summary": "À Paris, une grande fête dédiée au chocolat a commencé. C'est un événement où les gens viennent goûter du chocolat de toutes sortes et découvrir comment il est fabriqué. Il y a même des sculptures en chocolat ! Les chocolatiers, qui sont des spécialistes du chocolat, montrent leurs créations et partagent leur passion. Cet événement attire des visiteurs du monde entier qui aiment le chocolat ou qui travaillent avec lui. Si tu aimes le chocolat, ce festival est un véritable paradis !",
-      "date": "28/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Des jardins sur les toits ! 🌿🏢",
-      "summary": "Dans plusieurs villes du monde, des gens ont commencé à cultiver des jardins sur les toits des immeubles. Ces jardins aident à améliorer l'air que nous respirons et à créer des endroits plus frais pendant l'été. Les plantes, les fleurs et même les légumes poussent ainsi en hauteur, et les abeilles et les papillons adorent y passer du temps. Ces jardins apportent un peu de nature en ville et aident les gens à se sentir bien. C’est une belle manière d’utiliser l’espace des toits pour contribuer à un environnement plus vert !",
-      "date": "28/10/2023",
+      "title": "Les pandas géants en fête 🐼",
+      "summary": "Les pandas géants du centre de recherche en Chine ont célébré un anniversaire spécial avec de délicieux gâteaux faits de bambou, leur nourriture préférée ! Les soigneurs ont organisé cette fête pour les pandas qui sont très importants car ils sont en danger d'extinction. Les scientifiques travaillent dur pour s'assurer qu'il y ait plus de bébés pandas à l'avenir. En apprenant à les protéger, nous aidons à garder notre planète pleine de diversité et de merveilleuses créatures.",
+      "date": "06/11/2023",
       "link": ""
     }
   ]
