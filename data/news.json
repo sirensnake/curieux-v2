@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Un petit robot sur Mars 🚀",
-      "summary": "Un petit robot appelé Perseverance explore Mars, notre voisin rouge dans le ciel ! Il a récemment découvert des indices qui pourraient nous aider à comprendre s'il y a eu de la vie sur cette planète. Ce robot utilise des outils super modernes, comme des caméras et des lasers, pour étudier les roches et le sol martiens. C'est important pour les scientifiques qui veulent en savoir plus sur l'histoire de Mars et peut-être, un jour, envoyer des humains là-bas !",
-      "date": "06/11/2023",
-      "link": "https://mars.nasa.gov/news"
-    },
-    {
-      "title": "Un record de cercles de culture 🌾",
-      "summary": "Des cultivateurs en Angleterre ont créé le plus grand cercle de culture jamais réalisé ! Ces motifs géants apparaissent dans les champs de blé et sont souvent considérés comme mystérieux. En réalité, ils sont faits par des personnes très créatives qui aiment faire de l'art dans les champs. Ce nouveau motif est incroyable et représente une figure géométrique complexe. Les visiteurs viennent de partout pour admirer cette œuvre d'art qui disparaîtra dès que le blé sera récolté.",
-      "date": "06/11/2023",
+      "title": "Une comète visiteuse 🌠",
+      "summary": "Une comète a été vue dans le ciel nocturne, et elle ne reviendra pas avant 400 ans ! Une comète est une boule glacée de poussières et de gaz qui voyage très loin dans l'espace. Ce phénomène incroyable a été visible depuis certaines parties du monde. Les astronomes, qui sont des scientifiques étudiant les étoiles et les planètes, l'ont observée avec leurs télescopes pour en savoir plus. C'est une belle opportunité pour apprendre sur ce qui se passe dans notre univers !",
+      "date": "18/10/2023",
       "link": ""
     },
     {
-      "title": "Les pandas géants en fête 🐼",
-      "summary": "Les pandas géants du centre de recherche en Chine ont célébré un anniversaire spécial avec de délicieux gâteaux faits de bambou, leur nourriture préférée ! Les soigneurs ont organisé cette fête pour les pandas qui sont très importants car ils sont en danger d'extinction. Les scientifiques travaillent dur pour s'assurer qu'il y ait plus de bébés pandas à l'avenir. En apprenant à les protéger, nous aidons à garder notre planète pleine de diversité et de merveilleuses créatures.",
-      "date": "06/11/2023",
+      "title": "Dans les coulisses d'une pièce de théâtre 🎭",
+      "summary": "Un célèbre théâtre de Londres a invité des élèves à découvrir les coulisses de ses spectacles. Lors de cette visite, ils ont vu comment les décors sont construits, comment les costumes sont faits, et même comment les acteurs se préparent. C'était une occasion passionnante pour comprendre le travail d'équipe et la créativité nécessaires pour créer une pièce. Peut-être qu'un jour tu écrirai ou joueras dans une pièce de théâtre aussi !",
+      "date": "18/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Des panneaux solaires sur le toit de l'école ☀️",
+      "summary": "Une école en Espagne a installé des panneaux solaires sur son toit. Ces panneaux captent l'énergie du soleil pour produire de l'électricité, ce qui est bon pour l'environnement car cela réduit l'utilisation de combustibles polluants. Avec cette énergie propre, l'école peut allumer la lumière et les ordinateurs sans dépenser plus en électricité. C'est un bel exemple de comment les gens utilisent la science pour aider notre planète.",
+      "date": "18/10/2023",
       "link": ""
     }
   ]
