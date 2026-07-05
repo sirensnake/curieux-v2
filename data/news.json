@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Une comète visiteuse 🌠",
-      "summary": "Une comète a été vue dans le ciel nocturne, et elle ne reviendra pas avant 400 ans ! Une comète est une boule glacée de poussières et de gaz qui voyage très loin dans l'espace. Ce phénomène incroyable a été visible depuis certaines parties du monde. Les astronomes, qui sont des scientifiques étudiant les étoiles et les planètes, l'ont observée avec leurs télescopes pour en savoir plus. C'est une belle opportunité pour apprendre sur ce qui se passe dans notre univers !",
-      "date": "18/10/2023",
-      "link": ""
+      "title": "Une étoile très spéciale dans le ciel ✨",
+      "summary": "Les scientifiques ont récemment découvert une étoile très spéciale appelée une pulsar. Une pulsar est une étoile qui envoie des signaux lumineux très rapides, un peu comme un phare dans l'espace! Cela peut aider les chercheurs à mieux comprendre l'Univers. Regarder les étoiles peut être fascinant, et qui sait, peut-être qu'un jour tu découvriras quelque chose d'incroyable dans le ciel!",
+      "date": "16/10/2023",
+      "link": "https://www.nasa.gov"
     },
     {
-      "title": "Dans les coulisses d'une pièce de théâtre 🎭",
-      "summary": "Un célèbre théâtre de Londres a invité des élèves à découvrir les coulisses de ses spectacles. Lors de cette visite, ils ont vu comment les décors sont construits, comment les costumes sont faits, et même comment les acteurs se préparent. C'était une occasion passionnante pour comprendre le travail d'équipe et la créativité nécessaires pour créer une pièce. Peut-être qu'un jour tu écrirai ou joueras dans une pièce de théâtre aussi !",
-      "date": "18/10/2023",
-      "link": ""
+      "title": "Des pandas en pleine forme 🐼",
+      "summary": "Bonne nouvelle pour les pandas géants! Grâce aux efforts de conservation, leur nombre a augmenté ces dernières années. Ces adorables animaux noirs et blancs se portent mieux grâce à des habitats protégés en Chine. Cela montre à quel point il est important de prendre soin des animaux et de la nature pour qu'ils puissent vivre heureux et en sécurité. Peut-être qu'un jour, tu pourras aussi aider un animal en danger!",
+      "date": "16/10/2023",
+      "link": "https://www.wwf.fr"
     },
     {
-      "title": "Des panneaux solaires sur le toit de l'école ☀️",
-      "summary": "Une école en Espagne a installé des panneaux solaires sur son toit. Ces panneaux captent l'énergie du soleil pour produire de l'électricité, ce qui est bon pour l'environnement car cela réduit l'utilisation de combustibles polluants. Avec cette énergie propre, l'école peut allumer la lumière et les ordinateurs sans dépenser plus en électricité. C'est un bel exemple de comment les gens utilisent la science pour aider notre planète.",
-      "date": "18/10/2023",
+      "title": "L'art de l'origami au Japon 🇯🇵",
+      "summary": "Le Japon est mondialement connu pour l'art de l'origami, qui consiste à plier du papier pour créer des formes étonnantes comme des oiseaux ou des fleurs. Récemment, un grand événement s'est tenu à Tokyo, où des artistes du monde entier ont montré leurs créations. L'origami est un moyen amusant et créatif de passer du temps. Qui sait, peut-être que tu pourrais essayer de faire un petit origami toi-même!",
+      "date": "16/10/2023",
       "link": ""
     }
   ]
