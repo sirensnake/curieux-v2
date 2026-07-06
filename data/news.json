@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une étoile très spéciale dans le ciel ✨",
-      "summary": "Les scientifiques ont récemment découvert une étoile très spéciale appelée une pulsar. Une pulsar est une étoile qui envoie des signaux lumineux très rapides, un peu comme un phare dans l'espace! Cela peut aider les chercheurs à mieux comprendre l'Univers. Regarder les étoiles peut être fascinant, et qui sait, peut-être qu'un jour tu découvriras quelque chose d'incroyable dans le ciel!",
-      "date": "16/10/2023",
-      "link": "https://www.nasa.gov"
+      "title": "🚀 Une nouvelle mission vers un astéroïde !",
+      "summary": "La NASA a récemment lancé une nouvelle mission pour explorer un astéroïde lointain appelé Psyche. Cet astéroïde est spécial car il est probablement fait de métal, ce qui est rare ! Les scientifiques pensent qu'il pourrait nous donner des indices sur comment notre Terre s'est formée. La sonde spatiale va prendre plusieurs années pour y arriver, mais elle enverra des informations précieuses. C’est comme une chasse au trésor scientifique dans l'espace !",
+      "date": "14/10/2023",
+      "link": ""
     },
     {
-      "title": "Des pandas en pleine forme 🐼",
-      "summary": "Bonne nouvelle pour les pandas géants! Grâce aux efforts de conservation, leur nombre a augmenté ces dernières années. Ces adorables animaux noirs et blancs se portent mieux grâce à des habitats protégés en Chine. Cela montre à quel point il est important de prendre soin des animaux et de la nature pour qu'ils puissent vivre heureux et en sécurité. Peut-être qu'un jour, tu pourras aussi aider un animal en danger!",
-      "date": "16/10/2023",
-      "link": "https://www.wwf.fr"
+      "title": "🐼 Un baby panda au zoo de Washington !",
+      "summary": "Un événement joyeux s'est produit au Zoo national de Washington : la naissance d'un bébé panda ! Les pandas sont une espèce en danger car il reste peu de pandas dans le monde. Le bébé panda est tout mignon et stimule l'intérêt pour la protection de cette espèce. Les gardiens du zoo sont très attentionnés pour s'assurer qu'il grandisse en bonne santé. C'est une excellente nouvelle pour tous les amoureux des animaux !",
+      "date": "14/10/2023",
+      "link": ""
     },
     {
-      "title": "L'art de l'origami au Japon 🇯🇵",
-      "summary": "Le Japon est mondialement connu pour l'art de l'origami, qui consiste à plier du papier pour créer des formes étonnantes comme des oiseaux ou des fleurs. Récemment, un grand événement s'est tenu à Tokyo, où des artistes du monde entier ont montré leurs créations. L'origami est un moyen amusant et créatif de passer du temps. Qui sait, peut-être que tu pourrais essayer de faire un petit origami toi-même!",
-      "date": "16/10/2023",
+      "title": "🎨 Le Louvre dévoile une nouvelle exposition",
+      "summary": "Le célèbre musée du Louvre à Paris a lancé une nouvelle exposition fascinante ! Cette exposition montre des œuvres d'art incroyables venues du monde entier. Les visiteurs peuvent découvrir des peintures, des sculptures et même des objets anciens qui racontent des histoires de différentes cultures. C'est une chance unique d'apprendre en s'amusant et de voir des trésors que l'on ne trouve pas ailleurs.",
+      "date": "14/10/2023",
       "link": ""
     }
   ]
