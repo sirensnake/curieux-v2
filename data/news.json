@@ -1,22 +1,6 @@
 {
-  "articles": [
-    {
-      "title": "🚀 Nouvelle mission sur Mars !",
-      "summary": "Une nouvelle mission sur Mars vient d’être lancée par des scientifiques très intelligents ! Un rover, qui est un véhicule robotique, a été envoyé pour explorer la planète rouge. Son travail consiste à collecter des informations sur le sol, l'air et peut-être même rechercher des traces de vie passée. Cette mission est importante car elle envoie de précieuses données à la Terre, qui aident les chercheurs à mieux comprendre notre voisin cosmique et à envisager de futures explorations spatiales plus grandes et excitantes !",
-      "date": "20/10/2023",
-      "link": ""
-    },
-    {
-      "title": "🌍 Journée mondiale des reptiles",
-      "summary": "Saviez-vous qu'aujourd'hui, c'est la Journée mondiale des reptiles ? Ces fascinants animaux comprennent les lézards, serpents, tortues et crocodiles. Cette journée spéciale a été créée pour aider à sensibiliser les gens à l'importance des reptiles dans notre écosystème. Certains reptiles sont en danger à cause de la perte de leur habitat naturel. On peut les protéger en apprenant à leur sujet et en soutenant des actions de conservation. Qui sait, peut-être qu'un jour tu deviendras un grand scientifique du règne animal !",
-      "date": "20/10/2023",
-      "link": ""
-    },
-    {
-      "title": "🍂 Découvrez une nouvelle forêt",
-      "summary": "Récemment, des scientifiques ont découvert une nouvelle forêt dans une vallée difficile d'accès ! Cette forêt est si dense qu'elle abrite des espèces d'arbres et d'animaux que nous connaissons à peine. Ces découvertes sont comme un trésor secret de la nature et aident à mieux comprendre comment les forêts fonctionnent et comment elles peuvent nous aider à combattre le changement climatique. Protéger ces lieux est vital pour l'avenir de notre planète. Peut-être que tu trouveras toi aussi des merveilles cachées dans ton jardin !",
-      "date": "20/10/2023",
-      "link": ""
-    }
-  ]
+  "title": "Lancement d'une fusée ! 🚀",
+  "summary": "Hier, une fusée a été lancée dans le ciel depuis la Floride, aux États-Unis. Cette fusée transporte un satellite qui servira à améliorer les communications sur Terre. Les fusées sont des véhicules incroyables qui utilisent beaucoup d'énergie pour s'élever dans l'espace. Elles transportent des satellites, des astronautes, et de nombreuses choses importantes pour aider les gens sur notre planète. Chaque lancement est très soigneusement préparé pour être sûr que tout se déroule bien. Ce genre d'événement est toujours très passionnant à suivre !",
+  "date": "06/11/2023",
+  "link": ""
 }
