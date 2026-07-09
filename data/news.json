@@ -1,6 +1,22 @@
 {
-  "title": "Lancement d'une fusée ! 🚀",
-  "summary": "Hier, une fusée a été lancée dans le ciel depuis la Floride, aux États-Unis. Cette fusée transporte un satellite qui servira à améliorer les communications sur Terre. Les fusées sont des véhicules incroyables qui utilisent beaucoup d'énergie pour s'élever dans l'espace. Elles transportent des satellites, des astronautes, et de nombreuses choses importantes pour aider les gens sur notre planète. Chaque lancement est très soigneusement préparé pour être sûr que tout se déroule bien. Ce genre d'événement est toujours très passionnant à suivre !",
-  "date": "06/11/2023",
-  "link": ""
+  "articles": [
+    {
+      "title": "La Grande Découverte Astronomique! 🔭",
+      "summary": "Des scientifiques ont découvert un nouveau type d'étoile dans notre galaxie! Ces étoiles sont très rares et brillent d'une manière unique. Les astronomes les étudient avec de puissants télescopes pour mieux comprendre leur composition et leur rôle dans l'univers. C'est une découverte passionnante qui montre à quel point l'espace est vaste et mystérieux. Les jeunes curieux peuvent s'inspirer de cette découverte pour explorer le ciel étoilé et en apprendre davantage sur l'astronomie.",
+      "date": "20/10/2023",
+      "link": "https://www.sciencespourtous.com/decouverteetoile"
+    },
+    {
+      "title": "La Grande Migration des Papillons 🦋",
+      "summary": "En ce moment, des millions de papillons monarques migrent vers le sud pour passer l'hiver dans des endroits plus chauds. Ces papillons voyagent sur des milliers de kilomètres depuis le Canada et les États-Unis jusqu'au Mexique. La migration des monarques est un phénomène incroyable qui montre la force de la nature. Les scientifiques encouragent les gens à planter des fleurs de types préférés par les papillons pour les aider dans leur voyage.",
+      "date": "20/10/2023",
+      "link": "https://www.natureetpapillons.com/migrationmonarque"
+    },
+    {
+      "title": "Un Robot Chef pour la Cuisine! 🤖🍳",
+      "summary": "Une entreprise a lancé un robot capable de cuisiner de délicieux repas! Ce chef robot utilise des recettes programmées pour préparer des plats comme des pâtes ou des soupes. Il est très précis et rapide, ce qui peut aider les personnes qui n'ont pas beaucoup de temps pour cuisiner. Bien sûr, les chefs humains restent indispensables pour créer de nouvelles recettes et donner une touche personnelle. Cette invention pourrait rendre la cuisine plus amusante et accessible à l'avenir!",
+      "date": "20/10/2023",
+      "link": "https://www.technologieetcuisinerobot.com"
+    }
+  ]
 }
