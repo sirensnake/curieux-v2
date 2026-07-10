@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "La Grande Découverte Astronomique! 🔭",
-      "summary": "Des scientifiques ont découvert un nouveau type d'étoile dans notre galaxie! Ces étoiles sont très rares et brillent d'une manière unique. Les astronomes les étudient avec de puissants télescopes pour mieux comprendre leur composition et leur rôle dans l'univers. C'est une découverte passionnante qui montre à quel point l'espace est vaste et mystérieux. Les jeunes curieux peuvent s'inspirer de cette découverte pour explorer le ciel étoilé et en apprendre davantage sur l'astronomie.",
-      "date": "20/10/2023",
-      "link": "https://www.sciencespourtous.com/decouverteetoile"
+      "title": "Un record spatial 🚀",
+      "summary": "Une fusée d'une célèbre entreprise spatiale a récemment battu un record en envoyant le plus grand nombre de satellites en une seule fois dans l'espace ! Les satellites sont comme de petits robots qui flottent autour de la Terre et nous aident avec des choses comme la météo ou la télévision par satellite. Voir autant de satellites lancés d'un coup est un vrai exploit technologique ! Cette mission montre à quel point la science continue de faire de grands progrès. Les scientifiques et ingénieurs sont toujours à la recherche de moyens nouveaux et efficaces pour explorer et travailler dans l'espace.",
+      "date": "09/10/2023",
+      "link": ""
     },
     {
-      "title": "La Grande Migration des Papillons 🦋",
-      "summary": "En ce moment, des millions de papillons monarques migrent vers le sud pour passer l'hiver dans des endroits plus chauds. Ces papillons voyagent sur des milliers de kilomètres depuis le Canada et les États-Unis jusqu'au Mexique. La migration des monarques est un phénomène incroyable qui montre la force de la nature. Les scientifiques encouragent les gens à planter des fleurs de types préférés par les papillons pour les aider dans leur voyage.",
-      "date": "20/10/2023",
-      "link": "https://www.natureetpapillons.com/migrationmonarque"
+      "title": "Sauver les abeilles 🐝",
+      "summary": "Des défenseurs de l'environnement ont lancé une campagne pour aider les abeilles en plantant des fleurs spéciales dans les villes. Les abeilles sont très importantes pour la nature car elles aident à polliniser les plantes, ce qui permet à beaucoup de fruits et légumes de pousser. Planter des fleurs dans les villes peut offrir aux abeilles un bon endroit pour se nourrir. C'est une façon simple et efficace de protéger ces petites travailleuses. Cette initiative encourage tout le monde à participer pour rendre nos villes plus vertes et accueillantes pour les abeilles.",
+      "date": "09/10/2023",
+      "link": ""
     },
     {
-      "title": "Un Robot Chef pour la Cuisine! 🤖🍳",
-      "summary": "Une entreprise a lancé un robot capable de cuisiner de délicieux repas! Ce chef robot utilise des recettes programmées pour préparer des plats comme des pâtes ou des soupes. Il est très précis et rapide, ce qui peut aider les personnes qui n'ont pas beaucoup de temps pour cuisiner. Bien sûr, les chefs humains restent indispensables pour créer de nouvelles recettes et donner une touche personnelle. Cette invention pourrait rendre la cuisine plus amusante et accessible à l'avenir!",
-      "date": "20/10/2023",
-      "link": "https://www.technologieetcuisinerobot.com"
+      "title": "Musée du chocolat: Délicieux voyage 🍫",
+      "summary": "Un nouveau musée du chocolat a ouvert ses portes, et il attire déjà de nombreux jeunes curieux ! Ce musée permet de découvrir l'histoire du chocolat, depuis la culture des cacaoyers jusqu'à la fabrication des tablettes de chocolat que nous adorons. Les visiteurs peuvent apprendre comment le chocolat est devenu si populaire dans le monde entier. On peut même y déguster du chocolat, ce qui rend la visite encore plus savoureuse ! Si tu aimes les aventures culinaires et l'histoire, c'est un endroit à découvrir.",
+      "date": "09/10/2023",
+      "link": ""
     }
   ]
 }
