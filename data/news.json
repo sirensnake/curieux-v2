@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "✨ Découverte d'une comète mystérieuse",
-      "summary": "Des astronomes ont repéré une nouvelle comète qui voyage à travers notre système solaire! Cette comète, une boule de glace et de poussière venue de l'espace, se rapproche du Soleil et devrait passer près de la Terre. Les scientifiques pensent qu'elle pourrait être visible à l'œil nu dans quelques mois, ce qui est très excitant pour les amateurs d'astronomie. Les comètes nous aident à comprendre l'origine de notre système solaire, car elles contiennent des éléments très anciens. Prépare tes jumelles pour admirer ce spectacle céleste incroyable!",
-      "date": "01/11/2023",
+      "title": "Fusée vers Mars! 🚀",
+      "summary": "Aujourd'hui, une nouvelle fusée a été lancée dans l'espace avec pour destination la planète Mars! Elle va emporter des outils scientifiques super importants pour en savoir plus sur notre voisine rouge. Les scientifiques veulent comprendre si Mars a eu de la vie il y a longtemps. Ce voyage va durer plusieurs mois, car Mars est très loin. Imagine, la fusée voyage à une vitesse incroyable, mais ça prendra quand même beaucoup de temps. C'est une aventure passionnante qui pourrait nous apprendre plein de choses sur notre système solaire!",
+      "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "🌱 Un record pour la plus grande plantation d'arbres",
-      "summary": "Un groupe de bénévoles au Royaume-Uni a récemment établi un record mondial en plantant plus de 1 million d'arbres en une seule journée! Cette action vise à aider l'environnement en absorbant le dioxyde de carbone, un gaz qui réchauffe notre planète. En plantant autant d'arbres, ces bénévoles espèrent aussi créer de nouveaux habitats pour les animaux et rendre la nature plus verte et plus saine. Si chacun fait sa part, même en plantant un petit plant dans son jardin, on peut tous contribuer à protéger notre Terre.",
-      "date": "01/11/2023",
+      "title": "Une nouvelle espèce de grenouille découverte! 🐸",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans la forêt amazonienne. Elle est toute petite et a une couleur très vive, ce qui l'aide à se camoufler dans les feuilles vertes. Découvrir de nouvelles espèces est comme trouver un trésor pour les chercheurs, et cela nous montre à quel point la nature est diversifiée et surprenante. Les scientifiques espèrent que cette découverte encouragera les gens à protéger les forêts et les animaux qui y vivent.",
+      "date": "20/10/2023",
       "link": ""
     },
     {
-      "title": "🎨 Une exposition colorée pour les enfants",
-      "summary": "Un musée à Paris a ouvert une nouvelle exposition spécialement pour les enfants qui aime la peinture! Cette exposition présente des œuvres d'art interactives où tu peux toucher certaines pièces et même créer tes propres œuvres. Les différentes salles sont pleines de couleurs vives et racontent des histoires captivantes à travers les tableaux. Cette expérience encourage les enfants à explorer leur créativité et à découvrir le monde merveilleux de l'art. C'est une belle occasion de s’amuser et d'apprendre en famille!",
-      "date": "01/11/2023",
+      "title": "Festival des Lanternes en Chine 🏮",
+      "summary": "En Chine, des milliers de gens se rassemblent pour le Festival des Lanternes. Ce festival est une belle tradition où les gens allument des lanternes colorées et les regardent s'envoler dans le ciel. Certains participent même à des parades et mangent des plats spéciaux. Ce moment est aussi l'occasion pour les familles de se retrouver et raconter des histoires. Les lanternes symbolisent la chance et l'espoir pour l'avenir. C'est un spectacle magnifique qui illumine la nuit!",
+      "date": "20/10/2023",
       "link": ""
     }
   ]
