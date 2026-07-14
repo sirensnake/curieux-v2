@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "json": [
     {
-      "title": "Fusée vers Mars! 🚀",
-      "summary": "Aujourd'hui, une nouvelle fusée a été lancée dans l'espace avec pour destination la planète Mars! Elle va emporter des outils scientifiques super importants pour en savoir plus sur notre voisine rouge. Les scientifiques veulent comprendre si Mars a eu de la vie il y a longtemps. Ce voyage va durer plusieurs mois, car Mars est très loin. Imagine, la fusée voyage à une vitesse incroyable, mais ça prendra quand même beaucoup de temps. C'est une aventure passionnante qui pourrait nous apprendre plein de choses sur notre système solaire!",
-      "date": "20/10/2023",
+      "title": "🌌 Une nouvelle planète découverte !",
+      "summary": "Des astronomes ont trouvé une nouvelle planète qui ressemble beaucoup à la Terre ! Elle se trouve très loin, dans un autre système solaire. C'est une planète rocheuse où l'on pense qu'il pourrait y avoir de l'eau. Cela excite beaucoup les scientifiques, car là où il y a de l'eau, la vie pourrait être possible ! Ils l'ont appelée 'Planète Bleu 2'. Bien sûr, elle est bien trop loin pour qu'on y vive, mais c'est incroyable de savoir qu'il y a des mondes là-bas qui pourraient nous ressembler un peu.",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Une nouvelle espèce de grenouille découverte! 🐸",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans la forêt amazonienne. Elle est toute petite et a une couleur très vive, ce qui l'aide à se camoufler dans les feuilles vertes. Découvrir de nouvelles espèces est comme trouver un trésor pour les chercheurs, et cela nous montre à quel point la nature est diversifiée et surprenante. Les scientifiques espèrent que cette découverte encouragera les gens à protéger les forêts et les animaux qui y vivent.",
-      "date": "20/10/2023",
+      "title": "🐼 Bonne nouvelle pour les pandas !",
+      "summary": "Des chercheurs nous annoncent une superbe nouvelle pour les pandas géants. Leur population augmente grâce aux efforts importants pour protéger leur habitat naturel en Chine. Les réserves naturelles et la plantation de bambou, leur nourriture préférée, les aident à se reproduire plus facilement. Le panda est l'un des animaux symboliques de l’effort de conservation, et cette réussite montre qu'il est possible de faire une grande différence pour d'autres animaux en danger.",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Festival des Lanternes en Chine 🏮",
-      "summary": "En Chine, des milliers de gens se rassemblent pour le Festival des Lanternes. Ce festival est une belle tradition où les gens allument des lanternes colorées et les regardent s'envoler dans le ciel. Certains participent même à des parades et mangent des plats spéciaux. Ce moment est aussi l'occasion pour les familles de se retrouver et raconter des histoires. Les lanternes symbolisent la chance et l'espoir pour l'avenir. C'est un spectacle magnifique qui illumine la nuit!",
-      "date": "20/10/2023",
+      "title": "🎨 Un artiste de 10 ans épate le monde !",
+      "summary": "Un jeune artiste de seulement 10 ans, originaire du Brésil, a impressionné des experts avec ses peintures colorées et créatives. Sa dernière exposition a été un véritable succès, et ses œuvres ont même été comparées à celles de peintres célèbres. Ce prodige aime utiliser des couleurs vives et exprime sa vision joyeuse du monde. Il espère inspirer d'autres enfants à peindre et à poursuivre leurs rêves, peu importe leur âge.",
+      "date": "21/10/2023",
       "link": ""
     }
   ]
