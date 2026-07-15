@@ -1,21 +1,21 @@
 {
-  "json": [
+  "articles": [
     {
-      "title": "🌌 Une nouvelle planète découverte !",
-      "summary": "Des astronomes ont trouvé une nouvelle planète qui ressemble beaucoup à la Terre ! Elle se trouve très loin, dans un autre système solaire. C'est une planète rocheuse où l'on pense qu'il pourrait y avoir de l'eau. Cela excite beaucoup les scientifiques, car là où il y a de l'eau, la vie pourrait être possible ! Ils l'ont appelée 'Planète Bleu 2'. Bien sûr, elle est bien trop loin pour qu'on y vive, mais c'est incroyable de savoir qu'il y a des mondes là-bas qui pourraient nous ressembler un peu.",
-      "date": "21/10/2023",
+      "title": "Un volcan sous la glace 🏔️",
+      "summary": "Récemment, des chercheurs ont découvert un volcan sous une épaisse couche de glace en Antarctique ! C'est un endroit très froid où vivent les manchots empereurs. Les scientifiques utilisent des instruments spéciaux pour voir à travers la glace et observer ce qui se passe en dessous. Ce volcan est endormi pour l'instant, mais savoir où il se trouve peut aider à comprendre comment les volcans et la glace interagissent. C’est un peu comme un détective cherchant des indices pour raconter l'histoire de notre planète. C'est fascinant, non ?",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "🐼 Bonne nouvelle pour les pandas !",
-      "summary": "Des chercheurs nous annoncent une superbe nouvelle pour les pandas géants. Leur population augmente grâce aux efforts importants pour protéger leur habitat naturel en Chine. Les réserves naturelles et la plantation de bambou, leur nourriture préférée, les aident à se reproduire plus facilement. Le panda est l'un des animaux symboliques de l’effort de conservation, et cette réussite montre qu'il est possible de faire une grande différence pour d'autres animaux en danger.",
-      "date": "21/10/2023",
+      "title": "Une découverte dans l'espace 🌌",
+      "summary": "Des astronomes ont fait une découverte incroyable : une nouvelle planète très loin de notre système solaire. Cette planète est si loin qu'on ne pourrait jamais y aller avec nos fusées actuelles ! Cependant, les astronomes l'ont vue grâce à de puissants télescopes. Ils pensent qu'elle pourrait avoir des caractéristiques très différentes des planètes que nous connaissons. C'est excitant parce que chaque découverte dans l'espace nous aide à mieux comprendre l'univers qui nous entoure. Peut-être qu'un jour, on en saura plus sur cette planète mystérieuse !",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "🎨 Un artiste de 10 ans épate le monde !",
-      "summary": "Un jeune artiste de seulement 10 ans, originaire du Brésil, a impressionné des experts avec ses peintures colorées et créatives. Sa dernière exposition a été un véritable succès, et ses œuvres ont même été comparées à celles de peintres célèbres. Ce prodige aime utiliser des couleurs vives et exprime sa vision joyeuse du monde. Il espère inspirer d'autres enfants à peindre et à poursuivre leurs rêves, peu importe leur âge.",
-      "date": "21/10/2023",
+      "title": "Le mystère du puzzle 🧩",
+      "summary": "Dans un musée d'art aux États-Unis, un tableau célèbre a récemment révélé un secret grâce à un peu de technologie ! Des experts ont utilisé une caméra spéciale pour regarder sous la surface de la peinture et ont découvert un croquis caché. Cela montre que l'artiste a changé d'idée en travaillant sur son tableau. C'est comme si tu effaçais un dessin pour en faire un nouveau ! Cette découverte a permis aux experts de mieux comprendre comment l'artiste a créé cette œuvre d'art célèbre. C'est passionnant de découvrir tous les secrets cachés des œuvres d'art !",
+      "date": "12/10/2023",
       "link": ""
     }
   ]
