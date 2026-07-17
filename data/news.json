@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🚀 Une nouvelle mission sur la Lune",
-      "summary": "Un nouveau pas vers la Lune a été franchi ! Une équipe de chercheurs vient de planifier une nouvelle mission spatiale pour explorer notre satellite naturel. Cette mission vise à déployer des outils scientifiques pour mieux comprendre la composition de la Lune et son histoire. Les scientifiques espèrent aussi découvrir si des ressources naturelles pourront être utilisées lors de futures colonies. C'est une aventure excitante qui pourrait aider à mieux comprendre l’espace et peut-être un jour permettre aux humains de vivre sur la Lune !",
-      "date": "02/11/2023",
+      "title": "Une surprise venue des étoiles ! 🌟",
+      "summary": "Les scientifiques ont récemment découvert un nouvel astéroïde dans notre système solaire. Cet astéroïde a été observé grâce à un puissant télescope en Arizona. Cet objet céleste est particulièrement intéressant car il contient des métaux rares et précieux. Les astronomes étudient ces objets pour mieux comprendre la formation des planètes et des systèmes solaires. En apprenant plus sur ces corps célestes, les scientifiques espèrent découvrir comment notre propre planète a pu se former et évoluer. Fascinant, non ?",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "🌊 Un océan découvert sur une lune lointaine",
-      "summary": "Des scientifiques ont récemment utilisé un très grand télescope pour étudier la lune Europa, qui orbite autour de la planète Jupiter. Grâce à leurs observations, ils ont découvert que cette lune pourrait cacher un énorme océan sous sa surface glacée. Ce serait incroyable, car cet océan pourrait abriter des formes de vie ! Les chercheurs sont très enthousiastes à l'idée d'en apprendre plus, car cela pourrait nous aider à comprendre s'il existe d'autres endroits où la vie est possible dans notre système solaire.",
-      "date": "02/11/2023",
+      "title": "Un nouvel ami félin en Albanie 🐱",
+      "summary": "En Albanie, un village a accueilli un chat sauvage qui s'est avéré être une espèce rare de chat forestier. Ce chat, qui ressemble à nos chats domestiques mais vit dans les forêts et est plus sauvage, est un indicateur important de la santé de son habitat naturel. Les habitants et les protecteurs de la nature sont ravis car cela signifie que l'environnement est encore propre et sain. C'est une belle preuve que protéger la nature aide aussi les animaux à y vivre paisiblement.",
+      "date": "26/10/2023",
       "link": ""
     },
     {
-      "title": "🎨 Une œuvre d'art géante dans le désert",
-      "summary": "Un artiste a créé une étonnante œuvre d'art dans le désert d'Atacama, l'un des endroits les plus arides de la planète. Avec l'aide d'une équipe, il a dessiné des formes gigantesques dans le sable en utilisant des outils spéciaux pour respecter l'environnement fragile. Ces formes ne peuvent être vues que depuis le ciel et représentent divers animaux et motifs géométriques. Ce projet artistique vise à faire réfléchir sur la beauté de notre planète et l'importance de la préserver pour les futures générations.",
-      "date": "02/11/2023",
+      "title": "Explorer les fonds marins ! 🐠",
+      "summary": "Un nouveau robot sous-marin a été testé pour explorer les océans. Ce robot peut plonger très profondément et capter des images incroyables de la vie marine. Grâce à cette technologie, les chercheurs peuvent découvrir des espèces marines inconnues et observer leurs comportements dans leur habitat naturel. Protéger les océans est crucial, et ce robot pourrait aider à comprendre les menaces qui pèsent sur cet environnement, comme la pollution ou le réchauffement climatique.",
+      "date": "26/10/2023",
       "link": ""
     }
   ]
