@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Les dauphins et leurs conversations sous-marines 🐬",
-      "summary": "Les scientifiques ont découvert que les dauphins utilisent des sons complexes pour communiquer entre eux, presque comme un langage ! Ces recherches récentes montrent que les dauphins échangent des informations en utilisant différents clics et sifflements. Imagine des discussions sous-marines où ces animaux intelligents partagent leurs aventures de pêche ou préviennent des dangers. Les chercheurs espèrent comprendre un jour exactement ce que disent les dauphins pour mieux les protéger.",
-      "date": "06/10/2023",
+      "title": "Une nouvelle planète découverte ? 🌌",
+      "summary": "Les astronomes ont peut-être découvert une nouvelle planète dans notre système solaire ! Cette planète, que certains scientifiques appellent \"Planète Neuf\", n'a pas encore été directement observée, mais ses effets gravitationnels suggèrent qu'elle pourrait être là. Si elle existe, elle serait très loin du Soleil, beaucoup plus loin que Pluton. Les astronomes continuent d'explorer et d'observer pour en savoir plus. C'est une aventure passionnante où la science nous rappelle qu'il y a encore tant de choses à découvrir dans l'espace.",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Une nouvelle planète au-delà de notre système solaire? 🔭",
-      "summary": "Les astronomes ont découvert une nouvelle planète située très loin de notre système solaire. Cette planète, appelée TOI-1338 b, tourne autour de deux étoiles, un peu comme un film de science-fiction. C'est une découverte passionnante car elle montre que notre Univers est rempli de mondes encore inconnus. Les scientifiques utilisent de puissants télescopes et espèrent découvrir ce qu'il y a sur cette planète qui pourrait être très différente de la Terre.",
-      "date": "06/10/2023",
+      "title": "Un spectacle dans le ciel : l'éclipse solaire partielle ! 🌞",
+      "summary": "Cette semaine, dans certaines parties du monde, les gens ont eu la chance d'observer une éclipse solaire partielle. Cela signifie que la Lune a partiellement bloqué la Lumière du Soleil, créant un magnifique spectacle dans le ciel. Il est très important de ne jamais regarder directement le Soleil sans protection appropriée. De nombreux observatoires ont diffusé l'événement en direct pour que tout le monde puisse en profiter en toute sécurité. Si tu as manqué cette éclipse, pas de souci, il y en aura d'autres à l'avenir !",
+      "date": "10/10/2023",
       "link": ""
     },
     {
-      "title": "Le village où les maisons sont des champignons! 🍄",
-      "summary": "En Pologne, des architectes ont imaginé des maisons en forme de champignons pour un nouveau village écologique. Ces maisons originales sont construites avec des matériaux respectueux de l'environnement et utilisent l'énergie solaire. Le design unique des maisons aide à économiser de l'énergie en gardant les maisons fraîches en été et chaudes en hiver. Ce projet est un exemple de la façon dont les gens trouvent des idées amusantes pour vivre en harmonie avec la nature.",
-      "date": "06/10/2023",
+      "title": "Les animaux sauvages de retour en ville ? 🦊",
+      "summary": "Des villes du monde entier constatent un phénomène intéressant : des animaux sauvages, comme les renards et les cerfs, sont aperçus plus souvent en ville. Cela pourrait être dû au fait que les espaces naturels se réduisent, mais certains experts disent aussi que les animaux s'adaptent à vivre près des humains. C'est une bonne occasion pour nous de réfléchir à comment partager notre planète et respecter la nature. Rappelle-toi, si tu vois un animal sauvage, admire-le de loin et ne l'approche pas, pour sa sécurité et la tienne.",
+      "date": "10/10/2023",
       "link": ""
     }
   ]
