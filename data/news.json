@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle planète découverte ? 🌌",
-      "summary": "Les astronomes ont peut-être découvert une nouvelle planète dans notre système solaire ! Cette planète, que certains scientifiques appellent \"Planète Neuf\", n'a pas encore été directement observée, mais ses effets gravitationnels suggèrent qu'elle pourrait être là. Si elle existe, elle serait très loin du Soleil, beaucoup plus loin que Pluton. Les astronomes continuent d'explorer et d'observer pour en savoir plus. C'est une aventure passionnante où la science nous rappelle qu'il y a encore tant de choses à découvrir dans l'espace.",
-      "date": "10/10/2023",
+      "title": "Un Robot sur Mars ! 🚀",
+      "summary": "La semaine dernière, une nouvelle mission spatiale a été lancée vers Mars. Un robot, appelé Rover, explore la surface de la planète rouge. Ce robot est équipé de caméras et de capteurs pour prendre des photos et collecter des informations sur le sol martien. Les scientifiques espèrent en apprendre davantage sur Mars et chercher des signes de vie passée. C'est fascinant de découvrir ce qui se cache à des millions de kilomètres de notre Terre !",
+      "date": "31/10/2023",
       "link": ""
     },
     {
-      "title": "Un spectacle dans le ciel : l'éclipse solaire partielle ! 🌞",
-      "summary": "Cette semaine, dans certaines parties du monde, les gens ont eu la chance d'observer une éclipse solaire partielle. Cela signifie que la Lune a partiellement bloqué la Lumière du Soleil, créant un magnifique spectacle dans le ciel. Il est très important de ne jamais regarder directement le Soleil sans protection appropriée. De nombreux observatoires ont diffusé l'événement en direct pour que tout le monde puisse en profiter en toute sécurité. Si tu as manqué cette éclipse, pas de souci, il y en aura d'autres à l'avenir !",
-      "date": "10/10/2023",
+      "title": "L'Halloween Eco-friendly 🎃",
+      "summary": "Cette année, de nombreuses familles ont décidé de fêter Halloween de manière plus respectueuse de l'environnement. Elles utilisent des costumes fabriqués à la maison avec des matériaux recyclés et décorent leur maison avec des objets naturels comme des feuilles et des branches. Cela aide à réduire les déchets et à protéger notre planète. Quelle belle idée pour s'amuser tout en prenant soin de la Terre !",
+      "date": "31/10/2023",
       "link": ""
     },
     {
-      "title": "Les animaux sauvages de retour en ville ? 🦊",
-      "summary": "Des villes du monde entier constatent un phénomène intéressant : des animaux sauvages, comme les renards et les cerfs, sont aperçus plus souvent en ville. Cela pourrait être dû au fait que les espaces naturels se réduisent, mais certains experts disent aussi que les animaux s'adaptent à vivre près des humains. C'est une bonne occasion pour nous de réfléchir à comment partager notre planète et respecter la nature. Rappelle-toi, si tu vois un animal sauvage, admire-le de loin et ne l'approche pas, pour sa sécurité et la tienne.",
-      "date": "10/10/2023",
+      "title": "Nouvelle Plante Découverte 🌱",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de plante dans une forêt tropicale. Cette plante a de grandes feuilles vertes et produit de petites fleurs blanches. Elle peut aider à maintenir l'équilibre des écosystèmes en fournissant de la nourriture et de l'abri aux animaux. Les découvertes comme celle-ci sont importantes car elles nous apprennent à quel point notre planète est riche et diversifiée !",
+      "date": "31/10/2023",
       "link": ""
     }
   ]
