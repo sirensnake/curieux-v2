@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Un Robot sur Mars ! 🚀",
-      "summary": "La semaine dernière, une nouvelle mission spatiale a été lancée vers Mars. Un robot, appelé Rover, explore la surface de la planète rouge. Ce robot est équipé de caméras et de capteurs pour prendre des photos et collecter des informations sur le sol martien. Les scientifiques espèrent en apprendre davantage sur Mars et chercher des signes de vie passée. C'est fascinant de découvrir ce qui se cache à des millions de kilomètres de notre Terre !",
-      "date": "31/10/2023",
+      "title": "Découverte Spatiale 🚀",
+      "summary": "Des astronomes ont découvert une nouvelle planète en dehors de notre système solaire. Cette planète est très spéciale car elle est située dans une zone où l'eau pourrait exister sous forme liquide, ce qui est essentiel pour la vie telle que nous la connaissons. Les scientifiques utilisent de puissants télescopes pour en apprendre davantage à son sujet. C'est une grande avancée dans la recherche de formes de vie ailleurs dans l'univers. Découvrir de nouvelles planètes aide les scientifiques à comprendre comment notre propre planète, la Terre, s'est formée.",
+      "date": "11/10/2023",
       "link": ""
     },
     {
-      "title": "L'Halloween Eco-friendly 🎃",
-      "summary": "Cette année, de nombreuses familles ont décidé de fêter Halloween de manière plus respectueuse de l'environnement. Elles utilisent des costumes fabriqués à la maison avec des matériaux recyclés et décorent leur maison avec des objets naturels comme des feuilles et des branches. Cela aide à réduire les déchets et à protéger notre planète. Quelle belle idée pour s'amuser tout en prenant soin de la Terre !",
-      "date": "31/10/2023",
+      "title": "Salon du Livre 📚",
+      "summary": "Le grand Salon du Livre commence cette semaine. C'est un événement où de nombreux écrivains se réunissent pour partager leurs histoires et leurs idées. Les enfants et adultes peuvent rencontrer leurs auteurs préférés, écouter des lectures, et même participer à des ateliers d'écriture. C'est un excellent moyen de découvrir de nouveaux livres et de s'amuser avec des histoires. Les livres font voyager notre imagination et nourrissent notre curiosité. Si tu aimes lire ou inventer des histoires, cet événement est fait pour toi!",
+      "date": "11/10/2023",
       "link": ""
     },
     {
-      "title": "Nouvelle Plante Découverte 🌱",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de plante dans une forêt tropicale. Cette plante a de grandes feuilles vertes et produit de petites fleurs blanches. Elle peut aider à maintenir l'équilibre des écosystèmes en fournissant de la nourriture et de l'abri aux animaux. Les découvertes comme celle-ci sont importantes car elles nous apprennent à quel point notre planète est riche et diversifiée !",
-      "date": "31/10/2023",
+      "title": "Championnat de Rugby 🏉",
+      "summary": "Le championnat mondial de rugby bat son plein avec des équipes du monde entier qui s'affrontent pour le titre. C'est l'occasion de voir des matchs passionnants et de découvrir ce sport si tu ne le connais pas encore. Le rugby est un jeu d'équipe où tout le monde a un rôle important, que ce soit pour marquer des points ou défendre. En regardant les matchs, on peut apprendre des stratégies et admirer l'esprit sportif des joueurs. Alors, qui va gagner cette année? Les paris sont ouverts!",
+      "date": "11/10/2023",
       "link": ""
     }
   ]
