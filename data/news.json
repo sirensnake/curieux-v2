@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte Spatiale 🚀",
-      "summary": "Des astronomes ont découvert une nouvelle planète en dehors de notre système solaire. Cette planète est très spéciale car elle est située dans une zone où l'eau pourrait exister sous forme liquide, ce qui est essentiel pour la vie telle que nous la connaissons. Les scientifiques utilisent de puissants télescopes pour en apprendre davantage à son sujet. C'est une grande avancée dans la recherche de formes de vie ailleurs dans l'univers. Découvrir de nouvelles planètes aide les scientifiques à comprendre comment notre propre planète, la Terre, s'est formée.",
-      "date": "11/10/2023",
+      "title": "Explorateurs des Océans : Présentations d'un Nouveau Sous-Marin! 🌊",
+      "summary": "Un nouveau sous-marin a été dévoilé récemment, capable d'explorer les parties les plus profondes de l'océan. Ce petit vaisseau, aussi appelé submersible, permettra aux scientifiques d'en apprendre davantage sur les créatures mystérieuses qui vivent dans les profondeurs où la lumière du soleil n'arrive pas. Avec cet engin, les chercheurs espèrent découvrir de nouvelles espèces et mieux comprendre l'écosystème marin. Ne serait-ce pas incroyable de pouvoir plonger aussi profondément?",
+      "date": "22/10/2023",
       "link": ""
     },
     {
-      "title": "Salon du Livre 📚",
-      "summary": "Le grand Salon du Livre commence cette semaine. C'est un événement où de nombreux écrivains se réunissent pour partager leurs histoires et leurs idées. Les enfants et adultes peuvent rencontrer leurs auteurs préférés, écouter des lectures, et même participer à des ateliers d'écriture. C'est un excellent moyen de découvrir de nouveaux livres et de s'amuser avec des histoires. Les livres font voyager notre imagination et nourrissent notre curiosité. Si tu aimes lire ou inventer des histoires, cet événement est fait pour toi!",
-      "date": "11/10/2023",
+      "title": "Les Singes Savants Jouent à Cache-Cache! 🐒",
+      "summary": "Une étude récente montre que certains singes adorent jouer à cache-cache, tout comme nous! Des chercheurs ont observé des groupes de singes jouant à ce jeu dans leur habitat naturel. Cela prouve à quel point ces animaux sont intelligents et aiment s'amuser. Jouer à cache-cache aide aussi les singes à développer leurs compétences sociales, comme la coopération et la communication. C’est génial de voir que les jeux sont importants pour les animaux aussi!",
+      "date": "22/10/2023",
       "link": ""
     },
     {
-      "title": "Championnat de Rugby 🏉",
-      "summary": "Le championnat mondial de rugby bat son plein avec des équipes du monde entier qui s'affrontent pour le titre. C'est l'occasion de voir des matchs passionnants et de découvrir ce sport si tu ne le connais pas encore. Le rugby est un jeu d'équipe où tout le monde a un rôle important, que ce soit pour marquer des points ou défendre. En regardant les matchs, on peut apprendre des stratégies et admirer l'esprit sportif des joueurs. Alors, qui va gagner cette année? Les paris sont ouverts!",
-      "date": "11/10/2023",
+      "title": "Un Cirque Pas Comme les Autres! 🎪",
+      "summary": "Un nouveau type de cirque a fait son entrée sur scène, et il est complètement différent! Ce cirque met en avant des performances artistiques et acrobatiques incroyables, mais sans animaux. L'idée est de divertir le public tout en respectant le bien-être des animaux. Les acrobates, jongleurs et magiciens du spectacle sont tellement talentueux qu'ils captivent leur audience du début à la fin. Voir des artistes réaliser d'incroyables exploits peut être tout aussi fascinant!",
+      "date": "22/10/2023",
       "link": ""
     }
   ]
