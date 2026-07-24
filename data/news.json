@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌌 Une superbe comète traverse le ciel",
-      "summary": "Une belle comète, appelée Nishimura, est visible dans le ciel pour quelques jours seulement. Pour voir cette comète, il est préférable de regarder tôt le matin, avant le lever du soleil. Les comètes sont des boules de glace et de poussière qui voyagent dans l'espace. Elles laissent derrière elles une queue lumineuse que l'on peut voir de la Terre. C'est une chance unique de voir un tel phénomène, alors n'hésite pas à demander à tes parents de regarder ensemble si le ciel est dégagé !",
-      "date": "13/10/2023",
-      "link": "https://www.space.com/comet-nishimura-visibility-guide"
+      "title": "🍁 Les couleurs de l'automne expliquées",
+      "summary": "Les feuilles des arbres changent de couleur et tombent en automne, mais pourquoi? Découvrez comment les arbres se préparent pour l'hiver! En automne, les jours raccourcissent et les températures baissent. Les arbres arrêtent alors de produire de la chlorophylle, cette substance qui rend les feuilles vertes. Cela permet aux autres pigments, comme le jaune et l'orange, de briller. N'est-ce pas une belle manière pour la nature de nous impressionner avant l'hiver?",
+      "date": "04/10/2023",
+      "link": "https://www.scientificamerican.com/article/why-do-leaves-change-color-in-the-fall/"
     },
     {
-      "title": "🐼 Naissance d'un bébé panda en Chine",
-      "summary": "Un zoo en Chine a récemment annoncé la naissance d'un adorable bébé panda. Les pandas sont connus pour être des animaux doux et en voie de disparition. La naissance d'un bébé panda est une excellente nouvelle pour aider à la conservation de cette espèce. Les pandas vivent principalement en Chine et mangent beaucoup de bambou. Ce petit panda va grandir dans un environnement sécurisé et espérons qu'il deviendra un adulte en pleine santé.",
-      "date": "13/10/2023",
-      "link": "https://www.bbc.com/news/world-asia"
+      "title": "🦒 Nouveau-né à long cou au zoo !",
+      "summary": "Un bébé girafe est né récemment dans un zoo! Les girafes sont les plus grands animaux terrestres, et leur cou peut mesurer 2 mètres de long. Ce bébé girafe est déjà très curieux et explore son nouvel environnement sous le regard attentif de sa mère. Les visiteurs du zoo peuvent admirer ce magnifique bébé en train de découvrir le monde. C'est une occasion parfaite pour en apprendre davantage sur ces animaux étonnants et leur habitat naturel.",
+      "date": "04/10/2023",
+      "link": "https://www.nationalgeographic.com/animals/article/baby-giraffe-born-at-zoo"
     },
     {
-      "title": "🔬 Découverte d'une nouvelle espèce de grenouille",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille en forêt tropicale. Elle est toute petite et colorée, parfaite pour se cacher parmi les feuilles. La découverte de nouvelles espèces est importante car elle nous aide à mieux comprendre notre planète et à protéger les écosystèmes. Les forêts tropicales sont des endroits pleins de vie, abritant de nombreuses plantes et animaux que l'on ne trouve nulle part ailleurs.",
-      "date": "13/10/2023",
-      "link": "https://www.nationalgeographic.com/environment/article/newly-discovered-frog-species"
+      "title": "🌊 Un robot explorateur des fonds marins",
+      "summary": "Un robot sous-marin, qui ressemble à un petit sous-marin, vient de commencer une mission spéciale pour explorer les fonds marins. C'est incroyable, car seulement une petite partie des océans a été explorée par les humains. Ce robot peut plonger très profond et prendre des photos incroyables des créatures qui vivent dans ces profondeurs. Son travail va aider les scientifiques à en savoir plus sur la vie marine et sur comment protéger nos océans!",
+      "date": "04/10/2023",
+      "link": "https://www.bbc.com/news/science-environment-robot-deep-ocean"
     }
   ]
 }
