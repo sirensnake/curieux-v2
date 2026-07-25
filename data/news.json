@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🍁 Les couleurs de l'automne expliquées",
-      "summary": "Les feuilles des arbres changent de couleur et tombent en automne, mais pourquoi? Découvrez comment les arbres se préparent pour l'hiver! En automne, les jours raccourcissent et les températures baissent. Les arbres arrêtent alors de produire de la chlorophylle, cette substance qui rend les feuilles vertes. Cela permet aux autres pigments, comme le jaune et l'orange, de briller. N'est-ce pas une belle manière pour la nature de nous impressionner avant l'hiver?",
-      "date": "04/10/2023",
-      "link": "https://www.scientificamerican.com/article/why-do-leaves-change-color-in-the-fall/"
+      "title": "La découverte amusante: Une nouvelle espèce de grenouille 🐸",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans la forêt amazonienne, au Brésil. Ce qui rend cette grenouille spéciale, c'est sa peau brillante et ses couleurs éclatantes. Les chercheurs disent que cela pourrait être une façon pour elle de se camoufler parmi les feuilles brillantes et les fleurs. Cette découverte est importante car elle nous aide à mieux comprendre les richesses de la forêt amazonienne et l'importance de protéger ces habitats pour les animaux et les plantes qui y vivent.",
+      "date": "28/10/2023",
+      "link": "https://www.example.com/science/discovery/amazon-frog"
     },
     {
-      "title": "🦒 Nouveau-né à long cou au zoo !",
-      "summary": "Un bébé girafe est né récemment dans un zoo! Les girafes sont les plus grands animaux terrestres, et leur cou peut mesurer 2 mètres de long. Ce bébé girafe est déjà très curieux et explore son nouvel environnement sous le regard attentif de sa mère. Les visiteurs du zoo peuvent admirer ce magnifique bébé en train de découvrir le monde. C'est une occasion parfaite pour en apprendre davantage sur ces animaux étonnants et leur habitat naturel.",
-      "date": "04/10/2023",
-      "link": "https://www.nationalgeographic.com/animals/article/baby-giraffe-born-at-zoo"
+      "title": "La mission spatiale réussie: Touchdown sur la Lune! 🌕",
+      "summary": "Une mission spatiale a récemment réussi à envoyer un rover sur la surface de la Lune. Ce rover, qui ressemble un peu à une grande voiture télécommandée, va explorer la surface lunaire et envoyer des photos et des informations aux scientifiques sur Terre. Ce projet est une grande réussite pour les ingénieurs et les astronautes de l'équipe, car il nous aide à en apprendre davantage sur notre satellite naturel. Qui sait, cela pourrait même être un pas vers l'installation de bases spatiales futures!",
+      "date": "28/10/2023",
+      "link": "https://www.example.com/space/lunar-mission"
     },
     {
-      "title": "🌊 Un robot explorateur des fonds marins",
-      "summary": "Un robot sous-marin, qui ressemble à un petit sous-marin, vient de commencer une mission spéciale pour explorer les fonds marins. C'est incroyable, car seulement une petite partie des océans a été explorée par les humains. Ce robot peut plonger très profond et prendre des photos incroyables des créatures qui vivent dans ces profondeurs. Son travail va aider les scientifiques à en savoir plus sur la vie marine et sur comment protéger nos océans!",
-      "date": "04/10/2023",
-      "link": "https://www.bbc.com/news/science-environment-robot-deep-ocean"
+      "title": "Une sculpture gourmande pour Halloween 🎃",
+      "summary": "À l'occasion d'Halloween, des artistes culinaires ont créé une incroyable sculpture en chocolat en forme de citrouille géante! Elle est exposée dans un musée et attire de nombreux visiteurs. Les artistes disent qu'ils ont utilisé plus de 200 kilos de chocolat pour réaliser cette œuvre sucrée. Ce projet montre comment l'art peut se mélanger à la gourmandise pour créer des œuvres incroyables. De plus, après l'exposition, une partie de la sculpture sera offerte à une association pour les enfants.",
+      "date": "28/10/2023",
+      "link": ""
     }
   ]
 }
