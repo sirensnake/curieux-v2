@@ -1,22 +1,6 @@
 {
-  "articles": [
-    {
-      "title": "La découverte amusante: Une nouvelle espèce de grenouille 🐸",
-      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille dans la forêt amazonienne, au Brésil. Ce qui rend cette grenouille spéciale, c'est sa peau brillante et ses couleurs éclatantes. Les chercheurs disent que cela pourrait être une façon pour elle de se camoufler parmi les feuilles brillantes et les fleurs. Cette découverte est importante car elle nous aide à mieux comprendre les richesses de la forêt amazonienne et l'importance de protéger ces habitats pour les animaux et les plantes qui y vivent.",
-      "date": "28/10/2023",
-      "link": "https://www.example.com/science/discovery/amazon-frog"
-    },
-    {
-      "title": "La mission spatiale réussie: Touchdown sur la Lune! 🌕",
-      "summary": "Une mission spatiale a récemment réussi à envoyer un rover sur la surface de la Lune. Ce rover, qui ressemble un peu à une grande voiture télécommandée, va explorer la surface lunaire et envoyer des photos et des informations aux scientifiques sur Terre. Ce projet est une grande réussite pour les ingénieurs et les astronautes de l'équipe, car il nous aide à en apprendre davantage sur notre satellite naturel. Qui sait, cela pourrait même être un pas vers l'installation de bases spatiales futures!",
-      "date": "28/10/2023",
-      "link": "https://www.example.com/space/lunar-mission"
-    },
-    {
-      "title": "Une sculpture gourmande pour Halloween 🎃",
-      "summary": "À l'occasion d'Halloween, des artistes culinaires ont créé une incroyable sculpture en chocolat en forme de citrouille géante! Elle est exposée dans un musée et attire de nombreux visiteurs. Les artistes disent qu'ils ont utilisé plus de 200 kilos de chocolat pour réaliser cette œuvre sucrée. Ce projet montre comment l'art peut se mélanger à la gourmandise pour créer des œuvres incroyables. De plus, après l'exposition, une partie de la sculpture sera offerte à une association pour les enfants.",
-      "date": "28/10/2023",
-      "link": ""
-    }
-  ]
+  "title": "Étoiles en fête 🌟",
+  "summary": "Cette semaine, dans l'espace, un nouveau télescope a été lancé pour nous aider à mieux observer les étoiles et les planètes. Ce télescope s'appelle Euclid et a été lancé par une équipe de scientifiques en Europe. Il a pour mission de découvrir comment l'univers a évolué au fil du temps. Grâce à lui, nous pourrons peut-être répondre à des questions comme \"Pourquoi y a-t-il de la matière sombre dans l'univers ?\" C'est comme donner à nos yeux un super pouvoir pour voir plus loin et en apprendre davantage sur le ciel étoilé. Attends-toi à de nouvelles découvertes passionnantes dans les mois à venir!",
+  "date": "13/10/2023",
+  "link": ""
 }
