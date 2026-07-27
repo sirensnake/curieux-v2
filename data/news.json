@@ -1,6 +1,22 @@
 {
-  "title": "Étoiles en fête 🌟",
-  "summary": "Cette semaine, dans l'espace, un nouveau télescope a été lancé pour nous aider à mieux observer les étoiles et les planètes. Ce télescope s'appelle Euclid et a été lancé par une équipe de scientifiques en Europe. Il a pour mission de découvrir comment l'univers a évolué au fil du temps. Grâce à lui, nous pourrons peut-être répondre à des questions comme \"Pourquoi y a-t-il de la matière sombre dans l'univers ?\" C'est comme donner à nos yeux un super pouvoir pour voir plus loin et en apprendre davantage sur le ciel étoilé. Attends-toi à de nouvelles découvertes passionnantes dans les mois à venir!",
-  "date": "13/10/2023",
-  "link": ""
+  "articles": [
+    {
+      "title": "Découverte dans l'espace ! 🚀",
+      "summary": "Des scientifiques viennent de découvrir une nouvelle exoplanète dans notre galaxie. Une exoplanète est une planète qui tourne autour d'une étoile en dehors de notre système solaire. Cette planète est particulièrement intéressante, car elle pourrait avoir de l'eau à sa surface. Les chercheurs espèrent en apprendre davantage sur cette planète grâce à des télescopes spéciaux. Qui sait, peut-être découvriront-ils un jour des signes de vie !",
+      "date": "17/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Un zoo accueille un bébé panda 🐼",
+      "summary": "Un zoo en Chine est ravi d'annoncer la naissance d'un bébé panda ! Les pandas sont des animaux adorés partout dans le monde, mais ils sont aussi en danger d'extinction. Les zoos jouent un rôle important en aidant à protéger ces créatures en leur offrant un habitat sûr et en participant à des programmes de reproduction. Le bébé panda se porte bien et réjouit déjà les visiteurs avec ses adorables câlins et sa joie de vivre.",
+      "date": "17/10/2023",
+      "link": ""
+    },
+    {
+      "title": "La culture japonaise à l'honneur 🎏",
+      "summary": "À Paris, une grande exposition célèbre la culture japonaise. Les visiteurs peuvent découvrir des objets anciens, voir des démonstrations de calligraphie et même essayer des costumes traditionnels. Cette exposition permet aux gens d'en apprendre plus sur l'histoire et les traditions du Japon. C'est un moyen fantastique de voyager à travers le temps et l'espace sans quitter la ville. Les organisateurs espèrent que les gens repartiront avec une meilleure compréhension de cette culture fascinante.",
+      "date": "17/10/2023",
+      "link": ""
+    }
+  ]
 }
