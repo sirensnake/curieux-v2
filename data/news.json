@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte dans l'espace ! 🚀",
-      "summary": "Des scientifiques viennent de découvrir une nouvelle exoplanète dans notre galaxie. Une exoplanète est une planète qui tourne autour d'une étoile en dehors de notre système solaire. Cette planète est particulièrement intéressante, car elle pourrait avoir de l'eau à sa surface. Les chercheurs espèrent en apprendre davantage sur cette planète grâce à des télescopes spéciaux. Qui sait, peut-être découvriront-ils un jour des signes de vie !",
-      "date": "17/10/2023",
+      "title": "🐧 Un pas pour sauver les pingouins",
+      "summary": "Des scientifiques en Antarctique ont découvert de nouvelles façons de protéger les pingouins ! Ces adorables oiseaux vivent sur la glace et le changement climatique rend leur maison de plus en plus petite. Les chercheurs étudient comment ils se déplacent et mangent pour leur rendre la vie plus facile. Grâce à ces efforts, nous espérons que les colonies de pingouins se développeront et resteront en sécurité. Cela montre aussi à quel point il est important de prendre soin de notre planète, car chaque petit geste compte pour protéger les animaux !",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "Un zoo accueille un bébé panda 🐼",
-      "summary": "Un zoo en Chine est ravi d'annoncer la naissance d'un bébé panda ! Les pandas sont des animaux adorés partout dans le monde, mais ils sont aussi en danger d'extinction. Les zoos jouent un rôle important en aidant à protéger ces créatures en leur offrant un habitat sûr et en participant à des programmes de reproduction. Le bébé panda se porte bien et réjouit déjà les visiteurs avec ses adorables câlins et sa joie de vivre.",
-      "date": "17/10/2023",
+      "title": "🚀 Une mission vers Mars réussie !",
+      "summary": "La NASA a envoyé un nouveau robot sur Mars, appelé 'Rover Persévérance'. Ce n'est pas la première fois qu'un robot va sur Mars, mais celui-ci a une mission spéciale ! Il va chercher des signes de vie ancienne sur la planète rouge. Avec ses superbes caméras et ses outils, Persévérance pourra nous montrer des images incroyables et analyser le sol martien. Imaginer que nous pourrions un jour savoir s'il y a eu de la vie est super excitant, et cela pourrait changer notre façon de voir l'univers !",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "La culture japonaise à l'honneur 🎏",
-      "summary": "À Paris, une grande exposition célèbre la culture japonaise. Les visiteurs peuvent découvrir des objets anciens, voir des démonstrations de calligraphie et même essayer des costumes traditionnels. Cette exposition permet aux gens d'en apprendre plus sur l'histoire et les traditions du Japon. C'est un moyen fantastique de voyager à travers le temps et l'espace sans quitter la ville. Les organisateurs espèrent que les gens repartiront avec une meilleure compréhension de cette culture fascinante.",
-      "date": "17/10/2023",
+      "title": "🎨 Une œuvre d'art découverte dans une grotte",
+      "summary": "Dans une grotte en Indonésie, des archéologues ont trouvé une peinture très ancienne. Cette œuvre représente des scènes de chasse et remonterait à plus de 40 000 ans ! C'est fascinant de penser que nos ancêtres aimaient déjà créer des images pour raconter des histoires. Ces peintures montrent l'importance de l'art et de la communication à travers le temps. En étudiant ces découvertes, nous en apprenons plus sur nos lointains ancêtres et comment ils voyaient le monde. L'art est vraiment un langage universel qui unit tout le monde !",
+      "date": "12/10/2023",
       "link": ""
     }
   ]
