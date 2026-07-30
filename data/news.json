@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Merveille des étoiles filantes! 🌠",
-      "summary": "Cette semaine, un événement magique se passe dans le ciel : des étoiles filantes brillantes sont visibles la nuit! C’est une pluie de météores, un phénomène où de petits morceaux de roche et de poussière brûlent en entrant dans l’atmosphère de la Terre, créant de belles traînées lumineuses. Tu peux les voir après le coucher du soleil. N’oublie pas de lever les yeux et faire un vœu! C’est une belle occasion pour découvrir les merveilles de l’espace.",
-      "date": "08/10/2023",
+      "title": "Une espèce d'oiseau rare redécouverte 🦜",
+      "summary": "Un oiseau très spécial, qu'on croyait disparu, a été redécouvert dans une région lointaine d'Australie cette semaine. Ce petit oiseau coloré s'appelle le perroquet de nuit. Les scientifiques sont très heureux de le revoir, car cela signifie que son habitat est toujours là et qu'il peut encore vivre en liberté. Cette découverte encourage aussi beaucoup de personnes à protéger la nature pour que d'autres espèces ne disparaissent pas.",
+      "date": "16/10/2023",
       "link": ""
     },
     {
-      "title": "Le chat explorateur! 🐱",
-      "summary": "Un chat courageux a récemment fait une longue promenade dans la ville et est devenu la star de son quartier! Ce chat, nommé Biscuit, a été retrouvé à plusieurs kilomètres de chez lui après une aventure qui a duré deux jours. Ses propriétaires étaient très heureux de le retrouver sain et sauf. Les chats, comme beaucoup d’animaux, sont curieux de nature. Il est important de leur offrir un environnement sécurisé pour éviter les fugues.",
-      "date": "08/10/2023",
+      "title": "Des voitures solaires à l'essai 🌞",
+      "summary": "Des ingénieurs en Allemagne ont commencé à tester des voitures qui fonctionnent grâce à l'énergie solaire. Ces voitures ont des panneaux solaires intégrés sur leur toit, ce qui permet de voyager en utilisant uniquement l'énergie du soleil. C'est une avancée intéressante pour l'environnement, car cela pourrait aider à diminuer la pollution liée aux véhicules. Imagine conduire sans avoir besoin de passer à la pompe à essence !",
+      "date": "16/10/2023",
       "link": ""
     },
     {
-      "title": "Festival imaginaire des petites mains 🎨",
-      "summary": "Un festival artistique spécial, appelé « Les Petites Mains Créatives », a lieu en ce moment. C’est un événement où les enfants peuvent exprimer leurs talents artistiques en dessinant et en peignant. Le festival est ouvert aux enfants de tout niveau, et ils peuvent montrer leur créativité avec des couleurs, de l’argile ou même des matériaux recyclés. C’est une belle manière de passer du temps avec la famille et de faire de nouvelles rencontres tout en laissant libre cours à son imagination!",
-      "date": "08/10/2023",
+      "title": "Un astronaute européen revient sur Terre 🚀",
+      "summary": "Un astronaute français, Thomas Pesquet, est revenu sur Terre après avoir passé six mois dans l'espace à bord de la Station spatiale internationale. Pendant son séjour, il a aidé à mener des expériences scientifiques importantes et a partagé ses aventures avec nous à travers des photos incroyables. Son retour sur notre planète nous rappelle à quel point la collaboration internationale est précieuse pour explorer et comprendre l'espace.",
+      "date": "16/10/2023",
       "link": ""
     }
   ]
