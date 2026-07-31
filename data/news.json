@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une espèce d'oiseau rare redécouverte 🦜",
-      "summary": "Un oiseau très spécial, qu'on croyait disparu, a été redécouvert dans une région lointaine d'Australie cette semaine. Ce petit oiseau coloré s'appelle le perroquet de nuit. Les scientifiques sont très heureux de le revoir, car cela signifie que son habitat est toujours là et qu'il peut encore vivre en liberté. Cette découverte encourage aussi beaucoup de personnes à protéger la nature pour que d'autres espèces ne disparaissent pas.",
-      "date": "16/10/2023",
+      "title": "Découverte sous la glace ❄️",
+      "summary": "Récemment, des scientifiques ont découvert de nouvelles formes de vie sous les glaciers de l'Antarctique. Ces petits organismes vivent sans lumière du soleil, dans des eaux très froides. Cette découverte est fascinante, car elle montre comment la vie peut s'adapter à des environnements extrêmes. Les chercheurs espèrent que cela pourra nous aider à mieux comprendre la vie sur Terre et peut-être même ailleurs, comme sur Mars. N'est-ce pas incroyable de penser que des secrets se cachent encore sous la glace ?",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Des voitures solaires à l'essai 🌞",
-      "summary": "Des ingénieurs en Allemagne ont commencé à tester des voitures qui fonctionnent grâce à l'énergie solaire. Ces voitures ont des panneaux solaires intégrés sur leur toit, ce qui permet de voyager en utilisant uniquement l'énergie du soleil. C'est une avancée intéressante pour l'environnement, car cela pourrait aider à diminuer la pollution liée aux véhicules. Imagine conduire sans avoir besoin de passer à la pompe à essence !",
-      "date": "16/10/2023",
+      "title": "Un sacré coup pour le climat 🌿",
+      "summary": "Dans une réunion mondiale, différents pays ont décidé de travailler plus fort pour réduire la pollution. Ils veulent planter plus d'arbres, utiliser moins de plastique et encourager l'énergie solaire. Ces décisions sont importantes pour protéger notre belle planète et garantir un avenir plus vert pour tout le monde. Chaque petit geste compte, même recycler ou éteindre les lumières peut aider à sauver notre Terre.",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Un astronaute européen revient sur Terre 🚀",
-      "summary": "Un astronaute français, Thomas Pesquet, est revenu sur Terre après avoir passé six mois dans l'espace à bord de la Station spatiale internationale. Pendant son séjour, il a aidé à mener des expériences scientifiques importantes et a partagé ses aventures avec nous à travers des photos incroyables. Son retour sur notre planète nous rappelle à quel point la collaboration internationale est précieuse pour explorer et comprendre l'espace.",
-      "date": "16/10/2023",
+      "title": "Le chat le plus grand du monde 🐱",
+      "summary": "Un chat nommé Fenrir a été officiellement reconnu comme le plus grand chat domestique vivant. Mesurant presque 48 centimètres, Fenrir bat des records dans le monde entier. Ce chat impressionnant vit avec son propriétaire et est devenu une star sur Internet, grâce à sa taille étonnante et ses photos amusantes. Cela montre combien les animaux peuvent être uniques et surprenants.",
+      "date": "23/10/2023",
       "link": ""
     }
   ]
