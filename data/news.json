@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Des squelettes de dinosaures vendus! 🦕",
-      "summary": "Récemment, en France, une vente aux enchères très spéciale a eu lieu. Deux squelettes de dinosaures, vieux de plus de 150 millions d'années, ont été vendus. L'un s'appelait 'Barry', et il était un cousin éloigné du célèbre T-Rex. Les squelettes ont trouvé de nouveaux propriétaires qui vont prendre soin d'eux dans des musées. C'est une façon d'aider les gens à en apprendre davantage sur ces créatures incroyables qui vivaient sur Terre bien avant nous!",
-      "date": "19/10/2023",
+      "title": "La Lune brille sur Artemis 🌕",
+      "summary": "Le programme spatial Artemis de la NASA a récemment atteint une étape importante. Il vise à envoyer des astronautes vivre et travailler sur la Lune pour explorer de nouvelles régions. C’est une aventure passionnante qui pourrait même nous aider à préparer des voyages vers Mars dans le futur ! Imaginez être l'un des premiers explorateurs lunaires à marcher là où personne n’a encore posé le pied. La mission encourage également l'étude de notre planète en fournissant des informations précieuses sur l'environnement lunaire.",
+      "date": "29/11/2023",
+      "link": "https://www.nasa.gov/artemis"
+    },
+    {
+      "title": "Les oiseaux migrateurs commencent leur voyage épique 🦅",
+      "summary": "Chaque année, lorsque le froid arrive, des millions d'oiseaux entament une incroyable migration vers des terres plus chaudes. Ces oiseaux parcourent des milliers de kilomètres pour trouver des endroits où il fait bon vivre pendant l'hiver. C'est un vrai spectacle de la nature où on peut observer différentes espèces se rassembler pour préparer leur long voyage. Des scientifiques suivent ces aventures grâce à des technologies modernes pour comprendre leurs itinéraires et leur mode de vie, aidant ainsi à mieux les protéger.",
+      "date": "29/11/2023",
       "link": ""
     },
     {
-      "title": "Une nouvelle lune sur Neptune? 🌕",
-      "summary": "Les scientifiques ont récemment découvert ce qui pourrait être une nouvelle lune autour de Neptune, la planète géante bleue loin dans notre système solaire. Cette découverte a été faite grâce aux nouvelles images capturées par le télescope spatial James Webb. Si elle est confirmée, cette petite lune ajoutera encore plus de mystère à Neptune, qui a déjà 14 lunes connues. C'est incroyable de penser combien de choses nous avons encore à apprendre sur notre univers!",
-      "date": "19/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Des vélos pour lutter contre la pollution! 🚴",
-      "summary": "Dans plusieurs villes du monde, de nouvelles pistes cyclables sont en train d'apparaître. Elles encouragent les gens à utiliser plus souvent le vélo au lieu de la voiture. Cette initiative vise à réduire la pollution de l'air et à rendre l'air plus sain pour tout le monde. De nombreuses familles trouvent cela amusant et bon pour la santé. C'est aussi une belle façon d'explorer des parcs et des chemins en pleine nature. Alors, prêt à enfiler ton casque et à partir à l'aventure en vélo?",
-      "date": "19/10/2023",
+      "title": "Les secrets de la grotte révélés ⛰️",
+      "summary": "Récemment, des chercheurs ont découvert de nouvelles peintures dans une grotte en Espagne, vieilles de milliers d'années. Ces images ont été laissées par nos ancêtres et montrent des animaux, des mains et des formes mystérieuses. Les scientifiques pensent que ces œuvres d'art étaient un moyen pour les anciens habitants de communiquer et de raconter leurs histoires. Explorer ces grottes, c'est comme voyager dans le temps pour comprendre comment vivaient les premières personnes sur Terre. C'est fascinant de voir comment l'art a traversé les âges !",
+      "date": "29/11/2023",
       "link": ""
     }
   ]
