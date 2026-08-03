@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "La Lune brille sur Artemis 🌕",
-      "summary": "Le programme spatial Artemis de la NASA a récemment atteint une étape importante. Il vise à envoyer des astronautes vivre et travailler sur la Lune pour explorer de nouvelles régions. C’est une aventure passionnante qui pourrait même nous aider à préparer des voyages vers Mars dans le futur ! Imaginez être l'un des premiers explorateurs lunaires à marcher là où personne n’a encore posé le pied. La mission encourage également l'étude de notre planète en fournissant des informations précieuses sur l'environnement lunaire.",
-      "date": "29/11/2023",
-      "link": "https://www.nasa.gov/artemis"
-    },
-    {
-      "title": "Les oiseaux migrateurs commencent leur voyage épique 🦅",
-      "summary": "Chaque année, lorsque le froid arrive, des millions d'oiseaux entament une incroyable migration vers des terres plus chaudes. Ces oiseaux parcourent des milliers de kilomètres pour trouver des endroits où il fait bon vivre pendant l'hiver. C'est un vrai spectacle de la nature où on peut observer différentes espèces se rassembler pour préparer leur long voyage. Des scientifiques suivent ces aventures grâce à des technologies modernes pour comprendre leurs itinéraires et leur mode de vie, aidant ainsi à mieux les protéger.",
-      "date": "29/11/2023",
+      "title": "Des étoiles filantes dans le ciel 🌠",
+      "summary": "Ce mois-ci, une pluie d'étoiles filantes a illuminé le ciel nocturne. Les étoiles filantes sont des petites particules de poussière spatiale qui brûlent en entrant dans l'atmosphère terrestre, créant de belles traînées lumineuses. Pour mieux les voir, il faut se trouver dans un endroit sombre, loin des lumières de la ville. Les scientifiques étudient ces phénomènes pour en savoir plus sur l'espace. Gardez les yeux ouverts et vous pourriez peut-être réaliser un vœu en apercevant une étoile filante !",
+      "date": "12/10/2023",
       "link": ""
     },
     {
-      "title": "Les secrets de la grotte révélés ⛰️",
-      "summary": "Récemment, des chercheurs ont découvert de nouvelles peintures dans une grotte en Espagne, vieilles de milliers d'années. Ces images ont été laissées par nos ancêtres et montrent des animaux, des mains et des formes mystérieuses. Les scientifiques pensent que ces œuvres d'art étaient un moyen pour les anciens habitants de communiquer et de raconter leurs histoires. Explorer ces grottes, c'est comme voyager dans le temps pour comprendre comment vivaient les premières personnes sur Terre. C'est fascinant de voir comment l'art a traversé les âges !",
-      "date": "29/11/2023",
+      "title": "Un puzzle préhistorique résolu 🦖",
+      "summary": "Des chercheurs ont découvert une nouvelle espèce de dinosaure en Argentine. Ce dinosaure vivait il y a 70 millions d'années et ressemblait à un immense oiseau avec des ailes, mais il ne volait pas. Les scientifiques utilisent ces découvertes pour mieux comprendre l'évolution de la vie sur Terre. Cette nouvelle espèce montre à quel point notre planète était diverse et fascinante il y a très longtemps !",
+      "date": "12/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Un festival de couleurs et de musique 🎶",
+      "summary": "Le festival de musique annuel de Coachella a commencé en Californie ! Cet événement célèbre de nombreux styles de musique et rassemble des artistes du monde entier. C'est un moment où les gens se réunissent pour écouter de la musique, danser et découvrir de nouvelles cultures. Les festivals comme celui-ci montrent comment la musique peut rassembler des personnes de différents horizons pour faire la fête et s'amuser ensemble.",
+      "date": "12/10/2023",
       "link": ""
     }
   ]
