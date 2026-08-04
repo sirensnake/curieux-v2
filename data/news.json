@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Des étoiles filantes dans le ciel 🌠",
-      "summary": "Ce mois-ci, une pluie d'étoiles filantes a illuminé le ciel nocturne. Les étoiles filantes sont des petites particules de poussière spatiale qui brûlent en entrant dans l'atmosphère terrestre, créant de belles traînées lumineuses. Pour mieux les voir, il faut se trouver dans un endroit sombre, loin des lumières de la ville. Les scientifiques étudient ces phénomènes pour en savoir plus sur l'espace. Gardez les yeux ouverts et vous pourriez peut-être réaliser un vœu en apercevant une étoile filante !",
-      "date": "12/10/2023",
+      "title": "La terre vue de l'espace 🚀",
+      "summary": "Des astronautes de la Station Spatiale Internationale ont partagé de nouvelles photos incroyables de la Terre. Ces images montrent notre planète de nuit avec toutes les lumières des villes. Les astronautes trouvent que la Terre est magnifique vue de l'espace et cela nous rappelle l'importance de la protéger. Les photos prises depuis l'ISS aident les scientifiques à mieux comprendre comment notre planète change avec le temps.",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "Un puzzle préhistorique résolu 🦖",
-      "summary": "Des chercheurs ont découvert une nouvelle espèce de dinosaure en Argentine. Ce dinosaure vivait il y a 70 millions d'années et ressemblait à un immense oiseau avec des ailes, mais il ne volait pas. Les scientifiques utilisent ces découvertes pour mieux comprendre l'évolution de la vie sur Terre. Cette nouvelle espèce montre à quel point notre planète était diverse et fascinante il y a très longtemps !",
-      "date": "12/10/2023",
+      "title": "Retour des dauphins dans le fleuve 🌊",
+      "summary": "Bonne nouvelle pour les amoureux des animaux ! Les dauphins de l’Irrawaddy, une espèce rare, ont été observés en grand nombre dans un fleuve en Asie. Grâce aux efforts de protection de la faune, leur habitat est devenu plus sûr. Ces dauphins adorent jouer et sauter hors de l'eau, ce qui rend les voyages en bateau pleins de surprises pour ceux qui ont la chance de les voir.",
+      "date": "01/11/2023",
       "link": ""
     },
     {
-      "title": "Un festival de couleurs et de musique 🎶",
-      "summary": "Le festival de musique annuel de Coachella a commencé en Californie ! Cet événement célèbre de nombreux styles de musique et rassemble des artistes du monde entier. C'est un moment où les gens se réunissent pour écouter de la musique, danser et découvrir de nouvelles cultures. Les festivals comme celui-ci montrent comment la musique peut rassembler des personnes de différents horizons pour faire la fête et s'amuser ensemble.",
-      "date": "12/10/2023",
+      "title": "Festival des lanternes 🌟",
+      "summary": "En Chine, un festival traditionnel illumine les nuits avec des milliers de lanternes colorées. Ce festival s'appelle \"Fête des Lanternes\" et marque la fin des célébrations du Nouvel An chinois. Les gens fabriquent de belles lanternes en papier et les accrochent dans les rues et les parcs. C'est l'occasion pour les familles de se rassembler, d'admirer les jolies couleurs et de se raconter des histoires.",
+      "date": "01/11/2023",
       "link": ""
     }
   ]
