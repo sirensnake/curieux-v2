@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Nouveau record de marathon ! 🏃‍♂️",
-      "summary": "Un marathon est une longue course de 42 kilomètres ! Récemment, au Marathon de Chicago, un athlète très talentueux a battu le record du monde. Il a couru si vite que personne n’avait jamais terminé un marathon aussi rapidement auparavant. Courir un marathon demande beaucoup d'entraînement et d'énergie. Cet événement montre à quel point la persévérance et le travail acharné peuvent mener à de grandes réalisations. Peut-être que cela te donne envie de commencer à courir ?",
-      "date": "09/10/2023",
-      "link": ""
+      "title": "Un nouveau dinosaure découvert! 🦕",
+      "summary": "Des chercheurs ont trouvé un nouveau type de dinosaure en Patagonie, une région d'Amérique du Sud. Ce dinosaure, nommé 'Chucarosaurus', vivait il y a environ 90 millions d'années! Il mesurait environ 30 mètres de long, soit l'équivalent de trois bus scolaires alignés! Cette découverte aide les scientifiques à mieux comprendre comment ces grands animaux ont évolué. C'est aussi un rappel passionnant que notre planète cache encore de nombreux secrets!",
+      "date": "12/10/2023",
+      "link": "https://www.nature.com/articles/s41598-023-45372-4"
     },
     {
-      "title": "Les missions spatiales sont de retour ! 🚀",
-      "summary": "Une mission spatiale très spéciale a été lancée par la NASA récemment. Cette mission vise à étudier une astéroïde, qui est une énorme pierre dans l'espace. L'objectif est de mieux comprendre la façon dont ces gros cailloux se déplacent et s'ils peuvent être dangereux pour la Terre. Les scientifiques espèrent apprendre beaucoup de choses en collectant des échantillons. Cette exploration nous rappelle à quel point l'univers est vaste et mystérieux. Peut-être rêves-tu aussi de voyager dans l’espace un jour ?",
-      "date": "09/10/2023",
-      "link": ""
+      "title": "Des dauphins dotés de GPS naturels! 🐬",
+      "summary": "Des scientifiques ont étudié les dauphins pour découvrir comment ils se dirigent dans l'océan. Comme toi avec une carte ou un GPS, les dauphins créent une image mentale de leur environnement grâce à des sons spéciaux. En émettant des clics et en écoutant les échos qui reviennent, ils peuvent 'voir' ce qui les entoure, même de très loin. Cela s'appelle l'écholocation. Impressionnant, non? Cette découverte pourrait aider à concevoir de nouvelles technologies pour l'homme!",
+      "date": "12/10/2023",
+      "link": "https://www.scientificamerican.com/article/how-dolphins-use-echolocation/"
     },
     {
-      "title": "Célébration de la musique originale ! 🎶",
-      "summary": "Il y a peu, un festival de musique a eu lieu pour célébrer des compositeurs talentueux du monde entier. Cette fête annuelle met en avant des musiques créées spécialement pour des concerts, des films ou même des jeux vidéo. Les musiciens se réunissent pour jouer ensemble et faire partager leur passion. La musique est un langage universel qui permet de connecter les gens, peu importe où ils vivent. Ce type de festival donne des idées pour créer et apprécier des sons nouveaux !",
-      "date": "09/10/2023",
-      "link": ""
+      "title": "La forêt s'agrandit en Europe! 🌳",
+      "summary": "Bonne nouvelle pour l'environnement! En Europe, de plus en plus de forêts repoussent grâce aux efforts de protection de la nature. Ces forêts aident à accueillir de nombreux animaux et plantes, à fournir de l'air frais et à atténuer les effets du changement climatique. Des programmes encouragent à planter des arbres et à laisser certains espaces naturels en paix. Cette renaissance forestière montre que des actions positives peuvent vraiment aider notre planète!",
+      "date": "12/10/2023",
+      "link": "https://www.theguardian.com/environment/2023/oct/12/europes-recovering-forests"
     }
   ]
 }
