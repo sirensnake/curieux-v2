@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un nouveau dinosaure découvert! 🦕",
-      "summary": "Des chercheurs ont trouvé un nouveau type de dinosaure en Patagonie, une région d'Amérique du Sud. Ce dinosaure, nommé 'Chucarosaurus', vivait il y a environ 90 millions d'années! Il mesurait environ 30 mètres de long, soit l'équivalent de trois bus scolaires alignés! Cette découverte aide les scientifiques à mieux comprendre comment ces grands animaux ont évolué. C'est aussi un rappel passionnant que notre planète cache encore de nombreux secrets!",
-      "date": "12/10/2023",
-      "link": "https://www.nature.com/articles/s41598-023-45372-4"
+      "title": "Découverte spatiale 🚀",
+      "summary": "Les astronomes ont découvert une nouvelle exoplanète très intéressante. Elle se trouve à plus de 200 années-lumière de la Terre dans une autre galaxie! Cette planète est très spéciale car elle semble avoir une atmosphère ressemblant un peu à celle de la Terre. Cela aide les scientifiques à mieux comprendre où et comment la vie pourrait exister ailleurs dans l'univers. Cette découverte encourage le travail des chercheurs qui espèrent un jour trouver une planète qui pourrait abriter la vie.",
+      "date": "02/11/2023",
+      "link": "https://www.nasa.gov/"
     },
     {
-      "title": "Des dauphins dotés de GPS naturels! 🐬",
-      "summary": "Des scientifiques ont étudié les dauphins pour découvrir comment ils se dirigent dans l'océan. Comme toi avec une carte ou un GPS, les dauphins créent une image mentale de leur environnement grâce à des sons spéciaux. En émettant des clics et en écoutant les échos qui reviennent, ils peuvent 'voir' ce qui les entoure, même de très loin. Cela s'appelle l'écholocation. Impressionnant, non? Cette découverte pourrait aider à concevoir de nouvelles technologies pour l'homme!",
-      "date": "12/10/2023",
-      "link": "https://www.scientificamerican.com/article/how-dolphins-use-echolocation/"
+      "title": "Le phénomène de la migration 🐦",
+      "summary": "Chaque automne, des millions d'oiseaux migrent vers des endroits plus chauds pour passer l'hiver. Cette migration est comme un grand voyage pour ces oiseaux. Des scientifiques étudient ce phénomène pour comprendre comment ils trouvent leur chemin sans cartes ou GPS! Les oiseaux utilisent les étoiles et le champ magnétique de la Terre pour s'orienter. Cette année, les chercheurs ont utilisé des balises spéciales pour suivre certains oiseaux. Grâce à ça, ils peuvent maintenant suivre leur voyage incroyable et en apprendre plus sur leurs parcours.",
+      "date": "02/11/2023",
+      "link": "https://www.audubon.org/"
     },
     {
-      "title": "La forêt s'agrandit en Europe! 🌳",
-      "summary": "Bonne nouvelle pour l'environnement! En Europe, de plus en plus de forêts repoussent grâce aux efforts de protection de la nature. Ces forêts aident à accueillir de nombreux animaux et plantes, à fournir de l'air frais et à atténuer les effets du changement climatique. Des programmes encouragent à planter des arbres et à laisser certains espaces naturels en paix. Cette renaissance forestière montre que des actions positives peuvent vraiment aider notre planète!",
-      "date": "12/10/2023",
-      "link": "https://www.theguardian.com/environment/2023/oct/12/europes-recovering-forests"
+      "title": "Festival de lumières 🎉",
+      "summary": "Le Festival des Lumières a commencé hier dans plusieurs villes du monde. Ce festival est un événement annuel où des artistes créent des œuvres lumineuses magiques qui illuminent les rues. À Lyon, en France, c'est l'un des plus connus et il attire des milliers de visiteurs chaque année. Les artistes utilisent des lumières LED pour créer des sculptures, des projections vidéo sur les bâtiments et des installations interactives. C'est une façon amusante de voir l'art sous un autre jour et de redécouvrir la ville la nuit!",
+      "date": "02/11/2023",
+      "link": "https://www.fetedeslumieres.lyon.fr/"
     }
   ]
 }
