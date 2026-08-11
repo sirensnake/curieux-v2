@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Découverte spatiale 🚀",
-      "summary": "Les astronomes ont découvert une nouvelle exoplanète très intéressante. Elle se trouve à plus de 200 années-lumière de la Terre dans une autre galaxie! Cette planète est très spéciale car elle semble avoir une atmosphère ressemblant un peu à celle de la Terre. Cela aide les scientifiques à mieux comprendre où et comment la vie pourrait exister ailleurs dans l'univers. Cette découverte encourage le travail des chercheurs qui espèrent un jour trouver une planète qui pourrait abriter la vie.",
-      "date": "02/11/2023",
-      "link": "https://www.nasa.gov/"
+      "title": "Le vol supersonique est de retour ! ✈️",
+      "summary": "Une nouvelle entreprise fabrique des avions capables de voler très vite dans le ciel, presque aussi vite que le son ! Ces avions s'appellent des avions supersoniques. Il y a longtemps, on en utilisait déjà pour traverser l'océan Atlantique en quelques heures. Maintenant, avec des technologies modernes et plus écologiques, ces avions pourraient bientôt transporter des passagers de nouveau, tout en respectant mieux l'environnement. Cela pourrait permettre de voyager d'un pays à l'autre encore plus rapidement, tout en émettant moins de pollution.",
+      "date": "18/10/2023",
+      "link": ""
     },
     {
-      "title": "Le phénomène de la migration 🐦",
-      "summary": "Chaque automne, des millions d'oiseaux migrent vers des endroits plus chauds pour passer l'hiver. Cette migration est comme un grand voyage pour ces oiseaux. Des scientifiques étudient ce phénomène pour comprendre comment ils trouvent leur chemin sans cartes ou GPS! Les oiseaux utilisent les étoiles et le champ magnétique de la Terre pour s'orienter. Cette année, les chercheurs ont utilisé des balises spéciales pour suivre certains oiseaux. Grâce à ça, ils peuvent maintenant suivre leur voyage incroyable et en apprendre plus sur leurs parcours.",
-      "date": "02/11/2023",
-      "link": "https://www.audubon.org/"
+      "title": "Le mystère de la baleine à bosse 🤔🐋",
+      "summary": "Des chercheurs ont découvert que les baleines à bosse chantent des chansons très complexes pour communiquer entre elles dans l'océan. Ces chants sont différents selon les régions du monde. Elles peuvent même changer leurs mélodies, un peu comme les chansons à la radio ! Grâce à ces découvertes, les scientifiques espèrent mieux comprendre comment ces magnifiques créatures vivent et se déplacent dans l'océan. On apprend ainsi toujours plus sur les animaux et comment protéger leur environnement.",
+      "date": "18/10/2023",
+      "link": ""
     },
     {
-      "title": "Festival de lumières 🎉",
-      "summary": "Le Festival des Lumières a commencé hier dans plusieurs villes du monde. Ce festival est un événement annuel où des artistes créent des œuvres lumineuses magiques qui illuminent les rues. À Lyon, en France, c'est l'un des plus connus et il attire des milliers de visiteurs chaque année. Les artistes utilisent des lumières LED pour créer des sculptures, des projections vidéo sur les bâtiments et des installations interactives. C'est une façon amusante de voir l'art sous un autre jour et de redécouvrir la ville la nuit!",
-      "date": "02/11/2023",
-      "link": "https://www.fetedeslumieres.lyon.fr/"
+      "title": "Découverte d'un nouveau animal légendaire ! 🦄",
+      "summary": "Des chercheurs ont identifié une nouvelle espèce animale qu'ils ont surnommée \"licorne de mer\" ! C'est en fait un tout petit poisson qui a une nageoire en forme de corne au sommet de sa tête. Il vit dans des eaux très profondes au fond des océans. Les scientifiques sont très excités par cette découverte, car chaque nouvelle espèce est importante pour comprendre notre planète. Cela nous rappelle aussi qu'il y a encore beaucoup de mystères à découvrir dans le monde sous-marin.",
+      "date": "18/10/2023",
+      "link": ""
     }
   ]
 }
