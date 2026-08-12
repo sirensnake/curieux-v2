@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news": [
     {
-      "title": "Le vol supersonique est de retour ! ✈️",
-      "summary": "Une nouvelle entreprise fabrique des avions capables de voler très vite dans le ciel, presque aussi vite que le son ! Ces avions s'appellent des avions supersoniques. Il y a longtemps, on en utilisait déjà pour traverser l'océan Atlantique en quelques heures. Maintenant, avec des technologies modernes et plus écologiques, ces avions pourraient bientôt transporter des passagers de nouveau, tout en respectant mieux l'environnement. Cela pourrait permettre de voyager d'un pays à l'autre encore plus rapidement, tout en émettant moins de pollution.",
-      "date": "18/10/2023",
+      "title": "Des fossiles géants découverts ! 🦕",
+      "summary": "Des scientifiques ont trouvé des fossiles d'un énorme dinosaure en Argentine. Ce dinosaure vivait il y a très longtemps, et il mesurait plus de 30 mètres de long ! Ces découvertes nous aident à mieux comprendre comment les dinosaures vivaient et comment la Terre a changé depuis. Les fossiles sont comme des pièces de puzzle géantes qui racontent l'histoire de notre planète.",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Le mystère de la baleine à bosse 🤔🐋",
-      "summary": "Des chercheurs ont découvert que les baleines à bosse chantent des chansons très complexes pour communiquer entre elles dans l'océan. Ces chants sont différents selon les régions du monde. Elles peuvent même changer leurs mélodies, un peu comme les chansons à la radio ! Grâce à ces découvertes, les scientifiques espèrent mieux comprendre comment ces magnifiques créatures vivent et se déplacent dans l'océan. On apprend ainsi toujours plus sur les animaux et comment protéger leur environnement.",
-      "date": "18/10/2023",
+      "title": "Un robot pour nettoyer l'océan 🌊",
+      "summary": "Un nouveau robot a été créé pour aider à nettoyer les océans. Il peut ramasser le plastique et d'autres déchets qui flottent dans l'eau. Ce robot fonctionne comme un aspirateur géant, mais pour la mer ! Avec ces technologies, nous espérons que nos océans deviendront plus propres et que les animaux marins vivront mieux. C'est un grand pas vers la protection de notre planète.",
+      "date": "23/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte d'un nouveau animal légendaire ! 🦄",
-      "summary": "Des chercheurs ont identifié une nouvelle espèce animale qu'ils ont surnommée \"licorne de mer\" ! C'est en fait un tout petit poisson qui a une nageoire en forme de corne au sommet de sa tête. Il vit dans des eaux très profondes au fond des océans. Les scientifiques sont très excités par cette découverte, car chaque nouvelle espèce est importante pour comprendre notre planète. Cela nous rappelle aussi qu'il y a encore beaucoup de mystères à découvrir dans le monde sous-marin.",
-      "date": "18/10/2023",
+      "title": "Festival de lumières enchantées 🎆",
+      "summary": "Cette semaine, un incroyable festival de lumières a charmé les visiteurs en France. Des milliers de petites lumières ont illuminé les rues, formant de magnifiques designs et couleurs. Ce festival est un moment de joie et de créativité où artistes et familles se réunissent. On peut y admirer des sculptures lumineuses et participer à des ateliers amusants pour créer ses propres lanternes !",
+      "date": "23/10/2023",
       "link": ""
     }
   ]
