@@ -1,21 +1,21 @@
 {
-  "news": [
+  "articles": [
     {
-      "title": "Des fossiles géants découverts ! 🦕",
-      "summary": "Des scientifiques ont trouvé des fossiles d'un énorme dinosaure en Argentine. Ce dinosaure vivait il y a très longtemps, et il mesurait plus de 30 mètres de long ! Ces découvertes nous aident à mieux comprendre comment les dinosaures vivaient et comment la Terre a changé depuis. Les fossiles sont comme des pièces de puzzle géantes qui racontent l'histoire de notre planète.",
-      "date": "23/10/2023",
+      "title": "La Lune a un visiteur surprise 🚀",
+      "summary": "Un engin spatial de la NASA, appelé Artemis 1, a récemment approché la Lune pour une mission spéciale. L'engin ne transporte pas d'astronautes, mais il prépare le terrain pour de futures missions humaines. Son objectif est de tester les systèmes qui permettront aux astronautes de revenir un jour sur la Lune. C'est comme s'il faisait un repérage pour une future expédition! Cette mission pourrait aider à mieux comprendre notre système solaire et, qui sait, ouvrir la voie à de superbes découvertes sur la Lune.",
+      "date": "28/10/2023",
+      "link": "https://www.nasa.gov/artemis-1"
+    },
+    {
+      "title": "Des pandas au premier plan ! 🐼",
+      "summary": "Les pandas géants, célèbres pour leur pelage noir et blanc, ont une nouvelle maison en Chine. Un grand centre a été construit pour mieux les protéger et les étudier. Les chercheurs veulent s'assurer que ces animaux adorables puissent vivre longtemps et en bonne santé. Grâce à ce centre, ils pourront aussi apprendre comment les pandas se comportent et ce dont ils ont besoin pour être heureux. C'est une bonne nouvelle pour tous les amoureux de la nature et des animaux!",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "Un robot pour nettoyer l'océan 🌊",
-      "summary": "Un nouveau robot a été créé pour aider à nettoyer les océans. Il peut ramasser le plastique et d'autres déchets qui flottent dans l'eau. Ce robot fonctionne comme un aspirateur géant, mais pour la mer ! Avec ces technologies, nous espérons que nos océans deviendront plus propres et que les animaux marins vivront mieux. C'est un grand pas vers la protection de notre planète.",
-      "date": "23/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Festival de lumières enchantées 🎆",
-      "summary": "Cette semaine, un incroyable festival de lumières a charmé les visiteurs en France. Des milliers de petites lumières ont illuminé les rues, formant de magnifiques designs et couleurs. Ce festival est un moment de joie et de créativité où artistes et familles se réunissent. On peut y admirer des sculptures lumineuses et participer à des ateliers amusants pour créer ses propres lanternes !",
-      "date": "23/10/2023",
+      "title": "Le monde fête la culture du thé 🍵",
+      "summary": "Le 27 octobre est une date spéciale pour les amateurs de thé du monde entier. C'est une journée pour célébrer le thé, qui est l'une des boissons les plus anciennes et les plus aimées. Dans de nombreux pays, le thé n'est pas seulement une boisson, c'est aussi un moment de partage et de détente. De la Chine à l'Angleterre, chaque culture a sa manière unique de préparer et déguster le thé. Cette fête rappelle à quel point le thé peut rapprocher les gens, peu importe où ils vivent.",
+      "date": "28/10/2023",
       "link": ""
     }
   ]
