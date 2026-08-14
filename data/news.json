@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "La Lune a un visiteur surprise 🚀",
-      "summary": "Un engin spatial de la NASA, appelé Artemis 1, a récemment approché la Lune pour une mission spéciale. L'engin ne transporte pas d'astronautes, mais il prépare le terrain pour de futures missions humaines. Son objectif est de tester les systèmes qui permettront aux astronautes de revenir un jour sur la Lune. C'est comme s'il faisait un repérage pour une future expédition! Cette mission pourrait aider à mieux comprendre notre système solaire et, qui sait, ouvrir la voie à de superbes découvertes sur la Lune.",
-      "date": "28/10/2023",
-      "link": "https://www.nasa.gov/artemis-1"
-    },
-    {
-      "title": "Des pandas au premier plan ! 🐼",
-      "summary": "Les pandas géants, célèbres pour leur pelage noir et blanc, ont une nouvelle maison en Chine. Un grand centre a été construit pour mieux les protéger et les étudier. Les chercheurs veulent s'assurer que ces animaux adorables puissent vivre longtemps et en bonne santé. Grâce à ce centre, ils pourront aussi apprendre comment les pandas se comportent et ce dont ils ont besoin pour être heureux. C'est une bonne nouvelle pour tous les amoureux de la nature et des animaux!",
-      "date": "28/10/2023",
+      "title": "Nouvelle Découverte dans l'Espace 🚀",
+      "summary": "Les scientifiques ont récemment découvert une nouvelle planète qui ressemble beaucoup à la Terre ! Cette planète se trouve loin dans l'espace, dans une zone appelée la 'zone habitable', car elle pourrait avoir les bonnes conditions pour abriter de l'eau et peut-être même la vie. Les astronomes sont très excités car cela nous aide à en savoir plus sur l'univers et où d'autres formes de vie pourraient exister. Peut-être qu'un jour, nous pourrons en savoir plus sur cette fascinante planète grâce à des télescopes puissants.",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Le monde fête la culture du thé 🍵",
-      "summary": "Le 27 octobre est une date spéciale pour les amateurs de thé du monde entier. C'est une journée pour célébrer le thé, qui est l'une des boissons les plus anciennes et les plus aimées. Dans de nombreux pays, le thé n'est pas seulement une boisson, c'est aussi un moment de partage et de détente. De la Chine à l'Angleterre, chaque culture a sa manière unique de préparer et déguster le thé. Cette fête rappelle à quel point le thé peut rapprocher les gens, peu importe où ils vivent.",
-      "date": "28/10/2023",
+      "title": "Rencontre Étonnante entre un Ours et des Footballeurs 🏈",
+      "summary": "Lors d'un entraînement de football aux États-Unis, les joueurs ont eu une surprise incroyable : un ours voulait lui aussi faire partie de l'équipe ! Heureusement, tout s'est bien terminé. Les experts des animaux ont rapidement assuré la sécurité de l'ours et des gens. Cet événement nous rappelle l'importance de respecter les animaux et de s'assurer qu'ils restent dans leur habitat naturel. Tout le monde a ri de cette rencontre inattendue, et les joueurs ont continué leur match, heureux que leur nouvelle 'mascotte' soit en sécurité.",
+      "date": "15/10/2023",
+      "link": ""
+    },
+    {
+      "title": "Les Villes deviennent plus Vertes 🌳",
+      "summary": "Pour aider notre planète, de nombreuses grandes villes ont décidé de planter davantage d'arbres et de fleurs. Ces initiatives visent à rendre l'air plus pur et les espaces urbains plus agréables à vivre. Les arbres aident à abriter les oiseaux et à rafraîchir les rues pendant les chaudes journées d'été. Des écoles et des familles participent aussi à ces projets en plantant des plantes dans leurs quartiers. C'est une façon formidable de répondre aux défis environnementaux, tout en rendant nos villes plus belles et ainsi, tout le monde en profite.",
+      "date": "15/10/2023",
       "link": ""
     }
   ]
