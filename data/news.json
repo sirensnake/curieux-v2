@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🚀 Une mission vers un astéroïde réussie !",
-      "summary": "Une mission spatiale a réussi à envoyer une sonde vers un astéroïde appelé Bennu. La sonde devait y collecter des échantillons pour les ramener sur Terre. Cela peut aider les scientifiques à mieux comprendre comment notre système solaire s'est formé. La mission a été complexe, mais les ingénieurs et scientifiques ont fait un super travail ! Cette aventure montre à quel point l'espace est plein de mystères à découvrir.",
-      "date": "16/02/2023",
-      "link": "https://example.com/mission-spatiale"
+      "title": "Une découverte stellaire pour les astronomes ✨",
+      "summary": "Les scientifiques ont découvert une nouvelle étoile située dans notre galaxie, la Voie lactée, à l'aide d'un puissant télescope. Cette étoile est plus petite que notre Soleil, mais elle a des caractéristiques uniques qui aident les astronomes à comprendre comment les étoiles naissent et évoluent. Les découvertes comme celle-ci sont importantes car elles nous permettent d'en apprendre davantage sur l'univers qui nous entoure. Qui sait, peut-être que cette étoile aura encore d'autres secrets à révéler!",
+      "date": "11/10/2023",
+      "link": ""
     },
     {
-      "title": "🐢 Une tortue rare retrouvée en Indonésie",
-      "summary": "Des scientifiques en Indonésie ont récemment trouvé une tortue marine très rare sur la côte. Cette tortue est spéciale car elle appartient à une espèce en danger critique d'extinction. Les experts disent que c'est une bonne nouvelle, car cela signifie que les efforts pour protéger cet animal fonctionnent. Ils espèrent pouvoir encore mieux comprendre comment protéger notre planète et tous ses habitants, petits et grands. C'est une belle façon de montrer que nous pouvons aider la nature.",
-      "date": "16/02/2023",
-      "link": "https://example.com/tortue-rare"
+      "title": "Un panda rare aperçu en Chine 🐼",
+      "summary": "Un panda géant albinos, c'est-à-dire tout blanc, a été photographié dans une réserve naturelle en Chine. C'est une première mondiale! Les pandas géants sont déjà rares, mais un panda albinos est encore plus exceptionnel. Ces animaux sont très importants pour l'environnement car ils aident à maintenir l'équilibre des forêts où ils vivent. Cette découverte incroyable rappelle combien il est important de protéger toutes les espèces, petites et grandes, pour assurer la biodiversité de notre planète.",
+      "date": "11/10/2023",
+      "link": ""
     },
     {
-      "title": "🎭 Un festival de théâtre magique !",
-      "summary": "Un festival de théâtre incroyable vient de commencer dans une grande ville. Des artistes du monde entier se sont réunis pour montrer leurs talents et jouer des pièces passionnantes. C'est l'occasion idéale de découvrir des histoires amusantes, mystérieuses et même magiques sur scène. Le théâtre est un moyen formidable de raconter des histoires et de vivre des aventures, sans même quitter sa chaise ! Les spectateurs, petits et grands, sont émerveillés par ces spectacles colorés et créatifs.",
-      "date": "16/02/2023",
-      "link": "https://example.com/festival-theatre"
+      "title": "Un festival lumineux en préparation en Inde 🎆",
+      "summary": "En Inde, les préparatifs pour Diwali, la fête des lumières, battent leur plein! Diwali est célébré dans tout le pays avec des feux d'artifice, des lampes colorées et des repas en famille. C'est un moment où les gens réfléchissent à l'importance de la lumière qui chasse l'obscurité, symbole de la victoire du bien sur le mal. Les villes s'illuminent de mille feux, et les enfants participent aux festivités avec des jeux et des chants traditionnels. Ce festival est un rappel joyeux de valeurs telles que l'amour, la joie et l'unité.",
+      "date": "11/10/2023",
+      "link": ""
     }
   ]
 }
