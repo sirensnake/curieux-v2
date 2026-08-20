@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle planète découverte 🪐",
-      "summary": "Des astronomes ont découvert une nouvelle planète située loin de notre système solaire. Cette planète est plus grande que Jupiter, la plus grosse planète de notre système solaire ! Elle est constituée majoritairement de gaz, tout comme les géantes gazeuses que nous connaissons. Découvrir de nouvelles planètes aide les scientifiques à mieux comprendre l'univers, sa formation et, qui sait, peut-être à trouver des endroits où la vie est possible ! C'est une aventure fascinante pour tout le monde.",
-      "date": "20/10/2023",
+      "title": "Découverte spatiale 🚀",
+      "summary": "Des astronomes ont fait une nouvelle découverte dans l'espace ! Ils ont observé une étoile qui change de couleur. Cela se produit lorsqu'il y a des changements de température ou d'activité à sa surface. Ces changements peuvent aider les scientifiques à comprendre comment les étoiles, comme notre Soleil, évoluent au fil du temps.",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "Course de relais en Antarctique 🏃‍♂️🐧",
-      "summary": "Les manchots Empereurs font une véritable course de relais pour nourrir leurs petits ! Lorsque l'hiver arrive, les mamans manchots quittent leurs bébés, gardés au chaud par les papas, pour partir en quête de nourriture. Elles peuvent parcourir des centaines de kilomètres pour trouver de quoi nourrir toute la famille. Cette course incroyable montre comment les animaux s'adaptent pour survivre dans des conditions très difficiles, tout en prenant soin les uns des autres.",
-      "date": "20/10/2023",
+      "title": "Un trésor du passé 🏺",
+      "summary": "Des archéologues ont trouvé des objets anciens cachés sous terre en Égypte. Ce sont des poteries et des bijoux qui ont des milliers d'années ! Chaque découverte aide les scientifiques à en savoir plus sur la vie des anciennes civilisations égyptiennes. C'est comme rassembler des morceaux d'un puzzle pour comprendre l'histoire.",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "Un vélo en bambou révolutionnaire 🚲",
-      "summary": "Un groupe d'étudiants ingénieux a fabriqué un vélo à partir de bambou ! Ce matériau, très léger et écologique, est parfait pour construire des vélos qui sont à la fois solides et respectueux de l'environnement. Ce projet démontre qu'il est possible de concevoir des objets du quotidien de manière originale et durable. Le bambou pousse rapidement et n'a pas besoin de beaucoup d'eau, ce qui est un vrai plus pour notre planète.",
-      "date": "20/10/2023",
+      "title": "Championnat de robots 🤖",
+      "summary": "Dans un tournoi mondial, des équipes de jeunes ont fabriqué des robots pour accomplir différentes tâches, comme jouer au football ou résoudre des casse-têtes. Ces compétitions enseignent les sciences et la technologie tout en s'amusant. Participer à des compétitions de robots aide les enfants à penser de manière créative et à résoudre des problèmes.",
+      "date": "02/11/2023",
       "link": ""
     }
   ]
