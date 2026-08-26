@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un robot sur la Lune! 🌕🤖",
-      "summary": "Une grande nouvelle dans l'espace! Un robot a été envoyé sur la Lune pour explorer sa surface. Ce robot, construit par des scientifiques, a pour mission de rechercher des informations sur l'environnement lunaire. Ainsi, nous pourrions apprendre de nouvelles choses sur notre satellite naturel. Les robots sont très utiles pour explorer des endroits où les humains ne peuvent pas encore aller facilement. C'est un pas de plus pour éventuellement envoyer un jour des astronautes sur la Lune et même plus loin! Quelle aventure fascinante! ",
-      "date": "12/10/2023",
-      "link": ""
+      "title": "Une comète exceptionnelle 🪐",
+      "summary": "Un événement rare et incroyable peut être vu dans le ciel cette semaine : une comète ! Les astronomes ont découvert cette comète voyageant près de la Terre. Visible en regardant en direction du nord après le coucher du soleil, elle laisse une traînée brillante et colorée. Ce spectacle est une belle occasion de lever les yeux et de s'émerveiller des mystères de l'univers. Alors, si tu en as l'occasion, prends quelques minutes pour la chercher dans le ciel, mais n’oublie pas de vérifier les prévisions météo pour le meilleur moment d’observation.",
+      "date": "Date de publication de l'article (ex: 01/12/2023)",
+      "link": "https://example.com/article-1"
     },
     {
-      "title": "Une tortue très rare observée! 🐢",
-      "summary": "Bonne nouvelle pour les amoureux de la nature! Une tortue très rare a été aperçue par des chercheurs sur une plage lointaine. Cette espèce de tortue n'avait pas été vue depuis longtemps. La découverte de cette charmante tortue est importante car elle permet aux scientifiques d'en apprendre plus sur la façon de protéger les espèces en danger. Connaître et comprendre ces animaux aide à s'assurer qu'ils sont en sécurité pour l'avenir. C'est comme une grande chasse au trésor pour protéger notre planète!",
-      "date": "12/10/2023",
-      "link": ""
+      "title": "Un adorable bébé panda 🐼",
+      "summary": "De la joie au zoo de Taipei à Taïwan avec la naissance d’un bébé panda ! Les soigneurs du zoo sont très excités par cette arrivée, car les pandas géants sont des animaux en danger et chaque naissance est importante pour l’espèce. Le bébé passe ses journées à dormir et à boire du lait maternel. Quand il sera plus grand, il commencera à jouer et à manger des bambous. Les visiteurs du zoo auront bientôt l'occasion de le voir avec sa maman. Ce genre de nouvelles nous rappelle combien il est crucial de protéger nos amis animaux.",
+      "date": "Date de publication de l'article (ex: 01/12/2023)",
+      "link": "https://example.com/article-2"
     },
     {
-      "title": "Un nouveau record de marathon! 🏃‍♂️🎉",
-      "summary": "Un coureur a réussi à battre un nouveau record lors d'un marathon célèbre! Courir un marathon est un défi incroyable, car il faut parcourir plus de 42 kilomètres d'affilée. Ce nouveau record est très impressionnant et inspire de nombreuses personnes à essayer de donner le meilleur d'elles-mêmes dans le sport. Participer à un marathon demande beaucoup d'entraînement et de persévérance. Peut-être qu'un jour tu voudras toi aussi te lancer dans cette aventure pour tester tes limites!",
-      "date": "12/10/2023",
-      "link": ""
+      "title": "Inventions étonnantes : l'ordinateur pliable 💻",
+      "summary": "Découverte intéressante dans le monde de la technologie : un nouvel ordinateur portable qui se plie comme un livre ! Cette nouveauté permet de transporter facilement l'ordinateur et d'économiser de la place. Ce genre d'innovation montre comment les scientifiques et les ingénieurs continuent de développer de nouvelles idées pour rendre nos vies encore plus pratiques. En plus d'être une avancée technologique, cet ordinateur pliable pourrait être utile pour les étudiants qui souhaitent étudier partout où ils vont. Peut-être un jour, tu auras toi aussi un ordinateur super pratique comme ça !",
+      "date": "Date de publication de l'article (ex: 01/12/2023)",
+      "link": "https://example.com/article-3"
     }
   ]
 }
