@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une comète exceptionnelle 🪐",
-      "summary": "Un événement rare et incroyable peut être vu dans le ciel cette semaine : une comète ! Les astronomes ont découvert cette comète voyageant près de la Terre. Visible en regardant en direction du nord après le coucher du soleil, elle laisse une traînée brillante et colorée. Ce spectacle est une belle occasion de lever les yeux et de s'émerveiller des mystères de l'univers. Alors, si tu en as l'occasion, prends quelques minutes pour la chercher dans le ciel, mais n’oublie pas de vérifier les prévisions météo pour le meilleur moment d’observation.",
-      "date": "Date de publication de l'article (ex: 01/12/2023)",
-      "link": "https://example.com/article-1"
+      "title": "🦕 Découverte Passionnante : Nouveau Dinosaure!",
+      "summary": "Des scientifiques ont découvert un nouveau dinosaure en Argentine! Ce dinosaure, qu'ils ont appelé 'Maip', vivait il y a environ 70 millions d'années. Maip avait un long cou et une longue queue, ressemblant un peu à un Diplodocus. Cette découverte est importante car elle nous aide à mieux comprendre comment les dinosaures vivaient et évoluaient. Imagine la Terre remplie de ces créatures gigantesques! Qui sait quel autre dinosaure sera découvert prochainement?",
+      "date": "04/11/2023",
+      "link": ""
     },
     {
-      "title": "Un adorable bébé panda 🐼",
-      "summary": "De la joie au zoo de Taipei à Taïwan avec la naissance d’un bébé panda ! Les soigneurs du zoo sont très excités par cette arrivée, car les pandas géants sont des animaux en danger et chaque naissance est importante pour l’espèce. Le bébé passe ses journées à dormir et à boire du lait maternel. Quand il sera plus grand, il commencera à jouer et à manger des bambous. Les visiteurs du zoo auront bientôt l'occasion de le voir avec sa maman. Ce genre de nouvelles nous rappelle combien il est crucial de protéger nos amis animaux.",
-      "date": "Date de publication de l'article (ex: 01/12/2023)",
-      "link": "https://example.com/article-2"
+      "title": "🌍 Jour de l'Environnement: Agir pour la Terre!",
+      "summary": "Le 5 novembre, c'est le Jour de l'Environnement, une journée spéciale pour penser à notre planète. Partout dans le monde, les gens plantent des arbres, nettoient les plages et trouvent des façons de moins polluer. C'est l'occasion d'aider la Terre à rester belle et en bonne santé. Même de petites actions, comme recycler ou ne pas gaspiller l'eau, peuvent faire une grande différence. Prendre soin de notre planète, c'est prendre soin de notre future maison.",
+      "date": "04/11/2023",
+      "link": ""
     },
     {
-      "title": "Inventions étonnantes : l'ordinateur pliable 💻",
-      "summary": "Découverte intéressante dans le monde de la technologie : un nouvel ordinateur portable qui se plie comme un livre ! Cette nouveauté permet de transporter facilement l'ordinateur et d'économiser de la place. Ce genre d'innovation montre comment les scientifiques et les ingénieurs continuent de développer de nouvelles idées pour rendre nos vies encore plus pratiques. En plus d'être une avancée technologique, cet ordinateur pliable pourrait être utile pour les étudiants qui souhaitent étudier partout où ils vont. Peut-être un jour, tu auras toi aussi un ordinateur super pratique comme ça !",
-      "date": "Date de publication de l'article (ex: 01/12/2023)",
-      "link": "https://example.com/article-3"
+      "title": "🎾 Nouvelle étoile du Tennis!",
+      "summary": "Une jeune joueuse de tennis, Alyssa, âgée de seulement 16 ans, a remporté son premier grand tournoi. Elle a travaillé très dur pour en arriver là, s'entraînant tous les jours. Ce succès montre que la persévérance et la passion peuvent vraiment porter leurs fruits. Alyssa a inspiré beaucoup de jeunes à se lancer dans le sport, montrant qu'il est possible de réaliser ses rêves dès le plus jeune âge. Qui sait, peut-être que tu seras le prochain champion dans ton domaine!",
+      "date": "04/11/2023",
+      "link": ""
     }
   ]
 }
