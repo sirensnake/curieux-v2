@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🚀 Découverte Spatiale Surprenante",
-      "summary": "Les scientifiques viennent de découvrir une nouvelle planète ! Elle est située à des milliers de kilomètres de notre Terre. Ce qui est excitant, c'est qu'elle est composée surtout de diamant ! Les chercheurs utilisent de puissants télescopes pour en savoir plus sur cet astre brillant dans le ciel. Qui sait, un jour, nous pourrions même trouver des planètes qui pourraient abriter la vie. Pour l'instant, continuons à admirer les merveilles de notre univers depuis la Terre, tout en apprenant plein de choses sur le cosmos.",
-      "date": "12/10/2023",
+      "title": "Une comète brillante dans le ciel ✨",
+      "summary": "Hier soir, une belle comète a traversé le ciel, offrant un spectacle lumineux à travers le monde. Les comètes sont des objets célestes composés de glace, de gaz et de poussière. En se rapprochant du Soleil, elles brillent beaucoup, car la chaleur fait fondre leur surface glacée. Cette comète était visible même sans télescope, ce qui a fait le bonheur des curieux et des jeunes astronomes. Observer les comètes nous rappelle à quel point l'univers est vaste et fascinant !",
+      "date": "05/10/2023",
       "link": ""
     },
     {
-      "title": "🐾 Une Nouvelle Espèce d'Oiseau Découverte",
-      "summary": "Des scientifiques explorant la forêt amazonienne ont récemment découvert une nouvelle espèce d'oiseau. Cet oiseau, aux plumes colorées et au chant mélodieux, vit haut dans les arbres. La découverte d'une nouvelle espèce est toujours passionnante car elle nous en apprend plus sur la biodiversité de notre planète. Cela nous rappelle aussi l'importance de protéger la nature et ses habitants. Les explorateurs vont continuer leurs recherches pour comprendre comment cet oiseau vit et interagit dans son environnement.",
-      "date": "12/10/2023",
+      "title": "Des découvertes médicales en antarctique 🧊",
+      "summary": "Une équipe de scientifiques a fait une découverte intéressante en Antarctique ! Ils ont trouvé des bactéries capables de vivre dans le froid extrême. Ces petites créatures pourraient aider les chercheurs à développer de nouveaux médicaments. Les bactéries ont souvent des secrets étonnants et elles sont très importantes dans les découvertes scientifiques. Cette recherche montre à quel point la nature est incroyable et combien il est important de continuer à explorer notre monde.",
+      "date": "05/10/2023",
       "link": ""
     },
     {
-      "title": "🌍 Un Grand Sommet pour le Climat",
-      "summary": "Cette semaine, des dirigeants de nombreux pays se réunissent pour parler du changement climatique. Leur but est de trouver des solutions pour protéger notre planète. Ils discutent de différentes actions, comme réduire la pollution et utiliser plus d'énergies renouvelables, comme le soleil et le vent. Ces décisions sont importantes pour garantir un avenir sain pour tous. Grâce à ces efforts, nous espérons voir un monde plus vert et plus propre dans les années à venir.",
-      "date": "12/10/2023",
+      "title": "Une célébration de la danse autour du monde 💃",
+      "summary": "Demain commence le Festival Mondial de la Danse, une célébration incroyable de tous les styles de danse, du ballet à la danse hip-hop. Des danseurs du monde entier se réuniront pour montrer leur talent et partager leur culture. La danse est un moyen merveilleux pour les gens de s'exprimer et de se connecter les uns avec les autres, peu importe où ils vivent. C'est aussi une façon amusante de découvrir des cultures différentes. Attention, certains spectacles seront même diffusés en ligne pour que tout le monde puisse les voir !",
+      "date": "05/10/2023",
       "link": ""
     }
   ]
