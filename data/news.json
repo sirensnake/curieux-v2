@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte Martienne 🪐",
-      "summary": "Récemment, des scientifiques ont fait une découverte passionnante sur Mars ! Une nouvelle étude a révélé que la planète rouge aurait un jour possédé des rivières. Cela signifie que l'eau coulait autrefois sur sa surface comme sur Terre. Les scientifiques espèrent que cela les aidera à comprendre si Mars a pu abriter de la vie dans le passé. C'est un pas de plus pour en savoir plus sur nos voisins dans l'espace !",
-      "date": "14/10/2023",
+      "title": "Une nouvelle planète découverte! 🪐",
+      "summary": "Des astronomes ont trouvé une nouvelle planète très loin de notre système solaire, appelée TOI-1231 b! Ce n'est pas une planète où l'on pourrait vivre car elle est géante et gazeuse, un peu comme Jupiter. Cette découverte est très excitante car elle permet aux scientifiques d'en apprendre plus sur la formation et la diversité des planètes dans l'univers. Observer ces planètes lointaines aide les chercheurs à se poser plein de questions sur notre propre planète Terre et comment elle a été formée.",
+      "date": "18/10/2023",
       "link": ""
     },
     {
-      "title": "Jacques Anquetil - Un Champion du Temps Passé 🚴",
-      "summary": "Il y a exactement 62 ans, Jacques Anquetil, un célèbre cycliste français, gagnait sa cinquième et dernière Tour de France en 1964. Bien qu'il ne soit plus en compétition, sa carrière inspire encore de nombreux jeunes cyclistes aujourd'hui. Anquetil est connu pour sa capacité à gérer la course contre la montre avec une grande habileté. Son succès a aidé à populariser le cyclisme en France et dans le monde.",
-      "date": "14/10/2023",
+      "title": "Un festival de citrouilles géantes! 🎃",
+      "summary": "En Allemagne, un concours de citrouilles géantes a eu lieu et la citrouille gagnante pesait plus de 800 kilos! Ce type d'événement est très populaire et attire beaucoup de curieux qui viennent admirer les énormes légumes. Cultiver des citrouilles aussi grosses nécessite beaucoup de soin et d'attention. C'est une occasion de célébrer l'automne et de s'amuser tout en découvrant les talents de jardinage des participants!",
+      "date": "18/10/2023",
       "link": ""
     },
     {
-      "title": "Les Récifs Sont en Fête 🐠",
-      "summary": "Bonne nouvelle pour les océans ! En Nouvelle-Calédonie, des explorateurs sous-marins ont découvert un récif corallien en très bonne santé. C'est très important car les récifs coralliens sont comme des maisons pour beaucoup de poissons et d'autres créatures marines. Cette découverte montre que même si certaines parties de l'océan sont en difficulté, la nature peut aussi nous surprendre avec sa capacité à se rétablir.",
-      "date": "14/10/2023",
+      "title": "Les oiseaux font leur grande migration! 🦅",
+      "summary": "En ce moment, des millions d'oiseaux à travers le monde s'envolent pour leur migration annuelle. Ils quittent leurs habitats d'été pour retrouver des endroits plus chauds où ils se nourriront pendant l'hiver. Observer les oiseaux migrateurs peut être passionnant, car il y a plein d'espèces différentes qui ont chacune leurs propres parcours. Cette incroyable aventure nous montre la bravoure des animaux et l'ingéniosité de la nature pour survivre aux différentes saisons.",
+      "date": "18/10/2023",
       "link": ""
     }
   ]
