@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Une nouvelle planète découverte! 🪐",
-      "summary": "Des astronomes ont trouvé une nouvelle planète très loin de notre système solaire, appelée TOI-1231 b! Ce n'est pas une planète où l'on pourrait vivre car elle est géante et gazeuse, un peu comme Jupiter. Cette découverte est très excitante car elle permet aux scientifiques d'en apprendre plus sur la formation et la diversité des planètes dans l'univers. Observer ces planètes lointaines aide les chercheurs à se poser plein de questions sur notre propre planète Terre et comment elle a été formée.",
-      "date": "18/10/2023",
+      "title": "Le Monde en Panneaux Solaires ☀️",
+      "summary": "Les panneaux solaires transforment la lumière du soleil en électricité. Récemment, un nouveau parc solaire a été inauguré en Australie. Ce parc est tellement grand qu'il peut alimenter des milliers de foyers avec de l'énergie propre ! Cela signifie qu'il n'a pas besoin de brûler du charbon ou du pétrole, ce qui est meilleur pour notre planète. Les scientifiques disent que les panneaux solaires aident à réduire la pollution, ce qui est bon pour la nature et les animaux. Les enfants comme toi vont peut-être vivre dans un monde où l'énergie est plus verte et meilleure pour l'environnement !",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "Un festival de citrouilles géantes! 🎃",
-      "summary": "En Allemagne, un concours de citrouilles géantes a eu lieu et la citrouille gagnante pesait plus de 800 kilos! Ce type d'événement est très populaire et attire beaucoup de curieux qui viennent admirer les énormes légumes. Cultiver des citrouilles aussi grosses nécessite beaucoup de soin et d'attention. C'est une occasion de célébrer l'automne et de s'amuser tout en découvrant les talents de jardinage des participants!",
-      "date": "18/10/2023",
+      "title": "Un Nouveau Dinosaure Découvert ! 🦖",
+      "summary": "Des chercheurs en Argentine ont découvert un nouveau type de dinosaure ! Ce dinosaure géant avait un long cou et vivait il y a des millions d'années. On l'a appelé Chucarosaurus parce qu'il était aussi fort qu'un taureau. Les paléontologues, qui étudient les fossiles, pensent que ce dinosaure pourrait nous aider à comprendre comment ces incroyables créatures ont vécu et évolué. Découvrir de nouveaux dinosaures est toujours excitant car cela nous apprend plus sur le passé mystérieux de notre planète.",
+      "date": "28/10/2023",
       "link": ""
     },
     {
-      "title": "Les oiseaux font leur grande migration! 🦅",
-      "summary": "En ce moment, des millions d'oiseaux à travers le monde s'envolent pour leur migration annuelle. Ils quittent leurs habitats d'été pour retrouver des endroits plus chauds où ils se nourriront pendant l'hiver. Observer les oiseaux migrateurs peut être passionnant, car il y a plein d'espèces différentes qui ont chacune leurs propres parcours. Cette incroyable aventure nous montre la bravoure des animaux et l'ingéniosité de la nature pour survivre aux différentes saisons.",
-      "date": "18/10/2023",
+      "title": "Des Robots au Service des Plantes 🤖🌿",
+      "summary": "Imagine des robots qui aident les plantes à pousser ! En Californie, des scientifiques ont inventé de petits robots pour jardiner. Ces robots roulent dans les champs et surveillent les plantes. Ils peuvent voir si les plantes ont besoin d'eau ou si elles sont malades. Cela aide les fermiers à prendre soin de leurs cultures plus facilement et avec moins d'efforts. Grâce aux robots, on pourrait produire plus de nourriture saine pour tout le monde. C'est une façon amusante et intelligente d'utiliser la technologie pour aider la nature.",
+      "date": "28/10/2023",
       "link": ""
     }
   ]
