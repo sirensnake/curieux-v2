@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Voyage vers la Lune 🌕",
-      "summary": "Une grande aventure spatiale est en cours ! Une équipe d'astronautes se prépare à aller sur la Lune pour apprendre plus sur notre satellite. La mission est très importante pour la science car elle nous aidera à comprendre l'histoire de la Lune et peut-être même faire des découvertes sur l'origine de la Terre. Les astronautes devront s'entraîner beaucoup pour être prêts à ce long voyage, et ils utiliseront des technologies très modernes pour rester en sécurité. C'est un moment passionnant pour tous ceux qui aiment l'espace !",
-      "date": "04/10/2023",
+      "title": "Les baleines dansent sous les étoiles 🌌",
+      "summary": "Des scientifiques ont récemment observé un groupe de baleines à bosse en train de sauter et de nager sous un ciel étoilé. Ces animaux majestueux se trouvent souvent dans les océans pendant les mois d'été. Les chercheurs pensent que les baleines sautent pour communiquer entre elles ou pour s'amuser. Cette découverte nous rappelle à quel point les mers sont pleines de vie et d'aventures que nous avons hâte de découvrir!",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Nouveau membre au zoo 🐘",
-      "summary": "Une joyeuse nouvelle est arrivée dans un zoo célèbre ! Un bébé éléphant est né, pour le plus grand bonheur des visiteurs et des soigneurs. Les éléphants sont des animaux très intelligents et socialisés, et ce bébé ressemble déjà beaucoup à ses parents. Les visiteurs peuvent découvrir cet éléphanteau en jouant dans son enclos, toujours proche de sa maman. C'est aussi une belle occasion d'apprendre sur la conservation des éléphants, une espèce en danger qui a besoin de notre aide pour survivre.",
-      "date": "04/10/2023",
+      "title": "Nouveau robot qui aide à la maison 🤖",
+      "summary": "Une nouvelle invention a été présentée cette semaine : un robot capable d'aider les gens à ranger et nettoyer leurs maisons! Ce robot, qui ressemble à un petit aspirateur, peut naviguer dans différentes pièces, ramasser de petits objets et même passer le balai. Les ingénieurs espèrent que ces robots pourront aider les personnes âgées ou handicapées à garder leur maison propre et organisée. C'est une belle avancée technologique qui pourrait changer la vie de beaucoup de gens.",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Défi écologique : ramassez les déchets ! 🍃",
-      "summary": "Dans plusieurs villes du monde, des enfants et des adultes participent à une grande journée de ramassage des déchets. L'idée est de rendre notre planète plus propre et d'apprendre à mieux respecter l'environnement. C'est aussi un moyen amusant de rencontrer des amis et de travailler ensemble pour une bonne cause. De nombreux participants ont trouvé des objets inattendus et ont compris l'importance de jeter leurs déchets dans les poubelles. Rendre la Terre plus propre, c'est un défi que nous pouvons tous relever !",
-      "date": "04/10/2023",
+      "title": "Une courge géante aux États-Unis! 🎃",
+      "summary": "Aux États-Unis, un fermier a cultivé une courge énorme pesant plus de 900 kg! C'est l'une des plus grosses jamais vues. Les fermiers participent souvent à des compétitions pour voir qui peut cultiver la plus grosse courge. Cela demande beaucoup de soin, de patience, et de la chance avec le temps qu'il fait. Cette immense courge a impressionné tout le monde lors d'un concours et montre qu'avec de la passion, on peut réaliser des choses incroyables!",
+      "date": "21/10/2023",
       "link": ""
     }
   ]
