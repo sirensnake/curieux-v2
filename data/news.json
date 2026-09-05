@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Les baleines dansent sous les étoiles 🌌",
-      "summary": "Des scientifiques ont récemment observé un groupe de baleines à bosse en train de sauter et de nager sous un ciel étoilé. Ces animaux majestueux se trouvent souvent dans les océans pendant les mois d'été. Les chercheurs pensent que les baleines sautent pour communiquer entre elles ou pour s'amuser. Cette découverte nous rappelle à quel point les mers sont pleines de vie et d'aventures que nous avons hâte de découvrir!",
-      "date": "21/10/2023",
-      "link": ""
+      "title": "Pluie d'étoiles filantes ✨",
+      "summary": "La nuit dernière, de nombreuses étoiles filantes ont illuminé le ciel ! Ces étoiles filantes font partie d'un événement appelé \"les Draconides\". Les étoiles filantes sont des petites particules de comète qui brûlent en entrant dans notre atmosphère, créant de belles traînées lumineuses. Cet événement est spécial car il arrive chaque année en octobre. Si tu veux les voir, il suffit de sortir lorsque le ciel est bien sombre, loin des lumières des villes. N'oublie pas de faire un vœu lorsque tu vois une étoile filante, ça porte chance !",
+      "date": "09/10/2023",
+      "link": "https://www.nasa.gov/feature/goddard/2023/what-s-a-draconids-meteor-shower"
     },
     {
-      "title": "Nouveau robot qui aide à la maison 🤖",
-      "summary": "Une nouvelle invention a été présentée cette semaine : un robot capable d'aider les gens à ranger et nettoyer leurs maisons! Ce robot, qui ressemble à un petit aspirateur, peut naviguer dans différentes pièces, ramasser de petits objets et même passer le balai. Les ingénieurs espèrent que ces robots pourront aider les personnes âgées ou handicapées à garder leur maison propre et organisée. C'est une belle avancée technologique qui pourrait changer la vie de beaucoup de gens.",
-      "date": "21/10/2023",
-      "link": ""
+      "title": "Les pandas géants se régalent 🌿",
+      "summary": "Bonne nouvelle pour les pandas géants ! Dans une réserve naturelle en Chine, des dizaines de bambous ont été plantés spécialement pour eux. Les pandas géants adorent manger du bambou, c'est leur nourriture préférée ! En aidant à cultiver plus de bambous, on s'assure que ces adorables animaux ont assez à manger et qu'ils peuvent vivre heureux. C'est aussi une façon de protéger leur habitat naturel. Alors, lorsque tu penses aux pandas, tu sauras qu'ils profitent d'un bon repas dans la nature.",
+      "date": "09/10/2023",
+      "link": "https://www.worldwildlife.org/species/giant-panda"
     },
     {
-      "title": "Une courge géante aux États-Unis! 🎃",
-      "summary": "Aux États-Unis, un fermier a cultivé une courge énorme pesant plus de 900 kg! C'est l'une des plus grosses jamais vues. Les fermiers participent souvent à des compétitions pour voir qui peut cultiver la plus grosse courge. Cela demande beaucoup de soin, de patience, et de la chance avec le temps qu'il fait. Cette immense courge a impressionné tout le monde lors d'un concours et montre qu'avec de la passion, on peut réaliser des choses incroyables!",
-      "date": "21/10/2023",
+      "title": "Un robot au service des livres 📚",
+      "summary": "Une bibliothèque au Japon utilise maintenant un robot pour aider à ranger les livres. Le robot, appelé \"Buddy\", est très habile et peut facilement trouver le bon rayon pour chaque livre. Grâce à lui, les bibliothécaires ont plus de temps pour aider les visiteurs à découvrir de nouveaux livres à lire. Cela montre comment la technologie peut être utile et amusante. Si tu vas à la bibliothèque, qui sait, peut-être y rencontreras-tu un Buddy pour t'aider à trouver tes livres préférés !",
+      "date": "09/10/2023",
       "link": ""
     }
   ]
