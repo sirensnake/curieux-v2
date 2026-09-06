@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Pluie d'étoiles filantes ✨",
-      "summary": "La nuit dernière, de nombreuses étoiles filantes ont illuminé le ciel ! Ces étoiles filantes font partie d'un événement appelé \"les Draconides\". Les étoiles filantes sont des petites particules de comète qui brûlent en entrant dans notre atmosphère, créant de belles traînées lumineuses. Cet événement est spécial car il arrive chaque année en octobre. Si tu veux les voir, il suffit de sortir lorsque le ciel est bien sombre, loin des lumières des villes. N'oublie pas de faire un vœu lorsque tu vois une étoile filante, ça porte chance !",
-      "date": "09/10/2023",
-      "link": "https://www.nasa.gov/feature/goddard/2023/what-s-a-draconids-meteor-shower"
+      "title": "Une Planète Exoplanète Découverte! 🌌",
+      "summary": "Des scientifiques ont trouvé une nouvelle planète en dehors de notre système solaire! Cette planète s'appelle une 'exoplanète'. Elle est beaucoup plus grande que la Terre, et elle tourne autour de son propre soleil. Les chercheurs utilisent des télescopes puissants pour découvrir ces mondes lointains. C'est fascinant parce que chaque nouvelle découverte nous en apprend plus sur l'univers. Qui sait, peut-être que dans le futur, les humains pourront visiter ces planètes!",
+      "date": "25/10/2023",
+      "link": "https://example.com/exoplanete"
     },
     {
-      "title": "Les pandas géants se régalent 🌿",
-      "summary": "Bonne nouvelle pour les pandas géants ! Dans une réserve naturelle en Chine, des dizaines de bambous ont été plantés spécialement pour eux. Les pandas géants adorent manger du bambou, c'est leur nourriture préférée ! En aidant à cultiver plus de bambous, on s'assure que ces adorables animaux ont assez à manger et qu'ils peuvent vivre heureux. C'est aussi une façon de protéger leur habitat naturel. Alors, lorsque tu penses aux pandas, tu sauras qu'ils profitent d'un bon repas dans la nature.",
-      "date": "09/10/2023",
-      "link": "https://www.worldwildlife.org/species/giant-panda"
-    },
-    {
-      "title": "Un robot au service des livres 📚",
-      "summary": "Une bibliothèque au Japon utilise maintenant un robot pour aider à ranger les livres. Le robot, appelé \"Buddy\", est très habile et peut facilement trouver le bon rayon pour chaque livre. Grâce à lui, les bibliothécaires ont plus de temps pour aider les visiteurs à découvrir de nouveaux livres à lire. Cela montre comment la technologie peut être utile et amusante. Si tu vas à la bibliothèque, qui sait, peut-être y rencontreras-tu un Buddy pour t'aider à trouver tes livres préférés !",
-      "date": "09/10/2023",
+      "title": "Une Nouvelle Espèce de Papillon Découverte! 🦋",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de papillon en Amérique du Sud! Ce papillon a des motifs de couleurs très brillantes qui le rendent unique. Ces découvertes sont importantes car elles nous aident à comprendre la biodiversité et l'état de la nature dans différentes parties du monde. Protéger ces papillons et leur habitat est essentiel pour garder notre planète pleine de vie.",
+      "date": "25/10/2023",
       "link": ""
+    },
+    {
+      "title": "Les Jeux Vidéo Olympiques en Préparation! 🎮",
+      "summary": "Les premiers Jeux Olympiques de Jeux Vidéo sont en préparation! Ce nouvel événement rassemblera des joueurs du monde entier qui vont s'affronter dans des jeux populaires comme ceux de sport ou de stratégie. C'est une bonne occasion pour les fans de jeux vidéo de montrer leurs talents et de se connecter avec des gens partageant la même passion. Cela montre aussi que les jeux vidéo sont pris au sérieux dans le monde du sport.",
+      "date": "25/10/2023",
+      "link": "https://example.com/e-sports-olympiques"
     }
   ]
 }
