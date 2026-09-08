@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "La Lune en Vedette 🌕",
-      "summary": "Un événement spécial s'est produit cette semaine : une éclipse lunaire ! 🌗 Une éclipse lunaire se passe quand la Terre se place entre le Soleil et la Lune. Cela donne à la Lune une belle couleur rougeâtre appelée « Lune de Sang ». Ce phénomène n'est pas dangereux, et beaucoup de gens dans le monde aiment l'admirer. C'est une belle occasion d'apprendre comment notre système solaire fonctionne ! Peut-être as-tu pu l'observer depuis chez toi ?",
-      "date": "29/10/2023",
+      "title": "Découverte d'une Nouvelle Planète ✨",
+      "summary": "Des scientifiques ont trouvé une nouvelle planète en dehors de notre système solaire ! Elle s'appelle GJ 367 b et est plus petite que la Terre, mais tourne très vite autour de son étoile. GJ 367 b se situe si près de son étoile qu'une année y dure seulement 8 heures. Cette découverte permet aux astronomes d'apprendre plus sur la diversité des mondes dans l'univers. C'est incroyable de penser qu'il y a tant de choses à découvrir au-delà de notre propre ciel étoilé !",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Nouveau Record au Marathon 🏃‍♂️",
-      "summary": "Un athlète incroyable a battu un record incroyable lors du marathon de New York. Un marathon, c'est une course de 42,195 km ! Le coureur, qui s'appelle Kelvin Kiptum, a couru si vite qu'il a établi un nouveau temps record mondial. Les marathons sont des courses difficiles où les sportifs doivent être très déterminés et persévérants. Cet exploit montre l'importance de ne jamais abandonner ses objectifs.",
-      "date": "29/10/2023",
+      "title": "Un Téléphone Prend des Photos dans l'Espace 🚀",
+      "summary": "Les étudiants d'une université en Australie ont envoyé un téléphone portable dans l'espace pour voir s'il pouvait prendre des photos. Le téléphone a été attaché à un petit satellite et a capturé des images incroyables de la Terre. Cela prouve que même des appareils simples peuvent accomplir des tâches impressionnantes. Ce projet aide les jeunes à s'intéresser aux technologies spatiales et montre que l'espace est un domaine passionnant et accessible à tous avec un peu de créativité.",
+      "date": "15/10/2023",
       "link": ""
     },
     {
-      "title": "Découverte d'une Nouvelle Espèce de Singe 🐒",
-      "summary": "Des scientifiques ont récemment découvert une nouvelle espèce de singe dans la jungle en Asie. Ce singe a une apparence unique avec son nez retroussé et une queue très longue. Les scientifiques s'occupent maintenant de mieux comprendre comment il vit et ce qu'il mange. Cette découverte est importante car elle rappelle que notre planète abrite encore de nombreux secrets à découvrir et qu'il est essentiel de protéger les habitats de ces animaux.",
-      "date": "29/10/2023",
+      "title": "Des Éléphants Aident des Forets en Afrique 🐘",
+      "summary": "En Afrique, les éléphants jouent un rôle important dans la protection des forêts. Lorsqu'ils se déplacent, ils mangent des fruits et dispersent les graines dans la nature à travers leur fumier. Cela aide les nouvelles plantes à pousser et les forêts à se régénérer. Les scientifiques ont découvert que ces plantes attirent de nombreux animaux, ce qui est bon pour tout l'écosystème. Finalement, protéger les éléphants, c'est aussi protéger les forêts et la vie sauvage autour d'eux.",
+      "date": "15/10/2023",
       "link": ""
     }
   ]
