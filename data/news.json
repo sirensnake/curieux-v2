@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "Découverte d'une Nouvelle Planète ✨",
-      "summary": "Des scientifiques ont trouvé une nouvelle planète en dehors de notre système solaire ! Elle s'appelle GJ 367 b et est plus petite que la Terre, mais tourne très vite autour de son étoile. GJ 367 b se situe si près de son étoile qu'une année y dure seulement 8 heures. Cette découverte permet aux astronomes d'apprendre plus sur la diversité des mondes dans l'univers. C'est incroyable de penser qu'il y a tant de choses à découvrir au-delà de notre propre ciel étoilé !",
-      "date": "15/10/2023",
+      "title": "🐙 Découverte d'une Pieuvre Fantastique",
+      "summary": "Les scientifiques ont récemment découvert une nouvelle espèce de pieuvre dans les profondeurs de l'océan Pacifique. Cette pieuvre a des couleurs incroyables et peut changer de forme. Les chercheurs sont très excités, car cela montre à quel point la vie marine est encore pleine de surprises. Grâce à cette découverte, nous en apprendrons plus sur les créatures qui vivent dans des environnements très difficiles à explorer. Si tu aimes l'océan, cette pieuvre pourrait être ta nouvelle créature préférée!",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Un Téléphone Prend des Photos dans l'Espace 🚀",
-      "summary": "Les étudiants d'une université en Australie ont envoyé un téléphone portable dans l'espace pour voir s'il pouvait prendre des photos. Le téléphone a été attaché à un petit satellite et a capturé des images incroyables de la Terre. Cela prouve que même des appareils simples peuvent accomplir des tâches impressionnantes. Ce projet aide les jeunes à s'intéresser aux technologies spatiales et montre que l'espace est un domaine passionnant et accessible à tous avec un peu de créativité.",
-      "date": "15/10/2023",
+      "title": "🌐 Un Nouveau Record pour Internet",
+      "summary": "Un nouveau câble sous-marin a été installé pour améliorer la vitesse d'Internet entre l'Amérique du Nord et l'Europe. Ce câble est aussi large qu'une main et pourtant il transporte des quantités énormes de données très rapidement. Grâce à ce câble, les gens pourront se connecter et partager des informations encore plus vite. Cela rendra Internet plus efficace pour les écoles, les entreprises et surtout pour que les amis puissent continuer à garder le contact!",
+      "date": "21/10/2023",
       "link": ""
     },
     {
-      "title": "Des Éléphants Aident des Forets en Afrique 🐘",
-      "summary": "En Afrique, les éléphants jouent un rôle important dans la protection des forêts. Lorsqu'ils se déplacent, ils mangent des fruits et dispersent les graines dans la nature à travers leur fumier. Cela aide les nouvelles plantes à pousser et les forêts à se régénérer. Les scientifiques ont découvert que ces plantes attirent de nombreux animaux, ce qui est bon pour tout l'écosystème. Finalement, protéger les éléphants, c'est aussi protéger les forêts et la vie sauvage autour d'eux.",
-      "date": "15/10/2023",
+      "title": "🍁 Découvertes de l'Automne",
+      "summary": "L'automne est là, et avec lui, une belle palette de couleurs dans la nature. Les scientifiques expliquent que les feuilles changent de couleur grâce à un processus appelé la photosynthèse qui ralentit en automne. Les arbres se préparent pour l'hiver, et les pigments rouges, jaunes et oranges deviennent visibles. C'est une période parfaite pour aller se promener dans la nature et admirer ces magnifiques transformations naturelles. N'oublie pas de ramasser quelques feuilles pour un herbier!",
+      "date": "21/10/2023",
       "link": ""
     }
   ]
