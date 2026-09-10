@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "🐙 Découverte d'une Pieuvre Fantastique",
-      "summary": "Les scientifiques ont récemment découvert une nouvelle espèce de pieuvre dans les profondeurs de l'océan Pacifique. Cette pieuvre a des couleurs incroyables et peut changer de forme. Les chercheurs sont très excités, car cela montre à quel point la vie marine est encore pleine de surprises. Grâce à cette découverte, nous en apprendrons plus sur les créatures qui vivent dans des environnements très difficiles à explorer. Si tu aimes l'océan, cette pieuvre pourrait être ta nouvelle créature préférée!",
-      "date": "21/10/2023",
+      "title": "Découverte d'une nouvelle espèce de grenouille 🐸",
+      "summary": "Des scientifiques ont découvert une nouvelle espèce de grenouille en Amazonie ! Cette petite grenouille a été trouvée dans une forêt très dense au Brésil. Elle est de couleur vive et mesure environ 2 cm de long. Ce type de découverte est très important car cela aide les scientifiques à mieux comprendre la biodiversité de notre planète. La biodiversité, c'est la variété de vies différentes sur Terre. En protégeant ces animaux, on protège aussi notre environnement.",
+      "date": "04/10/2023",
       "link": ""
     },
     {
-      "title": "🌐 Un Nouveau Record pour Internet",
-      "summary": "Un nouveau câble sous-marin a été installé pour améliorer la vitesse d'Internet entre l'Amérique du Nord et l'Europe. Ce câble est aussi large qu'une main et pourtant il transporte des quantités énormes de données très rapidement. Grâce à ce câble, les gens pourront se connecter et partager des informations encore plus vite. Cela rendra Internet plus efficace pour les écoles, les entreprises et surtout pour que les amis puissent continuer à garder le contact!",
-      "date": "21/10/2023",
+      "title": "Un concert de musique classique sous les étoiles ✨",
+      "summary": "Récemment, un concert spécial a eu lieu dans un grand parc. Les musiciens ont joué de la musique classique sous le ciel étoilé. Les spectateurs se sont installés sur l'herbe, certains avec des couvertures et des pique-niques. Ce genre d'événement permet de profiter de la musique tout en admirant la beauté de la nature. Beaucoup de gens pensent que c'est une excellente façon de se détendre et d'apprécier le plein air.",
+      "date": "04/10/2023",
       "link": ""
     },
     {
-      "title": "🍁 Découvertes de l'Automne",
-      "summary": "L'automne est là, et avec lui, une belle palette de couleurs dans la nature. Les scientifiques expliquent que les feuilles changent de couleur grâce à un processus appelé la photosynthèse qui ralentit en automne. Les arbres se préparent pour l'hiver, et les pigments rouges, jaunes et oranges deviennent visibles. C'est une période parfaite pour aller se promener dans la nature et admirer ces magnifiques transformations naturelles. N'oublie pas de ramasser quelques feuilles pour un herbier!",
-      "date": "21/10/2023",
+      "title": "Course de drones au-dessus de la ville 🚁",
+      "summary": "Dans une ville moderne, une passionnante course de drones a eu lieu récemment ! Des pilotes talentueux ont contrôlé à distance leurs drones à travers des obstacles faits de lumières colorées. Les drones sont des petits appareils volants télécommandés, et ils peuvent être très rapides ! Ce type de course est un sport en plein essor et attire de nombreux spectateurs curieux. C’est également une occasion unique pour les passionnés de technologie d'améliorer leurs compétences.",
+      "date": "04/10/2023",
       "link": ""
     }
   ]
