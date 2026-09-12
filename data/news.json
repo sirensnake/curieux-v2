@@ -1,21 +1,21 @@
 {
-  "articles": [
+  "news_articles": [
     {
-      "title": "Nouvelle Découverte Archéologique 🚀",
-      "summary": "Des archéologues ont récemment découvert des restes d'une ancienne civilisation en Égypte. Cette découverte comprend des outils, des poteries et même des restes de maisons très anciennes. Les archéologues disent que cela pourrait nous aider à comprendre comment les gens vivaient il y a des milliers d'années ! Les enfants aiment particulièrement ces découvertes parce que c'est comme résoudre un mystère du passé. Imaginez trouver quelque chose que personne n'a vu depuis si longtemps !",
-      "date": "16/11/2023",
+      "title": "Un pas de géant pour le recyclage ♻️",
+      "summary": "Une nouvelle machine a été inventée pour mieux recycler le plastique usagé. Cette machine peut trier et nettoyer le plastique plus rapidement que les méthodes anciennes. Cela signifie que moins de déchets finiront dans les océans et plus de plastique sera réutilisé pour fabriquer de nouveaux objets. C'est une belle avancée pour protéger notre planète et encourager tout le monde à participer au recyclage ! Peut-être que tu pourrais même imaginer de nouvelles façons de réutiliser ce plastique recyclé. Ensemble, nous avons le pouvoir de faire une grande différence dans la lutte contre la pollution !",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Record de Vitesse au Football ⚽",
-      "summary": "Kylian Mbappé, un célèbre footballeur français, a battu un nouveau record de vitesse lors d'un match récent. Il a couru à une vitesse incroyable de 38 km/h ! C'est presque aussi rapide qu'une voiture en ville. Les experts disent que c'est parce qu'il a beaucoup d'entraînement et de talent naturel. Les jeunes footballeurs du monde entier sont inspirés par lui et beaucoup rêvent de courir aussi vite un jour. Joue au football et qui sait, tu pourrais aussi t'améliorer!",
-      "date": "16/11/2023",
+      "title": "Premiers jeux vidéo de la forêt amazonienne 🎮",
+      "summary": "Des chercheurs et des développeurs de jeux vidéo travaillent ensemble pour créer des jeux inspirés par la forêt amazonienne. Ces jeux permettent de découvrir les nombreuses espèces d'animaux et de plantes qui vivent dans cette forêt extraordinaire. Ils aident aussi à comprendre pourquoi il est important de protéger ce lieu unique sur Terre. En jouant, les enfants du monde entier peuvent apprendre et s'amuser en même temps, tout en devenant des protecteurs de la nature. Peut-être que tu trouveras là ton nouveau jeu préféré, qui sait ?",
+      "date": "29/10/2023",
       "link": ""
     },
     {
-      "title": "Des Forêts sous la Mer 🌊",
-      "summary": "Une équipe de scientifiques a découvert des forêts sous-marines incroyables au large des côtes australiennes. Ces forêts ne sont pas comme celles sur terre, elles sont remplies d'algues géantes et de créatures marines fascinantes. Les algues aident à protéger les poissons et à améliorer la qualité de l'eau. Ces forêts jouent un rôle important pour notre planète en absorbant le dioxyde de carbone, un gaz à effet de serre. C'est génial, car cela aide à garder notre planète en bonne santé!",
-      "date": "16/11/2023",
+      "title": "Le retour d'un ancien sport aux JO 🤾‍♂️",
+      "summary": "Les Jeux Olympiques de 2024 verront le retour de la crosse, un ancien sport collectif souvent méconnu. Ce sport, qui se joue avec une crosse et une petite balle, est originaire des peuples autochtones d'Amérique du Nord. Jouer à la crosse demande vitesse, stratégie et travail d'équipe, des qualités essentielles dans de nombreux sports. Regarder ce sport aux JO sera l'occasion de découvrir comment il se joue dans différentes parties du monde. Qui sait, il pourrait même devenir l'un de tes sports préférés à essayer avec tes amis !",
+      "date": "29/10/2023",
       "link": ""
     }
   ]
