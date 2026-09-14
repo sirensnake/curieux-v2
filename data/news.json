@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Découverte Spatiale 🚀",
-      "summary": "Les scientifiques ont découvert une toute nouvelle planète en dehors de notre système solaire ! Cette planète, appelée 'exoplanète', est à environ 120 années-lumière de la Terre. Ce qui est spécial à propos de cette exoplanète, c'est qu'elle pourrait avoir des conditions favorables pour la vie. Les astronomes utilisent de puissants télescopes pour l'étudier, et il sera passionnant de découvrir ce qu'ils apprendront à l'avenir. Peut-être y a-t-il des formes de vie différentes qui pourraient exister loin de nous.",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "Une comète « visiteuse » 🪐",
+      "summary": "Une comète qui passe rarement près de la Terre a été observée récemment par des astronomes. Elle s'appelle comète Nishimura et a été découverte cette année. Les comètes sont de gros blocs de glace et de poussière qui voyagent dans l'espace. Ce qui est spécial avec Nishimura, c'est qu'elle ne repassera pas près de notre planète avant plusieurs centaines d'années ! Les gens qui ont un télescope peuvent essayer de l'apercevoir dans le ciel tôt le matin pour quelques jours encore. Voir une comète est une chance rare et magique, car il faut être au bon endroit et au bon moment ! C'est aussi une belle occasion de découvrir combien l'univers est grand et mystérieux.",
+      "date": "09/10/2023",
+      "link": "https://example.com/comete-nishimura"
     },
     {
-      "title": "Célébration Naturelle 🌿",
-      "summary": "Dans plusieurs pays, des gens ont célébré la Journée mondiale des animaux. Cette journée spéciale est dédiée à sensibiliser chacun à l'importance de protéger nos amis à fourrure, à plumes et à écailles. Partout dans le monde, des ateliers et des activités sont organisés pour encourager les enfants et les adultes à prendre soin de la nature. Se soucier des animaux, c'est aussi se soucier de notre planète ! Peut-être as-tu aussi un animal que tu aimes et que tu protèges chaque jour.",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "Un spectacle de jonglerie de robots 🤖",
+      "summary": "À Tokyo, des robots jongleurs ont impressionné le public lors d'un spectacle incroyable. Ils ont montré qu'ils peuvent jongler avec des balles, des quilles et même faire des figures complexes comme des jongleurs humains ! Ces robots sont contrôlés par des ordinateurs qui leur donnent des instructions très précises. Ce spectacle montre à quel point la technologie peut être amusante et créative. Les scientifiques et ingénieurs qui construisent ces robots espèrent qu'ils pourront dans le futur aider dans d'autres domaines, comme aider les gens à la maison ou dans des usines. Pour l'instant, ils continuent de s'entraîner pour devenir de meilleurs artistes !",
+      "date": "09/10/2023",
+      "link": "https://example.com/spectacle-robots"
     },
     {
-      "title": "Jeux Éblouissants 🏆",
-      "summary": "Les Jeux Olympiques de la Jeunesse approchent, et cette fois, ils se dérouleront dans la ville ensoleillée de Rio de Janeiro, au Brésil. De jeunes athlètes du monde entier se préparent avec enthousiasme pour montrer leurs talents dans des sports comme l'athlétisme, la natation et même le skateboard ! Ces jeux sont l'occasion pour les jeunes d'expérimenter l'esprit olympique et de faire de nouvelles rencontres. Peut-être que certains participants deviendront les champions olympiques de demain.",
-      "date": "15/10/2023",
-      "link": ""
+      "title": "Un nouveau parc pour les baleines 🐋",
+      "summary": "Bonne nouvelle pour les baleines : un grand parc marin vient d'ouvrir au large des côtes de l'Islande. Ce parc est un espace protégé où les baleines peuvent nager librement et en sécurité. Les parcs marins sont très importants parce qu'ils préservent l'habitat naturel des animaux marins et leur offrent un endroit sûr loin de la pollution et des dangers comme la chasse excessive. En visitant ce parc, les scientifiques peuvent aussi en apprendre plus sur ces géants des mers et comment les protéger au mieux. C'est une grande étape pour s'assurer que les futures générations pourront encore observer ces magnifiques animaux dans l'océan.",
+      "date": "09/10/2023",
+      "link": "https://example.com/parc-baleines"
     }
   ]
 }
