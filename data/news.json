@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une comète « visiteuse » 🪐",
-      "summary": "Une comète qui passe rarement près de la Terre a été observée récemment par des astronomes. Elle s'appelle comète Nishimura et a été découverte cette année. Les comètes sont de gros blocs de glace et de poussière qui voyagent dans l'espace. Ce qui est spécial avec Nishimura, c'est qu'elle ne repassera pas près de notre planète avant plusieurs centaines d'années ! Les gens qui ont un télescope peuvent essayer de l'apercevoir dans le ciel tôt le matin pour quelques jours encore. Voir une comète est une chance rare et magique, car il faut être au bon endroit et au bon moment ! C'est aussi une belle occasion de découvrir combien l'univers est grand et mystérieux.",
-      "date": "09/10/2023",
-      "link": "https://example.com/comete-nishimura"
+      "title": "✨ Découverte d'une nouvelle galaxie lumineuse",
+      "summary": "Des scientifiques ont découvert une nouvelle galaxie qui brille très fort dans le ciel! Elle s'appelle 'HD1' et se trouve très loin de notre Terre. C'est incroyable parce qu'elle est vraiment vieille, presque aussi vieille que l'univers lui-même! Les chercheurs utilisent de grands télescopes pour l'observer et en apprendre plus sur elle. Cette découverte nous aide à mieux comprendre l'univers et comment il a évolué. Qui sait, peut-être qu'un jour, tu pourrais devenir l'astronome qui découvrira encore plus de galaxies!",
+      "date": "20/10/2023",
+      "link": ""
     },
     {
-      "title": "Un spectacle de jonglerie de robots 🤖",
-      "summary": "À Tokyo, des robots jongleurs ont impressionné le public lors d'un spectacle incroyable. Ils ont montré qu'ils peuvent jongler avec des balles, des quilles et même faire des figures complexes comme des jongleurs humains ! Ces robots sont contrôlés par des ordinateurs qui leur donnent des instructions très précises. Ce spectacle montre à quel point la technologie peut être amusante et créative. Les scientifiques et ingénieurs qui construisent ces robots espèrent qu'ils pourront dans le futur aider dans d'autres domaines, comme aider les gens à la maison ou dans des usines. Pour l'instant, ils continuent de s'entraîner pour devenir de meilleurs artistes !",
-      "date": "09/10/2023",
-      "link": "https://example.com/spectacle-robots"
+      "title": "🐘 Un nouvel espoir pour les éléphants de forêt",
+      "summary": "Bonne nouvelle pour les éléphants de forêt! Des chercheurs ont trouvé une façon de mieux protéger ces animaux en danger. En observant leurs habitudes, ils ont découvert de nouvelles façons de les aider à rester en sécurité dans leurs habitats naturels. Ces éléphants vivent dans les forêts d'Afrique et sont plus petits que leurs cousins des savanes. Grâce à cette recherche, il sera possible d'assurer qu'ils auront un endroit sûr où vivre et se nourrir. Protéger les animaux est important pour garder notre planète belle et en équilibre!",
+      "date": "20/10/2023",
+      "link": ""
     },
     {
-      "title": "Un nouveau parc pour les baleines 🐋",
-      "summary": "Bonne nouvelle pour les baleines : un grand parc marin vient d'ouvrir au large des côtes de l'Islande. Ce parc est un espace protégé où les baleines peuvent nager librement et en sécurité. Les parcs marins sont très importants parce qu'ils préservent l'habitat naturel des animaux marins et leur offrent un endroit sûr loin de la pollution et des dangers comme la chasse excessive. En visitant ce parc, les scientifiques peuvent aussi en apprendre plus sur ces géants des mers et comment les protéger au mieux. C'est une grande étape pour s'assurer que les futures générations pourront encore observer ces magnifiques animaux dans l'océan.",
-      "date": "09/10/2023",
-      "link": "https://example.com/parc-baleines"
+      "title": "🎭 Un festival de marionnettes enchanté!",
+      "summary": "Dans une petite ville de France, un festival de marionnettes a offert du plaisir à tous les enfants et leurs familles. Les marionnettistes ont montré des spectacles incroyables avec des histoires amusantes et des personnages animés. Chaque année, des artistes du monde entier se rassemblent pour partager leur passion pour cet art particulier. Les marionnettes bougent et parlent grâce aux fils et à la créativité des artistes qui les contrôlent. Ce festival rappelle combien l'art et les histoires peuvent nous faire rêver et nous apprendre de nouvelles choses!",
+      "date": "20/10/2023",
+      "link": ""
     }
   ]
 }
