@@ -1,21 +1,21 @@
 {
   "articles": [
     {
-      "title": "✨ Découverte d'une nouvelle galaxie lumineuse",
-      "summary": "Des scientifiques ont découvert une nouvelle galaxie qui brille très fort dans le ciel! Elle s'appelle 'HD1' et se trouve très loin de notre Terre. C'est incroyable parce qu'elle est vraiment vieille, presque aussi vieille que l'univers lui-même! Les chercheurs utilisent de grands télescopes pour l'observer et en apprendre plus sur elle. Cette découverte nous aide à mieux comprendre l'univers et comment il a évolué. Qui sait, peut-être qu'un jour, tu pourrais devenir l'astronome qui découvrira encore plus de galaxies!",
-      "date": "20/10/2023",
+      "title": "🚀 Une nouvelle mission vers Mars commence !",
+      "summary": "Une nouvelle mission spatiale est en cours ! L'organisation spatiale de l'Europe a lancé un vaisseau en direction de Mars. Ce vaisseau transportera des appareils pour mieux comprendre la planète rouge. Les scientifiques veulent découvrir si Mars a déjà eu de la vie dans le passé. Cette mission aidera aussi à planifier des voyages pour les astronautes dans le futur. Chaque mission comme celle-ci nous apprend quelque chose de nouveau sur notre univers !",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "🐘 Un nouvel espoir pour les éléphants de forêt",
-      "summary": "Bonne nouvelle pour les éléphants de forêt! Des chercheurs ont trouvé une façon de mieux protéger ces animaux en danger. En observant leurs habitudes, ils ont découvert de nouvelles façons de les aider à rester en sécurité dans leurs habitats naturels. Ces éléphants vivent dans les forêts d'Afrique et sont plus petits que leurs cousins des savanes. Grâce à cette recherche, il sera possible d'assurer qu'ils auront un endroit sûr où vivre et se nourrir. Protéger les animaux est important pour garder notre planète belle et en équilibre!",
-      "date": "20/10/2023",
+      "title": "🐋 Des baleines curieuses s'approchent des bateaux !",
+      "summary": "Des baleines ont récemment été aperçues près des bateaux aux Açores, un groupe d'îles dans l'océan Atlantique. Ces géants de la mer semblaient être très curieux. Les baleines ne représentent pas de danger pour les bateaux, mais les scientifiques expliquent que c'est important de toujours les observer de manière respectueuse. Ces magnifiques rencontres rappellent combien nos océans regorgent de vie incroyable !",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "🎭 Un festival de marionnettes enchanté!",
-      "summary": "Dans une petite ville de France, un festival de marionnettes a offert du plaisir à tous les enfants et leurs familles. Les marionnettistes ont montré des spectacles incroyables avec des histoires amusantes et des personnages animés. Chaque année, des artistes du monde entier se rassemblent pour partager leur passion pour cet art particulier. Les marionnettes bougent et parlent grâce aux fils et à la créativité des artistes qui les contrôlent. Ce festival rappelle combien l'art et les histoires peuvent nous faire rêver et nous apprendre de nouvelles choses!",
-      "date": "20/10/2023",
+      "title": "🎨 Un festival de l'art illumine la ville !",
+      "summary": "Un festival d'art lumineux a été inauguré dans une grande ville. Les rues sont transformées avec des projections colorées et des sculptures brillantes. Les artistes du festival ont utilisé des lumières spéciales pour créer des œuvres d'art qui brillent dans la nuit. Les familles peuvent se promener et admirer ces magnifiques créations tout en en apprenant plus sur l'art et la technologie. Ces événements rassemblent les gens et redonnent de la vie à la ville !",
+      "date": "02/11/2023",
       "link": ""
     }
   ]
