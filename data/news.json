@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Découverte de Fossiles Étonnants 🦖",
-      "summary": "Des scientifiques ont découvert des fossiles de dinosaures en Alaska qui montrent que ces animaux vivaient près du cercle polaire il y a des millions d'années. Cela signifie que certains dinosaures pouvaient probablement s'adapter au froid. Cette découverte aide les chercheurs à mieux comprendre comment les dinosaures vivaient dans différents climats. C'est passionnant de penser aux ancêtres des oiseaux modernes qui pourraient avoir évolué de ces créatures extraordinaires!",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Un robot à la rescousse ! 🤖",
+      "summary": "Un nouvel ami robot est là pour aider les gens ! Des scientifiques ont créé un robot qui peut ramasser des objets tombés par terre. Il est utile pour les personnes âgées ou celles qui ont du mal à se baisser. Ce robot utilise des caméras pour voir où se trouvent les objets, puis il les saisit délicatement avec une pince. Les chercheurs travaillent dur pour que ce robot puisse bientôt être utilisé dans les maisons du monde entier. Ce petit assistant montre comment la technologie peut améliorer notre vie quotidienne.",
+      "date": "21/10/2023",
+      "link": "https://www.example.com/science"
     },
     {
-      "title": "Lune de Sang Éclipse 🌕",
-      "summary": "Ce week-end, de nombreuses personnes à travers le monde ont pu observer une 'lune de sang'. Il s'agit d'une éclipse lunaire où la Terre s'interpose entre le Soleil et la Lune, donnant à la Lune une teinte rouge. Cet événement naturel est spectaculaire et n'arrive pas tous les jours. La prochaine fois que cela se produira, n'oublie pas de regarder le ciel et d'apprécier cette merveille de l'espace!",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Les abeilles à la fête ! 🐝",
+      "summary": "Bonne nouvelle pour les abeilles ! Une grande réunion a eu lieu entre des experts de plusieurs pays pour discuter des moyens de protéger ces petites créatures si importantes pour notre planète. Les abeilles nous aident à avoir des fruits et des légumes en pollinisant les plantes. Les scientifiques veulent planter plus de fleurs et réduire l'utilisation de produits chimiques pour aider les abeilles à prospérer. Grâce à ces efforts, les champs et jardins pourraient bientôt être encore plus colorés et pleins de vie !",
+      "date": "21/10/2023",
+      "link": "https://www.example.com/environment"
     },
     {
-      "title": "Sauver les Tortues de Mer 🐢",
-      "summary": "En Floride, des bénévoles travaillent dur pour aider les bébés tortues de mer à atteindre l'océan en toute sécurité. Ces tortues, après avoir éclos sur la plage, doivent réussir à se rendre à l'eau pour survivre. Grâce aux efforts de nombreuses personnes, de plus en plus de petites tortues parviennent à réaliser ce voyage important. Protéger ces espèces est essentiel pour maintenir l'équilibre de notre biodiversité marine.",
-      "date": "26/10/2023",
-      "link": ""
+      "title": "Une danse venue d'ailleurs ! 💃",
+      "summary": "Un groupe de danseurs a impressionné tout le monde en présentant un nouveau style de danse inspiré d'un pays lointain. Ce spectacle coloré a été montré lors d'un grand festival culturel. Les danseurs ont utilisé des costumes traditionnels et de la musique entraînante pour faire découvrir la richesse de leur culture. Les gens ont adoré et ont même appris quelques mouvements après le spectacle. Cela prouve que la danse est un langage universel qui peut réunir les gens du monde entier.",
+      "date": "21/10/2023",
+      "link": "https://www.example.com/culture"
     }
   ]
 }
