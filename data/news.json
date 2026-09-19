@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un robot à la rescousse ! 🤖",
-      "summary": "Un nouvel ami robot est là pour aider les gens ! Des scientifiques ont créé un robot qui peut ramasser des objets tombés par terre. Il est utile pour les personnes âgées ou celles qui ont du mal à se baisser. Ce robot utilise des caméras pour voir où se trouvent les objets, puis il les saisit délicatement avec une pince. Les chercheurs travaillent dur pour que ce robot puisse bientôt être utilisé dans les maisons du monde entier. Ce petit assistant montre comment la technologie peut améliorer notre vie quotidienne.",
+      "title": "La magie de la comète dragon 🐉",
+      "summary": "Une comète spéciale, surnommée \"Dragon\", passe près de la Terre cette semaine! Les comètes sont comme de gros morceaux de glace et de poussières qui voyagent dans l'espace. Cette comète se distingue car elle brille de couleurs lumineuses et les scientifiques disent qu'elle n'apparaît qu'une fois tous les 200 ans. C'est un moment parfait pour sortir avec tes parents ou amis, regarder le ciel de nuit et essayer de l'apercevoir! Les astronomes utilisent de puissants télescopes pour en savoir plus sur cette visiteuse rare. En apprendre davantage sur les comètes nous aide à comprendre notre univers et son histoire.",
       "date": "21/10/2023",
-      "link": "https://www.example.com/science"
+      "link": ""
     },
     {
-      "title": "Les abeilles à la fête ! 🐝",
-      "summary": "Bonne nouvelle pour les abeilles ! Une grande réunion a eu lieu entre des experts de plusieurs pays pour discuter des moyens de protéger ces petites créatures si importantes pour notre planète. Les abeilles nous aident à avoir des fruits et des légumes en pollinisant les plantes. Les scientifiques veulent planter plus de fleurs et réduire l'utilisation de produits chimiques pour aider les abeilles à prospérer. Grâce à ces efforts, les champs et jardins pourraient bientôt être encore plus colorés et pleins de vie !",
+      "title": "Des œuvres d'art naturelles 🍃",
+      "summary": "Des centaines d'œuvres d'art surprenantes ont été découvertes dans une grotte cachée en France. Les archéologues, qui explorent ces vieux endroits, ont trouvé de magnifiques dessins d'animaux sur les murs. Ces dessins ont été réalisés par des gens il y a des milliers d'années! Ils nous montrent à quoi ressemblaient les rhinocéros, les chevaux et même des lions de l'époque. Il est fascinant de penser que les humains aimaient déjà dessiner et exprimer leur créativité bien avant l'invention des téléphones ou des ordinateurs. Ces œuvres nous éclairent sur les cultures anciennes et leur vie quotidienne.",
       "date": "21/10/2023",
-      "link": "https://www.example.com/environment"
+      "link": ""
     },
     {
-      "title": "Une danse venue d'ailleurs ! 💃",
-      "summary": "Un groupe de danseurs a impressionné tout le monde en présentant un nouveau style de danse inspiré d'un pays lointain. Ce spectacle coloré a été montré lors d'un grand festival culturel. Les danseurs ont utilisé des costumes traditionnels et de la musique entraînante pour faire découvrir la richesse de leur culture. Les gens ont adoré et ont même appris quelques mouvements après le spectacle. Cela prouve que la danse est un langage universel qui peut réunir les gens du monde entier.",
+      "title": "Le marathon des sourires 🏃‍♂️",
+      "summary": "Le célèbre marathon de New York s'est déroulé ce week-end avec des milliers de participants du monde entier. Un marathon, c'est une course très longue de 42,195 kilomètres. Les coureurs ont été encouragés par des foules enthousiastes avec des pancartes et de la musique. Parmi les participants, beaucoup couraient pour ramasser des fonds pour des bonnes causes, comme aider les enfants en besoin ou protéger notre planète. Ce grand événement montre l'importance de la persévérance et de l'entraide. Courir un marathon demande beaucoup d'entraînement et de détermination, et même si tous les participants ne gagnent pas, chacun accomplit quelque chose de formidable.",
       "date": "21/10/2023",
-      "link": "https://www.example.com/culture"
+      "link": ""
     }
   ]
 }
