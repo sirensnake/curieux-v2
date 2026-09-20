@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "La magie de la comète dragon 🐉",
-      "summary": "Une comète spéciale, surnommée \"Dragon\", passe près de la Terre cette semaine! Les comètes sont comme de gros morceaux de glace et de poussières qui voyagent dans l'espace. Cette comète se distingue car elle brille de couleurs lumineuses et les scientifiques disent qu'elle n'apparaît qu'une fois tous les 200 ans. C'est un moment parfait pour sortir avec tes parents ou amis, regarder le ciel de nuit et essayer de l'apercevoir! Les astronomes utilisent de puissants télescopes pour en savoir plus sur cette visiteuse rare. En apprendre davantage sur les comètes nous aide à comprendre notre univers et son histoire.",
-      "date": "21/10/2023",
+      "title": "Nouvelle découverte spatiale 🚀",
+      "summary": "Des scientifiques ont découvert un astéroïde très spécial près de notre planète ! Cet astéroïde est fait de métal, principalement de fer et de nickel. Il pourrait aider les chercheurs à en apprendre plus sur les débuts de notre système solaire, car il est resté intact pendant des milliards d'années. Les astronautes rêvent déjà d'envoyer une mission pour étudier de près cet objet brillant et mystérieux. Cette découverte montre combien l'espace regorge encore de surprises à explorer!",
+      "date": "30/10/2023",
+      "link": "https://example.com/science-news"
+    },
+    {
+      "title": "Une course pour les animaux fantastiques 🦄",
+      "summary": "En France, une course un peu spéciale a été organisée : une course de licornes... gonflables ! Les participants, principalement des enfants, montaient sur ces licornes en plastique flottantes pour faire une course amusante dans une piscine. Cet événement visait à collecter des fonds pour une bonne cause. Les bénéfices iront à des associations qui protègent les animaux en danger. C'est une belle manière de s'amuser tout en aidant les animaux dans le besoin !",
+      "date": "30/10/2023",
       "link": ""
     },
     {
-      "title": "Des œuvres d'art naturelles 🍃",
-      "summary": "Des centaines d'œuvres d'art surprenantes ont été découvertes dans une grotte cachée en France. Les archéologues, qui explorent ces vieux endroits, ont trouvé de magnifiques dessins d'animaux sur les murs. Ces dessins ont été réalisés par des gens il y a des milliers d'années! Ils nous montrent à quoi ressemblaient les rhinocéros, les chevaux et même des lions de l'époque. Il est fascinant de penser que les humains aimaient déjà dessiner et exprimer leur créativité bien avant l'invention des téléphones ou des ordinateurs. Ces œuvres nous éclairent sur les cultures anciennes et leur vie quotidienne.",
-      "date": "21/10/2023",
-      "link": ""
-    },
-    {
-      "title": "Le marathon des sourires 🏃‍♂️",
-      "summary": "Le célèbre marathon de New York s'est déroulé ce week-end avec des milliers de participants du monde entier. Un marathon, c'est une course très longue de 42,195 kilomètres. Les coureurs ont été encouragés par des foules enthousiastes avec des pancartes et de la musique. Parmi les participants, beaucoup couraient pour ramasser des fonds pour des bonnes causes, comme aider les enfants en besoin ou protéger notre planète. Ce grand événement montre l'importance de la persévérance et de l'entraide. Courir un marathon demande beaucoup d'entraînement et de détermination, et même si tous les participants ne gagnent pas, chacun accomplit quelque chose de formidable.",
-      "date": "21/10/2023",
-      "link": ""
+      "title": "Nouveau spectacle sous-marin 🌊",
+      "summary": "Un grand festival de la mer a été lancé dernièrement. Des artistes du monde entier ont conçu des sculptures géantes et lumineuses qui flottent sur l'eau et brillent dans le noir ! Ces œuvres d'art racontent des histoires sur les océans et leurs créatures fantastiques. Ce festival est une belle manière de nous rappeler à quel point nos océans sont importants et qu'il faut les protéger. Cela permet aussi de voir la mer d'une manière magique et différente, surtout avec des spectacles aussi créatifs.",
+      "date": "30/10/2023",
+      "link": "https://example.com/culture-news"
     }
   ]
 }
