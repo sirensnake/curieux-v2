@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Nouvelle découverte spatiale 🚀",
-      "summary": "Des scientifiques ont découvert un astéroïde très spécial près de notre planète ! Cet astéroïde est fait de métal, principalement de fer et de nickel. Il pourrait aider les chercheurs à en apprendre plus sur les débuts de notre système solaire, car il est resté intact pendant des milliards d'années. Les astronautes rêvent déjà d'envoyer une mission pour étudier de près cet objet brillant et mystérieux. Cette découverte montre combien l'espace regorge encore de surprises à explorer!",
-      "date": "30/10/2023",
-      "link": "https://example.com/science-news"
-    },
-    {
-      "title": "Une course pour les animaux fantastiques 🦄",
-      "summary": "En France, une course un peu spéciale a été organisée : une course de licornes... gonflables ! Les participants, principalement des enfants, montaient sur ces licornes en plastique flottantes pour faire une course amusante dans une piscine. Cet événement visait à collecter des fonds pour une bonne cause. Les bénéfices iront à des associations qui protègent les animaux en danger. C'est une belle manière de s'amuser tout en aidant les animaux dans le besoin !",
-      "date": "30/10/2023",
+      "title": "Un trésor sous les mers découvert! 🏴‍☠️",
+      "summary": "Des archéologues sous-marins viennent de découvrir un incroyable trésor au fond de l'océan, près des côtes de l'Espagne! Ce trésor se compose de pièces d'or, de bijoux et même d'objets anciens en céramique. Ils pensent que ces objets proviennent d'un navire marchand qui a coulé il y a plusieurs centaines d'années. Les scientifiques se réjouissent de cette découverte car elle pourra nous en apprendre plus sur le commerce et la vie à cette époque. Et qui sait, peut-être y a-t-il d'autres trésors cachés là-bas, attendant d'être découverts!",
+      "date": "02/11/2023",
       "link": ""
     },
     {
-      "title": "Nouveau spectacle sous-marin 🌊",
-      "summary": "Un grand festival de la mer a été lancé dernièrement. Des artistes du monde entier ont conçu des sculptures géantes et lumineuses qui flottent sur l'eau et brillent dans le noir ! Ces œuvres d'art racontent des histoires sur les océans et leurs créatures fantastiques. Ce festival est une belle manière de nous rappeler à quel point nos océans sont importants et qu'il faut les protéger. Cela permet aussi de voir la mer d'une manière magique et différente, surtout avec des spectacles aussi créatifs.",
-      "date": "30/10/2023",
-      "link": "https://example.com/culture-news"
+      "title": "Les pare-brise des oiseaux! 🐦",
+      "summary": "Bonne nouvelle pour nos amis les oiseaux! Des scientifiques suédois ont inventé un nouveau type de vitrage pour les tuiles solaires qui réduisent les risques de collision pour les oiseaux. Ces nouvelles tuiles sont conçues pour être plus visibles aux oiseaux, leur permettant d'éviter les accidents douloureux. Cela signifie qu'ils n'auront plus à se cogner contre les vitres lumineuses lorsque la lumière du soleil les éblouit. Ce projet est une avancée pour protéger les oiseaux tout en promouvant les énergies renouvelables.",
+      "date": "02/11/2023",
+      "link": ""
+    },
+    {
+      "title": "Le Marathon de New York est lancé! 🏃‍♂️",
+      "summary": "Ce dimanche, des milliers de coureurs du monde entier se sont réunis à New York pour participer au célèbre marathon. Cet événement sportif est une grande fête de l'effort et de la communauté, avec des athlètes qui parcourent environ 42 kilomètres à travers les rues animées de la ville. Parmi les participants, il y a des coureurs expérimentés mais aussi des gens qui courent pour une bonne cause, collectant des fonds pour divers projets caritatifs. Le Marathon de New York est non seulement une épreuve sportive, mais aussi un moment inspirant pour tous!",
+      "date": "02/11/2023",
+      "link": ""
     }
   ]
 }
