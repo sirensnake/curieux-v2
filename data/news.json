@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Une chouette découverte 🌿",
-      "summary": "Des scientifiques ont trouvé une nouvelle espèce de plante dans la forêt amazonienne! Ce qui la rend spéciale, c'est qu'elle ressemble à une étoile et que ses fleurs illuminent la nuit. C'est important parce que découvrir de nouvelles plantes nous apprend beaucoup sur la nature et peut aider à protéger notre planète. Ça donne envie d'explorer et de rêver, n'est-ce pas?",
-      "date": "19/10/2023",
-      "link": ""
+      "title": "Éclipse de Lune 🌕",
+      "summary": "La nuit dernière, on a pu observer une éclipse lunaire dans plusieurs parties du monde ! Une éclipse de Lune se produit quand la Terre se place entre le Soleil et la Lune, projetant ainsi une ombre sur la Lune. Cette fois, elle a pris une teinte rougeâtre, qu'on appelle la \"Lune de Sang\". C’est un phénomène qui n’arrive pas souvent, alors beaucoup de gens, petits et grands, se sont réunis pour admirer ce spectacle céleste. Si tu l'as raté, pas d’inquiétude, il y en aura d'autres à l’avenir ! Pense à te renseigner sur les prochaines dates.",
+      "date": "01/11/2023",
+      "link": "https://www.example.com/eclipse-moon-info"
     },
     {
-      "title": "Le grand festival du livre 📚",
-      "summary": "Cette semaine, un grand festival du livre a ouvert ses portes dans une ville en France. Des écrivains venus du monde entier partagent leurs histoires et leurs idées avec des enfants et des adultes. C'est l'occasion parfaite de découvrir de nouvelles aventures et de développer son imagination. Lire nous aide à mieux comprendre le monde et renforce notre curiosité!",
-      "date": "19/10/2023",
-      "link": ""
+      "title": "Championnat de Drone 🚁",
+      "summary": "Ce week-end, un championnat de drones a eu lieu dans une grande ville ! Les participants ont dû piloter des drones à travers un parcours rempli d'obstacles. Ils devaient être rapides et précis. Les drones sont des petits appareils volants qu'on commande à distance, un peu comme des mini-avions télécommandés. Les pilotes ont souvent besoin de beaucoup d'entraînement pour bien les maîtriser. Les compétitions de drones deviennent de plus en plus populaires et attirer de jeunes passionnés de technologie et de vitesse. Peut-être qu'un jour tu pourras aussi en piloter un !",
+      "date": "01/11/2023",
+      "link": "https://www.example.com/drone-championship-news"
     },
     {
-      "title": "Les dauphins s'amusent 🐬",
-      "summary": "Des chercheurs ont récemment observé des dauphins jouant avec des méduses comme si elles étaient des ballons. Cela révèle à quel point ces animaux sont intelligents et joueurs. Les dauphins vivent en groupes très soudés et aiment s'amuser ensemble. Ce comportement nous rappelle l'importance du jeu et de la socialisation, même dans le monde animal!",
-      "date": "19/10/2023",
-      "link": ""
+      "title": "Découverte d'un gymnase sous-marin 🏊",
+      "summary": "Des chercheurs ont récemment découvert un endroit sous l'océan qui ressemble à un gymnase pour poissons ! Ce site se situe près des côtes d'une île et il s’avère être un lieu où des bancs de poissons viennent nager collectivement. Les scientifiques pensent que cet endroit est important pour observer les comportements sociaux des poissons dans leur environnement naturel. C’est fascinant de penser que comme nous aimons aller à la piscine avec nos amis, les poissons aussi aiment nager ensemble. Cette découverte aidera les experts à mieux comprendre la vie océanique.",
+      "date": "01/11/2023",
+      "link": "https://www.example.com/underwater-gym-news"
     }
   ]
 }
