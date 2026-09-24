@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Éclipse de Lune 🌕",
-      "summary": "La nuit dernière, on a pu observer une éclipse lunaire dans plusieurs parties du monde ! Une éclipse de Lune se produit quand la Terre se place entre le Soleil et la Lune, projetant ainsi une ombre sur la Lune. Cette fois, elle a pris une teinte rougeâtre, qu'on appelle la \"Lune de Sang\". C’est un phénomène qui n’arrive pas souvent, alors beaucoup de gens, petits et grands, se sont réunis pour admirer ce spectacle céleste. Si tu l'as raté, pas d’inquiétude, il y en aura d'autres à l’avenir ! Pense à te renseigner sur les prochaines dates.",
-      "date": "01/11/2023",
-      "link": "https://www.example.com/eclipse-moon-info"
+      "title": "Un géant dans le ciel 🌌",
+      "summary": "Une grande surprise pour tous ceux qui aiment regarder le ciel étoilé ! Un astéroïde, qui est une grosse pierre flottant dans l'espace, va passer près de la Terre. Ne t'inquiète pas, il ne va pas nous toucher ! C'est un moment spécial car, en ce moment, les scientifiques du monde entier se préparent à l'observer de près avec leurs télescopes. C'est une bonne opportunité pour en apprendre plus sur le système solaire et d'où viennent ces mystérieux visiteurs de l'espace.",
+      "date": "07/11/2023",
+      "link": ""
     },
     {
-      "title": "Championnat de Drone 🚁",
-      "summary": "Ce week-end, un championnat de drones a eu lieu dans une grande ville ! Les participants ont dû piloter des drones à travers un parcours rempli d'obstacles. Ils devaient être rapides et précis. Les drones sont des petits appareils volants qu'on commande à distance, un peu comme des mini-avions télécommandés. Les pilotes ont souvent besoin de beaucoup d'entraînement pour bien les maîtriser. Les compétitions de drones deviennent de plus en plus populaires et attirer de jeunes passionnés de technologie et de vitesse. Peut-être qu'un jour tu pourras aussi en piloter un !",
-      "date": "01/11/2023",
-      "link": "https://www.example.com/drone-championship-news"
+      "title": "L'art des mers 🐚",
+      "summary": "Un artiste talentueux a créé un chef-d'œuvre sur la plage avec du sable ! Avec l'aide de quelques outils simples, il a sculpté un magnifique château de sable qui a impressionné tout le monde. Mais attention, ces créations sont temporaires et disparaissent avec la marée. Cela nous rappelle qu'il est important de profiter des choses simples et belles autour de nous, même si elles ne durent pas toujours. Peut-être que la prochaine fois que tu iras à la plage, tu voudras essayer de créer ta propre œuvre d'art !",
+      "date": "07/11/2023",
+      "link": ""
     },
     {
-      "title": "Découverte d'un gymnase sous-marin 🏊",
-      "summary": "Des chercheurs ont récemment découvert un endroit sous l'océan qui ressemble à un gymnase pour poissons ! Ce site se situe près des côtes d'une île et il s’avère être un lieu où des bancs de poissons viennent nager collectivement. Les scientifiques pensent que cet endroit est important pour observer les comportements sociaux des poissons dans leur environnement naturel. C’est fascinant de penser que comme nous aimons aller à la piscine avec nos amis, les poissons aussi aiment nager ensemble. Cette découverte aidera les experts à mieux comprendre la vie océanique.",
-      "date": "01/11/2023",
-      "link": "https://www.example.com/underwater-gym-news"
+      "title": "Découverte sous-marine fascinante 🐙",
+      "summary": "Des scientifiques viennent de découvrir une nouvelle espèce d'animal dans les profondeurs de l'océan. Cet animal étrange ressemble à une pieuvre, mais il a des couleurs très vives et des comportements uniques. Les explorateurs marins sont toujours en train d'explorer des zones inconnues de l'océan, et chaque trouvaille nous aide à mieux comprendre la vie sous-marine. C'est passionnant de penser qu'il y a encore tellement de merveilles à découvrir sous la mer. Qui sait quels autres secrets l'océan pourrait révéler ?",
+      "date": "07/11/2023",
+      "link": ""
     }
   ]
 }
