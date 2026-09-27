@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Découverte d'une Lune Cachée 🌕",
-      "summary": "Les astronomes viennent de découvrir qu'une planète éloignée, appelée Jupiter 16, a une nouvelle lune cachée. Cette lune a été trouvée grâce à un puissant télescope qui permet de voir très loin dans l'espace. Les scientifiques pensent que cette nouvelle lune est très petite et tourne autour de la planète depuis très longtemps. Cette découverte aide les experts à mieux comprendre comment les planètes et leurs lunes se forment dans l'univers. Observons toujours le ciel avec curiosité, car il cache encore plein de mystères !",
-      "date": "28/10/2023",
-      "link": ""
+      "title": "Un volcan en fleurs 🌋",
+      "summary": "À Hawaï, un célèbre volcan nommé Kīlauea est en éruption ! Mais ne t'inquiète pas, personne n'est en danger. Les scientifiques étudient ce phénomène pour en apprendre davantage sur notre planète. Le Kīlauea est l'un des volcans les plus actifs du monde et quand il entre en éruption, ça ressemble un peu à un feu d'artifice géant. C'est aussi une chance pour les chercheurs de comprendre comment la lave sort de la terre et forme de nouvelles terres. Grâce à ces découvertes, on peut mieux protéger les gens et les animaux qui vivent à proximité. C'est fascinant, n'est-ce pas ?",
+      "date": "06/10/2023",
+      "link": "https://www.hawaiianvolcanoes.org/"
     },
     {
-      "title": "Les Arbres Communiquent Entre Eux 🌳",
-      "summary": "Des chercheurs ont découvert que les arbres de la forêt communiquent entre eux à travers leurs racines. Ils utilisent un réseau souterrain de minuscules champignons pour échanger des informations et des nutriments. C'est un peu comme si les arbres avaient Internet sous terre ! Cette découverte aide à comprendre comment les forêts gardent leur équilibre et leur santé. Protéger nos forêts devient encore plus important quand on sait combien elles sont intelligentes et connectées.",
-      "date": "28/10/2023",
-      "link": ""
+      "title": "Des baleines artistes 🎨",
+      "summary": "Des scientifiques ont découvert que certaines baleines à bosse adorent « chanter » sous l'eau. Ces sons ne sont pas seulement de jolis chants mais aident les baleines à communiquer entre elles. C'est un peu comme si elles échangeaient des poèmes ou des chansons. En plus, la façon dont elles forment ces sons est si complexe que cela ressemble à de l'art musical. Les chercheurs pensent que cela pourrait aussi aider d'autres animaux marins à mieux naviguer et se repérer dans l'océan. Cette découverte nous montre à quel point l'océan est plein de surprises !",
+      "date": "06/10/2023",
+      "link": "https://www.whalefacts.org/"
     },
     {
-      "title": "Nouveau Record pour un Jeune Cycliste 🚴",
-      "summary": "Un jeune cycliste de 12 ans, nommé Lucas, a battu un record impressionnant en pédalant pendant 24 heures sur une piste spéciale. Il a parcouru plus de 300 kilomètres, un exploit incroyable pour son âge ! Lucas a été soutenu par sa famille et ses amis qui l'ont encouragé tout au long du défi. Cette performance montre que la détermination et l'entraînement permettent d'atteindre de grands objectifs, même à un jeune âge. Continue d'explorer tes passions, tu pourrais aussi étonner le monde !",
-      "date": "28/10/2023",
-      "link": ""
+      "title": "Les robots au secours des agriculteurs 🤖",
+      "summary": "En Australie, de curieux petits robots aident maintenant les agriculteurs à prendre soin de leurs champs. Ces robots sont super doués pour retirer les mauvaises herbes sans abîmer les plantes. Ils utilisent des caméras et des lasers pour faire leur travail avec précision. Grâce à eux, les agriculteurs peuvent réduire l'utilisation de produits chimiques, ce qui est bien meilleur pour l'environnement. Les robots aident aussi à gagner du temps, ce qui laisse plus de moments aux agriculteurs pour s'occuper de leurs animaux ou pour inventer de nouvelles méthodes de culture.",
+      "date": "06/10/2023",
+      "link": "https://www.farmingwithrobots.org/"
     }
   ]
 }
