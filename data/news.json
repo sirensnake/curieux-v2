@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "Un volcan en fleurs 🌋",
-      "summary": "À Hawaï, un célèbre volcan nommé Kīlauea est en éruption ! Mais ne t'inquiète pas, personne n'est en danger. Les scientifiques étudient ce phénomène pour en apprendre davantage sur notre planète. Le Kīlauea est l'un des volcans les plus actifs du monde et quand il entre en éruption, ça ressemble un peu à un feu d'artifice géant. C'est aussi une chance pour les chercheurs de comprendre comment la lave sort de la terre et forme de nouvelles terres. Grâce à ces découvertes, on peut mieux protéger les gens et les animaux qui vivent à proximité. C'est fascinant, n'est-ce pas ?",
-      "date": "06/10/2023",
-      "link": "https://www.hawaiianvolcanoes.org/"
+      "title": "Une nuit pleine d'étoiles 🌟",
+      "summary": "La semaine dernière, des astronomes ont aperçu une nouvelle comète brillante. Une comète est comme une grosse boule de glace et de poussière qui voyage très loin dans l'espace. Cette comète sera visible dans le ciel pendant quelques semaines, si tu utilises des jumelles ou un petit télescope. Elle passe près de la Terre tous les 400 ans, si éloignée que nous ne courons aucun risque. C'est une occasion unique de voir de plus près ces visiteurs de l'espace ! Regarder le ciel étoilé la nuit, c'est comme un spectacle incroyable offert par la nature.",
+      "date": "02/10/2023",
+      "link": ""
     },
     {
-      "title": "Des baleines artistes 🎨",
-      "summary": "Des scientifiques ont découvert que certaines baleines à bosse adorent « chanter » sous l'eau. Ces sons ne sont pas seulement de jolis chants mais aident les baleines à communiquer entre elles. C'est un peu comme si elles échangeaient des poèmes ou des chansons. En plus, la façon dont elles forment ces sons est si complexe que cela ressemble à de l'art musical. Les chercheurs pensent que cela pourrait aussi aider d'autres animaux marins à mieux naviguer et se repérer dans l'océan. Cette découverte nous montre à quel point l'océan est plein de surprises !",
-      "date": "06/10/2023",
-      "link": "https://www.whalefacts.org/"
+      "title": "Le mystère des grenouilles dorées 🐸",
+      "summary": "Des scientifiques en Amérique du Sud ont fait une découverte étonnante : une nouvelle espèce de grenouille minuscule aux couleurs dorées. Ces petites créatures vivent dans les forêts tropicales et sont très difficiles à repérer à cause de leur taille et de leur habitat. Ces grenouilles sont importantes car elles jouent un rôle dans l'équilibre de la nature en mangeant des insectes. Malheureusement, certaines espèces de grenouilles sont en danger à cause de la disparition de leur habitat. C'est pourquoi il est essentiel de protéger la nature qui nous entoure.",
+      "date": "02/10/2023",
+      "link": ""
     },
     {
-      "title": "Les robots au secours des agriculteurs 🤖",
-      "summary": "En Australie, de curieux petits robots aident maintenant les agriculteurs à prendre soin de leurs champs. Ces robots sont super doués pour retirer les mauvaises herbes sans abîmer les plantes. Ils utilisent des caméras et des lasers pour faire leur travail avec précision. Grâce à eux, les agriculteurs peuvent réduire l'utilisation de produits chimiques, ce qui est bien meilleur pour l'environnement. Les robots aident aussi à gagner du temps, ce qui laisse plus de moments aux agriculteurs pour s'occuper de leurs animaux ou pour inventer de nouvelles méthodes de culture.",
-      "date": "06/10/2023",
-      "link": "https://www.farmingwithrobots.org/"
+      "title": "Un robot qui cuisine ! 🤖",
+      "summary": "Des ingénieurs au Japon ont dévoilé un robot capable de cuisiner des plats simples, comme des crêpes et des sandwiches. Ils ont programmé le robot pour qu'il reproduise les gestes humains en cuisine en toute sécurité. L'objectif est d'aider les personnes qui n'ont pas le temps ou les capacités de préparer des repas. Ce robot ne remplacera pas la cuisine faite maison par nos parents, mais c'est amusant de penser qu'un jour, des robots pourraient nous assister dans notre cuisine. Qui sait, peut-être aidera-t-il aussi à inventer de nouvelles recettes amusantes !",
+      "date": "02/10/2023",
+      "link": ""
     }
   ]
 }
