@@ -1,22 +1,22 @@
 {
   "articles": [
     {
-      "title": "🌍 Des glaciers en pleine transformation",
-      "summary": "Récemment, des scientifiques ont étudié certains des plus grands glaciers du monde pour comprendre comment ils changent. Un glacier est une grande masse de glace qui se forme dans les montagnes froides. Ces experts ont utilisé des satellites pour observer les glaciers et ont découvert qu'ils fondent plus vite que prévu. Cela se produit en partie à cause du réchauffement de notre planète. Mais ne t'inquiète pas, de nombreuses personnes travaillent dur pour trouver des solutions et protéger notre environnement !",
-      "date": "15/10/2023",
-      "link": "https://example.com/glaciers-research"
+      "title": "La nature au secours des abeilles 🐝",
+      "summary": "De super nouvelles pour nos amies les abeilles ! Des chercheurs ont récemment découvert que les fleurs peuvent aider les abeilles à lutter contre certains parasites. Ces parasites sont de petits êtres qui les rendent malades. Les fleurs produisent une substance qui aide les abeilles à se défendre. C'est une belle preuve que la nature sait s'entraider. Les abeilles, qui pollinisent nos plantes et aident à faire pousser nos fruits et légumes, sont essentielles pour notre planète. Cette découverte est donc très importante pour les protéger et rendre notre monde plus vert.",
+      "date": "07/10/2023",
+      "link": ""
     },
     {
-      "title": "🐕 Un nouveau meilleur ami robot !",
-      "summary": "Des ingénieurs ont créé un robot qui ressemble à un chien et qui peut aider les gens dans leur maison. Ce robot peut faire des tâches comme ramasser des objets ou même apporter des boissons. Ces robots ne remplacent pas les vrais chiens, mais ils peuvent être très utiles pour les personnes âgées ou celles qui ont des difficultés à se déplacer. En plus, c'est une excellente occasion de découvrir comment fonctionnent les robots et les nouvelles technologies !",
-      "date": "15/10/2023",
-      "link": "https://example.com/robot-dog"
+      "title": "Football et égalité des genres ⚽️",
+      "summary": "Un grand pas pour l'égalité des genres dans le sport ! La Fédération Internationale de Football a annoncé que les primes pour les tournois masculins et féminins seront bientôt égales. Cela signifie que les joueurs et joueuses recevront le même montant d'argent pour participer et gagner. Cette décision est importante car elle montre qu'il ne doit pas y avoir de différence entre les filles et les garçons dans le sport. Chacun mérite la même reconnaissance pour son talent et son travail. C'est une manière de dire que tout le monde a de la valeur, peu importe le genre.",
+      "date": "07/10/2023",
+      "link": ""
     },
     {
-      "title": "🦜 Une découverte fascinante : un oiseau couleur arc-en-ciel",
-      "summary": "Des chercheurs en Amazonie ont récemment découvert une nouvelle espèce d'oiseau aux couleurs étonnantes. Cet oiseau, avec ses plumes multicolores, ressemble à un véritable arc-en-ciel. Les scientifiques sont très excités par cette découverte, car elle montre à quel point la biodiversité est riche dans cette région. Chacun peut en apprendre plus sur ces animaux incroyables et pourquoi il est important de protéger leurs habitats naturels.",
-      "date": "15/10/2023",
-      "link": "https://example.com/rainbow-bird"
+      "title": "Vers une ville verte en 2050 🌿",
+      "summary": "Comment sera notre monde en 2050 ? Des architectes ont imaginé une ville très écologique où les immeubles seront recouverts de plantes et d'arbres. Ces bâtiments verts aideraient à purifier l'air, réduire la chaleur et même produire de l'énergie grâce au soleil. Ce projet, qui pourrait se réaliser dans une grande ville européenne, vise à rendre notre environnement urbain plus sain et agréable à vivre. En plantant plus d'arbres et en utilisant les énergies renouvelables, on agit positivement pour la planète. Une belle inspiration pour les villes du futur !",
+      "date": "07/10/2023",
+      "link": ""
     }
   ]
 }
